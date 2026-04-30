@@ -1,8 +1,0 @@
-{
-  "name": "prime-defense-single-service",
-  "version": "1.0.0",
-  "private": true,
-  "scripts": {
-    "start": "cd backend && node server.js"
-  }
-}
