@@ -1,0 +1,1 @@
+{"type":"module","scripts":{"start":"node server.js"},"dependencies":{"@stripe/stripe-js":"latest","bcryptjs":"latest","cors":"latest","express":"latest","jsonwebtoken":"latest","stripe":"latest"}}
