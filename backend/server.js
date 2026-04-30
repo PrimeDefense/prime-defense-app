@@ -2,9 +2,11 @@ import express from "express";
 import mongoose from "mongoose";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
+import Stripe from "stripe";
 
 const app = express();
 const PORT = process.env.PORT || 4000;
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
 app.use(express.json());
 
@@ -21,6 +23,9 @@ const UserSchema = new mongoose.Schema({
   expirationDate: String,
   emergencyName: String,
   emergencyPhone: String,
+  stripeCustomerId: String,
+  stripeSubscriptionId: String,
+  membershipStatus: String,
   createdAt: { type: Date, default: Date.now }
 });
 
@@ -28,6 +33,80 @@ const User = mongoose.model("User", UserSchema);
 
 function signToken(user) {
   return jwt.sign({ id: user._id }, process.env.JWT_SECRET, { expiresIn: "30d" });
+}
+
+function membershipLabel(status) {
+  if (status === "active") return "Active Protection Member";
+  if (status === "trialing") return "Trialing Protection Member";
+  if (status === "past_due") return "Past Due — Payment Issue";
+  if (status === "canceled") return "Canceled — Access Locked";
+  if (status === "unpaid") return "Unpaid — Access Locked";
+  if (status === "not_found") return "No Active Membership Found";
+  return "Membership Issue";
+}
+
+function accessAllowed(status) {
+  return status === "active" || status === "trialing";
+}
+
+async function checkStripeMembership(email) {
+  const customers = await stripe.customers.list({
+    email,
+    limit: 10
+  });
+
+  if (!customers.data.length) {
+    return {
+      status: "not_found",
+      customerId: "",
+      subscriptionId: ""
+    };
+  }
+
+  const customer = customers.data.sort((a, b) => b.created - a.created)[0];
+
+  const subscriptions = await stripe.subscriptions.list({
+    customer: customer.id,
+    status: "all",
+    limit: 20
+  });
+
+  if (!subscriptions.data.length) {
+    return {
+      status: "not_found",
+      customerId: customer.id,
+      subscriptionId: ""
+    };
+  }
+
+  const priority = ["active", "trialing", "past_due", "unpaid", "incomplete", "canceled"];
+
+  const sub = subscriptions.data.sort((a, b) => {
+    const ar = priority.indexOf(a.status);
+    const br = priority.indexOf(b.status);
+    return (ar === -1 ? 99 : ar) - (br === -1 ? 99 : br);
+  })[0];
+
+  return {
+    status: sub.status,
+    customerId: customer.id,
+    subscriptionId: sub.id
+  };
+}
+
+function publicUser(user) {
+  return {
+    name: user.name || "",
+    email: user.email || "",
+    permitState: user.permitState || "MI",
+    issueDate: user.issueDate || "",
+    expirationDate: user.expirationDate || "",
+    emergencyName: user.emergencyName || "",
+    emergencyPhone: user.emergencyPhone || "",
+    membershipStatus: user.membershipStatus || "not_found",
+    membershipLabel: membershipLabel(user.membershipStatus || "not_found"),
+    accessAllowed: accessAllowed(user.membershipStatus || "not_found")
+  };
 }
 
 app.post("/api/register", async (req, res) => {
@@ -45,6 +124,7 @@ app.post("/api/register", async (req, res) => {
       return res.json({ error: "An account already exists for this email. Please login." });
     }
 
+    const stripeCheck = await checkStripeMembership(email);
     const hashed = await bcrypt.hash(password, 10);
 
     const user = await User.create({
@@ -55,13 +135,16 @@ app.post("/api/register", async (req, res) => {
       issueDate: "",
       expirationDate: "",
       emergencyName: "",
-      emergencyPhone: ""
+      emergencyPhone: "",
+      stripeCustomerId: stripeCheck.customerId,
+      stripeSubscriptionId: stripeCheck.subscriptionId,
+      membershipStatus: stripeCheck.status
     });
 
     res.json({
       success: true,
-      message: "Account created.",
-      token: signToken(user)
+      token: signToken(user),
+      user: publicUser(user)
     });
   } catch (err) {
     console.log("Register error:", err);
@@ -79,18 +162,22 @@ app.post("/api/login", async (req, res) => {
     }
 
     const user = await User.findOne({ email });
-    if (!user) {
-      return res.json({ error: "No account found for this email." });
-    }
+    if (!user) return res.json({ error: "No account found for this email." });
 
     const valid = await bcrypt.compare(password, user.password);
-    if (!valid) {
-      return res.json({ error: "Invalid password." });
-    }
+    if (!valid) return res.json({ error: "Invalid password." });
+
+    const stripeCheck = await checkStripeMembership(email);
+
+    user.stripeCustomerId = stripeCheck.customerId;
+    user.stripeSubscriptionId = stripeCheck.subscriptionId;
+    user.membershipStatus = stripeCheck.status;
+    await user.save();
 
     res.json({
       success: true,
-      token: signToken(user)
+      token: signToken(user),
+      user: publicUser(user)
     });
   } catch (err) {
     console.log("Login error:", err);
@@ -101,14 +188,54 @@ app.post("/api/login", async (req, res) => {
 app.post("/api/get-profile", async (req, res) => {
   try {
     const decoded = jwt.verify(req.body.token, process.env.JWT_SECRET);
-    const user = await User.findById(decoded.id).lean();
+    const user = await User.findById(decoded.id);
 
     if (!user) return res.json({ error: "User not found." });
 
-    delete user.password;
-    res.json(user);
+    res.json(publicUser(user));
   } catch (err) {
     res.json({ error: "Session expired. Please login again." });
+  }
+});
+
+app.post("/api/refresh-membership", async (req, res) => {
+  try {
+    const decoded = jwt.verify(req.body.token, process.env.JWT_SECRET);
+    const user = await User.findById(decoded.id);
+
+    if (!user) return res.json({ error: "User not found." });
+
+    const stripeCheck = await checkStripeMembership(user.email);
+
+    user.stripeCustomerId = stripeCheck.customerId;
+    user.stripeSubscriptionId = stripeCheck.subscriptionId;
+    user.membershipStatus = stripeCheck.status;
+    await user.save();
+
+    res.json(publicUser(user));
+  } catch (err) {
+    res.json({ error: "Unable to refresh membership." });
+  }
+});
+
+app.post("/api/billing-portal", async (req, res) => {
+  try {
+    const decoded = jwt.verify(req.body.token, process.env.JWT_SECRET);
+    const user = await User.findById(decoded.id);
+
+    if (!user || !user.stripeCustomerId) {
+      return res.json({ error: "No Stripe customer found for this email." });
+    }
+
+    const session = await stripe.billingPortal.sessions.create({
+      customer: user.stripeCustomerId,
+      return_url: process.env.FRONTEND_URL || "https://app.primedefensetraining.com"
+    });
+
+    res.json({ url: session.url });
+  } catch (err) {
+    console.log("Billing portal error:", err);
+    res.json({ error: "Unable to open billing portal." });
   }
 });
 
@@ -249,6 +376,11 @@ button{
   font-size:13px;
   font-weight:900;
 }
+.status.locked{
+  background:rgba(239,35,60,.14);
+  color:#ffb8c0;
+  border:1px solid rgba(239,35,60,.35);
+}
 .small{
   color:#aaa;
   font-size:13px;
@@ -262,6 +394,15 @@ button{
 }
 .actions button{
   min-width:150px;
+}
+.lockbox{
+  max-width:720px;
+  margin:60px auto;
+  padding:36px;
+  background:rgba(15,15,15,.96);
+  border:1px solid rgba(239,35,60,.35);
+  border-radius:26px;
+  text-align:center;
 }
 @media(max-width:650px){
   .container{margin:22px 14px;padding:28px}
@@ -316,7 +457,7 @@ function showAuth(){
 }
 
 async function registerUser(){
-  setMsg("Creating account...");
+  setMsg("Creating account and checking membership...");
 
   var name = q("name").value;
   var email = q("email").value;
@@ -334,7 +475,8 @@ async function registerUser(){
     if(data.token){
       token = data.token;
       localStorage.setItem("pd_token", token);
-      showDashboard();
+      if(data.user && data.user.accessAllowed) showDashboard();
+      else showLocked(data.user);
     }else{
       setMsg(data.error || "Registration failed.");
     }
@@ -344,7 +486,7 @@ async function registerUser(){
 }
 
 async function loginUser(){
-  setMsg("Logging in...");
+  setMsg("Logging in and checking membership...");
 
   var email = q("email").value;
   var password = q("password").value;
@@ -361,7 +503,8 @@ async function loginUser(){
     if(data.token){
       token = data.token;
       localStorage.setItem("pd_token", token);
-      showDashboard();
+      if(data.user && data.user.accessAllowed) showDashboard();
+      else showLocked(data.user);
     }else{
       setMsg(data.error || "Login failed.");
     }
@@ -375,6 +518,58 @@ function logout(){
   token = null;
   authMode = "login";
   showAuth();
+}
+
+async function refreshMembership(){
+  setMsg("Refreshing membership status...");
+
+  var res = await fetch("/api/refresh-membership", {
+    method:"POST",
+    headers:{"Content-Type":"application/json"},
+    body:JSON.stringify({token:token})
+  });
+
+  var user = await res.json();
+
+  if(user.accessAllowed) showDashboard();
+  else showLocked(user);
+}
+
+async function openBilling(){
+  setMsg("Opening billing portal...");
+
+  var res = await fetch("/api/billing-portal", {
+    method:"POST",
+    headers:{"Content-Type":"application/json"},
+    body:JSON.stringify({token:token})
+  });
+
+  var data = await res.json();
+
+  if(data.url) window.location.href = data.url;
+  else setMsg(data.error || "Unable to open billing.");
+}
+
+function showLocked(user){
+  user = user || {};
+
+  q("app").innerHTML =
+    '<div class="lockbox">' +
+      '<div class="brand">MEMBERSHIP REQUIRED</div>' +
+      '<h1>Access Locked</h1>' +
+      '<span class="status locked">' + (user.membershipLabel || "Membership Required") + '</span>' +
+      '<p class="subtitle">Your app account exists, but active Prime Defense Protection membership is required to access member tools.</p>' +
+      '<div class="actions" style="justify-content:center">' +
+        '<button id="refreshBtn" class="primary" type="button">Refresh Status</button>' +
+        '<button id="billingBtn" class="secondary" type="button">Update Billing</button>' +
+        '<button id="logoutBtn" class="secondary" type="button">Logout</button>' +
+      '</div>' +
+      '<div id="msg" class="msg"></div>' +
+    '</div>';
+
+  q("refreshBtn").onclick = refreshMembership;
+  q("billingBtn").onclick = openBilling;
+  q("logoutBtn").onclick = logout;
 }
 
 async function showDashboard(){
@@ -394,14 +589,20 @@ async function showDashboard(){
       return;
     }
 
+    if(!user.accessAllowed){
+      showLocked(user);
+      return;
+    }
+
     q("app").innerHTML =
       '<div class="dashboard">' +
         '<div class="hero">' +
           '<div class="brand">PRIME DEFENSE PROTECTION</div>' +
           '<h1>Member Dashboard</h1>' +
-          '<span class="status">Active App Login</span>' +
+          '<span class="status">' + user.membershipLabel + '</span>' +
           '<p class="subtitle">Welcome' + (user.name ? ', ' + escapeHtml(user.name) : '') + '. Manage your permit details and emergency contact information.</p>' +
           '<div class="actions">' +
+            '<button id="refreshBtn" class="secondary" type="button">Refresh Status</button>' +
             '<button id="logoutBtn" class="secondary" type="button">Logout</button>' +
           '</div>' +
         '</div>' +
@@ -440,6 +641,7 @@ async function showDashboard(){
     q("state").value = user.permitState || "MI";
     q("saveBtn").onclick = saveProfile;
     q("logoutBtn").onclick = logout;
+    q("refreshBtn").onclick = refreshMembership;
 
   }catch(e){
     localStorage.removeItem("pd_token");
