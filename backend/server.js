@@ -60,5 +60,5 @@ function renderAftermath(){el('<div class="shell"><button class="btn dark" oncli
 boot();
 </script></body></html>`;
 app.get('/', (req,res)=>res.send(html));
-app.get('*', (req,res)=>res.send(html));
+app.use((req,res)=>res.send(html));
 app.listen(PORT, ()=>console.log('Prime Defense single-service app running on port '+PORT));
