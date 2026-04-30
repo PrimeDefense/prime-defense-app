@@ -30,28 +30,21 @@ const User = mongoose.model("User", UserSchema);
 
 app.post("/api/register", async (req, res) => {
 const { email, password } = req.body;
-
 const hashed = await bcrypt.hash(password, 10);
-
 const user = new User({ email, password: hashed });
 await user.save();
-
 res.json({ success: true });
 });
 
 app.post("/api/login", async (req, res) => {
 const { email, password } = req.body;
-
 const user = await User.findOne({ email });
-
 if (!user) return res.json({ error: "User not found" });
 
 const valid = await bcrypt.compare(password, user.password);
-
 if (!valid) return res.json({ error: "Invalid password" });
 
 const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET);
-
 res.json({ token });
 });
 
@@ -59,7 +52,6 @@ res.json({ token });
 
 app.post("/api/save-profile", async (req, res) => {
 const { token, permitState, issueDate, expirationDate, emergencyName, emergencyPhone } = req.body;
-
 const decoded = jwt.verify(token, process.env.JWT_SECRET);
 
 await User.findByIdAndUpdate(decoded.id, {
@@ -75,15 +67,12 @@ res.json({ success: true });
 
 app.post("/api/get-profile", async (req, res) => {
 const { token } = req.body;
-
 const decoded = jwt.verify(token, process.env.JWT_SECRET);
-
 const user = await User.findById(decoded.id);
-
 res.json(user);
 });
 
-/* ================= FRONTEND ================= */
+/* ================= UI ================= */
 
 const html = `
 
@@ -91,109 +80,180 @@ const html = `
 
 <html>
 <head>
-  <title>Prime Defense Protection</title>
-</head>
-<body style="background:black;color:white;font-family:sans-serif;text-align:center;padding-top:50px;">
+<title>Prime Defense Protection</title>
+<style>
+body {
+  margin:0;
+  font-family: Arial;
+  background: linear-gradient(135deg,#0a0a0a,#1a1a1a);
+  color:white;
+}
 
-<h1>Prime Defense Protection</h1>
+.container {
+max-width:400px;
+margin:80px auto;
+padding:30px;
+background:#111;
+border-radius:12px;
+box-shadow:0 0 20px rgba(255,0,0,0.2);
+text-align:center;
+}
+
+h1 { color:#ff2a2a; margin-bottom:10px; }
+input {
+width:100%;
+padding:12px;
+margin:8px 0;
+border:none;
+border-radius:6px;
+background:#222;
+color:white;
+}
+
+button {
+width:48%;
+padding:12px;
+margin-top:10px;
+border:none;
+border-radius:6px;
+cursor:pointer;
+font-weight:bold;
+}
+
+.login { background:#ff2a2a; color:white; }
+.register { background:#333; color:white; }
+
+.dashboard {
+max-width:600px;
+margin:40px auto;
+padding:20px;
+}
+
+.card {
+background:#111;
+padding:20px;
+margin-bottom:20px;
+border-radius:10px;
+box-shadow:0 0 15px rgba(255,0,0,0.15);
+}
+
+.save {
+width:100%;
+background:#ff2a2a;
+color:white;
+} </style>
+
+</head>
+
+<body>
 
 <div id="app"></div>
 
 <script>
 let token = localStorage.getItem("token");
 
-function renderLogin() {
-  document.getElementById("app").innerHTML = \`
-    <h2>Login</h2>
-    <input id="email" placeholder="Email"><br><br>
-    <input id="password" type="password" placeholder="Password"><br><br>
-    <button onclick="login()">Login</button>
-    <button onclick="register()">Register</button>
-  \`;
+function loginUI(){
+document.getElementById("app").innerHTML = \`
+<div class="container">
+<h1>Prime Defense</h1>
+<h3>Member Login</h3>
+<input id="email" placeholder="Email">
+<input id="password" type="password" placeholder="Password">
+<button class="login" onclick="login()">Login</button>
+<button class="register" onclick="register()">Register</button>
+</div>\`;
 }
 
-async function register() {
-  const email = document.getElementById("email").value;
-  const password = document.getElementById("password").value;
+async function register(){
+const email = document.getElementById("email").value;
+const password = document.getElementById("password").value;
 
-  await fetch("/api/register", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ email, password })
-  });
+await fetch("/api/register",{
+method:"POST",
+headers:{"Content-Type":"application/json"},
+body:JSON.stringify({email,password})
+});
 
-  alert("Registered. Now login.");
+alert("Registered. Login now.");
 }
 
-async function login() {
-  const email = document.getElementById("email").value;
-  const password = document.getElementById("password").value;
+async function login(){
+const email = document.getElementById("email").value;
+const password = document.getElementById("password").value;
 
-  const res = await fetch("/api/login", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ email, password })
-  });
+const res = await fetch("/api/login",{
+method:"POST",
+headers:{"Content-Type":"application/json"},
+body:JSON.stringify({email,password})
+});
 
-  const data = await res.json();
+const data = await res.json();
 
-  if (data.token) {
-    localStorage.setItem("token", data.token);
-    renderDashboard();
-  } else {
-    alert(data.error);
-  }
+if(data.token){
+localStorage.setItem("token",data.token);
+dashboard();
+}else{
+alert(data.error);
+}
 }
 
-async function renderDashboard() {
-  const res = await fetch("/api/get-profile", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ token })
-  });
+async function dashboard(){
+const res = await fetch("/api/get-profile",{
+method:"POST",
+headers:{"Content-Type":"application/json"},
+body:JSON.stringify({token})
+});
 
-  const user = await res.json();
+const user = await res.json();
 
-  document.getElementById("app").innerHTML = \`
-    <h2>Profile</h2>
-    <input id="state" placeholder="Permit State" value="\${user.permitState || ''}"><br><br>
-    <input id="issue" placeholder="Issue Date" value="\${user.issueDate || ''}"><br><br>
-    <input id="exp" placeholder="Expiration Date" value="\${user.expirationDate || ''}"><br><br>
+document.getElementById("app").innerHTML = \`
+<div class="dashboard">
 
-    <h3>Emergency Contact</h3>
-    <input id="ename" placeholder="Name" value="\${user.emergencyName || ''}"><br><br>
-    <input id="ephone" placeholder="Phone" value="\${user.emergencyPhone || ''}"><br><br>
+<h1>Member Dashboard</h1>
 
-    <button onclick="save()">Save</button>
-  \`;
+<div class="card">
+<h3>Permit Info</h3>
+<input id="state" placeholder="State" value="\${user.permitState||''}">
+<input id="issue" placeholder="Issue Date" value="\${user.issueDate||''}">
+<input id="exp" placeholder="Expiration" value="\${user.expirationDate||''}">
+</div>
+
+<div class="card">
+<h3>Emergency Contact</h3>
+<input id="ename" placeholder="Name" value="\${user.emergencyName||''}">
+<input id="phone" placeholder="Phone" value="\${user.emergencyPhone||''}">
+</div>
+
+<button class="save" onclick="save()">Save</button>
+
+</div>\`;
 }
 
-async function save() {
-  await fetch("/api/save-profile", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      token,
-      permitState: document.getElementById("state").value,
-      issueDate: document.getElementById("issue").value,
-      expirationDate: document.getElementById("exp").value,
-      emergencyName: document.getElementById("ename").value,
-      emergencyPhone: document.getElementById("ephone").value
-    })
-  });
-
-  alert("Saved");
+async function save(){
+await fetch("/api/save-profile",{
+method:"POST",
+headers:{"Content-Type":"application/json"},
+body:JSON.stringify({
+token,
+permitState:document.getElementById("state").value,
+issueDate:document.getElementById("issue").value,
+expirationDate:document.getElementById("exp").value,
+emergencyName:document.getElementById("ename").value,
+emergencyPhone:document.getElementById("phone").value
+})
+});
+alert("Saved");
 }
 
-if (token) renderDashboard();
-else renderLogin();
+if(token) dashboard();
+else loginUI();
 </script>
 
 </body>
 </html>
 `;
 
-app.get("/", (req, res) => res.send(html));
-app.use((req, res) => res.send(html));
+app.get("/", (req,res)=>res.send(html));
+app.use((req,res)=>res.send(html));
 
-app.listen(PORT, () => console.log("App running on port " + PORT));
+app.listen(PORT, ()=>console.log("Running on port "+PORT));
