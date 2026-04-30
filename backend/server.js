@@ -8,6 +8,7 @@ const PORT = process.env.PORT || 4000;
 
 app.use(express.json());
 
+/* ================= DATABASE ================= */
 mongoose.connect(process.env.MONGODB_URI)
   .then(() => console.log("MongoDB Connected"))
   .catch(err => console.log(err));
@@ -24,8 +25,10 @@ const UserSchema = new mongoose.Schema({
 
 const User = mongoose.model("User", UserSchema);
 
+/* ================= AUTH ================= */
 app.post("/api/register", async (req, res) => {
   const { email, password } = req.body;
+
   const existing = await User.findOne({ email });
   if (existing) return res.json({ error: "Account already exists" });
 
@@ -38,8 +41,8 @@ app.post("/api/register", async (req, res) => {
 
 app.post("/api/login", async (req, res) => {
   const { email, password } = req.body;
-  const user = await User.findOne({ email });
 
+  const user = await User.findOne({ email });
   if (!user) return res.json({ error: "User not found" });
 
   const valid = await bcrypt.compare(password, user.password);
@@ -49,8 +52,10 @@ app.post("/api/login", async (req, res) => {
   res.json({ token });
 });
 
+/* ================= PROFILE ================= */
 app.post("/api/save-profile", async (req, res) => {
   const { token, permitState, issueDate, expirationDate, emergencyName, emergencyPhone } = req.body;
+
   const decoded = jwt.verify(token, process.env.JWT_SECRET);
 
   await User.findByIdAndUpdate(decoded.id, {
@@ -66,11 +71,14 @@ app.post("/api/save-profile", async (req, res) => {
 
 app.post("/api/get-profile", async (req, res) => {
   const { token } = req.body;
+
   const decoded = jwt.verify(token, process.env.JWT_SECRET);
   const user = await User.findById(decoded.id);
-  res.json(user);
+
+  res.json(user || {});
 });
 
+/* ================= UI ================= */
 const html = `
 <!DOCTYPE html>
 <html>
@@ -113,10 +121,6 @@ h1 {
   margin: 10px 0 12px;
 }
 
-h2, h3 {
-  margin-top: 0;
-}
-
 .subtitle {
   color: #cfcfcf;
   line-height: 1.5;
@@ -135,15 +139,6 @@ input {
   font-size: 16px;
 }
 
-button {
-  padding: 15px 18px;
-  border: none;
-  border-radius: 14px;
-  cursor: pointer;
-  font-weight: 900;
-  font-size: 15px;
-}
-
 .buttonRow {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -151,16 +146,18 @@ button {
   margin-top: 14px;
 }
 
-.login, .save {
-  background: #ef233c;
-  color: white;
+button {
+  padding: 15px;
+  border-radius: 14px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
 }
 
-.register, .logout {
-  background: #242424;
-  color: white;
-  border: 1px solid rgba(255,255,255,.12);
-}
+.login { background:#ef233c; color:white; }
+.register { background:#242424; color:white; }
+.save { background:#ef233c; color:white; width:100%; margin-top:15px; }
+.logout { background:#242424; color:white; margin-top:10px; }
 
 .dashboard {
   max-width: 880px;
@@ -168,66 +165,11 @@ button {
   padding: 22px;
 }
 
-.hero {
-  background: rgba(15,15,15,.96);
-  border: 1px solid rgba(255,255,255,.10);
-  border-radius: 26px;
-  padding: 30px;
-  margin-bottom: 18px;
-  box-shadow: 0 25px 70px rgba(0,0,0,.55);
-}
-
 .card {
   background: rgba(15,15,15,.96);
-  border: 1px solid rgba(255,255,255,.09);
-  padding: 24px;
-  margin-bottom: 18px;
-  border-radius: 22px;
-  box-shadow: 0 18px 50px rgba(0,0,0,.35);
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 14px;
-}
-
-.save {
-  width: 100%;
-  margin-top: 10px;
-  font-size: 17px;
-}
-
-.status {
-  display: inline-block;
-  background: rgba(34,197,94,.14);
-  color: #8cffb0;
-  border: 1px solid rgba(34,197,94,.35);
-  padding: 9px 13px;
-  border-radius: 999px;
-  font-size: 13px;
-  font-weight: 900;
-}
-
-.smallText {
-  color: #aaa;
-  font-size: 13px;
-  line-height: 1.5;
-}
-
-@media (max-width: 650px) {
-  .container {
-    margin: 25px 14px;
-    padding: 28px;
-  }
-
-  h1 {
-    font-size: 34px;
-  }
-
-  .dashboard {
-    padding: 14px;
-  }
+  padding: 20px;
+  border-radius: 20px;
+  margin-bottom: 15px;
 }
 </style>
 </head>
@@ -241,20 +183,23 @@ let token = localStorage.getItem("token");
 function loginUI(){
 document.getElementById("app").innerHTML = \`
 <div class="container">
-  <div class="brand">PRIME DEFENSE TRAINING</div>
-  <h1>Prime Defense Protection</h1>
-  <p class="subtitle">Member-only access for permit tracking, emergency contact information, and future legal resources.</p>
+<div class="brand">PRIME DEFENSE TRAINING</div>
+<h1>Prime Defense Protection</h1>
+<p class="subtitle">Member Access Portal</p>
 
-  <input id="email" placeholder="Membership Email">
-  <input id="password" type="password" placeholder="Password">
+<input id="email" placeholder="Email">
+<input id="password" type="password" placeholder="Password">
 
-  <div class="buttonRow">
-    <button class="login" onclick="login()">Login</button>
-    <button class="register" onclick="register()">Register</button>
-  </div>
+<div class="buttonRow">
+<button id="loginBtn" class="login">Login</button>
+<button id="registerBtn" class="register">Register</button>
+</div>
 
-  <p class="smallText">Use the same email address associated with your Prime Defense Protection membership.</p>
+<div id="msg"></div>
 </div>\`;
+
+document.getElementById("loginBtn").addEventListener("click", login);
+document.getElementById("registerBtn").addEventListener("click", register);
 }
 
 async function register(){
@@ -268,8 +213,7 @@ body:JSON.stringify({email,password})
 });
 
 const data = await res.json();
-if(data.error) return alert(data.error);
-alert("Registered. You can now login.");
+document.getElementById("msg").innerText = data.error || "Registered. Now login.";
 }
 
 async function login(){
@@ -289,7 +233,7 @@ localStorage.setItem("token",data.token);
 token = data.token;
 dashboard();
 }else{
-alert(data.error);
+document.getElementById("msg").innerText = data.error;
 }
 }
 
@@ -310,41 +254,29 @@ const user = await res.json();
 
 document.getElementById("app").innerHTML = \`
 <div class="dashboard">
+<h1>Member Dashboard</h1>
 
-  <div class="hero">
-    <div class="brand">PRIME DEFENSE PROTECTION</div>
-    <h1>Member Dashboard</h1>
-    <span class="status">Active Member Access</span>
-    <p class="subtitle">Manage your permit details and emergency contact information.</p>
-    <button class="logout" onclick="logout()">Logout</button>
-  </div>
+<div class="card">
+<h3>Permit Info</h3>
+<input id="state" value="\${user.permitState||''}" placeholder="State">
+<input id="issue" value="\${user.issueDate||''}" placeholder="Issue Date">
+<input id="exp" value="\${user.expirationDate||''}" placeholder="Expiration Date">
+</div>
 
-  <div class="card">
-    <div class="brand">MY PERMIT</div>
-    <h2>Permit Profile</h2>
-    <p class="smallText">Enter the information exactly as it appears on your permit.</p>
+<div class="card">
+<h3>Emergency Contact</h3>
+<input id="ename" value="\${user.emergencyName||''}" placeholder="Name">
+<input id="phone" value="\${user.emergencyPhone||''}" placeholder="Phone">
+</div>
 
-    <div class="grid">
-      <input id="state" placeholder="Permit State" value="\${user.permitState || ''}">
-      <input id="issue" placeholder="Issue Date" value="\${user.issueDate || ''}">
-      <input id="exp" placeholder="Expiration Date" value="\${user.expirationDate || ''}">
-    </div>
-  </div>
+<button id="saveBtn" class="save">Save</button>
+<button id="logoutBtn" class="logout">Logout</button>
 
-  <div class="card">
-    <div class="brand">EMERGENCY CONTACT</div>
-    <h2>Family / Trusted Contact</h2>
-    <p class="smallText">This contact can later appear inside emergency mode.</p>
-
-    <div class="grid">
-      <input id="ename" placeholder="Contact Name" value="\${user.emergencyName || ''}">
-      <input id="phone" placeholder="Contact Phone" value="\${user.emergencyPhone || ''}">
-    </div>
-  </div>
-
-  <button class="save" onclick="save()">Save Profile</button>
-
+<div id="msg"></div>
 </div>\`;
+
+document.getElementById("saveBtn").addEventListener("click", save);
+document.getElementById("logoutBtn").addEventListener("click", logout);
 }
 
 async function save(){
@@ -361,7 +293,7 @@ emergencyPhone:document.getElementById("phone").value
 })
 });
 
-alert("Saved");
+document.getElementById("msg").innerText = "Saved";
 }
 
 if(token) dashboard();
