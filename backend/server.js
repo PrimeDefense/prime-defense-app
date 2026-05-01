@@ -271,6 +271,7 @@ button{padding:15px;border-radius:14px;font-weight:900;border:none;cursor:pointe
 .actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
 .actions button{min-width:150px}
 .lockbox{max-width:720px;margin:60px auto;padding:36px;background:rgba(15,15,15,.96);border:1px solid rgba(239,35,60,.35);border-radius:26px;text-align:center}
+.modeButtonGrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px;margin-top:14px}
 .emergencyButton{position:fixed;right:22px;bottom:22px;width:86px;height:86px;border-radius:50%;background:#ef233c;color:white;font-size:20px;box-shadow:0 0 28px rgba(239,35,60,.7);z-index:50}
 .emergencyScreen{position:fixed;inset:0;background:radial-gradient(circle at top left,rgba(180,0,20,.45),transparent 35%),#050505;z-index:999;padding:22px;overflow:auto}
 .emergencyShell{max-width:850px;margin:0 auto}
@@ -465,6 +466,17 @@ async function showDashboard(){
         '</div>' +
 
         '<div class="card">' +
+          '<div class="brand">INCIDENT MODES</div>' +
+          '<h2>Emergency Tools</h2>' +
+          '<p class="small">Use the appropriate mode based on what happened.</p>' +
+          '<div class="modeButtonGrid">' +
+            '<button id="shootingModeBtn" class="primary" type="button">Defensive Shooting</button>' +
+            '<button id="displayModeBtn" class="secondary" type="button">No Shots Fired / Defensive Display</button>' +
+            '<button id="aftermathBtn" class="secondary" type="button">Aftermath Mode</button>' +
+          '</div>' +
+        '</div>' +
+
+        '<div class="card">' +
           '<div class="brand">EMERGENCY CONTACT</div>' +
           '<h2>Family / Trusted Contact</h2>' +
           '<p class="small">This contact appears inside Emergency Mode.</p>' +
@@ -475,7 +487,6 @@ async function showDashboard(){
         '</div>' +
 
         '<button id="saveBtn" class="primary" type="button">Save Profile</button>' +
-        '<button id="aftermathBtn" class="secondary" type="button">Aftermath Mode</button>' +
         '<button id="emergencyBtn" class="emergencyButton" type="button">911</button>' +
         '<div id="msg" class="msg"></div>' +
       '</div>';
@@ -486,6 +497,8 @@ async function showDashboard(){
     q("logoutBtn").onclick=logout;
     q("refreshBtn").onclick=refreshMembership;
     q("emergencyBtn").onclick=openEmergency;
+    q("shootingModeBtn").onclick=openEmergency;
+    q("displayModeBtn").onclick=openDefensiveDisplay;
     q("aftermathBtn").onclick=openAftermath;
     q("miGuideBtn").onclick=showMichiganLegalGuide;
 
@@ -588,7 +601,6 @@ function showMichiganLegalGuide(){
   });
 
   html += '</div></div>';
-
   q("app").innerHTML = html;
 }
 
@@ -600,7 +612,7 @@ function openEmergency(){
     '<div class="emergencyScreen">' +
       '<div class="emergencyShell">' +
         '<div class="brand">PRIME DEFENSE PROTECTION MEMBER</div>' +
-        '<h1>Emergency Mode</h1>' +
+        '<h1>Emergency Mode — Defensive Shooting</h1>' +
         '<div class="card">' +
           '<div class="brand">STEP 1 — CALL 911</div>' +
           '<div class="script">“I was attacked, feared for my life, and had to defend myself. Please send both police and an ambulance to this location.”</div>' +
@@ -624,24 +636,50 @@ function openEmergency(){
     '</div>';
 }
 
+function openDefensiveDisplay(){
+  q("app").innerHTML =
+    '<div class="emergencyScreen">' +
+      '<div class="emergencyShell">' +
+        '<div class="brand">NO SHOTS FIRED</div>' +
+        '<h1>Defensive Display Mode</h1>' +
+        '<div class="card">' +
+          '<div class="brand">STEP 1 — CALL 911</div>' +
+          '<div class="script">“My name is [name], and I need to report an attack or possible attack at this location. I have a permit to carry a firearm and exposed it, but I did not pull the trigger.”</div>' +
+          '<button class="primary bigAction" type="button" onclick="window.location.href=\\'tel:911\\'">CALL 911</button>' +
+        '</div>' +
+        '<div class="card">' +
+          '<div class="brand">SUSPECT INFORMATION</div>' +
+          '<p class="small">Give only necessary details: clothing, physical description, direction of travel, vehicle description, license plate if safely known, and whether they ran off or drove off.</p>' +
+          '<div class="script">“The attacker was wearing [description] and ran/drove [direction]. I am not going to say another word until my attorney is present.”</div>' +
+        '</div>' +
+        '<div class="card">' +
+          '<div class="brand">STEP 2 — CALL USCCA</div>' +
+          '<button class="primary bigAction" type="button" onclick="window.location.href=\\'tel:8776771919\\'">CALL USCCA</button>' +
+        '</div>' +
+        '<div class="card">' +
+          '<div class="brand">IMPORTANT</div>' +
+          '<div class="warn">Do not over-explain. Do not argue. Do not speculate. Report the attack or possible attack, provide suspect direction/description, then wait for legal guidance.</div>' +
+        '</div>' +
+        '<button class="secondary bigAction" type="button" onclick="showDashboard()">BACK TO DASHBOARD</button>' +
+      '</div>' +
+    '</div>';
+}
+
 function openAftermath(){
   q("app").innerHTML =
     '<div class="emergencyScreen">' +
       '<div class="emergencyShell">' +
         '<div class="brand">POST-INCIDENT GUIDANCE</div>' +
         '<h1>Aftermath Mode</h1>' +
-
         '<div class="card">' +
           '<div class="brand">WHEN POLICE ARRIVE</div>' +
           '<p class="script">Keep your hands visible. Do not touch your firearm. Follow all commands immediately.</p>' +
           '<p class="small">Expect to be treated as a potential threat until officers secure the scene and understand what happened.</p>' +
         '</div>' +
-
         '<div class="card">' +
           '<div class="brand">WHAT TO SAY</div>' +
           '<div class="script">“I was attacked. I feared for my life. I will cooperate fully, but I would like to speak with my attorney before making a full statement.”</div>' +
         '</div>' +
-
         '<div class="card">' +
           '<div class="brand">WHAT TO DO NEXT</div>' +
           '<p class="small">• Identify yourself as the victim if appropriate.</p>' +
@@ -649,7 +687,6 @@ function openAftermath(){
           '<p class="small">• Identify witnesses if safe: “That person saw what happened.”</p>' +
           '<p class="small">• Then stop talking until legal counsel is involved.</p>' +
         '</div>' +
-
         '<div class="card">' +
           '<div class="brand">WHAT NOT TO DO</div>' +
           '<p class="small">• Do not give a detailed statement under stress.</p>' +
@@ -659,12 +696,10 @@ function openAftermath(){
           '<p class="small">• Do not post online.</p>' +
           '<p class="small">• Do not consent to broad searches without legal counsel.</p>' +
         '</div>' +
-
         '<div class="card">' +
           '<div class="brand">LEGAL REALITY</div>' +
           '<p class="warn">Even a justified defensive incident can result in detention, questioning, investigation, and legal review. Your words and behavior matter.</p>' +
         '</div>' +
-
         '<div class="card">' +
           '<div class="brand">NEXT STEPS</div>' +
           '<button class="primary bigAction" type="button" onclick="window.location.href=\\'tel:8776771919\\'">CALL USCCA</button>' +
