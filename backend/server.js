@@ -279,6 +279,15 @@ button{padding:15px;border-radius:14px;font-weight:900;border:none;cursor:pointe
 .bigAction{width:100%;padding:20px;font-size:20px;margin:10px 0}
 .warn{background:rgba(245,158,11,.12);border:1px solid rgba(245,158,11,.25);color:#ffe7b3;padding:16px;border-radius:16px;line-height:1.5}
 .reciprocityBox{margin-top:14px;background:rgba(0,0,0,.28);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:16px;color:#ddd;line-height:1.5}
+.reciprocityTitle{font-size:21px;font-weight:900;color:white;margin-bottom:10px}
+.reciprocitySub{color:#bbb;font-size:13px;line-height:1.45;margin:8px 0 14px}
+.pillWrap{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 16px}
+.statePill{display:inline-block;padding:8px 10px;border-radius:999px;font-size:12px;font-weight:800;border:1px solid rgba(255,255,255,.12)}
+.statePill.green{background:rgba(34,197,94,.14);color:#8cffb0;border-color:rgba(34,197,94,.35)}
+.statePill.yellow{background:rgba(245,158,11,.14);color:#ffe7b3;border-color:rgba(245,158,11,.35)}
+.statePill.red{background:rgba(239,35,60,.14);color:#ffb8c0;border-color:rgba(239,35,60,.35)}
+.reciprocityGrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:12px}
+.reciprocityPanel{background:rgba(0,0,0,.24);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:16px}
 .legalItem{background:rgba(0,0,0,.24);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:18px;margin:14px 0;line-height:1.55}
 .legalItem h3{margin-top:0;color:white}
 .legalSource{font-size:12px;color:#999;margin-top:10px;border-top:1px solid rgba(255,255,255,.08);padding-top:10px}
@@ -301,6 +310,22 @@ var states = [
 ["SD","South Dakota"],["TN","Tennessee"],["TX","Texas"],["UT","Utah"],["VT","Vermont"],["VA","Virginia"],["WA","Washington"],["WV","West Virginia"],["WI","Wisconsin"],["WY","Wyoming"]
 ];
 
+var reciprocityData = {
+  MI: {
+    title: "Michigan CPL Reciprocity Engine",
+    verifiedDate: "May 1, 2026",
+    sourceNote: "Michigan CPL profile selected. This is a structured field-reference framework. Recognition is not the same as identical laws. Always follow the law of the state you are physically in.",
+    recognized: ["AL","AK","AZ","AR","CO","FL","GA","ID","IN","IA","KS","KY","LA","ME","MN","MS","MO","MT","NE","NC","ND","OH","OK","PA","SD","TN","TX","UT","VA","VT","WV","WI","WY"],
+    restricted: ["DE","IL","NM","NV","SC","WA"],
+    noRecognition: ["CA","CT","HI","MD","MA","NJ","NY","OR","RI"],
+    warnings: [
+      "Verify destination-state law before travel. Recognition can depend on residency, age, permit type, and location restrictions.",
+      "Vehicle carry, alcohol-related locations, school zones, government buildings, and duty-to-inform rules vary by state.",
+      "This tool is an educational field reference and not legal advice."
+    ]
+  }
+};
+
 function q(id){return document.getElementById(id)}
 function setMsg(text){var msg=q("msg"); if(msg) msg.innerText=text||""}
 
@@ -308,12 +333,52 @@ function escapeHtml(value){
   return String(value || "").replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll('"',"&quot;").replaceAll("'","&#039;");
 }
 
-function getReciprocityText(state){
-  var names = {};
-  states.forEach(function(s){names[s[0]]=s[1]});
-  var stateName = names[state] || state;
-  if(state === "MI") return "Michigan CPL profile selected. Reciprocity guidance will display Michigan-based travel information as state-law data is added.";
-  return stateName + " permit profile selected. Reciprocity guidance will update based on the selected permit state as verified legal data is added.";
+function stateName(abbr){
+  var found = states.find(function(s){ return s[0] === abbr; });
+  return found ? found[1] : abbr;
+}
+
+function renderStatePills(list, cls){
+  if(!list || !list.length) return '<p class="small">No states listed yet.</p>';
+
+  return '<div class="pillWrap">' + list.map(function(abbr){
+    return '<span class="statePill ' + cls + '">' + abbr + ' — ' + stateName(abbr) + '</span>';
+  }).join('') + '</div>';
+}
+
+function getReciprocityHtml(state){
+  var data = reciprocityData[state];
+  var selectedName = stateName(state);
+
+  if(!data){
+    return '<div class="reciprocityTitle">' + selectedName + ' Permit Profile</div>' +
+      '<p><b>Status:</b> State-specific outbound reciprocity data has not been fully verified in the app yet.</p>' +
+      '<p class="reciprocitySub">This state is selectable for permit tracking. The verified reciprocity engine is being built state-by-state so the app does not display fake or unsafe legal information.</p>' +
+      '<div class="warn">Before carrying outside your home state, verify destination-state recognition, prohibited locations, duty-to-inform rules, vehicle carry rules, age restrictions, permit residency requirements, and local restrictions.</div>';
+  }
+
+  return '<div class="reciprocityTitle">' + data.title + '</div>' +
+    '<p><b>Selected permit:</b> ' + selectedName + '</p>' +
+    '<p><b>Last reviewed:</b> ' + data.verifiedDate + '</p>' +
+    '<p class="reciprocitySub">' + data.sourceNote + '</p>' +
+    '<div class="reciprocityGrid">' +
+      '<div class="reciprocityPanel">' +
+        '<h3>Likely Recognized / Carry May Be Available</h3>' +
+        renderStatePills(data.recognized, "green") +
+      '</div>' +
+      '<div class="reciprocityPanel">' +
+        '<h3>Restrictions / Verify Before Carry</h3>' +
+        renderStatePills(data.restricted, "yellow") +
+      '</div>' +
+      '<div class="reciprocityPanel">' +
+        '<h3>Do Not Assume Recognition</h3>' +
+        renderStatePills(data.noRecognition, "red") +
+      '</div>' +
+    '</div>' +
+    '<h3>Critical Travel Warnings</h3>' +
+    data.warnings.map(function(w){
+      return '<p class="small">• ' + w + '</p>';
+    }).join('');
 }
 
 function showAuth(){
@@ -511,7 +576,7 @@ async function showDashboard(){
 
 function updateReciprocity(){
   var state = q("state").value;
-  q("reciprocityBox").innerText = getReciprocityText(state);
+  q("reciprocityBox").innerHTML = getReciprocityHtml(state);
 }
 
 async function saveProfile(){
