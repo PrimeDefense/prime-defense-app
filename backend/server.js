@@ -278,6 +278,9 @@ button{padding:15px;border-radius:14px;font-weight:900;border:none;cursor:pointe
 .bigAction{width:100%;padding:20px;font-size:20px;margin:10px 0}
 .warn{background:rgba(245,158,11,.12);border:1px solid rgba(245,158,11,.25);color:#ffe7b3;padding:16px;border-radius:16px;line-height:1.5}
 .reciprocityBox{margin-top:14px;background:rgba(0,0,0,.28);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:16px;color:#ddd;line-height:1.5}
+.legalItem{background:rgba(0,0,0,.24);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:18px;margin:14px 0;line-height:1.55}
+.legalItem h3{margin-top:0;color:white}
+.legalSource{font-size:12px;color:#999;margin-top:10px;border-top:1px solid rgba(255,255,255,.08);padding-top:10px}
 @media(max-width:650px){.container{margin:22px 14px;padding:28px}h1{font-size:34px}.dashboard{padding:14px}.emergencyButton{width:74px;height:74px}}
 </style>
 </head>
@@ -455,6 +458,13 @@ async function showDashboard(){
         '</div>' +
 
         '<div class="card">' +
+          '<div class="brand">MICHIGAN LEGAL GUIDE</div>' +
+          '<h2>Michigan CPL & Firearms Law Guide</h2>' +
+          '<p class="small">Educational member reference for Michigan CPL holders. Not legal advice.</p>' +
+          '<button id="miGuideBtn" class="primary" type="button">Open Michigan Legal Guide</button>' +
+        '</div>' +
+
+        '<div class="card">' +
           '<div class="brand">EMERGENCY CONTACT</div>' +
           '<h2>Family / Trusted Contact</h2>' +
           '<p class="small">This contact appears inside Emergency Mode.</p>' +
@@ -475,6 +485,7 @@ async function showDashboard(){
     q("logoutBtn").onclick=logout;
     q("refreshBtn").onclick=refreshMembership;
     q("emergencyBtn").onclick=openEmergency;
+    q("miGuideBtn").onclick=showMichiganLegalGuide;
 
   }catch(e){
     localStorage.removeItem("pd_token");
@@ -502,6 +513,62 @@ async function saveProfile(){
     var data = await res.json();
     setMsg(data.error || data.message || "Saved.");
   }catch(e){setMsg("Save failed.")}
+}
+
+function showMichiganLegalGuide(){
+  q("app").innerHTML =
+    '<div class="dashboard">' +
+      '<div class="hero">' +
+        '<div class="brand">MICHIGAN LEGAL GUIDE</div>' +
+        '<h1>Michigan CPL & Firearms Law Guide</h1>' +
+        '<p class="subtitle">Educational reference for Prime Defense Protection members. This is not legal advice and does not replace current statutes, official state resources, or attorney guidance.</p>' +
+        '<div class="actions">' +
+          '<button class="secondary" type="button" onclick="showDashboard()">Back to Dashboard</button>' +
+          '<button class="secondary" type="button" onclick="openEmergency()">Emergency Mode</button>' +
+        '</div>' +
+      '</div>' +
+
+      '<div class="card">' +
+        '<div class="legalItem">' +
+          '<h3>CPL Renewal Window</h3>' +
+          '<p>Michigan CPL renewal may be submitted before expiration during the renewal window. Members should track the expiration date on their permit and begin renewal planning early.</p>' +
+          '<p>Michigan State Police guidance states that renewal may be submitted not more than 6 months before expiration and not more than 1 year after expiration.</p>' +
+          '<div class="legalSource">Source reference: Michigan State Police CPL renewal information.</div>' +
+        '</div>' +
+
+        '<div class="legalItem">' +
+          '<h3>Duty to Disclose / Police Contact</h3>' +
+          '<p>A Michigan CPL holder carrying a concealed pistol should understand disclosure and possession duties during police contact. Members should keep their CPL and identification available and follow lawful commands.</p>' +
+          '<p>This section is a reminder only. Members should review the current statutory language and seek attorney guidance for specific questions.</p>' +
+          '<div class="legalSource">Source reference: MCL 28.425f.</div>' +
+        '</div>' +
+
+        '<div class="legalItem">' +
+          '<h3>Pistol-Free Zones / Prohibited Premises</h3>' +
+          '<p>Michigan law identifies locations where concealed carry may be restricted, commonly taught as pistol-free zones. These rules can include schools, certain entertainment facilities, sports arenas, bars/taverns where the primary source of income is alcohol sales, places of worship, hospitals, dormitories/classrooms, and other listed locations.</p>' +
+          '<p>Members should review current Michigan law before carrying in sensitive or restricted locations.</p>' +
+          '<div class="legalSource">Source reference: MCL 28.425o and Michigan State Police prohibited-premises guidance.</div>' +
+        '</div>' +
+
+        '<div class="legalItem">' +
+          '<h3>Vehicle Carry Reminder</h3>' +
+          '<p>Vehicle carry rules depend on whether the person has a valid CPL, whether the pistol is concealed or otherwise transported, and whether the person is in a restricted location. Members should not assume vehicle rules are the same in every state.</p>' +
+          '<p>When traveling outside Michigan, always check the destination state and every state you pass through.</p>' +
+        '</div>' +
+
+        '<div class="legalItem">' +
+          '<h3>Self-Defense Law Overview</h3>' +
+          '<p>Michigan law recognizes the use of force, including deadly force, under specific circumstances. The general concepts include honest and reasonable belief, immediacy, necessity, and proportionality.</p>' +
+          '<p>This app does not determine whether a specific use of force is legally justified. That depends on the facts, evidence, statements, and applicable law.</p>' +
+          '<div class="legalSource">Source reference: MCL 780.972.</div>' +
+        '</div>' +
+
+        '<div class="legalItem">' +
+          '<h3>Important Disclaimer</h3>' +
+          '<p>This guide is for education and member reference only. It is not legal advice. Firearms laws change. Members should verify current law through official sources and consult qualified legal counsel for legal questions.</p>' +
+        '</div>' +
+      '</div>' +
+    '</div>';
 }
 
 function openEmergency(){
