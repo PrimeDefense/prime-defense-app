@@ -460,7 +460,7 @@ async function showDashboard(){
         '<div class="card">' +
           '<div class="brand">MICHIGAN LEGAL GUIDE</div>' +
           '<h2>Michigan CPL & Firearms Law Guide</h2>' +
-          '<p class="small">Educational member reference for Michigan CPL holders. Not legal advice.</p>' +
+          '<p class="small">Educational reference for Michigan CPL holders. Not legal advice.</p>' +
           '<button id="miGuideBtn" class="primary" type="button">Open Michigan Legal Guide</button>' +
         '</div>' +
 
@@ -475,6 +475,7 @@ async function showDashboard(){
         '</div>' +
 
         '<button id="saveBtn" class="primary" type="button">Save Profile</button>' +
+        '<button id="aftermathBtn" class="secondary" type="button">Aftermath Mode</button>' +
         '<button id="emergencyBtn" class="emergencyButton" type="button">911</button>' +
         '<div id="msg" class="msg"></div>' +
       '</div>';
@@ -485,6 +486,7 @@ async function showDashboard(){
     q("logoutBtn").onclick=logout;
     q("refreshBtn").onclick=refreshMembership;
     q("emergencyBtn").onclick=openEmergency;
+    q("aftermathBtn").onclick=openAftermath;
     q("miGuideBtn").onclick=showMichiganLegalGuide;
 
   }catch(e){
@@ -514,6 +516,7 @@ async function saveProfile(){
     setMsg(data.error || data.message || "Saved.");
   }catch(e){setMsg("Save failed.")}
 }
+
 function showMichiganLegalGuide(){
   var guideSections = [
     {
@@ -588,6 +591,7 @@ function showMichiganLegalGuide(){
 
   q("app").innerHTML = html;
 }
+
 function openEmergency(){
   var phone = q("phone") ? q("phone").value : "";
   var name = q("ename") ? q("ename").value : "";
@@ -616,6 +620,56 @@ function openEmergency(){
           '<div class="script">“I’ve been involved in a defensive incident. I’m safe. Do not discuss anything with anyone until I have legal guidance.”</div>' +
         '</div>' +
         '<button class="secondary bigAction" type="button" onclick="showDashboard()">EXIT EMERGENCY MODE</button>' +
+      '</div>' +
+    '</div>';
+}
+
+function openAftermath(){
+  q("app").innerHTML =
+    '<div class="emergencyScreen">' +
+      '<div class="emergencyShell">' +
+        '<div class="brand">POST-INCIDENT GUIDANCE</div>' +
+        '<h1>Aftermath Mode</h1>' +
+
+        '<div class="card">' +
+          '<div class="brand">WHEN POLICE ARRIVE</div>' +
+          '<p class="script">Keep your hands visible. Do not touch your firearm. Follow all commands immediately.</p>' +
+          '<p class="small">Expect to be treated as a potential threat until officers secure the scene and understand what happened.</p>' +
+        '</div>' +
+
+        '<div class="card">' +
+          '<div class="brand">WHAT TO SAY</div>' +
+          '<div class="script">“I was attacked. I feared for my life. I will cooperate fully, but I would like to speak with my attorney before making a full statement.”</div>' +
+        '</div>' +
+
+        '<div class="card">' +
+          '<div class="brand">WHAT TO DO NEXT</div>' +
+          '<p class="small">• Identify yourself as the victim if appropriate.</p>' +
+          '<p class="small">• Point out evidence if needed: “The weapon is there.”</p>' +
+          '<p class="small">• Identify witnesses if safe: “That person saw what happened.”</p>' +
+          '<p class="small">• Then stop talking until legal counsel is involved.</p>' +
+        '</div>' +
+
+        '<div class="card">' +
+          '<div class="brand">WHAT NOT TO DO</div>' +
+          '<p class="small">• Do not give a detailed statement under stress.</p>' +
+          '<p class="small">• Do not speculate or guess.</p>' +
+          '<p class="small">• Do not argue with police.</p>' +
+          '<p class="small">• Do not talk to media, bystanders, or uninvolved people.</p>' +
+          '<p class="small">• Do not post online.</p>' +
+          '<p class="small">• Do not consent to broad searches without legal counsel.</p>' +
+        '</div>' +
+
+        '<div class="card">' +
+          '<div class="brand">LEGAL REALITY</div>' +
+          '<p class="warn">Even a justified defensive incident can result in detention, questioning, investigation, and legal review. Your words and behavior matter.</p>' +
+        '</div>' +
+
+        '<div class="card">' +
+          '<div class="brand">NEXT STEPS</div>' +
+          '<button class="primary bigAction" type="button" onclick="window.location.href=\\'tel:8776771919\\'">CALL USCCA</button>' +
+          '<button class="secondary bigAction" type="button" onclick="showDashboard()">BACK TO DASHBOARD</button>' +
+        '</div>' +
       '</div>' +
     '</div>';
 }
