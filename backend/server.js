@@ -262,7 +262,7 @@ button{padding:15px;border-radius:14px;font-weight:900;border:none;cursor:pointe
 .primary{background:#ef233c;color:white;width:100%;margin-top:14px}
 .secondary{background:#242424;color:white;border:1px solid rgba(255,255,255,.12)}
 .msg{margin-top:16px;color:#ffe7b3;font-weight:bold;min-height:22px}
-.dashboard{max-width:980px;margin:35px auto;padding:22px}
+.dashboard{max-width:1100px;margin:35px auto;padding:22px}
 .hero,.card{background:rgba(15,15,15,.96);border:1px solid rgba(255,255,255,.09);border-radius:24px;padding:26px;margin-bottom:18px;box-shadow:0 18px 50px rgba(0,0,0,.35)}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
 .status{display:inline-block;background:rgba(34,197,94,.14);color:#8cffb0;border:1px solid rgba(34,197,94,.35);padding:9px 13px;border-radius:999px;font-size:13px;font-weight:900}
@@ -286,12 +286,22 @@ button{padding:15px;border-radius:14px;font-weight:900;border:none;cursor:pointe
 .statePill.green{background:rgba(34,197,94,.14);color:#8cffb0;border-color:rgba(34,197,94,.35)}
 .statePill.yellow{background:rgba(245,158,11,.14);color:#ffe7b3;border-color:rgba(245,158,11,.35)}
 .statePill.red{background:rgba(239,35,60,.14);color:#ffb8c0;border-color:rgba(239,35,60,.35)}
+.statePill.gray{background:rgba(148,163,184,.12);color:#cbd5e1;border-color:rgba(148,163,184,.25)}
 .reciprocityGrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:12px}
 .reciprocityPanel{background:rgba(0,0,0,.24);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:16px}
+.mapGrid{display:grid;grid-template-columns:repeat(10,1fr);gap:7px;margin:18px 0;background:rgba(0,0,0,.18);border:1px solid rgba(255,255,255,.08);border-radius:20px;padding:14px}
+.mapState{padding:10px 5px;border-radius:10px;text-align:center;font-size:12px;font-weight:900;border:1px solid rgba(255,255,255,.10);cursor:pointer;user-select:none}
+.mapState.green{background:rgba(34,197,94,.18);color:#8cffb0;border-color:rgba(34,197,94,.38)}
+.mapState.yellow{background:rgba(245,158,11,.18);color:#ffe7b3;border-color:rgba(245,158,11,.38)}
+.mapState.red{background:rgba(239,35,60,.18);color:#ffb8c0;border-color:rgba(239,35,60,.38)}
+.mapState.gray{background:rgba(148,163,184,.10);color:#cbd5e1;border-color:rgba(148,163,184,.18)}
+.mapState.selected{outline:3px solid white;transform:scale(1.04)}
+.mapLegend{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 14px}
+.legendItem{font-size:12px;font-weight:800;padding:7px 10px;border-radius:999px;border:1px solid rgba(255,255,255,.12)}
 .legalItem{background:rgba(0,0,0,.24);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:18px;margin:14px 0;line-height:1.55}
 .legalItem h3{margin-top:0;color:white}
 .legalSource{font-size:12px;color:#999;margin-top:10px;border-top:1px solid rgba(255,255,255,.08);padding-top:10px}
-@media(max-width:650px){.container{margin:22px 14px;padding:28px}h1{font-size:34px}.dashboard{padding:14px}.emergencyButton{width:74px;height:74px}}
+@media(max-width:650px){.container{margin:22px 14px;padding:28px}h1{font-size:34px}.dashboard{padding:14px}.emergencyButton{width:74px;height:74px}.mapGrid{grid-template-columns:repeat(5,1fr)}}
 </style>
 </head>
 <body>
@@ -301,6 +311,7 @@ button{padding:15px;border-radius:14px;font-weight:900;border:none;cursor:pointe
 var token = localStorage.getItem("pd_token");
 var authMode = "login";
 var currentUser = null;
+var selectedMapState = "";
 
 var states = [
 ["AL","Alabama"],["AK","Alaska"],["AZ","Arizona"],["AR","Arkansas"],["CA","California"],["CO","Colorado"],["CT","Connecticut"],["DE","Delaware"],["FL","Florida"],["GA","Georgia"],
@@ -309,6 +320,8 @@ var states = [
 ["NM","New Mexico"],["NY","New York"],["NC","North Carolina"],["ND","North Dakota"],["OH","Ohio"],["OK","Oklahoma"],["OR","Oregon"],["PA","Pennsylvania"],["RI","Rhode Island"],["SC","South Carolina"],
 ["SD","South Dakota"],["TN","Tennessee"],["TX","Texas"],["UT","Utah"],["VT","Vermont"],["VA","Virginia"],["WA","Washington"],["WV","West Virginia"],["WI","Wisconsin"],["WY","Wyoming"]
 ];
+
+var mapOrder = ["WA","MT","ND","MN","WI","MI","NY","VT","NH","ME","OR","ID","SD","IA","IL","IN","OH","PA","NJ","MA","CA","NV","WY","NE","MO","KY","WV","VA","MD","CT","AK","UT","CO","KS","AR","TN","NC","SC","DE","RI","HI","AZ","NM","OK","LA","MS","AL","GA","FL","TX"];
 
 var reciprocityData = {
   MI: {
@@ -338,6 +351,39 @@ function stateName(abbr){
   return found ? found[1] : abbr;
 }
 
+function stateStatus(permitState, travelState){
+  var data = reciprocityData[permitState];
+  if(!data) return "gray";
+  if(data.recognized.indexOf(travelState) !== -1) return "green";
+  if(data.restricted.indexOf(travelState) !== -1) return "yellow";
+  if(data.noRecognition.indexOf(travelState) !== -1) return "red";
+  if(travelState === permitState) return "green";
+  return "gray";
+}
+
+function statusLabel(cls){
+  if(cls === "green") return "Likely Recognized / Carry May Be Available";
+  if(cls === "yellow") return "Restrictions / Verify Before Carry";
+  if(cls === "red") return "Do Not Assume Recognition";
+  return "Not Verified Yet";
+}
+
+function renderMap(permitState){
+  return '<div class="mapLegend">' +
+    '<span class="legendItem statePill green">Green: Likely recognized</span>' +
+    '<span class="legendItem statePill yellow">Yellow: verify first</span>' +
+    '<span class="legendItem statePill red">Red: do not assume</span>' +
+    '<span class="legendItem statePill gray">Gray: not verified yet</span>' +
+  '</div>' +
+  '<div class="mapGrid">' +
+  mapOrder.map(function(abbr){
+    var cls = stateStatus(permitState, abbr);
+    var selected = selectedMapState === abbr ? " selected" : "";
+    return '<div class="mapState ' + cls + selected + '" onclick="selectMapState(\\'' + abbr + '\\')">' + abbr + '</div>';
+  }).join('') +
+  '</div>';
+}
+
 function renderStatePills(list, cls){
   if(!list || !list.length) return '<p class="small">No states listed yet.</p>';
 
@@ -350,10 +396,14 @@ function getReciprocityHtml(state){
   var data = reciprocityData[state];
   var selectedName = stateName(state);
 
+  if(!selectedMapState) selectedMapState = state;
+
   if(!data){
     return '<div class="reciprocityTitle">' + selectedName + ' Permit Profile</div>' +
       '<p><b>Status:</b> State-specific outbound reciprocity data has not been fully verified in the app yet.</p>' +
       '<p class="reciprocitySub">This state is selectable for permit tracking. The verified reciprocity engine is being built state-by-state so the app does not display fake or unsafe legal information.</p>' +
+      renderMap(state) +
+      '<div id="mapDetail" class="warn">Select a state above to view its current verification status.</div>' +
       '<div class="warn">Before carrying outside your home state, verify destination-state recognition, prohibited locations, duty-to-inform rules, vehicle carry rules, age restrictions, permit residency requirements, and local restrictions.</div>';
   }
 
@@ -361,6 +411,9 @@ function getReciprocityHtml(state){
     '<p><b>Selected permit:</b> ' + selectedName + '</p>' +
     '<p><b>Last reviewed:</b> ' + data.verifiedDate + '</p>' +
     '<p class="reciprocitySub">' + data.sourceNote + '</p>' +
+    '<h3>Map-Style Reciprocity View</h3>' +
+    renderMap(state) +
+    '<div id="mapDetail" class="warn">Select a state above to view status/details.</div>' +
     '<div class="reciprocityGrid">' +
       '<div class="reciprocityPanel">' +
         '<h3>Likely Recognized / Carry May Be Available</h3>' +
@@ -379,6 +432,19 @@ function getReciprocityHtml(state){
     data.warnings.map(function(w){
       return '<p class="small">• ' + w + '</p>';
     }).join('');
+}
+
+function selectMapState(abbr){
+  selectedMapState = abbr;
+  updateReciprocity();
+  var permitState = q("state") ? q("state").value : "MI";
+  var cls = stateStatus(permitState, abbr);
+  var detail = q("mapDetail");
+  if(detail){
+    detail.innerHTML = '<b>' + abbr + ' — ' + stateName(abbr) + '</b><br>' +
+      '<b>Status:</b> ' + statusLabel(cls) + '<br>' +
+      '<span class="small">Always verify current destination-state law before carrying. This map is a field reference, not legal advice.</span>';
+  }
 }
 
 function showAuth(){
@@ -497,6 +563,7 @@ async function showDashboard(){
 
     currentUser=user;
     var selectedState = user.permitState || "MI";
+    selectedMapState = selectedState;
 
     q("app").innerHTML =
       '<div class="dashboard">' +
@@ -513,8 +580,8 @@ async function showDashboard(){
 
         '<div class="card">' +
           '<div class="brand">MY PERMIT</div>' +
-          '<h2>Permit Profile</h2>' +
-          '<p class="small">Enter the information exactly as it appears on your permit.</p>' +
+          '<h2>Permit Profile & Reciprocity Map</h2>' +
+          '<p class="small">Select your permit state to update the reciprocity engine.</p>' +
           '<div class="grid">' +
             '<select id="state">' + buildStateOptions(selectedState) + '</select>' +
             '<input id="issue" type="date" value="' + escapeHtml(user.issueDate || '') + '">' +
@@ -557,7 +624,7 @@ async function showDashboard(){
       '</div>';
 
     updateReciprocity();
-    q("state").onchange=updateReciprocity;
+    q("state").onchange=function(){ selectedMapState = q("state").value; updateReciprocity(); };
     q("saveBtn").onclick=saveProfile;
     q("logoutBtn").onclick=logout;
     q("refreshBtn").onclick=refreshMembership;
