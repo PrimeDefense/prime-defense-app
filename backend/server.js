@@ -169,8 +169,16 @@ app.post("/api/get-profile", async (req, res) => {
 
     if (!user) return res.json({ error: "User not found." });
 
+    const stripeCheck = await checkStripeMembership(user.email);
+
+    user.stripeCustomerId = stripeCheck.customerId;
+    user.stripeSubscriptionId = stripeCheck.subscriptionId;
+    user.membershipStatus = stripeCheck.status;
+    await user.save();
+
     res.json(publicUser(user));
   } catch (err) {
+    console.log("Profile load error:", err);
     res.json({ error: "Session expired. Please login again." });
   }
 });
