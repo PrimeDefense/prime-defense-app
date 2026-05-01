@@ -598,15 +598,41 @@ function showMichiganLegalGuide(){
           '<p><b>Training note:</b> The safest language after a no-shots-fired defensive display is factual, brief, and attorney-conscious. Report the attack or possible attack, describe the suspect and direction of travel, and avoid detailed argument on scene.</p>' +
         '</div>' +
 
-        '<div class="legalItem">' +
-          '<h3>Use of Force / Deadly Force</h3>' +
-          '<p><b>What the law/source says:</b> MCL 780.972 addresses when deadly force may be used under Michigan law. Core concepts include honest and reasonable belief, immediacy, necessity, and the nature of the threatened harm.</p>' +
-          '<p><b>What it means:</b> The legal standard is not simply “I was scared.” Fear must be tied to facts that support an honest and reasonable belief that force was necessary.</p>' +
-          '<p><b>Deadly force concerns:</b> Deadly force is generally tied to threats such as death, great bodily harm, or sexual assault under the conditions described by law.</p>' +
-          '<p><b>Common mistake:</b> Believing a firearm can be used to protect property alone. Property protection and defense against death/great bodily harm are not the same legal category.</p>' +
-          '<p><b>Training note:</b> Articulation matters. The question is not whether you “won” the encounter. The question is whether your decisions were lawful, necessary, reasonable, and explainable based on the facts known at the time.</p>' +
-          '<div class="legalSource">Reference: MCL 780.972.</div>' +
-        '</div>' +
+      '<div class="legalItem">' +
+  '<h3>Use of Force / Deadly Force (MCL 780.972)</h3>' +
+
+  '<p><b>What the law says (simplified):</b> Under MCL 780.972, deadly force may be used only if a person honestly and reasonably believes it is necessary to prevent imminent death, great bodily harm, or sexual assault to themselves or another person.</p>' +
+
+  '<p><b>Key legal elements that must ALL be present:</b></p>' +
+  '<p>• <b>Honest belief:</b> You genuinely believed you were in danger.</p>' +
+  '<p>• <b>Reasonable belief:</b> A reasonable person in the same situation would agree.</p>' +
+  '<p>• <b>Imminent threat:</b> The danger must be happening now or about to happen immediately—not something that might happen later.</p>' +
+  '<p>• <b>Necessity:</b> Deadly force must be necessary to stop the threat—not optional or avoidable.</p>' +
+
+  '<p><b>What this means in plain English:</b></p>' +
+  '<p>Deadly force is a last-resort response to an immediate, unavoidable threat of severe harm. It is not about winning a confrontation—it is about stopping a threat that cannot be safely avoided.</p>' +
+
+  '<p><b>MCL 780.972(2) — Defense of Others:</b></p>' +
+  '<p>You may use deadly force to protect another person under the same standards. The law does not allow a lower threshold just because the threat is directed at someone else.</p>' +
+  '<p>This means you must reasonably believe the other person is facing imminent death, great bodily harm, or sexual assault—and that deadly force is necessary to stop it.</p>' +
+
+  '<p><b>Important reality:</b></p>' +
+  '<p>If you are wrong about the situation, even with good intentions, you may still face serious legal consequences. The standard is not just what you believed—it is whether that belief was reasonable based on the facts.</p>' +
+
+  '<p><b>Common mistakes:</b></p>' +
+  '<p>• Using a firearm to protect property only</p>' +
+  '<p>• Acting on anger, ego, or escalation</p>' +
+  '<p>• Intervening in third-party situations without fully understanding what is happening</p>' +
+  '<p>• Assuming “Stand Your Ground” removes all legal scrutiny (it does not)</p>' +
+
+  '<p><b>Training insight:</b></p>' +
+  '<p>The moment deadly force is used, everything will be judged after the fact—by police, prosecutors, and potentially a jury. What matters is whether your actions were necessary, reasonable, and clearly tied to an immediate threat.</p>' +
+
+  '<p><b>Post-incident reality:</b></p>' +
+  '<p>Even a legally justified use of force can result in detention, investigation, and potential charges until facts are established. Your words, actions, and evidence will matter.</p>' +
+
+  '<div class="legalSource">Reference: MCL 780.972</div>' +
+'</div>'
 
         '<div class="legalItem">' +
           '<h3>After a Defensive Gun Use</h3>' +
