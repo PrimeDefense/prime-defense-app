@@ -627,7 +627,6 @@ function showMichiganLegalGuide(){
 
   '<p><b>Training insight:</b></p>' +
   '<p>The moment deadly force is used, everything will be judged after the fact—by police, prosecutors, and potentially a jury. What matters is whether your actions were necessary, reasonable, and clearly tied to an immediate threat.</p>' +
-
   '<p><b>Post-incident reality:</b></p>' +
   '<p>Even a legally justified use of force can result in detention, investigation, and potential charges until facts are established. Your words, actions, and evidence will matter.</p>' +
 
