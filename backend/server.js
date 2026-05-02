@@ -332,7 +332,7 @@ var mapOrder = ["WA","MT","ND","MN","WI","MI","NY","VT","NH","ME","OR","ID","SD"
 var reciprocityData = {
   MI: {
     title: "Michigan CPL Reciprocity & Travel Guide",
-    verifiedDate: "May 1, 2026",
+    verifiedDate: "May 2, 2026",
     sourceNote: "Recognition does not mean identical laws. Follow the law of the state you are physically in.",
     recognized: ["AL","AK","AZ","AR","CO","FL","GA","ID","IN","IA","KS","KY","LA","ME","MN","MS","MO","MT","NE","NC","ND","OH","OK","PA","SD","TN","TX","UT","VA","VT","WV","WI","WY"],
     restricted: ["DE","NM","NV","SC","WA"],
@@ -666,55 +666,66 @@ async function saveProfile(){
 function showMichiganLegalGuide(){
   var guideSections = [
     {
-      title: "Michigan Carry Overview",
+      title: "Quick State Snapshot",
       body: [
-        "<b>Plain English:</b> Michigan allows open carry in many places, but concealed carry generally requires a valid CPL. The biggest legal risks usually involve vehicle carry, prohibited locations, police-contact disclosure, and post-incident statements.",
-        "<b>Core idea:</b> A CPL gives you important legal authority, but it does not let you carry everywhere, ignore private property, or bypass use-of-force law.",
-        "<b>Training note:</b> Do not think in terms of 'Can I carry anywhere?' Think in terms of: Am I licensed? Is this location restricted? Am I in a vehicle? Am I concealing? Is alcohol, school property, court property, or private policy involved?"
+        "<b>Permitless concealed carry:</b> No. Michigan generally requires a CPL to carry a concealed pistol.",
+        "<b>Open carry:</b> Generally lawful for a person who may lawfully possess a firearm, but location restrictions and vehicle rules matter.",
+        "<b>Vehicle carry:</b> A CPL is generally required to carry a concealed pistol in a vehicle.",
+        "<b>Duty to disclose:</b> Yes. A CPL holder carrying concealed and stopped by a peace officer must immediately disclose.",
+        "<b>Private signs:</b> A sign is not the same as a statutory pistol-free zone, but refusal to leave after notice can become a trespass issue.",
+        "<b>Use of deadly force:</b> Governed by Michigan Self-Defense Act standards, including honest and reasonable belief, imminence, necessity, and qualifying threat."
       ],
-      source: "Reference framework: Michigan Firearms Laws publication; MCL 28.425f; MCL 28.425o."
+      source: "References: MCL 28.425f, MCL 28.425o, MCL 780.972, MSP firearms guidance."
     },
     {
-      title: "CPL Basics & Renewal",
+      title: "CPL Basics",
       body: [
-        "<b>What a CPL does:</b> A Michigan CPL allows a qualified license holder to carry a concealed pistol and generally changes what is lawful inside a vehicle.",
-        "<b>What it does not do:</b> It does not override all prohibited premises, federal law, court rules, private property decisions, employer policies, or the laws of other states.",
-        "<b>Renewal timing:</b> Michigan State Police guidance states renewal may be submitted not more than 6 months before expiration and not more than 1 year after expiration.",
-        "<b>Common mistake:</b> Thinking renewal eligibility means you are automatically safe to carry after expiration. Renewal eligibility and lawful carry authority are not the same thing.",
-        "<b>Training note:</b> Track your expiration date early, keep digital and paper reminders, and do not wait until the last month."
+        "<b>What a Michigan CPL does:</b> It authorizes qualified license holders to carry a concealed pistol, subject to Michigan law and restrictions.",
+        "<b>What it does not do:</b> It does not override pistol-free zones, federal law, court rules, employer policies, private-property rights, or the laws of other states.",
+        "<b>Training note:</b> Treat the CPL as permission to carry under defined rules, not permission to carry everywhere."
+      ],
+      source: "Reference framework: Michigan Firearms Laws publication."
+    },
+    {
+      title: "CPL Renewal & Expiration",
+      body: [
+        "<b>Renewal window:</b> Michigan State Police guidance states that renewal may be submitted not more than 6 months before expiration and not more than 1 year after expiration.",
+        "<b>Practical meaning:</b> Start renewal early. Do not wait until the last few weeks.",
+        "<b>Common mistake:</b> Confusing renewal eligibility with lawful authority to continue carrying after expiration.",
+        "<b>Training note:</b> Enter your expiration date in the app and keep your CPL renewal documents organized."
       ],
       source: "Reference: Michigan State Police CPL Renewal Information."
     },
     {
-      title: "Duty to Disclose / Police Contact",
+      title: "Duty to Disclose During Police Contact",
       body: [
         "<b>Core rule:</b> A CPL holder carrying a concealed pistol who is stopped by a peace officer must immediately disclose that they are carrying concealed.",
-        "<b>What to do:</b> Keep your hands visible, disclose calmly, and follow instructions. Do not reach toward the firearm, wallet, glovebox, center console, or permit unless instructed.",
+        "<b>Recommended conduct:</b> Keep hands visible, disclose calmly, do not reach, and follow instructions.",
         "<b>Suggested wording:</b> Officer, I have a CPL and I am currently carrying. How would you like me to proceed?",
-        "<b>Common mistake:</b> Waiting until the officer asks, talking over the officer, reaching too soon, or assuming the officer already knows because of the license plate or database return.",
-        "<b>Training note:</b> Disclosure is not the time to explain your opinions about the law. Be calm, simple, and compliant."
+        "<b>Common mistakes:</b> Waiting too long, reaching for a wallet/firearm, talking over the officer, or assuming the officer already knows.",
+        "<b>Training note:</b> Police contact is not the time for debate. Make the stop safe and controlled."
       ],
       source: "Reference: MCL 28.425f."
     },
     {
-      title: "Open Carry in Michigan",
+      title: "Open Carry",
       body: [
-        "<b>Plain English:</b> Open carry is generally lawful in Michigan for people who may lawfully possess a firearm, but it is not a universal pass.",
-        "<b>Important:</b> Open carry and concealed carry are treated differently. A firearm that is visible while walking may create different issues once you enter a vehicle, enter a restricted place, or cover the firearm.",
-        "<b>High-risk issue:</b> Open carry in or around schools, certain public places, private businesses, or emotionally charged environments can lead to police contact even when the person believes they are lawful.",
-        "<b>Common mistake:</b> Thinking 'open carry is legal' answers every question. Location, manner of carry, age, possession eligibility, vehicle status, and intent all matter.",
-        "<b>Training note:</b> Legal does not always mean tactically or socially wise. Open carry can draw attention, create complaints, and increase the chance of a police encounter."
+        "<b>Plain English:</b> Michigan generally allows open carry by people who may lawfully possess firearms, but that rule has important limits.",
+        "<b>CPL impact:</b> MSP Legal Update No. 86 explains that a CPL holder is not required to carry only concealed and may carry concealed or non-concealed, but premises rules still matter.",
+        "<b>Private property:</b> A private property owner may prohibit firearms, whether concealed or openly carried.",
+        "<b>Common mistake:</b> Thinking 'open carry is legal' answers every situation. Location, intent, concealment, vehicle status, and possession eligibility all matter.",
+        "<b>Training note:</b> Open carry may be lawful, but can increase police contacts, complaints, and social friction."
       ],
-      source: "Reference framework: Michigan Firearms Laws publication and MSP open carry guidance."
+      source: "Reference: MSP Legal Update No. 86."
     },
     {
       title: "Vehicle Carry",
       body: [
-        "<b>Plain English:</b> Vehicles are one of the most misunderstood parts of Michigan firearm law.",
-        "<b>With CPL:</b> A valid CPL generally allows concealed pistol carry in a vehicle, subject to prohibited places and other restrictions.",
-        "<b>Without CPL:</b> Transport rules are much more restrictive. Generally, the pistol must be unloaded and transported according to Michigan law rather than carried for immediate access.",
-        "<b>Common mistake:</b> Thinking open carry on foot means you can simply get into a car with the pistol accessible without a CPL.",
-        "<b>Training note:</b> Treat vehicles as a separate legal environment. The moment you enter a vehicle, the legal analysis changes."
+        "<b>Key point:</b> A vehicle changes the legal analysis. What may be open carry on foot can become a concealed/vehicle issue once you enter a vehicle.",
+        "<b>With CPL:</b> A valid CPL generally allows carrying a concealed pistol in a vehicle, subject to prohibited-location rules and other laws.",
+        "<b>Without CPL:</b> Transport is much more restrictive and generally must be handled as lawful transport, not ready-access carry.",
+        "<b>Common mistake:</b> Getting into a vehicle with a handgun accessible and assuming open carry rules still protect you.",
+        "<b>Training note:</b> Treat the inside of a vehicle as its own legal environment."
       ],
       source: "Reference framework: Michigan Firearms Laws publication."
     },
@@ -722,44 +733,100 @@ function showMichiganLegalGuide(){
       title: "Pistol-Free Zones / Prohibited Premises",
       body: [
         "<b>Core rule:</b> MCL 28.425o lists premises where a CPL holder generally may not carry a concealed pistol, subject to statutory language and exceptions.",
-        "<b>Common categories:</b> Schools/school property, public or private day care centers, sports arenas/stadiums, bars/taverns where the primary source of income is alcohol by the glass, places of worship unless permitted by the presiding official, certain entertainment facilities, hospitals, and college/university dormitories/classrooms.",
-        "<b>Important nuance:</b> The exact statutory wording matters. Do not rely on short summaries alone.",
-        "<b>Common mistake:</b> Treating every restricted place the same. A statutory pistol-free zone, a private sign, a school policy, a court rule, and an employer policy are not the same thing.",
-        "<b>Training note:</b> Before entering a sensitive location, pause and ask: Is this prohibited by statute, private policy, workplace rule, school rule, federal law, or court rule?"
+        "<b>Common categories:</b> Schools/school property, public or private day care centers, sports arenas/stadiums, bars/taverns where alcohol sales by the glass are the primary source of income, places of worship unless permitted by the presiding official, certain entertainment facilities, hospitals, and college/university dormitories/classrooms.",
+        "<b>Important nuance:</b> Read the exact statutory language. Summaries are not enough when the location is close-call or high-risk.",
+        "<b>Common mistake:</b> Treating a statutory pistol-free zone, a private no-gun sign, a school policy, a court rule, and an employer rule as if they are the same thing.",
+        "<b>Training note:</b> Before entering a sensitive place, ask: Is this restricted by statute, private policy, workplace policy, school policy, federal law, or court rule?"
+      ],
+      source: "References: MSP prohibited-premises page; MCL 28.425o."
+    },
+    {
+      title: "Schools & School Property",
+      body: [
+        "<b>High-risk area:</b> Schools and school property are among the most legally sensitive firearm locations.",
+        "<b>Parent drop-off/pick-up nuance:</b> Michigan law contains specific language and exceptions that must be read carefully. Do not rely on word-of-mouth rules.",
+        "<b>Practical rule:</b> If school property is involved, slow down and verify the exact law before carrying.",
+        "<b>Training note:</b> School mistakes can carry serious criminal, licensing, employment, and family consequences."
+      ],
+      source: "Reference framework: MCL 28.425o and Michigan Firearms Laws publication."
+    },
+    {
+      title: "Colleges & Universities",
+      body: [
+        "<b>Core issue:</b> Colleges and universities can involve statutory restrictions, building/classroom/dormitory issues, and institutional policies.",
+        "<b>Practical warning:</b> University policy may be more restrictive than general state carry assumptions.",
+        "<b>Training note:</b> Do not assume a CPL allows carry on campus. Check the school’s policy and current Michigan law before entering campus property armed."
+      ],
+      source: "Reference framework: Michigan Firearms Laws publication and institutional policy considerations."
+    },
+    {
+      title: "Bars, Restaurants & Alcohol",
+      body: [
+        "<b>Statutory issue:</b> MCL 28.425o includes restrictions involving bars/taverns where the primary source of income is alcohol sold by the glass.",
+        "<b>Plain English:</b> Do not rely on guessing whether a location is a restaurant or a bar. The legal distinction can matter.",
+        "<b>Practical risk:</b> Alcohol, firearms, emotional environments, and crowds create increased legal risk even when possession itself may appear lawful.",
+        "<b>Training note:</b> The safest rule is simple: avoid alcohol-related environments when armed unless you have verified the law and have a strong reason to be there."
+      ],
+      source: "Reference: MCL 28.425o."
+    },
+    {
+      title: "Places of Worship",
+      body: [
+        "<b>Core issue:</b> Michigan law includes restrictions for places of worship unless permitted by the presiding official or appropriate authority.",
+        "<b>Plain English:</b> Permission matters. Do not assume you can carry into a church or place of worship because you have a CPL.",
+        "<b>Training note:</b> If you are part of a church safety team, get written authorization, clear policy, and training."
+      ],
+      source: "Reference: MCL 28.425o."
+    },
+    {
+      title: "Hospitals & Medical Facilities",
+      body: [
+        "<b>Core issue:</b> Hospitals are listed in Michigan prohibited-premises law for concealed carry by CPL holders.",
+        "<b>Practical issue:</b> Medical facilities can also have private policies, security, and emergency circumstances.",
+        "<b>Training note:</b> Do not assume a medical appointment, ER visit, or family emergency excuses a prohibited carry location."
       ],
       source: "Reference: MCL 28.425o."
     },
     {
       title: "Private Property & No-Gun Signs",
       body: [
-        "<b>Plain English:</b> A private 'no firearms' sign is not the same thing as a statutory pistol-free zone, but that does not mean you can ignore it without consequence.",
-        "<b>Practical effect:</b> A business or property owner can ask you to leave. If you refuse, the issue can become trespassing.",
-        "<b>Common mistake:</b> Saying 'signs have no force of law' and then acting like there are no consequences. That is the wrong mindset.",
-        "<b>Training note:</b> Do not argue with employees, security, managers, or bystanders. Leave calmly. Decide later whether you want to spend money there."
+        "<b>Plain English:</b> A no-gun sign is not the same as a statutory pistol-free zone, but it still matters.",
+        "<b>Practical effect:</b> A property owner or authorized person can ask you to leave. Refusing can become trespassing.",
+        "<b>MSP guidance:</b> MSP Legal Update No. 86 states that private property owners may prohibit firearms on their property and a person remaining after being told to leave may be subject to trespass enforcement.",
+        "<b>Training note:</b> Do not argue with employees or security. Leave calmly and decide later where to spend your money."
       ],
-      source: "Reference framework: Michigan trespass/private property principles; verify current local enforcement."
+      source: "Reference: MSP Legal Update No. 86."
     },
     {
-      title: "Brandishing / Defensive Display",
+      title: "Brandishing / Improper Display",
       body: [
         "<b>Core concept:</b> Displaying or exposing a firearm can become legally dangerous if it appears threatening, careless, angry, or unnecessary.",
-        "<b>Defensive display:</b> A firearm may be displayed in a defensive context only when the facts support a lawful defensive need. The danger is that witnesses, cameras, and police may interpret the action differently.",
-        "<b>Common mistake:</b> Saying 'I only showed it to scare him.' That can sound like intimidation rather than lawful defense.",
-        "<b>Training note:</b> If the firearm comes out, there must be an immediate defensive reason. If there is no immediate threat, create distance, leave, call police, and document."
+        "<b>Defensive display:</b> A firearm display may be defensible only if the facts support an immediate defensive need.",
+        "<b>Bad statement:</b> I showed him my gun to scare him away. That can sound like intimidation rather than lawful self-defense.",
+        "<b>Training note:</b> If the firearm comes out, there must be a lawful, immediate defensive reason. If there is no immediate threat, create distance, leave, call police, and document."
       ],
-      source: "Reference framework: Michigan brandishing statute and defensive-use principles."
+      source: "Reference framework: Michigan brandishing and defensive-use principles."
     },
     {
-      title: "Use of Force / Deadly Force — MCL 780.972",
+      title: "Use of Force / Deadly Force",
       body: [
-        "<b>Core rule:</b> Deadly force may be used only when a person honestly and reasonably believes it is necessary to prevent imminent death, great bodily harm, or sexual assault.",
-        "<b>Honest belief:</b> You actually believed the danger was real.",
+        "<b>Core standard:</b> Deadly force may be used only when a person honestly and reasonably believes it is necessary to prevent imminent death, great bodily harm, or sexual assault.",
+        "<b>Honest belief:</b> You genuinely believed the danger was real.",
         "<b>Reasonable belief:</b> A reasonable person in the same situation would likely understand the danger the same way.",
-        "<b>Imminent threat:</b> The danger must be happening now or immediately about to happen. A past threat, future threat, insult, or vague fear is not enough.",
+        "<b>Imminent threat:</b> The danger must be happening now or immediately about to happen. A past threat or vague future threat is not enough.",
         "<b>Necessity:</b> Deadly force must be necessary to stop the threat. It is not punishment, payback, warning, or control.",
-        "<b>Defense of others:</b> MCL 780.972 also covers defense of another person, but the standard is not lower. You must reasonably believe that person faces imminent death, great bodily harm, or sexual assault.",
-        "<b>Major warning:</b> You cannot use deadly force merely to protect property. Property crimes and deadly-force threats are different legal categories.",
-        "<b>Training note:</b> The legal question is not whether you were scared. The legal question is whether the facts support an honest and reasonable belief that deadly force was immediately necessary."
+        "<b>Property warning:</b> Deadly force cannot be justified merely to protect property.",
+        "<b>Training note:</b> The legal question is not whether you were scared. The question is whether the facts support an honest and reasonable belief that deadly force was immediately necessary."
+      ],
+      source: "Reference: MCL 780.972."
+    },
+    {
+      title: "Defense of Others",
+      body: [
+        "<b>Core rule:</b> Michigan law can allow deadly force in defense of another person under the same type of standard.",
+        "<b>Important:</b> The threshold is not lower because someone else is involved. You still need an honest and reasonable belief that deadly force is necessary to prevent imminent death, great bodily harm, or sexual assault.",
+        "<b>High-risk mistake:</b> Intervening in a third-party fight without knowing who started it, who escalated it, or whether the person you are defending is actually the aggressor.",
+        "<b>Training note:</b> Defense of others is legally and tactically dangerous because you may not know the full story."
       ],
       source: "Reference: MCL 780.972."
     },
@@ -767,33 +834,43 @@ function showMichiganLegalGuide(){
       title: "Stand Your Ground / No Duty to Retreat",
       body: [
         "<b>Plain English:</b> Michigan law may remove the duty to retreat in certain lawful self-defense circumstances, but it does not remove the requirement that force be lawful, necessary, and reasonable.",
-        "<b>Common mistake:</b> Thinking 'stand your ground' means you can escalate, chase, re-engage, or use deadly force over pride, anger, or property.",
-        "<b>Training note:</b> Avoidance is still powerful evidence. If you safely avoided the confrontation before it became deadly, that often helps. If you escalated it, chased someone, or continued the fight, that can hurt."
+        "<b>Common mistake:</b> Thinking no duty to retreat means permission to escalate, chase, re-engage, or use deadly force over pride, anger, or property.",
+        "<b>Training note:</b> Avoidance is still powerful evidence. Creating distance, leaving safely, or calling police can help show reasonableness."
       ],
-      source: "Reference framework: Michigan Self-Defense Act, including MCL 780.972 and related sections."
+      source: "Reference framework: Michigan Self-Defense Act."
     },
     {
-      title: "What Gets People Charged",
+      title: "Safe Storage / Child Access",
+      body: [
+        "<b>Practical rule:</b> Firearms must be secured from unauthorized access, especially children.",
+        "<b>High-risk locations:</b> Vehicles, nightstands, purses, backpacks, unlocked closets, and range bags.",
+        "<b>Training note:</b> Defensive readiness and responsible storage must both be addressed. A firearm that is accessible to you may also be accessible to someone else if not controlled."
+      ],
+      source: "Reference framework: Michigan firearms law and child-safety storage obligations."
+    },
+    {
+      title: "Common Legal Pitfalls",
       body: [
         "• Carrying in a prohibited location.",
-        "• Failing to disclose during police contact.",
-        "• Mishandling a firearm in a vehicle.",
+        "• Failing to immediately disclose during police contact.",
+        "• Mishandling firearm carry in a vehicle.",
         "• Displaying a gun during an argument.",
-        "• Intervening in a third-party fight without knowing who the aggressor is.",
-        "• Using a firearm to protect property only.",
-        "• Talking too much after an incident.",
-        "• Posting online after a defensive incident.",
+        "• Intervening in someone else’s fight without knowing who the aggressor is.",
+        "• Using or threatening deadly force over property.",
+        "• Talking too much after a defensive incident.",
+        "• Posting online after an incident.",
         "• Giving inconsistent statements while under adrenaline.",
-        "<b>Training note:</b> Many cases are damaged after the incident by statements, behavior, and poor decision-making."
+        "<b>Training note:</b> Many defensive cases are damaged after the incident by statements, behavior, and poor decisions."
       ],
       source: "Training reference: Prime Defense legal-risk framework."
     },
     {
       title: "After a Defensive Incident",
       body: [
-        "<b>First:</b> Get safe. Call 911. Request police and medical. Follow commands.",
-        "<b>Second:</b> Identify the threat, evidence, and witnesses if necessary.",
-        "<b>Third:</b> Request counsel before detailed questioning.",
+        "<b>First:</b> Get safe. Call 911. Request police and medical.",
+        "<b>Second:</b> When police arrive, keep hands visible and comply.",
+        "<b>Third:</b> Identify the attacker, evidence, and witnesses if needed.",
+        "<b>Fourth:</b> Request counsel before detailed questioning.",
         "<b>Do not:</b> Argue, speculate, exaggerate, talk to bystanders, post online, or give repeated statements.",
         "<b>Training note:</b> Adrenaline can distort memory. A short, accurate, rights-protecting statement is safer than a detailed emotional explanation."
       ],
