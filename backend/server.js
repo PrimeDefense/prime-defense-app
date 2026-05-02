@@ -343,46 +343,7 @@ var reciprocityData = {
       "A recognized permit does not erase prohibited locations, vehicle carry rules, alcohol/location restrictions, or duty-to-inform requirements.",
       "Before travel, verify destination-state law using official state resources and at least one current reciprocity reference."
     ],
-    details: {
-      AL:{status:"recognized",meaning:"Michigan CPL is treated as recognized for general concealed carry purposes, but Alabama law controls while you are there.",notes:["Follow Alabama prohibited-location rules.","Permitless carry may affect practical requirements, but your conduct is still controlled by Alabama law."],risk:"Do not assume Michigan rules apply once you cross into Alabama."},
-      AK:{status:"recognized",meaning:"Michigan CPL is treated as recognized; Alaska law controls carry while in Alaska.",notes:["Permitless carry may exist, but state-specific restrictions still matter.","Check alcohol, school, government-building, and vehicle rules."],risk:"Recognition is not a substitute for checking Alaska carry restrictions."},
-      AZ:{status:"recognized",meaning:"Michigan CPL is treated as recognized; Arizona law controls while carrying there.",notes:["Arizona has broad carry laws, but prohibited places and federal restrictions still apply.","Verify rules for alcohol-serving locations and posted premises."],risk:"Broad carry laws do not eliminate location restrictions."},
-      AR:{status:"recognized",meaning:"Michigan CPL is treated as recognized; Arkansas law controls while carrying there.",notes:["Verify current prohibited places and signage rules.","Check whether enhanced-permit rules affect specific locations."],risk:"Do not assume every public building or posted location is lawful."},
-      CO:{status:"recognized",meaning:"Michigan CPL is treated as recognized with Colorado-specific limits.",notes:["Colorado can have local restrictions, especially around Denver and certain public places.","Check magazine limits and local rules before travel."],risk:"Colorado local restrictions can create problems if ignored."},
-      DE:{status:"restricted",meaning:"Michigan CPL may be recognized or treated under reciprocity rules, but Delaware requires careful verification before carry.",notes:["Verify current Delaware reciprocity list before entering armed.","Check vehicle carry, prohibited locations, and duty-to-inform expectations."],risk:"Treat Delaware as verify-before-carry."},
-      FL:{status:"recognized",meaning:"Michigan CPL is treated as recognized; Florida law controls while carrying there.",notes:["Follow Florida prohibited-place rules.","Alcohol/bar-area restrictions and school/government locations require attention.","Florida law may differ sharply from Michigan law."],risk:"Tourist-heavy areas can create accidental restricted-location issues."},
-      GA:{status:"recognized",meaning:"Michigan CPL is treated as recognized; Georgia law controls while carrying there.",notes:["Check public gathering, school, government-building, and private-property restrictions.","Recognition does not mean carry is allowed everywhere."],risk:"Verify destination-specific restrictions before carrying."},
-      ID:{status:"recognized",meaning:"Michigan CPL is treated as recognized; Idaho law controls while carrying there.",notes:["Permitless carry may apply in some situations, but prohibited places still matter.","Check enhanced permit rules if relevant."],risk:"Do not rely only on general permitless carry summaries."},
-      IN:{status:"recognized",meaning:"Michigan CPL is treated as recognized; Indiana law controls while carrying there.",notes:["Indiana is common travel territory from Michigan.","Verify rules for schools, government buildings, private property, and vehicle carry."],risk:"Crossing a state line changes the legal rulebook."},
-      IA:{status:"recognized",meaning:"Michigan CPL is treated as recognized; Iowa law controls while carrying there.",notes:["Check current weapon-free zones and permitless carry details.","Carry restrictions may differ from Michigan."],risk:"Verify current Iowa law before carrying."},
-      KS:{status:"recognized",meaning:"Michigan CPL is treated as recognized; Kansas law controls while carrying there.",notes:["Check signage rules and prohibited locations.","Permitless carry does not mean unrestricted carry."],risk:"Posted or restricted locations can still create legal exposure."},
-      KY:{status:"recognized",meaning:"Michigan CPL is treated as recognized; Kentucky law controls while carrying there.",notes:["Check school, courthouse, police station, and alcohol-related restrictions.","Vehicle carry rules may differ from Michigan."],risk:"Recognition does not mean Michigan CPL rules follow you."},
-      LA:{status:"recognized",meaning:"Michigan CPL is treated as recognized; Louisiana law controls while carrying there.",notes:["Check alcohol-serving locations, parades/events, schools, and government buildings.","Verify current permitless carry and permit recognition interaction."],risk:"Louisiana has location-specific restrictions that require attention."},
-      ME:{status:"recognized",meaning:"Michigan CPL is treated as recognized; Maine law controls while carrying there.",notes:["Permitless carry may exist, but duty-to-inform and location rules may still matter.","Verify current state rules before travel."],risk:"Permitless carry does not eliminate all restrictions."},
-      MN:{status:"recognized",meaning:"Michigan CPL is treated as recognized; Minnesota law controls while carrying there.",notes:["Minnesota has its own permit and location rules.","Check signage, school, courthouse, and private-property restrictions."],risk:"Minnesota is not legally identical to Michigan."},
-      MS:{status:"recognized",meaning:"Michigan CPL is treated as recognized; Mississippi law controls while carrying there.",notes:["Check enhanced-permit areas, prohibited locations, and alcohol-related restrictions.","Permitless carry and permit-based carry can have different practical effects."],risk:"Enhanced-permit exceptions can be misunderstood."},
-      MO:{status:"recognized",meaning:"Michigan CPL is treated as recognized; Missouri law controls while carrying there.",notes:["Check restricted places, signage, school zones, and government buildings.","Permitless carry does not remove every restriction."],risk:"Location restrictions still matter."},
-      MT:{status:"recognized",meaning:"Michigan CPL is treated as recognized; Montana law controls while carrying there.",notes:["Check prohibited places, schools, government buildings, and posted premises.","Some local or special-location rules may apply."],risk:"Do not assume rural carry culture equals no legal restrictions."},
-      NE:{status:"recognized",meaning:"Michigan CPL is treated as recognized; Nebraska law controls while carrying there.",notes:["Check Omaha/Lincoln-specific concerns if applicable.","Verify current signage and prohibited-location rules."],risk:"Local rules and signage may create issues."},
-      NV:{status:"restricted",meaning:"Nevada requires careful verification because recognition can depend on Nevada’s current reciprocity list.",notes:["Confirm Nevada’s current recognized-permit list before travel.","Check casino, alcohol, school, and public-building rules."],risk:"Do not carry in Nevada based only on outdated reciprocity charts."},
-      NM:{status:"restricted",meaning:"New Mexico requires careful verification before carry.",notes:["Check current New Mexico recognition, alcohol-location restrictions, and prohibited places.","Vehicle carry may differ from concealed carry rules."],risk:"Alcohol-related location restrictions can be a major trap."},
-      NC:{status:"recognized",meaning:"Michigan CPL is treated as recognized; North Carolina law controls while carrying there.",notes:["Check restaurant/alcohol rules, posted premises, schools, and government buildings.","North Carolina has specific prohibited-place rules."],risk:"Private postings and alcohol-related rules deserve attention."},
-      ND:{status:"recognized",meaning:"Michigan CPL is treated as recognized; North Dakota law controls while carrying there.",notes:["Check permitless carry qualifications and prohibited places.","Verify current resident/nonresident distinctions if relevant."],risk:"Carry authority can depend on details beyond simple recognition."},
-      OH:{status:"recognized",meaning:"Michigan CPL is treated as recognized; Ohio law controls while carrying there.",notes:["Ohio is common travel territory from Michigan.","Verify school safety zones, police contact duties, vehicle carry, and posted locations."],risk:"Ohio rules are not identical to Michigan rules."},
-      OK:{status:"recognized",meaning:"Michigan CPL is treated as recognized; Oklahoma law controls while carrying there.",notes:["Check prohibited places, tribal land concerns, and alcohol-related restrictions.","Permitless carry does not mean unrestricted carry."],risk:"Special jurisdiction areas can complicate travel."},
-      PA:{status:"recognized",meaning:"Michigan CPL is treated as recognized; Pennsylvania law controls while carrying there.",notes:["Philadelphia and vehicle carry can involve special attention.","Verify current Pennsylvania reciprocity and local enforcement issues."],risk:"Pennsylvania travel requires more than a quick yes/no."},
-      SC:{status:"restricted",meaning:"South Carolina requires verification before carry because recognition can involve specific permit/list conditions.",notes:["Check current South Carolina recognition rules.","Verify restaurant carry, prohibited places, and signage rules."],risk:"Treat South Carolina as recognized-with-restrictions until verified for your exact permit."},
-      SD:{status:"recognized",meaning:"Michigan CPL is treated as recognized; South Dakota law controls while carrying there.",notes:["Check school, courthouse, and posted-location rules.","Permitless carry may exist but does not remove all restrictions."],risk:"Follow South Dakota law, not Michigan habits."},
-      TN:{status:"recognized",meaning:"Michigan CPL is treated as recognized; Tennessee law controls while carrying there.",notes:["Check permitless carry rules, alcohol-serving locations, parks, schools, and posted premises.","Tennessee has its own signage and restricted-location framework."],risk:"Posted premises and alcohol/location issues matter."},
-      TX:{status:"recognized",meaning:"Michigan CPL is treated as recognized; Texas law controls while carrying there.",notes:["Texas signage rules can be highly specific.","Check 30.05/30.06/30.07-style notices, alcohol locations, schools, and government buildings."],risk:"Texas signage rules can create legal problems if misunderstood."},
-      UT:{status:"recognized",meaning:"Michigan CPL is treated as recognized; Utah law controls while carrying there.",notes:["Check schools, houses of worship/private restrictions, and posted locations.","Permitless carry may not cover every situation."],risk:"Verify current Utah carry rules before travel."},
-      VA:{status:"recognized",meaning:"Michigan CPL is treated as recognized; Virginia law controls while carrying there.",notes:["Check alcohol-serving restaurants, schools, government buildings, and local event restrictions.","Virginia law has changed over time."],risk:"Do not rely on old Virginia reciprocity summaries."},
-      VT:{status:"recognized",meaning:"Vermont has broad permitless carry, but Vermont law controls while there.",notes:["Permit recognition may be less relevant due to permitless carry, but prohibited places still matter.","Federal school-zone issues and restricted locations still require attention."],risk:"Permitless carry is not the same as unrestricted carry."},
-      WA:{status:"restricted",meaning:"Washington requires verification before carry.",notes:["Check current Washington recognition rules and prohibited places.","Vehicle carry, schools, and restricted public locations require attention."],risk:"Do not assume Michigan CPL is enough without current Washington verification."},
-      WV:{status:"recognized",meaning:"Michigan CPL is treated as recognized; West Virginia law controls while carrying there.",notes:["Check courthouse, school, government building, and posted-property restrictions.","Permitless carry may exist but restrictions remain."],risk:"Follow West Virginia-specific restrictions."},
-      WI:{status:"recognized",meaning:"Michigan CPL is treated as recognized; Wisconsin law controls while carrying there.",notes:["Wisconsin is common travel territory from Michigan.","Check school zones, vehicle carry, private postings, and government buildings."],risk:"Wisconsin restrictions differ from Michigan."},
-      WY:{status:"recognized",meaning:"Michigan CPL is treated as recognized; Wyoming law controls while carrying there.",notes:["Check permitless carry rules, prohibited places, and federal land/building restrictions.","Recognition does not remove all restrictions."],risk:"Outdoor/recreation travel can still involve restricted buildings or federal areas."}
-    }
+    details: {}
   }
 };
 
@@ -439,38 +400,17 @@ function renderMap(permitState){
   '</div>';
 }
 
-function renderStatePills(list, cls){
-  if(!list || !list.length) return '<p class="small">No states listed yet.</p>';
-
-  return '<div class="pillWrap">' + list.map(function(abbr){
-    return '<span class="statePill ' + cls + '">' + abbr + ' — ' + stateName(abbr) + '</span>';
-  }).join('') + '</div>';
-}
-
 function getStateDetailHtml(permitState, travelState){
-  var data = reciprocityData[permitState];
   var status = stateStatus(permitState, travelState);
   var cls = statusClass(status);
-  var detail = data && data.details ? data.details[travelState] : null;
-
-  if(!detail){
-    return '<div class="detailBox">' +
-      '<h3>' + travelState + ' — ' + stateName(travelState) + '</h3>' +
-      '<span class="detailStatus ' + cls + '">' + statusLabelByStatus(status) + '</span>' +
-      '<p><b>Meaning:</b> This state has not been fully built into the detailed legal engine yet.</p>' +
-      '<p><b>Carry notes:</b> Verify current permit recognition, prohibited places, vehicle carry, duty-to-inform rules, signage rules, and local restrictions before carrying.</p>' +
-      '<p><b>Risk warning:</b> Do not rely on a colored map alone. Confirm current law before travel.</p>' +
-    '</div>';
-  }
 
   return '<div class="detailBox">' +
     '<h3>' + travelState + ' — ' + stateName(travelState) + '</h3>' +
-    '<span class="detailStatus ' + cls + '">' + statusLabelByStatus(detail.status) + '</span>' +
-    '<p><b>Meaning:</b> ' + detail.meaning + '</p>' +
-    '<p><b>Critical carry notes:</b></p>' +
-    detail.notes.map(function(note){ return '<p class="small">• ' + note + '</p>'; }).join('') +
-    '<p><b>Risk warning:</b> ' + detail.risk + '</p>' +
-    '<p class="small"><b>Disclaimer:</b> This is an educational field reference. Verify current law before carrying.</p>' +
+    '<span class="detailStatus ' + cls + '">' + statusLabelByStatus(status) + '</span>' +
+    '<p><b>Meaning:</b> This state is categorized based on the current Michigan CPL reciprocity framework in this app. Full CCW Hub-style legal detail is being built state-by-state.</p>' +
+    '<p><b>Critical carry notes:</b> Verify current permit recognition, prohibited places, vehicle carry, duty-to-inform rules, signage/private property rules, alcohol restrictions, age restrictions, and local restrictions before carrying.</p>' +
+    '<p><b>Risk warning:</b> Do not rely on a colored map alone. Confirm current law before travel.</p>' +
+    '<p class="small"><b>Disclaimer:</b> Educational field reference only. Not legal advice.</p>' +
   '</div>';
 }
 
@@ -499,15 +439,15 @@ function getReciprocityHtml(state){
     '<div class="reciprocityGrid">' +
       '<div class="reciprocityPanel">' +
         '<h3>Recognized</h3>' +
-        renderStatePills(data.recognized, "green") +
+        '<p class="small">' + data.recognized.length + ' states currently listed.</p>' +
       '</div>' +
       '<div class="reciprocityPanel">' +
         '<h3>Recognized with Restrictions</h3>' +
-        renderStatePills(data.restricted, "yellow") +
+        '<p class="small">' + data.restricted.length + ' states currently listed.</p>' +
       '</div>' +
       '<div class="reciprocityPanel">' +
         '<h3>Not Recognized</h3>' +
-        renderStatePills(data.notRecognized, "red") +
+        '<p class="small">' + data.notRecognized.length + ' states currently listed.</p>' +
       '</div>' +
     '</div>' +
     '<h3>Critical Travel Warnings</h3>' +
@@ -877,35 +817,37 @@ function openAftermath(){
       '<div class="emergencyShell">' +
         '<div class="brand">POST-INCIDENT GUIDANCE</div>' +
         '<h1>Aftermath Mode</h1>' +
+
         '<div class="card">' +
           '<div class="brand">WHEN POLICE ARRIVE</div>' +
-          '<p class="script">Keep your hands visible. Do not touch your firearm. Follow all commands immediately.</p>' +
-          '<p class="small">Expect to be treated as a potential threat until officers secure the scene and understand what happened.</p>' +
+          '<div class="script">Hands high and clearly visible. Do not move unless told. Do not resist, twitch, argue, or make sudden movements. Comply with all commands immediately.</div>' +
+          '<div class="warn">Be prepared to be treated like a criminal at first. Officers may not know who the victim is, who the attacker is, or whether the threat is over.</div>' +
         '</div>' +
+
         '<div class="card">' +
-          '<div class="brand">WHAT TO SAY</div>' +
-          '<div class="script">“I was attacked. I feared for my life. I will cooperate fully, but I would like to speak with my attorney before making a full statement.”</div>' +
+          '<div class="brand">FOUR-PART STATEMENT</div>' +
+          '<p class="small">Say only what is necessary to identify the threat, evidence, witnesses, and your request for counsel.</p>' +
+          '<div class="script">1. “I was attacked by that person.” or “The person who attacked me ran that direction.”</div>' +
+          '<div class="script">2. “That is the evidence / weapon / object used as a weapon.”</div>' +
+          '<div class="script">3. “That person, and those people, were witnesses.”</div>' +
+          '<div class="script">4. “I have spoken with, or left a message with, my attorney. I am not saying another word or signing anything until my attorney is present.”</div>' +
         '</div>' +
-        '<div class="card">' +
-          '<div class="brand">WHAT TO DO NEXT</div>' +
-          '<p class="small">• Identify yourself as the victim if appropriate.</p>' +
-          '<p class="small">• Point out evidence if needed: “The weapon is there.”</p>' +
-          '<p class="small">• Identify witnesses if safe: “That person saw what happened.”</p>' +
-          '<p class="small">• Then stop talking until legal counsel is involved.</p>' +
-        '</div>' +
+
         '<div class="card">' +
           '<div class="brand">WHAT NOT TO DO</div>' +
           '<p class="small">• Do not give a detailed statement under stress.</p>' +
-          '<p class="small">• Do not speculate or guess.</p>' +
-          '<p class="small">• Do not argue with police.</p>' +
+          '<p class="small">• Do not speculate, guess, exaggerate, or fill in blanks.</p>' +
+          '<p class="small">• Do not argue with officers.</p>' +
           '<p class="small">• Do not talk to media, bystanders, or uninvolved people.</p>' +
           '<p class="small">• Do not post online.</p>' +
-          '<p class="small">• Do not consent to broad searches without legal counsel.</p>' +
+          '<p class="small">• Do not sign anything without legal guidance.</p>' +
         '</div>' +
+
         '<div class="card">' +
-          '<div class="brand">LEGAL REALITY</div>' +
-          '<p class="warn">Even a justified defensive incident can result in detention, questioning, investigation, and legal review. Your words and behavior matter.</p>' +
+          '<div class="brand">STOP TALKING</div>' +
+          '<div class="warn">After the four-part statement, stop talking. Your body may be flooded with adrenaline. Details can be incomplete, distorted, or misunderstood. Protect your rights and wait for counsel.</div>' +
         '</div>' +
+
         '<div class="card">' +
           '<div class="brand">NEXT STEPS</div>' +
           '<button class="primary bigAction" type="button" onclick="window.location.href=\\'tel:8776771919\\'">CALL USCCA</button>' +
