@@ -70,14 +70,7 @@ async function checkStripeMembership(email) {
     return { status: "not_found", customerId: customer.id, subscriptionId: "" };
   }
 
-  const priority = [
-    "active",
-    "trialing",
-    "past_due",
-    "unpaid",
-    "incomplete",
-    "canceled"
-  ];
+  const priority = ["active", "trialing", "past_due", "unpaid", "incomplete", "canceled"];
 
   const sub = subscriptions.data.sort((a, b) => {
     const ar = priority.indexOf(a.status);
@@ -527,31 +520,16 @@ button{
   color:var(--ink);
   margin-bottom:10px;
 }
-.reciprocitySub{color:var(--muted);font-size:13px;line-height:1.45;margin:8px 0 14px}
-.statePill{
-  display:inline-block;
-  padding:8px 10px;
-  border-radius:999px;
-  font-size:12px;
-  font-weight:900;
-  border:1px solid rgba(16,19,24,.12);
+.reciprocitySub{
+  color:var(--muted);
+  font-size:13px;
+  line-height:1.45;
+  margin:8px 0 14px;
 }
 .green{background:rgba(22,163,74,.10);color:#13733a;border-color:rgba(22,163,74,.30)}
 .yellow{background:rgba(217,119,6,.12);color:#9a3412;border-color:rgba(217,119,6,.32)}
 .red{background:rgba(215,25,32,.10);color:#b91c1c;border-color:rgba(215,25,32,.30)}
 .gray{background:rgba(100,116,139,.10);color:#475569;border-color:rgba(100,116,139,.22)}
-.reciprocityGrid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-  gap:14px;
-  margin-top:12px;
-}
-.reciprocityPanel{
-  background:#fff;
-  border:1px solid rgba(16,19,24,.08);
-  border-radius:18px;
-  padding:16px;
-}
 .mapGrid{
   display:grid;
   grid-template-columns:repeat(10,1fr);
@@ -576,32 +554,39 @@ button{
   outline:3px solid var(--dark);
   transform:scale(1.04);
 }
-.mapLegend{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 14px}
-.legendItem{font-size:12px;font-weight:900;padding:7px 10px;border-radius:999px;border:1px solid rgba(16,19,24,.12)}
-.detailBox{
+.mapLegend{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin:8px 0 14px;
+}
+.legendItem{
+  font-size:12px;
+  font-weight:900;
+  padding:7px 10px;
+  border-radius:999px;
+  border:1px solid rgba(16,19,24,.12);
+}
+.detailBox,.legalItem{
   background:#fff;
   border:1px solid rgba(16,19,24,.10);
   border-radius:20px;
   padding:18px;
   margin-top:14px;
 }
-.detailStatus{
+.legalItem{
+  padding:20px;
+  margin:14px 0;
+  line-height:1.6;
+}
+.detailStatus,.lawPill{
   display:inline-block;
   padding:8px 12px;
   border-radius:999px;
   font-size:12px;
   font-weight:950;
-  margin-bottom:10px;
+  margin:4px 6px 8px 0;
 }
-.legalItem{
-  background:#fff;
-  border:1px solid rgba(16,19,24,.09);
-  border-radius:20px;
-  padding:20px;
-  margin:14px 0;
-  line-height:1.6;
-}
-.legalItem h3{margin-top:0;color:var(--ink)}
 .legalSource{
   font-size:12px;
   color:#707887;
@@ -609,7 +594,12 @@ button{
   border-top:1px solid rgba(16,19,24,.08);
   padding-top:10px;
 }
-.badgeRow{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+.badgeRow{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin:12px 0;
+}
 .badge{
   display:inline-block;
   padding:8px 11px;
@@ -628,6 +618,34 @@ button{
   margin:14px 0;
 }
 .callout .small{color:#d1d5db}
+.profileGrid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:12px;
+}
+.miniPanel{
+  background:#fff;
+  border:1px solid rgba(16,19,24,.08);
+  border-radius:18px;
+  padding:16px;
+}
+.scenario{
+  border-left:5px solid var(--red);
+  background:#fff;
+  border-radius:16px;
+  padding:16px;
+  margin:12px 0;
+  border-top:1px solid rgba(16,19,24,.08);
+  border-right:1px solid rgba(16,19,24,.08);
+  border-bottom:1px solid rgba(16,19,24,.08);
+}
+.searchBox{
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:10px;
+  margin:14px 0;
+}
+.searchBox input{margin:0}
 @media(max-width:650px){
   .container{margin:22px 14px;padding:28px}
   h1{font-size:34px}
@@ -635,6 +653,7 @@ button{
   .hero,.card{padding:22px}
   .emergencyButton{width:74px;height:74px}
   .mapGrid{grid-template-columns:repeat(5,1fr)}
+  .searchBox{grid-template-columns:1fr}
 }
 </style>
 </head>
@@ -648,33 +667,901 @@ var currentUser = null;
 var selectedMapState = "";
 
 var states = [
-["AL","Alabama"],["AK","Alaska"],["AZ","Arizona"],["AR","Arkansas"],["CA","California"],["CO","Colorado"],["CT","Connecticut"],["DE","Delaware"],["FL","Florida"],["GA","Georgia"],
-["HI","Hawaii"],["ID","Idaho"],["IL","Illinois"],["IN","Indiana"],["IA","Iowa"],["KS","Kansas"],["KY","Kentucky"],["LA","Louisiana"],["ME","Maine"],["MD","Maryland"],
-["MA","Massachusetts"],["MI","Michigan"],["MN","Minnesota"],["MS","Mississippi"],["MO","Missouri"],["MT","Montana"],["NE","Nebraska"],["NV","Nevada"],["NH","New Hampshire"],["NJ","New Jersey"],
-["NM","New Mexico"],["NY","New York"],["NC","North Carolina"],["ND","North Dakota"],["OH","Ohio"],["OK","Oklahoma"],["OR","Oregon"],["PA","Pennsylvania"],["RI","Rhode Island"],["SC","South Carolina"],
-["SD","South Dakota"],["TN","Tennessee"],["TX","Utah"],["UT","Utah"],["VT","Vermont"],["VA","Virginia"],["WA","Washington"],["WV","West Virginia"],["WI","Wisconsin"],["WY","Wyoming"]
+  ["AL","Alabama"],["AK","Alaska"],["AZ","Arizona"],["AR","Arkansas"],["CA","California"],
+  ["CO","Colorado"],["CT","Connecticut"],["DE","Delaware"],["FL","Florida"],["GA","Georgia"],
+  ["HI","Hawaii"],["ID","Idaho"],["IL","Illinois"],["IN","Indiana"],["IA","Iowa"],
+  ["KS","Kansas"],["KY","Kentucky"],["LA","Louisiana"],["ME","Maine"],["MD","Maryland"],
+  ["MA","Massachusetts"],["MI","Michigan"],["MN","Minnesota"],["MS","Mississippi"],["MO","Missouri"],
+  ["MT","Montana"],["NE","Nebraska"],["NV","Nevada"],["NH","New Hampshire"],["NJ","New Jersey"],
+  ["NM","New Mexico"],["NY","New York"],["NC","North Carolina"],["ND","North Dakota"],["OH","Ohio"],
+  ["OK","Oklahoma"],["OR","Oregon"],["PA","Pennsylvania"],["RI","Rhode Island"],["SC","South Carolina"],
+  ["SD","South Dakota"],["TN","Tennessee"],["TX","Texas"],["UT","Utah"],["VT","Vermont"],
+  ["VA","Virginia"],["WA","Washington"],["WV","West Virginia"],["WI","Wisconsin"],["WY","Wyoming"]
 ];
 
-var mapOrder = ["WA","MT","ND","MN","WI","MI","NY","VT","NH","ME","OR","ID","SD","IA","IL","IN","OH","PA","NJ","MA","CA","NV","WY","NE","MO","KY","WV","VA","MD","CT","AK","UT","CO","KS","AR","TN","NC","SC","DE","RI","HI","AZ","NM","OK","LA","MS","AL","GA","FL","TX"];
+var mapOrder = [
+  "WA","MT","ND","MN","WI","MI","NY","VT","NH","ME",
+  "OR","ID","SD","IA","IL","IN","OH","PA","NJ","MA",
+  "CA","NV","WY","NE","MO","KY","WV","VA","MD","CT",
+  "AK","UT","CO","KS","AR","TN","NC","SC","DE","RI",
+  "HI","AZ","NM","OK","LA","MS","AL","GA","FL","TX"
+];
 
 var reciprocityData = {
   MI: {
     title: "Michigan CPL Reciprocity & Travel Guide",
     verifiedDate: "May 2, 2026",
-    sourceNote: "Recognition does not mean identical laws. Follow the law of the state you are physically in.",
-    recognized: ["AL","AK","AZ","AR","CO","FL","GA","ID","IN","IA","KS","KY","LA","ME","MN","MS","MO","MT","NE","NC","ND","OH","OK","PA","SD","TN","TX","UT","VA","VT","WV","WI","WY"],
-    restricted: ["DE","NM","NV","SC","WA"],
-    notRecognized: ["CA","CT","HI","IL","MD","MA","NJ","NY","OR","RI"],
+    sourceNote: "Recognition does not mean identical laws. Follow the law of the state you are physically in. Michigan MSP advises CPL holders to check the destination state directly before travel.",
+    recognized: [
+      "AL","AK","AZ","AR","CO","FL","GA","HI","ID","IN","IA","KS","KY","LA","ME","MN","MS",
+      "MO","MT","NE","NH","NM","NC","ND","OH","OK","PA","SC","SD","TN","TX","UT","VA","VT",
+      "WA","WV","WI","WY"
+    ],
+    restricted: [],
+    notRecognized: ["CA","CT","DE","IL","MD","MA","NJ","NV","NY","OR","RI"],
     warnings: [
-      "Recognition can depend on residency, age, permit type, and current state law.",
-      "A recognized permit does not erase prohibited locations, vehicle carry rules, alcohol/location restrictions, signage/private property rules, or duty-to-inform requirements.",
-      "Before travel, verify destination-state law using official state resources and at least one current reciprocity reference."
+      "This is an outbound Michigan CPL travel reference, not a substitute for destination-state law.",
+      "Recognition can depend on residency, age, permit type, current state law, and state-specific restrictions.",
+      "A recognized permit does not override prohibited places, vehicle rules, alcohol rules, duty-to-inform rules, private-property rules, federal property, court rules, tribal property, or local restrictions.",
+      "Before traveling, verify the destination state using official state resources."
     ]
   }
 };
 
-function q(id){return document.getElementById(id)}
-function setMsg(text){var msg=q("msg"); if(msg) msg.innerText=text||""}
+var stateLawData = {
+  MI: {
+    name: "Michigan",
+    lastReviewed: "May 2, 2026",
+    profileStatus: "Ultra Expanded",
+    summary: "Michigan is not permitless for concealed pistol carry. A CPL is generally required for concealed carry and ready-access pistol carry in a vehicle. Michigan carry decisions require careful attention to disclosure, prohibited premises, weapon-free school zones, safe storage, transport rules, prohibited-person status, ERPOs, civil liability, and post-incident conduct.",
+    quick: {
+      concealedCarry: "Michigan generally requires a valid CPL to carry a concealed pistol.",
+      openCarry: "Generally lawful for eligible people, but location, vehicle, intent, and prohibited-person status matter.",
+      vehicleCarry: "A CPL is generally required for ready-access pistol carry in a vehicle. Without a CPL, treat it as lawful transport only.",
+      dutyToInform: "Yes. A CPL holder carrying concealed and stopped by a peace officer must immediately disclose.",
+      privateSigns: "Private property rules matter. Refusal to leave after notice can create trespass exposure.",
+      forceLaw: "Deadly force requires an honest and reasonable belief of imminent death, great bodily harm, or sexual assault, plus other statutory conditions."
+    },
+    legalSections: [
+      {
+        title: "Michigan CPL Basics",
+        risk: "Core Rule",
+        body: [
+          "A Michigan CPL allows a qualified license holder to carry a concealed pistol, but only within the limits of Michigan law.",
+          "A CPL does not override federal law, court rules, school rules, private property restrictions, employer rules, tribal rules, secure facility rules, or the laws of another state.",
+          "The correct mindset is not: I have a CPL, so I can carry. The correct mindset is: I have a CPL, and now I must verify whether this location, method of carry, and circumstance are lawful.",
+          "Prime Defense field rule: before carrying, ask: Am I eligible today? Is this location lawful? Is my method of carry lawful? Am I emotionally and mentally prepared to avoid conflict?"
+        ],
+        source: "Michigan Firearms Laws publication; MCL 28.425f; MCL 28.425o."
+      },
+      {
+        title: "Duty to Disclose During Police Contact",
+        risk: "High-Risk Stop",
+        body: [
+          "If you are carrying concealed under a CPL and are stopped by a peace officer, Michigan law requires immediate disclosure that you are carrying.",
+          "Recommended wording: Officer, I have a CPL and I am currently carrying. How would you like me to proceed?",
+          "Keep your hands visible. Do not reach for your firearm, wallet, purse, registration, glove box, center console, or pocket until instructed.",
+          "Do not assume the officer already knows. Do not wait until later in the stop. Do not say it casually while reaching.",
+          "If passengers are present, stay calm and do not allow the vehicle to become chaotic.",
+          "Prime Defense field rule: disclosure should be early, calm, clear, and paired with visible hands."
+        ],
+        source: "MCL 28.425f."
+      },
+      {
+        title: "CPL Pistol-Free Zones / Concealed Carry Restricted Premises",
+        risk: "Major Carry Restriction",
+        body: [
+          "MCL 28.425o lists places where a CPL holder generally may not carry a concealed pistol, subject to statutory language and exceptions.",
+          "Common listed categories include schools and school property, public or private child care centers, sports arenas or stadiums, certain bars and taverns, places of worship unless allowed by the presiding official, certain entertainment facilities, hospitals, and college or university dormitories and classrooms.",
+          "Exact statutory wording matters. A summary is useful for education, but not enough for a close-call carry decision.",
+          "Do not treat every restriction the same. A statutory pistol-free zone, private no-firearm sign, employer policy, court rule, school policy, casino rule, and federal restriction can all operate differently.",
+          "Prime Defense field rule: if the location is school-related, court-related, government-related, medical, alcohol-centered, worship-related, entertainment-related, casino-related, security-controlled, or posted, stop and verify before entering armed."
+        ],
+        source: "MCL 28.425o; Michigan State Police prohibited premises guidance."
+      },
+      {
+        title: "General Firearm-Prohibited Premises",
+        risk: "Separate Legal Framework",
+        body: [
+          "Michigan also has general firearm-prohibited premises under MCL 750.234d. This is separate from the CPL-specific pistol-free zone statute.",
+          "General prohibited premises can include places such as depository financial institutions, churches or houses of worship, courts, theatres, sports arenas, day care centers, hospitals, and establishments licensed under the Liquor Control Code, subject to statutory exceptions.",
+          "A CPL may change the analysis in certain situations, but it should not be treated as a universal pass.",
+          "This is one reason Michigan carry law can be confusing: one statute may address CPL concealed carry, while another statute may address possession on certain premises more broadly.",
+          "Prime Defense field rule: identify the location first, then identify which legal framework applies."
+        ],
+        source: "MCL 750.234d."
+      },
+      {
+        title: "Schools & Weapon-Free School Zones",
+        risk: "Extreme Risk Area",
+        body: [
+          "Schools and school property are among the most legally dangerous places for carry mistakes.",
+          "Michigan law includes both CPL prohibited-premises rules and weapon-free school zone rules. Those are related but not identical.",
+          "School property can involve buildings, parking lots, school vehicles, school events, school property used for school purposes, and other fact-specific questions.",
+          "Parent pickup and drop-off can be misunderstood. Do not rely on what another parent, internet comment, or old article says.",
+          "Open carry, concealed carry, vehicle presence, student events, extracurricular activities, and school-owned property can all change the analysis.",
+          "Prime Defense field rule: if school property is involved, verify the exact statute and exception before carrying. When uncertain, do not enter armed."
+        ],
+        source: "MCL 28.425o; MCL 750.237a."
+      },
+      {
+        title: "Secure Storage / Child Access",
+        risk: "Criminal & Civil Exposure",
+        body: [
+          "Michigan secure storage law requires special care when minors are likely to be present.",
+          "A firearm that is unattended should be unloaded and locked with a locking device or stored in a locked box or container if it is reasonably known that a minor is likely to be present.",
+          "High-risk locations include vehicles, nightstands, purses, backpacks, range bags, unlocked closets, garages, and bedside tables.",
+          "Responsible carry does not end when the firearm leaves your holster. Storage decisions can create criminal liability, civil liability, family consequences, and community harm.",
+          "Vehicle storage deserves special attention. A locked vehicle is not a gun safe. Vehicle theft is predictable and common.",
+          "Prime Defense field rule: when a firearm is unattended, ask: could a child, guest, roommate, prohibited person, contractor, visitor, or thief access it?"
+        ],
+        source: "MCL 28.429; Michigan secure storage framework."
+      },
+      {
+        title: "EMD / Stun Gun Disclosure & Carry",
+        risk: "Less Lethal Does Not Mean Legally Simple",
+        body: [
+          "Michigan law includes electro-muscular disruption devices in portions of the defensive tool and prohibited premises framework.",
+          "A device being less lethal does not mean it is legally casual. Possession, carry method, disclosure, prohibited places, and use-of-force principles still matter.",
+          "Disclosure obligations may apply depending on the device, carry authority, and police contact circumstances.",
+          "Recommended wording during police contact: Officer, I have a CPL and I am carrying an electronic defensive device. How would you like me to proceed?",
+          "Prime Defense field rule: treat EMD and stun gun carry with the same seriousness as any defensive tool. Less lethal does not mean consequence-free."
+        ],
+        source: "Michigan EMD/stun gun and CPL statutory framework."
+      },
+      {
+        title: "Casinos",
+        risk: "Special Prohibited Location Concern",
+        body: [
+          "Michigan State Police prohibited-premises guidance specifically flags casinos and notes that a pistol is subject to seizure in a casino whether carried concealed or exposed.",
+          "Casinos may also involve private property rules, gaming regulations, tribal considerations, alcohol, event security, and surveillance.",
+          "The legal risk is not just whether you are allowed to possess. It is also whether you are violating property rules, gaming rules, or a specific restricted-area rule.",
+          "Prime Defense field rule: do not assume your CPL authorizes casino carry. Verify the specific property. If instructed to leave, leave calmly and immediately."
+        ],
+        source: "Michigan State Police prohibited premises guidance."
+      },
+      {
+        title: "Federal Buildings / Post Offices",
+        risk: "Federal Law Overlay",
+        body: [
+          "Federal property can be governed by federal law, not Michigan CPL law.",
+          "Post offices, federal agency buildings, federal courthouses, secure federal facilities, and posted federal property are high-risk locations.",
+          "A Michigan CPL does not override federal property restrictions.",
+          "Postal property is a classic trap area because people may think they are simply running a quick errand.",
+          "Prime Defense field rule: if the property is federal, stop using a Michigan-only carry analysis. Verify federal law and posted instructions."
+        ],
+        source: "Federal facility and postal property legal framework."
+      },
+      {
+        title: "Transport Without CPL",
+        risk: "Vehicle Mistake Zone",
+        body: [
+          "Without a CPL, do not treat a pistol in a vehicle as carry. Treat it as lawful transport only.",
+          "Practical transport method: unloaded, secured, inaccessible, and connected to a lawful purpose or destination.",
+          "Common lawful transport contexts may include going to or from a range, repair, lawful sale, purchase, hunting-related lawful activity, or another lawful destination.",
+          "A common mistake is open carrying on foot, then entering a vehicle with the pistol accessible.",
+          "Another common mistake is keeping a pistol loaded in a center console or glove box without a CPL.",
+          "Prime Defense field rule: the moment you enter a vehicle, your legal analysis changes."
+        ],
+        source: "Michigan Firearms Laws publication."
+      },
+      {
+        title: "Prohibited Persons / Domestic Violence / PPOs",
+        risk: "Possession Eligibility Warning",
+        body: [
+          "Not everyone who owns or wants a firearm is legally allowed to possess one.",
+          "Possible disqualifiers can include felony convictions, certain misdemeanor convictions, domestic violence restrictions, mental health adjudications, court orders, personal protection orders, bond conditions, probation or parole restrictions, and federal prohibitions.",
+          "Domestic violence-related cases can trigger both state and federal firearm restrictions.",
+          "A PPO or bond condition can create restrictions even when the person thinks they have not been convicted of anything.",
+          "Do not assume you are still eligible because you physically still possess your CPL card.",
+          "Prime Defense field rule: if there is a pending case, domestic dispute, PPO, bond condition, court order, prior conviction, or mental health adjudication, get legal guidance before possessing or carrying."
+        ],
+        source: "Michigan and federal prohibited-person framework."
+      },
+      {
+        title: "ERPO / Red Flag Orders",
+        risk: "Court Order Emergency",
+        body: [
+          "Michigan has an Extreme Risk Protection Order framework commonly referred to as ERPO or red flag law.",
+          "An ERPO can temporarily prevent a person from possessing or purchasing firearms and can require surrender or removal under court order.",
+          "Violating an ERPO can create serious criminal exposure and long-term firearms consequences.",
+          "Do not hide firearms, transfer property casually, argue during service, or post about the situation online.",
+          "Prime Defense field rule: if served with a firearm-related court order, comply safely at the scene and contact qualified legal counsel immediately."
+        ],
+        source: "Michigan Extreme Risk Protection Order Act; MCL 691.1801 to MCL 691.1821 framework."
+      },
+      {
+        title: "Purchase / Registration Basics",
+        risk: "Paperwork & Transfer Risk",
+        body: [
+          "Michigan pistol acquisition and transfer rules involve paperwork and record requirements that can vary based on CPL status, transaction type, and where the pistol is obtained.",
+          "A private sale is not complete just because money changed hands.",
+          "Keep copies of purchase records, sales records, registration paperwork, transfer documents, and receipts organized.",
+          "Mistakes can happen during private transfers, inherited firearms, gifts, family transfers, and out-of-state purchases.",
+          "Prime Defense field rule: if buying, selling, inheriting, gifting, or transferring a pistol, verify the required Michigan process before the transfer."
+        ],
+        source: "Michigan Firearms Laws publication."
+      },
+      {
+        title: "Civil Liability / Wrongful Death Exposure",
+        risk: "Financial & Legal Exposure",
+        body: [
+          "Even if no criminal charge is filed, a defensive incident can still trigger civil litigation.",
+          "Potential civil claims may involve wrongful death, personal injury, negligence, emotional distress, property damage, or claims from the attacker or attacker’s family.",
+          "Michigan law includes civil-liability protection language for qualifying lawful self-defense situations, but whether it applies depends on the facts.",
+          "Your behavior before, during, and after the incident may all be examined.",
+          "Social media posts, angry texts, prior threats, bad training statements, reckless behavior, and inconsistent statements can hurt you.",
+          "Prime Defense field rule: self-defense is not only a trigger-pull decision. It is a total-facts investigation."
+        ],
+        source: "MCL 780.972; MCL 600.2922 framework."
+      },
+      {
+        title: "Hunting / DNR Context",
+        risk: "CPL Does Not Replace DNR Rules",
+        body: [
+          "Hunting, public land, state land, DNR rules, species seasons, transport rules, ORVs, boats, and firearm-type rules can affect what is lawful.",
+          "A CPL does not replace hunting laws, game laws, trespass rules, DNR restrictions, or public-land rules.",
+          "Long guns, pistols, loaded firearms, vehicles, blinds, boats, ORVs, and public land may each involve different rules.",
+          "Prime Defense field rule: if carrying or transporting during hunting, scouting, camping, boating, ORV use, or public-land activity, check DNR rules in addition to CPL law."
+        ],
+        source: "Michigan DNR and firearms transport/hunting framework."
+      },
+      {
+        title: "Use of Force / Deadly Force",
+        risk: "Life-Altering Standard",
+        body: [
+          "Deadly force may be justified only if the person honestly and reasonably believes it is necessary to prevent imminent death, great bodily harm, or sexual assault, and other statutory conditions are met.",
+          "Honest belief means you actually believed the threat was real.",
+          "Reasonable belief means a reasonable person in the same circumstances would likely understand the danger similarly.",
+          "Imminent means happening now or immediately about to happen. A past threat, vague future threat, insult, fear, property dispute, or anger is not enough by itself.",
+          "Necessity means deadly force was needed to stop the qualifying threat. It is not punishment, revenge, warning, control, or intimidation.",
+          "Prime Defense field rule: the legal question is not whether you were scared. The legal question is whether the facts support an honest and reasonable belief that deadly force was immediately necessary."
+        ],
+        source: "MCL 780.972."
+      },
+      {
+        title: "Defense of Others",
+        risk: "Third-Party Uncertainty",
+        body: [
+          "Defense of another person can be lawful under the same type of honest, reasonable, imminent-threat analysis.",
+          "The threshold is not lower because someone else is involved.",
+          "The danger is that you may not know who started the fight, who escalated it, who is the aggressor, or whether the person you are defending is legally innocent.",
+          "High-risk mistake: jumping into a third-party fight based on emotion or incomplete information.",
+          "Prime Defense field rule: defense of others is legally and tactically dangerous because you may not know the whole story."
+        ],
+        source: "MCL 780.972."
+      },
+      {
+        title: "Stand Your Ground / No Duty to Retreat",
+        risk: "Often Misunderstood",
+        body: [
+          "Michigan law may remove a duty to retreat in qualifying lawful self-defense situations where the person has a legal right to be.",
+          "No duty to retreat does not mean permission to escalate, chase, provoke, re-engage, threaten, or use force over pride or property.",
+          "No duty to retreat does not eliminate the requirement that force be honest, reasonable, imminent, and necessary.",
+          "Leaving safely, creating distance, and avoiding conflict can still help show reasonableness.",
+          "Prime Defense field rule: avoidance is not weakness. Avoidance is often excellent evidence."
+        ],
+        source: "Michigan Self-Defense Act framework."
+      },
+      {
+        title: "Attorney / Contact-After-Incident Reminders",
+        risk: "Words Become Evidence",
+        body: [
+          "After a defensive incident: get safe, call 911, request police and medical, then contact legal-defense support or attorney guidance as soon as practical.",
+          "Contact one trusted family member only if safe and appropriate.",
+          "Do not text a group, post online, call multiple friends, argue with bystanders, talk to media, or repeatedly explain what happened.",
+          "Family script: I was involved in a defensive incident. I am safe. Please do not discuss this with anyone. I am waiting for legal guidance.",
+          "Prime Defense field rule: short, factual, rights-protecting communications are safer than emotional explanations."
+        ],
+        source: "Prime Defense aftermath protocol."
+      }
+    ],
+    decisionBlocks: [
+      {
+        title: "Can I Carry Here?",
+        steps: [
+          "1. Am I legally allowed to possess today?",
+          "2. Is my CPL valid, current, and not restricted?",
+          "3. Am I carrying concealed, openly, in a vehicle, or transporting?",
+          "4. Is this a CPL pistol-free zone under MCL 28.425o?",
+          "5. Is this a general firearm-prohibited premise under MCL 750.234d?",
+          "6. Is this school-related, court-related, federal, casino-related, hospital-related, worship-related, alcohol-related, private property, tribal, employer-controlled, or security-controlled?",
+          "7. Are there signs, verbal instructions, event rules, bag checks, or security screening?",
+          "8. If any answer is uncertain, do not enter armed until verified."
+        ]
+      },
+      {
+        title: "Should I Display My Defensive Tool?",
+        steps: [
+          "1. Is there an immediate threat of death, great bodily harm, sexual assault, or serious unlawful force?",
+          "2. Is display necessary to stop the threat right now?",
+          "3. Am I displaying from fear and necessity, or from anger and intimidation?",
+          "4. Can I safely leave, create distance, lock a door, drive away, or call 911?",
+          "5. If displayed, call 911 first and report the attack or attempted attack.",
+          "6. Do not say: I showed it to scare him. Say only necessary facts and wait for legal guidance."
+        ]
+      },
+      {
+        title: "After a Defensive Incident",
+        steps: [
+          "1. Get safe and make sure the threat has stopped.",
+          "2. Call 911 and request police and medical.",
+          "3. Keep hands visible when police arrive.",
+          "4. Identify the attacker, evidence, and witnesses only as necessary.",
+          "5. State that you will cooperate after speaking with counsel.",
+          "6. Do not argue, speculate, exaggerate, apologize, explain repeatedly, or post online."
+        ]
+      },
+      {
+        title: "Transport Without CPL",
+        steps: [
+          "1. Confirm you are legally eligible to possess.",
+          "2. Confirm the destination is lawful.",
+          "3. Unload the pistol.",
+          "4. Secure it in a lawful transport configuration.",
+          "5. Keep it inaccessible and separate from ammunition where appropriate.",
+          "6. Do not treat the vehicle as carry. Treat it as transport only."
+        ]
+      },
+      {
+        title: "School Property Decision Tree",
+        steps: [
+          "1. Is any school property, school event, school vehicle, school parking lot, or school-sponsored activity involved?",
+          "2. Are you a CPL holder or non-CPL holder?",
+          "3. Are you inside a building, in a vehicle, on school grounds, or merely passing by?",
+          "4. Does federal law also apply?",
+          "5. If you cannot answer confidently, do not enter armed.",
+          "6. Verify current Michigan law and applicable federal law before relying on any exception."
+        ]
+      }
+    ],
+    scenarios: [
+      {
+        title: "Parking Lot Confrontation",
+        summary: "Parking lots create distance, vehicle, witness, lighting, and escape-route issues. Most bad cases start as avoidable arguments.",
+        guidance: [
+          "Stay mobile.",
+          "Create distance.",
+          "Do not argue over parking, gestures, insults, or disrespect.",
+          "Use your vehicle as an escape tool when safe.",
+          "If you display, be ready to explain the immediate threat that made it necessary.",
+          "Call 911 first if you were attacked or threatened."
+        ]
+      },
+      {
+        title: "Road Rage",
+        summary: "Road rage is one of the worst legal contexts for armed citizens because both sides may look like aggressors.",
+        guidance: [
+          "Do not follow.",
+          "Do not brake-check.",
+          "Do not gesture.",
+          "Do not get out unless absolutely necessary for safety.",
+          "Drive to a safe public place or police station if needed.",
+          "Call 911 if there is an active threat."
+        ]
+      },
+      {
+        title: "Home Defense",
+        summary: "Castle Doctrine concepts do not eliminate the need for reasonableness, target identification, and post-incident discipline.",
+        guidance: [
+          "Identify before acting.",
+          "Do not shoot at sounds or shadows.",
+          "Use lights, verbal commands, barriers, and 911 when safe.",
+          "Avoid chasing outside after the threat leaves.",
+          "Preserve evidence and wait for counsel before detailed statements."
+        ]
+      },
+      {
+        title: "School Pickup / Drop-Off",
+        summary: "School property is a high-risk legal environment with multiple overlapping rules.",
+        guidance: [
+          "Verify statute and exceptions before carrying.",
+          "Do not rely on what another parent says.",
+          "Understand the difference between parking lot, building, vehicle, school event, and school property contexts.",
+          "When uncertain, choose the safest lawful option."
+        ]
+      },
+      {
+        title: "No Shots Fired / Defensive Display",
+        summary: "The person who calls 911 first often frames the incident first. If you lawfully displayed due to a threat, report the attack or attempted attack immediately.",
+        guidance: [
+          "Call 911.",
+          "Report the threat.",
+          "Give suspect description and direction.",
+          "Do not over-explain before legal guidance.",
+          "Do not say you displayed to scare someone."
+        ]
+      },
+      {
+        title: "Third-Party Fight",
+        summary: "Defense of others may be lawful, but third-party fights are dangerous because you may not know who the aggressor is.",
+        guidance: [
+          "Create distance and call 911 when possible.",
+          "Look for weapons, disparity of force, and imminent serious harm.",
+          "Do not assume the loudest person is the bad guy.",
+          "Do not intervene with deadly force unless the legal threshold is clearly met."
+        ]
+      },
+      {
+        title: "Store or Business with No-Firearm Sign",
+        summary: "Private signs may not always equal a statutory pistol-free zone, but private property instructions still matter.",
+        guidance: [
+          "Do not argue with staff.",
+          "Leave calmly if asked.",
+          "Do not turn a business policy disagreement into a trespass or disorderly conduct issue.",
+          "Decide later where to spend your money."
+        ]
+      }
+    ],
+    commonMistakes: [
+      "Assuming open carry answers every location question.",
+      "Forgetting that vehicle carry changes the legal analysis.",
+      "Failing to immediately disclose during police contact.",
+      "Carrying in a prohibited location because a summary seemed unclear.",
+      "Displaying a firearm during an argument rather than an immediate threat.",
+      "Saying: I showed it to scare him.",
+      "Intervening in a third-party fight without knowing the aggressor.",
+      "Using or threatening deadly force over property.",
+      "Talking too much after an incident.",
+      "Posting online after an incident.",
+      "Ignoring PPO, bond condition, domestic violence, or prohibited-person issues.",
+      "Assuming a CPL overrides school rules, federal rules, casino rules, or employer rules.",
+      "Leaving a firearm unsecured in a vehicle.",
+      "Relying on old reciprocity information before travel."
+    ],
+    beforeCarryChecklist: [
+      "Am I legally eligible to possess today?",
+      "Is my CPL valid and not expired?",
+      "Am I under any PPO, bond condition, court order, ERPO, probation, parole, or domestic violence restriction?",
+      "Am I entering a school, hospital, casino, court, federal property, alcohol-heavy location, place of worship, posted private property, or employer-controlled location?",
+      "Am I carrying in a vehicle or merely transporting?",
+      "Do I know my disclosure script if stopped?",
+      "Is my defensive tool secured from children and unauthorized access?",
+      "Am I emotionally calm enough to avoid unnecessary confrontation?",
+      "Do I have my emergency contact and legal-defense contact ready?",
+      "Do I know what I will say and what I will not say after an incident?"
+    ],
+    plainEnglishReality: [
+      {
+        myth: "Stand your ground means I can shoot if I feel threatened.",
+        reality: "No. You still need an honest and reasonable belief that deadly force is immediately necessary to stop a qualifying threat."
+      },
+      {
+        myth: "Open carry is legal, so I can open carry anywhere.",
+        reality: "No. Location restrictions, vehicle rules, prohibited-person rules, private property, schools, casinos, courts, and federal property still matter."
+      },
+      {
+        myth: "A CPL lets me carry everywhere.",
+        reality: "No. A CPL is permission under limits, not unlimited authority."
+      },
+      {
+        myth: "If I do not fire, it is not a big deal.",
+        reality: "A defensive display can still create brandishing, assault, disorderly conduct, or intimidation allegations if not justified."
+      },
+      {
+        myth: "If the shooting is justified, I do not need to worry about civil court.",
+        reality: "Civil claims can still be filed, and whether immunity applies depends on the facts."
+      }
+    ]
+  },
+
+  OH: {
+    name: "Ohio",
+    lastReviewed: "Starter profile — verify before reliance",
+    profileStatus: "Starter",
+    summary: "Ohio is included as a starter travel profile. Michigan CPL holders must verify current Ohio law before carrying.",
+    quick: {
+      concealedCarry: "Starter profile. Verify Ohio carry law before relying.",
+      openCarry: "Starter profile. Verify Ohio open carry rules.",
+      vehicleCarry: "Verify current Ohio vehicle carry law.",
+      dutyToInform: "Verify current Ohio police-contact rules.",
+      privateSigns: "Private property and signage may matter.",
+      forceLaw: "Verify current Ohio self-defense law."
+    },
+    commonMistakes: [
+      "Assuming Michigan rules follow you into Ohio.",
+      "Ignoring vehicle carry differences.",
+      "Ignoring duty-to-inform differences.",
+      "Assuming permit recognition means all locations are lawful."
+    ],
+    beforeCarryChecklist: [
+      "Verify permit recognition.",
+      "Verify vehicle carry rules.",
+      "Verify prohibited places.",
+      "Verify duty-to-inform rules.",
+      "Verify signage and private property rules."
+    ]
+  },
+
+  IN: {
+    name: "Indiana",
+    lastReviewed: "Starter profile — verify before reliance",
+    profileStatus: "Starter",
+    summary: "Indiana is included as a starter travel profile. Michigan CPL holders must verify current Indiana law before carrying.",
+    quick: {
+      concealedCarry: "Starter profile. Verify Indiana law.",
+      openCarry: "Starter profile. Verify Indiana law.",
+      vehicleCarry: "Verify current Indiana vehicle carry law.",
+      dutyToInform: "Verify current Indiana police-contact rules.",
+      privateSigns: "Private property rules may matter.",
+      forceLaw: "Verify current Indiana self-defense law."
+    },
+    commonMistakes: [
+      "Assuming recognition or permitless carry means everywhere.",
+      "Ignoring prohibited-place rules.",
+      "Ignoring private property restrictions."
+    ],
+    beforeCarryChecklist: [
+      "Verify permit recognition.",
+      "Verify prohibited places.",
+      "Verify vehicle carry.",
+      "Verify duty-to-inform rules."
+    ]
+  },
+
+  FL: {
+    name: "Florida",
+    lastReviewed: "Starter profile — verify before reliance",
+    profileStatus: "Starter",
+    summary: "Florida is included as a starter travel profile. Michigan CPL holders must verify current Florida law before carrying.",
+    quick: {
+      concealedCarry: "Starter profile. Verify Florida law.",
+      openCarry: "Starter profile. Verify Florida open carry rules.",
+      vehicleCarry: "Verify current Florida vehicle carry law.",
+      dutyToInform: "Verify current Florida police-contact rules.",
+      privateSigns: "Private property rules may matter.",
+      forceLaw: "Verify current Florida self-defense law."
+    },
+    commonMistakes: [
+      "Assuming vacation destinations have relaxed rules.",
+      "Ignoring alcohol, theme park, event venue, airport, and government property rules.",
+      "Assuming permitless carry means every location is allowed."
+    ],
+    beforeCarryChecklist: [
+      "Verify permit recognition.",
+      "Verify prohibited places.",
+      "Verify vehicle rules.",
+      "Verify lodging, event, and venue rules."
+    ]
+  },
+
+  TX: {
+    name: "Texas",
+    lastReviewed: "Starter profile — verify before reliance",
+    profileStatus: "Starter",
+    summary: "Texas is included as a starter travel profile. Michigan CPL holders must verify current Texas law before carrying.",
+    quick: {
+      concealedCarry: "Starter profile. Verify Texas law.",
+      openCarry: "Starter profile. Verify Texas open carry rules.",
+      vehicleCarry: "Verify current Texas vehicle carry law.",
+      dutyToInform: "Verify current Texas police-contact rules.",
+      privateSigns: "Texas signage rules can be specific. Verify before relying.",
+      forceLaw: "Verify current Texas self-defense law."
+    },
+    commonMistakes: [
+      "Ignoring specific Texas signage language.",
+      "Assuming permitless carry means everywhere.",
+      "Ignoring alcohol, school, government, and event restrictions."
+    ],
+    beforeCarryChecklist: [
+      "Verify signage rules.",
+      "Verify prohibited places.",
+      "Verify vehicle carry.",
+      "Verify recognition and age rules."
+    ]
+  },
+
+  WA: {
+    name: "Washington",
+    lastReviewed: "Starter profile — verify before reliance",
+    profileStatus: "Starter",
+    summary: "Washington is treated as recognizing Michigan CPL in this app travel engine, but state-specific rules still apply.",
+    quick: {
+      concealedCarry: "Michigan CPL treated as recognized in this app travel engine. Verify before travel.",
+      openCarry: "Verify current Washington law.",
+      vehicleCarry: "Verify current Washington vehicle rules.",
+      dutyToInform: "Verify current Washington police-contact rules.",
+      privateSigns: "Private property rules may matter.",
+      forceLaw: "Verify current Washington self-defense law."
+    },
+    commonMistakes: [
+      "Assuming recognition means Michigan rules apply.",
+      "Ignoring vehicle rules.",
+      "Ignoring prohibited places.",
+      "Ignoring local or event-specific restrictions."
+    ],
+    beforeCarryChecklist: [
+      "Verify recognition before travel.",
+      "Verify vehicle rules.",
+      "Verify prohibited places.",
+      "Verify duty-to-inform rules."
+    ]
+  },
+
+  NV: {
+    name: "Nevada",
+    lastReviewed: "Starter profile — verify before reliance",
+    profileStatus: "Starter",
+    summary: "Nevada is treated as not recognizing Michigan CPL in this app travel engine. Verify official Nevada reciprocity before travel.",
+    quick: {
+      concealedCarry: "Michigan CPL not recognized in this app travel engine.",
+      openCarry: "Verify current Nevada law.",
+      vehicleCarry: "Verify Nevada vehicle rules.",
+      dutyToInform: "Verify current Nevada police-contact rules.",
+      privateSigns: "Casino, resort, event, and private property rules may matter.",
+      forceLaw: "Verify current Nevada self-defense law."
+    },
+    commonMistakes: [
+      "Assuming Las Vegas casino environments are carry-friendly.",
+      "Ignoring property rules and security instructions.",
+      "Ignoring current reciprocity changes."
+    ],
+    beforeCarryChecklist: [
+      "Verify current Nevada recognition.",
+      "Verify casino and resort property rules.",
+      "Verify vehicle transport.",
+      "Do not rely on Michigan CPL alone."
+    ]
+  },
+
+  CA: {
+    name: "California",
+    lastReviewed: "Starter profile — verify before reliance",
+    profileStatus: "Starter",
+    summary: "California does not honor a Michigan CPL in this app travel engine. Treat as not recognized and verify California law before travel.",
+    quick: {
+      concealedCarry: "Michigan CPL not recognized.",
+      openCarry: "Highly restricted. Verify current California law.",
+      vehicleCarry: "Verify California transport rules.",
+      dutyToInform: "Verify current California law.",
+      privateSigns: "Private, local, and sensitive-place rules may matter.",
+      forceLaw: "Verify current California self-defense law."
+    },
+    commonMistakes: [
+      "Assuming a Michigan CPL travels into California.",
+      "Ignoring transport rules.",
+      "Ignoring magazine, ammunition, local, and sensitive-place restrictions.",
+      "Stopping unnecessarily while transporting."
+    ],
+    beforeCarryChecklist: [
+      "Do not carry on Michigan CPL alone.",
+      "Verify lawful transport.",
+      "Verify magazine and ammunition restrictions.",
+      "Verify local rules."
+    ]
+  },
+
+  IL: {
+    name: "Illinois",
+    lastReviewed: "Starter profile — verify before reliance",
+    profileStatus: "Starter",
+    summary: "Illinois does not honor a Michigan CPL for ordinary carry in this app travel engine. Verify Illinois law before travel.",
+    quick: {
+      concealedCarry: "Michigan CPL not recognized for ordinary carry.",
+      openCarry: "Verify current Illinois law.",
+      vehicleCarry: "Verify Illinois transport and vehicle rules.",
+      dutyToInform: "Verify current Illinois law.",
+      privateSigns: "Private property and signage may matter.",
+      forceLaw: "Verify current Illinois self-defense law."
+    },
+    commonMistakes: [
+      "Assuming Michigan CPL permits carry in Illinois.",
+      "Ignoring Chicago/local issues.",
+      "Ignoring vehicle transport rules."
+    ],
+    beforeCarryChecklist: [
+      "Verify transport rules.",
+      "Verify prohibited places.",
+      "Do not rely on Michigan CPL alone.",
+      "Verify local restrictions."
+    ]
+  },
+
+  NY: {
+    name: "New York",
+    lastReviewed: "Starter profile — verify before reliance",
+    profileStatus: "Starter",
+    summary: "New York does not honor a Michigan CPL in this app travel engine. Treat as not recognized and verify New York law before travel.",
+    quick: {
+      concealedCarry: "Michigan CPL not recognized.",
+      openCarry: "Verify current New York law.",
+      vehicleCarry: "Verify strict transport rules.",
+      dutyToInform: "Verify current New York law.",
+      privateSigns: "Sensitive and restricted location rules may be extensive.",
+      forceLaw: "Verify current New York self-defense law."
+    },
+    commonMistakes: [
+      "Assuming federal travel rules allow casual possession during stops.",
+      "Ignoring New York City rules.",
+      "Ignoring sensitive-place restrictions.",
+      "Assuming Michigan CPL has any carry value in New York."
+    ],
+    beforeCarryChecklist: [
+      "Do not carry on Michigan CPL alone.",
+      "Verify transport and ammunition/magazine rules.",
+      "Avoid unnecessary stops if transporting under federal framework.",
+      "Verify New York City restrictions separately."
+    ]
+  },
+
+  DE: {
+    name: "Delaware",
+    lastReviewed: "Starter profile — verify before reliance",
+    profileStatus: "Starter",
+    summary: "Delaware is treated as not recognizing Michigan CPL in this app travel engine. Verify official Delaware law before travel.",
+    quick: {
+      concealedCarry: "Michigan CPL not recognized in this app travel engine.",
+      openCarry: "Verify Delaware law.",
+      vehicleCarry: "Verify Delaware transport and vehicle rules.",
+      dutyToInform: "Verify current Delaware law.",
+      privateSigns: "Private property rules may matter.",
+      forceLaw: "Verify Delaware self-defense law."
+    },
+    commonMistakes: [
+      "Assuming nearby East Coast states recognize Michigan CPL.",
+      "Ignoring transport and vehicle rules."
+    ],
+    beforeCarryChecklist: [
+      "Do not rely on Michigan CPL alone.",
+      "Verify lawful transport.",
+      "Verify prohibited places."
+    ]
+  },
+
+  OR: {
+    name: "Oregon",
+    lastReviewed: "Starter profile — verify before reliance",
+    profileStatus: "Starter",
+    summary: "Oregon is treated as not recognizing Michigan CPL in this app travel engine. Verify Oregon law before travel.",
+    quick: {
+      concealedCarry: "Michigan CPL not recognized in this app travel engine.",
+      openCarry: "Verify Oregon law.",
+      vehicleCarry: "Verify Oregon vehicle and transport rules.",
+      dutyToInform: "Verify current Oregon law.",
+      privateSigns: "Local restrictions may matter.",
+      forceLaw: "Verify Oregon self-defense law."
+    },
+    commonMistakes: [
+      "Assuming western states have similar carry rules.",
+      "Ignoring local restrictions and transport rules."
+    ],
+    beforeCarryChecklist: [
+      "Do not rely on Michigan CPL alone.",
+      "Verify local and transport rules.",
+      "Verify prohibited places."
+    ]
+  },
+
+  CT: {
+    name: "Connecticut",
+    lastReviewed: "Starter profile — verify before reliance",
+    profileStatus: "Starter",
+    summary: "Connecticut is treated as not recognizing Michigan CPL in this app travel engine. Verify Connecticut law before travel.",
+    quick: {
+      concealedCarry: "Michigan CPL not recognized in this app travel engine.",
+      openCarry: "Verify Connecticut law.",
+      vehicleCarry: "Verify transport rules.",
+      dutyToInform: "Verify current Connecticut law.",
+      privateSigns: "Private and sensitive-place rules may matter.",
+      forceLaw: "Verify Connecticut self-defense law."
+    },
+    commonMistakes: [
+      "Assuming Michigan CPL has carry value in Connecticut.",
+      "Ignoring transport, magazine, and local restrictions."
+    ],
+    beforeCarryChecklist: [
+      "Do not rely on Michigan CPL alone.",
+      "Verify transport rules.",
+      "Verify prohibited places."
+    ]
+  },
+
+  MA: {
+    name: "Massachusetts",
+    lastReviewed: "Starter profile — verify before reliance",
+    profileStatus: "Starter",
+    summary: "Massachusetts is treated as not recognizing Michigan CPL in this app travel engine. Verify Massachusetts law before travel.",
+    quick: {
+      concealedCarry: "Michigan CPL not recognized in this app travel engine.",
+      openCarry: "Verify Massachusetts law.",
+      vehicleCarry: "Verify strict transport rules.",
+      dutyToInform: "Verify Massachusetts law.",
+      privateSigns: "Sensitive and local rules may matter.",
+      forceLaw: "Verify Massachusetts self-defense law."
+    },
+    commonMistakes: [
+      "Assuming Michigan CPL provides carry authority.",
+      "Ignoring strict possession and transport rules.",
+      "Ignoring magazine and ammunition restrictions."
+    ],
+    beforeCarryChecklist: [
+      "Do not rely on Michigan CPL alone.",
+      "Verify transport and possession rules.",
+      "Verify magazine/ammunition restrictions."
+    ]
+  },
+
+  NJ: {
+    name: "New Jersey",
+    lastReviewed: "Starter profile — verify before reliance",
+    profileStatus: "Starter",
+    summary: "New Jersey is treated as not recognizing Michigan CPL in this app travel engine. Verify New Jersey law before travel.",
+    quick: {
+      concealedCarry: "Michigan CPL not recognized in this app travel engine.",
+      openCarry: "Verify New Jersey law.",
+      vehicleCarry: "Verify strict transport rules.",
+      dutyToInform: "Verify New Jersey law.",
+      privateSigns: "Sensitive-place and property rules may be extensive.",
+      forceLaw: "Verify New Jersey self-defense law."
+    },
+    commonMistakes: [
+      "Assuming federal travel protections allow casual stops.",
+      "Ignoring ammunition and magazine restrictions.",
+      "Assuming Michigan CPL has carry value."
+    ],
+    beforeCarryChecklist: [
+      "Do not rely on Michigan CPL alone.",
+      "Verify transport rules.",
+      "Verify ammunition and magazine rules.",
+      "Avoid unnecessary stops if transporting under federal framework."
+    ]
+  },
+
+  MD: {
+    name: "Maryland",
+    lastReviewed: "Starter profile — verify before reliance",
+    profileStatus: "Starter",
+    summary: "Maryland is treated as not recognizing Michigan CPL in this app travel engine. Verify Maryland law before travel.",
+    quick: {
+      concealedCarry: "Michigan CPL not recognized in this app travel engine.",
+      openCarry: "Verify Maryland law.",
+      vehicleCarry: "Verify transport rules.",
+      dutyToInform: "Verify Maryland law.",
+      privateSigns: "Sensitive-place and property rules may matter.",
+      forceLaw: "Verify Maryland self-defense law."
+    },
+    commonMistakes: [
+      "Assuming reciprocity exists because another nearby state honors Michigan.",
+      "Ignoring transport and prohibited place rules."
+    ],
+    beforeCarryChecklist: [
+      "Do not rely on Michigan CPL alone.",
+      "Verify transport rules.",
+      "Verify prohibited places."
+    ]
+  },
+
+  RI: {
+    name: "Rhode Island",
+    lastReviewed: "Starter profile — verify before reliance",
+    profileStatus: "Starter",
+    summary: "Rhode Island is treated as not recognizing Michigan CPL in this app travel engine. Verify Rhode Island law before travel.",
+    quick: {
+      concealedCarry: "Michigan CPL not recognized in this app travel engine.",
+      openCarry: "Verify Rhode Island law.",
+      vehicleCarry: "Verify transport rules.",
+      dutyToInform: "Verify Rhode Island law.",
+      privateSigns: "Private property rules may matter.",
+      forceLaw: "Verify Rhode Island self-defense law."
+    },
+    commonMistakes: [
+      "Assuming New England states recognize Michigan CPL.",
+      "Ignoring transport and local restrictions."
+    ],
+    beforeCarryChecklist: [
+      "Do not rely on Michigan CPL alone.",
+      "Verify transport rules.",
+      "Verify prohibited places."
+    ]
+  }
+};
+
+function q(id){ return document.getElementById(id); }
+
+function setMsg(text){
+  var msg = q("msg");
+  if(msg) msg.innerText = text || "";
+}
 
 function escapeHtml(value){
   return String(value || "")
@@ -731,6 +1618,106 @@ function renderMap(permitState){
   '</div>';
 }
 
+function renderLawProfile(abbr){
+  var law = stateLawData[abbr];
+
+  if(!law){
+    return '<div class="detailBox">' +
+      '<h3>' + abbr + ' — ' + stateName(abbr) + '</h3>' +
+      '<p><b>State law profile:</b> Not built yet.</p>' +
+      '<p class="small">This state is still using the reciprocity-only travel warning. Full legal profile will be added in a future build.</p>' +
+      '</div>';
+  }
+
+  var qk = law.quick || {};
+
+  var html = '<div class="detailBox">' +
+    '<h3>' + abbr + ' — ' + escapeHtml(law.name || stateName(abbr)) + '</h3>' +
+    '<span class="lawPill green">' + escapeHtml(law.profileStatus || "Profile") + '</span>' +
+    '<span class="lawPill gray">Reviewed: ' + escapeHtml(law.lastReviewed || "Verify") + '</span>' +
+    '<p>' + escapeHtml(law.summary || "") + '</p>';
+
+  html += '<div class="profileGrid">' +
+    '<div class="miniPanel"><b>Concealed Carry</b><p class="small">' + escapeHtml(qk.concealedCarry || "Verify current law.") + '</p></div>' +
+    '<div class="miniPanel"><b>Open Carry</b><p class="small">' + escapeHtml(qk.openCarry || "Verify current law.") + '</p></div>' +
+    '<div class="miniPanel"><b>Vehicle Carry</b><p class="small">' + escapeHtml(qk.vehicleCarry || "Verify current law.") + '</p></div>' +
+    '<div class="miniPanel"><b>Duty to Inform</b><p class="small">' + escapeHtml(qk.dutyToInform || "Verify current law.") + '</p></div>' +
+    '<div class="miniPanel"><b>Private Property</b><p class="small">' + escapeHtml(qk.privateSigns || "Verify current law.") + '</p></div>' +
+    '<div class="miniPanel"><b>Use of Force</b><p class="small">' + escapeHtml(qk.forceLaw || "Verify current law.") + '</p></div>' +
+  '</div>';
+
+  if(law.legalSections && law.legalSections.length){
+    html += '<h3>Detailed Legal Intelligence</h3>';
+    law.legalSections.forEach(function(section){
+      html += '<div class="legalItem">' +
+        '<h3>' + escapeHtml(section.title) + '</h3>' +
+        '<span class="lawPill yellow">' + escapeHtml(section.risk || "Legal Topic") + '</span>';
+      (section.body || []).forEach(function(p){
+        html += '<p>' + escapeHtml(p) + '</p>';
+      });
+      if(section.source){
+        html += '<div class="legalSource">' + escapeHtml(section.source) + '</div>';
+      }
+      html += '</div>';
+    });
+  }
+
+  if(law.decisionBlocks && law.decisionBlocks.length){
+    html += '<h3>Decision Blocks</h3>';
+    law.decisionBlocks.forEach(function(block){
+      html += '<div class="legalItem"><h3>' + escapeHtml(block.title) + '</h3>';
+      (block.steps || []).forEach(function(step){
+        html += '<p>' + escapeHtml(step) + '</p>';
+      });
+      html += '</div>';
+    });
+  }
+
+  if(law.scenarios && law.scenarios.length){
+    html += '<h3>High-Risk Scenarios</h3>';
+    law.scenarios.forEach(function(s){
+      html += '<div class="scenario">' +
+        '<h3>' + escapeHtml(s.title) + '</h3>' +
+        '<p>' + escapeHtml(s.summary || "") + '</p>';
+      (s.guidance || []).forEach(function(g){
+        html += '<p class="small">• ' + escapeHtml(g) + '</p>';
+      });
+      html += '</div>';
+    });
+  }
+
+  if(law.commonMistakes && law.commonMistakes.length){
+    html += '<h3>Common Mistakes</h3><div class="legalItem">';
+    law.commonMistakes.forEach(function(m){
+      html += '<p>• ' + escapeHtml(m) + '</p>';
+    });
+    html += '</div>';
+  }
+
+  if(law.beforeCarryChecklist && law.beforeCarryChecklist.length){
+    html += '<h3>Before You Carry Checklist</h3><div class="legalItem">';
+    law.beforeCarryChecklist.forEach(function(m){
+      html += '<p>☐ ' + escapeHtml(m) + '</p>';
+    });
+    html += '</div>';
+  }
+
+  if(law.plainEnglishReality && law.plainEnglishReality.length){
+    html += '<h3>Plain English vs. Legal Reality</h3>';
+    law.plainEnglishReality.forEach(function(item){
+      html += '<div class="legalItem">' +
+        '<p><b>What people think:</b> ' + escapeHtml(item.myth) + '</p>' +
+        '<p><b>Reality:</b> ' + escapeHtml(item.reality) + '</p>' +
+        '</div>';
+    });
+  }
+
+  html += '<p class="small"><b>Disclaimer:</b> Educational field reference only. Not legal advice. Verify current law before relying on any summary.</p>';
+  html += '</div>';
+
+  return html;
+}
+
 function getStateDetailHtml(permitState, travelState){
   var status = stateStatus(permitState, travelState);
   var cls = statusClass(status);
@@ -738,10 +1725,10 @@ function getStateDetailHtml(permitState, travelState){
   return '<div class="detailBox">' +
     '<h3>' + travelState + ' — ' + stateName(travelState) + '</h3>' +
     '<span class="detailStatus ' + cls + '">' + statusLabelByStatus(status) + '</span>' +
-    '<p><b>Meaning:</b> This color is a starting point only. It does not guarantee lawful carry in every place or situation.</p>' +
-    '<p><b>Check before travel:</b> permit recognition, prohibited places, vehicle carry, duty to inform, signage/private property rules, alcohol restrictions, age restrictions, magazine/ammunition rules, local restrictions, and whether your permit must be resident or nonresident.</p>' +
-    '<p class="small"><b>Disclaimer:</b> Educational field reference only. Not legal advice.</p>' +
-  '</div>';
+    '<p><b>Travel meaning:</b> This color is a starting point only. It does not guarantee lawful carry in every place or situation.</p>' +
+    '<p><b>Check before travel:</b> permit recognition, prohibited places, vehicle carry, duty to inform, signage/private property rules, alcohol restrictions, age restrictions, magazine/ammunition rules, local restrictions, tribal restrictions, federal property, and whether your permit must be resident or nonresident.</p>' +
+  '</div>' +
+  renderLawProfile(travelState);
 }
 
 function getReciprocityHtml(state){
@@ -753,10 +1740,9 @@ function getReciprocityHtml(state){
   if(!data){
     return '<div class="reciprocityTitle">' + selectedName + ' Permit Profile</div>' +
       '<p><b>Status:</b> State-specific outbound reciprocity data has not been fully verified in this app yet.</p>' +
-      '<p class="reciprocitySub">This state is selectable for permit tracking. The verified reciprocity engine is being built state-by-state.</p>' +
       renderMap(state) +
       getStateDetailHtml(state, selectedMapState) +
-      '<div class="warn">Before carrying outside your home state, verify destination-state recognition, prohibited locations, duty-to-inform rules, vehicle carry rules, age restrictions, permit residency requirements, and local restrictions.</div>';
+      '<div class="warn">Before carrying outside your home state, verify destination-state recognition, prohibited locations, duty-to-inform rules, vehicle carry rules, age restrictions, permit residency requirements, local restrictions, federal restrictions, and private property rules.</div>';
   }
 
   return '<div class="reciprocityTitle">' + data.title + '</div>' +
@@ -765,13 +1751,8 @@ function getReciprocityHtml(state){
     '<p class="reciprocitySub">' + data.sourceNote + '</p>' +
     renderMap(state) +
     getStateDetailHtml(state, selectedMapState) +
-    '<div class="reciprocityGrid">' +
-      '<div class="reciprocityPanel"><h3>Recognized</h3><p class="small">' + data.recognized.length + ' states currently listed.</p></div>' +
-      '<div class="reciprocityPanel"><h3>Recognized with Restrictions</h3><p class="small">' + data.restricted.length + ' states currently listed.</p></div>' +
-      '<div class="reciprocityPanel"><h3>Not Recognized</h3><p class="small">' + data.notRecognized.length + ' states currently listed.</p></div>' +
-    '</div>' +
     '<h3>Critical Travel Warnings</h3>' +
-    data.warnings.map(function(w){ return '<p class="small">• ' + w + '</p>'; }).join('');
+    data.warnings.map(function(w){ return '<p class="small">• ' + escapeHtml(w) + '</p>'; }).join('');
 }
 
 function selectMapState(abbr){
@@ -781,6 +1762,7 @@ function selectMapState(abbr){
 
 function showAuth(){
   var isRegister = authMode === "register";
+
   q("app").innerHTML =
     '<div class="container">' +
       '<div class="brand">Prime Defense Training</div>' +
@@ -798,71 +1780,116 @@ function showAuth(){
       '<p class="small">Use the same email address associated with your Prime Defense Protection membership.</p>' +
     '</div>';
 
-  q("loginTab").onclick=function(){authMode="login";showAuth()};
-  q("registerTab").onclick=function(){authMode="register";showAuth()};
-  q("submitBtn").onclick=function(){ if(authMode==="register") registerUser(); else loginUser(); };
+  q("loginTab").onclick = function(){ authMode = "login"; showAuth(); };
+  q("registerTab").onclick = function(){ authMode = "register"; showAuth(); };
+  q("submitBtn").onclick = function(){ if(authMode === "register") registerUser(); else loginUser(); };
 }
 
 async function registerUser(){
   setMsg("Creating account and checking membership...");
-  var name = q("name").value;
-  var email = q("email").value;
-  var password = q("password").value;
 
   try{
-    var res = await fetch("/api/register",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({name:name,email:email,password:password})});
+    var res = await fetch("/api/register", {
+      method:"POST",
+      headers:{ "Content-Type":"application/json" },
+      body:JSON.stringify({
+        name:q("name").value,
+        email:q("email").value,
+        password:q("password").value
+      })
+    });
+
     var data = await res.json();
+
     if(data.token){
-      token=data.token;
-      localStorage.setItem("pd_token",token);
-      if(data.user && data.user.accessAllowed) showDashboard(); else showLocked(data.user);
-    } else setMsg(data.error || "Registration failed.");
-  }catch(e){setMsg("Registration failed.")}
+      token = data.token;
+      localStorage.setItem("pd_token", token);
+      if(data.user && data.user.accessAllowed) showDashboard();
+      else showLocked(data.user);
+    } else {
+      setMsg(data.error || "Registration failed.");
+    }
+  }catch(e){
+    setMsg("Registration failed.");
+  }
 }
 
 async function loginUser(){
   setMsg("Logging in and checking membership...");
-  var email = q("email").value;
-  var password = q("password").value;
 
   try{
-    var res = await fetch("/api/login",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({email:email,password:password})});
+    var res = await fetch("/api/login", {
+      method:"POST",
+      headers:{ "Content-Type":"application/json" },
+      body:JSON.stringify({
+        email:q("email").value,
+        password:q("password").value
+      })
+    });
+
     var data = await res.json();
+
     if(data.token){
-      token=data.token;
-      localStorage.setItem("pd_token",token);
-      if(data.user && data.user.accessAllowed) showDashboard(); else showLocked(data.user);
-    } else setMsg(data.error || "Login failed.");
-  }catch(e){setMsg("Login failed.")}
+      token = data.token;
+      localStorage.setItem("pd_token", token);
+      if(data.user && data.user.accessAllowed) showDashboard();
+      else showLocked(data.user);
+    } else {
+      setMsg(data.error || "Login failed.");
+    }
+  }catch(e){
+    setMsg("Login failed.");
+  }
 }
 
 function logout(){
   localStorage.removeItem("pd_token");
-  token=null;
-  authMode="login";
+  token = null;
+  authMode = "login";
   showAuth();
 }
 
 async function refreshMembership(){
   setMsg("Refreshing membership status...");
+
   try{
-    var res = await fetch("/api/refresh-membership",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({token:token})});
+    var res = await fetch("/api/refresh-membership", {
+      method:"POST",
+      headers:{ "Content-Type":"application/json" },
+      body:JSON.stringify({ token:token })
+    });
+
     var user = await res.json();
-    if(user.accessAllowed) showDashboard(); else showLocked(user);
-  }catch(e){setMsg("Unable to refresh membership.")}
+
+    if(user.accessAllowed) showDashboard();
+    else showLocked(user);
+  }catch(e){
+    setMsg("Unable to refresh membership.");
+  }
 }
 
 async function openBilling(){
   setMsg("Opening billing portal...");
+
   try{
-    var res = await fetch("/api/billing-portal",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({token:token})});
+    var res = await fetch("/api/billing-portal", {
+      method:"POST",
+      headers:{ "Content-Type":"application/json" },
+      body:JSON.stringify({ token:token })
+    });
+
     var data = await res.json();
-    if(data.url) window.location.href=data.url; else setMsg(data.error || "Unable to open billing.");
-  }catch(e){setMsg("Unable to open billing.")}
+
+    if(data.url) window.location.href = data.url;
+    else setMsg(data.error || "Unable to open billing.");
+  }catch(e){
+    setMsg("Unable to open billing.");
+  }
 }
 
 function showLocked(user){
-  user=user||{};
+  user = user || {};
+
   q("app").innerHTML =
     '<div class="lockbox">' +
       '<div class="brand">Membership Required</div>' +
@@ -876,28 +1903,45 @@ function showLocked(user){
       '</div>' +
       '<div id="msg" class="msg"></div>' +
     '</div>';
-  q("refreshBtn").onclick=refreshMembership;
-  q("billingBtn").onclick=openBilling;
-  q("logoutBtn").onclick=logout;
+
+  q("refreshBtn").onclick = refreshMembership;
+  q("billingBtn").onclick = openBilling;
+  q("logoutBtn").onclick = logout;
 }
 
 function buildStateOptions(selected){
   var html = "";
+
   states.forEach(function(s){
-    html += '<option value="' + s[0] + '"' + (s[0]===selected?' selected':'') + '>' + s[1] + '</option>';
+    html += '<option value="' + s[0] + '"' + (s[0] === selected ? ' selected' : '') + '>' + s[1] + '</option>';
   });
+
   return html;
 }
 
 async function showDashboard(){
   try{
-    var res = await fetch("/api/get-profile",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({token:token})});
+    var res = await fetch("/api/get-profile", {
+      method:"POST",
+      headers:{ "Content-Type":"application/json" },
+      body:JSON.stringify({ token:token })
+    });
+
     var user = await res.json();
 
-    if(user.error){localStorage.removeItem("pd_token"); token=null; showAuth(); return;}
-    if(!user.accessAllowed){showLocked(user); return;}
+    if(user.error){
+      localStorage.removeItem("pd_token");
+      token = null;
+      showAuth();
+      return;
+    }
 
-    currentUser=user;
+    if(!user.accessAllowed){
+      showLocked(user);
+      return;
+    }
+
+    currentUser = user;
     var selectedState = user.permitState || "MI";
     selectedMapState = selectedState;
 
@@ -907,10 +1951,12 @@ async function showDashboard(){
           '<div class="brand">Prime Defense Protection</div>' +
           '<h1>Member Dashboard</h1>' +
           '<span class="status">' + escapeHtml(user.membershipLabel) + '</span>' +
-          '<p class="subtitle">Welcome' + (user.name ? ', ' + escapeHtml(user.name) : '') + '. Your premium member dashboard for permit tracking, incident tools, and Michigan legal education.</p>' +
+          '<p class="subtitle">Welcome' + (user.name ? ', ' + escapeHtml(user.name) : '') + '. Your premium member dashboard for permit tracking, incident tools, reciprocity, and legal intelligence.</p>' +
           '<div class="badgeRow">' +
             '<span class="badge">Permit Profile</span>' +
             '<span class="badge">Reciprocity Map</span>' +
+            '<span class="badge">State Law Engine</span>' +
+            '<span class="badge">Michigan Ultra Guide</span>' +
             '<span class="badge">Emergency Mode</span>' +
             '<span class="badge">Aftermath Guidance</span>' +
           '</div>' +
@@ -922,8 +1968,8 @@ async function showDashboard(){
 
         '<div class="card">' +
           '<div class="brand">My Permit</div>' +
-          '<h2>Permit Profile & Reciprocity Map</h2>' +
-          '<p class="small">Select your permit state to update your travel reference. Michigan is currently the deepest legal guide in this build.</p>' +
+          '<h2>Permit Profile, Reciprocity & State Law Engine</h2>' +
+          '<p class="small">Select your permit state. Click any state on the map to view reciprocity status and available legal profile data.</p>' +
           '<div class="grid">' +
             '<select id="state">' + buildStateOptions(selectedState) + '</select>' +
             '<input id="issue" type="date" value="' + escapeHtml(user.issueDate || '') + '">' +
@@ -933,16 +1979,16 @@ async function showDashboard(){
         '</div>' +
 
         '<div class="card">' +
-          '<div class="brand">Michigan Legal Guide</div>' +
-          '<h2>Michigan CPL & Firearms Law Field Guide</h2>' +
-          '<p class="small">Expanded reference covering carry rules, prohibited places, secure storage, school zones, transport, ERPOs, civil liability exposure, and post-incident reminders. Educational only. Not legal advice.</p>' +
-          '<button id="miGuideBtn" class="primary" type="button">Open Michigan Legal Guide</button>' +
+          '<div class="brand">Michigan Ultra Guide</div>' +
+          '<h2>Michigan CPL & Firearms Law Intelligence</h2>' +
+          '<p class="small">Open the expanded Michigan guide with detailed sections, decision blocks, common mistakes, scenarios, plain-English reality checks, and before-carry checklists.</p>' +
+          '<button id="miGuideBtn" class="primary" type="button">Open Michigan Ultra Guide</button>' +
         '</div>' +
 
         '<div class="card">' +
           '<div class="brand">Incident Modes</div>' +
           '<h2>Emergency Tools</h2>' +
-          '<p class="small">Use the mode that best matches the situation. These tools are designed to help you slow down, call for help, and avoid damaging statements.</p>' +
+          '<p class="small">Use the mode that best matches the situation. These tools help you slow down, call for help, and avoid damaging statements.</p>' +
           '<div class="modeButtonGrid">' +
             '<button id="shootingModeBtn" class="primary" type="button">Defensive Shooting</button>' +
             '<button id="displayModeBtn" class="secondary" type="button">No Shots Fired / Defensive Display</button>' +
@@ -966,19 +2012,27 @@ async function showDashboard(){
       '</div>';
 
     updateReciprocity();
-    q("state").onchange=function(){ selectedMapState = q("state").value; updateReciprocity(); };
-    q("saveBtn").onclick=saveProfile;
-    q("logoutBtn").onclick=logout;
-    q("refreshBtn").onclick=refreshMembership;
-    q("emergencyBtn").onclick=openEmergency;
-    q("shootingModeBtn").onclick=openEmergency;
-    q("displayModeBtn").onclick=openDefensiveDisplay;
-    q("aftermathBtn").onclick=openAftermath;
-    q("miGuideBtn").onclick=showMichiganLegalGuide;
+
+    q("state").onchange = function(){
+      selectedMapState = q("state").value;
+      updateReciprocity();
+    };
+
+    q("saveBtn").onclick = saveProfile;
+    q("logoutBtn").onclick = logout;
+    q("refreshBtn").onclick = refreshMembership;
+    q("emergencyBtn").onclick = openEmergency;
+    q("shootingModeBtn").onclick = openEmergency;
+    q("displayModeBtn").onclick = openDefensiveDisplay;
+    q("aftermathBtn").onclick = openAftermath;
+    q("miGuideBtn").onclick = function(){
+      selectedMapState = "MI";
+      showStateLawFull("MI");
+    };
 
   }catch(e){
     localStorage.removeItem("pd_token");
-    token=null;
+    token = null;
     showAuth();
   }
 }
@@ -992,380 +2046,86 @@ function updateReciprocity(){
 
 async function saveProfile(){
   setMsg("Saving...");
+
   try{
-    var res = await fetch("/api/save-profile",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({
-      token:token,
-      permitState:q("state").value,
-      issueDate:q("issue").value,
-      expirationDate:q("exp").value,
-      emergencyName:q("ename").value,
-      emergencyPhone:q("phone").value
-    })});
+    var res = await fetch("/api/save-profile", {
+      method:"POST",
+      headers:{ "Content-Type":"application/json" },
+      body:JSON.stringify({
+        token:token,
+        permitState:q("state").value,
+        issueDate:q("issue").value,
+        expirationDate:q("exp").value,
+        emergencyName:q("ename").value,
+        emergencyPhone:q("phone").value
+      })
+    });
+
     var data = await res.json();
     setMsg(data.error || data.message || "Saved.");
-  }catch(e){setMsg("Save failed.")}
+  }catch(e){
+    setMsg("Save failed.");
+  }
 }
 
-function showMichiganLegalGuide(){
-  var guideSections = [
-    {
-      title: "Quick Michigan Snapshot",
-      body: [
-        "<b>Concealed pistol carry:</b> Michigan generally requires a valid CPL to carry a concealed pistol.",
-        "<b>Open carry:</b> Michigan generally permits open carry by a person who may lawfully possess a firearm, but locations, vehicles, intent, and eligibility matter.",
-        "<b>Vehicle carry:</b> A pistol in a vehicle is a major legal dividing line. Without a CPL, transport must be treated as lawful transport, not ready-access carry.",
-        "<b>Duty to disclose:</b> A CPL holder carrying concealed and stopped by a peace officer must immediately disclose that they are carrying.",
-        "<b>Prohibited places:</b> Michigan has statutory pistol-free zones and separate general firearm-prohibited premises. Federal law and private policies may also apply.",
-        "<b>Use of deadly force:</b> Deadly force is limited to situations where the person honestly and reasonably believes it is necessary to prevent imminent death, great bodily harm, or sexual assault."
-      ],
-      source: "References: Michigan Firearms Laws publication; MCL 28.425f; MCL 28.425o; MCL 750.234d; MCL 780.972."
-    },
-    {
-      title: "CPL Basics",
-      body: [
-        "<b>What a Michigan CPL does:</b> It allows a qualified license holder to carry a concealed pistol, subject to Michigan law and restrictions.",
-        "<b>What it does not do:</b> It does not override pistol-free zones, federal buildings, court rules, employer policies, school rules, private-property instructions, or another state’s laws.",
-        "<b>Practical rule:</b> A CPL is permission under defined limits. It is not permission to carry everywhere.",
-        "<b>Training note:</b> Every carry decision should answer three questions: Am I eligible? Is this location lawful? Is my method of carry lawful?"
-      ],
-      source: "Reference: Michigan Firearms Laws publication."
-    },
-    {
-      title: "Duty to Disclose During Police Contact",
-      body: [
-        "<b>Core rule:</b> If you are carrying concealed under a CPL and are stopped by a peace officer, disclose immediately.",
-        "<b>Recommended wording:</b> Officer, I have a CPL and I am currently carrying. How would you like me to proceed?",
-        "<b>Hands:</b> Keep your hands visible. Do not reach for your firearm, wallet, purse, center console, glove box, or documents until instructed.",
-        "<b>Common mistake:</b> Waiting until later in the stop because you think the officer already knows. Do not assume.",
-        "<b>Training note:</b> Disclosure should be calm, early, and simple."
-      ],
-      source: "Reference: MCL 28.425f."
-    },
-    {
-      title: "Pistol-Free Zones / Concealed Carry Restricted Premises",
-      body: [
-        "<b>Core rule:</b> MCL 28.425o lists places where a CPL holder generally may not carry a concealed pistol, subject to statutory exceptions and exact wording.",
-        "<b>Common categories:</b> Schools and school property, public or private child care centers, sports arenas or stadiums, certain bars/taverns, places of worship unless allowed by the presiding official, certain entertainment facilities, hospitals, and college/university dormitories or classrooms.",
-        "<b>Important nuance:</b> Do not rely on shorthand lists. Exact statutory definitions matter.",
-        "<b>Separate issue:</b> A pistol-free zone, private no-firearm sign, workplace policy, school policy, federal restriction, and court rule are not all the same thing.",
-        "<b>Training note:</b> If the location is sensitive, close-call, emotional, crowded, alcohol-related, school-related, government-related, or security-controlled, slow down and verify before entering."
-      ],
-      source: "Reference: MCL 28.425o."
-    },
-    {
-      title: "General Firearm-Prohibited Premises",
-      body: [
-        "<b>Core issue:</b> Michigan also has general firearm-prohibited premises under MCL 750.234d. This can matter even when the discussion is not strictly about concealed carry.",
-        "<b>Examples under this framework:</b> Certain financial institutions, churches or houses of religious worship, courts, theatres, sports arenas, day care centers, hospitals, and establishments licensed under the Michigan Liquor Control Code, subject to statutory language and exceptions.",
-        "<b>Election-related expansion:</b> Michigan law has also addressed firearms at polling places, early voting sites, absentee ballot drop box locations, certain clerk offices, and absent voter counting locations.",
-        "<b>Training note:</b> Do not assume a CPL automatically solves general prohibited-premises rules."
-      ],
-      source: "References: MCL 750.234d; MSP Legal Update No. 163."
-    },
-    {
-      title: "Secure Storage / Child Access",
-      body: [
-        "<b>Core principle:</b> Firearms must be secured from unauthorized access, especially minors.",
-        "<b>High-risk places:</b> Vehicles, nightstands, backpacks, purses, range bags, closets, bedside tables, garages, and unlocked cases.",
-        "<b>Practical rule:</b> If the firearm is unattended, ask whether a child, visitor, prohibited person, roommate, worker, or thief could access it.",
-        "<b>Vehicle warning:</b> A vehicle is not a safe by itself. Theft from vehicles is one of the most predictable ways firearms enter criminal circulation.",
-        "<b>Training note:</b> Responsible defensive ownership requires two goals at the same time: fast lawful access for the authorized adult and reliable denial of access to everyone else."
-      ],
-      source: "Reference framework: Michigan secure-storage and firearms safety laws."
-    },
-    {
-      title: "EMD / Stun Gun Disclosure",
-      body: [
-        "<b>Core issue:</b> Michigan law treats electro-muscular disruption devices, commonly called EMDs or stun guns, differently than ordinary defensive tools.",
-        "<b>Disclosure warning:</b> If you are carrying an EMD under authority of a CPL or other lawful framework and are stopped by law enforcement, disclosure obligations may apply.",
-        "<b>Practical wording:</b> Officer, I have a CPL and I am carrying an electronic defensive device. How would you like me to proceed?",
-        "<b>Training note:</b> Do not assume that because it is less lethal it is legally casual. Possession, carry method, disclosure, prohibited locations, and use-of-force rules still matter."
-      ],
-      source: "Reference framework: Michigan EMD/stun gun statutes and CPL disclosure principles."
-    },
-    {
-      title: "Casinos",
-      body: [
-        "<b>Core warning:</b> Casinos are high-risk environments for armed citizens because of private property rules, gaming regulations, alcohol, security screening, and tribal or federal issues depending on the property.",
-        "<b>Practical rule:</b> Do not assume your CPL authorizes carry in a casino. Check the specific property, ownership, posted rules, gaming commission rules, tribal rules if applicable, and any law-enforcement/security direction.",
-        "<b>Risk factors:</b> Alcohol, money disputes, crowds, surveillance, and armed security can make any incident more legally complex.",
-        "<b>Training note:</b> If a property prohibits weapons and you are discovered, leave immediately and calmly when instructed."
-      ],
-      source: "Reference framework: Michigan premises law, private property rights, and federal/tribal considerations."
-    },
-    {
-      title: "Federal Buildings / Post Offices",
-      body: [
-        "<b>Core rule:</b> Federal property can be controlled by federal law, not just Michigan law.",
-        "<b>Post office warning:</b> Do not assume that a Michigan CPL allows carry inside a post office or on postal property. Postal property is a classic high-risk federal-location issue.",
-        "<b>Federal buildings:</b> Courthouses, agency buildings, federal offices, secure federal facilities, and posted federal properties may be restricted even if state law otherwise allows carry.",
-        "<b>Training note:</b> If the property is federal, stop relying on state carry summaries and verify federal law and posted instructions."
-      ],
-      source: "Reference framework: Federal facility and postal property restrictions."
-    },
-    {
-      title: "Schools & School Zones Nuance",
-      body: [
-        "<b>High-risk area:</b> Schools, school property, and weapon-free school zones are among the most legally sensitive firearm locations.",
-        "<b>Michigan law:</b> MCL 28.425o and MCL 750.237a both matter. One deals with CPL prohibited premises and the other addresses weapon-free school zones.",
-        "<b>Nuance:</b> School property can include more than the building. Vehicles used by a school and property used for school purposes may matter depending on the statute.",
-        "<b>Parent pickup/drop-off:</b> Do not rely on casual advice. Read the exact statute and exceptions before making decisions involving school property.",
-        "<b>Training note:</b> School mistakes can create criminal exposure, CPL consequences, employment consequences, family-court consequences, and major public scrutiny."
-      ],
-      source: "References: MCL 28.425o; MCL 750.237a."
-    },
-    {
-      title: "Transport Without CPL",
-      body: [
-        "<b>Core rule:</b> Without a CPL, do not treat a pistol in a vehicle as carry. Treat it as lawful transport only.",
-        "<b>Practical transport method:</b> The pistol should generally be unloaded, secured, inaccessible, and transported only for lawful purposes such as going to or from a range, repair, purchase, sale, hunting-related lawful activity, or another lawful destination.",
-        "<b>Common mistake:</b> Open carrying on foot and then getting into a vehicle with the pistol accessible.",
-        "<b>Training note:</b> The moment you enter a vehicle, the legal analysis changes. Vehicle possession is one of the easiest ways for a lawful owner to make a serious mistake."
-      ],
-      source: "Reference: Michigan Firearms Laws publication."
-    },
-    {
-      title: "Prohibited Persons / Domestic Violence / PPOs",
-      body: [
-        "<b>Core issue:</b> Not everyone who owns or wants a firearm is legally allowed to possess one.",
-        "<b>Disqualifiers may include:</b> Certain felony convictions, certain misdemeanor convictions, domestic violence-related prohibitions, mental health adjudications, court orders, bond conditions, probation/parole restrictions, and protection orders.",
-        "<b>PPO warning:</b> A personal protection order or court order can create serious possession and carry restrictions. Read the order and speak with counsel.",
-        "<b>Domestic violence warning:</b> Domestic violence-related cases can trigger both state and federal restrictions.",
-        "<b>Training note:</b> If there is a pending case, court order, PPO, domestic dispute, bond condition, or prior conviction, do not guess. Get legal guidance before possessing or carrying."
-      ],
-      source: "Reference framework: Michigan and federal prohibited-person laws."
-    },
-    {
-      title: "ERPO / Red Flag Orders",
-      body: [
-        "<b>Core issue:</b> Michigan has an Extreme Risk Protection Order framework commonly called ERPO or red flag law.",
-        "<b>Practical effect:</b> An ERPO can affect firearm possession and may require surrender or removal of firearms under court order.",
-        "<b>Warning:</b> Violating an order can create serious criminal exposure and long-term firearm-rights consequences.",
-        "<b>Training note:</b> If served with any court order involving firearms, do not argue at the door, hide property, transfer property casually, or post about it online. Contact qualified legal counsel immediately."
-      ],
-      source: "Reference framework: Michigan Extreme Risk Protection Order laws."
-    },
-    {
-      title: "Purchase / Registration Basics",
-      body: [
-        "<b>Core issue:</b> Michigan pistol acquisition has paperwork and record requirements. The process can differ depending on whether the person has a CPL, the type of transaction, and where the pistol is obtained.",
-        "<b>Practical rule:</b> Keep copies of purchase records, sales records, registration paperwork, and transfer documents organized.",
-        "<b>Private transfer warning:</b> Do not assume a casual private sale is legally complete just because money changed hands.",
-        "<b>Training note:</b> If you buy, sell, inherit, gift, or transfer a pistol, slow down and verify the required Michigan process before the transfer."
-      ],
-      source: "Reference: Michigan Firearms Laws publication."
-    },
-    {
-      title: "Civil Liability / Wrongful Death Exposure",
-      body: [
-        "<b>Core warning:</b> Even when no criminal charge is filed, a defensive incident can still trigger civil claims.",
-        "<b>Possible exposure:</b> Lawsuits may involve wrongful death, personal injury, negligence, emotional distress, property damage, or claims from the attacker’s family.",
-        "<b>Michigan Self-Defense Act:</b> Michigan law includes civil-liability protection language in qualifying lawful self-defense situations, but whether it applies depends on the facts.",
-        "<b>Training note:</b> Lawful self-defense is not just a trigger-pull decision. Your actions before, during, and after the incident may all be examined."
-      ],
-      source: "References: MCL 780.972; MCL 600.2922."
-    },
-    {
-      title: "Hunting / DNR Context",
-      body: [
-        "<b>Core issue:</b> Hunting, public land, state land, DNR rules, species seasons, transport rules, and firearm-type rules can all affect what is lawful.",
-        "<b>CPL warning:</b> A CPL does not replace hunting laws, game laws, DNR regulations, trespass rules, or public-land restrictions.",
-        "<b>Transport warning:</b> Long guns, pistols, loaded firearms, vehicles, ORVs, boats, and hunting activity may have separate rules.",
-        "<b>Training note:</b> If your carry or transport occurs during hunting, scouting, camping, boating, ORV use, or public-land activity, verify DNR rules in addition to CPL law."
-      ],
-      source: "Reference framework: Michigan DNR and firearms transport/hunting rules."
-    },
-    {
-      title: "Open Carry",
-      body: [
-        "<b>Plain English:</b> Michigan generally permits open carry by people who may lawfully possess firearms, but important limits apply.",
-        "<b>CPL impact:</b> A CPL holder may have different options than a non-CPL holder, especially regarding vehicle carry and certain locations.",
-        "<b>Private property:</b> A property owner or authorized agent may prohibit weapons and require you to leave.",
-        "<b>Common mistake:</b> Thinking 'open carry is legal' answers every question. Location, intent, vehicle status, concealment, and eligibility still matter.",
-        "<b>Training note:</b> Open carry can increase police contacts, public complaints, and social friction even when lawful."
-      ],
-      source: "Reference framework: Michigan Firearms Laws publication and MSP legal guidance."
-    },
-    {
-      title: "Private Property & No-Firearm Signs",
-      body: [
-        "<b>Plain English:</b> A private no-firearm sign is not always the same as a statutory pistol-free zone, but it still matters.",
-        "<b>Practical effect:</b> A property owner, manager, employee, or authorized agent may direct you to leave. Refusing can create trespass exposure.",
-        "<b>Best response:</b> Do not argue with staff or security. Leave calmly.",
-        "<b>Training note:</b> Being technically right is not useful if the situation escalates into a trespass complaint, police contact, or public confrontation."
-      ],
-      source: "Reference framework: Michigan private-property and trespass principles."
-    },
-    {
-      title: "Bars, Restaurants & Alcohol",
-      body: [
-        "<b>Core issue:</b> Michigan prohibited-premises law includes alcohol-related location restrictions, including bars/taverns where alcohol sales by the glass are the primary source of income.",
-        "<b>Practical warning:</b> Do not guess whether a location is legally a restaurant or bar for CPL purposes.",
-        "<b>Behavior warning:</b> Alcohol, crowds, emotion, and firearms create high legal risk.",
-        "<b>Training note:</b> The safer lifestyle rule is simple: if alcohol is a central part of the environment, strongly reconsider being armed there."
-      ],
-      source: "Reference: MCL 28.425o."
-    },
-    {
-      title: "Places of Worship",
-      body: [
-        "<b>Core issue:</b> Michigan law includes places of worship in prohibited-premises analysis unless permission is granted by the proper authority.",
-        "<b>Practical rule:</b> Permission matters. Do not assume you can carry because you are a member, volunteer, usher, or safety-team participant.",
-        "<b>Best practice:</b> Get written authorization, written policy, defined role, team training, and clear communication with leadership.",
-        "<b>Training note:</b> Church safety work needs legal clarity, not informal hallway permission."
-      ],
-      source: "Reference: MCL 28.425o."
-    },
-    {
-      title: "Hospitals & Medical Facilities",
-      body: [
-        "<b>Core issue:</b> Hospitals are specifically sensitive under Michigan prohibited-premises law.",
-        "<b>Practical warning:</b> Medical emergencies do not automatically erase carry restrictions.",
-        "<b>Private policy:</b> Medical facilities may also have security policies, signage, screening, and police/security procedures.",
-        "<b>Training note:</b> Plan ahead for appointments, ER visits, and family emergencies."
-      ],
-      source: "Reference: MCL 28.425o."
-    },
-    {
-      title: "Brandishing / Improper Display",
-      body: [
-        "<b>Core concept:</b> Displaying or exposing a firearm can become legally dangerous if it appears threatening, angry, careless, or unnecessary.",
-        "<b>Defensive display:</b> Display may be defensible only when the facts support an immediate defensive need.",
-        "<b>Bad explanation:</b> I showed him my gun to scare him. That can sound like intimidation rather than lawful defense.",
-        "<b>Training note:</b> If the firearm comes out, you should be able to explain the immediate threat that made the display necessary."
-      ],
-      source: "Reference framework: Michigan brandishing and defensive-use principles."
-    },
-    {
-      title: "Use of Force / Deadly Force",
-      body: [
-        "<b>Core standard:</b> Deadly force may be justified only when a person honestly and reasonably believes it is necessary to prevent imminent death, great bodily harm, or sexual assault.",
-        "<b>Honest belief:</b> You genuinely believed the danger was real.",
-        "<b>Reasonable belief:</b> A reasonable person in the same circumstances would likely understand the danger similarly.",
-        "<b>Imminent threat:</b> The danger must be happening now or immediately about to happen.",
-        "<b>Necessity:</b> Deadly force must be necessary to stop the threat. It is not punishment, warning, revenge, control, or intimidation.",
-        "<b>Property warning:</b> Deadly force is not justified merely to protect property.",
-        "<b>Training note:</b> The legal question is not simply whether you were afraid. The question is whether the facts support an honest and reasonable belief that deadly force was immediately necessary."
-      ],
-      source: "Reference: MCL 780.972."
-    },
-    {
-      title: "Defense of Others",
-      body: [
-        "<b>Core rule:</b> Michigan law can allow force in defense of another person under the same basic necessity and reasonableness framework.",
-        "<b>Important:</b> The threshold is not lower because another person is involved.",
-        "<b>High-risk mistake:</b> Intervening in a third-party fight without knowing who started it, who escalated it, or whether the person you are defending is actually the aggressor.",
-        "<b>Training note:</b> Defense of others is tactically and legally dangerous because you may not know the whole story."
-      ],
-      source: "Reference: MCL 780.972."
-    },
-    {
-      title: "Stand Your Ground / No Duty to Retreat",
-      body: [
-        "<b>Plain English:</b> Michigan law may remove a duty to retreat in qualifying lawful self-defense situations.",
-        "<b>Important limitation:</b> No duty to retreat does not mean permission to escalate, chase, re-engage, provoke, threaten, or use force over pride or property.",
-        "<b>Training note:</b> Avoidance can still help show reasonableness. Leaving safely is often tactically and legally smarter than staying to prove a point."
-      ],
-      source: "Reference framework: Michigan Self-Defense Act."
-    },
-    {
-      title: "Attorney / Contact-After-Incident Reminders",
-      body: [
-        "<b>First:</b> Get safe. Call 911. Request police and medical.",
-        "<b>Second:</b> Call your legal-defense support/attorney contact as soon as practical after emergency help is coming.",
-        "<b>Third:</b> Contact one trusted family member only if safe and appropriate.",
-        "<b>Do not:</b> Post online, text multiple people, call friends to explain, argue with bystanders, speak to media, or repeatedly retell the story.",
-        "<b>Family wording:</b> I was involved in a defensive incident. I am safe. Please do not discuss this with anyone. I am waiting for legal guidance.",
-        "<b>Training note:</b> After an incident, your words can become evidence. Keep communications short, factual, and rights-protecting."
-      ],
-      source: "Training reference: Prime Defense aftermath protocol."
-    },
-    {
-      title: "Common Legal Pitfalls",
-      body: [
-        "• Carrying in a prohibited location.",
-        "• Failing to immediately disclose during police contact.",
-        "• Mishandling pistol transport in a vehicle.",
-        "• Displaying a firearm during an argument.",
-        "• Intervening in someone else’s fight without knowing who the aggressor is.",
-        "• Using or threatening deadly force over property.",
-        "• Carrying while subject to a court order, PPO, bond condition, or disqualifying conviction.",
-        "• Ignoring school-zone nuance.",
-        "• Talking too much after a defensive incident.",
-        "• Posting online after an incident."
-      ],
-      source: "Training reference: Prime Defense legal-risk framework."
-    },
-    {
-      title: "Final Disclaimer",
-      body: [
-        "This guide is educational information only. It is not legal advice, does not create an attorney-client relationship, and should not be treated as a substitute for current statutes, official guidance, or qualified legal counsel.",
-        "Firearms law changes. Court rulings change. Agency guidance changes. Private policies change. Always verify current law before relying on any legal summary."
-      ],
-      source: ""
-    }
-  ];
-
-  var html = '<div class="dashboard">' +
-    '<div class="hero">' +
-      '<div class="brand">Michigan Legal Guide</div>' +
-      '<h1>Michigan CPL Field Guide</h1>' +
-      '<p class="subtitle">Expanded legal education built for practical decision-making before, during, and after a defensive incident. Educational only. Not legal advice.</p>' +
-      '<div class="actions">' +
-        '<button class="secondary" type="button" onclick="showDashboard()">Back to Dashboard</button>' +
-        '<button class="primary" type="button" onclick="openEmergency()">Emergency Mode</button>' +
+function showStateLawFull(abbr){
+  q("app").innerHTML =
+    '<div class="dashboard">' +
+      '<div class="hero">' +
+        '<div class="brand">Prime Defense Legal Intelligence</div>' +
+        '<h1>' + stateName(abbr) + ' State Law Engine</h1>' +
+        '<p class="subtitle">Structured legal reference, decision blocks, scenario guidance, and practical carry warnings. Educational only. Not legal advice.</p>' +
+        '<div class="actions">' +
+          '<button class="secondary" type="button" onclick="showDashboard()">Back to Dashboard</button>' +
+          '<button class="primary" type="button" onclick="openEmergency()">Emergency Mode</button>' +
+        '</div>' +
       '</div>' +
-    '</div>' +
-    '<div class="callout">' +
-      '<div class="brand">Premium Member Reference</div>' +
-      '<h2>Slow Down. Verify. Make Better Decisions.</h2>' +
-      '<p class="small">This guide is intentionally detailed because real-world carry decisions are rarely answered by one sentence. Location, conduct, eligibility, method of carry, and post-incident behavior all matter.</p>' +
-    '</div>' +
-    '<div class="card">';
-
-  guideSections.forEach(function(section){
-    html += '<div class="legalItem">';
-    html += '<h3>' + section.title + '</h3>';
-    section.body.forEach(function(paragraph){
-      html += '<p>' + paragraph + '</p>';
-    });
-    if(section.source){
-      html += '<div class="legalSource">' + section.source + '</div>';
-    }
-    html += '</div>';
-  });
-
-  html += '</div></div>';
-  q("app").innerHTML = html;
+      '<div class="callout">' +
+        '<div class="brand">Premium Field Reference</div>' +
+        '<h2>Law + Real-World Decision Support</h2>' +
+        '<p class="small">This section is built to go beyond generic summaries. The goal is to help members identify risk before they make a bad carry, storage, transport, or post-incident decision.</p>' +
+      '</div>' +
+      renderLawProfile(abbr) +
+    '</div>';
 }
 
 function openEmergency(){
   var phone = q("phone") ? q("phone").value : "";
   var name = q("ename") ? q("ename").value : "";
+  var cleanPhone = phone.replace(/[^0-9+]/g,"");
 
   q("app").innerHTML =
     '<div class="emergencyScreen">' +
       '<div class="emergencyShell">' +
         '<div class="brand">Prime Defense Protection Member</div>' +
         '<h1>Emergency Mode — Defensive Shooting</h1>' +
+
         '<div class="card">' +
           '<div class="brand">Step 1 — Call 911</div>' +
           '<div class="script">“I was attacked, feared for my life, and had to defend myself. Please send both police and an ambulance to this location.”</div>' +
           '<button class="primary bigAction" type="button" onclick="window.location.href=\\'tel:911\\'">CALL 911</button>' +
           '<div class="warn">Secondary wording: “There has been a self-defense shooting at this location. Send help.” Provide only necessary information and follow dispatcher instructions.</div>' +
         '</div>' +
+
         '<div class="card">' +
           '<div class="brand">Step 2 — Call USCCA</div>' +
           '<p class="small">Contact the USCCA Critical Response Team after calling 911.</p>' +
           '<button class="primary bigAction" type="button" onclick="window.location.href=\\'tel:8776771919\\'">CALL USCCA</button>' +
         '</div>' +
+
         '<div class="card">' +
           '<div class="brand">Step 3 — Contact Family</div>' +
           '<h2>' + escapeHtml(name || "Emergency Contact") + '</h2>' +
           '<p class="small">' + escapeHtml(phone || "No phone saved") + '</p>' +
-          (phone ? '<button class="primary bigAction" type="button" onclick="window.location.href=\\'tel:' + phone.replace(/[^0-9+]/g,"") + '\\'">CALL CONTACT</button>' : '<div class="warn">No emergency contact saved.</div>') +
+          (phone ? '<button class="primary bigAction" type="button" onclick="window.location.href=\\'tel:' + cleanPhone + '\\'">CALL CONTACT</button>' : '<div class="warn">No emergency contact saved.</div>') +
           '<div class="script">“I’ve been involved in a defensive incident. I’m safe. Do not discuss anything with anyone until I have legal guidance.”</div>' +
         '</div>' +
+
+        '<div class="card">' +
+          '<div class="brand">Step 4 — When Police Arrive</div>' +
+          '<div class="script">Hands visible. Do not move unless instructed. Follow commands. Do not argue. Do not explain in detail.</div>' +
+        '</div>' +
+
         '<button class="secondary bigAction" type="button" onclick="showDashboard()">EXIT EMERGENCY MODE</button>' +
       '</div>' +
     '</div>';
@@ -1377,24 +2137,29 @@ function openDefensiveDisplay(){
       '<div class="emergencyShell">' +
         '<div class="brand">No Shots Fired</div>' +
         '<h1>Defensive Display Mode</h1>' +
+
         '<div class="card">' +
           '<div class="brand">Step 1 — Call 911</div>' +
           '<div class="script">“My name is [name], and I need to report an attack or possible attack at this location. I have a permit to carry and exposed my defensive tool, but I did not fire.”</div>' +
           '<button class="primary bigAction" type="button" onclick="window.location.href=\\'tel:911\\'">CALL 911</button>' +
         '</div>' +
+
         '<div class="card">' +
           '<div class="brand">Suspect Information</div>' +
           '<p class="small">Give only necessary details: clothing, physical description, direction of travel, vehicle description, license plate if safely known, and whether they ran off or drove off.</p>' +
           '<div class="script">“The attacker was wearing [description] and ran/drove [direction]. I am not going to say another word until my attorney is present.”</div>' +
         '</div>' +
+
         '<div class="card">' +
           '<div class="brand">Step 2 — Call USCCA</div>' +
           '<button class="primary bigAction" type="button" onclick="window.location.href=\\'tel:8776771919\\'">CALL USCCA</button>' +
         '</div>' +
+
         '<div class="card">' +
           '<div class="brand">Important</div>' +
           '<div class="warn">Do not over-explain. Do not argue. Do not speculate. Report the attack or possible attack, provide suspect direction/description, then wait for legal guidance.</div>' +
         '</div>' +
+
         '<button class="secondary bigAction" type="button" onclick="showDashboard()">BACK TO DASHBOARD</button>' +
       '</div>' +
     '</div>';
@@ -1446,13 +2211,15 @@ function openAftermath(){
     '</div>';
 }
 
-if(token) showDashboard(); else showAuth();
+if(token) showDashboard();
+else showAuth();
 </script>
 </body>
 </html>
 `;
 
 app.get("/", (req, res) => res.send(html));
+
 app.use((req, res) => res.send(html));
 
 app.listen(PORT, () => console.log("Running on port " + PORT));
