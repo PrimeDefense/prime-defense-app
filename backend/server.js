@@ -281,7 +281,6 @@ button{padding:15px;border-radius:14px;font-weight:900;border:none;cursor:pointe
 .reciprocityBox{margin-top:14px;background:rgba(0,0,0,.28);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:16px;color:#ddd;line-height:1.5}
 .reciprocityTitle{font-size:21px;font-weight:900;color:white;margin-bottom:10px}
 .reciprocitySub{color:#bbb;font-size:13px;line-height:1.45;margin:8px 0 14px}
-.pillWrap{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 16px}
 .statePill{display:inline-block;padding:8px 10px;border-radius:999px;font-size:12px;font-weight:800;border:1px solid rgba(255,255,255,.12)}
 .statePill.green{background:rgba(34,197,94,.14);color:#8cffb0;border-color:rgba(34,197,94,.35)}
 .statePill.yellow{background:rgba(245,158,11,.14);color:#ffe7b3;border-color:rgba(245,158,11,.35)}
@@ -334,7 +333,7 @@ var reciprocityData = {
   MI: {
     title: "Michigan CPL Reciprocity & Travel Guide",
     verifiedDate: "May 1, 2026",
-    sourceNote: "Modeled after practical reciprocity-map resources: permit recognition first, then state-specific carry cautions. Recognition does not mean identical laws. Follow the law of the state you are physically in.",
+    sourceNote: "Recognition does not mean identical laws. Follow the law of the state you are physically in.",
     recognized: ["AL","AK","AZ","AR","CO","FL","GA","ID","IN","IA","KS","KY","LA","ME","MN","MS","MO","MT","NE","NC","ND","OH","OK","PA","SD","TN","TX","UT","VA","VT","WV","WI","WY"],
     restricted: ["DE","NM","NV","SC","WA"],
     notRecognized: ["CA","CT","HI","IL","MD","MA","NJ","NY","OR","RI"],
@@ -342,8 +341,7 @@ var reciprocityData = {
       "Recognition can depend on residency, age, permit type, and current state law.",
       "A recognized permit does not erase prohibited locations, vehicle carry rules, alcohol/location restrictions, or duty-to-inform requirements.",
       "Before travel, verify destination-state law using official state resources and at least one current reciprocity reference."
-    ],
-    details: {}
+    ]
   }
 };
 
@@ -407,7 +405,7 @@ function getStateDetailHtml(permitState, travelState){
   return '<div class="detailBox">' +
     '<h3>' + travelState + ' — ' + stateName(travelState) + '</h3>' +
     '<span class="detailStatus ' + cls + '">' + statusLabelByStatus(status) + '</span>' +
-    '<p><b>Meaning:</b> This state is categorized based on the current Michigan CPL reciprocity framework in this app. Full CCW Hub-style legal detail is being built state-by-state.</p>' +
+    '<p><b>Meaning:</b> This state is categorized based on the current Michigan CPL reciprocity framework in this app. Full legal detail is being built state-by-state.</p>' +
     '<p><b>Critical carry notes:</b> Verify current permit recognition, prohibited places, vehicle carry, duty-to-inform rules, signage/private property rules, alcohol restrictions, age restrictions, and local restrictions before carrying.</p>' +
     '<p><b>Risk warning:</b> Do not rely on a colored map alone. Confirm current law before travel.</p>' +
     '<p class="small"><b>Disclaimer:</b> Educational field reference only. Not legal advice.</p>' +
@@ -423,7 +421,7 @@ function getReciprocityHtml(state){
   if(!data){
     return '<div class="reciprocityTitle">' + selectedName + ' Permit Profile</div>' +
       '<p><b>Status:</b> State-specific outbound reciprocity data has not been fully verified in the app yet.</p>' +
-      '<p class="reciprocitySub">This state is selectable for permit tracking. The verified reciprocity engine is being built state-by-state so the app does not display fake or unsafe legal information.</p>' +
+      '<p class="reciprocitySub">This state is selectable for permit tracking. The verified reciprocity engine is being built state-by-state.</p>' +
       renderMap(state) +
       getStateDetailHtml(state, selectedMapState) +
       '<div class="warn">Before carrying outside your home state, verify destination-state recognition, prohibited locations, duty-to-inform rules, vehicle carry rules, age restrictions, permit residency requirements, and local restrictions.</div>';
@@ -437,23 +435,12 @@ function getReciprocityHtml(state){
     renderMap(state) +
     getStateDetailHtml(state, selectedMapState) +
     '<div class="reciprocityGrid">' +
-      '<div class="reciprocityPanel">' +
-        '<h3>Recognized</h3>' +
-        '<p class="small">' + data.recognized.length + ' states currently listed.</p>' +
-      '</div>' +
-      '<div class="reciprocityPanel">' +
-        '<h3>Recognized with Restrictions</h3>' +
-        '<p class="small">' + data.restricted.length + ' states currently listed.</p>' +
-      '</div>' +
-      '<div class="reciprocityPanel">' +
-        '<h3>Not Recognized</h3>' +
-        '<p class="small">' + data.notRecognized.length + ' states currently listed.</p>' +
-      '</div>' +
+      '<div class="reciprocityPanel"><h3>Recognized</h3><p class="small">' + data.recognized.length + ' states currently listed.</p></div>' +
+      '<div class="reciprocityPanel"><h3>Recognized with Restrictions</h3><p class="small">' + data.restricted.length + ' states currently listed.</p></div>' +
+      '<div class="reciprocityPanel"><h3>Not Recognized</h3><p class="small">' + data.notRecognized.length + ' states currently listed.</p></div>' +
     '</div>' +
     '<h3>Critical Travel Warnings</h3>' +
-    data.warnings.map(function(w){
-      return '<p class="small">• ' + w + '</p>';
-    }).join('');
+    data.warnings.map(function(w){ return '<p class="small">• ' + w + '</p>'; }).join('');
 }
 
 function selectMapState(abbr){
@@ -607,7 +594,7 @@ async function showDashboard(){
         '<div class="card">' +
           '<div class="brand">MICHIGAN LEGAL GUIDE</div>' +
           '<h2>Michigan CPL & Firearms Law Guide</h2>' +
-          '<p class="small">Educational reference for Michigan CPL holders. Not legal advice.</p>' +
+          '<p class="small">Expanded Michigan legal reference. Not legal advice.</p>' +
           '<button id="miGuideBtn" class="primary" type="button">Open Michigan Legal Guide</button>' +
         '</div>' +
 
@@ -679,38 +666,138 @@ async function saveProfile(){
 function showMichiganLegalGuide(){
   var guideSections = [
     {
-      title: "CPL Renewal & Expiration",
+      title: "Michigan Carry Overview",
       body: [
-        "<b>What the law/source says:</b> Michigan State Police states a CPL renewal may be submitted not more than 6 months before expiration and not more than 1 year after expiration.",
-        "<b>What it means:</b> Do not wait until the last minute. Once you are inside the 6-month window, begin renewal planning.",
-        "<b>Common mistake:</b> Thinking the permit is automatically extended just because a renewal is possible. Renewal eligibility and lawful carry are not the same thing.",
-        "<b>Training note:</b> Track the expiration date, renew early, and keep proof/receipts organized."
+        "<b>Plain English:</b> Michigan allows open carry in many places, but concealed carry generally requires a valid CPL. The biggest legal risks usually involve vehicle carry, prohibited locations, police-contact disclosure, and post-incident statements.",
+        "<b>Core idea:</b> A CPL gives you important legal authority, but it does not let you carry everywhere, ignore private property, or bypass use-of-force law.",
+        "<b>Training note:</b> Do not think in terms of 'Can I carry anywhere?' Think in terms of: Am I licensed? Is this location restricted? Am I in a vehicle? Am I concealing? Is alcohol, school property, court property, or private policy involved?"
+      ],
+      source: "Reference framework: Michigan Firearms Laws publication; MCL 28.425f; MCL 28.425o."
+    },
+    {
+      title: "CPL Basics & Renewal",
+      body: [
+        "<b>What a CPL does:</b> A Michigan CPL allows a qualified license holder to carry a concealed pistol and generally changes what is lawful inside a vehicle.",
+        "<b>What it does not do:</b> It does not override all prohibited premises, federal law, court rules, private property decisions, employer policies, or the laws of other states.",
+        "<b>Renewal timing:</b> Michigan State Police guidance states renewal may be submitted not more than 6 months before expiration and not more than 1 year after expiration.",
+        "<b>Common mistake:</b> Thinking renewal eligibility means you are automatically safe to carry after expiration. Renewal eligibility and lawful carry authority are not the same thing.",
+        "<b>Training note:</b> Track your expiration date early, keep digital and paper reminders, and do not wait until the last month."
       ],
       source: "Reference: Michigan State Police CPL Renewal Information."
+    },
+    {
+      title: "Duty to Disclose / Police Contact",
+      body: [
+        "<b>Core rule:</b> A CPL holder carrying a concealed pistol who is stopped by a peace officer must immediately disclose that they are carrying concealed.",
+        "<b>What to do:</b> Keep your hands visible, disclose calmly, and follow instructions. Do not reach toward the firearm, wallet, glovebox, center console, or permit unless instructed.",
+        "<b>Suggested wording:</b> Officer, I have a CPL and I am currently carrying. How would you like me to proceed?",
+        "<b>Common mistake:</b> Waiting until the officer asks, talking over the officer, reaching too soon, or assuming the officer already knows because of the license plate or database return.",
+        "<b>Training note:</b> Disclosure is not the time to explain your opinions about the law. Be calm, simple, and compliant."
+      ],
+      source: "Reference: MCL 28.425f."
+    },
+    {
+      title: "Open Carry in Michigan",
+      body: [
+        "<b>Plain English:</b> Open carry is generally lawful in Michigan for people who may lawfully possess a firearm, but it is not a universal pass.",
+        "<b>Important:</b> Open carry and concealed carry are treated differently. A firearm that is visible while walking may create different issues once you enter a vehicle, enter a restricted place, or cover the firearm.",
+        "<b>High-risk issue:</b> Open carry in or around schools, certain public places, private businesses, or emotionally charged environments can lead to police contact even when the person believes they are lawful.",
+        "<b>Common mistake:</b> Thinking 'open carry is legal' answers every question. Location, manner of carry, age, possession eligibility, vehicle status, and intent all matter.",
+        "<b>Training note:</b> Legal does not always mean tactically or socially wise. Open carry can draw attention, create complaints, and increase the chance of a police encounter."
+      ],
+      source: "Reference framework: Michigan Firearms Laws publication and MSP open carry guidance."
+    },
+    {
+      title: "Vehicle Carry",
+      body: [
+        "<b>Plain English:</b> Vehicles are one of the most misunderstood parts of Michigan firearm law.",
+        "<b>With CPL:</b> A valid CPL generally allows concealed pistol carry in a vehicle, subject to prohibited places and other restrictions.",
+        "<b>Without CPL:</b> Transport rules are much more restrictive. Generally, the pistol must be unloaded and transported according to Michigan law rather than carried for immediate access.",
+        "<b>Common mistake:</b> Thinking open carry on foot means you can simply get into a car with the pistol accessible without a CPL.",
+        "<b>Training note:</b> Treat vehicles as a separate legal environment. The moment you enter a vehicle, the legal analysis changes."
+      ],
+      source: "Reference framework: Michigan Firearms Laws publication."
+    },
+    {
+      title: "Pistol-Free Zones / Prohibited Premises",
+      body: [
+        "<b>Core rule:</b> MCL 28.425o lists premises where a CPL holder generally may not carry a concealed pistol, subject to statutory language and exceptions.",
+        "<b>Common categories:</b> Schools/school property, public or private day care centers, sports arenas/stadiums, bars/taverns where the primary source of income is alcohol by the glass, places of worship unless permitted by the presiding official, certain entertainment facilities, hospitals, and college/university dormitories/classrooms.",
+        "<b>Important nuance:</b> The exact statutory wording matters. Do not rely on short summaries alone.",
+        "<b>Common mistake:</b> Treating every restricted place the same. A statutory pistol-free zone, a private sign, a school policy, a court rule, and an employer policy are not the same thing.",
+        "<b>Training note:</b> Before entering a sensitive location, pause and ask: Is this prohibited by statute, private policy, workplace rule, school rule, federal law, or court rule?"
+      ],
+      source: "Reference: MCL 28.425o."
+    },
+    {
+      title: "Private Property & No-Gun Signs",
+      body: [
+        "<b>Plain English:</b> A private 'no firearms' sign is not the same thing as a statutory pistol-free zone, but that does not mean you can ignore it without consequence.",
+        "<b>Practical effect:</b> A business or property owner can ask you to leave. If you refuse, the issue can become trespassing.",
+        "<b>Common mistake:</b> Saying 'signs have no force of law' and then acting like there are no consequences. That is the wrong mindset.",
+        "<b>Training note:</b> Do not argue with employees, security, managers, or bystanders. Leave calmly. Decide later whether you want to spend money there."
+      ],
+      source: "Reference framework: Michigan trespass/private property principles; verify current local enforcement."
+    },
+    {
+      title: "Brandishing / Defensive Display",
+      body: [
+        "<b>Core concept:</b> Displaying or exposing a firearm can become legally dangerous if it appears threatening, careless, angry, or unnecessary.",
+        "<b>Defensive display:</b> A firearm may be displayed in a defensive context only when the facts support a lawful defensive need. The danger is that witnesses, cameras, and police may interpret the action differently.",
+        "<b>Common mistake:</b> Saying 'I only showed it to scare him.' That can sound like intimidation rather than lawful defense.",
+        "<b>Training note:</b> If the firearm comes out, there must be an immediate defensive reason. If there is no immediate threat, create distance, leave, call police, and document."
+      ],
+      source: "Reference framework: Michigan brandishing statute and defensive-use principles."
     },
     {
       title: "Use of Force / Deadly Force — MCL 780.972",
       body: [
         "<b>Core rule:</b> Deadly force may be used only when a person honestly and reasonably believes it is necessary to prevent imminent death, great bodily harm, or sexual assault.",
-        "<b>Honest belief:</b> You genuinely believed the danger was real.",
-        "<b>Reasonable belief:</b> A reasonable person in the same situation would likely see the same danger.",
-        "<b>Imminent threat:</b> The danger must be happening now or immediately about to happen.",
-        "<b>Necessity:</b> Deadly force must be necessary to stop the threat.",
-        "<b>MCL 780.972(2) — Defense of others:</b> Deadly force may be used to protect another person under the same standards. The threshold is not lower just because someone else is in danger.",
-        "<b>Important:</b> If you misunderstand the situation, even with good intentions, you may still face serious legal consequences.",
-        "<b>Common mistakes:</b> Using a firearm to protect property only; acting out of anger; intervening in third-party situations without knowing who the aggressor is; assuming Stand Your Ground removes all legal scrutiny.",
-        "<b>Training insight:</b> The issue is whether your actions were necessary, reasonable, and clearly tied to an immediate threat."
+        "<b>Honest belief:</b> You actually believed the danger was real.",
+        "<b>Reasonable belief:</b> A reasonable person in the same situation would likely understand the danger the same way.",
+        "<b>Imminent threat:</b> The danger must be happening now or immediately about to happen. A past threat, future threat, insult, or vague fear is not enough.",
+        "<b>Necessity:</b> Deadly force must be necessary to stop the threat. It is not punishment, payback, warning, or control.",
+        "<b>Defense of others:</b> MCL 780.972 also covers defense of another person, but the standard is not lower. You must reasonably believe that person faces imminent death, great bodily harm, or sexual assault.",
+        "<b>Major warning:</b> You cannot use deadly force merely to protect property. Property crimes and deadly-force threats are different legal categories.",
+        "<b>Training note:</b> The legal question is not whether you were scared. The legal question is whether the facts support an honest and reasonable belief that deadly force was immediately necessary."
       ],
       source: "Reference: MCL 780.972."
     },
     {
-      title: "After a Defensive Gun Use",
+      title: "Stand Your Ground / No Duty to Retreat",
       body: [
-        "<b>Immediate priorities:</b> Get to safety, call 911, request police and medical, identify yourself as the caller when appropriate, follow commands, and avoid detailed statements until legal counsel is involved.",
-        "<b>What to avoid:</b> Do not argue, speculate, exaggerate, discuss details with bystanders, post online, consent to broad searches without counsel, or make repeated statements while under adrenaline.",
-        "<b>Training note:</b> The goal is to report the emergency, preserve safety, preserve evidence, identify witnesses if necessary, and protect legal rights."
+        "<b>Plain English:</b> Michigan law may remove the duty to retreat in certain lawful self-defense circumstances, but it does not remove the requirement that force be lawful, necessary, and reasonable.",
+        "<b>Common mistake:</b> Thinking 'stand your ground' means you can escalate, chase, re-engage, or use deadly force over pride, anger, or property.",
+        "<b>Training note:</b> Avoidance is still powerful evidence. If you safely avoided the confrontation before it became deadly, that often helps. If you escalated it, chased someone, or continued the fight, that can hurt."
       ],
-      source: ""
+      source: "Reference framework: Michigan Self-Defense Act, including MCL 780.972 and related sections."
+    },
+    {
+      title: "What Gets People Charged",
+      body: [
+        "• Carrying in a prohibited location.",
+        "• Failing to disclose during police contact.",
+        "• Mishandling a firearm in a vehicle.",
+        "• Displaying a gun during an argument.",
+        "• Intervening in a third-party fight without knowing who the aggressor is.",
+        "• Using a firearm to protect property only.",
+        "• Talking too much after an incident.",
+        "• Posting online after a defensive incident.",
+        "• Giving inconsistent statements while under adrenaline.",
+        "<b>Training note:</b> Many cases are damaged after the incident by statements, behavior, and poor decision-making."
+      ],
+      source: "Training reference: Prime Defense legal-risk framework."
+    },
+    {
+      title: "After a Defensive Incident",
+      body: [
+        "<b>First:</b> Get safe. Call 911. Request police and medical. Follow commands.",
+        "<b>Second:</b> Identify the threat, evidence, and witnesses if necessary.",
+        "<b>Third:</b> Request counsel before detailed questioning.",
+        "<b>Do not:</b> Argue, speculate, exaggerate, talk to bystanders, post online, or give repeated statements.",
+        "<b>Training note:</b> Adrenaline can distort memory. A short, accurate, rights-protecting statement is safer than a detailed emotional explanation."
+      ],
+      source: "Training reference: Prime Defense aftermath protocol."
     },
     {
       title: "Final Disclaimer",
@@ -726,7 +813,7 @@ function showMichiganLegalGuide(){
     '<div class="hero">' +
       '<div class="brand">MICHIGAN LEGAL GUIDE</div>' +
       '<h1>Michigan CPL Field Guide</h1>' +
-      '<p class="subtitle">Detailed Michigan CPL and firearms law reference. Educational only. Not legal advice.</p>' +
+      '<p class="subtitle">Expanded Michigan firearms law reference built for practical CPL decision-making. Educational only. Not legal advice.</p>' +
       '<div class="actions">' +
         '<button class="secondary" type="button" onclick="showDashboard()">Back to Dashboard</button>' +
         '<button class="secondary" type="button" onclick="openEmergency()">Emergency Mode</button>' +
