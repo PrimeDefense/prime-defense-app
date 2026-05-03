@@ -1242,319 +1242,271 @@ var stateLawData = {
     ]
   ),
 
-      OH: makeProfile(
+       OH: makeProfile(
     "Ohio",
-    "Ultra Expanded Travel State",
-    "Ohio is one of the most important travel states for Michigan CPL holders because it borders Michigan, is frequently traveled by Prime Defense students, and has major differences from Michigan law. Ohio has permitless concealed carry for a qualifying adult, but that does not mean carry is consequence-free. Members must still understand eligibility, restricted locations, school safety zones, vehicle carry, police-contact expectations, private property, alcohol-related locations, federal property, and use-of-force realities.",
+    "Law-Backed Ultra Expanded Travel State",
+    "Ohio is one of the most important travel states for Michigan CPL holders because it borders Michigan and has major differences from Michigan law. Ohio allows permitless concealed carry for a qualifying adult, but that does not mean carry is rule-free. This Ohio profile is organized by statute first, then plain-English meaning, then practical caution.",
     {
-      reciprocity: "Michigan CPL treated as recognized in this app travel engine; Ohio also has permitless concealed carry for a qualifying adult.",
-      permitlessCarry: "Ohio allows a qualifying adult to carry a concealed handgun without obtaining an Ohio concealed handgun license. The person must still meet Ohio eligibility rules.",
-      concealedCarry: "Concealed carry may be lawful for a qualifying adult, but restricted places, sobriety, eligibility, and conduct still matter.",
-      openCarry: "Ohio generally recognizes open carry, but open carry can still create practical risk, police contact, private-property issues, and restricted-location problems.",
-      vehicleCarry: "Vehicle carry can be lawful, but traffic stops are high-risk. Keep hands visible, do not reach, and answer truthfully if asked whether you are carrying.",
-      dutyToInform: "Ohio is not the same as Michigan. Ohio no longer uses the old automatic prompt-notification model, but if an officer asks whether you are carrying, answer truthfully and calmly.",
-      privateSigns: "Ohio private businesses may post against firearms. If asked to leave, leave immediately and do not turn a carry issue into trespass.",
-      forceLaw: "Ohio self-defense law may be favorable to defenders, but deadly force must still be reasonable, necessary, and tied to an imminent unlawful threat."
+      reciprocity: "Michigan CPL treated as recognized in this app travel engine. Ohio also allows permitless concealed carry for a qualifying adult.",
+      permitlessCarry: "Law cite: ORC 2923.111. A qualifying adult is not required to obtain a concealed handgun license to carry a concealed handgun that is not a restricted firearm.",
+      concealedCarry: "Law cite: ORC 2923.111 and ORC 2923.126. Concealed carry may be lawful, but eligibility and restricted-location rules still apply.",
+      openCarry: "Ohio generally recognizes open carry, but restricted locations, vehicles, private property, and police-contact issues still matter.",
+      vehicleCarry: "Law cite: ORC 2923.111 and ORC 2923.126 framework. Vehicle carry may be lawful, but traffic-stop behavior is critical.",
+      dutyToInform: "Ohio is not Michigan. Ohio no longer uses the same automatic prompt-notification model, but if an officer asks whether you are carrying, answer truthfully and calmly.",
+      privateSigns: "Law cite: ORC 2923.126. Private businesses may prohibit firearms on their premises. Leave immediately if asked.",
+      forceLaw: "Ohio self-defense law may be favorable to lawful defenders, but force must still be reasonable, necessary, and tied to an imminent unlawful threat."
     },
     [
-      "Ohio is not Michigan. Do not use Michigan disclosure, vehicle, school, alcohol, or prohibited-place assumptions while traveling in Ohio.",
-      "Ohio permitless concealed carry applies to a qualifying adult. That generally means age and eligibility still matter.",
-      "Permitless carry does not erase restricted locations, school safety zones, private property, alcohol-related restrictions, courthouse restrictions, federal property rules, or officer-safety concerns.",
-      "Traffic stops are still high-risk. Keep hands visible, do not reach, and answer truthfully if asked whether you are carrying.",
-      "A Michigan CPL may still be useful documentation even in a permitless carry state, especially for travel, reciprocity, and proof of training/background-check status.",
-      "Private signs and verbal instructions should be handled calmly. Leave if asked. Do not turn a carry issue into a trespass, disorderly conduct, or public-relations problem.",
-      "Ohio has strong self-defense concepts, but slogans like 'constitutional carry' and 'stand your ground' do not replace reasonableness, imminence, necessity, and good judgment."
+      "Ohio law should be read from the statute first, then explained in plain English.",
+      "Ohio permitless carry applies to a qualifying adult; it does not protect prohibited persons or people who do not meet Ohio’s eligibility standards.",
+      "Permitless carry does not override prohibited places, school safety zones, courthouses, liquor-premises restrictions, federal property, private property signs, or police-contact safety concerns.",
+      "A Michigan CPL may still be useful documentation, but Ohio law controls while you are physically in Ohio.",
+      "For every Ohio topic in this app, the rule should be tied to a statute or official legal source where possible."
     ],
     [
       {
-        title: "Ohio Permitless Carry / Qualifying Adult Rule",
+        title: "Permitless Carry / Qualifying Adult",
         risk: "Eligibility Required",
+        lawCite: "Ohio Revised Code 2923.111",
+        lawText: [
+          "ORC 2923.111 states that a person who is a qualifying adult shall not be required to obtain a concealed handgun license in order to carry a concealed handgun that is not a restricted firearm.",
+          "The statute also says qualifying-adult carry is treated in many places as if the person had been issued a valid concealed handgun license."
+        ],
+        plainEnglish: [
+          "Ohio allows permitless concealed carry, but only for a qualifying adult.",
+          "This does not mean everyone can carry. The person must still be legally eligible.",
+          "A prohibited person, intoxicated person, underage person, or otherwise disqualified person cannot rely on permitless carry."
+        ],
         body: [
           "Ohio allows a qualifying adult to carry a concealed handgun without obtaining a concealed handgun license.",
           "This does not mean everyone may carry. Ohio law uses the term qualifying adult, and the person must still satisfy Ohio eligibility requirements.",
-          "A qualifying adult must not be prohibited from possessing or receiving a firearm under applicable state or federal law.",
           "The handgun also cannot be a restricted firearm under the relevant Ohio framework.",
           "The biggest mistake is thinking permitless means ruleless. It does not.",
           "Prime Defense field rule: before carrying in Ohio, ask: Am I old enough, eligible, sober, legally allowed to possess, and in a lawful location?"
         ],
-        source: "Ohio Revised Code 2923.111."
+        source: "ORC 2923.111. Ohio permitless carry took effect June 13, 2022. See Ohio Attorney General concealed carry guidance."
       },
       {
-        title: "Michigan CPL Recognition in Ohio",
-        risk: "Travel Context",
-        body: [
-          "For Michigan travelers, Ohio should be treated as a recognized state in this app travel engine.",
-          "Because Ohio also has permitless carry for qualifying adults, some users may think the Michigan CPL no longer matters. That is the wrong mindset.",
-          "A Michigan CPL can still be useful documentation, may matter when traveling beyond Ohio, and may help clarify the user's training and licensing background.",
-          "A Michigan CPL does not make Ohio law disappear. Once physically in Ohio, the user must follow Ohio law.",
-          "Recognition does not override restricted places, school safety zones, vehicle rules, alcohol rules, private property signs, or police-contact rules.",
-          "Prime Defense field rule: recognition is only the beginning. The state you are standing in controls the rules."
-        ],
-        source: "Ohio reciprocity and concealed carry framework; Michigan outbound reciprocity warning."
-      },
-      {
-        title: "Concealed Carry in Ohio",
-        risk: "Core Carry Rule",
-        body: [
-          "Ohio permitless concealed carry is built around qualifying-adult status.",
-          "A person who is disqualified under state or federal law cannot use permitless carry as a workaround.",
-          "A person carrying concealed still needs to avoid restricted locations and unlawful conduct.",
-          "Carrying concealed while intoxicated, carrying in a prohibited location, carrying during criminal activity, or carrying while otherwise disqualified can create serious consequences.",
-          "Do not confuse lawful carry with smart carry. Good judgment still matters.",
-          "Prime Defense field rule: carrying concealed in Ohio is not just about whether you can carry; it is about whether you can lawfully carry here, now, in this condition, and in this manner."
-        ],
-        source: "Ohio Revised Code 2923.111; Ohio Revised Code Chapter 2923 framework."
-      },
-      {
-        title: "Open Carry in Ohio",
-        risk: "Lawful Does Not Always Mean Smart",
-        body: [
-          "Ohio generally recognizes open carry, but open carry can still create practical and legal risk.",
-          "Open carry may alarm the public, trigger police contact, attract attention, or create tension in private businesses even if the conduct is otherwise lawful.",
-          "Open carry rules can interact with vehicles, restricted premises, private property, event rules, schools, and local emergency circumstances.",
-          "Open carry is not a tool for testing boundaries, making political points in sensitive areas, or forcing confrontations with staff/security.",
-          "Prime Defense field rule: lawful open carry does not automatically mean tactically wise carry. Consider whether open carry increases or decreases safety in the actual environment."
-        ],
-        source: "Ohio firearms law framework; Ohio Revised Code Chapter 2923."
-      },
-      {
-        title: "Ohio Vehicle Carry",
-        risk: "Traffic Stop Risk",
-        body: [
-          "Vehicle carry is one of the most important Ohio topics for Michigan travelers because most Prime Defense members will enter Ohio by car.",
-          "A qualifying adult may have lawful carry options in a vehicle, but the driver and passengers still need to understand Ohio's vehicle and possession rules.",
-          "Traffic stops are one of the most dangerous practical moments for lawful carriers because hands, movement, documents, and firearm location all matter.",
-          "Keep hands visible. Do not reach for your firearm, wallet, registration, insurance, glove box, purse, console, backpack, or phone until the officer gives clear instructions.",
-          "If an officer asks whether you are carrying, answer truthfully and calmly.",
-          "Good wording: Officer, I am lawfully carrying. How would you like me to proceed?",
-          "Prime Defense field rule: in a traffic stop, your hands and your behavior matter as much as the law."
-        ],
-        source: "Ohio concealed carry and vehicle carry framework; Ohio Attorney General concealed carry guidance."
-      },
-      {
-        title: "Ohio Police Contact / Notification",
-        risk: "Different From Michigan",
-        body: [
-          "Michigan CPL holders are used to Michigan's immediate-disclosure rule. Ohio should not be treated as identical.",
-          "Ohio law changed with permitless carry. The modern Ohio framework is different from the old prompt-notification model.",
-          "Even if automatic immediate notification is not required in the same way, safest practice is still calm cooperation, visible hands, no reaching, and truthful answers.",
-          "If asked whether you are carrying, do not lie, joke, argue, make sudden movements, or try to explain the law during the stop.",
-          "Recommended wording: Officer, I am lawfully carrying. How would you like me to proceed?",
-          "Prime Defense field rule: do not be cute during a traffic stop. Calm, clear, truthful, and motionless is the goal."
-        ],
-        source: "Ohio Attorney General concealed carry guidance; Ohio permitless carry changes effective June 13, 2022."
-      },
-      {
-        title: "Ohio Prohibited Places",
+        title: "Concealed Carry Restrictions / Places You Still Cannot Carry",
         risk: "Major Location Restriction",
+        lawCite: "Ohio Revised Code 2923.126",
+        lawText: [
+          "ORC 2923.126 lists duties and restrictions for licensed carry and identifies locations where carry remains restricted.",
+          "The statute references school safety zones, courthouse/courtroom buildings, certain government and law-enforcement locations, correctional facilities, airport passenger terminals, places of worship unless permitted, and posted private property."
+        ],
+        plainEnglish: [
+          "Even if Ohio recognizes your Michigan CPL or you qualify for permitless carry, you still cannot carry everywhere.",
+          "The map being green does not mean the building, school, courthouse, event, or business is lawful.",
+          "Restricted places must be checked separately."
+        ],
         body: [
           "Ohio still restricts carry in certain places even though it has permitless carry.",
-          "Ohio Revised Code 2923.126 addresses duties and restrictions tied to concealed handgun carry authority.",
-          "High-risk locations include school safety zones, courthouses or courtrooms, certain government buildings, law enforcement facilities, correctional or detention facilities, secure airport areas, and certain alcohol-related premises.",
-          "Other restrictions can come from federal law, posted private property, employer rules, event rules, security screening, and specific property control.",
+          "High-risk locations include school safety zones, courthouses or courtrooms, certain government buildings, law enforcement facilities, correctional or detention facilities, secure airport areas, certain alcohol-related premises, places of worship unless permitted, and posted private property.",
+          "Other restrictions can come from federal law, employer rules, event rules, security screening, and specific property control.",
           "A concealed handgun license or permitless carry status does not authorize carry into every location.",
           "Prime Defense field rule: if the destination is school-related, court-related, government-related, law-enforcement-related, correctional, airport-related, alcohol-centered, federal, posted, or security-controlled, stop and verify before entering."
         ],
-        source: "Ohio Revised Code 2923.126."
+        source: "ORC 2923.126."
       },
       {
-        title: "Ohio School Safety Zones",
+        title: "School Safety Zones",
         risk: "Extreme Risk Area",
+        lawCite: "Ohio Revised Code 2923.122",
+        lawText: [
+          "ORC 2923.122 addresses illegal conveyance or possession of a deadly weapon or dangerous ordnance in a school safety zone.",
+          "School safety zones can include school property, school buildings, and school activities as defined by Ohio law."
+        ],
+        plainEnglish: [
+          "Schools are not a casual carry area in Ohio.",
+          "Do not assume your Michigan CPL or Ohio permitless carry automatically makes school property lawful.",
+          "Parking lots, school events, and vehicle presence can create legal risk."
+        ],
         body: [
           "School safety zones are one of the easiest areas for travelers to misunderstand.",
-          "Ohio law separately addresses illegal conveyance or possession of a deadly weapon, dangerous ordnance, or an object indistinguishable from a firearm in a school safety zone.",
-          "School safety zones can involve school buildings, school premises, school activities, and areas defined under Ohio law.",
+          "Ohio law separately addresses possession or conveyance of weapons in a school safety zone.",
           "Do not assume that staying in the car, staying in a parking lot, or having a Michigan CPL automatically solves the issue.",
           "Federal school-zone law may also be relevant depending on the facts.",
           "Prime Defense field rule: if any school property, school event, school parking area, school activity, student transportation, or school-controlled property is involved, verify the exact current rule before entering armed."
         ],
-        source: "Ohio Revised Code 2923.122."
+        source: "ORC 2923.122; federal school-zone framework."
       },
       {
-        title: "Ohio Courthouses / Courtrooms",
+        title: "Liquor Permit Premises / Alcohol Locations",
+        risk: "Alcohol Location Risk",
+        lawCite: "Ohio Revised Code 2923.121",
+        lawText: [
+          "ORC 2923.121 states that no person shall possess a firearm in any room in which any person is consuming beer or intoxicating liquor in a premises for which a D permit has been issued, unless an exception applies."
+        ],
+        plainEnglish: [
+          "Ohio alcohol-location rules are easy to misunderstand.",
+          "The issue is not just whether a place sells alcohol. The type of permit, whether alcohol is being consumed, whether an exception applies, and whether the person is drinking all matter.",
+          "Do not carry while intoxicated or impaired."
+        ],
+        body: [
+          "Ohio has specific rules involving firearms and certain liquor-permit premises.",
+          "The key question is not simply whether alcohol is present. The type of premises, permit status, whether the person is consuming, and the exact statutory exception all matter.",
+          "Never carry while intoxicated or impaired.",
+          "Do not assume a restaurant, bar, brewery, stadium, festival, or event is lawful without checking the rule.",
+          "Prime Defense field rule: alcohol and defensive carry do not mix. If alcohol is part of the plan, carrying should not be."
+        ],
+        source: "ORC 2923.121."
+      },
+      {
+        title: "Courthouses / Courtrooms",
         risk: "Hard Stop Area",
+        lawCite: "Ohio Revised Code 2923.123 and ORC 2923.126",
+        lawText: [
+          "ORC 2923.126 references courthouse and courtroom restrictions.",
+          "ORC 2923.123 addresses illegal conveyance or possession of a deadly weapon or dangerous ordnance into a courthouse."
+        ],
+        plainEnglish: [
+          "Do not bring a firearm into a courthouse or courtroom building unless you know a clear legal exception applies.",
+          "Court buildings are not places to guess.",
+          "Security screening, signs, and law enforcement presence make this a high-risk area."
+        ],
         body: [
           "Courthouses and buildings or structures with courtrooms are major restricted areas under Ohio law.",
           "Do not bring a firearm or defensive tool into a courthouse, courtroom building, or security-screened court facility unless a specific lawful exception clearly applies.",
           "Court buildings often have security screening, posted signs, metal detectors, and law enforcement presence.",
-          "Do not assume a license, permitless carry status, or lack of signage makes a court facility lawful.",
           "Prime Defense field rule: court-related buildings are not places to guess. Secure the firearm lawfully before arrival or do not bring it."
         ],
-        source: "Ohio Revised Code 2923.123; Ohio Revised Code 2923.126."
+        source: "ORC 2923.123; ORC 2923.126."
       },
       {
-        title: "Ohio Alcohol / Liquor Permit Premises",
-        risk: "Alcohol Location Risk",
-        body: [
-          "Ohio has specific rules involving firearms and certain premises with liquor permits.",
-          "The key question is not simply whether alcohol is present. The type of premises, the permit status, whether the person is consuming, and the exact statutory restriction all matter.",
-          "Never carry while intoxicated or impaired.",
-          "Do not assume a restaurant, bar, brewery, stadium, festival, or event is lawful without checking the rule.",
-          "Even if carry may be lawful in some restaurant contexts, mixing alcohol and defensive carry creates legal, tactical, and judgment risk.",
-          "Prime Defense field rule: alcohol and defensive carry do not mix. If alcohol is part of the plan, carrying should not be."
+        title: "Police Stations / Correctional Facilities / Government Security",
+        risk: "Restricted Facility Risk",
+        lawCite: "Ohio Revised Code 2923.126",
+        lawText: [
+          "ORC 2923.126 includes restrictions involving law-enforcement facilities, correctional institutions, detention facilities, and certain government buildings."
         ],
-        source: "Ohio Revised Code 2923.121; Ohio Revised Code 2923.126."
+        plainEnglish: [
+          "Police stations, jails, prisons, detention facilities, and secure government buildings are high-risk locations.",
+          "Do not walk into these places armed just because you have a Michigan CPL or qualify under Ohio permitless carry.",
+          "If the facility is security-controlled, verify before arrival."
+        ],
+        body: [
+          "Government buildings, law-enforcement facilities, jails, detention facilities, and correctional facilities can carry strict restrictions.",
+          "Correctional and detention environments can involve laws beyond the concealed-carry statute.",
+          "Do not bring a firearm into a police station, sheriff's office, jail, detention facility, correctional facility, or secure government building without confirming a clear lawful exception.",
+          "Prime Defense field rule: if the building is controlled by government security, court security, police, jail, prison, detention, or corrections operations, assume high risk and verify before arrival."
+        ],
+        source: "ORC 2923.126; Ohio correctional facility framework."
       },
       {
-        title: "Ohio Private Property / Signs",
+        title: "Private Property / Posted Businesses",
         risk: "Trespass and Property Control",
+        lawCite: "Ohio Revised Code 2923.126",
+        lawText: [
+          "ORC 2923.126 allows private employers and private property owners to post signs prohibiting persons from carrying firearms or concealed firearms onto the property."
+        ],
+        plainEnglish: [
+          "Private property owners can set firearm rules for their property.",
+          "A posted business or instruction to leave should be taken seriously.",
+          "Do not argue with staff or security."
+        ],
         body: [
           "Ohio private businesses may choose to post signs prohibiting firearms on their premises.",
           "A private sign may not always operate the same way as a statutory prohibited place, but ignoring a property owner's instructions can create trespass or removal risk.",
           "Do not argue with staff, security, managers, church leaders, event workers, or property owners.",
           "If asked to leave, leave calmly and immediately.",
-          "Do not turn a policy disagreement into disorderly conduct, trespass, brand damage, or a viral video.",
           "Prime Defense field rule: a private-property disagreement is not worth a criminal case, a scene, or a reputation problem."
         ],
-        source: "Ohio Revised Code 2923.126; Ohio private property and trespass framework."
+        source: "ORC 2923.126; Ohio Investigative Unit firearms/signage guidance."
       },
       {
-        title: "Ohio Government Buildings / Police / Correctional Facilities",
-        risk: "Restricted Facility Risk",
-        body: [
-          "Government buildings, law-enforcement facilities, jails, detention facilities, and correctional facilities can carry strict restrictions.",
-          "Correctional and detention environments can involve laws beyond the concealed-carry statute.",
-          "Do not bring a firearm into a police station, sheriff's office, jail, detention facility, correctional facility, or secure government building without confirming a clear lawful exception.",
-          "Many of these locations are security-controlled and may involve screening, posted signs, lockers, or immediate law enforcement contact.",
-          "Prime Defense field rule: if the building is controlled by government security, court security, police, jail, prison, detention, or corrections operations, assume high risk and verify before arrival."
+        title: "Vehicle Carry / Traffic Stops",
+        risk: "Traffic Stop Risk",
+        lawCite: "Ohio Revised Code 2923.111 and ORC 2923.126 framework",
+        lawText: [
+          "Ohio permitless carry law treats a qualifying adult carrying a non-restricted concealed handgun similarly to a person issued a concealed handgun license in many Revised Code provisions.",
+          "Ohio law and Attorney General guidance should be checked for the current duties during police contact."
         ],
-        source: "Ohio Revised Code 2923.126; Ohio correctional facility framework."
+        plainEnglish: [
+          "Vehicle carry may be lawful, but traffic stops are high-risk.",
+          "The law matters, but your hands and movements matter too.",
+          "If asked whether you are carrying, answer truthfully."
+        ],
+        body: [
+          "Vehicle carry is one of the most important Ohio topics for Michigan travelers because most Prime Defense members will enter Ohio by car.",
+          "A qualifying adult may have lawful carry options in a vehicle, but the driver and passengers still need to understand Ohio's vehicle and possession rules.",
+          "Keep hands visible. Do not reach for your firearm, wallet, registration, insurance, glove box, purse, console, backpack, or phone until the officer gives clear instructions.",
+          "Good wording: Officer, I am lawfully carrying. How would you like me to proceed?",
+          "Prime Defense field rule: in a traffic stop, your hands and your behavior matter as much as the law."
+        ],
+        source: "ORC 2923.111; ORC 2923.126; Ohio Attorney General concealed carry guidance."
       },
       {
-        title: "Ohio Federal Property / Post Offices",
+        title: "Federal Property / Post Offices",
         risk: "Federal Law Overlay",
+        lawCite: "Federal law; not controlled by Ohio carry permission",
+        lawText: [
+          "State carry permission does not override federal restrictions on federal property."
+        ],
+        plainEnglish: [
+          "A Michigan CPL and Ohio permitless carry do not control federal property.",
+          "Post offices, federal courthouses, and secure federal buildings must be checked separately.",
+          "Do not use an Ohio-only analysis for federal property."
+        ],
         body: [
           "A Michigan CPL and Ohio permitless carry do not override federal property restrictions.",
           "Post offices, federal buildings, secure federal facilities, federal courthouses, and certain federal lands or offices can be controlled by federal law.",
           "A state carry law analysis is not enough when federal property is involved.",
-          "Do not use Ohio permitless carry as a reason to ignore federal rules or posted federal property warnings.",
           "Prime Defense field rule: if the property is federal, stop and verify federal law separately."
         ],
         source: "Federal facility and postal property framework."
       },
       {
-        title: "Ohio Workplace / Employer Rules",
-        risk: "Policy and Property Risk",
-        body: [
-          "Employer rules can restrict what employees may do at work or on company property.",
-          "A carry law may not protect a job, contract, company credential, or workplace access if the employer has policies against firearms or defensive tools.",
-          "Parking-lot rules, company vehicle rules, customer site rules, and contractor rules can all matter.",
-          "Do not assume that a carry right automatically overrides employment consequences.",
-          "Prime Defense field rule: separate the criminal-law question from the employment-policy question. You may avoid charges but still lose access, credentials, or employment."
-        ],
-        source: "Ohio employment/property policy framework."
-      },
-      {
-        title: "Ohio Magazine / Ammunition Issues",
-        risk: "Usually Lower Than High-Restriction States, Still Verify",
-        body: [
-          "Ohio is not typically treated like the high-restriction states for magazine and ammunition restrictions, but travelers should still verify current law before travel.",
-          "Do not assume that every firearm type, magazine, accessory, or ammunition configuration is lawful in every city, event, or restricted location.",
-          "If traveling beyond Ohio into another state, the next state's rules may be drastically different.",
-          "This matters for Michigan travelers passing through Ohio into Pennsylvania, West Virginia, Kentucky, Indiana, or farther east.",
-          "Prime Defense field rule: even when a state is generally permissive, verify your actual equipment before a multi-state trip."
-        ],
-        source: "Ohio firearms law framework; multi-state travel best practice."
-      },
-      {
-        title: "Ohio Use of Force / Self-Defense",
+        title: "Use of Force / Self-Defense",
         risk: "Slogans Are Not Law",
+        lawCite: "Ohio self-defense statutes and case law framework",
+        lawText: [
+          "Ohio self-defense law should be verified from current Ohio statutes and jury-instruction/case-law guidance before relying on a summary."
+        ],
+        plainEnglish: [
+          "Ohio may be favorable to lawful defenders, but self-defense still depends on facts.",
+          "Deadly force is not for insults, property disputes, road rage, warning shots, punishment, or intimidation.",
+          "Reasonableness still matters."
+        ],
         body: [
           "Ohio has important self-defense protections, but every defensive-force case is still judged on facts.",
           "The person claiming self-defense must still be dealing with an unlawful threat, and the force used must fit the threat.",
           "Deadly force is not for insults, property disputes, road rage, ego fights, warning shots, punishment, or intimidation.",
           "Avoidance, disengagement, creating distance, and calling 911 can still help show reasonableness.",
-          "A no-duty-to-retreat concept does not mean a right to escalate or chase.",
           "Prime Defense field rule: the winning self-defense case is usually the one where the defender avoided everything they safely could before force became necessary."
         ],
-        source: "Ohio self-defense framework."
-      },
-      {
-        title: "Ohio Defensive Display / No Shots Fired",
-        risk: "Can Still Create Charges",
-        body: [
-          "Displaying a firearm or defensive tool without firing can still create legal risk if it is not tied to a legitimate imminent threat.",
-          "A bad defensive display may be framed as menacing, aggravated menacing, disorderly conduct, assault, or improper handling depending on the facts.",
-          "Do not display to win an argument, scare someone, stop a verbal insult, protect pride, or end a non-deadly dispute.",
-          "If you lawfully display because of a real threat, call 911 first and report the attack or attempted attack.",
-          "Prime Defense field rule: if the only reason for display is to scare someone, you are in dangerous legal territory."
-        ],
-        source: "Ohio criminal law framework; Prime Defense defensive display protocol."
-      },
-      {
-        title: "Ohio Aftermath / Calling 911",
-        risk: "Words Become Evidence",
-        body: [
-          "After a defensive incident in Ohio, call 911 once safe and report the emergency.",
-          "Identify yourself as the person who was attacked or threatened.",
-          "Request police and medical if needed.",
-          "Identify the attacker, evidence, and witnesses when necessary, but do not give a long detailed statement under adrenaline.",
-          "Use a short statement: I was attacked. I will cooperate fully after I speak with counsel.",
-          "Prime Defense field rule: short, factual, rights-protecting communication is better than emotional storytelling."
-        ],
-        source: "Prime Defense aftermath protocol; general self-defense best practice."
+        source: "Ohio self-defense framework. Verify current Ohio statutory and case-law guidance."
       }
     ],
     [
       {
         title: "Can I Carry Here in Ohio?",
         steps: [
-          "1. Am I a qualifying adult under Ohio law?",
-          "2. Am I legally allowed to possess today?",
-          "3. Am I sober and unimpaired?",
-          "4. Is this a prohibited place under Ohio law?",
-          "5. Is this school-related, court-related, law-enforcement-related, correctional, government-controlled, airport-secure, alcohol-related, federal, posted, employer-controlled, or security-controlled?",
-          "6. Am I in a vehicle, and do I know Ohio vehicle carry rules?",
-          "7. If any answer is uncertain, do not enter armed until verified."
+          "1. Check ORC 2923.111: Am I a qualifying adult?",
+          "2. Check ORC 2923.126: Is this a restricted location?",
+          "3. Check ORC 2923.122: Is this a school safety zone?",
+          "4. Check ORC 2923.123: Is this courthouse or courtroom related?",
+          "5. Check ORC 2923.121: Is this a liquor-permit premises issue?",
+          "6. Check private-property signs and instructions.",
+          "7. Check whether federal property is involved.",
+          "8. If any answer is uncertain, do not enter armed until verified."
         ]
       },
       {
         title: "Ohio Traffic Stop Script",
         steps: [
           "1. Pull over safely.",
-          "2. Turn the vehicle off if appropriate.",
-          "3. Keep both hands visible.",
-          "4. Do not reach for anything until instructed.",
-          "5. If asked whether you are carrying, answer truthfully.",
-          "6. Recommended wording: Officer, I am lawfully carrying. How would you like me to proceed?",
-          "7. Follow instructions calmly and slowly."
-        ]
-      },
-      {
-        title: "Ohio Private Property Decision",
-        steps: [
-          "1. Look for posted signs before entering.",
-          "2. Consider whether the property is a statutory prohibited place or a private restriction.",
-          "3. If asked to leave, leave immediately.",
-          "4. Do not debate staff or security.",
-          "5. Decide later whether you want to support that business."
-        ]
-      },
-      {
-        title: "Ohio Alcohol Decision",
-        steps: [
-          "1. Am I entering a bar, brewery, restaurant, stadium, festival, or alcohol-centered event?",
-          "2. Am I consuming alcohol?",
-          "3. Is the location under a liquor permit or other alcohol-related restriction?",
-          "4. Is carry prohibited by statute, sign, event rule, or private property instruction?",
-          "5. If alcohol is part of the plan, do not carry."
-        ]
-      },
-      {
-        title: "Ohio School Zone Decision",
-        steps: [
-          "1. Is any school building, property, parking area, activity, transportation, or school-controlled area involved?",
-          "2. Am I relying on permitless carry, a Michigan CPL, or some other authority?",
-          "3. Does Ohio law allow my exact conduct in this exact area?",
-          "4. Does federal school-zone law add another layer?",
-          "5. If uncertain, do not enter armed."
+          "2. Keep both hands visible.",
+          "3. Do not reach for anything until instructed.",
+          "4. If asked whether you are carrying, answer truthfully.",
+          "5. Recommended wording: Officer, I am lawfully carrying. How would you like me to proceed?",
+          "6. Follow instructions calmly and slowly."
         ]
       }
     ],
     [
       {
         title: "Michigan Driver Pulled Over in Ohio",
-        summary: "A lawful carrier is nervous, and their documents are near the firearm. This is where a lawful stop can become dangerous.",
+        summary: "The law may allow carry, but movement during a traffic stop can create danger.",
         guidance: [
           "Hands visible.",
           "No reaching.",
@@ -1565,10 +1517,10 @@ var stateLawData = {
       },
       {
         title: "Restaurant With Alcohol",
-        summary: "The location serves alcohol, but the exact rule depends on the type of premises, whether the person is drinking, and whether signs or statutory restrictions apply.",
+        summary: "Ohio alcohol-location rules depend on the type of premises, whether alcohol is being consumed, and whether an exception applies.",
         guidance: [
+          "Check ORC 2923.121.",
           "Do not drink while armed.",
-          "Check the location type.",
           "Check signs.",
           "Leave if asked."
         ]
@@ -1577,41 +1529,10 @@ var stateLawData = {
         title: "School Pickup While Traveling",
         summary: "A Michigan CPL holder visiting family in Ohio may misunderstand school safety zone rules.",
         guidance: [
+          "Check ORC 2923.122.",
           "Do not rely on Michigan school rules.",
-          "Verify Ohio school safety zone law.",
           "Be careful with parking lots, events, and vehicle presence.",
           "When uncertain, do not enter armed."
-        ]
-      },
-      {
-        title: "Posted Store",
-        summary: "A posted store may not feel like a serious legal issue, but refusing to leave can create a problem.",
-        guidance: [
-          "Do not argue.",
-          "Do not make a scene.",
-          "Leave immediately if instructed.",
-          "Handle the business decision later."
-        ]
-      },
-      {
-        title: "Road Rage on I-75",
-        summary: "A highway confrontation can make both drivers look like aggressors.",
-        guidance: [
-          "Do not gesture.",
-          "Do not follow.",
-          "Do not stop to argue.",
-          "Drive to a safe public location.",
-          "Call 911 if actively threatened."
-        ]
-      },
-      {
-        title: "Courthouse Errand",
-        summary: "A quick courthouse errand can become a serious problem if a person forgets they are carrying.",
-        guidance: [
-          "Plan before arrival.",
-          "Do not rely on signage alone.",
-          "Secure the firearm lawfully before approaching.",
-          "Do not bring it to the screening point."
         ]
       }
     ],
@@ -1619,58 +1540,51 @@ var stateLawData = {
       "Assuming Ohio disclosure rules are identical to Michigan.",
       "Assuming permitless carry means no prohibited places.",
       "Assuming a Michigan CPL overrides Ohio law.",
-      "Ignoring school safety zones.",
-      "Ignoring posted private property.",
+      "Ignoring ORC 2923.122 school safety zones.",
+      "Ignoring ORC 2923.121 liquor-premises rules.",
+      "Ignoring ORC 2923.126 private-property and restricted-location rules.",
       "Carrying while drinking or impaired.",
       "Reaching during a traffic stop.",
       "Arguing with staff or security over signs.",
-      "Assuming open carry is always tactically wise.",
       "Treating Ohio as a no-rules state because it has permitless carry.",
-      "Failing to verify courthouse, airport, government, police, or correctional facility restrictions.",
       "Assuming federal property follows Ohio carry rules.",
-      "Displaying a defensive tool to scare someone during a non-deadly argument.",
-      "Forgetting that employer policies and job sites may create separate consequences.",
-      "Traveling through Ohio into another state without checking the next state's laws."
+      "Displaying a defensive tool to scare someone during a non-deadly argument."
     ],
     [
-      "Am I a qualifying adult under Ohio law?",
-      "Am I legally allowed to possess today?",
-      "Am I sober and unimpaired?",
-      "Is my destination a school, courthouse, government building, police facility, jail/correctional facility, airport secure area, federal property, alcohol-related location, posted private property, or employer-controlled location?",
-      "Have I checked Ohio vehicle carry rules?",
-      "Do I know what I will do during a traffic stop?",
-      "Have I checked signs before entering private property?",
-      "Am I crossing into another state after Ohio?",
-      "Do I have my emergency contact and legal-defense contact ready?",
-      "Do I understand that Ohio law controls while I am physically in Ohio?"
+      "ORC 2923.111 qualifying-adult status checked.",
+      "ORC 2923.126 restricted locations checked.",
+      "ORC 2923.122 school safety zone issues checked.",
+      "ORC 2923.123 courthouse/courtroom issues checked.",
+      "ORC 2923.121 liquor premises checked.",
+      "Private signs and property instructions checked.",
+      "Federal property checked separately.",
+      "Vehicle/traffic stop behavior plan ready.",
+      "Emergency contact and legal-defense contact ready.",
+      "Next state on trip route checked."
     ],
     [
       {
         myth: "Ohio has permitless carry, so anyone can carry there.",
-        reality: "No. Ohio permitless carry applies to qualifying adults. Prohibited persons and disqualified people cannot rely on permitless carry."
+        reality: "No. ORC 2923.111 applies to a qualifying adult. Eligibility still matters."
       },
       {
         myth: "If Ohio recognizes my Michigan CPL, Michigan rules follow me.",
-        reality: "No. Ohio law controls once you are in Ohio."
-      },
-      {
-        myth: "I do not have to say anything during an Ohio traffic stop, so I can ignore the topic.",
-        reality: "Do not play games. Keep hands visible, do not reach, and answer truthfully if asked."
+        reality: "No. Ohio law controls once you are physically in Ohio."
       },
       {
         myth: "Permitless carry means I can carry in schools, courthouses, and government buildings.",
-        reality: "No. Prohibited places still matter."
+        reality: "No. ORC 2923.126, ORC 2923.122, ORC 2923.123, and other laws still restrict locations."
       },
       {
         myth: "If a private business posts a sign, I can just debate them.",
-        reality: "That is how a carry issue can become a trespass or disorderly conduct issue. Leave calmly if asked."
+        reality: "No. ORC 2923.126 recognizes private-property firearm restrictions. Leave calmly if asked."
       },
       {
         myth: "A defensive display is not serious if I do not fire.",
         reality: "A bad display can still create criminal allegations. Display must be tied to a real, immediate threat."
       }
     ]
-  ),
+  ), 
   IN: makeProfile(
     "Indiana",
     "Expanded Travel State",
