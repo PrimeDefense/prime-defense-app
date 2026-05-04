@@ -3607,9 +3607,7 @@ var stateLawData = {
         reality: "No. Permit recognition does not override educational property, posted private premises, alcohol/event restrictions, federal property, or disclosure duties."
       }
     ]
-  )
-
-};
+  ),
 
   CA: makeProfile(
     "California",
