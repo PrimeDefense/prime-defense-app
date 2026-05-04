@@ -553,31 +553,6 @@ button{
   border-radius:20px;
   padding:8px;
 }
-.actualMap{
-  width:100%;
-  min-height:430px;
-  background:linear-gradient(135deg,#f9fafb,#eef1f5);
-  border:1px solid rgba(16,19,24,.08);
-  border-radius:20px;
-  overflow:hidden;
-  position:relative;
-}
-.actualMap svg{
-  width:100%;
-  height:430px;
-  display:block;
-}
-.mapLoading{
-  background:#fff;
-  border:1px solid rgba(16,19,24,.08);
-  border-radius:16px;
-  padding:14px;
-  margin-top:10px;
-  color:#626975;
-  font-size:13px;
-  line-height:1.45;
-}
-
 .mapCell{
   cursor:pointer;
   stroke:#fff;
@@ -680,6 +655,11 @@ button{
   border-right:1px solid rgba(16,19,24,.08);
   border-bottom:1px solid rgba(16,19,24,.08);
 }
+
+.geoMap .geoState circle{transition:filter .12s ease, stroke-width .12s ease, transform .12s ease;}
+.geoMap .geoState:hover circle{filter:brightness(.94);}
+.geoMap .geoState.selected circle{filter:brightness(.90);}
+
 @media(max-width:950px){
   .mapShell{grid-template-columns:1fr}
   .mapPanel{position:static}
@@ -695,10 +675,6 @@ button{
 </head>
 <body>
 <div id="app"></div>
-
-<script src="https://d3js.org/d3.v3.min.js"></script>
-<script src="https://d3js.org/topojson.v1.min.js"></script>
-<script src="https://datamaps.github.io/scripts/datamaps.usa.min.js"></script>
 
 <script>
 var token = localStorage.getItem("pd_token");
@@ -3148,119 +3124,49 @@ function renderMapLegend(){
   '</div>';
 }
 
-function renderTileMapFallback(permitState){
-  var cellW = 62;
-  var cellH = 46;
-  var gap = 5;
-
-  var html = '<svg class="mapSvg" viewBox="0 0 720 390" role="img" aria-label="Fallback clickable United States reciprocity map">';
-  html += '<text x="18" y="26" style="font-size:17px;font-weight:950;fill:#11151b">Fallback State Map</text>';
-  html += '<text x="18" y="47" style="font-size:12px;font-weight:700;fill:#626975">Tap a state to populate the legal intelligence panel.</text>';
-
-  mapCells.forEach(function(cell){
-    var abbr = cell[0];
-    var col = cell[1];
-    var row = cell[2];
-    var x = 18 + col * (cellW + gap);
-    var y = 68 + row * (cellH + gap);
-    var status = stateStatus(permitState, abbr);
-    var selected = selectedMapState === abbr;
-
-    html += '<rect class="mapCell ' + (selected ? 'selected' : '') + '" x="' + x + '" y="' + y + '" width="' + cellW + '" height="' + cellH + '" rx="9" fill="' + statusFill(status) + '" onclick="selectMapState(\'' + abbr + '\')"></rect>';
-    html += '<text class="mapText" x="' + (x + cellW / 2) + '" y="' + (y + cellH / 2) + '">' + abbr + '</text>';
-  });
-
-  html += '</svg>';
-  return html;
-}
-
 function renderSvgMap(permitState){
-  return '<div id="actualUsMap" class="actualMap" aria-label="Clickable United States map"></div>' +
-    '<div id="mapLoading" class="mapLoading">Loading interactive state-shape map. If it does not load, the app will show the fallback clickable state map.</div>';
-}
+  var geoPoints = {
+    WA:[78,82], OR:[67,145], CA:[68,236], ID:[132,145], NV:[118,226], MT:[199,95], WY:[210,185], UT:[180,260], AZ:[174,335], CO:[270,250], NM:[266,340],
+    ND:[300,92], SD:[305,160], NE:[318,218], KS:[352,282], OK:[386,340], TX:[392,410], MN:[391,98], IA:[405,185], MO:[430,255], AR:[450,325], LA:[470,395],
+    WI:[465,130], IL:[468,220], MS:[500,357], MI:[535,138], IN:[515,225], KY:[545,270], TN:[560,325], AL:[545,370], OH:[575,210], WV:[610,255], GA:[598,375],
+    FL:[655,430], PA:[650,185], NY:[692,130], VT:[724,82], NH:[756,95], ME:[785,55], MA:[756,140], CT:[734,162], RI:[768,166], NJ:[690,210], DE:[704,238], MD:[674,242],
+    VA:[650,285], NC:[650,330], SC:[625,355], AK:[115,430], HI:[265,450]
+  };
 
-function statusFillKey(status){
-  if(status === "recognized") return "recognized";
-  if(status === "restricted") return "restricted";
-  if(status === "not_recognized") return "notRecognized";
-  return "verify";
-}
+  var html = '<svg class="mapSvg geoMap" viewBox="0 0 840 485" role="img" aria-label="Clickable United States reciprocity map">';
+  html += '<defs>';
+  html += '<filter id="mapShadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#101318" flood-opacity="0.14"/></filter>';
+  html += '</defs>';
+  html += '<rect x="0" y="0" width="840" height="485" rx="22" fill="#f8fafc"></rect>';
+  html += '<text x="22" y="30" style="font-size:18px;font-weight:950;fill:#11151b">Interactive U.S. Reciprocity Map</text>';
+  html += '<text x="22" y="52" style="font-size:12px;font-weight:700;fill:#626975">Click a state marker to show reciprocity and that state legal profile.</text>';
 
-function initActualMap(permitState){
-  var el = q("actualUsMap");
-  if(!el) return;
+  html += '<path d="M66,91 L130,62 L210,72 L285,70 L360,77 L425,92 L488,104 L535,102 L586,121 L640,115 L696,93 L755,98 L798,142 L786,190 L740,209 L713,252 L683,282 L673,330 L652,368 L671,423 L628,448 L579,394 L527,398 L493,372 L452,383 L405,352 L363,355 L326,322 L281,333 L235,311 L197,336 L146,312 L116,267 L82,238 L53,188 L46,134 Z" fill="#eef2f7" stroke="#d3dae5" stroke-width="2" filter="url(#mapShadow)"></path>';
+  html += '<path d="M70,392 L182,392 L200,470 L50,470 Z" fill="#eef2f7" stroke="#d3dae5" stroke-width="2"></path>';
+  html += '<path d="M228,420 L330,420 L340,470 L220,470 Z" fill="#eef2f7" stroke="#d3dae5" stroke-width="2"></path>';
 
-  var loading = q("mapLoading");
-
-  if(typeof Datamap === "undefined" || typeof d3 === "undefined"){
-    if(loading){
-      loading.innerHTML = "The live state-shape map could not load from the map library. Showing fallback clickable map instead.";
-    }
-    el.innerHTML = renderTileMapFallback(permitState);
-    return;
-  }
-
-  var mapData = {};
+  html += '<g class="mapMarkers">';
   states.forEach(function(s){
     var abbr = s[0];
-    mapData[abbr] = {
-      fillKey: statusFillKey(stateStatus(permitState, abbr)),
-      statusLabel: statusLabelByStatus(stateStatus(permitState, abbr)),
-      stateName: s[1]
-    };
+    var pt = geoPoints[abbr];
+    if(!pt) return;
+    var status = stateStatus(permitState, abbr);
+    var selected = selectedMapState === abbr;
+    var fill = statusFill(status);
+    var ring = selected ? '#11151b' : '#ffffff';
+    var ringWidth = selected ? 4 : 2;
+    html += '<g class="geoState ' + (selected ? 'selected' : '') + '" onclick="selectMapState(\\'' + abbr + '\\')" style="cursor:pointer">';
+    html += '<title>' + abbr + ' — ' + stateName(abbr) + ': ' + statusLabelByStatus(status) + '</title>';
+    html += '<circle cx="' + pt[0] + '" cy="' + pt[1] + '" r="16" fill="' + fill + '" stroke="' + ring + '" stroke-width="' + ringWidth + '"></circle>';
+    html += '<text x="' + pt[0] + '" y="' + (pt[1] + 4) + '" class="mapText">' + abbr + '</text>';
+    html += '</g>';
   });
+  html += '</g>';
 
-  try{
-    el.innerHTML = "";
-    var map = new Datamap({
-      element: el,
-      scope: "usa",
-      responsive: true,
-      fills: {
-        recognized: "#b9f3cc",
-        restricted: "#fde2b8",
-        notRecognized: "#ffc2c7",
-        verify: "#dbe2ea",
-        defaultFill: "#dbe2ea"
-      },
-      data: mapData,
-      geographyConfig: {
-        borderColor: "#ffffff",
-        borderWidth: 1.4,
-        highlightBorderColor: "#11151b",
-        highlightBorderWidth: 2,
-        highlightFillColor: function(geo){
-          var item = mapData[geo.id];
-          return item ? statusFill(stateStatus(permitState, geo.id)) : "#dbe2ea";
-        },
-        popupTemplate: function(geo, data){
-          var status = data && data.statusLabel ? data.statusLabel : statusLabelByStatus(stateStatus(permitState, geo.id));
-          return '<div class="hoverinfo"><strong>' + geo.properties.name + '</strong><br>' + status + '<br>Click for laws and reciprocity</div>';
-        }
-      },
-      done: function(datamap){
-        datamap.svg.selectAll('.datamaps-subunit')
-          .style('cursor', 'pointer')
-          .style('stroke', function(geo){ return geo.id === selectedMapState ? '#11151b' : '#ffffff'; })
-          .style('stroke-width', function(geo){ return geo.id === selectedMapState ? 3.5 : 1.4; })
-          .on('click', function(geo){ selectMapState(geo.id); });
-      }
-    });
-
-    if(loading){
-      loading.innerHTML = "Click any state shape to view reciprocity and that state’s law profile.";
-    }
-
-    window.setTimeout(function(){
-      if(map && map.resize){ map.resize(); }
-    }, 150);
-  } catch(err){
-    console.log("Map render error:", err);
-    if(loading){
-      loading.innerHTML = "The state-shape map could not render. Showing fallback clickable map instead.";
-    }
-    el.innerHTML = renderTileMapFallback(permitState);
-  }
+  html += '<text x="75" y="482" style="font-size:11px;font-weight:800;fill:#64748b">AK</text>';
+  html += '<text x="235" y="482" style="font-size:11px;font-weight:800;fill:#64748b">HI</text>';
+  html += '</svg>';
+  return html;
 }
 
 function renderList(title, items, bullet){
@@ -3697,7 +3603,6 @@ function updateReciprocity(){
   var box = q("reciprocityBox");
   if(!stateEl || !box) return;
   box.innerHTML = getReciprocityHtml(stateEl.value);
-  window.setTimeout(function(){ initActualMap(stateEl.value); }, 50);
 }
 
 async function saveProfile(){
@@ -3759,21 +3664,21 @@ function openEmergency(){
         '<div class="card">' +
           '<div class="brand">Step 1 — Call 911</div>' +
           '<div class="script">“I was attacked, feared for my life, and had to defend myself. Please send both police and an ambulance to this location.”</div>' +
-          '<button class="primary bigAction" type="button" onclick="window.location.href=&quot;tel:911&quot;">CALL 911</button>' +
+          '<button class="primary bigAction" type="button" onclick="window.location.href=\\'tel:911\\'">CALL 911</button>' +
           '<div class="warn">Secondary wording: “There has been a self-defense shooting at this location. Send help.” Provide only necessary information and follow dispatcher instructions.</div>' +
         '</div>' +
 
         '<div class="card">' +
           '<div class="brand">Step 2 — Call USCCA</div>' +
           '<p class="small">Contact the USCCA Critical Response Team after calling 911.</p>' +
-          '<button class="primary bigAction" type="button" onclick="window.location.href=&quot;tel:8776771919&quot;">CALL USCCA</button>' +
+          '<button class="primary bigAction" type="button" onclick="window.location.href=\\'tel:8776771919\\'">CALL USCCA</button>' +
         '</div>' +
 
         '<div class="card">' +
           '<div class="brand">Step 3 — Contact Family</div>' +
           '<h2>' + escapeHtml(name || "Emergency Contact") + '</h2>' +
           '<p class="small">' + escapeHtml(phone || "No phone saved") + '</p>' +
-          (phone ? '<button class="primary bigAction" type="button" onclick="window.location.href=&quot;tel:' + cleanPhone + '&quot;">CALL CONTACT</button>' : '<div class="warn">No emergency contact saved.</div>') +
+          (phone ? '<button class="primary bigAction" type="button" onclick="window.location.href=\\'tel:' + cleanPhone + '\\'">CALL CONTACT</button>' : '<div class="warn">No emergency contact saved.</div>') +
           '<div class="script">“I’ve been involved in a defensive incident. I’m safe. Do not discuss anything with anyone until I have legal guidance.”</div>' +
         '</div>' +
 
@@ -3797,7 +3702,7 @@ function openDefensiveDisplay(){
         '<div class="card">' +
           '<div class="brand">Step 1 — Call 911</div>' +
           '<div class="script">“My name is [name], and I need to report an attack or possible attack at this location. I have a permit to carry and exposed my defensive tool, but I did not fire.”</div>' +
-          '<button class="primary bigAction" type="button" onclick="window.location.href=&quot;tel:911&quot;">CALL 911</button>' +
+          '<button class="primary bigAction" type="button" onclick="window.location.href=\\'tel:911\\'">CALL 911</button>' +
         '</div>' +
 
         '<div class="card">' +
@@ -3808,7 +3713,7 @@ function openDefensiveDisplay(){
 
         '<div class="card">' +
           '<div class="brand">Step 2 — Call USCCA</div>' +
-          '<button class="primary bigAction" type="button" onclick="window.location.href=&quot;tel:8776771919&quot;">CALL USCCA</button>' +
+          '<button class="primary bigAction" type="button" onclick="window.location.href=\\'tel:8776771919\\'">CALL USCCA</button>' +
         '</div>' +
 
         '<div class="card">' +
@@ -3860,19 +3765,12 @@ function openAftermath(){
 
         '<div class="card">' +
           '<div class="brand">Next Steps</div>' +
-          '<button class="primary bigAction" type="button" onclick="window.location.href=&quot;tel:8776771919&quot;">CALL USCCA</button>' +
+          '<button class="primary bigAction" type="button" onclick="window.location.href=\\'tel:8776771919\\'">CALL USCCA</button>' +
           '<button class="secondary bigAction" type="button" onclick="showDashboard()">BACK TO DASHBOARD</button>' +
         '</div>' +
       '</div>' +
     '</div>';
 }
-
-window.addEventListener("resize", function(){
-  var stateEl = q("state");
-  if(stateEl && q("actualUsMap")){
-    window.setTimeout(function(){ initActualMap(stateEl.value); }, 150);
-  }
-});
 
 if(token) showDashboard();
 else showAuth();
