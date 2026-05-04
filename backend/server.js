@@ -2736,78 +2736,1742 @@ var stateLawData = {
     ]
   ),
 
-  CA: makeProfile(
-    "California",
-    "High-Risk Travel State",
-    "California does not honor a Michigan CPL in this app travel engine. Treat as not recognized and verify California law before travel. California is a high-risk state for transport, local restrictions, magazine rules, ammunition rules, and sensitive-place restrictions.",
+  PA: makeProfile(
+    "Pennsylvania",
+    "Law-Backed Ultra Expanded Travel State",
+    "Pennsylvania is a high-priority travel state for Michigan CPL holders because it is a common eastern travel route and has strict license rules for concealed carry and vehicle carry. Pennsylvania generally requires a valid license to carry a firearm concealed or in a vehicle, and state law includes important restrictions involving schools, courts, Philadelphia, emergency conditions, private property, federal property, and use-of-force conduct.",
     {
-      reciprocity: "Michigan CPL not recognized.",
-      permitlessCarry: "No. Do not rely on permitless carry.",
-      concealedCarry: "Michigan CPL does not authorize concealed carry in California.",
-      openCarry: "Highly restricted. Verify current California law.",
-      vehicleCarry: "Verify California transport rules before entering the state.",
-      dutyToInform: "Verify current California police-contact rules.",
-      privateSigns: "Private, local, and sensitive-place rules may matter.",
-      forceLaw: "Verify current California self-defense law."
+      reciprocity: "Michigan CPL should be verified against current Pennsylvania reciprocity before travel. This app treats Pennsylvania as recognized for Michigan CPL travel, but Pennsylvania law controls while physically in Pennsylvania.",
+      permitlessCarry: "No general permitless concealed carry. 18 Pa.C.S. § 6106 generally prohibits concealed carry or vehicle carry without a valid license unless an exception applies.",
+      concealedCarry: "18 Pa.C.S. § 6106 and § 6109: concealed carry generally requires a valid and lawfully issued license.",
+      openCarry: "Open carry may be lawful in some areas, but Philadelphia, vehicles, emergency conditions, prohibited places, and police contact create major risk.",
+      vehicleCarry: "18 Pa.C.S. § 6106: carrying a firearm in a vehicle generally requires a valid license unless a statutory exception applies.",
+      dutyToInform: "Pennsylvania does not use the same automatic disclosure rule as Michigan, but police-contact behavior still matters. Answer lawful questions truthfully and avoid reaching.",
+      privateSigns: "Private property rules and trespass law matter. Leave immediately if asked.",
+      forceLaw: "Pennsylvania self-defense law is fact-specific. Deadly force must still be legally justified."
     },
     [
-      "Do not carry on a Michigan CPL in California.",
-      "Verify transport rules before entering the state.",
-      "Magazine, ammunition, and local restrictions may apply.",
-      "Avoid casual stops when transporting under any federal travel framework."
+      "Pennsylvania is not permitless for concealed carry or vehicle carry.",
+      "Vehicle carry is one of the biggest traps for out-of-state travelers.",
+      "Philadelphia has special significance under Pennsylvania firearms law.",
+      "School property, courts, federal property, and private property require separate review.",
+      "A green reciprocity status does not mean every location or method of carry is lawful."
+    ],
+    [
+      {
+        title: "License Required for Concealed Carry / Vehicle Carry",
+        risk: "Core Rule",
+        body: [
+          "STATUTE: 18 Pa.C.S. § 6106.",
+          "SUMMARY: Pennsylvania generally prohibits carrying a firearm concealed on or about the person, or carrying a firearm in a vehicle, without a valid and lawfully issued license unless a statutory exception applies.",
+          "GUIDANCE: This is the key Pennsylvania travel warning. A Michigan CPL holder must verify recognition and must understand that vehicle carry is treated seriously under Pennsylvania law."
+        ],
+        source: "18 Pa.C.S. § 6106."
+      },
+      {
+        title: "Pennsylvania License to Carry Firearms",
+        risk: "License / Recognition Rule",
+        body: [
+          "STATUTE: 18 Pa.C.S. § 6109.",
+          "SUMMARY: Pennsylvania’s license-to-carry statute governs issuance, eligibility, denial, and the licensing framework for carrying firearms.",
+          "GUIDANCE: Out-of-state travelers should verify whether their permit is honored and should carry license/ID documentation when relying on reciprocity."
+        ],
+        source: "18 Pa.C.S. § 6109."
+      },
+      {
+        title: "Vehicle Carry",
+        risk: "High-Risk Travel Issue",
+        body: [
+          "STATUTE: 18 Pa.C.S. § 6106.",
+          "SUMMARY: Carrying a firearm in a vehicle generally requires a valid license unless an exception applies.",
+          "GUIDANCE: Do not assume open carry rules on foot apply once entering a vehicle. Pennsylvania vehicle carry should be treated as license-required unless a clear exception applies."
+        ],
+        source: "18 Pa.C.S. § 6106."
+      },
+      {
+        title: "Philadelphia Carry Warning",
+        risk: "City-Specific Risk",
+        body: [
+          "STATUTE: 18 Pa.C.S. § 6108.",
+          "SUMMARY: Pennsylvania law restricts carrying firearms on public streets or public property in Philadelphia unless licensed or exempt.",
+          "GUIDANCE: Philadelphia should be treated as a special-risk area. Do not rely on general open-carry assumptions while in Philadelphia."
+        ],
+        source: "18 Pa.C.S. § 6108."
+      },
+      {
+        title: "Emergency Conditions",
+        risk: "Declared Emergency Risk",
+        body: [
+          "STATUTE: 18 Pa.C.S. § 6107.",
+          "SUMMARY: Pennsylvania restricts carrying firearms on public streets or public property during an emergency proclaimed by governmental authorities unless licensed or exempt.",
+          "GUIDANCE: During declared emergencies, unrest, disaster conditions, or evacuation events, verify the current legal status before carrying."
+        ],
+        source: "18 Pa.C.S. § 6107."
+      },
+      {
+        title: "Schools",
+        risk: "Extreme Risk Area",
+        body: [
+          "STATUTE: 18 Pa.C.S. § 912.",
+          "SUMMARY: Pennsylvania law restricts possession of weapons on school property, including school buildings, grounds, and conveyances, unless a statutory defense or exception applies.",
+          "GUIDANCE: School parking lots, events, and pickup/drop-off should be treated as verify-first situations."
+        ],
+        source: "18 Pa.C.S. § 912."
+      },
+      {
+        title: "Court Facilities",
+        risk: "Hard Stop Area",
+        body: [
+          "STATUTE: 18 Pa.C.S. § 913.",
+          "SUMMARY: Pennsylvania law restricts possession of firearms and dangerous weapons in court facilities, subject to statutory procedures and exceptions.",
+          "GUIDANCE: Do not approach courthouse security armed. Plan storage before arrival."
+        ],
+        source: "18 Pa.C.S. § 913."
+      },
+      {
+        title: "Private Property / Posted Locations",
+        risk: "Trespass and Property Control",
+        body: [
+          "STATUTE / SOURCE: Pennsylvania trespass and property-control framework.",
+          "SUMMARY: Private property owners may control access and require people to leave.",
+          "GUIDANCE: If posted or asked to leave, leave immediately. Do not turn a carry issue into trespass, disorderly conduct, or a confrontation."
+        ],
+        source: "Pennsylvania trespass/property law framework."
+      },
+      {
+        title: "Federal Property / Post Offices",
+        risk: "Federal Law Overlay",
+        body: [
+          "STATUTE / SOURCE: Federal facility and postal property framework.",
+          "SUMMARY: Pennsylvania carry permission does not override federal property restrictions.",
+          "GUIDANCE: Federal buildings, post offices, federal courthouses, and secure federal facilities must be checked separately."
+        ],
+        source: "Federal facility and postal property framework."
+      },
+      {
+        title: "Use of Force / Self-Defense",
+        risk: "Fact-Specific Legal Risk",
+        body: [
+          "STATUTE / SOURCE: Pennsylvania self-defense framework.",
+          "SUMMARY: Defensive force must be justified under the facts. Deadly force is not justified for anger, property disputes, insults, road rage, intimidation, or punishment.",
+          "GUIDANCE: Avoid, disengage, call 911, identify evidence/witnesses when necessary, request counsel, and avoid detailed statements under stress."
+        ],
+        source: "Pennsylvania self-defense law framework."
+      }
+    ],
+    [
+      {
+        title: "Pennsylvania Travel Checklist",
+        steps: [
+          "1. Verify Michigan CPL recognition.",
+          "2. Check 18 Pa.C.S. § 6106 before vehicle carry.",
+          "3. Check Philadelphia restrictions under § 6108.",
+          "4. Check emergency restrictions under § 6107.",
+          "5. Check school property under § 912.",
+          "6. Check court facilities under § 913.",
+          "7. Check federal and private property separately."
+        ]
+      }
+    ],
+    [
+      {
+        title: "Driving Through Pennsylvania",
+        summary: "Vehicle carry is the biggest Pennsylvania trap for travelers.",
+        guidance: [
+          "Verify license recognition before entering.",
+          "Do not assume open carry rules apply in a vehicle.",
+          "Carry license/ID documentation.",
+          "Check Philadelphia if your route enters the city."
+        ]
+      },
+      {
+        title: "Philadelphia Stop",
+        summary: "Philadelphia has special statutory treatment for public carry.",
+        guidance: [
+          "Check § 6108.",
+          "Do not rely on general open carry assumptions.",
+          "Avoid unnecessary handling or display."
+        ]
+      }
+    ],
+    [
+      "Assuming Pennsylvania is permitless carry.",
+      "Ignoring vehicle carry under § 6106.",
+      "Ignoring Philadelphia restrictions under § 6108.",
+      "Ignoring schools under § 912.",
+      "Ignoring court facilities under § 913.",
+      "Assuming reciprocity overrides location restrictions."
+    ],
+    [
+      "Permit recognition checked.",
+      "Vehicle carry under § 6106 checked.",
+      "Philadelphia route checked.",
+      "School property checked.",
+      "Court facilities checked.",
+      "Federal property checked.",
+      "Private property/signs checked."
+    ],
+    [
+      {
+        myth: "If Pennsylvania honors my permit, I can carry anywhere.",
+        reality: "No. Recognition does not override vehicle rules, Philadelphia, schools, courts, federal property, or private property."
+      }
+    ]
+  ),
+
+  WI: makeProfile(
+    "Wisconsin",
+    "Law-Backed Ultra Expanded Travel State",
+    "Wisconsin is a high-priority Great Lakes travel state for Michigan CPL holders. Wisconsin has a concealed carry licensing system and recognizes qualifying out-of-state licenses, but users must understand license/ID possession, prohibited places, school zones, vehicles, government buildings, alcohol-related issues, private property, and federal property restrictions.",
+    {
+      reciprocity: "Michigan CPL recognition should be verified before travel. Wisconsin law controls while physically in Wisconsin.",
+      permitlessCarry: "No general permitless concealed carry. Wisconsin generally requires a valid Wisconsin CCW license or recognized out-of-state license for concealed carry.",
+      concealedCarry: "Wis. Stat. § 175.60 governs Wisconsin concealed carry licensing and recognition.",
+      openCarry: "Open carry may be lawful in some circumstances, but restricted places, vehicles, disorderly conduct, and private property still matter.",
+      vehicleCarry: "Vehicle carry must be analyzed under Wisconsin concealed carry and transport laws.",
+      dutyToInform: "Wisconsin requires license/ID possession and display upon lawful request when carrying concealed under the license framework.",
+      privateSigns: "Private property owners may restrict carry. Leave immediately if asked.",
+      forceLaw: "Wisconsin self-defense law is fact-specific and must be verified before relying on any summary."
+    },
+    [
+      "Wisconsin is not a permitless concealed carry state.",
+      "A recognized out-of-state license may matter, but users must carry proper documentation.",
+      "School zones, government buildings, law enforcement facilities, and posted private property require special caution.",
+      "Open carry does not solve concealed carry or restricted-location issues.",
+      "Great Lakes travel often involves parks, campgrounds, boats, hotels, and vehicle storage—each should be checked separately."
+    ],
+    [
+      {
+        title: "Concealed Carry License Framework",
+        risk: "Core Carry Rule",
+        body: [
+          "STATUTE: Wis. Stat. § 175.60.",
+          "SUMMARY: Wisconsin’s concealed carry statute governs issuance of licenses and the concealed carry framework.",
+          "GUIDANCE: A Michigan CPL holder should verify Wisconsin recognition and should carry the out-of-state license and photo identification when relying on reciprocity."
+        ],
+        source: "Wis. Stat. § 175.60."
+      },
+      {
+        title: "Carrying License and Photo ID",
+        risk: "Documentation Requirement",
+        body: [
+          "STATUTE: Wis. Stat. § 175.60(4).",
+          "SUMMARY: Wisconsin requires a licensee to have the license document and photographic identification while carrying concealed.",
+          "GUIDANCE: Members should carry both permit and photo ID. Do not assume a digital photo or memory of the permit number is enough."
+        ],
+        source: "Wis. Stat. § 175.60(4)."
+      },
+      {
+        title: "Carrying Concealed Without License",
+        risk: "Criminal Exposure",
+        body: [
+          "STATUTE: Wis. Stat. § 941.23.",
+          "SUMMARY: Wisconsin law addresses carrying a concealed weapon and exceptions for lawful carry.",
+          "GUIDANCE: Do not treat Wisconsin as permitless concealed carry. Verify license recognition before carrying concealed."
+        ],
+        source: "Wis. Stat. § 941.23."
+      },
+      {
+        title: "School Zones",
+        risk: "Extreme Risk Area",
+        body: [
+          "STATUTE: Wis. Stat. § 948.605.",
+          "SUMMARY: Wisconsin law restricts firearm possession in school zones, subject to exceptions.",
+          "GUIDANCE: School buildings, grounds, events, and parking areas should be treated as verify-first areas."
+        ],
+        source: "Wis. Stat. § 948.605."
+      },
+      {
+        title: "Prohibited / Restricted Locations",
+        risk: "Location Restriction",
+        body: [
+          "STATUTE / SOURCE: Wis. Stat. § 175.60 and related Wisconsin prohibited-place framework.",
+          "SUMMARY: Wisconsin law restricts carry in certain locations and allows certain property owners/government facilities to restrict firearms.",
+          "GUIDANCE: Check police stations, sheriff offices, jails, courthouses/courtrooms, schools, federal property, secure areas, and posted locations before entering."
+        ],
+        source: "Wis. Stat. § 175.60; Wisconsin DOJ CCW guidance."
+      },
+      {
+        title: "Private Property / Posted Locations",
+        risk: "Trespass / Property Control",
+        body: [
+          "STATUTE / SOURCE: Wisconsin property and CCW posting framework.",
+          "SUMMARY: Property owners may restrict firearms on private property.",
+          "GUIDANCE: Posted signs and staff/security instructions should be followed. Leave immediately if asked."
+        ],
+        source: "Wisconsin DOJ CCW FAQ; Wisconsin property law framework."
+      },
+      {
+        title: "Vehicle Carry",
+        risk: "Travel / Storage Risk",
+        body: [
+          "STATUTE / SOURCE: Wis. Stat. § 941.23; Wis. Stat. § 175.60.",
+          "SUMMARY: Vehicle carry must comply with Wisconsin concealed carry and transport rules.",
+          "GUIDANCE: If carrying concealed in a vehicle, verify license recognition and avoid unnecessary reaching during police contact."
+        ],
+        source: "Wis. Stat. § 941.23; Wis. Stat. § 175.60."
+      },
+      {
+        title: "Alcohol / Impairment",
+        risk: "Judgment and Legal Risk",
+        body: [
+          "STATUTE / SOURCE: Wisconsin weapons and intoxication framework.",
+          "SUMMARY: Carrying while impaired creates legal and tactical risk.",
+          "GUIDANCE: If drinking is part of the plan, carrying should not be. Bars, restaurants, festivals, stadiums, and events should be checked for posted rules."
+        ],
+        source: "Wisconsin weapons/intoxication framework."
+      },
+      {
+        title: "Federal Property / Post Offices",
+        risk: "Federal Law Overlay",
+        body: [
+          "STATUTE / SOURCE: Federal facility and postal property framework.",
+          "SUMMARY: Wisconsin carry permission does not override federal restrictions.",
+          "GUIDANCE: Federal buildings, federal courthouses, post offices, and secure federal property must be checked separately."
+        ],
+        source: "Federal facility and postal property framework."
+      },
+      {
+        title: "Use of Force / Self-Defense",
+        risk: "Fact-Specific Legal Risk",
+        body: [
+          "STATUTE / SOURCE: Wisconsin self-defense framework.",
+          "SUMMARY: Wisconsin self-defense law is fact-specific and depends on necessity, reasonableness, and the circumstances.",
+          "GUIDANCE: Avoid confrontation, disengage if safely possible, call 911, identify evidence/witnesses, request counsel, and avoid long statements under stress."
+        ],
+        source: "Wisconsin self-defense law framework."
+      }
+    ],
+    [
+      {
+        title: "Wisconsin Carry Checklist",
+        steps: [
+          "1. Verify Michigan CPL recognition.",
+          "2. Carry license and photo ID.",
+          "3. Check Wis. Stat. § 941.23 concealed carry rules.",
+          "4. Check Wis. Stat. § 948.605 school zones.",
+          "5. Check posted private property.",
+          "6. Check federal and government facilities.",
+          "7. Plan safe vehicle storage."
+        ]
+      }
+    ],
+    [
+      {
+        title: "Great Lakes Weekend Trip",
+        summary: "Wisconsin travel often involves hotels, parks, restaurants, events, and vehicle storage.",
+        guidance: [
+          "Carry permit and photo ID.",
+          "Check posted locations.",
+          "Secure firearms from unauthorized access.",
+          "Check parks/federal property separately."
+        ]
+      }
+    ],
+    [
+      "Assuming Wisconsin is permitless concealed carry.",
+      "Failing to carry license and photo ID.",
+      "Ignoring school zones.",
+      "Ignoring posted private property.",
+      "Assuming vehicle carry has no separate rules.",
+      "Ignoring federal property."
+    ],
+    [
+      "Recognition checked.",
+      "Permit and photo ID carried.",
+      "School zones checked.",
+      "Vehicle carry checked.",
+      "Private signs checked.",
+      "Federal property checked."
+    ],
+    [
+      {
+        myth: "Wisconsin is close to Michigan, so rules are basically the same.",
+        reality: "No. Wisconsin has its own concealed carry, school zone, license/ID, and location rules."
+      }
+    ]
+  ),
+
+  WV: makeProfile(
+    "West Virginia",
+    "Law-Backed Ultra Expanded Travel State",
+    "West Virginia is a permitless carry state for eligible adults 21 and older, but it still has statutory restrictions involving age, prohibited persons, school property, court facilities, campus carry, vehicles, private property, federal property, and use-of-force conduct.",
+    {
+      reciprocity: "Michigan CPL recognition should be verified, but West Virginia also allows permitless concealed carry for eligible adults 21 and older.",
+      permitlessCarry: "W. Va. Code § 61-7-7 allows certain adults 21+ to carry concealed without a license if not prohibited.",
+      concealedCarry: "Permitless concealed carry applies only to eligible persons. Younger adults may need a provisional license.",
+      openCarry: "Open carry may be lawful for eligible persons, but restricted locations and conduct still matter.",
+      vehicleCarry: "Vehicle carry must be analyzed under West Virginia weapons law, school property law, and prohibited-person rules.",
+      dutyToInform: "Verify current West Virginia police-contact rules before travel. Keep hands visible and answer lawful questions truthfully.",
+      privateSigns: "Private property and posted locations still matter. Leave if asked.",
+      forceLaw: "West Virginia self-defense law is fact-specific."
+    },
+    [
+      "West Virginia permitless carry does not mean carry anywhere.",
+      "School and court-related premises are major statutory risk points.",
+      "Campus carry has detailed rules and exceptions.",
+      "A license may still matter for reciprocity outside West Virginia.",
+      "Federal property and private property must be checked separately."
+    ],
+    [
+      {
+        title: "Permitless Concealed Carry",
+        risk: "Core Eligibility Rule",
+        body: [
+          "STATUTE: W. Va. Code § 61-7-7.",
+          "SUMMARY: Certain adults 21 and older may carry a concealed deadly weapon without a license if they are not prohibited under state or federal law.",
+          "GUIDANCE: Permitless carry does not apply to prohibited persons and does not override restricted places."
+        ],
+        source: "W. Va. Code § 61-7-7."
+      },
+      {
+        title: "Under 21 / Provisional License",
+        risk: "Age-Based Carry Risk",
+        body: [
+          "STATUTE: W. Va. Code § 61-7-3; W. Va. Code § 61-7-4.",
+          "SUMMARY: Persons under 21 have separate rules and may require a provisional license or other lawful authorization.",
+          "GUIDANCE: Do not assume an 18–20-year-old may carry concealed without a license."
+        ],
+        source: "W. Va. Code § 61-7-3; § 61-7-4."
+      },
+      {
+        title: "Concealed Weapon License",
+        risk: "License / Reciprocity Context",
+        body: [
+          "STATUTE: W. Va. Code § 61-7-4.",
+          "SUMMARY: West Virginia law provides a licensing process for concealed deadly weapons, including resident and nonresident licenses.",
+          "GUIDANCE: Even with permitless carry inside West Virginia, a license may matter for travel reciprocity in other states."
+        ],
+        source: "W. Va. Code § 61-7-4."
+      },
+      {
+        title: "Prohibited Persons",
+        risk: "Disqualification Risk",
+        body: [
+          "STATUTE: W. Va. Code § 61-7-7.",
+          "SUMMARY: West Virginia law identifies persons prohibited from possessing firearms or carrying under the statutory framework.",
+          "GUIDANCE: Protection orders, criminal history, domestic violence issues, substance issues, and federal prohibitions should be checked before carrying."
+        ],
+        source: "W. Va. Code § 61-7-7."
+      },
+      {
+        title: "Schools / Educational Facilities",
+        risk: "Extreme Risk Area",
+        body: [
+          "STATUTE: W. Va. Code § 61-7-11a.",
+          "SUMMARY: West Virginia restricts deadly weapons on premises of educational facilities and court premises, subject to statutory exceptions.",
+          "GUIDANCE: Schools, school events, educational property, and court-related premises should be treated as verify-first locations."
+        ],
+        source: "W. Va. Code § 61-7-11a."
+      },
+      {
+        title: "Courts / Court Premises",
+        risk: "Hard Stop Area",
+        body: [
+          "STATUTE: W. Va. Code § 61-7-11a.",
+          "SUMMARY: West Virginia restricts deadly weapons on premises housing courts of law and family law courts.",
+          "GUIDANCE: Do not enter courthouse or court-related premises armed unless a clear legal exception applies."
+        ],
+        source: "W. Va. Code § 61-7-11a."
+      },
+      {
+        title: "Campus Carry",
+        risk: "Detailed Campus Rules",
+        body: [
+          "STATUTE / SOURCE: West Virginia campus carry framework.",
+          "SUMMARY: West Virginia law allows certain concealed carry on public college/university campuses, but restrictions, exceptions, storage rules, and specific locations may apply.",
+          "GUIDANCE: Campus carry should not be summarized casually. Check the institution, location type, and current rules before carrying."
+        ],
+        source: "West Virginia campus carry framework; W. Va. Code Chapter 18B / § 61-7 references."
+      },
+      {
+        title: "Brandishing / Threatening Conduct",
+        risk: "Display Risk",
+        body: [
+          "STATUTE: W. Va. Code § 61-7-11.",
+          "SUMMARY: West Virginia law addresses brandishing deadly weapons and threatening or causing breach of the peace.",
+          "GUIDANCE: Do not display a firearm to intimidate, win an argument, or stop a verbal dispute. If display was necessary due to an immediate threat, call 911 first."
+        ],
+        source: "W. Va. Code § 61-7-11."
+      },
+      {
+        title: "Private Property / Posted Locations",
+        risk: "Property Control",
+        body: [
+          "STATUTE / SOURCE: West Virginia property and trespass framework.",
+          "SUMMARY: Private property owners may control access and restrict firearms on their property.",
+          "GUIDANCE: If posted or asked to leave, leave immediately."
+        ],
+        source: "West Virginia property/trespass framework."
+      },
+      {
+        title: "Federal Property / Post Offices",
+        risk: "Federal Law Overlay",
+        body: [
+          "STATUTE / SOURCE: Federal facility and postal property framework.",
+          "SUMMARY: West Virginia carry permission does not override federal restrictions.",
+          "GUIDANCE: Federal buildings, post offices, federal courthouses, and secure federal property must be checked separately."
+        ],
+        source: "Federal facility and postal property framework."
+      }
+    ],
+    [
+      {
+        title: "West Virginia Carry Checklist",
+        steps: [
+          "1. Confirm age and eligibility under § 61-7-7.",
+          "2. If under 21, check § 61-7-3 and license requirements.",
+          "3. Check schools and courts under § 61-7-11a.",
+          "4. Check campus carry rules if on college/university property.",
+          "5. Check private property and federal property.",
+          "6. Avoid display/brandishing conduct under § 61-7-11."
+        ]
+      }
+    ],
+    [
+      {
+        title: "Mountain Trip / Vehicle Travel",
+        summary: "West Virginia is permissive, but schools, courts, campuses, and private property remain traps.",
+        guidance: [
+          "Verify age/eligibility.",
+          "Check campus rules.",
+          "Check schools and courts.",
+          "Do not assume permitless means unrestricted."
+        ]
+      }
+    ],
+    [
+      "Assuming permitless carry means carry anywhere.",
+      "Ignoring under-21 restrictions.",
+      "Ignoring schools and courts under § 61-7-11a.",
+      "Ignoring campus carry exceptions.",
+      "Displaying a firearm in a non-deadly dispute."
+    ],
+    [
+      "Age and eligibility checked.",
+      "School/court restrictions checked.",
+      "Campus rules checked.",
+      "Private property checked.",
+      "Federal property checked.",
+      "Display/brandishing risk understood."
+    ],
+    [
+      {
+        myth: "West Virginia is permitless, so there are no location restrictions.",
+        reality: "No. Schools, courts, campuses, private property, federal property, and prohibited-person rules still matter."
+      }
+    ]
+  ),
+
+  GA: makeProfile(
+    "Georgia",
+    "Law-Backed Ultra Expanded Travel State",
+    "Georgia is a high-priority southern travel state with permitless carry for lawful weapons carriers. Georgia law recognizes out-of-state weapons carry licenses, but users must understand lawful weapons carrier status, unauthorized locations, school safety zones, courthouses, government buildings, places of worship, private property, vehicles, and federal property.",
+    {
+      reciprocity: "Georgia law authorizes persons licensed to carry in another state to carry in Georgia, but they must comply with Georgia law.",
+      permitlessCarry: "O.C.G.A. § 16-11-126: lawful weapons carriers may carry weapons as allowed by Georgia law.",
+      concealedCarry: "Georgia allows carry by lawful weapons carriers, but unauthorized locations still apply.",
+      openCarry: "Georgia carry may be open or concealed for lawful weapons carriers, subject to restricted locations.",
+      vehicleCarry: "O.C.G.A. § 16-11-126 addresses carrying in private passenger motor vehicles.",
+      dutyToInform: "Verify current Georgia police-contact rules. Keep hands visible and answer lawful questions truthfully.",
+      privateSigns: "Private property owners may control access and ask armed persons to leave.",
+      forceLaw: "Georgia self-defense law is fact-specific."
+    },
+    [
+      "Georgia permitless carry applies to lawful weapons carriers, not everyone.",
+      "Out-of-state license holders must comply with Georgia law.",
+      "Unauthorized locations remain in effect.",
+      "Schools, courthouses, government buildings, jails/prisons, places of worship, and nuclear power facilities require special caution.",
+      "Private property and federal property remain separate issues."
+    ],
+    [
+      {
+        title: "Lawful Weapons Carrier / Carry Authority",
+        risk: "Core Eligibility Rule",
+        body: [
+          "STATUTE: O.C.G.A. § 16-11-126.",
+          "SUMMARY: Georgia law allows lawful weapons carriers to carry weapons under Georgia’s carry framework.",
+          "GUIDANCE: Do not treat Georgia as ruleless. The user must qualify as a lawful weapons carrier and must obey Georgia restricted-location law."
+        ],
+        source: "O.C.G.A. § 16-11-126."
+      },
+      {
+        title: "Out-of-State License Recognition",
+        risk: "Travel Carry Rule",
+        body: [
+          "STATUTE: O.C.G.A. § 16-11-126(d).",
+          "SUMMARY: Georgia authorizes a person licensed to carry a weapon in another state to carry in Georgia, provided the person carries in compliance with Georgia law.",
+          "GUIDANCE: Michigan CPL may help with Georgia recognition, but Georgia law controls while in Georgia."
+        ],
+        source: "O.C.G.A. § 16-11-126(d)."
+      },
+      {
+        title: "Unauthorized Locations",
+        risk: "Major Location Restriction",
+        body: [
+          "STATUTE: O.C.G.A. § 16-11-127.",
+          "SUMMARY: Georgia law restricts carrying weapons or long guns in certain unauthorized locations.",
+          "GUIDANCE: Check government buildings, courthouses, jails/prisons, places of worship unless permitted, state mental health facilities, nuclear power facilities, and polling places."
+        ],
+        source: "O.C.G.A. § 16-11-127."
+      },
+      {
+        title: "School Safety Zones",
+        risk: "Extreme Risk Area",
+        body: [
+          "STATUTE: O.C.G.A. § 16-11-127.1.",
+          "SUMMARY: Georgia law restricts weapons in school safety zones, subject to statutory exceptions.",
+          "GUIDANCE: Schools, school buses, school functions, parking areas, and events should be treated as verify-first areas."
+        ],
+        source: "O.C.G.A. § 16-11-127.1."
+      },
+      {
+        title: "Courthouses",
+        risk: "Hard Stop Area",
+        body: [
+          "STATUTE: O.C.G.A. § 16-11-127.",
+          "SUMMARY: Georgia law treats courthouses as unauthorized locations.",
+          "GUIDANCE: Do not approach courthouse security armed. Plan storage before arrival."
+        ],
+        source: "O.C.G.A. § 16-11-127."
+      },
+      {
+        title: "Government Buildings",
+        risk: "Government Facility Risk",
+        body: [
+          "STATUTE: O.C.G.A. § 16-11-127.",
+          "SUMMARY: Georgia restricts weapons in government buildings under the statutory framework, with different treatment depending on lawful weapons carrier status and security screening.",
+          "GUIDANCE: Government buildings should be treated as verify-first locations."
+        ],
+        source: "O.C.G.A. § 16-11-127."
+      },
+      {
+        title: "Places of Worship",
+        risk: "Permission Required",
+        body: [
+          "STATUTE: O.C.G.A. § 16-11-127.",
+          "SUMMARY: Georgia restricts carry in places of worship unless the governing body or authority permits carry.",
+          "GUIDANCE: Do not assume churches or religious facilities allow carry. Verify policy with the proper authority."
+        ],
+        source: "O.C.G.A. § 16-11-127."
+      },
+      {
+        title: "Vehicle Carry",
+        risk: "Travel / Vehicle Rule",
+        body: [
+          "STATUTE: O.C.G.A. § 16-11-126.",
+          "SUMMARY: Georgia law addresses carrying handguns, long guns, and weapons in private passenger motor vehicles.",
+          "GUIDANCE: Vehicle carry should still be paired with calm traffic-stop behavior: hands visible, no reaching, truthful answers."
+        ],
+        source: "O.C.G.A. § 16-11-126."
+      },
+      {
+        title: "Private Property / Posted Locations",
+        risk: "Property Control",
+        body: [
+          "STATUTE / SOURCE: Georgia trespass/property framework.",
+          "SUMMARY: Private property owners may control access and require armed persons to leave.",
+          "GUIDANCE: If posted or asked to leave, leave immediately."
+        ],
+        source: "Georgia property/trespass framework."
+      },
+      {
+        title: "Federal Property / Post Offices",
+        risk: "Federal Law Overlay",
+        body: [
+          "STATUTE / SOURCE: Federal facility and postal property framework.",
+          "SUMMARY: Georgia carry permission does not override federal restrictions.",
+          "GUIDANCE: Federal buildings, federal courthouses, post offices, and secure federal property must be checked separately."
+        ],
+        source: "Federal facility and postal property framework."
+      }
+    ],
+    [
+      {
+        title: "Georgia Carry Checklist",
+        steps: [
+          "1. Confirm lawful weapons carrier status.",
+          "2. Verify out-of-state license recognition if relying on Michigan CPL.",
+          "3. Check unauthorized locations under § 16-11-127.",
+          "4. Check school safety zones under § 16-11-127.1.",
+          "5. Check places of worship policy.",
+          "6. Check private and federal property separately."
+        ]
+      }
+    ],
+    [
+      {
+        title: "Atlanta / Event Venue Travel",
+        summary: "Georgia is permissive, but city travel often involves government buildings, events, private security, and parking.",
+        guidance: [
+          "Check unauthorized locations.",
+          "Watch for security screening.",
+          "Follow private property instructions.",
+          "Do not argue with venue staff."
+        ]
+      }
+    ],
+    [
+      "Assuming lawful weapons carrier means carry anywhere.",
+      "Ignoring Georgia unauthorized locations.",
+      "Ignoring school safety zones.",
+      "Ignoring places of worship rules.",
+      "Ignoring private property instructions.",
+      "Assuming federal property follows Georgia law."
+    ],
+    [
+      "Lawful weapons carrier status checked.",
+      "Recognition checked.",
+      "Unauthorized locations checked.",
+      "School safety zones checked.",
+      "Vehicle carry checked.",
+      "Private/federal property checked."
+    ],
+    [
+      {
+        myth: "Georgia permitless carry means no restrictions.",
+        reality: "No. Georgia still has unauthorized locations, school safety zones, private property rules, and federal restrictions."
+      }
+    ]
+  ),
+
+  NC: makeProfile(
+    "North Carolina",
+    "Law-Backed Ultra Expanded Travel State",
+    "North Carolina is a high-priority southeastern travel state with a concealed handgun permit framework. North Carolina recognizes valid permits, but users must understand permit scope, prohibited places, educational property, assemblies where admission is charged, alcohol-related locations, posted private property, vehicles, parks, and federal property.",
+    {
+      reciprocity: "North Carolina recognizes valid concealed handgun permits, but users must comply with North Carolina law while physically in the state.",
+      permitlessCarry: "No general permitless concealed carry. Concealed handgun carry generally requires a valid permit.",
+      concealedCarry: "G.S. 14-415.11: a person with a concealed handgun permit may carry unless otherwise prohibited by law.",
+      openCarry: "Open carry may be lawful in some circumstances, but prohibited places, local restrictions, private property, and police contact still matter.",
+      vehicleCarry: "Vehicle carry must be analyzed under concealed carry and open carry rules.",
+      dutyToInform: "North Carolina permit holders must disclose to law enforcement when approached or addressed by an officer while carrying concealed.",
+      privateSigns: "G.S. 14-415.11(c)(8): posted private premises may prohibit concealed carry.",
+      forceLaw: "North Carolina self-defense law is fact-specific."
+    },
+    [
+      "North Carolina is not general permitless concealed carry.",
+      "Permit recognition does not override prohibited places.",
+      "Educational property is a major statutory risk area.",
+      "Private posting has explicit statutory significance.",
+      "Alcohol-related and event locations need careful review."
+    ],
+    [
+      {
+        title: "Concealed Handgun Permit Authority",
+        risk: "Core Carry Rule",
+        body: [
+          "STATUTE: G.S. 14-415.11.",
+          "SUMMARY: A person with a concealed handgun permit may carry a concealed handgun unless otherwise specifically prohibited by law.",
+          "GUIDANCE: A permit is not blanket authority. Restricted places and posted private property still matter."
+        ],
+        source: "N.C. Gen. Stat. § 14-415.11."
+      },
+      {
+        title: "Permit Scope / Prohibited Places",
+        risk: "Major Carry Restriction",
+        body: [
+          "STATUTE: G.S. 14-415.11(c).",
+          "SUMMARY: North Carolina law identifies areas where a concealed handgun permit does not authorize carry, including areas prohibited by other statutes and posted private premises.",
+          "GUIDANCE: Check every destination separately before carrying concealed."
+        ],
+        source: "N.C. Gen. Stat. § 14-415.11(c)."
+      },
+      {
+        title: "Educational Property",
+        risk: "Extreme Risk Area",
+        body: [
+          "STATUTE: G.S. 14-269.2.",
+          "SUMMARY: North Carolina restricts possession or carrying of firearms and other weapons on educational property, subject to statutory exceptions.",
+          "GUIDANCE: Schools, colleges, school events, parking lots, and educational property should be treated as verify-first areas."
+        ],
+        source: "N.C. Gen. Stat. § 14-269.2."
+      },
+      {
+        title: "Assemblies / Admission Charged / Alcohol Sold",
+        risk: "Event and Alcohol Location Risk",
+        body: [
+          "STATUTE: G.S. 14-269.3.",
+          "SUMMARY: North Carolina restricts weapons at certain assemblies and establishments where alcoholic beverages are sold and consumed, subject to exceptions.",
+          "GUIDANCE: Bars, restaurants, festivals, concerts, stadium events, and ticketed gatherings should be checked carefully."
+        ],
+        source: "N.C. Gen. Stat. § 14-269.3."
+      },
+      {
+        title: "Private Premises / Posted Notice",
+        risk: "Posted Property Rule",
+        body: [
+          "STATUTE: G.S. 14-415.11(c)(8).",
+          "SUMMARY: A concealed handgun permit does not authorize carry on private premises where notice prohibiting concealed handguns is conspicuously posted or stated by the person in control of the premises.",
+          "GUIDANCE: Posted signs matter in North Carolina. Leave immediately if asked."
+        ],
+        source: "N.C. Gen. Stat. § 14-415.11(c)(8)."
+      },
+      {
+        title: "Duty to Disclose During Police Contact",
+        risk: "Police Contact Requirement",
+        body: [
+          "STATUTE / SOURCE: North Carolina concealed handgun permit framework.",
+          "SUMMARY: North Carolina permit holders carrying concealed must disclose to law enforcement when approached or addressed by an officer.",
+          "GUIDANCE: Use a calm script: Officer, I have a valid permit and I am carrying. How would you like me to proceed?"
+        ],
+        source: "North Carolina concealed handgun permit guidance; N.C. Gen. Stat. Article 54B."
+      },
+      {
+        title: "State Parks",
+        risk: "Parks / Public Lands",
+        body: [
+          "STATUTE: G.S. 14-415.11(c1).",
+          "SUMMARY: North Carolina law allows permit holders to carry concealed handguns on grounds or waters of state parks, subject to other restrictions.",
+          "GUIDANCE: State parks are not the same as federal land, visitor centers, schools, posted buildings, or private property. Verify the specific location."
+        ],
+        source: "N.C. Gen. Stat. § 14-415.11(c1)."
+      },
+      {
+        title: "Vehicle Carry",
+        risk: "Vehicle / Concealment Risk",
+        body: [
+          "STATUTE / SOURCE: G.S. 14-269; G.S. 14-415.11.",
+          "SUMMARY: North Carolina concealed weapon law and concealed handgun permit law affect how firearms may be carried in vehicles.",
+          "GUIDANCE: If relying on concealment in a vehicle, verify permit validity and disclosure duties before travel."
+        ],
+        source: "N.C. Gen. Stat. § 14-269; § 14-415.11."
+      },
+      {
+        title: "Federal Property / Post Offices",
+        risk: "Federal Law Overlay",
+        body: [
+          "STATUTE / SOURCE: Federal facility and postal property framework.",
+          "SUMMARY: North Carolina carry permission does not override federal property restrictions.",
+          "GUIDANCE: Federal buildings, federal courthouses, post offices, and secure federal property must be checked separately."
+        ],
+        source: "Federal facility and postal property framework."
+      },
+      {
+        title: "Use of Force / Self-Defense",
+        risk: "Fact-Specific Legal Risk",
+        body: [
+          "STATUTE / SOURCE: North Carolina self-defense framework.",
+          "SUMMARY: Defensive force must be justified under the facts and applicable North Carolina law.",
+          "GUIDANCE: Avoid, disengage, call 911, identify evidence/witnesses when necessary, request counsel, and avoid detailed statements under stress."
+        ],
+        source: "North Carolina self-defense law framework."
+      }
+    ],
+    [
+      {
+        title: "North Carolina Carry Checklist",
+        steps: [
+          "1. Verify permit recognition.",
+          "2. Check G.S. 14-415.11 permit scope.",
+          "3. Check educational property under G.S. 14-269.2.",
+          "4. Check alcohol/event restrictions under G.S. 14-269.3.",
+          "5. Check posted private property under G.S. 14-415.11(c)(8).",
+          "6. Know police disclosure script.",
+          "7. Check federal property separately."
+        ]
+      }
+    ],
+    [
+      {
+        title: "Beach / Vacation Travel",
+        summary: "North Carolina travel may include hotels, restaurants, parks, alcohol locations, posted businesses, and federal coastal property.",
+        guidance: [
+          "Check posted signs.",
+          "Check alcohol/event restrictions.",
+          "Verify whether land is state, federal, municipal, or private.",
+          "Know disclosure duties."
+        ]
+      }
+    ],
+    [
+      "Assuming North Carolina is permitless concealed carry.",
+      "Ignoring posted private property.",
+      "Ignoring educational property.",
+      "Ignoring alcohol/event restrictions.",
+      "Forgetting police disclosure duties.",
+      "Assuming state park rules apply to federal property."
+    ],
+    [
+      "Permit recognition checked.",
+      "Educational property checked.",
+      "Alcohol/event restrictions checked.",
+      "Posted private premises checked.",
+      "Vehicle carry checked.",
+      "Police disclosure script ready.",
+      "Federal property checked."
+    ],
+    [
+      {
+        myth: "If North Carolina recognizes my permit, I can carry anywhere.",
+        reality: "No. Permit recognition does not override educational property, posted private premises, alcohol/event restrictions, federal property, or disclosure duties."
+      }
+    ]
+  )
+
+};
+
+  CA: makeProfile(
+    "California",
+    "High-Risk Law-Backed Ultra Expanded State",
+    "California is a high-risk non-recognition state for Michigan CPL holders. A Michigan CPL does not authorize carry in California. California has a restrictive licensing framework, broad sensitive-place restrictions, strict school-zone law, detailed vehicle/transport rules, magazine/equipment restrictions, and significant local and federal overlays. This profile should be treated as a warning-first travel profile.",
+    {
+      reciprocity: "Michigan CPL is treated as not recognized in this app travel engine. Do not carry in California on a Michigan CPL alone.",
+      permitlessCarry: "No general permitless concealed carry. California generally requires a California CCW license for public concealed carry.",
+      concealedCarry: "California Penal Code §§ 26150, 26155, and related licensing provisions govern California CCW licenses.",
+      openCarry: "Open carry is generally restricted in California and should not be relied upon for travel carry.",
+      vehicleCarry: "California vehicle transport must be handled carefully. Treat travel as lawful transport only unless the user has valid California authority.",
+      dutyToInform: "Verify current California license conditions and local issuing-agency rules. Keep hands visible and answer lawful questions truthfully.",
+      privateSigns: "Private property, sensitive places, posted areas, and local rules may restrict carry.",
+      forceLaw: "California self-defense law is fact-specific and should be verified before relying on any summary."
+    },
+    [
+      "California is not a Michigan CPL carry state.",
+      "California should be treated as a transport-only state unless the user has lawful California carry authority.",
+      "School zones, sensitive places, government property, alcohol locations, parks, casinos, public transit, and federal property require separate review.",
+      "California magazine, ammunition, firearm-feature, and local restrictions can create legal exposure even when carry is not occurring.",
+      "Do not rely on reciprocity apps alone for California. Verify official law and current injunction/enforcement status."
     ],
     [
       {
         title: "Michigan CPL Not Recognized",
         risk: "Do Not Carry on Michigan CPL",
         body: [
-          "California does not honor a Michigan CPL in this app travel engine.",
-          "Do not assume a permit, training certificate, or Michigan CPL creates carry authority in California.",
-          "Possession, transport, ammunition, magazine, and local rules require careful review."
+          "STATUTE / SOURCE: California CCW licensing framework; Penal Code §§ 26150 and 26155.",
+          "SUMMARY: California requires California-issued carry authority for ordinary public concealed carry. A Michigan CPL does not authorize public carry in California.",
+          "GUIDANCE: Treat California as a non-recognition state. Do not carry on a Michigan CPL alone."
         ],
-        source: "High-risk travel profile. Official California source verification required."
+        source: "California Penal Code §§ 26150, 26155; California DOJ CCW guidance."
+      },
+      {
+        title: "California CCW License Framework",
+        risk: "State-Issued License Requirement",
+        body: [
+          "STATUTE: California Penal Code §§ 26150 and 26155.",
+          "SUMMARY: California sheriffs and police chiefs may issue licenses to carry concealed firearms under California law and local procedures.",
+          "GUIDANCE: A traveler should not assume they can carry without a California license. Local issuing conditions and restrictions may apply."
+        ],
+        source: "California Penal Code §§ 26150, 26155."
+      },
+      {
+        title: "Sensitive Places / SB 2 Restrictions",
+        risk: "Major Location Restriction",
+        body: [
+          "STATUTE: California Penal Code § 26230.",
+          "SUMMARY: California law designates many sensitive places where carry may be restricted, and enforcement status can be affected by litigation.",
+          "GUIDANCE: Verify current enforcement status before relying on any California sensitive-place summary."
+        ],
+        source: "California Penal Code § 26230; California DOJ law-enforcement bulletins."
+      },
+      {
+        title: "School Zones",
+        risk: "Extreme Risk Area",
+        body: [
+          "STATUTE: California Penal Code § 626.9.",
+          "SUMMARY: California generally prohibits firearm possession in a school zone unless a statutory exception applies.",
+          "GUIDANCE: School property, parking areas, nearby zones, school events, and vehicle presence should be treated as high-risk."
+        ],
+        source: "California Penal Code § 626.9."
+      },
+      {
+        title: "Vehicle Transport",
+        risk: "Transport / Vehicle Trap",
+        body: [
+          "STATUTE / SOURCE: California firearm transport framework.",
+          "SUMMARY: California transport rules are separate from carry rules and should be followed strictly when transporting firearms.",
+          "GUIDANCE: Treat firearms as unloaded, locked, and transported only in a lawful manner unless the user has valid California carry authority."
+        ],
+        source: "California firearm transport framework; California DOJ guidance."
+      },
+      {
+        title: "Open Carry",
+        risk: "Do Not Rely on Open Carry",
+        body: [
+          "STATUTE / SOURCE: California open carry restrictions under Penal Code framework.",
+          "SUMMARY: California generally restricts open carry of loaded and unloaded firearms in public places, subject to limited exceptions.",
+          "GUIDANCE: Do not rely on open carry as a workaround for lack of California carry authority."
+        ],
+        source: "California Penal Code open-carry framework."
+      },
+      {
+        title: "Magazines / Ammunition / Equipment",
+        risk: "Equipment Restriction Risk",
+        body: [
+          "STATUTE / SOURCE: California large-capacity magazine, ammunition, and firearm-feature restrictions.",
+          "SUMMARY: California regulates certain magazines, ammunition transactions, firearm configurations, and accessories more heavily than many states.",
+          "GUIDANCE: Verify firearm, magazine, ammunition, and accessory legality before entering California."
+        ],
+        source: "California Penal Code firearm-equipment framework."
+      },
+      {
+        title: "Federal Property / Post Offices",
+        risk: "Federal Law Overlay",
+        body: [
+          "STATUTE / SOURCE: Federal facility and postal property framework.",
+          "SUMMARY: California carry or transport permission does not override federal restrictions.",
+          "GUIDANCE: Federal buildings, federal courthouses, post offices, and secure federal property must be checked separately."
+        ],
+        source: "Federal facility and postal property framework."
+      },
+      {
+        title: "Private Property / Posted Locations",
+        risk: "Property Control",
+        body: [
+          "STATUTE / SOURCE: California property/trespass framework and sensitive-place law.",
+          "SUMMARY: Private property and posted locations can restrict access and carry.",
+          "GUIDANCE: If posted or instructed to leave, leave immediately."
+        ],
+        source: "California property/trespass framework."
+      },
+      {
+        title: "Use of Force / Self-Defense",
+        risk: "Fact-Specific Legal Risk",
+        body: [
+          "STATUTE / SOURCE: California self-defense framework.",
+          "SUMMARY: Defensive force must be justified by the facts. Carry legality and use-of-force legality are separate questions.",
+          "GUIDANCE: Avoid confrontation, call 911, identify evidence/witnesses when necessary, request counsel, and avoid detailed statements."
+        ],
+        source: "California self-defense law framework."
       }
     ],
     [
       {
-        title: "Before Traveling to California",
+        title: "California Travel Checklist",
         steps: [
-          "1. Do not rely on Michigan CPL.",
-          "2. Verify lawful transport rules.",
-          "3. Verify magazine and ammunition restrictions.",
-          "4. Verify local restrictions.",
-          "5. Avoid unnecessary stops if transporting under federal framework."
+          "1. Do not carry on Michigan CPL alone.",
+          "2. Verify California CCW authority if applicable.",
+          "3. Check Penal Code § 26230 sensitive places.",
+          "4. Check Penal Code § 626.9 school zones.",
+          "5. Verify locked/unloaded transport rules.",
+          "6. Verify magazine, ammunition, and equipment restrictions.",
+          "7. Check federal and private property separately."
         ]
       }
     ],
     [
       {
-        title: "Driving Through California",
-        summary: "Transport rules and local restrictions are major risk points.",
+        title: "Driving Into California",
+        summary: "California should be treated as a transport-only state unless the user has California carry authority.",
         guidance: [
-          "Plan the route.",
-          "Verify transport method.",
-          "Avoid unnecessary handling.",
-          "Do not assume other states' rules apply."
+          "Do not carry on Michigan CPL.",
+          "Transport unloaded and locked under California rules.",
+          "Verify magazines and ammunition.",
+          "Avoid unnecessary handling or stops."
         ]
       }
     ],
     [
-      "Assuming a Michigan CPL travels into California.",
-      "Ignoring transport rules.",
-      "Ignoring magazine, ammunition, local, and sensitive-place restrictions.",
-      "Stopping unnecessarily while transporting."
+      "Carrying on a Michigan CPL.",
+      "Ignoring sensitive places.",
+      "Ignoring school zones.",
+      "Assuming open carry is an option.",
+      "Ignoring magazine/ammunition restrictions.",
+      "Failing to verify transport rules."
     ],
     [
-      "Do not carry on Michigan CPL alone.",
-      "Verify lawful transport.",
-      "Verify magazine and ammunition restrictions.",
-      "Verify local rules."
+      "Michigan CPL non-recognition understood.",
+      "California CCW authority verified or no carry.",
+      "Transport rules checked.",
+      "Sensitive places checked.",
+      "School zones checked.",
+      "Equipment restrictions checked."
     ],
     [
       {
-        myth: "I am only visiting, so my Michigan CPL should be enough.",
-        reality: "California does not treat a Michigan CPL as carry authority in this app travel engine."
+        myth: "I am visiting, so my Michigan CPL should be good enough.",
+        reality: "No. California does not recognize Michigan CPL for ordinary carry in this app travel engine."
+      }
+    ]
+  ),
+
+  NY: makeProfile(
+    "New York",
+    "High-Risk Law-Backed Ultra Expanded State",
+    "New York is a high-risk non-recognition state for Michigan CPL holders. A Michigan CPL does not authorize carry in New York. New York has a restrictive licensing framework, a broad sensitive-location statute, separate New York City concerns, strict school rules, public transportation restrictions, and major travel/transport risks.",
+    {
+      reciprocity: "Michigan CPL is treated as not recognized in this app travel engine. Do not carry in New York on a Michigan CPL alone.",
+      permitlessCarry: "No permitless carry. New York requires New York carry authority.",
+      concealedCarry: "New York Penal Law § 400.00 governs handgun licensing; Penal Law § 265.01-e restricts sensitive locations.",
+      openCarry: "Do not rely on open carry in New York. New York handgun carry is license-based and highly restricted.",
+      vehicleCarry: "Vehicle possession/transport must be handled with extreme caution under New York and federal transport rules.",
+      dutyToInform: "Verify current New York license conditions and police-contact rules. Keep hands visible and answer lawful questions truthfully.",
+      privateSigns: "New York sensitive/restricted location rules and private property rules must be checked.",
+      forceLaw: "New York self-defense law is fact-specific and duty/retreat concepts may matter."
+    },
+    [
+      "New York is not a Michigan CPL carry state.",
+      "New York City must be treated as a separate high-risk legal environment.",
+      "Sensitive-location restrictions are broad and include many common travel destinations.",
+      "Transport through New York requires careful planning; casual stops can create risk.",
+      "Public transit, Times Square, schools, government locations, parks, and other sensitive places require specific review."
+    ],
+    [
+      {
+        title: "Michigan CPL Not Recognized",
+        risk: "Do Not Carry on Michigan CPL",
+        body: [
+          "STATUTE / SOURCE: New York Penal Law Article 400 licensing framework.",
+          "SUMMARY: A Michigan CPL does not authorize public handgun carry in New York.",
+          "GUIDANCE: Treat New York as a non-recognition state. Do not carry on Michigan CPL alone."
+        ],
+        source: "N.Y. Penal Law § 400.00."
+      },
+      {
+        title: "New York License Framework",
+        risk: "State License Requirement",
+        body: [
+          "STATUTE: N.Y. Penal Law § 400.00.",
+          "SUMMARY: New York handgun possession/carry licensing is governed by New York law and local licensing officers.",
+          "GUIDANCE: A traveler should not assume out-of-state licensing creates New York carry authority."
+        ],
+        source: "N.Y. Penal Law § 400.00."
+      },
+      {
+        title: "Sensitive Locations",
+        risk: "Major Location Restriction",
+        body: [
+          "STATUTE: N.Y. Penal Law § 265.01-e.",
+          "SUMMARY: New York prohibits possession of firearms, rifles, or shotguns in sensitive locations as defined by statute unless an exception applies.",
+          "GUIDANCE: Treat the sensitive-location list as a major travel warning. Verify before entering any public venue, transportation area, school, government location, or crowded public area."
+        ],
+        source: "N.Y. Penal Law § 265.01-e."
+      },
+      {
+        title: "Restricted Locations / Private Property",
+        risk: "Property and Location Risk",
+        body: [
+          "STATUTE / SOURCE: New York Concealed Carry Improvement Act framework.",
+          "SUMMARY: New York law includes sensitive and restricted location concepts that can affect private property and public-facing locations.",
+          "GUIDANCE: Do not assume absence of a sign means carry is lawful. Verify current New York rules before relying."
+        ],
+        source: "New York CCIA framework; N.Y. Penal Law Article 265."
+      },
+      {
+        title: "New York City",
+        risk: "Separate High-Risk Jurisdiction",
+        body: [
+          "STATUTE / SOURCE: New York City licensing and administrative framework.",
+          "SUMMARY: New York City has its own licensing and enforcement environment in addition to state law.",
+          "GUIDANCE: Treat NYC, subway/commuter rail, Times Square, airports, and crowded tourist areas as high-risk no-assumption zones."
+        ],
+        source: "New York State and New York City handgun licensing framework."
+      },
+      {
+        title: "Schools",
+        risk: "Extreme Risk Area",
+        body: [
+          "STATUTE: N.Y. Penal Law § 265.01-e and related school weapons laws.",
+          "SUMMARY: Schools and education-related locations are treated as sensitive/high-risk areas under New York law.",
+          "GUIDANCE: Do not enter school property, school events, or school-adjacent restricted areas armed unless a clear exception applies."
+        ],
+        source: "N.Y. Penal Law § 265.01-e; New York school weapons framework."
+      },
+      {
+        title: "Public Transportation",
+        risk: "Transit Restriction Risk",
+        body: [
+          "STATUTE / SOURCE: N.Y. Penal Law § 265.01-e and transit authority restrictions.",
+          "SUMMARY: New York sensitive-location restrictions can apply to public transportation and related areas.",
+          "GUIDANCE: Subways, buses, commuter rail, terminals, and transit hubs should be treated as restricted unless verified otherwise."
+        ],
+        source: "N.Y. Penal Law § 265.01-e; New York transit restrictions."
+      },
+      {
+        title: "Vehicle Transport / Passing Through",
+        risk: "Transport Trap",
+        body: [
+          "STATUTE / SOURCE: New York weapons law and federal interstate transport framework.",
+          "SUMMARY: Transporting through New York requires strict compliance with state and federal rules.",
+          "GUIDANCE: Plan route, avoid unnecessary stops, keep firearms unloaded/locked where applicable, and do not treat transport as carry."
+        ],
+        source: "New York Penal Law Article 265; federal interstate transport framework."
+      },
+      {
+        title: "Magazines / Ammunition / Equipment",
+        risk: "Equipment Restriction Risk",
+        body: [
+          "STATUTE / SOURCE: New York SAFE Act and Penal Law equipment restrictions.",
+          "SUMMARY: New York regulates certain magazines, firearm features, ammunition-related issues, and configurations.",
+          "GUIDANCE: Verify firearm, magazine, and ammunition legality before entering New York."
+        ],
+        source: "New York SAFE Act / Penal Law equipment framework."
+      },
+      {
+        title: "Use of Force / Self-Defense",
+        risk: "Fact-Specific Legal Risk",
+        body: [
+          "STATUTE / SOURCE: New York justification law framework.",
+          "SUMMARY: New York self-defense law is fact-specific and can involve necessity, reasonableness, proportionality, and retreat-related issues.",
+          "GUIDANCE: Avoid confrontation, disengage when safe, call 911, request counsel, and avoid detailed statements."
+        ],
+        source: "N.Y. Penal Law Article 35 framework."
+      }
+    ],
+    [
+      {
+        title: "New York Travel Checklist",
+        steps: [
+          "1. Do not carry on Michigan CPL alone.",
+          "2. Verify New York license authority if applicable.",
+          "3. Check Penal Law § 265.01-e sensitive locations.",
+          "4. Treat NYC as a separate high-risk environment.",
+          "5. Verify transport rules before entry.",
+          "6. Verify magazine/equipment restrictions.",
+          "7. Avoid casual stops when transporting."
+        ]
+      }
+    ],
+    [
+      {
+        title: "Passing Through New York",
+        summary: "New York is one of the highest-risk transport states for travelers.",
+        guidance: [
+          "Do not carry on Michigan CPL.",
+          "Plan route carefully.",
+          "Avoid unnecessary stops.",
+          "Verify firearm and magazine legality."
+        ]
+      }
+    ],
+    [
+      "Carrying on Michigan CPL.",
+      "Ignoring sensitive locations.",
+      "Ignoring New York City rules.",
+      "Using public transit while armed.",
+      "Ignoring transport limits.",
+      "Ignoring magazine/equipment restrictions."
+    ],
+    [
+      "Non-recognition understood.",
+      "New York license authority verified or no carry.",
+      "Sensitive locations checked.",
+      "NYC checked separately.",
+      "Transport rules checked.",
+      "Equipment restrictions checked."
+    ],
+    [
+      {
+        myth: "I am just passing through New York, so it does not matter.",
+        reality: "New York travel and transport must be planned carefully. Casual stops and noncompliant equipment can create serious risk."
+      }
+    ]
+  ),
+
+  NJ: makeProfile(
+    "New Jersey",
+    "High-Risk Law-Backed Ultra Expanded State",
+    "New Jersey is a high-risk non-recognition state for Michigan CPL holders. A Michigan CPL does not authorize carry in New Jersey. New Jersey has a restrictive permit-to-carry framework, extensive sensitive-place restrictions, transportation rules, school restrictions, magazine limits, private property issues, and rapidly litigated carry restrictions.",
+    {
+      reciprocity: "Michigan CPL is treated as not recognized in this app travel engine. Do not carry in New Jersey on a Michigan CPL alone.",
+      permitlessCarry: "No permitless carry. New Jersey requires New Jersey carry authority.",
+      concealedCarry: "N.J.S.A. 2C:58-4 governs permits to carry handguns; N.J.S.A. 2C:58-4.6 lists many prohibited carry locations.",
+      openCarry: "New Jersey permit-to-carry authority should not be treated as open carry authorization.",
+      vehicleCarry: "Vehicle possession/transport is tightly regulated and should be treated as transport only unless lawful New Jersey carry authority exists.",
+      dutyToInform: "Verify current New Jersey carry-permit duties and police-contact rules. Keep hands visible and answer lawful questions truthfully.",
+      privateSigns: "New Jersey sensitive-place and private-property rules must be checked carefully.",
+      forceLaw: "New Jersey self-defense law is fact-specific and should be verified before relying on any summary."
+    },
+    [
+      "New Jersey is not a Michigan CPL carry state.",
+      "New Jersey sensitive-place law is broad and has been subject to litigation.",
+      "Magazine/equipment rules can create legal risk independent of carry.",
+      "Transport rules must be followed strictly.",
+      "Schools, courthouses, government buildings, parks, beaches, casinos, public gatherings, and private property require careful review."
+    ],
+    [
+      {
+        title: "Michigan CPL Not Recognized",
+        risk: "Do Not Carry on Michigan CPL",
+        body: [
+          "STATUTE / SOURCE: New Jersey permit-to-carry framework.",
+          "SUMMARY: A Michigan CPL does not authorize public handgun carry in New Jersey.",
+          "GUIDANCE: Treat New Jersey as a non-recognition state. Do not carry on Michigan CPL alone."
+        ],
+        source: "N.J.S.A. 2C:58-4."
+      },
+      {
+        title: "New Jersey Permit to Carry",
+        risk: "Permit Requirement",
+        body: [
+          "STATUTE: N.J.S.A. 2C:58-4.",
+          "SUMMARY: New Jersey regulates permits to carry handguns under state law.",
+          "GUIDANCE: A traveler should not assume out-of-state permits create New Jersey carry authority."
+        ],
+        source: "N.J.S.A. 2C:58-4."
+      },
+      {
+        title: "Prohibited Carry Locations / Sensitive Places",
+        risk: "Major Location Restriction",
+        body: [
+          "STATUTE: N.J.S.A. 2C:58-4.6.",
+          "SUMMARY: New Jersey lists places where carrying a firearm or destructive device is prohibited, subject to current law and litigation.",
+          "GUIDANCE: Verify current enforcement status and location rules before entering any public building, park, beach, casino, school, courthouse, public gathering, or transportation area."
+        ],
+        source: "N.J.S.A. 2C:58-4.6."
+      },
+      {
+        title: "Schools and Educational Property",
+        risk: "Extreme Risk Area",
+        body: [
+          "STATUTE / SOURCE: N.J.S.A. 2C:58-4.6 and New Jersey school weapons framework.",
+          "SUMMARY: Schools and education-related locations are prohibited or highly restricted areas under New Jersey law.",
+          "GUIDANCE: Treat school property, buses, events, and parking areas as no-assumption zones."
+        ],
+        source: "N.J.S.A. 2C:58-4.6; New Jersey school weapons framework."
+      },
+      {
+        title: "Vehicle Transport",
+        risk: "Transport Trap",
+        body: [
+          "STATUTE / SOURCE: New Jersey firearm transport framework.",
+          "SUMMARY: New Jersey regulates firearm possession and transport strictly.",
+          "GUIDANCE: If transporting, follow lawful transport rules exactly. Do not treat transport as carry."
+        ],
+        source: "N.J.S.A. 2C:39-6 transport framework."
+      },
+      {
+        title: "Magazine / Ammunition / Equipment Restrictions",
+        risk: "Equipment Restriction Risk",
+        body: [
+          "STATUTE / SOURCE: New Jersey large-capacity magazine and ammunition/firearm framework.",
+          "SUMMARY: New Jersey restricts certain magazines, ammunition, firearm types, and configurations.",
+          "GUIDANCE: Verify firearm, magazine, ammunition, and accessory legality before entering New Jersey."
+        ],
+        source: "New Jersey firearm equipment restrictions framework."
+      },
+      {
+        title: "Private Property / Posted Locations",
+        risk: "Property Control",
+        body: [
+          "STATUTE / SOURCE: New Jersey sensitive-place and property law framework.",
+          "SUMMARY: Private property and posted locations can restrict carry or access.",
+          "GUIDANCE: If posted or instructed to leave, leave immediately."
+        ],
+        source: "N.J.S.A. 2C:58-4.6; New Jersey property/trespass framework."
+      },
+      {
+        title: "Courts / Government Facilities",
+        risk: "Hard Stop Area",
+        body: [
+          "STATUTE: N.J.S.A. 2C:58-4.6.",
+          "SUMMARY: New Jersey sensitive-place law includes government and court-related restrictions.",
+          "GUIDANCE: Do not approach courthouse or government security armed."
+        ],
+        source: "N.J.S.A. 2C:58-4.6."
+      },
+      {
+        title: "Public Gatherings / Parks / Beaches / Casinos",
+        risk: "Common Destination Risk",
+        body: [
+          "STATUTE: N.J.S.A. 2C:58-4.6.",
+          "SUMMARY: New Jersey's prohibited-location framework includes many common public destinations.",
+          "GUIDANCE: Parks, beaches, casinos, public gatherings, entertainment venues, and transportation areas require direct verification."
+        ],
+        source: "N.J.S.A. 2C:58-4.6; current litigation/enforcement guidance."
+      },
+      {
+        title: "Use of Force / Self-Defense",
+        risk: "Fact-Specific Legal Risk",
+        body: [
+          "STATUTE / SOURCE: New Jersey self-defense framework.",
+          "SUMMARY: Defensive force must be justified by the facts under New Jersey law.",
+          "GUIDANCE: Avoid confrontation, disengage when safe, call 911, request counsel, and avoid detailed statements."
+        ],
+        source: "New Jersey self-defense law framework."
+      }
+    ],
+    [
+      {
+        title: "New Jersey Travel Checklist",
+        steps: [
+          "1. Do not carry on Michigan CPL alone.",
+          "2. Verify New Jersey permit-to-carry authority if applicable.",
+          "3. Check N.J.S.A. 2C:58-4.6 prohibited locations.",
+          "4. Verify transport rules under New Jersey law.",
+          "5. Verify magazine/equipment restrictions.",
+          "6. Check private property and sensitive places.",
+          "7. Track current litigation/enforcement updates."
+        ]
+      }
+    ],
+    [
+      {
+        title: "New Jersey Shore / Casino / Public Event Travel",
+        summary: "Many common New Jersey destinations fall into sensitive-place or property-controlled categories.",
+        guidance: [
+          "Do not carry on Michigan CPL.",
+          "Check prohibited locations.",
+          "Check equipment legality.",
+          "Follow transport rules exactly."
+        ]
+      }
+    ],
+    [
+      "Carrying on Michigan CPL.",
+      "Ignoring sensitive places.",
+      "Ignoring transport rules.",
+      "Ignoring magazine restrictions.",
+      "Assuming permit-to-carry means open carry.",
+      "Ignoring current litigation status."
+    ],
+    [
+      "Non-recognition understood.",
+      "NJ permit authority verified or no carry.",
+      "Sensitive places checked.",
+      "Transport rules checked.",
+      "Magazine/equipment restrictions checked.",
+      "Private property checked."
+    ],
+    [
+      {
+        myth: "If I am legal in Pennsylvania or Delaware, I am legal in New Jersey.",
+        reality: "No. New Jersey has its own restrictive carry, transport, magazine, and sensitive-place laws."
+      }
+    ]
+  ),
+
+  MA: makeProfile(
+    "Massachusetts",
+    "High-Risk Law-Backed Ultra Expanded State",
+    "Massachusetts is a high-risk non-recognition state for Michigan CPL holders. A Michigan CPL does not authorize carry in Massachusetts. Massachusetts has a restrictive licensing framework, vehicle possession rules, ammunition and magazine restrictions, intoxication restrictions, safe storage obligations, and important school/government/federal property concerns.",
+    {
+      reciprocity: "Michigan CPL is treated as not recognized in this app travel engine. Do not carry in Massachusetts on a Michigan CPL alone.",
+      permitlessCarry: "No permitless carry. Massachusetts requires Massachusetts licensing authority.",
+      concealedCarry: "Mass. Gen. Laws ch. 140, § 131 governs licenses to carry firearms.",
+      openCarry: "Do not rely on open carry in Massachusetts. Massachusetts carry is license-based and highly regulated.",
+      vehicleCarry: "Mass. Gen. Laws ch. 269, § 10 addresses possession/control in a vehicle without proper licensing.",
+      dutyToInform: "Verify current Massachusetts license conditions and police-contact rules. Keep hands visible and answer lawful questions truthfully.",
+      privateSigns: "Private property and posted locations still matter. Leave if asked.",
+      forceLaw: "Massachusetts self-defense law is fact-specific."
+    },
+    [
+      "Massachusetts is not a Michigan CPL carry state.",
+      "Massachusetts licensing and possession rules are strict.",
+      "Vehicle possession without proper Massachusetts authority can create serious exposure.",
+      "Magazine, ammunition, safe storage, and equipment rules must be verified.",
+      "Schools, courts, government buildings, federal property, and private property require separate review."
+    ],
+    [
+      {
+        title: "Massachusetts License to Carry",
+        risk: "State License Requirement",
+        body: [
+          "STATUTE: M.G.L. ch. 140, § 131.",
+          "SUMMARY: Massachusetts governs licenses to carry firearms through a state licensing framework.",
+          "GUIDANCE: A Michigan CPL does not substitute for Massachusetts carry authority."
+        ],
+        source: "Mass. Gen. Laws ch. 140, § 131."
+      },
+      {
+        title: "Unlawful Possession / Vehicle Control",
+        risk: "Core Criminal Exposure",
+        body: [
+          "STATUTE: M.G.L. ch. 269, § 10.",
+          "SUMMARY: Massachusetts law criminalizes possession or control of a firearm, including in a vehicle, without proper statutory authority or licensing.",
+          "GUIDANCE: Treat Massachusetts as a high-risk state for vehicle possession and transport."
+        ],
+        source: "Mass. Gen. Laws ch. 269, § 10."
+      },
+      {
+        title: "Nonresident Carry / Travel",
+        risk: "Nonresident License Risk",
+        body: [
+          "STATUTE / SOURCE: Massachusetts firearms licensing framework.",
+          "SUMMARY: Nonresidents must verify Massachusetts nonresident licensing and temporary carry requirements before possessing or carrying.",
+          "GUIDANCE: Do not enter Massachusetts relying on Michigan CPL alone."
+        ],
+        source: "Massachusetts firearms licensing framework."
+      },
+      {
+        title: "Firearm Identification / Possession Framework",
+        risk: "Licensing and Possession Risk",
+        body: [
+          "STATUTE: M.G.L. ch. 140, §§ 129B and 129C.",
+          "SUMMARY: Massachusetts regulates firearm identification, possession, and licensing obligations.",
+          "GUIDANCE: Verify possession authority before bringing any firearm into Massachusetts."
+        ],
+        source: "Mass. Gen. Laws ch. 140, §§ 129B, 129C."
+      },
+      {
+        title: "Large Capacity Weapons / Feeding Devices",
+        risk: "Equipment Restriction Risk",
+        body: [
+          "STATUTE: M.G.L. ch. 269, § 10 and § 10F; ch. 140 definitions.",
+          "SUMMARY: Massachusetts restricts large-capacity weapons and large-capacity feeding devices.",
+          "GUIDANCE: Verify magazine and firearm configuration before entering Massachusetts."
+        ],
+        source: "Mass. Gen. Laws ch. 269, §§ 10, 10F; ch. 140 § 121."
+      },
+      {
+        title: "Carrying Loaded While Under Influence",
+        risk: "Intoxication Risk",
+        body: [
+          "STATUTE: M.G.L. ch. 269, § 10H.",
+          "SUMMARY: Massachusetts law addresses carrying a loaded firearm while under the influence of liquor, marijuana, narcotic drugs, depressants, stimulant substances, or toxic vapors.",
+          "GUIDANCE: If alcohol, marijuana, drugs, or impairment are involved, do not carry."
+        ],
+        source: "Mass. Gen. Laws ch. 269, § 10H."
+      },
+      {
+        title: "Safe Storage",
+        risk: "Storage / Child Access Risk",
+        body: [
+          "STATUTE / SOURCE: Massachusetts safe storage framework.",
+          "SUMMARY: Massachusetts imposes firearm storage obligations.",
+          "GUIDANCE: Firearms should be locked, secured, and inaccessible to unauthorized persons when not under direct control."
+        ],
+        source: "Massachusetts safe storage law framework."
+      },
+      {
+        title: "Schools / Government / Courts",
+        risk: "Location Restriction Risk",
+        body: [
+          "STATUTE / SOURCE: Massachusetts weapons and prohibited-location framework.",
+          "SUMMARY: Schools, courts, government buildings, and secured public facilities can create serious location restrictions.",
+          "GUIDANCE: Treat educational, court, government, and security-screened buildings as verify-first/no-assumption locations."
+        ],
+        source: "Massachusetts weapons/prohibited-location framework."
+      },
+      {
+        title: "Federal Property / Post Offices",
+        risk: "Federal Law Overlay",
+        body: [
+          "STATUTE / SOURCE: Federal facility and postal property framework.",
+          "SUMMARY: Massachusetts carry or possession authority does not override federal restrictions.",
+          "GUIDANCE: Federal buildings, post offices, federal courthouses, and secure federal property must be checked separately."
+        ],
+        source: "Federal facility and postal property framework."
+      },
+      {
+        title: "Use of Force / Self-Defense",
+        risk: "Fact-Specific Legal Risk",
+        body: [
+          "STATUTE / SOURCE: Massachusetts self-defense framework.",
+          "SUMMARY: Massachusetts self-defense law is fact-specific and may involve retreat/avoidance concepts depending on location and facts.",
+          "GUIDANCE: Avoid confrontation, disengage when safe, call 911, request counsel, and avoid detailed statements."
+        ],
+        source: "Massachusetts self-defense law framework."
+      }
+    ],
+    [
+      {
+        title: "Massachusetts Travel Checklist",
+        steps: [
+          "1. Do not carry on Michigan CPL alone.",
+          "2. Verify Massachusetts licensing/nonresident authority.",
+          "3. Check M.G.L. ch. 269 § 10 possession/vehicle rules.",
+          "4. Verify magazine/equipment restrictions.",
+          "5. Check intoxication law under § 10H.",
+          "6. Check safe storage rules.",
+          "7. Check schools/courts/government/federal property."
+        ]
+      }
+    ],
+    [
+      {
+        title: "Driving Into Massachusetts",
+        summary: "Massachusetts is high risk for possession, vehicle control, magazines, and licensing.",
+        guidance: [
+          "Do not carry on Michigan CPL.",
+          "Verify Massachusetts authority before entry.",
+          "Check magazine/equipment legality.",
+          "Treat vehicle possession as high risk."
+        ]
+      }
+    ],
+    [
+      "Carrying on Michigan CPL.",
+      "Ignoring vehicle possession/control rules.",
+      "Ignoring magazine restrictions.",
+      "Ignoring licensing requirements.",
+      "Ignoring safe storage.",
+      "Carrying while impaired."
+    ],
+    [
+      "Non-recognition understood.",
+      "Massachusetts license authority verified or no carry.",
+      "Vehicle possession rules checked.",
+      "Magazine/equipment checked.",
+      "Safe storage checked.",
+      "Location restrictions checked."
+    ],
+    [
+      {
+        myth: "Massachusetts is just another New England state; my permit should be fine.",
+        reality: "No. Massachusetts has its own strict licensing, possession, transport, and equipment rules."
+      }
+    ]
+  ),
+
+  CT: makeProfile(
+    "Connecticut",
+    "High-Risk Law-Backed Ultra Expanded State",
+    "Connecticut is a high-risk non-recognition state for Michigan CPL holders. Connecticut does not honor Michigan CPL for carry. Connecticut has a pistol permit framework, restrictions on carrying without a permit, recent open-carry/display restrictions, school and government location restrictions, magazine/equipment rules, private-property limitations, and federal overlays.",
+    {
+      reciprocity: "Michigan CPL is treated as not recognized in this app travel engine. Do not carry in Connecticut on a Michigan CPL alone.",
+      permitlessCarry: "No permitless handgun carry. Connecticut generally requires a Connecticut pistol/revolver permit for carry.",
+      concealedCarry: "Conn. Gen. Stat. §§ 29-28 and 29-35 govern pistol/revolver permits and carry without permit prohibitions.",
+      openCarry: "Connecticut now restricts open carry/knowing display concepts. Do not rely on open carry.",
+      vehicleCarry: "Vehicle carry/transport must comply with Connecticut permit and transport rules.",
+      dutyToInform: "Verify current Connecticut police-contact and permit-display rules. Keep hands visible and answer lawful questions truthfully.",
+      privateSigns: "Connecticut permit authority does not override private property prohibitions.",
+      forceLaw: "Connecticut self-defense law is fact-specific."
+    },
+    [
+      "Connecticut is not a Michigan CPL carry state.",
+      "Connecticut requires Connecticut authority for handgun carry.",
+      "Open carry/display is restricted and should not be relied upon.",
+      "Schools, legislative buildings, government buildings, parks, private property, and federal property require review.",
+      "Magazine/equipment restrictions must be checked before travel."
+    ],
+    [
+      {
+        title: "Connecticut Pistol / Revolver Permit",
+        risk: "State Permit Requirement",
+        body: [
+          "STATUTE: Conn. Gen. Stat. § 29-28.",
+          "SUMMARY: Connecticut provides a permit framework for carrying pistols and revolvers.",
+          "GUIDANCE: A Michigan CPL does not authorize carry in Connecticut."
+        ],
+        source: "Conn. Gen. Stat. § 29-28."
+      },
+      {
+        title: "Carrying Without Permit Prohibited",
+        risk: "Core Criminal Exposure",
+        body: [
+          "STATUTE: Conn. Gen. Stat. § 29-35.",
+          "SUMMARY: Connecticut prohibits carrying a pistol or revolver without a permit, subject to statutory exceptions.",
+          "GUIDANCE: Do not carry in Connecticut without valid Connecticut authority."
+        ],
+        source: "Conn. Gen. Stat. § 29-35."
+      },
+      {
+        title: "Open Carry / Display Restriction",
+        risk: "Display Risk",
+        body: [
+          "STATUTE: Conn. Gen. Stat. § 29-35 and current Connecticut public act framework.",
+          "SUMMARY: Connecticut restricts knowingly carrying with intent to display a firearm in public, subject to exceptions.",
+          "GUIDANCE: Do not rely on open carry or visible display in Connecticut."
+        ],
+        source: "Conn. Gen. Stat. § 29-35."
+      },
+      {
+        title: "Permit Must Be Carried",
+        risk: "Documentation Requirement",
+        body: [
+          "STATUTE: Conn. Gen. Stat. § 29-35.",
+          "SUMMARY: Connecticut permit holders must carry the permit while carrying the pistol or revolver.",
+          "GUIDANCE: A user with Connecticut authority should carry permit documentation and photo identification."
+        ],
+        source: "Conn. Gen. Stat. § 29-35."
+      },
+      {
+        title: "Schools",
+        risk: "Extreme Risk Area",
+        body: [
+          "STATUTE: Conn. Gen. Stat. § 53a-217b.",
+          "SUMMARY: Connecticut restricts possession of firearms and deadly weapons on school grounds, subject to exceptions.",
+          "GUIDANCE: Schools, school grounds, events, and parking areas should be treated as verify-first/no-assumption zones."
+        ],
+        source: "Conn. Gen. Stat. § 53a-217b."
+      },
+      {
+        title: "Private Property / Premises Prohibition",
+        risk: "Property Control",
+        body: [
+          "STATUTE / SOURCE: Connecticut carry-location framework.",
+          "SUMMARY: A Connecticut permit does not authorize carry where possession or carrying is prohibited by the person who owns or controls the premises.",
+          "GUIDANCE: Posted signs and verbal instructions matter. Leave immediately if asked."
+        ],
+        source: "Connecticut location restriction framework."
+      },
+      {
+        title: "Legislative / Government Buildings",
+        risk: "Government Facility Risk",
+        body: [
+          "STATUTE / SOURCE: Connecticut location restriction framework.",
+          "SUMMARY: Connecticut restricts firearms in certain government and legislative buildings.",
+          "GUIDANCE: Treat legislative buildings, courts, government offices, and security-screened facilities as verify-first locations."
+        ],
+        source: "Connecticut location restriction framework."
+      },
+      {
+        title: "Magazine / Equipment Restrictions",
+        risk: "Equipment Restriction Risk",
+        body: [
+          "STATUTE / SOURCE: Connecticut large-capacity magazine and assault-weapon framework.",
+          "SUMMARY: Connecticut regulates certain magazines, firearm types, and equipment.",
+          "GUIDANCE: Verify firearm, magazine, ammunition, and accessory legality before entering Connecticut."
+        ],
+        source: "Connecticut firearm equipment restrictions framework."
+      },
+      {
+        title: "Federal Property / Post Offices",
+        risk: "Federal Law Overlay",
+        body: [
+          "STATUTE / SOURCE: Federal facility and postal property framework.",
+          "SUMMARY: Connecticut carry or possession authority does not override federal restrictions.",
+          "GUIDANCE: Federal buildings, federal courthouses, post offices, and secure federal property must be checked separately."
+        ],
+        source: "Federal facility and postal property framework."
+      },
+      {
+        title: "Use of Force / Self-Defense",
+        risk: "Fact-Specific Legal Risk",
+        body: [
+          "STATUTE / SOURCE: Connecticut self-defense framework.",
+          "SUMMARY: Connecticut self-defense law is fact-specific and depends on necessity, reasonableness, and statutory justification principles.",
+          "GUIDANCE: Avoid confrontation, disengage when safe, call 911, request counsel, and avoid detailed statements."
+        ],
+        source: "Connecticut self-defense law framework."
+      }
+    ],
+    [
+      {
+        title: "Connecticut Travel Checklist",
+        steps: [
+          "1. Do not carry on Michigan CPL alone.",
+          "2. Verify Connecticut permit authority if applicable.",
+          "3. Check Conn. Gen. Stat. § 29-35 carry prohibition.",
+          "4. Avoid open carry/visible display.",
+          "5. Check school restrictions under § 53a-217b.",
+          "6. Check private property and government buildings.",
+          "7. Verify magazine/equipment restrictions."
+        ]
+      }
+    ],
+    [
+      {
+        title: "Traveling Through Connecticut",
+        summary: "Connecticut is high risk for nonresident carry, visible display, schools, and equipment restrictions.",
+        guidance: [
+          "Do not carry on Michigan CPL.",
+          "Avoid visible display.",
+          "Verify permit authority.",
+          "Check equipment restrictions."
+        ]
+      }
+    ],
+    [
+      "Carrying on Michigan CPL.",
+      "Assuming open carry is allowed.",
+      "Ignoring schools.",
+      "Ignoring private property prohibitions.",
+      "Ignoring magazine/equipment rules.",
+      "Failing to carry permit documentation if authorized."
+    ],
+    [
+      "Non-recognition understood.",
+      "Connecticut permit authority verified or no carry.",
+      "Open carry/display restriction understood.",
+      "School restrictions checked.",
+      "Private property checked.",
+      "Equipment restrictions checked."
+    ],
+    [
+      {
+        myth: "Connecticut will honor my Michigan CPL because I am only visiting.",
+        reality: "No. Connecticut does not honor Michigan CPL in this app travel engine."
       }
     ]
   ),
@@ -2887,82 +4551,6 @@ var stateLawData = {
       }
     ]
   ),
-
-  NY: makeProfile(
-    "New York",
-    "High-Risk Travel State",
-    "New York does not honor a Michigan CPL in this app travel engine. Treat as not recognized and verify New York law before travel. New York is a high-risk state for transport, sensitive locations, magazine/ammunition issues, and New York City restrictions.",
-    {
-      reciprocity: "Michigan CPL not recognized.",
-      permitlessCarry: "No. Do not rely on permitless carry.",
-      concealedCarry: "Michigan CPL does not authorize concealed carry in New York.",
-      openCarry: "Verify current New York law.",
-      vehicleCarry: "Verify strict transport rules.",
-      dutyToInform: "Verify current New York law.",
-      privateSigns: "Sensitive and restricted location rules may be extensive.",
-      forceLaw: "Verify current New York self-defense law."
-    },
-    [
-      "Do not carry on Michigan CPL in New York.",
-      "New York City requires separate caution and verification.",
-      "Sensitive-place rules can be extensive.",
-      "Transport, magazine, and ammunition rules require careful verification."
-    ],
-    [
-      {
-        title: "Michigan CPL Not Recognized",
-        risk: "Do Not Carry on Michigan CPL",
-        body: [
-          "New York does not honor a Michigan CPL in this app travel engine.",
-          "Do not assume federal travel rules allow casual possession during stops.",
-          "New York City and sensitive-place rules require separate review."
-        ],
-        source: "High-risk travel profile. Official New York source verification required."
-      }
-    ],
-    [
-      {
-        title: "Before Traveling to New York",
-        steps: [
-          "1. Do not rely on Michigan CPL.",
-          "2. Verify transport rules.",
-          "3. Verify New York City rules separately.",
-          "4. Verify sensitive-place restrictions.",
-          "5. Verify magazine and ammunition restrictions."
-        ]
-      }
-    ],
-    [
-      {
-        title: "Passing Through New York",
-        summary: "Federal travel concepts can be misunderstood and may not protect casual stops or deviations.",
-        guidance: [
-          "Plan carefully.",
-          "Avoid unnecessary stops.",
-          "Keep transport method compliant.",
-          "Verify law before the trip."
-        ]
-      }
-    ],
-    [
-      "Assuming federal travel rules allow casual possession during stops.",
-      "Ignoring New York City rules.",
-      "Ignoring sensitive-place restrictions.",
-      "Assuming Michigan CPL has any carry value in New York."
-    ],
-    [
-      "Do not carry on Michigan CPL alone.",
-      "Verify transport and ammunition/magazine rules.",
-      "Avoid unnecessary stops if transporting under federal framework.",
-      "Verify New York City restrictions separately."
-    ],
-    [
-      {
-        myth: "I am just passing through New York, so I am fine.",
-        reality: "Transport through New York requires careful planning and strict compliance. Casual stops can create risk."
-      }
-    ]
-  )
 };
 
 var additionalHighRiskStates = {
