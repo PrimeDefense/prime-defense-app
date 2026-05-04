@@ -659,6 +659,75 @@ button{
   border-right:1px solid rgba(16,19,24,.08);
   border-bottom:1px solid rgba(16,19,24,.08);
 }
+
+.intelBanner{
+  background:linear-gradient(135deg,#11151b,#252b36);
+  color:#fff;
+  border-radius:22px;
+  padding:22px;
+  margin-bottom:14px;
+  box-shadow:0 16px 42px rgba(16,19,24,.18);
+}
+.intelBanner h3{color:#fff;margin:0 0 8px;font-size:24px}
+.intelBanner p{color:#e5e7eb;margin:8px 0;line-height:1.5}
+.intelGrid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
+  gap:10px;
+  margin-top:14px;
+}
+.intelTile{
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.13);
+  border-radius:16px;
+  padding:13px;
+}
+.intelTile b{display:block;color:#fff;margin-bottom:5px;font-size:13px}
+.intelTile span{display:block;color:#d1d5db;font-size:12px;line-height:1.4}
+.riskStack{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+  gap:10px;
+  margin:12px 0;
+}
+.riskCard{
+  background:#fff;
+  border:1px solid rgba(16,19,24,.10);
+  border-radius:18px;
+  padding:15px;
+  box-shadow:0 8px 24px rgba(16,19,24,.06);
+}
+.riskCard strong{display:block;margin-bottom:6px;color:#11151b}
+.riskCard p{margin:0;color:#626975;font-size:13px;line-height:1.45}
+.jumpNav{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin:14px 0 6px;
+}
+.jumpNav button{
+  padding:9px 12px;
+  border-radius:999px;
+  font-size:12px;
+  background:#fff;
+  border:1px solid rgba(16,19,24,.12);
+  color:#11151b;
+}
+.sectionHeader{
+  margin-top:22px;
+  padding:14px 16px;
+  border-radius:18px;
+  background:#eef0f3;
+  border:1px solid rgba(16,19,24,.08);
+}
+.sectionHeader h3{margin:0;color:#11151b}
+.sectionHeader p{margin:5px 0 0;color:#626975;font-size:13px}
+.legalItem.critical{border-left:5px solid #d71920}
+.legalItem.vehicle{border-left:5px solid #d97706}
+.legalItem.police{border-left:5px solid #2563eb}
+.legalItem.property{border-left:5px solid #64748b}
+.legalItem.force{border-left:5px solid #7c3aed}
+
 @media(max-width:950px){
   .mapShell{grid-template-columns:1fr}
   .mapPanel{position:static}
@@ -718,11 +787,12 @@ var reciprocityData = {
       "MO","MT","NE","NH","NM","NC","ND","OH","OK","PA","SC","SD","TN","TX","UT","VA","VT",
       "WA","WV","WI","WY"
     ],
-    restricted: [],
-    notRecognized: ["CA","CT","DE","IL","MD","MA","NJ","NV","NY","OR","RI"],
+    restricted: ["NV"],
+    notRecognized: ["CA","CT","DE","IL","MD","MA","NJ","NY","OR","RI"],
     warnings: [
       "This is an outbound Michigan CPL travel reference, not a substitute for destination-state law.",
       "Recognition can depend on residency, age, permit type, current state law, and state-specific restrictions.",
+      "Nevada has conflicting official online references regarding Michigan CPL recognition; this app flags Nevada as VERIFY before travel, not clean green.",
       "A recognized permit does not override prohibited places, vehicle rules, alcohol rules, duty-to-inform rules, private-property rules, federal property, court rules, tribal property, or local restrictions.",
       "Before traveling, verify the destination state using official state resources."
     ]
@@ -4476,78 +4546,208 @@ var stateLawData = {
 
   IL: makeProfile(
     "Illinois",
-    "High-Risk Travel State",
-    "Illinois does not honor a Michigan CPL for ordinary carry in this app travel engine. Verify Illinois law before travel, especially vehicle transport, Chicago/local issues, prohibited places, and private property.",
+    "Law-Backed Ultra Expanded High-Risk State",
+    "Illinois is a critical high-risk border state for Michigan CPL holders. Illinois does not treat a Michigan CPL as ordinary public carry authority. Illinois has its own Firearm Concealed Carry Act, strict prohibited areas, vehicle-safe-harbor style rules for nonresidents in limited circumstances, FOID-related framework for residents, local complexity around Chicago/Cook County, and serious transport risks for travelers.",
     {
-      reciprocity: "Michigan CPL not recognized for ordinary carry in this app travel engine.",
-      permitlessCarry: "No. Do not rely on permitless carry.",
-      concealedCarry: "Michigan CPL does not authorize ordinary concealed carry in Illinois.",
-      openCarry: "Verify current Illinois law.",
-      vehicleCarry: "Verify Illinois transport and vehicle rules.",
-      dutyToInform: "Verify current Illinois law.",
-      privateSigns: "Private property and signage may matter.",
-      forceLaw: "Verify current Illinois self-defense law."
+      reciprocity: "Michigan CPL is not treated as ordinary Illinois public carry authority in this app. Verify any nonresident vehicle exception before travel.",
+      permitlessCarry: "No general permitless concealed carry. Illinois concealed carry is license-based.",
+      concealedCarry: "430 ILCS 66 governs Illinois concealed carry licensing; nonresident public carry authority is limited and must be verified.",
+      openCarry: "Do not rely on open carry in Illinois. Illinois is a high-risk state for public carry without Illinois authority.",
+      vehicleCarry: "430 ILCS 66/40 includes limited vehicle-related provisions for certain nonresidents, but this must be handled carefully.",
+      dutyToInform: "Illinois licensees/nonresidents should verify current disclosure and police-contact duties; answer lawful questions truthfully and do not reach.",
+      privateSigns: "430 ILCS 66/65 and Illinois posting rules make signs and prohibited places important.",
+      forceLaw: "Illinois self-defense is fact-specific and does not excuse unlawful carry or unlawful possession."
     },
     [
-      "Do not assume Michigan CPL permits carry in Illinois.",
-      "Vehicle transport rules matter heavily.",
-      "Chicago/local rules may add risk.",
-      "Prohibited places and signage need verification."
+      "Illinois is not a casual travel state for Michigan CPL holders.",
+      "Do not assume Michigan CPL gives ordinary public carry authority in Illinois.",
+      "Vehicle handling and transport are major risk areas.",
+      "Illinois has many prohibited places under 430 ILCS 66/65.",
+      "Chicago/Cook County and local-law/equipment issues require extra verification.",
+      "If traveling through Illinois, verify lawful transport before entering the state."
     ],
     [
-      {
-        title: "Michigan CPL Not Recognized for Ordinary Carry",
-        risk: "Do Not Rely on Michigan CPL",
-        body: [
-          "Illinois does not honor a Michigan CPL for ordinary carry in this app travel engine.",
-          "Transport and vehicle rules should be verified before travel.",
-          "Local rules and sensitive locations can add risk."
-        ],
-        source: "High-risk travel profile. Official Illinois source verification required."
-      }
+      { title: "Illinois Concealed Carry Act", risk: "Core Carry Framework", body: ["STATUTE: 430 ILCS 66.", "SUMMARY: Illinois public concealed carry is governed by the Firearm Concealed Carry Act and generally requires Illinois-recognized authority.", "GUIDANCE: A Michigan CPL should not be treated as ordinary Illinois public carry authority. Verify current Illinois State Police guidance before carrying or transporting."], source: "430 ILCS 66." },
+      { title: "Nonresident Vehicle Carry / Limited Safe Harbor", risk: "High-Risk Traveler Rule", body: ["STATUTE: 430 ILCS 66/40.", "SUMMARY: Illinois law contains limited provisions for nonresidents who may carry in a vehicle if they are not prohibited and are eligible to carry in their home state, with strict limits when exiting the vehicle.", "GUIDANCE: This is not full reciprocity. Treat Illinois vehicle carry as a narrow, technical exception and verify before relying on it."], source: "430 ILCS 66/40." },
+      { title: "Prohibited Areas", risk: "Major Location Restriction", body: ["STATUTE: 430 ILCS 66/65.", "SUMMARY: Illinois lists numerous prohibited areas where firearms may not be carried, including schools, government buildings, courts, correctional facilities, hospitals, public transportation areas, parks/playgrounds, libraries, airports, certain alcohol locations, events, and other listed areas.", "GUIDANCE: Illinois has one of the more detailed prohibited-place lists. Check every stop before entering armed."], source: "430 ILCS 66/65." },
+      { title: "Parking Lot / Vehicle Storage", risk: "Technical Compliance Risk", body: ["STATUTE: 430 ILCS 66/65 parking-lot provisions.", "SUMMARY: Illinois allows limited handling in the immediate area around a vehicle for storage/retrieval in certain prohibited parking lot areas under strict conditions.", "GUIDANCE: Do not handle the firearm casually in public. Know the case/trunk/glove-box/console storage requirements before entering a prohibited area."], source: "430 ILCS 66/65." },
+      { title: "Schools", risk: "Extreme Risk Area", body: ["STATUTE: 430 ILCS 66/65 and Illinois school weapons framework.", "SUMMARY: Schools and school property are prohibited or highly restricted locations under Illinois law.", "GUIDANCE: Do not assume parking-lot exceptions allow general carry. School property requires specific verification."], source: "430 ILCS 66/65; Illinois school weapons framework." },
+      { title: "Public Transportation / Airports", risk: "Travel Infrastructure Risk", body: ["STATUTE: 430 ILCS 66/65.", "SUMMARY: Illinois restricts carry in public transportation facilities and airport secure/passenger areas under the prohibited-place framework.", "GUIDANCE: Travelers using airports, trains, buses, rideshare drop-offs, or transit stations should verify before arrival."], source: "430 ILCS 66/65; federal airport/security framework." },
+      { title: "Chicago / Cook County / Local Issues", risk: "Local Complexity", body: ["STATUTE / SOURCE: Illinois preemption and local ordinance framework.", "SUMMARY: Illinois has state firearm preemption in some areas, but Chicago/Cook County history and local equipment restrictions can still create traveler confusion.", "GUIDANCE: Verify magazine, ammunition, local ordinance, and destination-specific rules before entering the Chicago area."], source: "Illinois state/local firearms framework." },
+      { title: "Transport Through Illinois", risk: "Interstate Travel Risk", body: ["STATUTE / SOURCE: Illinois transport framework; federal interstate transport framework.", "SUMMARY: Travelers passing through Illinois should understand unloaded/cased/inaccessible transport principles and avoid unnecessary deviations when relying on transport protections.", "GUIDANCE: Plan the route. Avoid unnecessary stops. Do not handle or display firearms during travel."], source: "Illinois transport framework; 18 U.S.C. § 926A framework." },
+      { title: "Private Property / Posted Locations", risk: "Posted Property Rule", body: ["STATUTE: 430 ILCS 66/65 posting framework.", "SUMMARY: Illinois recognizes posted prohibited areas and private property restrictions under the concealed carry framework.", "GUIDANCE: If posted or asked to leave, leave immediately. Do not argue with staff or security."], source: "430 ILCS 66/65." },
+      { title: "Use of Force / Self-Defense", risk: "Fact-Specific Legal Risk", body: ["STATUTE / SOURCE: Illinois self-defense framework.", "SUMMARY: Self-defense is fact-specific and does not cure unlawful possession or unlawful carry.", "GUIDANCE: Avoid, disengage, call 911, identify evidence/witnesses, request counsel, and avoid detailed statements under stress."], source: "Illinois self-defense law framework." }
     ],
+    [ { title: "Illinois Travel Checklist", steps: ["1. Do not assume Michigan CPL equals Illinois carry authority.", "2. Check 430 ILCS 66/40 before relying on any vehicle exception.", "3. Check 430 ILCS 66/65 prohibited areas.", "4. Check Chicago/Cook County equipment/local issues.", "5. Check transport method before entering Illinois.", "6. Avoid unnecessary handling or display."] } ],
+    [ { title: "Driving Into Illinois", summary: "Illinois is high risk because a Michigan CPL does not operate like full reciprocity.", guidance: ["Verify vehicle exception.", "Keep firearm secured when required.", "Avoid unnecessary stops.", "Do not enter prohibited locations armed."] } ],
+    ["Assuming Michigan CPL is honored for ordinary public carry.", "Ignoring Illinois vehicle limits.", "Ignoring 430 ILCS 66/65 prohibited areas.", "Entering Chicago/Cook County without checking local/equipment rules.", "Handling firearms in parking lots beyond narrow permitted conduct."],
+    ["Illinois recognition status understood.", "Vehicle rules checked.", "Prohibited areas checked.", "Chicago/Cook County checked.", "Transport plan confirmed.", "Federal property checked."],
+    [ { myth: "Illinois is next to Michigan, so my CPL should work there.", reality: "No. Illinois is a high-risk state and does not treat Michigan CPL as ordinary public carry authority." } ]
+  ),
+
+  MD: makeProfile(
+    "Maryland",
+    "Law-Backed Ultra Expanded High-Risk State",
+    "Maryland is a strict non-recognition state for Michigan CPL holders. Maryland requires Maryland wear-and-carry authority for public handgun carry, has extensive sensitive-place restrictions, strict transport expectations, school and government location rules, and significant risk for travelers who assume their home-state permit applies.",
+    {
+      reciprocity: "Michigan CPL is not recognized for ordinary Maryland public carry in this app.",
+      permitlessCarry: "No permitless concealed carry. Maryland requires a Maryland Wear and Carry Permit for public handgun carry.",
+      concealedCarry: "Md. Public Safety § 5-306 governs Maryland wear and carry permit issuance.",
+      openCarry: "Do not rely on open carry in Maryland. Maryland public handgun carry is permit-based and highly restricted.",
+      vehicleCarry: "Maryland transport must be handled carefully under Criminal Law § 4-203 and related exceptions.",
+      dutyToInform: "Verify current Maryland police-contact rules; answer lawful questions truthfully and avoid reaching.",
+      privateSigns: "Maryland sensitive-place/private-property rules are complex after SB 1 and subsequent litigation; verify before entering.",
+      forceLaw: "Maryland self-defense is fact-specific and does not excuse unlawful carry."
+    },
+    ["Do not carry in Maryland on Michigan CPL alone.", "Maryland transport law is a major traveler trap.", "SB 1 added sensitive-place restrictions effective October 1, 2023.", "Schools, government buildings, hospitals, children/vulnerable-individual locations, and private property can be high risk.", "Maryland is a verify-before-entry state for nearly every destination."],
     [
-      {
-        title: "Before Traveling to Illinois",
-        steps: [
-          "1. Do not rely on Michigan CPL for ordinary carry.",
-          "2. Verify vehicle transport rules.",
-          "3. Verify local restrictions.",
-          "4. Verify prohibited places.",
-          "5. Verify ammunition/magazine restrictions where applicable."
-        ]
-      }
+      { title: "Wear and Carry Permit", risk: "Core Carry Authority", body: ["STATUTE: Md. Public Safety § 5-306.", "SUMMARY: Maryland’s wear-and-carry permit statute controls public handgun carry authority.", "GUIDANCE: A Michigan CPL does not replace a Maryland Wear and Carry Permit. Do not carry publicly in Maryland without Maryland authority."], source: "Md. Public Safety § 5-306; Maryland State Police Wear and Carry Permit guidance." },
+      { title: "Handgun Wear / Carry / Transport", risk: "Criminal Exposure", body: ["STATUTE: Md. Criminal Law § 4-203.", "SUMMARY: Maryland restricts wearing, carrying, or transporting a handgun, subject to statutory exceptions.", "GUIDANCE: Transport exceptions are technical. Travel with firearms should be planned before entering Maryland."], source: "Md. Criminal Law § 4-203." },
+      { title: "Sensitive Places / SB 1 Restrictions", risk: "Major Location Restriction", body: ["STATUTE / SOURCE: Maryland SB 1 sensitive-place framework; Maryland State Police guidance.", "SUMMARY: Maryland added significant prohibited areas effective October 1, 2023, including areas involving children/vulnerable individuals and other specified locations.", "GUIDANCE: Even Maryland permit holders must check sensitive-place rules before entering."], source: "Maryland State Police Wear and Carry guidance; 2023 SB 1 framework." },
+      { title: "Schools and Child-Care Related Areas", risk: "Extreme Risk Area", body: ["STATUTE / SOURCE: Maryland school weapons and SB 1 framework.", "SUMMARY: Schools, child-care areas, and areas for children or vulnerable individuals are high-risk Maryland locations.", "GUIDANCE: Do not treat parking lots, events, or school-adjacent locations casually."], source: "Maryland school weapons framework; Maryland State Police SB 1 guidance." },
+      { title: "Private Property / Posted or Restricted Locations", risk: "Property Control", body: ["STATUTE / SOURCE: Maryland sensitive-place/private-property framework.", "SUMMARY: Maryland has complex rules involving private property and locations where firearms are prohibited or restricted.", "GUIDANCE: Check signage, property rules, and current litigation status before entering armed."], source: "Maryland SB 1/private property framework." },
+      { title: "Vehicle Transport", risk: "Traveler Trap", body: ["STATUTE: Md. Criminal Law § 4-203.", "SUMMARY: Maryland transport exceptions are limited and should not be treated as general vehicle carry.", "GUIDANCE: When transporting, keep firearms unloaded, secured, inaccessible, and connected to a lawful purpose or destination as required."], source: "Md. Criminal Law § 4-203." },
+      { title: "Assault Weapon / Magazine / Equipment Issues", risk: "Equipment Restriction", body: ["STATUTE / SOURCE: Maryland regulated firearms and magazine framework.", "SUMMARY: Maryland regulates certain firearms, magazines, and equipment.", "GUIDANCE: Verify firearm type, magazine capacity, ammunition, and equipment legality before travel."], source: "Maryland regulated firearms/equipment framework." },
+      { title: "Federal Property / DC Proximity", risk: "Federal/District Overlay", body: ["STATUTE / SOURCE: Federal facility framework; District of Columbia border risk.", "SUMMARY: Maryland carry/transport authority does not override federal property or Washington, DC law.", "GUIDANCE: Be extremely careful near DC, federal facilities, military installations, monuments, and federal buildings."], source: "Federal facility framework; DC firearms law framework." },
+      { title: "Use of Force / Self-Defense", risk: "Fact-Specific Legal Risk", body: ["STATUTE / SOURCE: Maryland self-defense framework.", "SUMMARY: Maryland self-defense is fact-specific and does not cure unlawful carry or transport.", "GUIDANCE: Avoid confrontation, call 911, request counsel, and avoid detailed statements."], source: "Maryland self-defense framework." }
     ],
+    [ { title: "Maryland Travel Checklist", steps: ["1. Do not carry on Michigan CPL alone.", "2. Verify Maryland Wear and Carry authority.", "3. Check Md. Criminal Law § 4-203 transport rules.", "4. Check SB 1 sensitive places.", "5. Check school/child-related locations.", "6. Check equipment restrictions.", "7. Check DC/federal property risk."] } ],
+    [ { title: "Maryland / DC Road Trip", summary: "Maryland is strict, and DC proximity increases risk.", guidance: ["Do not carry on Michigan CPL.", "Plan transport route.", "Avoid DC unless separately compliant.", "Check sensitive places."] } ],
+    ["Carrying on Michigan CPL.", "Treating transport as vehicle carry.", "Ignoring SB 1 sensitive places.", "Crossing into DC with firearms.", "Ignoring magazine/equipment restrictions."],
+    ["Maryland non-recognition understood.", "Wear and Carry authority verified or no carry.", "Transport method checked.", "Sensitive places checked.", "Equipment restrictions checked.", "DC/federal risks checked."],
+    [ { myth: "My Michigan CPL should work because I am only visiting Maryland.", reality: "No. Maryland does not honor Michigan CPL for ordinary public carry in this app." } ]
+  ),
+
+  DE: makeProfile(
+    "Delaware",
+    "Law-Backed Ultra Expanded High-Risk State",
+    "Delaware is a non-recognition/high-risk state for Michigan CPL holders. Delaware uses a concealed deadly weapon license framework, has Safe School and Recreation Zone restrictions, college/university safe-zone rules, courthouse and government-location risks, private property issues, and technical transport concerns for travelers.",
+    {
+      reciprocity: "Michigan CPL is not treated as recognized for Delaware concealed carry in this app.",
+      permitlessCarry: "No permitless concealed carry. Delaware requires a license to carry concealed deadly weapons.",
+      concealedCarry: "11 Del. C. § 1441 governs licenses to carry concealed deadly weapons.",
+      openCarry: "Open carry may be treated differently than concealed carry, but location and conduct restrictions still matter.",
+      vehicleCarry: "Vehicle carry/transport must be verified under Delaware law and school-zone restrictions.",
+      dutyToInform: "Verify current Delaware police-contact expectations; answer lawful questions truthfully and avoid reaching.",
+      privateSigns: "Private property owners may control access. Leave if asked.",
+      forceLaw: "Delaware self-defense is fact-specific and does not excuse unlawful carry."
+    },
+    ["Do not carry concealed in Delaware on Michigan CPL alone.", "Delaware CCDW licensing is its own process under 11 Del. C. § 1441.", "Safe School and Recreation Zones create major risk.", "College/university safe zones must be checked separately.", "Transport through Delaware should be planned carefully."],
     [
-      {
-        title: "Chicago Area Travel",
-        summary: "Dense urban areas and local rules can increase risk.",
-        guidance: [
-          "Verify local restrictions.",
-          "Plan transport carefully.",
-          "Avoid unnecessary handling.",
-          "Do not assume Michigan rules apply."
-        ]
-      }
+      { title: "Concealed Deadly Weapon License", risk: "Core Carry Authority", body: ["STATUTE: 11 Del. C. § 1441.", "SUMMARY: Delaware licenses concealed deadly weapon carry through its statutory CCDW process.", "GUIDANCE: A Michigan CPL should not be treated as Delaware concealed carry authority."], source: "11 Del. C. § 1441; Delaware Superior Court CCDW rules." },
+      { title: "Carrying Concealed Deadly Weapon", risk: "Criminal Exposure", body: ["STATUTE: 11 Del. C. § 1442.", "SUMMARY: Delaware law prohibits carrying a concealed deadly weapon without lawful authority.", "GUIDANCE: Do not conceal carry in Delaware without Delaware-recognized authority."], source: "11 Del. C. § 1442." },
+      { title: "Safe School and Recreation Zones", risk: "Extreme Risk Area", body: ["STATUTE: 11 Del. C. § 1457.", "SUMMARY: Delaware restricts weapons in Safe School and Recreation Zones, subject to statutory classifications and exceptions.", "GUIDANCE: Schools, recreation zones, events, parking areas, and youth-related facilities require careful verification."], source: "11 Del. C. § 1457." },
+      { title: "College / University Safe Zones", risk: "Campus Risk", body: ["STATUTE: 11 Del. C. § 1457C.", "SUMMARY: Delaware has separate restrictions for college and university safe zones.", "GUIDANCE: Do not assume K-12 school rules are the only educational restrictions."], source: "11 Del. C. § 1457C." },
+      { title: "Courthouses / Government Buildings", risk: "Hard Stop Area", body: ["STATUTE / SOURCE: Delaware court/government security framework.", "SUMMARY: Court and government facilities may prohibit weapons and involve screening/security rules.", "GUIDANCE: Do not approach security armed. Plan lawful storage before arrival."], source: "Delaware court/government security framework." },
+      { title: "Vehicle / Transport", risk: "Travel Risk", body: ["STATUTE / SOURCE: Delaware concealed weapon and transport framework.", "SUMMARY: Vehicle possession can create concealed-carry issues depending on location, accessibility, and manner of transport.", "GUIDANCE: Verify transport rules before entering Delaware; do not treat a vehicle as a safe carry workaround."], source: "Delaware transport/concealed weapon framework." },
+      { title: "Private Property / Posted Locations", risk: "Property Control", body: ["STATUTE / SOURCE: Delaware trespass/property framework.", "SUMMARY: Property owners may control access and require armed persons to leave.", "GUIDANCE: If posted or asked to leave, leave immediately."], source: "Delaware property/trespass framework." },
+      { title: "Federal Property / Post Offices", risk: "Federal Law Overlay", body: ["STATUTE / SOURCE: Federal facility and postal property framework.", "SUMMARY: Delaware permission does not override federal restrictions.", "GUIDANCE: Federal buildings, post offices, federal courthouses, and secure federal property must be checked separately."], source: "Federal facility and postal property framework." },
+      { title: "Use of Force / Self-Defense", risk: "Fact-Specific Legal Risk", body: ["STATUTE / SOURCE: Delaware justification/self-defense framework.", "SUMMARY: Defensive force must be legally justified under Delaware law and facts.", "GUIDANCE: Avoid confrontation, call 911, request counsel, and do not give detailed statements under stress."], source: "Delaware self-defense/justification framework." }
     ],
+    [ { title: "Delaware Travel Checklist", steps: ["1. Do not carry concealed on Michigan CPL alone.", "2. Check 11 Del. C. § 1441 / § 1442.", "3. Check Safe School/Recreation Zones under § 1457.", "4. Check college/university zones under § 1457C.", "5. Check vehicle/transport method.", "6. Check court/government/federal property."] } ],
+    [ { title: "Passing Through Delaware", summary: "Delaware is small, but legal mistakes can happen quickly during travel stops.", guidance: ["Plan transport before entry.", "Avoid school/recreation zones.", "Check hotel/private property rules.", "Do not conceal carry on Michigan CPL."] } ],
+    ["Carrying concealed on Michigan CPL.", "Ignoring school/recreation zones.", "Ignoring college/university safe zones.", "Using vehicle accessibility as a workaround.", "Ignoring federal/court property."],
+    ["Non-recognition understood.", "CCDW authority verified or no carry.", "School/recreation zones checked.", "Campus zones checked.", "Transport checked.", "Federal/court property checked."],
+    [ { myth: "Delaware is small, so it is just a pass-through and not a big deal.", reality: "No. Delaware has specific concealed weapon, school-zone, recreation-zone, and campus restrictions." } ]
+  ),
+
+  RI: makeProfile(
+    "Rhode Island",
+    "Law-Backed Ultra Expanded High-Risk State",
+    "Rhode Island is a high-risk non-recognition state for Michigan CPL holders. Rhode Island has a permit/license framework for carrying pistols or revolvers, separate municipal and Attorney General permit paths, strong school-ground restrictions, and serious risks for travelers who assume out-of-state carry authority applies.",
+    {
+      reciprocity: "Michigan CPL is not recognized for ordinary Rhode Island carry in this app.",
+      permitlessCarry: "No permitless concealed handgun carry. Rhode Island requires Rhode Island permit authority.",
+      concealedCarry: "R.I. Gen. Laws § 11-47-11 and § 11-47-18 address permit/license pathways.",
+      openCarry: "Open carry requires careful Rhode Island permit analysis and should not be assumed lawful for visitors.",
+      vehicleCarry: "Vehicle carry/transport must be verified under Rhode Island law.",
+      dutyToInform: "Verify current Rhode Island police-contact duties; answer lawful questions truthfully and avoid reaching.",
+      privateSigns: "Private property and event/location rules still matter.",
+      forceLaw: "Rhode Island self-defense is fact-specific and does not excuse unlawful carry."
+    },
+    ["Do not carry in Rhode Island on Michigan CPL alone.", "Rhode Island permit law is complex because local licensing and Attorney General licensing are distinct.", "School grounds are a major hard-stop risk.", "Open carry should not be assumed lawful without specific Rhode Island authority.", "Transport through Rhode Island should be planned carefully."],
     [
-      "Assuming Michigan CPL permits carry in Illinois.",
-      "Ignoring Chicago/local issues.",
-      "Ignoring vehicle transport rules.",
-      "Ignoring posted locations."
+      { title: "License / Permit Required", risk: "Core Carry Rule", body: ["STATUTE: R.I. Gen. Laws § 11-47-8.", "SUMMARY: Rhode Island restricts carrying pistols/revolvers without license or permit authority.", "GUIDANCE: A Michigan CPL does not provide ordinary Rhode Island carry authority."], source: "R.I. Gen. Laws § 11-47-8." },
+      { title: "Local Concealed Permit Path", risk: "Permit Framework", body: ["STATUTE: R.I. Gen. Laws § 11-47-11.", "SUMMARY: Rhode Island law provides a local licensing pathway to carry a concealed pistol or revolver.", "GUIDANCE: This is Rhode Island authority, not Michigan reciprocity."], source: "R.I. Gen. Laws § 11-47-11; Rhode Island AG guidance." },
+      { title: "Attorney General Permit Path", risk: "Permit Framework", body: ["STATUTE: R.I. Gen. Laws § 11-47-18.", "SUMMARY: Rhode Island law also provides an Attorney General permitting pathway, including carry authority under the statute.", "GUIDANCE: Visitors should not assume this applies without an issued Rhode Island permit."], source: "R.I. Gen. Laws § 11-47-18; Rhode Island AG guidance." },
+      { title: "School Grounds", risk: "Extreme Risk Area", body: ["STATUTE: R.I. Gen. Laws § 11-47-60.", "SUMMARY: Rhode Island restricts possession of firearms on school grounds, including property of public/private elementary or secondary schools and school-sponsored activity areas.", "GUIDANCE: Do not enter school grounds armed unless a specific statutory exception clearly applies."], source: "R.I. Gen. Laws § 11-47-60." },
+      { title: "Transport to Range / Limited Exceptions", risk: "Technical Transport Rule", body: ["STATUTE: R.I. Gen. Laws § 11-47-10.", "SUMMARY: Rhode Island law includes circumstances where a license or permit is not required for transport to/from target ranges and similar lawful contexts.", "GUIDANCE: Treat these as narrow transport exceptions, not general carry authority."], source: "R.I. Gen. Laws § 11-47-10." },
+      { title: "Private Property / Events", risk: "Property and Venue Control", body: ["STATUTE / SOURCE: Rhode Island property/trespass framework.", "SUMMARY: Private property owners and event venues may control access and restrict firearms.", "GUIDANCE: Posted signs, venue rules, and instructions to leave should be followed immediately."], source: "Rhode Island property/trespass framework." },
+      { title: "Federal Property / Post Offices", risk: "Federal Law Overlay", body: ["STATUTE / SOURCE: Federal facility and postal property framework.", "SUMMARY: Rhode Island permit authority does not override federal restrictions.", "GUIDANCE: Federal buildings, federal courthouses, post offices, and secure federal property must be checked separately."], source: "Federal facility and postal property framework." },
+      { title: "Use of Force / Self-Defense", risk: "Fact-Specific Legal Risk", body: ["STATUTE / SOURCE: Rhode Island self-defense framework.", "SUMMARY: Defensive force must be justified under Rhode Island law and the specific facts.", "GUIDANCE: Avoid confrontation, call 911, request counsel, and avoid detailed statements under stress."], source: "Rhode Island self-defense law framework." }
     ],
+    [ { title: "Rhode Island Travel Checklist", steps: ["1. Do not carry on Michigan CPL alone.", "2. Verify Rhode Island permit authority.", "3. Check § 11-47-8, § 11-47-11, and § 11-47-18.", "4. Check school grounds under § 11-47-60.", "5. Check any transport exception under § 11-47-10.", "6. Check private/federal property."] } ],
+    [ { title: "New England Road Trip", summary: "Rhode Island is small and easy to enter accidentally while traveling between other states.", guidance: ["Do not carry on Michigan CPL.", "Check route before entry.", "Avoid school grounds.", "Confirm transport method."] } ],
+    ["Carrying on Michigan CPL.", "Assuming open carry is available.", "Ignoring school grounds.", "Treating transport exceptions as carry authority.", "Ignoring private/federal property."],
+    ["Non-recognition understood.", "RI permit authority verified or no carry.", "School grounds checked.", "Transport method checked.", "Private/federal property checked."],
+    [ { myth: "Rhode Island is tiny, so it does not matter if I just pass through.", reality: "No. State lines matter immediately and Rhode Island does not honor Michigan CPL in this app." } ]
+  ),
+
+  OR: makeProfile(
+    "Oregon",
+    "Law-Backed Ultra Expanded High-Risk State",
+    "Oregon is a high-risk non-recognition state for Michigan CPL holders. Oregon has an Oregon concealed handgun license framework, public-building restrictions, school/court/government location issues, city/county local loaded-firearm restrictions for non-licensees, and serious vehicle/transport concerns for travelers.",
+    {
+      reciprocity: "Michigan CPL is not recognized for ordinary Oregon concealed carry in this app.",
+      permitlessCarry: "No permitless concealed handgun carry. Oregon requires an Oregon CHL for concealed handgun carry.",
+      concealedCarry: "ORS 166.291 and ORS 166.292 govern Oregon CHL issuance and licensing.",
+      openCarry: "Open carry may be affected by local loaded-firearm restrictions and public-building rules.",
+      vehicleCarry: "Vehicle carry and loaded firearm rules must be checked carefully, especially local ordinances for non-CHL holders.",
+      dutyToInform: "Verify current Oregon police-contact rules; answer lawful questions truthfully and avoid reaching.",
+      privateSigns: "Private property and posted locations still matter.",
+      forceLaw: "Oregon self-defense is fact-specific and does not excuse unlawful carry."
+    },
+    ["Do not carry concealed in Oregon on Michigan CPL alone.", "Oregon CHL is the key concealed handgun license authority.", "Public buildings, courts, schools, and airport/secure areas require careful review.", "Some localities restrict loaded firearms in public places for people without Oregon CHL authority.", "Vehicle carry should be verified before travel."],
     [
-      "Verify transport rules.",
-      "Verify prohibited places.",
-      "Do not rely on Michigan CPL alone.",
-      "Verify local restrictions."
+      { title: "Oregon CHL Issuance", risk: "Core Carry Authority", body: ["STATUTE: ORS 166.291; ORS 166.292.", "SUMMARY: Oregon uses a concealed handgun license framework administered by county sheriffs.", "GUIDANCE: A Michigan CPL should not be treated as Oregon concealed carry authority."], source: "ORS 166.291; ORS 166.292." },
+      { title: "Public Buildings", risk: "Major Location Restriction", body: ["STATUTE: ORS 166.370.", "SUMMARY: Oregon restricts possession of firearms and dangerous weapons in public buildings, with statutory exceptions.", "GUIDANCE: Government buildings, courts, schools, and public facilities should be checked before entering."], source: "ORS 166.370." },
+      { title: "Court Facilities", risk: "Hard Stop Area", body: ["STATUTE / SOURCE: ORS 166.370 and Oregon court security framework.", "SUMMARY: Court facilities are high-risk public building locations under Oregon law.", "GUIDANCE: Do not approach courthouse security armed unless a clear exception applies."], source: "ORS 166.370; Oregon court security framework." },
+      { title: "Schools / Campus Issues", risk: "Extreme Risk Area", body: ["STATUTE / SOURCE: ORS 166.370 and Oregon school/campus weapons framework.", "SUMMARY: Schools and campus properties may involve public-building restrictions, school policies, and statutory exceptions.", "GUIDANCE: Do not rely on Michigan CPL. Verify the specific institution and building."], source: "ORS 166.370; Oregon school/campus framework." },
+      { title: "Loaded Firearms in Public Places / Local Restrictions", risk: "Local Ordinance Risk", body: ["STATUTE: ORS 166.173.", "SUMMARY: Oregon allows certain cities/counties to regulate possession of loaded firearms in public places, with exceptions including CHL holders.", "GUIDANCE: Portland/Multnomah County and other local rules should be checked before open or vehicle carry."], source: "ORS 166.173." },
+      { title: "Vehicle Carry / Loaded Firearm", risk: "Vehicle Trap", body: ["STATUTE / SOURCE: ORS 166.250; ORS 166.173 framework.", "SUMMARY: Oregon vehicle carry can create concealed, loaded, and local-restriction issues.", "GUIDANCE: Verify loaded/unloaded status, accessibility, local ordinances, and lawful transport before entering Oregon."], source: "ORS 166.250; ORS 166.173." },
+      { title: "Private Property / Posted Locations", risk: "Property Control", body: ["STATUTE / SOURCE: Oregon property/trespass framework.", "SUMMARY: Private property owners and venues may restrict firearms and require persons to leave.", "GUIDANCE: Follow posted signs and staff/security instructions immediately."], source: "Oregon property/trespass framework." },
+      { title: "Federal Property / Post Offices / Public Lands", risk: "Federal/Public Land Overlay", body: ["STATUTE / SOURCE: Federal facility, postal property, and public-land framework.", "SUMMARY: Oregon law does not override federal property restrictions, national park/building rules, or postal property restrictions.", "GUIDANCE: Public lands and federal buildings are different. Verify the specific property."], source: "Federal facility and public land framework." },
+      { title: "Use of Force / Self-Defense", risk: "Fact-Specific Legal Risk", body: ["STATUTE / SOURCE: Oregon self-defense framework.", "SUMMARY: Defensive force must be justified under Oregon law and the facts.", "GUIDANCE: Avoid confrontation, call 911, request counsel, and avoid detailed statements under stress."], source: "Oregon self-defense law framework." }
     ],
+    [ { title: "Oregon Travel Checklist", steps: ["1. Do not carry concealed on Michigan CPL.", "2. Verify Oregon CHL authority under ORS 166.291/166.292.", "3. Check public buildings under ORS 166.370.", "4. Check loaded/local restrictions under ORS 166.173.", "5. Check vehicle carry/transport.", "6. Check federal/public land rules."] } ],
+    [ { title: "Oregon Road Trip", summary: "Oregon travel often involves cities, public buildings, parks, public land, and vehicles.", guidance: ["Do not conceal carry on Michigan CPL.", "Check local loaded-firearm restrictions.", "Check public buildings.", "Verify public land/federal property." ] } ],
+    ["Carrying concealed on Michigan CPL.", "Ignoring local loaded-firearm restrictions.", "Ignoring ORS 166.370 public buildings.", "Assuming public land equals carry permission.", "Ignoring vehicle accessibility/loaded issues."],
+    ["Oregon non-recognition understood.", "Oregon CHL authority verified or no carry.", "Public buildings checked.", "Local loaded restrictions checked.", "Vehicle transport checked.", "Federal/public land checked."],
+    [ { myth: "Oregon is outdoorsy, so carry laws are probably relaxed.", reality: "No. Oregon does not honor Michigan CPL for concealed carry and has public-building/local loaded-firearm issues." } ]
+  ),
+
+  NV: makeProfile(
+    "Nevada",
+    "Law-Backed Ultra Expanded Verify-Status Travel State",
+    "Nevada requires special handling because current official Nevada online sources conflict regarding Michigan CPL recognition. Nevada’s official resources page lists Michigan, while the linked 2025 Recognition List PDF does not list Michigan. Because of that conflict, this app flags Nevada as VERIFY BEFORE TRAVEL rather than clean recognized. Nevada has no permitless concealed carry, maintains a recognition-list system under NRS 202.3689, and restricts carry in certain public buildings, airports, schools, child-care facilities, and other locations.",
+    {
+      reciprocity: "VERIFY BEFORE TRAVEL: official Nevada online sources conflict. One Nevada page lists Michigan, but the 2025 Recognition List PDF does not list Michigan.",
+      permitlessCarry: "No permitless concealed carry. Nevada concealed carry requires Nevada permit or a recognized out-of-state permit under Nevada’s list.",
+      concealedCarry: "NRS 202.3688 and NRS 202.3689 govern recognition of out-of-state permits.",
+      openCarry: "Open carry may be lawful in many places, but restricted locations, vehicle issues, private property, and local rules still matter.",
+      vehicleCarry: "Vehicle carry must be evaluated under Nevada concealed/open carry rules and prohibited locations.",
+      dutyToInform: "Verify current Nevada police-contact rules; permit must be in possession when carrying concealed under recognized authority.",
+      privateSigns: "Private property, casinos, hotels, resorts, event venues, and security instructions matter.",
+      forceLaw: "Nevada self-defense is fact-specific and does not excuse unlawful carry."
+    },
+    ["Nevada reciprocity is flagged VERIFY, not clean green, because Nevada official pages conflict regarding Michigan.", "Do not assume Michigan CPL is honored without checking Nevada’s current recognition list immediately before travel.", "Nevada does not have permitless concealed carry.", "Casinos/hotels/resorts are private property and can remove or trespass armed persons.", "Public airports, schools, child-care facilities, and public buildings have specific restrictions."],
     [
-      {
-        myth: "Illinois is next to Michigan, so reciprocity should be easy.",
-        reality: "Illinois does not honor Michigan CPL for ordinary carry in this app travel engine."
-      }
-    ]
+      { title: "Out-of-State Permit Recognition", risk: "Conflicting Official Source Warning", body: ["STATUTE: NRS 202.3688; NRS 202.3689.", "SUMMARY: Nevada recognizes permits from states included on the list prepared under NRS 202.3689. Official Nevada web materials currently conflict about whether Michigan appears on the active list.", "GUIDANCE: Treat Nevada as VERIFY BEFORE TRAVEL. Check Nevada State Police/RCCD recognition list and call if necessary before carrying concealed."], source: "NRS 202.3688; NRS 202.3689; Nevada RCCD Out-of-State CCW Recognition pages." },
+      { title: "No Permitless Concealed Carry", risk: "Core Carry Rule", body: ["STATUTE / SOURCE: Nevada concealed firearm permit framework.", "SUMMARY: Nevada requires a Nevada permit or recognized out-of-state permit for concealed firearm carry.", "GUIDANCE: If Michigan is not on the active Nevada list at the time of travel, do not concealed carry on Michigan CPL."], source: "NRS 202.3653 to NRS 202.369; NRS 202.3688." },
+      { title: "Permit Must Be Possessed", risk: "Documentation Requirement", body: ["STATUTE / SOURCE: Nevada RCCD recognition guidance.", "SUMMARY: Nevada states that permit holders from recognized states must have the permit in their possession while carrying.", "GUIDANCE: Carry physical permit and ID. Do not rely on memory, screenshots, or assumptions."], source: "Nevada RCCD Out-of-State CCW Recognition guidance." },
+      { title: "Public Buildings / Airports / Schools / Child-Care", risk: "Major Location Restriction", body: ["STATUTE: NRS 202.3673.", "SUMMARY: Nevada restricts concealed firearms in certain public buildings, airport property, public schools, child-care facilities, and other listed locations.", "GUIDANCE: Airports, schools, government buildings, child-care facilities, and posted/security-controlled buildings should be checked before entering."], source: "NRS 202.3673." },
+      { title: "Schools and Child-Care Facilities", risk: "Extreme Risk Area", body: ["STATUTE: NRS 202.265; NRS 202.3673.", "SUMMARY: Nevada restricts weapons on school property and child-care related premises, subject to exceptions.", "GUIDANCE: Do not treat parking lots, events, or child-care locations casually."], source: "NRS 202.265; NRS 202.3673." },
+      { title: "Casinos / Hotels / Resorts", risk: "Private Property / Security Risk", body: ["STATUTE / SOURCE: Nevada private property and trespass framework.", "SUMMARY: Nevada casinos, hotels, resorts, convention centers, and event venues can impose private property/security rules even when state carry would otherwise be lawful.", "GUIDANCE: Follow security instructions. If asked to leave or disarm, leave calmly."], source: "Nevada private property/trespass framework." },
+      { title: "Las Vegas Strip / Event Venues", risk: "High-Contact Environment", body: ["STATUTE / SOURCE: Nevada private property/event/security framework.", "SUMMARY: Las Vegas travel involves casinos, hotels, concerts, stadiums, clubs, alcohol, rideshare areas, and security screening.", "GUIDANCE: Plan storage and venue rules before leaving the hotel. Do not argue with security."], source: "Nevada private property and event security framework." },
+      { title: "Vehicle Carry", risk: "Travel Carry Risk", body: ["STATUTE / SOURCE: Nevada open/concealed carry and vehicle framework.", "SUMMARY: Vehicle possession can involve concealed carry, open carry, accessibility, and local/private-property issues.", "GUIDANCE: Verify whether your method of carry is concealed or open under Nevada law and whether your permit status is valid."], source: "Nevada firearm/vehicle carry framework." },
+      { title: "Federal Property / Post Offices / National Parks", risk: "Federal/Public Land Overlay", body: ["STATUTE / SOURCE: Federal facility and public land framework.", "SUMMARY: Nevada carry permission does not override federal buildings, post offices, secure federal facilities, or specific federal-property rules.", "GUIDANCE: National parks may follow state carry rules generally, but buildings/facilities remain restricted. Verify specific property."], source: "Federal facility and public land framework." },
+      { title: "Use of Force / Self-Defense", risk: "Fact-Specific Legal Risk", body: ["STATUTE / SOURCE: Nevada self-defense framework.", "SUMMARY: Defensive force must be justified under Nevada law and the facts.", "GUIDANCE: Avoid confrontation, call 911, request counsel, and avoid detailed statements under stress."], source: "Nevada self-defense law framework." }
+    ],
+    [ { title: "Nevada Travel Checklist", steps: ["1. Verify Nevada’s current recognition list immediately before travel.", "2. If Michigan is absent or unclear, do not concealed carry on Michigan CPL.", "3. Check NRS 202.3673 prohibited locations.", "4. Check schools/child-care under NRS 202.265 and NRS 202.3673.", "5. Check casino/hotel/private property rules.", "6. Carry permit and ID if legally carrying.", "7. Check federal property/public land rules."] } ],
+    [ { title: "Las Vegas Trip", summary: "Nevada travel often means casinos, hotels, alcohol, security screening, rideshare areas, and event venues.", guidance: ["Verify reciprocity before travel.", "Check hotel/casino policy.", "Do not argue with security.", "Plan lawful storage before events."] } ],
+    ["Assuming Nevada cleanly honors Michigan without checking current official list.", "Ignoring official-source conflict.", "Carrying concealed without recognized permit authority.", "Ignoring NRS 202.3673 locations.", "Ignoring casino/hotel private property rules.", "Ignoring schools/child-care facilities."],
+    ["Nevada recognition verified within 24-48 hours of travel.", "Permit/ID carried if legally carrying.", "NRS 202.3673 locations checked.", "Casino/hotel/event rules checked.", "Vehicle carry method checked.", "Federal property checked."],
+    [ { myth: "Nevada definitely honors Michigan CPL, so I can just carry in Vegas.", reality: "Nevada official sources conflict. This app flags Nevada as VERIFY BEFORE TRAVEL until the active recognition list is confirmed." } ]
   ),
 };
 
@@ -4765,6 +4965,142 @@ function renderList(title, items, bullet){
   return html;
 }
 
+function containsAny(value, terms){
+  value = String(value || "").toLowerCase();
+  return terms.some(function(t){ return value.indexOf(t) !== -1; });
+}
+
+function sectionCategory(section){
+  var text = (section.title + " " + (section.risk || "") + " " + (section.source || "") + " " + (section.body || []).join(" ")).toLowerCase();
+  if(containsAny(text,["school","court","courthouse","liquor","alcohol","airport","federal","post office","police","correctional","jail","prohibited","restricted","unauthorized","sensitive","casino","government"])) return "critical";
+  if(containsAny(text,["vehicle","motor vehicle","transport","traffic stop","glove","console","car"])) return "vehicle";
+  if(containsAny(text,["police","officer","inform","disclose","notification","traffic stop"])) return "police";
+  if(containsAny(text,["private","posted","property","employer","workplace","sign"])) return "property";
+  if(containsAny(text,["force","self-defense","display","brandish","aftermath","911","civil","liability"])) return "force";
+  return "general";
+}
+
+function sectionPriority(section){
+  var text = (section.title + " " + (section.risk || "") + " " + (section.body || []).join(" ")).toLowerCase();
+  var score = 0;
+  if(containsAny(text,["school","court","courthouse","federal","airport","liquor","alcohol","jail","correctional","police","casino","prohibited","restricted","unauthorized","sensitive"])) score += 8;
+  if(containsAny(text,["vehicle","traffic stop","transport","motor vehicle"])) score += 6;
+  if(containsAny(text,["private","posted","employer","property"])) score += 4;
+  if(containsAny(text,["force","self-defense","display","brandish","aftermath","911"])) score += 3;
+  return score;
+}
+
+function firstLineByPrefix(section, prefix){
+  var rows = section.body || [];
+  prefix = prefix.toLowerCase();
+  for(var i=0;i<rows.length;i++){
+    var row = String(rows[i] || "");
+    if(row.toLowerCase().indexOf(prefix) === 0){
+      row = row.replace("STATUTE / SOURCE:", "");
+      row = row.replace("STATUTE:", "");
+      row = row.replace("SOURCE:", "");
+      row = row.replace("SUMMARY:", "");
+      row = row.replace("GUIDANCE:", "");
+      return row.trim();
+    }
+  }
+  return "";
+}
+
+function buildIntelSummary(permitState, travelState){
+  var law = stateLawData[travelState] || {};
+  var qk = law.quick || {};
+  var status = stateStatus(permitState, travelState);
+  var legalSections = law.legalSections || [];
+  var highRisk = legalSections
+    .slice()
+    .sort(function(a,b){ return sectionPriority(b) - sectionPriority(a); })
+    .filter(function(section){ return sectionPriority(section) > 0; })
+    .slice(0,6);
+
+  var warnings = [];
+  if(status === "not_recognized") warnings.push("Michigan CPL not recognized / do not carry on Michigan CPL alone.");
+  if(status === "restricted") warnings.push("Reciprocity marked VERIFY / conditional — confirm before travel.");
+  if(qk.vehicleCarry) warnings.push("Vehicle: " + qk.vehicleCarry);
+  if(qk.dutyToInform) warnings.push("Police contact: " + qk.dutyToInform);
+  if(qk.privateSigns) warnings.push("Private property: " + qk.privateSigns);
+
+  return { highRisk: highRisk, warnings: warnings.slice(0,5) };
+}
+
+function renderIntelPanel(permitState, travelState){
+  var law = stateLawData[travelState] || {};
+  var qk = law.quick || {};
+  var status = stateStatus(permitState, travelState);
+  var cls = statusClass(status);
+  var intel = buildIntelSummary(permitState, travelState);
+
+  var html = '<div class="intelBanner">' +
+    '<h3>' + travelState + ' — ' + escapeHtml(stateName(travelState)) + ' State Intelligence</h3>' +
+    '<span class="detailStatus ' + cls + '">' + statusLabelByStatus(status) + '</span>' +
+    '<p><b>Permit selected:</b> ' + escapeHtml(stateName(permitState)) + ' | <b>Clicked state:</b> ' + escapeHtml(stateName(travelState)) + '</p>' +
+    '<p>This panel shows the fast-read carry intelligence first, then the detailed legal profile below.</p>' +
+    '<div class="intelGrid">' +
+      '<div class="intelTile"><b>Reciprocity</b><span>' + escapeHtml(qk.reciprocity || 'Verify recognition before travel.') + '</span></div>' +
+      '<div class="intelTile"><b>Permitless / Concealed</b><span>' + escapeHtml(qk.permitlessCarry || 'Verify permitless carry status.') + '</span></div>' +
+      '<div class="intelTile"><b>Vehicle / Transport</b><span>' + escapeHtml(qk.vehicleCarry || 'Verify vehicle carry and transport rules.') + '</span></div>' +
+      '<div class="intelTile"><b>Police Contact</b><span>' + escapeHtml(qk.dutyToInform || 'Verify duty-to-inform rules.') + '</span></div>' +
+      '<div class="intelTile"><b>Private Property</b><span>' + escapeHtml(qk.privateSigns || 'Verify signage/property rules.') + '</span></div>' +
+      '<div class="intelTile"><b>Use of Force</b><span>' + escapeHtml(qk.forceLaw || 'Verify self-defense law.') + '</span></div>' +
+    '</div>' +
+  '</div>';
+
+  if(intel.warnings.length){
+    html += '<div class="detailBox"><h3>Fast Travel Warnings</h3><div class="riskStack">';
+    intel.warnings.forEach(function(w){ html += '<div class="riskCard"><strong>Warning</strong><p>' + escapeHtml(w) + '</p></div>'; });
+    html += '</div></div>';
+  }
+
+  if(intel.highRisk.length){
+    html += '<div class="detailBox"><h3>High-Risk Areas in This State</h3><div class="riskStack">';
+    intel.highRisk.forEach(function(section){
+      var summary = firstLineByPrefix(section,"SUMMARY:") || (section.body && section.body[0]) || "Review this section before travel.";
+      html += '<div class="riskCard"><strong>' + escapeHtml(section.title) + '</strong><p>' + escapeHtml(summary) + '</p></div>';
+    });
+    html += '</div></div>';
+  }
+
+  html += '<div class="jumpNav">' +
+    '<button type="button" onclick="document.getElementById(\\'pd-legal-details\\').scrollIntoView({behavior:\\'smooth\\'})">Detailed Law</button>' +
+    '<button type="button" onclick="document.getElementById(\\'pd-decision-blocks\\').scrollIntoView({behavior:\\'smooth\\'})">Checklists</button>' +
+    '<button type="button" onclick="document.getElementById(\\'pd-scenarios\\').scrollIntoView({behavior:\\'smooth\\'})">Scenarios</button>' +
+    '<button type="button" onclick="document.getElementById(\\'pd-common-mistakes\\').scrollIntoView({behavior:\\'smooth\\'})">Common Mistakes</button>' +
+  '</div>';
+
+  return html;
+}
+
+function renderLegalSection(section){
+  var cat = sectionCategory(section);
+  var html = '<div class="legalItem ' + cat + '">' +
+    '<h3>' + escapeHtml(section.title) + '</h3>' +
+    '<span class="lawPill yellow">' + escapeHtml(section.risk || "Legal Topic") + '</span>';
+
+  (section.body || []).forEach(function(p){
+    var safe = escapeHtml(p);
+    if(String(p).indexOf("STATUTE:") === 0 || String(p).indexOf("STATUTE / SOURCE:") === 0 || String(p).indexOf("SOURCE:") === 0){
+      html += '<p><b>' + safe + '</b></p>';
+    } else if(String(p).indexOf("SUMMARY:") === 0){
+      html += '<p><b>' + safe + '</b></p>';
+    } else if(String(p).indexOf("GUIDANCE:") === 0){
+      html += '<p><b>' + safe + '</b></p>';
+    } else {
+      html += '<p>' + safe + '</p>';
+    }
+  });
+
+  if(section.source){
+    html += '<div class="legalSource">' + escapeHtml(section.source) + '</div>';
+  }
+  html += '</div>';
+  return html;
+}
+
 function renderLawProfile(abbr){
   var law = stateLawData[abbr];
 
@@ -4776,72 +5112,44 @@ function renderLawProfile(abbr){
       '</div>';
   }
 
-  var qk = law.quick || {};
-
   var html = '<div class="detailBox">' +
     '<h3>' + abbr + ' — ' + escapeHtml(law.name || stateName(abbr)) + '</h3>' +
     '<span class="lawPill green">' + escapeHtml(law.profileStatus || "Profile") + '</span>' +
     '<span class="lawPill gray">Reviewed: ' + escapeHtml(law.lastReviewed || "Verify") + '</span>' +
     '<p>' + escapeHtml(law.summary || "") + '</p>';
 
-  html += '<div class="profileGrid">' +
-    '<div class="miniPanel"><b>Michigan CPL / Recognition</b><p class="small">' + escapeHtml(qk.reciprocity || "Verify recognition.") + '</p></div>' +
-    '<div class="miniPanel"><b>Permitless Carry</b><p class="small">' + escapeHtml(qk.permitlessCarry || "Verify current law.") + '</p></div>' +
-    '<div class="miniPanel"><b>Concealed Carry</b><p class="small">' + escapeHtml(qk.concealedCarry || "Verify current law.") + '</p></div>' +
-    '<div class="miniPanel"><b>Open Carry</b><p class="small">' + escapeHtml(qk.openCarry || "Verify current law.") + '</p></div>' +
-    '<div class="miniPanel"><b>Vehicle Carry</b><p class="small">' + escapeHtml(qk.vehicleCarry || "Verify current law.") + '</p></div>' +
-    '<div class="miniPanel"><b>Duty to Inform</b><p class="small">' + escapeHtml(qk.dutyToInform || "Verify current law.") + '</p></div>' +
-    '<div class="miniPanel"><b>Private Property / Signs</b><p class="small">' + escapeHtml(qk.privateSigns || "Verify current law.") + '</p></div>' +
-    '<div class="miniPanel"><b>Use of Force</b><p class="small">' + escapeHtml(qk.forceLaw || "Verify current law.") + '</p></div>' +
-  '</div>';
-
   html += renderList("Red Flag Travel Alerts", law.travelAlerts);
 
+  html += '<div id="pd-legal-details" class="sectionHeader"><h3>Detailed Legal Intelligence</h3><p>Statute-backed sections, summaries, and Prime Defense practical guidance.</p></div>';
   if(law.legalSections && law.legalSections.length){
-    html += '<h3>Detailed Legal Intelligence</h3>';
-    law.legalSections.forEach(function(section){
-      html += '<div class="legalItem">' +
-        '<h3>' + escapeHtml(section.title) + '</h3>' +
-        '<span class="lawPill yellow">' + escapeHtml(section.risk || "Legal Topic") + '</span>';
-
-      (section.body || []).forEach(function(p){
-        html += '<p>' + escapeHtml(p) + '</p>';
-      });
-
-      if(section.source){
-        html += '<div class="legalSource">' + escapeHtml(section.source) + '</div>';
-      }
-
-      html += '</div>';
-    });
+    law.legalSections.forEach(function(section){ html += renderLegalSection(section); });
+  } else {
+    html += '<div class="legalItem"><p>No expanded legal sections are built for this state yet.</p></div>';
   }
 
+  html += '<div id="pd-decision-blocks" class="sectionHeader"><h3>Decision Blocks / Checklists</h3><p>Fast field checks before carrying or traveling.</p></div>';
   if(law.decisionBlocks && law.decisionBlocks.length){
-    html += '<h3>Decision Blocks</h3>';
     law.decisionBlocks.forEach(function(block){
       html += '<div class="legalItem"><h3>' + escapeHtml(block.title) + '</h3>';
-      (block.steps || []).forEach(function(step){
-        html += '<p>' + escapeHtml(step) + '</p>';
-      });
+      (block.steps || []).forEach(function(step){ html += '<p>' + escapeHtml(step) + '</p>'; });
       html += '</div>';
     });
+  } else {
+    html += '<div class="legalItem"><p>No state-specific decision blocks built yet.</p></div>';
   }
 
+  html += '<div id="pd-scenarios" class="sectionHeader"><h3>High-Risk Scenarios</h3><p>Real-world traps and common member travel situations.</p></div>';
   if(law.scenarios && law.scenarios.length){
-    html += '<h3>High-Risk Scenarios</h3>';
     law.scenarios.forEach(function(s){
-      html += '<div class="scenario">' +
-        '<h3>' + escapeHtml(s.title) + '</h3>' +
-        '<p>' + escapeHtml(s.summary || "") + '</p>';
-
-      (s.guidance || []).forEach(function(g){
-        html += '<p class="small">• ' + escapeHtml(g) + '</p>';
-      });
-
+      html += '<div class="scenario"><h3>' + escapeHtml(s.title) + '</h3><p>' + escapeHtml(s.summary || "") + '</p>';
+      (s.guidance || []).forEach(function(g){ html += '<p class="small">• ' + escapeHtml(g) + '</p>'; });
       html += '</div>';
     });
+  } else {
+    html += '<div class="scenario"><p>No state-specific scenarios built yet.</p></div>';
   }
 
+  html += '<div id="pd-common-mistakes" class="sectionHeader"><h3>Common Mistakes & Final Checklist</h3><p>Things members should avoid before they create legal exposure.</p></div>';
   html += renderList("Common Mistakes", law.commonMistakes);
   html += renderList("Before You Carry Checklist", law.beforeCarryChecklist, "☐ ");
 
@@ -4862,16 +5170,7 @@ function renderLawProfile(abbr){
 }
 
 function getStateDetailHtml(permitState, travelState){
-  var status = stateStatus(permitState, travelState);
-  var cls = statusClass(status);
-
-  return '<div class="detailBox">' +
-    '<h3>' + travelState + ' — ' + stateName(travelState) + '</h3>' +
-    '<span class="detailStatus ' + cls + '">' + statusLabelByStatus(status) + '</span>' +
-    '<p><b>Travel meaning:</b> This color is a starting point only. It does not guarantee lawful carry in every place or situation.</p>' +
-    '<p><b>Check before travel:</b> permit recognition, prohibited places, vehicle carry, duty to inform, signage/private property rules, alcohol restrictions, age restrictions, magazine/ammunition rules, local restrictions, tribal restrictions, federal property, and whether your permit must be resident or nonresident.</p>' +
-  '</div>' +
-  renderLawProfile(travelState);
+  return renderIntelPanel(permitState, travelState) + renderLawProfile(travelState);
 }
 
 function getReciprocityHtml(state){
