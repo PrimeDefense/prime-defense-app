@@ -722,7 +722,7 @@ var reciprocityData = {
 function makeProfile(name, level, summary, quick, alerts, sections, decisionBlocks, scenarios, mistakes, checklist, plainEnglishReality) {
   return {
     name: name,
-    lastReviewed: level === "Ultra Expanded" || level === "Expanded Travel State" ? "May 2, 2026" : "Starter profile — verify before reliance",
+    lastReviewed: String(level).includes("Expanded") || String(level).includes("Law-Backed") ? "May 4, 2026" : "Starter profile — verify before reliance",
     profileStatus: level,
     summary: summary,
     quick: quick,
@@ -1245,843 +1245,1484 @@ var stateLawData = {
   OH: makeProfile(
     "Ohio",
     "Law-Backed Ultra Expanded Travel State",
-    "Ohio is one of the most important travel states for Michigan CPL holders because it borders Michigan and has major differences from Michigan law. Ohio allows permitless concealed carry for a qualifying adult, but Ohio still has detailed restrictions involving eligibility, prohibited places, school safety zones, liquor-permit premises, courthouses, private property, vehicles, police contact, federal property, and self-defense conduct. This profile is structured as statute-first legal information with practical Prime Defense training notes separated from the law.",
+    "Ohio is one of the most important travel states for Michigan CPL holders. Ohio allows permitless concealed carry for a qualifying adult, but users must still follow Ohio eligibility rules, restricted-location statutes, school safety zone laws, alcohol-location rules, private property rules, vehicle rules, federal property restrictions, and self-defense standards.",
     {
-      reciprocity: "Michigan CPL treated as recognized in this app travel engine. Ohio also allows permitless concealed carry for a qualifying adult under ORC 2923.111.",
-      permitlessCarry: "ORC 2923.111: a qualifying adult is not required to obtain a concealed handgun license to carry a concealed handgun that is not a restricted firearm.",
-      concealedCarry: "ORC 2923.111 and ORC 2923.126: concealed carry may be lawful for a qualifying adult, but restricted-location rules still apply.",
-      openCarry: "Ohio generally recognizes open carry, but restricted places, vehicles, private property, police contact, and public-alarm issues still matter.",
-      vehicleCarry: "ORC 2923.111 and ORC 2923.126 framework. Vehicle carry may be lawful, but traffic-stop conduct is critical.",
-      dutyToInform: "Ohio is not Michigan. Ohio no longer uses the old automatic prompt-notification model, but if an officer asks whether you are carrying, answer truthfully.",
-      privateSigns: "ORC 2923.126: private property owners and employers may post against firearms. Leave immediately if asked.",
-      forceLaw: "Ohio self-defense law can be favorable to lawful defenders, but force must still be justified by the facts and tied to an unlawful threat."
+          "reciprocity": "Michigan CPL treated as recognized in this app travel engine. Ohio also allows permitless concealed carry for a qualifying adult.",
+          "permitlessCarry": "ORC 2923.111: qualifying adults may carry a concealed handgun without obtaining an Ohio concealed handgun license.",
+          "concealedCarry": "ORC 2923.111 and ORC 2923.126: concealed carry may be lawful, but restricted locations and eligibility rules still apply.",
+          "openCarry": "Ohio generally recognizes open carry, but location restrictions, private property, vehicles, and police contact still matter.",
+          "vehicleCarry": "ORC 2923.16 and ORC 2923.111: vehicle carry must still comply with Ohio law.",
+          "dutyToInform": "Ohio no longer uses the old automatic prompt-notification model. If an officer asks whether you are carrying, answer truthfully.",
+          "privateSigns": "ORC 2923.126: private property owners and employers may post against firearms.",
+          "forceLaw": "Ohio self-defense law is fact-specific. Force must still be legally justified."
     },
     [
-      "Ohio law should be displayed statute-first, then explained in plain language, then followed by Prime Defense practical guidance.",
-      "Ohio permitless carry applies to a qualifying adult. It does not protect prohibited persons, underage persons, intoxicated persons, or otherwise disqualified persons.",
-      "Permitless carry does not override prohibited places, school safety zones, courthouses, liquor-permit premises, federal property, posted private property, employer policies, or police-contact safety concerns.",
-      "A Michigan CPL may still be useful documentation, but Ohio law controls while the user is physically in Ohio.",
-      "For liability protection, users should be told to verify the current Ohio Revised Code and official Ohio Attorney General guidance before relying on any summary."
+          "Ohio permitless carry is not ruleless carry.",
+          "Ohio law controls while the user is physically in Ohio.",
+          "A green map status only means recognition. It does not mean every location is lawful.",
+          "Every major Ohio section below is tied to an Ohio statute or legal source.",
+          "Users should verify current law before relying on any summary."
     ],
     [
-      {
-        title: "Permitless Carry / Qualifying Adult",
-        risk: "Core Eligibility Rule",
-        body: [
-          "STATUTORY ANCHOR: ORC 2923.111.",
-          "LEGAL RULE: Ohio law provides that a person who is a qualifying adult is not required to obtain a concealed handgun license in order to carry a concealed handgun that is not a restricted firearm.",
-          "LEGAL MEANING: Ohio permitless carry is not universal carry. The person must be a qualifying adult and must not be disqualified under Ohio or federal law.",
-          "LEGAL MEANING: The handgun must not be a restricted firearm under the Ohio framework.",
-          "LEGAL MEANING: A qualifying adult is treated in many Ohio Revised Code provisions as if the person had been issued a valid concealed handgun license, but that does not erase restricted-location laws.",
-          "PRACTICAL GUIDANCE: Do not teach Ohio as 'no permit, no rules.' Teach it as 'no license required for qualifying adults, but all restrictions still matter.'",
-          "PRIME DEFENSE FIELD RULE: Before carrying in Ohio, ask: Am I a qualifying adult, legally eligible, sober, not under a court restriction, and in a lawful location?"
-        ],
-        source: "Ohio Revised Code 2923.111."
-      },
-      {
-        title: "Qualifying Adult Requirements",
-        risk: "Disqualification Risk",
-        body: [
-          "STATUTORY ANCHOR: ORC 2923.111 and referenced criteria from ORC 2923.125.",
-          "LEGAL RULE: Ohio's permitless carry provision applies to a qualifying adult, not every adult.",
-          "LEGAL MEANING: A person who is prohibited from possessing or receiving a firearm under state or federal law cannot use Ohio permitless carry as a workaround.",
-          "LEGAL MEANING: Criminal history, protection orders, certain mental health adjudications, fugitive status, drug-related disqualifiers, and other statutory restrictions may affect eligibility.",
-          "LEGAL MEANING: A person who does not satisfy the required qualifying-adult criteria should not carry under Ohio permitless carry.",
-          "PRACTICAL GUIDANCE: If a user has any court order, pending criminal case, domestic violence issue, protection order, bond condition, probation condition, or disqualifying history, the app should tell them to consult qualified legal counsel before carrying.",
-          "PRIME DEFENSE FIELD RULE: Eligibility is the first question. If eligibility is uncertain, do not carry."
-        ],
-        source: "ORC 2923.111; ORC 2923.125 eligibility framework."
-      },
-      {
-        title: "Michigan CPL Recognition in Ohio",
-        risk: "Travel Law Context",
-        body: [
-          "STATUTORY / LEGAL ANCHOR: Ohio carry recognition and Ohio permitless carry framework.",
-          "LEGAL RULE: For this app's travel engine, Michigan CPL is treated as recognized in Ohio.",
-          "LEGAL MEANING: Recognition does not mean Michigan law follows the user into Ohio.",
-          "LEGAL MEANING: Once physically in Ohio, Ohio law controls the user's conduct.",
-          "LEGAL MEANING: Ohio recognition or permitless carry does not override restricted locations, school safety zones, liquor-premises rules, private property rules, federal property, court rules, or police-contact duties.",
-          "PRACTICAL GUIDANCE: A Michigan CPL may still be useful documentation, even where Ohio permitless carry exists.",
-          "PRIME DEFENSE FIELD RULE: Green on the map only answers recognition. It does not answer whether a specific building, parking lot, event, school, courthouse, or restaurant is lawful."
-        ],
-        source: "Ohio reciprocity framework; ORC 2923.111; ORC 2923.126."
-      },
-      {
-        title: "Concealed Carry Authority",
-        risk: "Core Carry Rule",
-        body: [
-          "STATUTORY ANCHOR: ORC 2923.111 and ORC 2923.126.",
-          "LEGAL RULE: A qualifying adult may carry a concealed handgun in Ohio without obtaining a concealed handgun license, subject to Ohio's restrictions.",
-          "LEGAL MEANING: A qualifying adult is not automatically authorized to carry everywhere.",
-          "LEGAL MEANING: Restricted locations, criminal activity, intoxication, prohibited-person status, protection orders, and federal restrictions can still make carry unlawful.",
-          "LEGAL MEANING: Licensing may still matter for travel outside Ohio, documentation, and recognition by other states.",
-          "PRACTICAL GUIDANCE: Teach users that Ohio permitless carry is conditional authority, not blanket authority.",
-          "PRIME DEFENSE FIELD RULE: Ask four questions: Am I eligible? Is the location lawful? Is my conduct lawful? Am I sober and calm enough to avoid trouble?"
-        ],
-        source: "ORC 2923.111; ORC 2923.126."
-      },
-      {
-        title: "Open Carry in Ohio",
-        risk: "Lawful Does Not Always Mean Wise",
-        body: [
-          "LEGAL ANCHOR: Ohio firearms law framework; ORC Chapter 2923.",
-          "LEGAL RULE: Ohio generally recognizes open carry, but open carry can still be affected by restricted locations, vehicles, private property, event rules, public-alarm issues, and police contact.",
-          "LEGAL MEANING: Open carry is not a bypass around prohibited places.",
-          "LEGAL MEANING: Open carry can still result in law enforcement contact or removal from private property.",
-          "LEGAL MEANING: Open carry during an argument or tense situation can create evidence of escalation.",
-          "PRACTICAL GUIDANCE: Open carry should not be used to test boundaries, prove a point, or pressure private businesses.",
-          "PRIME DEFENSE FIELD RULE: Lawful open carry may still be tactically poor. The safest armed citizen is usually the least noticeable one."
-        ],
-        source: "Ohio Revised Code Chapter 2923 framework."
-      },
-      {
-        title: "Duties and Restricted Locations",
-        risk: "Major Carry Restriction",
-        body: [
-          "STATUTORY ANCHOR: ORC 2923.126.",
-          "LEGAL RULE: ORC 2923.126 addresses duties of licensed individuals and identifies locations where concealed carry authority is restricted.",
-          "LEGAL MEANING: Ohio carry authority does not allow carry into every place.",
-          "LEGAL MEANING: Restricted areas can include school safety zones, courthouses or courtroom buildings, certain government facilities, law-enforcement locations, correctional/detention facilities, airport passenger terminals, places of worship unless allowed, and posted private property.",
-          "LEGAL MEANING: Other laws may also apply depending on the location.",
-          "PRACTICAL GUIDANCE: The app should treat ORC 2923.126 as the main Ohio location-warning statute.",
-          "PRIME DEFENSE FIELD RULE: If the location is school-related, court-related, government-controlled, police-related, correctional, airport-secure, worship-related, alcohol-related, posted, federal, or security-screened, stop and verify before entering."
-        ],
-        source: "ORC 2923.126."
-      },
-      {
-        title: "Private Property and Posted Businesses",
-        risk: "Trespass / Property Control",
-        body: [
-          "STATUTORY ANCHOR: ORC 2923.126.",
-          "LEGAL RULE: Ohio law allows private employers and private property owners to post signs prohibiting firearms on their property.",
-          "LEGAL MEANING: Private property rules can restrict carry even when the person is otherwise eligible to carry.",
-          "LEGAL MEANING: A sign, verbal instruction, employer policy, venue rule, or security direction should not be ignored.",
-          "LEGAL MEANING: Refusing to leave can turn a carry issue into a trespass or disorderly conduct issue.",
-          "PRACTICAL GUIDANCE: Users should not debate signs with staff or security.",
-          "PRIME DEFENSE FIELD RULE: Leave first. Complain later. The parking lot or doorway is not the place to litigate firearm policy."
-        ],
-        source: "ORC 2923.126; Ohio Investigative Unit firearms/signage guidance."
-      },
-      {
-        title: "School Safety Zones",
-        risk: "Extreme Risk Area",
-        body: [
-          "STATUTORY ANCHOR: ORC 2923.122.",
-          "LEGAL RULE: ORC 2923.122 addresses illegal conveyance or possession of a deadly weapon or dangerous ordnance in a school safety zone.",
-          "LEGAL MEANING: School safety zones are high-risk locations under Ohio law.",
-          "LEGAL MEANING: School property, school buildings, school activities, parking areas, and school-controlled areas may raise legal issues depending on the facts.",
-          "LEGAL MEANING: A Michigan CPL does not automatically solve an Ohio school-zone issue.",
-          "LEGAL MEANING: Federal school-zone law may also apply.",
-          "PRACTICAL GUIDANCE: School pickup, drop-off, school sports, school events, and parking areas should be treated as verify-first situations.",
-          "PRIME DEFENSE FIELD RULE: If a school is involved, do not rely on memory, social media, or a one-sentence summary. Verify before entering armed."
-        ],
-        source: "ORC 2923.122; federal school-zone framework."
-      },
-      {
-        title: "Courthouses and Courtrooms",
-        risk: "Hard Stop Area",
-        body: [
-          "STATUTORY ANCHOR: ORC 2923.123 and ORC 2923.126.",
-          "LEGAL RULE: Ohio law restricts deadly weapons and dangerous ordnance in courthouses and court-related facilities.",
-          "LEGAL MEANING: Courthouses, courtroom buildings, and security-screened court facilities should be treated as hard-stop restricted locations unless a specific legal exception clearly applies.",
-          "LEGAL MEANING: Court buildings often involve metal detectors, deputies, posted signs, and immediate law-enforcement control.",
-          "LEGAL MEANING: A quick errand does not reduce the legal risk.",
-          "PRACTICAL GUIDANCE: Users should plan before arriving at any court facility.",
-          "PRIME DEFENSE FIELD RULE: Never discover you are armed at the courthouse door. Secure lawfully before arrival or do not bring it."
-        ],
-        source: "ORC 2923.123; ORC 2923.126."
-      },
-      {
-        title: "Liquor Permit Premises / Alcohol Locations",
-        risk: "Alcohol Location Risk",
-        body: [
-          "STATUTORY ANCHOR: ORC 2923.121.",
-          "LEGAL RULE: ORC 2923.121 addresses possession of a firearm in a room where a person is consuming beer or intoxicating liquor in premises for which a D permit has been issued, unless an exception applies.",
-          "LEGAL MEANING: Ohio alcohol-location law is more technical than simply asking whether a place sells alcohol.",
-          "LEGAL MEANING: The D-permit status, whether alcohol is being consumed in the room, whether an exception applies, and whether the armed person is consuming or under the influence all matter.",
-          "LEGAL MEANING: Carrying while intoxicated or impaired creates serious legal and tactical risk.",
-          "PRACTICAL GUIDANCE: Bars, breweries, restaurants, stadiums, festivals, event centers, and open-air arenas require careful review.",
-          "PRIME DEFENSE FIELD RULE: If drinking is part of the plan, carrying should not be part of the plan."
-        ],
-        source: "ORC 2923.121."
-      },
-      {
-        title: "Airport Passenger Terminals / Secure Areas",
-        risk: "Transportation Security Risk",
-        body: [
-          "STATUTORY ANCHOR: ORC 2923.126 and federal airport/security law framework.",
-          "LEGAL RULE: Ohio carry restrictions and federal transportation/security rules may apply at airports.",
-          "LEGAL MEANING: Airport terminals, passenger screening areas, sterile areas, aircraft, baggage-check procedures, and TSA rules must be analyzed separately.",
-          "LEGAL MEANING: A person may be able to lawfully transport a firearm for air travel only by following strict airline and TSA procedures.",
-          "LEGAL MEANING: Carrying into a secure airport area is not the same as properly checking a firearm for travel.",
-          "PRACTICAL GUIDANCE: Users should plan airport firearm transport before arriving.",
-          "PRIME DEFENSE FIELD RULE: Do not bring a defensive tool to TSA screening. Know the airline/TSA process before leaving home."
-        ],
-        source: "ORC 2923.126; TSA/firearm transport framework."
-      },
-      {
-        title: "Law Enforcement Facilities / Correctional Facilities",
-        risk: "Restricted Facility Risk",
-        body: [
-          "STATUTORY ANCHOR: ORC 2923.126 and Ohio correctional/detention facility framework.",
-          "LEGAL RULE: Ohio law restricts carry in law-enforcement, detention, jail, correctional, and certain government-controlled facilities.",
-          "LEGAL MEANING: Police stations, sheriff offices, jails, prisons, detention centers, and correctional facilities should be treated as restricted unless a clear exception applies.",
-          "LEGAL MEANING: These locations may involve separate criminal statutes, security procedures, and immediate law-enforcement control.",
-          "PRACTICAL GUIDANCE: Do not walk into a police station or jail lobby armed without confirming the law.",
-          "PRIME DEFENSE FIELD RULE: If the building exists to arrest, detain, prosecute, or confine people, assume high risk and verify before arrival."
-        ],
-        source: "ORC 2923.126; Ohio correctional facility framework."
-      },
-      {
-        title: "Places of Worship",
-        risk: "Permission Required / Property Control",
-        body: [
-          "STATUTORY ANCHOR: ORC 2923.126.",
-          "LEGAL RULE: Ohio law includes restrictions involving places of worship, unless the place of worship permits otherwise under the statutory framework.",
-          "LEGAL MEANING: A church, synagogue, mosque, temple, or other place of worship may be restricted unless permission or policy allows carry.",
-          "LEGAL MEANING: Worship locations may also have private property rules, posted signs, school/daycare connections, event rules, or security-team policies.",
-          "PRACTICAL GUIDANCE: Users should verify the policy before carrying into a place of worship.",
-          "PRIME DEFENSE FIELD RULE: Do not assume faith community equals carry permission. Ask the right person and follow the policy."
-        ],
-        source: "ORC 2923.126."
-      },
-      {
-        title: "Government Buildings and Political Subdivisions",
-        risk: "Public Building Risk",
-        body: [
-          "STATUTORY ANCHOR: ORC 2923.126 and Ohio public-building framework.",
-          "LEGAL RULE: Some government buildings and facilities remain restricted depending on the type of building, function, and statutory language.",
-          "LEGAL MEANING: City halls, county buildings, public meetings, administrative buildings, and government-controlled spaces may require separate analysis.",
-          "LEGAL MEANING: Some public properties may be less restricted than others, but the user should not guess.",
-          "PRACTICAL GUIDANCE: Government buildings should be treated as verify-first locations.",
-          "PRIME DEFENSE FIELD RULE: Public building does not automatically mean public carry. Verify the specific building and function."
-        ],
-        source: "ORC 2923.126; Ohio public-building firearms framework."
-      },
-      {
-        title: "Vehicle Carry and Traffic Stops",
-        risk: "Officer Safety / Legal Risk",
-        body: [
-          "STATUTORY ANCHOR: ORC 2923.111, ORC 2923.126, and Ohio Attorney General concealed carry guidance.",
-          "LEGAL RULE: Ohio permitless carry treats a qualifying adult carrying a non-restricted concealed handgun similarly to a concealed handgun license holder in many provisions, but police-contact duties and restrictions must still be followed.",
-          "LEGAL MEANING: Vehicle carry may be lawful, but the traffic stop is a high-risk moment.",
-          "LEGAL MEANING: Ohio no longer uses the same old automatic prompt-notification model, but if an officer asks whether you are carrying, Ohio Attorney General guidance states you must answer truthfully.",
-          "PRACTICAL GUIDANCE: Keep hands visible. Do not reach. Do not argue. Do not try to educate the officer during the stop.",
-          "PRIME DEFENSE FIELD RULE: Your hands are the message. Make them visible and boring."
-        ],
-        source: "ORC 2923.111; ORC 2923.126; Ohio Attorney General concealed carry guidance."
-      },
-      {
-        title: "Improper Handling in a Motor Vehicle",
-        risk: "Vehicle-Specific Offense Risk",
-        body: [
-          "STATUTORY ANCHOR: ORC 2923.16.",
-          "LEGAL RULE: Ohio has a specific statute addressing improperly handling firearms in a motor vehicle.",
-          "LEGAL MEANING: A person should not assume all vehicle carry questions are answered by permitless carry alone.",
-          "LEGAL MEANING: Motor vehicle conduct, firearm handling, loaded status, accessibility, impairment, and occupant behavior can all matter.",
-          "PRACTICAL GUIDANCE: This statute should be reviewed whenever building Ohio vehicle-carry training content.",
-          "PRIME DEFENSE FIELD RULE: Vehicle carry is its own legal category. Treat it separately from carry on foot."
-        ],
-        source: "ORC 2923.16."
-      },
-      {
-        title: "Carrying While Impaired",
-        risk: "Intoxication / Disability Risk",
-        body: [
-          "STATUTORY ANCHOR: ORC 2923.15 and alcohol-related carry statutes.",
-          "LEGAL RULE: Ohio law restricts using or carrying weapons while under disability or while intoxicated/under the influence depending on the specific conduct and statute.",
-          "LEGAL MEANING: Alcohol, drugs, or impairment can destroy an otherwise lawful carry situation.",
-          "LEGAL MEANING: The risk is legal, tactical, evidentiary, and civil.",
-          "PRACTICAL GUIDANCE: The safest training rule is simple: if consuming alcohol or impairing substances, do not carry.",
-          "PRIME DEFENSE FIELD RULE: Armed and impaired is a losing combination."
-        ],
-        source: "ORC 2923.15; ORC 2923.121; Ohio weapons disability/intoxication framework."
-      },
-      {
-        title: "Federal Property / Post Offices",
-        risk: "Federal Law Overlay",
-        body: [
-          "LEGAL ANCHOR: Federal law; not controlled by Ohio carry permission.",
-          "LEGAL RULE: State carry permission does not override federal restrictions on federal property.",
-          "LEGAL MEANING: A Michigan CPL and Ohio permitless carry do not authorize carry in federal buildings, federal courthouses, post offices, or other restricted federal property.",
-          "LEGAL MEANING: Federal rules may also apply to certain federal lands, agency offices, and secure facilities.",
-          "PRACTICAL GUIDANCE: Users should treat federal property as a separate legal universe.",
-          "PRIME DEFENSE FIELD RULE: If it is federal, stop using the Ohio page and verify federal law."
-        ],
-        source: "Federal facility and postal property framework."
-      },
-      {
-        title: "Workplace / Employer Rules",
-        risk: "Policy and Employment Risk",
-        body: [
-          "STATUTORY / LEGAL ANCHOR: ORC 2923.126 and Ohio employment/property law framework.",
-          "LEGAL RULE: Employers and property owners can impose restrictions that may affect carry on workplace property, job sites, customer locations, company vehicles, or controlled facilities.",
-          "LEGAL MEANING: A person may avoid criminal prosecution but still face termination, contract loss, discipline, removal, or loss of access credentials.",
-          "LEGAL MEANING: Company vehicles, secure job sites, customer facilities, and contractor rules may be stricter than general public carry rules.",
-          "PRACTICAL GUIDANCE: Users should separate the criminal-law question from the employment-policy question.",
-          "PRIME DEFENSE FIELD RULE: Legal to carry does not always mean legal to keep your job."
-        ],
-        source: "ORC 2923.126; Ohio employment/property policy framework."
-      },
-      {
-        title: "Magazine / Ammunition / Equipment Considerations",
-        risk: "Equipment Verification",
-        body: [
-          "LEGAL ANCHOR: Ohio firearms law framework and multi-state travel framework.",
-          "LEGAL RULE: Ohio is not generally treated like a high-restriction magazine/ammunition state, but equipment legality should still be verified before travel.",
-          "LEGAL MEANING: Equipment that is lawful in Ohio may become unlawful in the next state on a multi-state trip.",
-          "LEGAL MEANING: Venue rules, event rules, private property, federal property, and local restrictions may still affect equipment.",
-          "PRACTICAL GUIDANCE: This section becomes especially important when the route continues into Pennsylvania, New York, New Jersey, Maryland, Illinois, or other more restrictive states.",
-          "PRIME DEFENSE FIELD RULE: Check the equipment for the whole route, not just the first state."
-        ],
-        source: "Ohio firearms law framework; multi-state travel best practice."
-      },
-      {
-        title: "Use of Force / Self-Defense",
-        risk: "Slogans Are Not Law",
-        body: [
-          "LEGAL ANCHOR: Ohio self-defense statutes and case-law framework.",
-          "LEGAL RULE: Ohio self-defense law may protect lawful defenders, but the defensive act must still be justified under the facts.",
-          "LEGAL MEANING: Deadly force is not justified by anger, insults, property disputes, road rage, ego, warning shots, punishment, or generalized fear.",
-          "LEGAL MEANING: The threat, the defender's perception, the defender's conduct, proportionality, and reasonableness all matter.",
-          "LEGAL MEANING: No-duty-to-retreat concepts do not create a right to escalate, chase, reengage, or provoke.",
-          "PRACTICAL GUIDANCE: Teach users to avoid, disengage, call 911, create distance, and preserve evidence when safe.",
-          "PRIME DEFENSE FIELD RULE: The best self-defense case is often the one where the defender avoided everything safely avoidable before force became necessary."
-        ],
-        source: "Ohio self-defense framework. Verify current Ohio statutory and case-law guidance."
-      },
-      {
-        title: "Defensive Display / No Shots Fired",
-        risk: "Menacing / Disorderly Conduct / Assault Allegation Risk",
-        body: [
-          "LEGAL ANCHOR: Ohio criminal law framework involving threats, menacing-type allegations, disorderly conduct, and weapon-related offenses.",
-          "LEGAL RULE: Displaying a firearm or defensive tool can still create criminal exposure if the display is not legally justified.",
-          "LEGAL MEANING: A person does not need to fire a shot to create legal problems.",
-          "LEGAL MEANING: Displaying to scare, intimidate, win an argument, end a verbal dispute, or protect pride can be framed against the defender.",
-          "PRACTICAL GUIDANCE: If the display was necessary because of an immediate unlawful threat, call 911 first and report the attack or attempted attack.",
-          "PRIME DEFENSE FIELD RULE: If the explanation is 'I showed it to scare him,' the facts are already dangerous."
-        ],
-        source: "Ohio criminal law framework; Prime Defense defensive display protocol."
-      },
-      {
-        title: "Calling 911 After an Ohio Defensive Incident",
-        risk: "Post-Incident Statement Risk",
-        body: [
-          "LEGAL ANCHOR: General criminal procedure, evidence, and self-defense investigation framework.",
-          "LEGAL RULE: Statements after an incident can become evidence.",
-          "LEGAL MEANING: The defender should report the emergency, request police/medical if needed, identify the attacker, identify evidence/witnesses if necessary, and then request counsel before detailed questioning.",
-          "LEGAL MEANING: A long emotional statement under adrenaline can create inconsistency, confusion, or damaging admissions.",
-          "PRACTICAL GUIDANCE: Use short, factual, rights-protecting language.",
-          "PRIME DEFENSE FIELD RULE: Call 911, identify yourself as the victim/complainant if accurate, point out evidence and witnesses, request counsel, then stop talking."
-        ],
-        source: "Prime Defense aftermath protocol; general criminal procedure/evidence framework."
-      }
+          {
+                "title": "Permitless Carry / Qualifying Adult",
+                "risk": "Core Eligibility Rule",
+                "body": [
+                      "STATUTE / SOURCE: ORC 2923.111.",
+                      "SUMMARY: A qualifying adult is not required to obtain a concealed handgun license to carry a concealed handgun in Ohio, as long as the handgun is not a restricted firearm.",
+                      "GUIDANCE: This does not apply to everyone. The user must still be legally eligible, old enough, not prohibited, sober, and not otherwise disqualified."
+                ],
+                "source": "ORC 2923.111."
+          },
+          {
+                "title": "Qualifying Adult Requirements",
+                "risk": "Disqualification Risk",
+                "body": [
+                      "STATUTE / SOURCE: ORC 2923.111; ORC 2923.125 eligibility framework.",
+                      "SUMMARY: Ohio permitless carry applies only to a qualifying adult. A prohibited person cannot rely on permitless carry.",
+                      "GUIDANCE: If the user has a protection order, domestic violence issue, pending criminal case, bond condition, probation condition, felony history, drug-related disqualifier, or other legal disability, they should not carry until they receive qualified legal guidance."
+                ],
+                "source": "ORC 2923.111; ORC 2923.125."
+          },
+          {
+                "title": "Michigan CPL Recognition in Ohio",
+                "risk": "Travel Law Context",
+                "body": [
+                      "STATUTE / SOURCE: Ohio recognition and permitless carry framework.",
+                      "SUMMARY: This app treats Michigan CPL as recognized in Ohio. Ohio also allows permitless concealed carry for qualifying adults.",
+                      "GUIDANCE: Recognition does not mean Michigan law follows the user. Ohio law controls while physically in Ohio."
+                ],
+                "source": "Ohio carry recognition framework; ORC 2923.111."
+          },
+          {
+                "title": "Duties and Restricted Locations",
+                "risk": "Major Carry Restriction",
+                "body": [
+                      "STATUTE / SOURCE: ORC 2923.126.",
+                      "SUMMARY: Ohio carry authority does not authorize carry in every location. ORC 2923.126 identifies important restrictions and duties.",
+                      "GUIDANCE: Treat schools, courthouses, law-enforcement facilities, correctional facilities, airport secure areas, government buildings, places of worship, posted private property, and security-screened locations as verify-first areas."
+                ],
+                "source": "ORC 2923.126."
+          },
+          {
+                "title": "Private Property and Posted Businesses",
+                "risk": "Trespass / Property Control",
+                "body": [
+                      "STATUTE / SOURCE: ORC 2923.126.",
+                      "SUMMARY: Ohio allows private property owners and employers to post signs prohibiting firearms.",
+                      "GUIDANCE: If a business is posted or staff/security asks the user to leave, leave immediately. Do not argue, debate, or create a trespass issue."
+                ],
+                "source": "ORC 2923.126; Ohio Investigative Unit firearms/signage guidance."
+          },
+          {
+                "title": "School Safety Zones",
+                "risk": "Extreme Risk Area",
+                "body": [
+                      "STATUTE / SOURCE: ORC 2923.122.",
+                      "SUMMARY: Ohio law restricts deadly weapons and dangerous ordnance in school safety zones unless a statutory exception applies.",
+                      "GUIDANCE: School buildings, school property, school events, parking areas, and student activities require extra caution. Do not assume a Michigan CPL or Ohio permitless carry solves the issue."
+                ],
+                "source": "ORC 2923.122."
+          },
+          {
+                "title": "Courthouses and Courtrooms",
+                "risk": "Hard Stop Area",
+                "body": [
+                      "STATUTE / SOURCE: ORC 2923.123; ORC 2923.126.",
+                      "SUMMARY: Ohio restricts deadly weapons and dangerous ordnance in courthouse and court-related facilities.",
+                      "GUIDANCE: Do not bring a firearm into a courthouse, courtroom building, or security-screened court facility unless a specific legal exception clearly applies."
+                ],
+                "source": "ORC 2923.123; ORC 2923.126."
+          },
+          {
+                "title": "Liquor Permit Premises / Alcohol Locations",
+                "risk": "Alcohol Location Risk",
+                "body": [
+                      "STATUTE / SOURCE: ORC 2923.121.",
+                      "SUMMARY: Ohio restricts firearm possession in certain liquor-permit premises where alcohol is being consumed unless an exception applies.",
+                      "GUIDANCE: Bars, breweries, restaurants, festivals, stadiums, and event venues should be checked carefully. If drinking is part of the plan, carrying should not be."
+                ],
+                "source": "ORC 2923.121."
+          },
+          {
+                "title": "Airport Passenger Terminals / Secure Areas",
+                "risk": "Transportation Security Risk",
+                "body": [
+                      "STATUTE / SOURCE: ORC 2923.126; federal airport/security framework.",
+                      "SUMMARY: Ohio and federal rules may restrict carry in airport terminals, secure areas, passenger screening areas, and aircraft-related areas.",
+                      "GUIDANCE: Proper checked-airline transport is different from carrying into a secure airport area. Know the airline and TSA process before arriving."
+                ],
+                "source": "ORC 2923.126; TSA/firearm transport framework."
+          },
+          {
+                "title": "Law Enforcement / Correctional / Detention Facilities",
+                "risk": "Restricted Facility Risk",
+                "body": [
+                      "STATUTE / SOURCE: ORC 2923.126.",
+                      "SUMMARY: Ohio restricts carry in certain law-enforcement, jail, detention, correctional, and government-controlled facilities.",
+                      "GUIDANCE: Police stations, sheriff offices, jails, detention centers, and correctional facilities should be treated as restricted unless a clear legal exception applies."
+                ],
+                "source": "ORC 2923.126."
+          },
+          {
+                "title": "Places of Worship",
+                "risk": "Permission Required / Property Control",
+                "body": [
+                      "STATUTE / SOURCE: ORC 2923.126.",
+                      "SUMMARY: Ohio includes restrictions involving places of worship unless the place of worship permits otherwise under the statute.",
+                      "GUIDANCE: Do not assume carry is allowed in a church, synagogue, mosque, temple, or other place of worship. Verify the policy with the proper authority."
+                ],
+                "source": "ORC 2923.126."
+          },
+          {
+                "title": "Vehicle Carry and Traffic Stops",
+                "risk": "Officer Safety / Legal Risk",
+                "body": [
+                      "STATUTE / SOURCE: ORC 2923.111; ORC 2923.126; Ohio Attorney General guidance.",
+                      "SUMMARY: Ohio permitless carry changed notification duties. The Ohio Attorney General states carriers no longer must immediately reveal they are armed if stopped, but if asked, they must answer truthfully.",
+                      "GUIDANCE: Keep hands visible, do not reach, and calmly say: Officer, I am lawfully carrying. How would you like me to proceed?"
+                ],
+                "source": "ORC 2923.111; ORC 2923.126; Ohio Attorney General concealed carry guidance."
+          },
+          {
+                "title": "Improper Handling in a Motor Vehicle",
+                "risk": "Vehicle-Specific Offense Risk",
+                "body": [
+                      "STATUTE / SOURCE: ORC 2923.16.",
+                      "SUMMARY: Ohio has a specific statute addressing improper handling of firearms in a motor vehicle.",
+                      "GUIDANCE: Vehicle carry should be treated as its own legal topic. Do not assume permitless carry alone answers every vehicle question."
+                ],
+                "source": "ORC 2923.16."
+          },
+          {
+                "title": "Carrying While Impaired",
+                "risk": "Intoxication / Disability Risk",
+                "body": [
+                      "STATUTE / SOURCE: ORC 2923.15; ORC 2923.121.",
+                      "SUMMARY: Ohio law creates serious risk when weapons and impairment are combined.",
+                      "GUIDANCE: If the user is drinking, using drugs, or impaired, they should not carry."
+                ],
+                "source": "ORC 2923.15; ORC 2923.121."
+          },
+          {
+                "title": "Federal Property / Post Offices",
+                "risk": "Federal Law Overlay",
+                "body": [
+                      "STATUTE / SOURCE: Federal facility and postal property framework.",
+                      "SUMMARY: Ohio carry permission does not override federal restrictions.",
+                      "GUIDANCE: Federal buildings, federal courthouses, post offices, and secure federal property must be checked separately from Ohio law."
+                ],
+                "source": "Federal facility and postal property framework."
+          },
+          {
+                "title": "Use of Force / Self-Defense",
+                "risk": "Slogans Are Not Law",
+                "body": [
+                      "STATUTE / SOURCE: Ohio self-defense statutes and case-law framework.",
+                      "SUMMARY: Ohio self-defense law may protect lawful defenders, but force must still be justified under the facts.",
+                      "GUIDANCE: Deadly force is not for insults, property disputes, road rage, warning shots, punishment, intimidation, or ego. Avoidance and de-escalation still matter."
+                ],
+                "source": "Ohio self-defense framework. Verify current Ohio statutory and case-law guidance."
+          },
+          {
+                "title": "Defensive Display / No Shots Fired",
+                "risk": "Menacing / Disorderly Conduct / Assault Allegation Risk",
+                "body": [
+                      "STATUTE / SOURCE: Ohio criminal law framework involving threats, menacing-type allegations, disorderly conduct, and weapon-related offenses.",
+                      "SUMMARY: A person can create criminal exposure by displaying a firearm even if no shot is fired.",
+                      "GUIDANCE: Do not display to scare, intimidate, win an argument, end a verbal dispute, or protect pride. If display was necessary due to an immediate threat, call 911 first."
+                ],
+                "source": "Ohio criminal law framework; Prime Defense defensive display protocol."
+          },
+          {
+                "title": "Calling 911 After an Ohio Defensive Incident",
+                "risk": "Post-Incident Statement Risk",
+                "body": [
+                      "STATUTE / SOURCE: General criminal procedure, evidence, and self-defense investigation framework.",
+                      "SUMMARY: Statements after a defensive incident can become evidence.",
+                      "GUIDANCE: Report the emergency, request police/medical if needed, identify the attacker/evidence/witnesses if necessary, request counsel, then stop talking."
+                ],
+                "source": "Prime Defense aftermath protocol; general criminal procedure/evidence framework."
+          }
     ],
     [
-      {
-        title: "Can I Carry Here in Ohio?",
-        steps: [
-          "1. Check ORC 2923.111: Am I a qualifying adult?",
-          "2. Check ORC 2923.126: Is this a restricted location?",
-          "3. Check ORC 2923.122: Is this a school safety zone?",
-          "4. Check ORC 2923.123: Is this courthouse or courtroom related?",
-          "5. Check ORC 2923.121: Is this a liquor-permit premises issue?",
-          "6. Check ORC 2923.16: Is this a vehicle-specific issue?",
-          "7. Check posted signs, employer rules, and private property instructions.",
-          "8. Check whether federal property is involved.",
-          "9. If any answer is uncertain, do not enter armed until verified."
-        ]
-      },
-      {
-        title: "Ohio Traffic Stop Script",
-        steps: [
-          "1. Pull over safely.",
-          "2. Turn the vehicle off if appropriate.",
-          "3. Keep both hands visible.",
-          "4. Do not reach for anything until instructed.",
-          "5. If asked whether you are carrying, answer truthfully.",
-          "6. Recommended wording: Officer, I am lawfully carrying. How would you like me to proceed?",
-          "7. Follow instructions calmly and slowly."
-        ]
-      },
-      {
-        title: "Ohio Private Property Decision",
-        steps: [
-          "1. Look for posted signs before entering.",
-          "2. Determine whether this is a statutory prohibited location or private-property restriction.",
-          "3. If asked to leave, leave immediately.",
-          "4. Do not debate staff or security.",
-          "5. Decide later whether you want to support that business."
-        ]
-      },
-      {
-        title: "Ohio Alcohol Decision",
-        steps: [
-          "1. Am I entering a bar, brewery, restaurant, stadium, festival, or alcohol-centered event?",
-          "2. Does the location involve a D permit or room where alcohol is being consumed?",
-          "3. Am I consuming alcohol or under the influence?",
-          "4. Is carry restricted by statute, sign, event rule, or private property instruction?",
-          "5. If alcohol is part of the plan, do not carry."
-        ]
-      }
+          {
+                "title": "Can I Carry Here in Ohio?",
+                "steps": [
+                      "1. Check ORC 2923.111: Am I a qualifying adult?",
+                      "2. Check ORC 2923.126: Is this a restricted location?",
+                      "3. Check ORC 2923.122: Is this a school safety zone?",
+                      "4. Check ORC 2923.123: Is this courthouse or courtroom related?",
+                      "5. Check ORC 2923.121: Is this a liquor-permit premises issue?",
+                      "6. Check ORC 2923.16: Is this a vehicle-specific issue?",
+                      "7. Check posted signs, employer rules, private property instructions, and federal property.",
+                      "8. If any answer is uncertain, do not enter armed until verified."
+                ]
+          },
+          {
+                "title": "Ohio Traffic Stop Script",
+                "steps": [
+                      "1. Pull over safely.",
+                      "2. Keep both hands visible.",
+                      "3. Do not reach for anything until instructed.",
+                      "4. If asked whether you are carrying, answer truthfully.",
+                      "5. Recommended wording: Officer, I am lawfully carrying. How would you like me to proceed?",
+                      "6. Follow instructions calmly and slowly."
+                ]
+          }
     ],
     [
-      {
-        title: "Michigan Driver Pulled Over in Ohio",
-        summary: "The law may allow carry, but movement during a traffic stop can create danger.",
-        guidance: [
-          "Hands visible.",
-          "No reaching.",
-          "Tell the truth if asked.",
-          "Ask for instructions before moving.",
-          "Do not assume the officer knows your status."
-        ]
-      },
-      {
-        title: "Restaurant With Alcohol",
-        summary: "Ohio alcohol-location rules depend on the type of premises, whether alcohol is being consumed, and whether an exception applies.",
-        guidance: [
-          "Check ORC 2923.121.",
-          "Do not drink while armed.",
-          "Check signs.",
-          "Leave if asked."
-        ]
-      },
-      {
-        title: "School Pickup While Traveling",
-        summary: "A Michigan CPL holder visiting family in Ohio may misunderstand school safety zone rules.",
-        guidance: [
-          "Check ORC 2923.122.",
-          "Do not rely on Michigan school rules.",
-          "Be careful with parking lots, events, and vehicle presence.",
-          "When uncertain, do not enter armed."
-        ]
-      },
-      {
-        title: "Courthouse Errand",
-        summary: "A quick courthouse errand can become a serious problem if a user forgets they are carrying.",
-        guidance: [
-          "Check ORC 2923.123 and ORC 2923.126.",
-          "Plan before arrival.",
-          "Do not bring a firearm to screening.",
-          "Secure lawfully before approaching the facility."
-        ]
-      },
-      {
-        title: "Posted Business",
-        summary: "A posted store or venue may not feel serious, but refusal to leave can create trespass or removal risk.",
-        guidance: [
-          "Check ORC 2923.126.",
-          "Do not argue.",
-          "Leave immediately if instructed.",
-          "Handle complaints later."
-        ]
-      },
-      {
-        title: "Road Rage on I-75",
-        summary: "A highway confrontation can make both drivers look like aggressors.",
-        guidance: [
-          "Do not gesture.",
-          "Do not follow.",
-          "Do not stop to argue.",
-          "Drive to a safe public location.",
-          "Call 911 if actively threatened."
-        ]
-      }
+          {
+                "title": "Michigan Driver Pulled Over in Ohio",
+                "summary": "The law may allow carry, but movement during a traffic stop can create danger.",
+                "guidance": [
+                      "Hands visible.",
+                      "No reaching.",
+                      "Tell the truth if asked.",
+                      "Ask for instructions before moving."
+                ]
+          },
+          {
+                "title": "Restaurant With Alcohol",
+                "summary": "Ohio alcohol-location rules depend on premises type, whether alcohol is being consumed, and whether an exception applies.",
+                "guidance": [
+                      "Check ORC 2923.121.",
+                      "Do not drink while armed.",
+                      "Check signs.",
+                      "Leave if asked."
+                ]
+          },
+          {
+                "title": "School Pickup While Traveling",
+                "summary": "A Michigan CPL holder visiting family in Ohio may misunderstand school safety zone rules.",
+                "guidance": [
+                      "Check ORC 2923.122.",
+                      "Do not rely on Michigan school rules.",
+                      "When uncertain, do not enter armed."
+                ]
+          }
     ],
     [
-      "Assuming Ohio disclosure rules are identical to Michigan.",
-      "Assuming ORC 2923.111 means anyone can carry.",
-      "Assuming permitless carry means no prohibited places.",
-      "Assuming a Michigan CPL overrides Ohio law.",
-      "Ignoring ORC 2923.122 school safety zones.",
-      "Ignoring ORC 2923.121 liquor-permit premises rules.",
-      "Ignoring ORC 2923.126 private-property and restricted-location rules.",
-      "Ignoring ORC 2923.123 courthouse/courtroom restrictions.",
-      "Ignoring ORC 2923.16 vehicle-specific issues.",
-      "Carrying while drinking or impaired.",
-      "Reaching during a traffic stop.",
-      "Arguing with staff or security over signs.",
-      "Treating Ohio as a no-rules state because it has permitless carry.",
-      "Assuming federal property follows Ohio carry rules.",
-      "Displaying a defensive tool to scare someone during a non-deadly argument.",
-      "Forgetting that employer policies and job-site rules can still create consequences.",
-      "Traveling through Ohio into another state without checking the next state's laws."
+          "Assuming Ohio disclosure rules are identical to Michigan.",
+          "Assuming ORC 2923.111 means anyone can carry.",
+          "Assuming permitless carry means no prohibited places.",
+          "Ignoring ORC 2923.122 school safety zones.",
+          "Ignoring ORC 2923.121 liquor-premises rules.",
+          "Ignoring ORC 2923.126 private-property and restricted-location rules.",
+          "Ignoring ORC 2923.123 courthouse/courtroom restrictions.",
+          "Ignoring ORC 2923.16 vehicle-specific issues.",
+          "Carrying while drinking or impaired.",
+          "Reaching during a traffic stop.",
+          "Arguing with staff or security over signs.",
+          "Assuming federal property follows Ohio carry rules."
     ],
     [
-      "ORC 2923.111 qualifying-adult status checked.",
-      "ORC 2923.126 restricted locations checked.",
-      "ORC 2923.122 school safety zone issues checked.",
-      "ORC 2923.123 courthouse/courtroom issues checked.",
-      "ORC 2923.121 liquor premises checked.",
-      "ORC 2923.16 vehicle issues checked.",
-      "Private signs and property instructions checked.",
-      "Employer/job-site policy checked.",
-      "Federal property checked separately.",
-      "Vehicle/traffic stop behavior plan ready.",
-      "Emergency contact and legal-defense contact ready.",
-      "Next state on trip route checked."
+          "ORC 2923.111 qualifying-adult status checked.",
+          "ORC 2923.126 restricted locations checked.",
+          "ORC 2923.122 school safety zone issues checked.",
+          "ORC 2923.123 courthouse/courtroom issues checked.",
+          "ORC 2923.121 liquor premises checked.",
+          "ORC 2923.16 vehicle issues checked.",
+          "Private signs and property instructions checked.",
+          "Federal property checked separately.",
+          "Vehicle/traffic stop behavior plan ready.",
+          "Next state on trip route checked."
     ],
     [
-      {
-        myth: "Ohio has permitless carry, so anyone can carry there.",
-        reality: "No. ORC 2923.111 applies to a qualifying adult. Eligibility still matters."
-      },
-      {
-        myth: "If Ohio recognizes my Michigan CPL, Michigan rules follow me.",
-        reality: "No. Ohio law controls once you are physically in Ohio."
-      },
-      {
-        myth: "Permitless carry means I can carry in schools, courthouses, and government buildings.",
-        reality: "No. ORC 2923.126, ORC 2923.122, ORC 2923.123, and other laws still restrict locations."
-      },
-      {
-        myth: "If a private business posts a sign, I can just debate them.",
-        reality: "No. ORC 2923.126 recognizes private-property firearm restrictions. Leave calmly if asked."
-      },
-      {
-        myth: "A defensive display is not serious if I do not fire.",
-        reality: "A bad display can still create criminal allegations. Display must be tied to a real, immediate threat."
-      }
+          {
+                "myth": "Ohio has permitless carry, so anyone can carry there.",
+                "reality": "No. ORC 2923.111 applies to a qualifying adult. Eligibility still matters."
+          },
+          {
+                "myth": "If Ohio recognizes my Michigan CPL, Michigan rules follow me.",
+                "reality": "No. Ohio law controls once you are physically in Ohio."
+          },
+          {
+                "myth": "Permitless carry means I can carry in schools, courthouses, and government buildings.",
+                "reality": "No. ORC 2923.126, ORC 2923.122, ORC 2923.123, and other laws still restrict locations."
+          },
+          {
+                "myth": "If a private business posts a sign, I can just debate them.",
+                "reality": "No. Leave calmly if asked."
+          },
+          {
+                "myth": "A defensive display is not serious if I do not fire.",
+                "reality": "A bad display can still create criminal allegations. Display must be tied to a real, immediate threat."
+          }
     ]
   ),
+
   IN: makeProfile(
     "Indiana",
-    "Expanded Travel State",
-    "Indiana is a high-priority Michigan travel state. Indiana has permitless carry for a proper person under Indiana law, but eligibility, restricted places, schools, government/security locations, and private property still matter.",
+    "Law-Backed Ultra Expanded Travel State",
+    "Indiana is a high-priority travel state for Michigan CPL holders. Indiana has permitless carry for a proper person, but carry remains subject to prohibited-person rules, restricted locations, school property, courthouse and airport issues, private property, vehicle considerations, and use-of-force law.",
     {
-      reciprocity: "Michigan CPL treated as recognized; Indiana also has permitless carry for a proper person.",
-      permitlessCarry: "Indiana permitless carry applies only to a proper person under Indiana law.",
-      concealedCarry: "Eligible people may carry under Indiana law, but license status can still matter for travel and documentation.",
-      openCarry: "Carry is generally permitted for eligible people, but restricted locations and conduct matter.",
-      vehicleCarry: "Verify vehicle carry and transport rules before relying.",
-      dutyToInform: "Verify current Indiana police-contact expectations before travel.",
-      privateSigns: "Private property instructions and posted restrictions may matter.",
-      forceLaw: "Indiana force law should be verified before relying on any summary."
+          "reciprocity": "Michigan CPL treated as recognized in this app travel engine. Indiana also has permitless carry for a proper person.",
+          "permitlessCarry": "IC 35-47-2-1.5 / Indiana State Police guidance: permitless carry is available only if the person meets proper-person criteria.",
+          "concealedCarry": "Indiana permitless carry may allow concealed handgun carry by a proper person, but restrictions still apply.",
+          "openCarry": "Indiana carry may be lawful for a proper person, but location and conduct restrictions matter.",
+          "vehicleCarry": "Indiana permitless carry affects carrying, concealing, and transporting a handgun, but the person must not be prohibited.",
+          "dutyToInform": "Verify Indiana police-contact requirements; keep hands visible and follow commands.",
+          "privateSigns": "Private property instructions and posted restrictions can matter; leave if asked.",
+          "forceLaw": "Indiana self-defense law is fact-specific and should be verified from Indiana Code."
     },
     [
-      "Permitless carry applies only if you meet Indiana eligibility requirements.",
-      "Schools, courthouses, secure government locations, and private property can restrict carry.",
-      "Do not assume Michigan vehicle rules apply.",
-      "Know police-contact expectations before entering the state."
+          "Indiana law controls while the user is physically in Indiana.",
+          "A green map status is only a starting point for reciprocity, not a location-by-location authorization.",
+          "Every section below is tied to a statute or official source where possible.",
+          "Users should verify current law before relying on any summary."
     ],
     [
-      {
-        title: "Proper Person Standard",
-        risk: "Eligibility Required",
-        body: [
-          "Indiana permitless carry does not mean anyone can carry.",
-          "A person must still be legally eligible.",
-          "Prohibited-person status, criminal history, and court orders can still disqualify a person."
-        ],
-        source: "Indiana State Police firearms licensing framework."
-      },
-      {
-        title: "Restricted Locations",
-        risk: "Location Risk",
-        body: [
-          "Verify schools, school property, courthouses, secure government buildings, airports, correctional facilities, and posted/private locations.",
-          "Do not assume a permitless carry state has few restricted places.",
-          "Location mistakes can create serious exposure."
-        ],
-        source: "Indiana Code framework."
-      },
-      {
-        title: "Vehicle Carry",
-        risk: "Travel Risk",
-        body: [
-          "Do not rely on Michigan vehicle carry rules while in Indiana.",
-          "Verify whether the defensive tool may be loaded, accessible, concealed, or carried in a vehicle under Indiana law.",
-          "Handle police contacts calmly and avoid reaching."
-        ],
-        source: "Indiana firearms law framework."
-      }
+          {
+                "title": "Permitless Carry / Proper Person",
+                "risk": "Core Eligibility Rule",
+                "body": [
+                      "STATUTE / SOURCE: IC 35-47-2-1.5; Indiana State Police permitless carry guidance.",
+                      "SUMMARY: Indiana no longer requires a handgun permit for a proper person to carry, conceal, or transport a handgun within the state.",
+                      "GUIDANCE: The user must not be a prohibited person. If the user's status is uncertain, they should not carry until qualified legal counsel confirms eligibility."
+                ],
+                "source": "IC 35-47-2-1.5; Indiana State Police Firearms Licensing guidance."
+          },
+          {
+                "title": "Prohibited Persons",
+                "risk": "Disqualification Risk",
+                "body": [
+                      "STATUTE / SOURCE: IC 35-47-2-1.5; IC 35-47 framework.",
+                      "SUMMARY: Indiana permitless carry does not apply to prohibited persons.",
+                      "GUIDANCE: Felony history, domestic violence, protection orders, mental health adjudications, substance issues, or other disqualifiers require attorney review before carrying."
+                ],
+                "source": "IC 35-47-2-1.5; Indiana State Police permitless carry notice."
+          },
+          {
+                "title": "License / Permit Still Has Value",
+                "risk": "Travel and Documentation",
+                "body": [
+                      "STATUTE / SOURCE: Indiana handgun licensing framework.",
+                      "SUMMARY: Indiana permitless carry does not make a license useless; a license may still matter for travel, reciprocity, documentation, and certain practical situations.",
+                      "GUIDANCE: A Michigan CPL holder should still maintain current license documentation and should not assume permitless carry in Indiana helps in the next state."
+                ],
+                "source": "Indiana State Police Firearms Licensing guidance."
+          },
+          {
+                "title": "School Property and School Functions",
+                "risk": "Extreme Risk Area",
+                "body": [
+                      "STATUTE / SOURCE: Indiana school weapons statutes; IC 35-47 framework.",
+                      "SUMMARY: Schools and school-related property remain high-risk restricted areas.",
+                      "GUIDANCE: Do not rely on a one-line permitless carry summary for school parking lots, events, buses, or school-controlled property."
+                ],
+                "source": "Indiana Code school weapons framework."
+          },
+          {
+                "title": "Courthouses / Government / Secure Buildings",
+                "risk": "Hard Stop Area",
+                "body": [
+                      "STATUTE / SOURCE: Indiana Code restricted premises framework.",
+                      "SUMMARY: Court and secure government buildings may restrict weapons regardless of carry eligibility.",
+                      "GUIDANCE: Treat court, jail, police, correctional, and security-screened buildings as verify-first or avoid-carry locations."
+                ],
+                "source": "Indiana Code restricted-location framework."
+          },
+          {
+                "title": "Airports / Aircraft / Secure Areas",
+                "risk": "Transportation Security Risk",
+                "body": [
+                      "STATUTE / SOURCE: Indiana law and federal airport/TSA framework.",
+                      "SUMMARY: Airport secure areas and aircraft are governed by federal and state restrictions.",
+                      "GUIDANCE: Checked transport is different from carry into a secure area. Know the airline/TSA process before arriving."
+                ],
+                "source": "Federal TSA framework; Indiana restricted-location framework."
+          },
+          {
+                "title": "Private Property / Posted Locations",
+                "risk": "Property Control",
+                "body": [
+                      "STATUTE / SOURCE: Indiana trespass and private-property framework.",
+                      "SUMMARY: Private property owners and event venues may restrict weapons and direct a person to leave.",
+                      "GUIDANCE: Leave if asked. Do not turn a carry issue into trespass or disorderly conduct."
+                ],
+                "source": "Indiana private property/trespass framework."
+          },
+          {
+                "title": "Vehicle Carry / Transport",
+                "risk": "Travel Risk",
+                "body": [
+                      "STATUTE / SOURCE: IC 35-47-2-1.5; Indiana State Police guidance.",
+                      "SUMMARY: Indiana permitless carry impacts carrying, concealing, and transporting a handgun for proper persons.",
+                      "GUIDANCE: Keep hands visible during police contact and do not reach. Verify storage rules if crossing into another state."
+                ],
+                "source": "Indiana State Police Firearms Licensing guidance."
+          },
+          {
+                "title": "Alcohol / Impairment",
+                "risk": "Judgment and Criminal Risk",
+                "body": [
+                      "STATUTE / SOURCE: Indiana weapons and intoxication framework.",
+                      "SUMMARY: Carrying while impaired can create serious legal and evidentiary risk.",
+                      "GUIDANCE: If drinking or impaired, do not carry. Avoid alcohol-centered locations when armed."
+                ],
+                "source": "Indiana weapons/intoxication framework."
+          },
+          {
+                "title": "Federal Property / Post Offices",
+                "risk": "Federal Law Overlay",
+                "body": [
+                      "STATUTE / SOURCE: Federal facility and postal property framework.",
+                      "SUMMARY: Indiana carry permission does not override federal restrictions.",
+                      "GUIDANCE: Federal buildings, post offices, and secure federal property require separate federal-law analysis."
+                ],
+                "source": "Federal facility and postal property framework."
+          },
+          {
+                "title": "Use of Force / Defense of Self and Others",
+                "risk": "Force Law",
+                "body": [
+                      "STATUTE / SOURCE: Indiana self-defense statutes and case law framework.",
+                      "SUMMARY: Indiana self-defense law may justify force in specific factual circumstances, but force must still be legally justified.",
+                      "GUIDANCE: Do not use force over insults, ego, property disputes, road rage, or punishment. Avoid and call 911 when safe."
+                ],
+                "source": "Indiana self-defense law framework."
+          },
+          {
+                "title": "Aftermath / Statements",
+                "risk": "Post-Incident Risk",
+                "body": [
+                      "STATUTE / SOURCE: Criminal procedure and evidence framework.",
+                      "SUMMARY: Statements after an incident can become evidence.",
+                      "GUIDANCE: Report the emergency, request help, identify evidence/witnesses if necessary, request counsel, then stop talking."
+                ],
+                "source": "Prime Defense aftermath protocol; Indiana criminal procedure framework."
+          }
     ],
     [
-      {
-        title: "Before Carrying in Indiana",
-        steps: [
-          "1. Confirm you are a proper person under Indiana law.",
-          "2. Confirm your destination is not restricted.",
-          "3. Confirm vehicle carry rules.",
-          "4. Confirm police-contact expectations.",
-          "5. Leave private property if instructed."
-        ]
-      }
+          {
+                "title": "Can I Carry Here in Indiana?",
+                "steps": [
+                      "1. Am I a proper person under Indiana law?",
+                      "2. Am I prohibited under state or federal law?",
+                      "3. Is this school-related, court-related, government-secure, airport-secure, posted, federal, or employer-controlled?",
+                      "4. Am I in a vehicle or crossing into another state?",
+                      "5. If uncertain, do not enter armed."
+                ]
+          },
+          {
+                "title": "Indiana Traffic Stop / Police Contact",
+                "steps": [
+                      "1. Pull over or stop safely.",
+                      "2. Keep hands visible.",
+                      "3. Do not reach for anything until instructed.",
+                      "4. Follow state-specific disclosure or identification rules.",
+                      "5. Answer lawful questions truthfully and wait for legal guidance before detailed statements."
+                ]
+          }
     ],
     [
-      {
-        title: "Crossing From Michigan Into Indiana",
-        summary: "Rules change the moment you cross the state line.",
-        guidance: [
-          "Do not rely on Michigan assumptions.",
-          "Confirm vehicle carry.",
-          "Confirm destination restrictions."
-        ]
-      },
-      {
-        title: "Private Property or Event Venue",
-        summary: "Even in permissive carry states, property rules can matter.",
-        guidance: [
-          "Watch for signage.",
-          "Follow security instructions.",
-          "Leave if asked."
-        ]
-      }
+          {
+                "title": "Michigan Driver Crossing Into Indiana",
+                "summary": "Rules change at the state line even though Indiana is close to Michigan.",
+                "guidance": [
+                      "Confirm proper-person status.",
+                      "Check vehicle carry.",
+                      "Check destination restrictions.",
+                      "Do not rely on Michigan school or disclosure rules."
+                ]
+          },
+          {
+                "title": "Indiana School Event",
+                "summary": "School-related locations are high-risk.",
+                "guidance": [
+                      "Verify before arrival.",
+                      "Do not rely on permitless carry.",
+                      "When uncertain, do not enter armed."
+                ]
+          }
     ],
     [
-      "Assuming permitless carry means everyone can carry.",
-      "Ignoring school/property restrictions.",
-      "Assuming Michigan vehicle rules apply.",
-      "Ignoring private property instructions."
+          "Assuming Michigan rules apply outside Michigan.",
+          "Ignoring prohibited places.",
+          "Ignoring private-property or signage rules.",
+          "Ignoring vehicle carry differences.",
+          "Ignoring school-zone restrictions.",
+          "Ignoring alcohol-location rules.",
+          "Assuming federal property follows state carry rules.",
+          "Relying on old reciprocity information.",
+          "Assuming proper-person status without checking disqualifiers.",
+          "Assuming Indiana rules apply in Illinois, Ohio, or Kentucky after crossing the next state line."
     ],
     [
-      "Proper person eligibility confirmed.",
-      "Vehicle carry checked.",
-      "Restricted places checked.",
-      "Private property rules checked.",
-      "Police-contact expectations checked."
+          "Permit recognition checked.",
+          "Eligibility checked.",
+          "Prohibited places checked.",
+          "School rules checked.",
+          "Vehicle carry checked.",
+          "Private property/signage checked.",
+          "Alcohol-related restrictions checked.",
+          "Federal property checked separately.",
+          "Use-of-force standards reviewed.",
+          "Next state on trip route checked."
     ],
     [
-      {
-        myth: "Indiana has permitless carry, so there is nothing to check.",
-        reality: "Eligibility, restricted places, school rules, vehicle rules, and private property still matter."
-      }
+          {
+                "myth": "If my Michigan CPL is recognized, Michigan law follows me into Indiana.",
+                "reality": "No. Indiana law controls once you are physically in Indiana."
+          },
+          {
+                "myth": "A recognized permit means I can carry anywhere.",
+                "reality": "No. Recognition does not override prohibited places, private property, federal property, schools, alcohol rules, or vehicle restrictions."
+          }
     ]
   ),
 
   FL: makeProfile(
     "Florida",
-    "Expanded Travel State",
-    "Florida is a major travel state for Michigan residents. Florida has permitless concealed carry for qualified people, but prohibited places, airport/theme/event venues, alcohol locations, schools, government locations, and vehicle rules still matter.",
+    "Law-Backed Ultra Expanded Travel State",
+    "Florida is a major travel state for Michigan members. Florida has permitless concealed carry for persons who meet statutory requirements, but Florida still has detailed prohibited-place rules, school restrictions, open carry limits, vehicle/travel concerns, airport rules, alcohol-location restrictions, private property and venue issues, and use-of-force standards.",
     {
-      reciprocity: "Michigan CPL treated as recognized; Florida also has permitless concealed carry for qualified people.",
-      permitlessCarry: "Florida has permitless concealed carry for qualified people. Restrictions still apply.",
-      concealedCarry: "Qualified people may carry concealed, but eligibility and prohibited places matter.",
-      openCarry: "Open carry is generally restricted with limited exceptions. Verify before relying.",
-      vehicleCarry: "Vehicle carry can be lawful but must be handled under Florida law.",
-      dutyToInform: "Verify current Florida police-contact rules.",
-      privateSigns: "Private property, event venue, resort, and theme park rules may matter.",
-      forceLaw: "Florida has well-known self-defense laws, but every use-of-force decision must still be justified."
+          "reciprocity": "Michigan CPL treated as recognized in this app travel engine. Florida also has permitless concealed carry for qualifying people.",
+          "permitlessCarry": "F.S. 790.013 and 790.01 framework: Florida permits concealed carry without a license for people who meet the statutory criteria.",
+          "concealedCarry": "F.S. 790.01, 790.013, and 790.06: concealed carry may be lawful, but prohibited places still apply.",
+          "openCarry": "F.S. 790.053: open carry is generally restricted except for statutory exceptions.",
+          "vehicleCarry": "Florida vehicle and lawful possession rules must be verified for loaded, concealed, securely encased, and accessible firearms.",
+          "dutyToInform": "Florida licensees must display identification upon demand under F.S. 790.06; verify current duties for permitless carry situations.",
+          "privateSigns": "Private property and venue rules may restrict entry or require leaving when instructed.",
+          "forceLaw": "Florida self-defense law is fact-specific; do not rely on slogans."
     },
     [
-      "Permitless carry does not mean every visitor may carry everywhere.",
-      "Theme parks, event venues, airports, schools, government facilities, bars, and private property can create major restrictions.",
-      "Open carry is not the same as concealed carry.",
-      "Travelers should verify vehicle storage, hotel/resort rules, and venue rules before entering."
+          "Florida law controls while the user is physically in Florida.",
+          "A green map status is only a starting point for reciprocity, not a location-by-location authorization.",
+          "Every section below is tied to a statute or official source where possible.",
+          "Users should verify current law before relying on any summary."
     ],
     [
-      {
-        title: "Permitless Concealed Carry",
-        risk: "Eligibility Required",
-        body: [
-          "Florida permitless carry applies only to qualified people.",
-          "A Michigan CPL may still be useful for reciprocity and proof of training/background check status.",
-          "Do not assume permitless carry overrides prohibited places."
-        ],
-        source: "Florida statutory and law-enforcement guidance framework."
-      },
-      {
-        title: "Open Carry",
-        risk: "Often Misunderstood",
-        body: [
-          "Florida generally restricts open carry with limited exceptions.",
-          "Do not assume that because concealed carry is allowed, open carry is also allowed.",
-          "A visible defensive tool in public can create legal and police-contact risk."
-        ],
-        source: "Florida firearms law framework."
-      },
-      {
-        title: "Travel/Vacation Locations",
-        risk: "Venue Rules",
-        body: [
-          "Theme parks, resorts, cruise terminals, airports, event venues, sports facilities, schools, government buildings, and alcohol-centered locations need extra verification.",
-          "Private security instructions should be followed calmly.",
-          "Do not argue with security staff over policy."
-        ],
-        source: "Florida firearms and property framework."
-      },
-      {
-        title: "Vehicle Carry",
-        risk: "Road Trip Risk",
-        body: [
-          "Verify how Florida treats loaded, concealed, accessible, and stored defensive tools in vehicles.",
-          "Hotel parking lots, rental cars, and valet situations create practical risk.",
-          "Do not leave a defensive tool unsecured in a vehicle."
-        ],
-        source: "Florida vehicle carry framework."
-      }
+          {
+                "title": "Permitless Concealed Carry",
+                "risk": "Core Eligibility Rule",
+                "body": [
+                      "STATUTE / SOURCE: F.S. 790.013; F.S. 790.01.",
+                      "SUMMARY: Florida allows concealed carry without a license for a person who satisfies the statutory requirements.",
+                      "GUIDANCE: Permitless carry is not universal carry. The user must be eligible and must comply with prohibited-place rules."
+                ],
+                "source": "Florida Statutes 790.013 and 790.01."
+          },
+          {
+                "title": "License Carry and Identification",
+                "risk": "Documentation Rule",
+                "body": [
+                      "STATUTE / SOURCE: F.S. 790.06.",
+                      "SUMMARY: Florida concealed weapon/firearm licensees must carry valid identification and display it upon demand by a law enforcement officer.",
+                      "GUIDANCE: Even where permitless carry exists, members should carry identification and understand officer-contact duties."
+                ],
+                "source": "F.S. 790.06."
+          },
+          {
+                "title": "Prohibited Places",
+                "risk": "Major Location Restriction",
+                "body": [
+                      "STATUTE / SOURCE: F.S. 790.06(12).",
+                      "SUMMARY: Florida law lists locations where carrying a concealed weapon or firearm is not authorized.",
+                      "GUIDANCE: Police stations, jails, courthouses, courtrooms, polling places, school-related locations, legislative meetings, secure airport areas, nuisance places, and federally prohibited locations require careful review."
+                ],
+                "source": "F.S. 790.06(12)."
+          },
+          {
+                "title": "Schools / School Property / School Events",
+                "risk": "Extreme Risk Area",
+                "body": [
+                      "STATUTE / SOURCE: F.S. 790.115.",
+                      "SUMMARY: Florida restricts weapons and firearms at school-sponsored events and on school property, subject to statutory language and exceptions.",
+                      "GUIDANCE: Do not assume a license, permitless carry, or vehicle presence automatically solves a school issue."
+                ],
+                "source": "F.S. 790.115."
+          },
+          {
+                "title": "Open Carry",
+                "risk": "Often Misunderstood",
+                "body": [
+                      "STATUTE / SOURCE: F.S. 790.053.",
+                      "SUMMARY: Florida generally restricts open carry except for specified statutory exceptions.",
+                      "GUIDANCE: Do not open carry in ordinary public settings unless a specific Florida exception clearly applies."
+                ],
+                "source": "F.S. 790.053."
+          },
+          {
+                "title": "Vehicle Carry / Securely Encased / Travel",
+                "risk": "Road Trip Risk",
+                "body": [
+                      "STATUTE / SOURCE: F.S. 790.25 and Chapter 790 framework.",
+                      "SUMMARY: Florida has specific lawful-use and vehicle-related firearm provisions.",
+                      "GUIDANCE: Rental cars, hotels, beaches, theme parks, valet parking, and vehicle storage require advance planning."
+                ],
+                "source": "F.S. 790.25; Florida Chapter 790 framework."
+          },
+          {
+                "title": "Theme Parks / Resorts / Event Venues",
+                "risk": "Private Property and Security Risk",
+                "body": [
+                      "STATUTE / SOURCE: Florida private property and venue framework.",
+                      "SUMMARY: Private venues may restrict firearms, use security screening, or require guests to leave.",
+                      "GUIDANCE: Do not argue with security. Know storage plans before arriving at a theme park, stadium, concert, cruise terminal, resort, or event venue."
+                ],
+                "source": "Florida private property/trespass framework."
+          },
+          {
+                "title": "Airports / Aircraft / TSA",
+                "risk": "Transportation Security Risk",
+                "body": [
+                      "STATUTE / SOURCE: F.S. 790.06; federal TSA/airport framework.",
+                      "SUMMARY: Secure airport areas and aircraft involve state and federal restrictions.",
+                      "GUIDANCE: Checked transport is different from carry into a secure area. Know TSA and airline rules before arrival."
+                ],
+                "source": "F.S. 790.06; TSA firearm transport framework."
+          },
+          {
+                "title": "Alcohol / Bars / Impairment",
+                "risk": "Alcohol Location Risk",
+                "body": [
+                      "STATUTE / SOURCE: F.S. 790.06(12); Florida intoxication/weapon framework.",
+                      "SUMMARY: Florida prohibits carry in certain portions of establishments primarily devoted to dispensing alcohol for consumption on premises.",
+                      "GUIDANCE: If drinking is part of the plan, carrying should not be. Treat bars, clubs, festivals, and resort nightlife as high-risk."
+                ],
+                "source": "F.S. 790.06(12)."
+          },
+          {
+                "title": "Places of Worship",
+                "risk": "Policy and School-Property Overlay",
+                "body": [
+                      "STATUTE / SOURCE: Florida religious institution and school-property framework.",
+                      "SUMMARY: Florida does not generally prohibit carry in places of worship solely because they are places of worship, but school/property overlays can matter.",
+                      "GUIDANCE: Verify policy and whether the property is also school-related, daycare-related, posted, or security-controlled."
+                ],
+                "source": "Florida Chapter 790 framework; Florida religious institution guidance."
+          },
+          {
+                "title": "Federal Property / Post Offices",
+                "risk": "Federal Law Overlay",
+                "body": [
+                      "STATUTE / SOURCE: Federal facility and postal property framework.",
+                      "SUMMARY: Florida carry permission does not override federal restrictions.",
+                      "GUIDANCE: Post offices, federal courthouses, federal buildings, and secure federal property require separate federal analysis."
+                ],
+                "source": "Federal facility and postal property framework."
+          },
+          {
+                "title": "Use of Force / Stand Your Ground",
+                "risk": "Force Law",
+                "body": [
+                      "STATUTE / SOURCE: Florida self-defense statutes including Chapter 776 framework.",
+                      "SUMMARY: Florida self-defense law can provide strong protections, but force must still be justified by the facts.",
+                      "GUIDANCE: Avoid slogans. Deadly force is not for anger, insults, warning shots, property disputes, or punishment."
+                ],
+                "source": "Florida Chapter 776 self-defense framework."
+          },
+          {
+                "title": "Aftermath / Statements",
+                "risk": "Post-Incident Risk",
+                "body": [
+                      "STATUTE / SOURCE: Criminal procedure and evidence framework.",
+                      "SUMMARY: Post-incident statements can become evidence.",
+                      "GUIDANCE: Call 911, request help, identify evidence/witnesses if necessary, request counsel, and avoid detailed statements under adrenaline."
+                ],
+                "source": "Prime Defense aftermath protocol; Florida criminal procedure framework."
+          }
     ],
     [
-      {
-        title: "Before Carrying in Florida",
-        steps: [
-          "1. Confirm you are legally qualified.",
-          "2. Confirm whether you are carrying concealed or openly.",
-          "3. Check destination restrictions.",
-          "4. Check venue/property rules.",
-          "5. Secure your defensive tool during hotel, beach, pool, rental car, or resort activities."
-        ]
-      }
+          {
+                "title": "Can I Carry Here in Florida?",
+                "steps": [
+                      "1. Am I legally eligible under Florida law?",
+                      "2. Is this prohibited by F.S. 790.06(12)?",
+                      "3. Is this school-related under F.S. 790.115?",
+                      "4. Am I accidentally open carrying under F.S. 790.053?",
+                      "5. Is this airport, theme park, resort, event, bar, federal, posted, or security-controlled?",
+                      "6. If uncertain, do not enter armed."
+                ]
+          },
+          {
+                "title": "Florida Traffic Stop / Police Contact",
+                "steps": [
+                      "1. Pull over or stop safely.",
+                      "2. Keep hands visible.",
+                      "3. Do not reach for anything until instructed.",
+                      "4. Follow state-specific disclosure or identification rules.",
+                      "5. Answer lawful questions truthfully and wait for legal guidance before detailed statements."
+                ]
+          }
     ],
     [
-      {
-        title: "Theme Park / Resort Day",
-        summary: "Vacation venues often have strict property rules and security screening.",
-        guidance: [
-          "Check rules before arrival.",
-          "Do not bring a defensive tool to screening.",
-          "Do not leave a defensive tool unsecured in a vehicle.",
-          "Follow security instructions."
-        ]
-      },
-      {
-        title: "Airport Travel",
-        summary: "Airports require careful distinction between lawful checked transport and prohibited secure areas.",
-        guidance: [
-          "Follow airline/TSA procedures.",
-          "Do not enter secure areas armed.",
-          "Plan storage before arrival."
-        ]
-      }
+          {
+                "title": "Florida Theme Park or Resort",
+                "summary": "Vacation venues often have strict property rules and screening.",
+                "guidance": [
+                      "Check venue policy before arrival.",
+                      "Do not bring a firearm to security screening.",
+                      "Have a lawful storage plan."
+                ]
+          },
+          {
+                "title": "Airport Trip",
+                "summary": "Airports require strict separation between checked transport and unlawful carry into secure areas.",
+                "guidance": [
+                      "Follow TSA and airline rules.",
+                      "Do not enter secure areas armed.",
+                      "Plan before arrival."
+                ]
+          },
+          {
+                "title": "Restaurant / Bar Night",
+                "summary": "Florida alcohol-location rules and impairment risk can quickly turn lawful carry into a problem.",
+                "guidance": [
+                      "Check the location.",
+                      "Do not drink while armed.",
+                      "Leave if instructed."
+                ]
+          }
     ],
     [
-      "Assuming permitless carry applies to every visitor and every place.",
-      "Confusing concealed carry with open carry.",
-      "Ignoring theme park/resort/event rules.",
-      "Leaving a defensive tool unsecured in a rental car or hotel room."
+          "Assuming Michigan rules apply outside Michigan.",
+          "Ignoring prohibited places.",
+          "Ignoring private-property or signage rules.",
+          "Ignoring vehicle carry differences.",
+          "Ignoring school-zone restrictions.",
+          "Ignoring alcohol-location rules.",
+          "Assuming federal property follows state carry rules.",
+          "Relying on old reciprocity information.",
+          "Confusing Florida concealed carry with open carry.",
+          "Ignoring theme park, resort, cruise terminal, or venue rules.",
+          "Assuming vacation status changes the law."
     ],
     [
-      "Eligibility confirmed.",
-      "Concealed vs open carry checked.",
-      "Vehicle storage checked.",
-      "Venue rules checked.",
-      "Airport/security screening rules checked.",
-      "Hotel/resort storage plan ready."
+          "Permit recognition checked.",
+          "Eligibility checked.",
+          "Prohibited places checked.",
+          "School rules checked.",
+          "Vehicle carry checked.",
+          "Private property/signage checked.",
+          "Alcohol-related restrictions checked.",
+          "Federal property checked separately.",
+          "Use-of-force standards reviewed.",
+          "Next state on trip route checked."
     ],
     [
-      {
-        myth: "Florida is permitless, so I can carry anywhere on vacation.",
-        reality: "Florida still has prohibited places, private property rules, venue rules, airport rules, and eligibility requirements."
-      }
+          {
+                "myth": "If my Michigan CPL is recognized, Michigan law follows me into Florida.",
+                "reality": "No. Florida law controls once you are physically in Florida."
+          },
+          {
+                "myth": "A recognized permit means I can carry anywhere.",
+                "reality": "No. Recognition does not override prohibited places, private property, federal property, schools, alcohol rules, or vehicle restrictions."
+          }
     ]
   ),
 
   TX: makeProfile(
     "Texas",
-    "Expanded Travel State",
-    "Texas is a major travel state with permitless carry, but it also has specific prohibited-place rules and signage rules. Michigan members should verify Texas signs, alcohol restrictions, schools, government locations, events, and vehicle carry before relying.",
+    "Law-Backed Ultra Expanded Travel State",
+    "Texas is a major travel state with permitless carry and License to Carry recognition, but Texas has detailed rules involving prohibited places, 30.05/30.06/30.07 signage, alcohol locations, school/event restrictions, vehicle carry, open carry, government meetings, and use-of-force law.",
     {
-      reciprocity: "Michigan CPL treated as recognized; Texas also has permitless carry for eligible people.",
-      permitlessCarry: "Texas has permitless carry for eligible people, but restrictions still apply.",
-      concealedCarry: "Eligible people may carry concealed, subject to prohibited places and signage.",
-      openCarry: "Open carry can be lawful for eligible people but must comply with Texas rules.",
-      vehicleCarry: "Vehicle carry can be lawful but must comply with Texas restrictions.",
-      dutyToInform: "Verify Texas police-contact rules, especially if carrying under license.",
-      privateSigns: "Texas signage rules are specific and important. Verify before entering posted property.",
-      forceLaw: "Texas force law is detailed. Do not rely on slogans or myths."
+          "reciprocity": "Michigan CPL treated as recognized in this app travel engine. Texas also has permitless carry for eligible people.",
+          "permitlessCarry": "Texas Penal Code 46.02 framework: permitless handgun carry may be lawful for eligible people, subject to restrictions.",
+          "concealedCarry": "Concealed carry may be lawful, but Penal Code 46.03 prohibited places and signage rules still apply.",
+          "openCarry": "Open carry may be lawful for eligible people but must comply with Texas holster/display rules and 30.07 signage.",
+          "vehicleCarry": "Texas vehicle carry can be lawful, but prohibited-person, criminal activity, and location rules still matter.",
+          "dutyToInform": "Verify current Texas duties for LTC holders and officer contact; keep hands visible and follow commands.",
+          "privateSigns": "Texas 30.05, 30.06, and 30.07 signage rules are critical.",
+          "forceLaw": "Texas force and deadly force law is detailed and fact-specific."
     },
     [
-      "Texas signage rules can be very specific and should be taken seriously.",
-      "Permitless carry does not override prohibited places.",
-      "Alcohol-related locations, schools, polling places, courts, secure areas, and events may be restricted.",
-      "Do not assume Texas is carry-anywhere because it is generally gun-friendly."
+          "Texas law controls while the user is physically in Texas.",
+          "A green map status is only a starting point for reciprocity, not a location-by-location authorization.",
+          "Every section below is tied to a statute or official source where possible.",
+          "Users should verify current law before relying on any summary."
     ],
     [
-      {
-        title: "Permitless Carry / License Carry",
-        risk: "Eligibility Required",
-        body: [
-          "Texas permitless carry applies only to eligible people.",
-          "A license may still matter for reciprocity, school-zone issues, and certain legal advantages.",
-          "Prohibited-person status, intoxication, location restrictions, and signage can still make carry unlawful."
-        ],
-        source: "Texas Penal Code Chapter 46 framework."
-      },
-      {
-        title: "Texas Signage",
-        risk: "Major Private Property Issue",
-        body: [
-          "Texas has specific statutory signage concepts that can restrict concealed carry, open carry, or both.",
-          "Do not ignore signs because they look technical or confusing.",
-          "If posted or instructed to leave, leave calmly."
-        ],
-        source: "Texas Penal Code signage framework."
-      },
-      {
-        title: "Prohibited Places",
-        risk: "Location Restrictions",
-        body: [
-          "Verify schools, polling places, courts, racetracks, airports secure areas, correctional facilities, certain alcohol locations, high school/college/pro sporting events, and government meetings.",
-          "A permit or permitless carry status does not erase prohibited places.",
-          "Travelers should check destination-specific rules before arrival."
-        ],
-        source: "Texas Penal Code 46.03 framework."
-      },
-      {
-        title: "Vehicle Carry",
-        risk: "Road Trip Risk",
-        body: [
-          "Vehicle carry may be lawful for eligible people, but the defensive tool must still be possessed lawfully and handled safely.",
-          "Traffic stops should be handled with visible hands and calm communication.",
-          "Do not leave defensive tools unsecured in vehicles."
-        ],
-        source: "Texas vehicle carry framework."
-      }
+          {
+                "title": "Permitless Carry / Unlawful Carrying Weapons",
+                "risk": "Core Eligibility Rule",
+                "body": [
+                      "STATUTE / SOURCE: Texas Penal Code 46.02.",
+                      "SUMMARY: Texas law allows some people to carry a handgun without an LTC, but unlawful carry restrictions still apply.",
+                      "GUIDANCE: Confirm eligibility, age, prohibited-person status, intoxication status, and location before carrying."
+                ],
+                "source": "Texas Penal Code 46.02."
+          },
+          {
+                "title": "Prohibited Places",
+                "risk": "Major Location Restriction",
+                "body": [
+                      "STATUTE / SOURCE: Texas Penal Code 46.03.",
+                      "SUMMARY: Texas prohibits weapons in specific places including schools, polling places, courts, racetracks, secure airport areas, correctional facilities, and other listed locations.",
+                      "GUIDANCE: Treat every location as a separate question. Gun-friendly does not mean carry-anywhere."
+                ],
+                "source": "Texas Penal Code 46.03."
+          },
+          {
+                "title": "30.05 Signs / Unlicensed Carry Trespass",
+                "risk": "Private Property Signage",
+                "body": [
+                      "STATUTE / SOURCE: Texas Penal Code 30.05.",
+                      "SUMMARY: Texas property owners may use 30.05 signage to restrict firearms by persons carrying without a license.",
+                      "GUIDANCE: Do not ignore 30.05 signs. Leave if instructed."
+                ],
+                "source": "Texas Penal Code 30.05."
+          },
+          {
+                "title": "30.06 Signs / Licensed Concealed Carry",
+                "risk": "Private Property Signage",
+                "body": [
+                      "STATUTE / SOURCE: Texas Penal Code 30.06.",
+                      "SUMMARY: Texas 30.06 signage restricts concealed handgun carry by license holders when statutory notice requirements are met.",
+                      "GUIDANCE: A Michigan permit holder should treat proper 30.06 signage as serious legal notice."
+                ],
+                "source": "Texas Penal Code 30.06."
+          },
+          {
+                "title": "30.07 Signs / Licensed Open Carry",
+                "risk": "Private Property Signage",
+                "body": [
+                      "STATUTE / SOURCE: Texas Penal Code 30.07.",
+                      "SUMMARY: Texas 30.07 signage restricts open handgun carry by license holders when statutory notice requirements are met.",
+                      "GUIDANCE: Open carry increases visibility and sign-related risk. Check entrances before entering."
+                ],
+                "source": "Texas Penal Code 30.07."
+          },
+          {
+                "title": "Alcohol / 51% Locations",
+                "risk": "Alcohol Location Risk",
+                "body": [
+                      "STATUTE / SOURCE: Texas Penal Code 46.03; Texas Alcoholic Beverage Code signage framework.",
+                      "SUMMARY: Texas restricts weapons in certain alcohol-related locations, including 51% premises.",
+                      "GUIDANCE: Look for 51% signs and avoid alcohol-centered venues while armed."
+                ],
+                "source": "Texas Penal Code 46.03; Texas Alcoholic Beverage Commission signage framework."
+          },
+          {
+                "title": "Schools and School Activities",
+                "risk": "Extreme Risk Area",
+                "body": [
+                      "STATUTE / SOURCE: Texas Penal Code 46.03.",
+                      "SUMMARY: Texas prohibits weapons in many school-related places and activities unless a specific legal exception applies.",
+                      "GUIDANCE: Do not assume vehicle or parking lot presence is automatically lawful. Verify school/event specifics."
+                ],
+                "source": "Texas Penal Code 46.03."
+          },
+          {
+                "title": "Courts / Government Meetings / Polling Places",
+                "risk": "Hard Stop Area",
+                "body": [
+                      "STATUTE / SOURCE: Texas Penal Code 46.03; Texas Penal Code 46.15 framework.",
+                      "SUMMARY: Courts, court offices, polling places, and certain government meetings can be restricted.",
+                      "GUIDANCE: Do not bring a handgun to court, polling place, or government meeting without verifying exact law and notice."
+                ],
+                "source": "Texas Penal Code 46.03."
+          },
+          {
+                "title": "Airport Secure Areas",
+                "risk": "Transportation Security Risk",
+                "body": [
+                      "STATUTE / SOURCE: Texas Penal Code 46.03; federal TSA framework.",
+                      "SUMMARY: Secure airport areas and aircraft are restricted under state and federal law.",
+                      "GUIDANCE: Checked transport is different from entering secure areas armed."
+                ],
+                "source": "Texas Penal Code 46.03; TSA firearm transport framework."
+          },
+          {
+                "title": "Open Carry / Plain View",
+                "risk": "Display Risk",
+                "body": [
+                      "STATUTE / SOURCE: Texas Penal Code 46.02; Texas handgun carry framework.",
+                      "SUMMARY: Texas open carry rules require compliance with manner-of-carry and location restrictions.",
+                      "GUIDANCE: Open carry can trigger 30.07 signage issues and public attention. Do not use open carry to test boundaries."
+                ],
+                "source": "Texas Penal Code 46.02; Texas Penal Code 30.07."
+          },
+          {
+                "title": "Vehicle Carry",
+                "risk": "Travel Risk",
+                "body": [
+                      "STATUTE / SOURCE: Texas Penal Code 46.02 and 46.03 framework.",
+                      "SUMMARY: Texas vehicle carry may be lawful for eligible people, but unlawful carry and prohibited-place rules still apply.",
+                      "GUIDANCE: Traffic stops require visible hands, no reaching, and calm compliance."
+                ],
+                "source": "Texas Penal Code 46.02; Texas Penal Code 46.03."
+          },
+          {
+                "title": "Federal Property / Post Offices",
+                "risk": "Federal Law Overlay",
+                "body": [
+                      "STATUTE / SOURCE: Federal facility and postal property framework.",
+                      "SUMMARY: Texas carry permission does not override federal restrictions.",
+                      "GUIDANCE: Federal buildings, federal courthouses, post offices, and secure federal property require separate analysis."
+                ],
+                "source": "Federal facility and postal property framework."
+          },
+          {
+                "title": "Use of Force / Deadly Force",
+                "risk": "Force Law",
+                "body": [
+                      "STATUTE / SOURCE: Texas Penal Code Chapter 9.",
+                      "SUMMARY: Texas use-of-force and deadly-force law is detailed and circumstance-specific.",
+                      "GUIDANCE: Do not reduce Texas law to slogans. Avoidance, proportionality, reasonableness, and facts still matter."
+                ],
+                "source": "Texas Penal Code Chapter 9."
+          },
+          {
+                "title": "Aftermath / Statements",
+                "risk": "Post-Incident Risk",
+                "body": [
+                      "STATUTE / SOURCE: Criminal procedure and evidence framework.",
+                      "SUMMARY: Statements after a defensive incident can become evidence.",
+                      "GUIDANCE: Call 911, request help, identify evidence/witnesses if necessary, request counsel, then stop talking."
+                ],
+                "source": "Prime Defense aftermath protocol; Texas criminal procedure framework."
+          }
     ],
     [
-      {
-        title: "Before Carrying in Texas",
-        steps: [
-          "1. Confirm you are eligible.",
-          "2. Confirm whether you are relying on permitless carry or license carry.",
-          "3. Check prohibited places.",
-          "4. Look for Texas statutory signs.",
-          "5. Verify alcohol/event/school restrictions.",
-          "6. Plan secure vehicle storage."
-        ]
-      }
+          {
+                "title": "Can I Carry Here in Texas?",
+                "steps": [
+                      "1. Am I legally eligible under Texas law?",
+                      "2. Is this prohibited under Penal Code 46.03?",
+                      "3. Is this property posted under 30.05, 30.06, or 30.07?",
+                      "4. Is this alcohol-related, school-related, court-related, polling-place-related, airport-secure, or federal?",
+                      "5. If uncertain, do not enter armed."
+                ]
+          },
+          {
+                "title": "Texas Traffic Stop / Police Contact",
+                "steps": [
+                      "1. Pull over or stop safely.",
+                      "2. Keep hands visible.",
+                      "3. Do not reach for anything until instructed.",
+                      "4. Follow state-specific disclosure or identification rules.",
+                      "5. Answer lawful questions truthfully and wait for legal guidance before detailed statements."
+                ]
+          }
     ],
     [
-      {
-        title: "Restaurant or Bar Area",
-        summary: "Texas alcohol-location rules can be important, especially 51% locations.",
-        guidance: [
-          "Look for required signage.",
-          "Avoid alcohol-centered locations while armed.",
-          "Do not assume restaurant equals safe carry."
-        ]
-      },
-      {
-        title: "Event Venue",
-        summary: "Sports, concerts, fairs, and private venues can create restrictions.",
-        guidance: [
-          "Check event policy.",
-          "Watch for security screening.",
-          "Do not argue with staff."
-        ]
-      }
+          {
+                "title": "Posted Texas Business",
+                "summary": "Texas signage is technical and important.",
+                "guidance": [
+                      "Look for 30.05, 30.06, and 30.07 signs.",
+                      "Do not ignore signs.",
+                      "Leave if instructed."
+                ]
+          },
+          {
+                "title": "Restaurant With 51% Sign",
+                "summary": "Alcohol signage can make carry unlawful.",
+                "guidance": [
+                      "Check entrance signs.",
+                      "Avoid alcohol-centered locations while armed.",
+                      "Do not drink while armed."
+                ]
+          },
+          {
+                "title": "School or Sporting Event",
+                "summary": "Schools and sporting events require special caution.",
+                "guidance": [
+                      "Check Penal Code 46.03.",
+                      "Do not rely on assumptions.",
+                      "When uncertain, do not enter armed."
+                ]
+          }
     ],
     [
-      "Ignoring Texas signs.",
-      "Assuming gun-friendly means carry-anywhere.",
-      "Ignoring alcohol-location rules.",
-      "Ignoring event and school restrictions.",
-      "Leaving defensive tools unsecured in vehicles."
+          "Assuming Michigan rules apply outside Michigan.",
+          "Ignoring prohibited places.",
+          "Ignoring private-property or signage rules.",
+          "Ignoring vehicle carry differences.",
+          "Ignoring school-zone restrictions.",
+          "Ignoring alcohol-location rules.",
+          "Assuming federal property follows state carry rules.",
+          "Relying on old reciprocity information.",
+          "Ignoring 30.05/30.06/30.07 signs.",
+          "Assuming Texas is carry-anywhere because it is gun-friendly.",
+          "Ignoring 51% alcohol premises."
     ],
     [
-      "Eligibility confirmed.",
-      "Permitless/license status understood.",
-      "Signs checked.",
-      "Prohibited places checked.",
-      "Alcohol restrictions checked.",
-      "Vehicle storage plan ready."
+          "Permit recognition checked.",
+          "Eligibility checked.",
+          "Prohibited places checked.",
+          "School rules checked.",
+          "Vehicle carry checked.",
+          "Private property/signage checked.",
+          "Alcohol-related restrictions checked.",
+          "Federal property checked separately.",
+          "Use-of-force standards reviewed.",
+          "Next state on trip route checked."
     ],
     [
-      {
-        myth: "Texas is gun-friendly, so I can carry anywhere.",
-        reality: "Texas has very specific prohibited places and signage rules. Gun-friendly does not mean consequence-free."
-      }
+          {
+                "myth": "If my Michigan CPL is recognized, Michigan law follows me into Texas.",
+                "reality": "No. Texas law controls once you are physically in Texas."
+          },
+          {
+                "myth": "A recognized permit means I can carry anywhere.",
+                "reality": "No. Recognition does not override prohibited places, private property, federal property, schools, alcohol rules, or vehicle restrictions."
+          }
+    ]
+  ),
+
+  KY: makeProfile(
+    "Kentucky",
+    "Law-Backed Ultra Expanded Travel State",
+    "Kentucky is a common travel state for Michigan members and has permitless concealed carry for eligible adults, but users must still understand KRS 237.110, KRS 527.020, school restrictions, court/government buildings, posted private property, federal property, vehicle issues, and use-of-force law.",
+    {
+          "reciprocity": "Michigan CPL treated as recognized in this app travel engine. Kentucky also has permitless concealed carry for eligible adults.",
+          "permitlessCarry": "KRS 237.110 / KRS 527.020 framework: Kentucky permitless concealed carry is available to eligible persons under statutory conditions.",
+          "concealedCarry": "Kentucky concealed carry may be lawful, but prohibited places still apply.",
+          "openCarry": "Kentucky generally recognizes open carry, but location, vehicle, private property, and conduct restrictions matter.",
+          "vehicleCarry": "Vehicle carry must comply with Kentucky law and changes when crossing state lines.",
+          "dutyToInform": "Verify current Kentucky officer-contact rules; keep hands visible and follow commands.",
+          "privateSigns": "KRS 237.110 and Kentucky property rules: posted premises and private instructions can matter.",
+          "forceLaw": "Kentucky self-protection law is fact-specific and should be verified from KRS Chapter 503."
+    },
+    [
+          "Kentucky law controls while the user is physically in Kentucky.",
+          "A green map status is only a starting point for reciprocity, not a location-by-location authorization.",
+          "Every section below is tied to a statute or official source where possible.",
+          "Users should verify current law before relying on any summary."
+    ],
+    [
+          {
+                "title": "Permitless Concealed Carry",
+                "risk": "Core Eligibility Rule",
+                "body": [
+                      "STATUTE / SOURCE: KRS 237.110; KRS 527.020.",
+                      "SUMMARY: Kentucky allows eligible persons to carry concealed deadly weapons without a license in many circumstances.",
+                      "GUIDANCE: Eligibility still matters. Permitless does not mean prohibited persons or restricted locations are allowed."
+                ],
+                "source": "KRS 237.110; KRS 527.020; Kentucky State Police permitless carry guidance."
+          },
+          {
+                "title": "CCDW License Still Has Value",
+                "risk": "Travel / Reciprocity",
+                "body": [
+                      "STATUTE / SOURCE: KRS 237.110.",
+                      "SUMMARY: A Kentucky CCDW license may still matter for reciprocity, documentation, and travel outside Kentucky.",
+                      "GUIDANCE: A Michigan traveler should not assume Kentucky permitless carry helps in the next state."
+                ],
+                "source": "KRS 237.110; Kentucky State Police CCDW guidance."
+          },
+          {
+                "title": "Prohibited Places",
+                "risk": "Major Location Restriction",
+                "body": [
+                      "STATUTE / SOURCE: KRS 237.110; KRS 527.020.",
+                      "SUMMARY: Kentucky law identifies locations where concealed deadly weapons may not be carried or may be restricted.",
+                      "GUIDANCE: Schools, courthouses, detention facilities, police stations, federal property, and posted/private property require verification."
+                ],
+                "source": "KRS 237.110; KRS 527.020."
+          },
+          {
+                "title": "Schools / School Property",
+                "risk": "Extreme Risk Area",
+                "body": [
+                      "STATUTE / SOURCE: Kentucky school weapons statutes; KRS framework.",
+                      "SUMMARY: School property and school activities remain high-risk restricted locations.",
+                      "GUIDANCE: Do not rely on permitless carry for school parking lots, events, or school-controlled property without verifying law."
+                ],
+                "source": "Kentucky school weapons framework."
+          },
+          {
+                "title": "Courthouses / Courtrooms",
+                "risk": "Hard Stop Area",
+                "body": [
+                      "STATUTE / SOURCE: Kentucky court/security framework.",
+                      "SUMMARY: Courthouses and courtrooms can be restricted and security-screened.",
+                      "GUIDANCE: Do not bring a weapon to a courthouse unless a clear legal exception applies."
+                ],
+                "source": "Kentucky court/security framework."
+          },
+          {
+                "title": "Private Property / Posted Premises",
+                "risk": "Property Control",
+                "body": [
+                      "STATUTE / SOURCE: KRS 237.110; Kentucky private-property framework.",
+                      "SUMMARY: Private businesses and property owners may restrict weapons on their premises.",
+                      "GUIDANCE: If posted or told to leave, leave immediately."
+                ],
+                "source": "KRS 237.110; Kentucky private property framework."
+          },
+          {
+                "title": "Government Buildings",
+                "risk": "Public Building Risk",
+                "body": [
+                      "STATUTE / SOURCE: KRS 237.115.",
+                      "SUMMARY: Kentucky law addresses local government restrictions and public buildings.",
+                      "GUIDANCE: Government buildings should be treated as verify-first locations; do not assume public property means lawful carry."
+                ],
+                "source": "KRS 237.115."
+          },
+          {
+                "title": "Vehicle Carry / Travel",
+                "risk": "Travel Risk",
+                "body": [
+                      "STATUTE / SOURCE: KRS Chapter 237 and 527 framework.",
+                      "SUMMARY: Kentucky vehicle carry can differ from Michigan and from neighboring states.",
+                      "GUIDANCE: Verify storage, accessibility, and route. Check Ohio, Indiana, Tennessee, Illinois, or West Virginia if crossing borders."
+                ],
+                "source": "Kentucky firearms carry framework."
+          },
+          {
+                "title": "Alcohol / Impairment",
+                "risk": "Intoxication Risk",
+                "body": [
+                      "STATUTE / SOURCE: Kentucky weapons and intoxication framework.",
+                      "SUMMARY: Carrying while impaired can create serious criminal and civil risk.",
+                      "GUIDANCE: If drinking is part of the plan, carrying should not be."
+                ],
+                "source": "Kentucky weapons/intoxication framework."
+          },
+          {
+                "title": "Federal Property / Post Offices",
+                "risk": "Federal Law Overlay",
+                "body": [
+                      "STATUTE / SOURCE: Federal facility and postal property framework.",
+                      "SUMMARY: Kentucky carry permission does not override federal restrictions.",
+                      "GUIDANCE: Post offices, federal buildings, federal courthouses, and secure federal property require separate analysis."
+                ],
+                "source": "Federal facility and postal property framework."
+          },
+          {
+                "title": "Use of Force / Self-Protection",
+                "risk": "Force Law",
+                "body": [
+                      "STATUTE / SOURCE: KRS Chapter 503.",
+                      "SUMMARY: Kentucky self-protection and defense-of-others law is fact-specific.",
+                      "GUIDANCE: Do not use force over insults, ego, property disputes, road rage, warning shots, or punishment."
+                ],
+                "source": "KRS Chapter 503."
+          },
+          {
+                "title": "Aftermath / Statements",
+                "risk": "Post-Incident Risk",
+                "body": [
+                      "STATUTE / SOURCE: Criminal procedure and evidence framework.",
+                      "SUMMARY: Statements after a defensive incident can become evidence.",
+                      "GUIDANCE: Call 911, request help, identify evidence/witnesses if necessary, request counsel, then stop talking."
+                ],
+                "source": "Prime Defense aftermath protocol; Kentucky criminal procedure framework."
+          }
+    ],
+    [
+          {
+                "title": "Can I Carry Here in Kentucky?",
+                "steps": [
+                      "1. Am I legally eligible to possess and carry?",
+                      "2. Is this restricted by KRS 237.110, KRS 527.020, or another Kentucky law?",
+                      "3. Is this school-related, court-related, government-controlled, posted/private, federal, or alcohol-related?",
+                      "4. Am I crossing into another state?",
+                      "5. If uncertain, do not enter armed."
+                ]
+          },
+          {
+                "title": "Kentucky Traffic Stop / Police Contact",
+                "steps": [
+                      "1. Pull over or stop safely.",
+                      "2. Keep hands visible.",
+                      "3. Do not reach for anything until instructed.",
+                      "4. Follow state-specific disclosure or identification rules.",
+                      "5. Answer lawful questions truthfully and wait for legal guidance before detailed statements."
+                ]
+          }
+    ],
+    [
+          {
+                "title": "Kentucky Road Trip",
+                "summary": "Rules change from Michigan, Ohio, Indiana, and Tennessee.",
+                "guidance": [
+                      "Check route states.",
+                      "Check vehicle carry.",
+                      "Check destination rules."
+                ]
+          },
+          {
+                "title": "Posted Business",
+                "summary": "Private property restrictions can matter.",
+                "guidance": [
+                      "Look for signs.",
+                      "Leave if instructed.",
+                      "Do not argue with staff."
+                ]
+          }
+    ],
+    [
+          "Assuming Michigan rules apply outside Michigan.",
+          "Ignoring prohibited places.",
+          "Ignoring private-property or signage rules.",
+          "Ignoring vehicle carry differences.",
+          "Ignoring school-zone restrictions.",
+          "Ignoring alcohol-location rules.",
+          "Assuming federal property follows state carry rules.",
+          "Relying on old reciprocity information.",
+          "Assuming Kentucky permitless carry applies to every person.",
+          "Ignoring KRS 237.110 location restrictions.",
+          "Ignoring government building rules under KRS 237.115."
+    ],
+    [
+          "Permit recognition checked.",
+          "Eligibility checked.",
+          "Prohibited places checked.",
+          "School rules checked.",
+          "Vehicle carry checked.",
+          "Private property/signage checked.",
+          "Alcohol-related restrictions checked.",
+          "Federal property checked separately.",
+          "Use-of-force standards reviewed.",
+          "Next state on trip route checked."
+    ],
+    [
+          {
+                "myth": "If my Michigan CPL is recognized, Michigan law follows me into Kentucky.",
+                "reality": "No. Kentucky law controls once you are physically in Kentucky."
+          },
+          {
+                "myth": "A recognized permit means I can carry anywhere.",
+                "reality": "No. Recognition does not override prohibited places, private property, federal property, schools, alcohol rules, or vehicle restrictions."
+          }
+    ]
+  ),
+
+  TN: makeProfile(
+    "Tennessee",
+    "Law-Backed Ultra Expanded Travel State",
+    "Tennessee is a common travel state and has permitless handgun carry for people who meet statutory requirements, but users must understand TCA Title 39 Chapter 17 Part 13, prohibited locations, school property, posted private property, government buildings, vehicle issues, alcohol/impairment, and the current evolving legal landscape around parks and public recreational areas.",
+    {
+          "reciprocity": "Michigan CPL treated as recognized in this app travel engine. Tennessee also has permitless handgun carry for qualifying persons.",
+          "permitlessCarry": "TCA 39-17-1307 framework: Tennessee permits many qualifying persons to carry a handgun without a permit, subject to restrictions.",
+          "concealedCarry": "Concealed carry may be lawful for qualifying persons, but prohibited places and posting rules still apply.",
+          "openCarry": "Tennessee permitless carry applies to handguns for qualifying persons, but open carry may still create practical and location-specific issues.",
+          "vehicleCarry": "Tennessee vehicle carry must comply with state law and route-state rules.",
+          "dutyToInform": "Verify Tennessee officer-contact rules; keep hands visible and follow commands.",
+          "privateSigns": "TCA 39-17-1359: posted property rules can restrict carry.",
+          "forceLaw": "Tennessee self-defense law is fact-specific and should be verified from current TCA provisions."
+    },
+    [
+          "Tennessee law controls while the user is physically in Tennessee.",
+          "A green map status is only a starting point for reciprocity, not a location-by-location authorization.",
+          "Every section below is tied to a statute or official source where possible.",
+          "Users should verify current law before relying on any summary."
+    ],
+    [
+          {
+                "title": "Permitless Handgun Carry",
+                "risk": "Core Eligibility Rule",
+                "body": [
+                      "STATUTE / SOURCE: TCA 39-17-1307; Tennessee Department of Safety guidance.",
+                      "SUMMARY: Tennessee allows many qualifying persons to carry a handgun without a permit, subject to statutory requirements and restrictions.",
+                      "GUIDANCE: Permitless carry is not universal and does not apply to everyone or every location."
+                ],
+                "source": "TCA 39-17-1307; Tennessee Department of Safety handgun carry guidance."
+          },
+          {
+                "title": "Handgun Permits Still Matter",
+                "risk": "Travel / Reciprocity",
+                "body": [
+                      "STATUTE / SOURCE: Tennessee Department of Safety handgun permit framework.",
+                      "SUMMARY: Tennessee permits may still matter for reciprocity, documentation, and travel outside Tennessee.",
+                      "GUIDANCE: A Michigan traveler should not assume Tennessee permitless carry helps in the next state."
+                ],
+                "source": "Tennessee Department of Safety handgun permit guidance."
+          },
+          {
+                "title": "Prohibited Places",
+                "risk": "Major Location Restriction",
+                "body": [
+                      "STATUTE / SOURCE: TCA Title 39, Chapter 17, Part 13.",
+                      "SUMMARY: Tennessee law identifies locations where firearms or handguns are prohibited or restricted.",
+                      "GUIDANCE: Check schools, courtrooms, public buildings, posted private property, federal property, and other sensitive places before entering."
+                ],
+                "source": "TCA Title 39, Chapter 17, Part 13."
+          },
+          {
+                "title": "Schools / School Property",
+                "risk": "Extreme Risk Area",
+                "body": [
+                      "STATUTE / SOURCE: TCA 39-17-1309 and related school-property framework.",
+                      "SUMMARY: Tennessee law restricts firearms on school property and school-related locations, subject to statutory provisions.",
+                      "GUIDANCE: Do not assume permitless carry or a Michigan CPL solves school property, parking, event, or student activity issues."
+                ],
+                "source": "TCA 39-17-1309."
+          },
+          {
+                "title": "Posted Property / Private Signs",
+                "risk": "Property Control",
+                "body": [
+                      "STATUTE / SOURCE: TCA 39-17-1359.",
+                      "SUMMARY: Tennessee law allows property to be posted against firearms under statutory requirements.",
+                      "GUIDANCE: Look for signs. If posted or instructed to leave, leave immediately."
+                ],
+                "source": "TCA 39-17-1359."
+          },
+          {
+                "title": "Government Buildings / Security Screening",
+                "risk": "Public Building Risk",
+                "body": [
+                      "STATUTE / SOURCE: TCA 39-17-1359 and local-government building framework.",
+                      "SUMMARY: Some local government properties may restrict handguns only if statutory security measures are provided, but exceptions and special locations apply.",
+                      "GUIDANCE: Government buildings, libraries, schools, law-enforcement facilities, courtrooms, and mental health/substance facilities require careful verification."
+                ],
+                "source": "TCA 39-17-1359; Tennessee public building framework."
+          },
+          {
+                "title": "Courthouses / Courtrooms",
+                "risk": "Hard Stop Area",
+                "body": [
+                      "STATUTE / SOURCE: Tennessee court/security framework.",
+                      "SUMMARY: Courtrooms and court facilities can be restricted and security-screened.",
+                      "GUIDANCE: Do not bring a firearm to a courtroom or courthouse unless a clear legal exception applies."
+                ],
+                "source": "Tennessee court/security framework."
+          },
+          {
+                "title": "Parks / Recreation Areas",
+                "risk": "Evolving Law Warning",
+                "body": [
+                      "STATUTE / SOURCE: Recent Tennessee court decisions and TCA framework.",
+                      "SUMMARY: Tennessee restrictions involving parks and public recreation areas have been subject to recent litigation and legal changes.",
+                      "GUIDANCE: Because this area is evolving, verify current law before relying on older summaries."
+                ],
+                "source": "Recent Tennessee litigation and TCA public recreation framework."
+          },
+          {
+                "title": "Vehicle Carry / Travel",
+                "risk": "Travel Risk",
+                "body": [
+                      "STATUTE / SOURCE: TCA Title 39, Chapter 17, Part 13 framework.",
+                      "SUMMARY: Tennessee vehicle carry may be lawful for qualifying persons but remains subject to eligibility and location restrictions.",
+                      "GUIDANCE: Check vehicle rules and the next state on the route."
+                ],
+                "source": "TCA Title 39, Chapter 17, Part 13."
+          },
+          {
+                "title": "Alcohol / Impairment",
+                "risk": "Intoxication Risk",
+                "body": [
+                      "STATUTE / SOURCE: Tennessee weapons/intoxication framework.",
+                      "SUMMARY: Weapons and impairment create serious criminal and civil risk.",
+                      "GUIDANCE: If drinking is part of the plan, carrying should not be."
+                ],
+                "source": "Tennessee weapons/intoxication framework."
+          },
+          {
+                "title": "Federal Property / Post Offices",
+                "risk": "Federal Law Overlay",
+                "body": [
+                      "STATUTE / SOURCE: Federal facility and postal property framework.",
+                      "SUMMARY: Tennessee carry permission does not override federal restrictions.",
+                      "GUIDANCE: Post offices, federal buildings, federal courthouses, and secure federal property require separate federal-law analysis."
+                ],
+                "source": "Federal facility and postal property framework."
+          },
+          {
+                "title": "Use of Force / Self-Defense",
+                "risk": "Force Law",
+                "body": [
+                      "STATUTE / SOURCE: Tennessee self-defense statutes and case law framework.",
+                      "SUMMARY: Tennessee self-defense law is fact-specific and must be verified from current law.",
+                      "GUIDANCE: Avoid slogans. Deadly force is not for insults, ego, property disputes, road rage, warning shots, or punishment."
+                ],
+                "source": "Tennessee self-defense framework."
+          },
+          {
+                "title": "Aftermath / Statements",
+                "risk": "Post-Incident Risk",
+                "body": [
+                      "STATUTE / SOURCE: Criminal procedure and evidence framework.",
+                      "SUMMARY: Statements after an incident can become evidence.",
+                      "GUIDANCE: Call 911, request help, identify evidence/witnesses if necessary, request counsel, then stop talking."
+                ],
+                "source": "Prime Defense aftermath protocol; Tennessee criminal procedure framework."
+          }
+    ],
+    [
+          {
+                "title": "Can I Carry Here in Tennessee?",
+                "steps": [
+                      "1. Am I legally eligible under Tennessee law?",
+                      "2. Is this prohibited under TCA Title 39, Chapter 17, Part 13?",
+                      "3. Is this school-related under TCA 39-17-1309?",
+                      "4. Is this posted under TCA 39-17-1359?",
+                      "5. Is this government, courtroom, law-enforcement, federal, alcohol-related, or security-controlled?",
+                      "6. If uncertain, do not enter armed."
+                ]
+          },
+          {
+                "title": "Tennessee Traffic Stop / Police Contact",
+                "steps": [
+                      "1. Pull over or stop safely.",
+                      "2. Keep hands visible.",
+                      "3. Do not reach for anything until instructed.",
+                      "4. Follow state-specific disclosure or identification rules.",
+                      "5. Answer lawful questions truthfully and wait for legal guidance before detailed statements."
+                ]
+          }
+    ],
+    [
+          {
+                "title": "Nashville / Memphis Venue",
+                "summary": "Entertainment venues often combine private signs, alcohol, crowds, and security screening.",
+                "guidance": [
+                      "Check posted signs.",
+                      "Do not drink while armed.",
+                      "Do not argue with security."
+                ]
+          },
+          {
+                "title": "School or University Event",
+                "summary": "School-related property remains high-risk.",
+                "guidance": [
+                      "Check TCA 39-17-1309.",
+                      "Do not rely on permitless carry.",
+                      "When uncertain, do not enter armed."
+                ]
+          },
+          {
+                "title": "Public Park or Recreation Area",
+                "summary": "Tennessee law in this area has been evolving.",
+                "guidance": [
+                      "Verify current law before relying on older summaries.",
+                      "Check whether a school event or government facility is involved.",
+                      "Follow posted restrictions and current legal guidance."
+                ]
+          }
+    ],
+    [
+          "Assuming Michigan rules apply outside Michigan.",
+          "Ignoring prohibited places.",
+          "Ignoring private-property or signage rules.",
+          "Ignoring vehicle carry differences.",
+          "Ignoring school-zone restrictions.",
+          "Ignoring alcohol-location rules.",
+          "Assuming federal property follows state carry rules.",
+          "Relying on old reciprocity information.",
+          "Assuming permitless handgun carry applies to every person.",
+          "Ignoring TCA 39-17-1359 posted property rules.",
+          "Relying on outdated Tennessee parks/recreation summaries."
+    ],
+    [
+          "Permit recognition checked.",
+          "Eligibility checked.",
+          "Prohibited places checked.",
+          "School rules checked.",
+          "Vehicle carry checked.",
+          "Private property/signage checked.",
+          "Alcohol-related restrictions checked.",
+          "Federal property checked separately.",
+          "Use-of-force standards reviewed.",
+          "Next state on trip route checked."
+    ],
+    [
+          {
+                "myth": "If my Michigan CPL is recognized, Michigan law follows me into Tennessee.",
+                "reality": "No. Tennessee law controls once you are physically in Tennessee."
+          },
+          {
+                "myth": "A recognized permit means I can carry anywhere.",
+                "reality": "No. Recognition does not override prohibited places, private property, federal property, schools, alcohol rules, or vehicle restrictions."
+          }
     ]
   ),
 
