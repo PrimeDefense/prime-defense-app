@@ -580,6 +580,20 @@ button{
   gap:8px;
   margin:8px 0 14px;
 }
+.permitEngineCard{
+  background:linear-gradient(135deg,#ffffff,#f7f8fa);
+  border:1px solid rgba(16,19,24,.10);
+  border-radius:18px;
+  padding:14px;
+  margin:10px 0 14px;
+}
+.permitEngineCard h3{margin:0 0 6px;font-size:16px}
+.permitEngineStats{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:10px}
+.permitEngineStat{border:1px solid rgba(16,19,24,.08);border-radius:14px;padding:10px;background:#fff;text-align:center}
+.permitEngineStat b{display:block;font-size:18px;color:#11151b}
+.permitEngineStat span{display:block;font-size:11px;font-weight:900;color:#626975;text-transform:uppercase}
+@media(max-width:650px){.permitEngineStats{grid-template-columns:repeat(2,1fr)}}
+
 .legendItem{
   font-size:12px;
   font-weight:900;
@@ -4915,14 +4929,59 @@ function renderMapLegend(){
   '</div>';
 }
 
+function permitDataFor(permitState){
+  return reciprocityData[permitState] || null;
+}
+
+function permitEngineCounts(permitState){
+  var data = permitDataFor(permitState);
+  if(!data){
+    return { recognized:0, restricted:0, notRecognized:0, unverified:states.length, hasData:false };
+  }
+  var recognized = 0;
+  var restricted = 0;
+  var notRecognized = 0;
+  var unverified = 0;
+  states.forEach(function(row){
+    var status = stateStatus(permitState, row[0]);
+    if(status === "recognized") recognized++;
+    else if(status === "restricted") restricted++;
+    else if(status === "not_recognized") notRecognized++;
+    else unverified++;
+  });
+  return { recognized:recognized, restricted:restricted, notRecognized:notRecognized, unverified:unverified, hasData:true };
+}
+
+function renderPermitEngineCard(permitState){
+  var data = permitDataFor(permitState);
+  var counts = permitEngineCounts(permitState);
+  var title = data ? (data.title || (stateName(permitState) + " Permit Reciprocity Engine")) : (stateName(permitState) + " Permit Reciprocity Engine");
+  var note = data ? (data.sourceNote || "Map colors are based on the selected permit state.") : "This permit state is not fully built in the reciprocity engine yet. The map will show VERIFY until this permit dataset is added.";
+  var reviewed = data ? (data.verifiedDate || "Verify before travel") : "Not built yet";
+
+  return '<div class="permitEngineCard">' +
+    '<h3>' + escapeHtml(title) + '</h3>' +
+    '<p class="small"><b>Selected permit:</b> ' + escapeHtml(stateName(permitState)) + ' | <b>Reciprocity reviewed:</b> ' + escapeHtml(reviewed) + '</p>' +
+    '<p class="small">' + escapeHtml(note) + '</p>' +
+    '<div class="permitEngineStats">' +
+      '<div class="permitEngineStat green"><b>' + counts.recognized + '</b><span>Recognized</span></div>' +
+      '<div class="permitEngineStat yellow"><b>' + counts.restricted + '</b><span>Verify</span></div>' +
+      '<div class="permitEngineStat red"><b>' + counts.notRecognized + '</b><span>Not Honored</span></div>' +
+      '<div class="permitEngineStat gray"><b>' + counts.unverified + '</b><span>Unverified</span></div>' +
+    '</div>' +
+  '</div>';
+}
+
 function renderSvgMap(permitState){
-  var html = '<svg class="mapSvg" viewBox="0 0 960 620" role="img" aria-label="Clickable United States reciprocity map">';
+  var html = '<svg class="mapSvg" viewBox="0 0 960 690" role="img" aria-label="Clickable United States reciprocity map">';
   html += '<defs>';
   html += '<filter id="stateShadow" x="-10%" y="-10%" width="120%" height="120%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#101318" flood-opacity="0.18"/></filter>';
   html += '</defs>';
-  html += '<rect x="0" y="0" width="960" height="620" rx="22" fill="#f8fafc"></rect>';
-  html += '<text x="24" y="32" style="font-size:20px;font-weight:950;fill:#11151b">Interactive U.S. Reciprocity Map</text>';
-  html += '<text x="24" y="54" style="font-size:12px;font-weight:800;fill:#626975">Click any state shape to view reciprocity status and state legal intelligence.</text>';
+  html += '<rect x="0" y="0" width="960" height="690" rx="22" fill="#f8fafc"></rect>';
+  html += '<text x="24" y="34" style="font-size:20px;font-weight:950;fill:#11151b">Interactive U.S. Reciprocity Map</text>';
+  html += '<text x="24" y="58" style="font-size:12px;font-weight:800;fill:#626975">Click any state shape to view reciprocity status and state legal intelligence.</text>';
+  html += '<text x="24" y="78" style="font-size:11px;font-weight:800;fill:#8a93a3">Map colors are based on the selected permit state.</text>';
+  html += '<g transform="translate(0,54)">';
   html += '<rect x="33" y="462" width="275" height="142" rx="16" fill="#ffffff" stroke="rgba(16,19,24,.12)"></rect>';
   html += '<text x="48" y="484" style="font-size:12px;font-weight:950;fill:#626975">ALASKA</text>';
   html += '<rect x="323" y="492" width="235" height="112" rx="16" fill="#ffffff" stroke="rgba(16,19,24,.12)"></rect>';
@@ -4936,7 +4995,7 @@ function renderSvgMap(permitState){
 
     var status = stateStatus(permitState, abbr);
     var selected = selectedMapState === abbr;
-    html += '<path class="mapCell ' + (selected ? 'selected' : '') + '" d="' + path + '" fill="' + statusFill(status) + '" onclick="selectMapState(\\\'' + abbr + '\\\')"><title>' + escapeHtml(name) + ' — ' + statusLabelByStatus(status) + '</title></path>';
+    html += '<path class="mapCell ' + (selected ? 'selected' : '') + '" d="' + path + '" fill="' + statusFill(status) + '" onclick="selectMapState(\'' + abbr + '\')"><title>' + escapeHtml(name) + ' — ' + statusLabelByStatus(status) + '</title></path>';
   });
 
   html += '<g class="mapLabels">';
@@ -4950,6 +5009,7 @@ function renderSvgMap(permitState){
     var fs = tiny ? 9 : 11;
     html += '<text class="mapText" x="' + x + '" y="' + y + '" style="font-size:' + fs + 'px">' + abbr + '</text>';
   });
+  html += '</g>';
   html += '</g>';
   html += '</svg>';
   return html;
@@ -5066,10 +5126,10 @@ function renderIntelPanel(permitState, travelState){
   }
 
   html += '<div class="jumpNav">' +
-    '<button type="button" onclick="document.getElementById(\\'pd-legal-details\\').scrollIntoView({behavior:\\'smooth\\'})">Detailed Law</button>' +
-    '<button type="button" onclick="document.getElementById(\\'pd-decision-blocks\\').scrollIntoView({behavior:\\'smooth\\'})">Checklists</button>' +
-    '<button type="button" onclick="document.getElementById(\\'pd-scenarios\\').scrollIntoView({behavior:\\'smooth\\'})">Scenarios</button>' +
-    '<button type="button" onclick="document.getElementById(\\'pd-common-mistakes\\').scrollIntoView({behavior:\\'smooth\\'})">Common Mistakes</button>' +
+    '<button type="button" onclick="document.getElementById(\'pd-legal-details\').scrollIntoView({behavior:\'smooth\'})">Detailed Law</button>' +
+    '<button type="button" onclick="document.getElementById(\'pd-decision-blocks\').scrollIntoView({behavior:\'smooth\'})">Checklists</button>' +
+    '<button type="button" onclick="document.getElementById(\'pd-scenarios\').scrollIntoView({behavior:\'smooth\'})">Scenarios</button>' +
+    '<button type="button" onclick="document.getElementById(\'pd-common-mistakes\').scrollIntoView({behavior:\'smooth\'})">Common Mistakes</button>' +
   '</div>';
 
   return html;
@@ -5182,6 +5242,7 @@ function getReciprocityHtml(state){
   if(!data){
     return '<div class="reciprocityTitle">' + selectedName + ' Permit Profile</div>' +
       '<p><b>Status:</b> State-specific outbound reciprocity data has not been fully verified in this app yet.</p>' +
+      renderPermitEngineCard(state) +
       '<div class="mapShell">' +
         '<div class="mapPanel">' + renderMapLegend() + renderSvgMap(state) + '</div>' +
         '<div>' + getStateDetailHtml(state, selectedMapState) + '</div>' +
@@ -5193,6 +5254,7 @@ function getReciprocityHtml(state){
     '<p><b>Selected permit:</b> ' + selectedName + '</p>' +
     '<p><b>Last reviewed:</b> ' + data.verifiedDate + '</p>' +
     '<p class="reciprocitySub">' + data.sourceNote + '</p>' +
+    renderPermitEngineCard(state) +
     '<div class="mapShell">' +
       '<div class="mapPanel">' + renderMapLegend() + renderSvgMap(state) + '</div>' +
       '<div>' + getStateDetailHtml(state, selectedMapState) + '</div>' +
@@ -5415,9 +5477,9 @@ async function showDashboard(){
         '<div class="card">' +
           '<div class="brand">My Permit</div>' +
           '<h2>Interactive Reciprocity Map & State Detail Panel</h2>' +
-          '<p class="small">Select your permit state. Click any state on the map to view reciprocity status and available legal profile data.</p>' +
+          '<p class="small">Select the permit you hold. The map colors update from that permit’s reciprocity data. Click any state to view reciprocity status and legal intelligence.</p>' +
           '<div class="grid">' +
-            '<select id="state">' + buildStateOptions(selectedState) + '</select>' +
+            '<div><label class="small"><b>Permit State</b></label><select id="state">' + buildStateOptions(selectedState) + '</select></div>' +
             '<input id="issue" type="date" value="' + escapeHtml(user.issueDate || '') + '">' +
             '<input id="exp" type="date" value="' + escapeHtml(user.expirationDate || '') + '">' +
           '</div>' +
@@ -5549,21 +5611,21 @@ function openEmergency(){
         '<div class="card">' +
           '<div class="brand">Step 1 — Call 911</div>' +
           '<div class="script">“I was attacked, feared for my life, and had to defend myself. Please send both police and an ambulance to this location.”</div>' +
-          '<button class="primary bigAction" type="button" onclick="window.location.href=\\'tel:911\\'">CALL 911</button>' +
+          '<button class="primary bigAction" type="button" onclick="window.location.href=\'tel:911\'">CALL 911</button>' +
           '<div class="warn">Secondary wording: “There has been a self-defense shooting at this location. Send help.” Provide only necessary information and follow dispatcher instructions.</div>' +
         '</div>' +
 
         '<div class="card">' +
           '<div class="brand">Step 2 — Call USCCA</div>' +
           '<p class="small">Contact the USCCA Critical Response Team after calling 911.</p>' +
-          '<button class="primary bigAction" type="button" onclick="window.location.href=\\'tel:8776771919\\'">CALL USCCA</button>' +
+          '<button class="primary bigAction" type="button" onclick="window.location.href=\'tel:8776771919\'">CALL USCCA</button>' +
         '</div>' +
 
         '<div class="card">' +
           '<div class="brand">Step 3 — Contact Family</div>' +
           '<h2>' + escapeHtml(name || "Emergency Contact") + '</h2>' +
           '<p class="small">' + escapeHtml(phone || "No phone saved") + '</p>' +
-          (phone ? '<button class="primary bigAction" type="button" onclick="window.location.href=\\'tel:' + cleanPhone + '\\'">CALL CONTACT</button>' : '<div class="warn">No emergency contact saved.</div>') +
+          (phone ? '<button class="primary bigAction" type="button" onclick="window.location.href=\'tel:' + cleanPhone + '\'">CALL CONTACT</button>' : '<div class="warn">No emergency contact saved.</div>') +
           '<div class="script">“I’ve been involved in a defensive incident. I’m safe. Do not discuss anything with anyone until I have legal guidance.”</div>' +
         '</div>' +
 
@@ -5587,7 +5649,7 @@ function openDefensiveDisplay(){
         '<div class="card">' +
           '<div class="brand">Step 1 — Call 911</div>' +
           '<div class="script">“My name is [name], and I need to report an attack or possible attack at this location. I have a permit to carry and exposed my defensive tool, but I did not fire.”</div>' +
-          '<button class="primary bigAction" type="button" onclick="window.location.href=\\'tel:911\\'">CALL 911</button>' +
+          '<button class="primary bigAction" type="button" onclick="window.location.href=\'tel:911\'">CALL 911</button>' +
         '</div>' +
 
         '<div class="card">' +
@@ -5598,7 +5660,7 @@ function openDefensiveDisplay(){
 
         '<div class="card">' +
           '<div class="brand">Step 2 — Call USCCA</div>' +
-          '<button class="primary bigAction" type="button" onclick="window.location.href=\\'tel:8776771919\\'">CALL USCCA</button>' +
+          '<button class="primary bigAction" type="button" onclick="window.location.href=\'tel:8776771919\'">CALL USCCA</button>' +
         '</div>' +
 
         '<div class="card">' +
@@ -5650,7 +5712,7 @@ function openAftermath(){
 
         '<div class="card">' +
           '<div class="brand">Next Steps</div>' +
-          '<button class="primary bigAction" type="button" onclick="window.location.href=\\'tel:8776771919\\'">CALL USCCA</button>' +
+          '<button class="primary bigAction" type="button" onclick="window.location.href=\'tel:8776771919\'">CALL USCCA</button>' +
           '<button class="secondary bigAction" type="button" onclick="showDashboard()">BACK TO DASHBOARD</button>' +
         '</div>' +
       '</div>' +
