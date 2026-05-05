@@ -594,6 +594,84 @@ button{
 .permitEngineStat b{display:block;font-size:18px;color:#11151b}
 .permitEngineStat span{display:block;font-size:11px;font-weight:900;color:#626975;text-transform:uppercase}
 @media(max-width:650px){.permitEngineStats{grid-template-columns:repeat(2,1fr)}}
+
+.travelBuilder{
+  background:linear-gradient(135deg,#ffffff,#f7f8fa);
+  border:1px solid rgba(16,19,24,.10);
+  border-radius:22px;
+  padding:18px;
+  margin-top:14px;
+}
+.travelControls{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:12px;
+  align-items:end;
+}
+.travelResult{margin-top:14px}
+.travelRouteHeader{
+  background:linear-gradient(135deg,#11151b,#242b36);
+  color:#fff;
+  border-radius:20px;
+  padding:18px;
+  margin:12px 0;
+}
+.travelRouteHeader h3{margin:0 0 6px;color:#fff}
+.travelRouteHeader p{margin:0;color:#d1d5db;font-size:13px;line-height:1.45}
+.travelStateGrid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+  gap:12px;
+  margin-top:12px;
+}
+.travelStateCard{
+  background:#fff;
+  border:1px solid rgba(16,19,24,.10);
+  border-radius:18px;
+  padding:15px;
+  box-shadow:0 8px 24px rgba(16,19,24,.06);
+}
+.travelStateCard h4{margin:0 0 8px;font-size:17px}
+.travelStateCard p{margin:6px 0;color:#626975;font-size:13px;line-height:1.45}
+.travelStateCard button{
+  width:100%;
+  margin-top:10px;
+  padding:11px 12px;
+  border-radius:14px;
+  font-size:13px;
+  background:#11151b;
+  color:white;
+}
+.travelPill{
+  display:inline-block;
+  padding:6px 9px;
+  border-radius:999px;
+  font-size:11px;
+  font-weight:950;
+  border:1px solid rgba(16,19,24,.10);
+  margin-right:6px;
+}
+.travelWarningList{margin-top:10px;display:grid;gap:8px}
+.travelWarningItem{
+  border-left:4px solid #d71920;
+  background:#fff;
+  border-radius:14px;
+  padding:11px 12px;
+  border-top:1px solid rgba(16,19,24,.08);
+  border-right:1px solid rgba(16,19,24,.08);
+  border-bottom:1px solid rgba(16,19,24,.08);
+  font-size:13px;
+  color:#374151;
+}
+.routeLine{display:flex;flex-wrap:wrap;gap:7px;margin-top:10px}
+.routeDot{
+  background:#eef0f3;
+  border:1px solid rgba(16,19,24,.08);
+  border-radius:999px;
+  padding:7px 10px;
+  font-size:12px;
+  font-weight:950;
+}
 .legendItem{
   font-size:12px;
   font-weight:900;
@@ -11759,6 +11837,187 @@ async function openBilling(){
   }
 }
 
+
+var routeGraph = {
+  AL:["MS","TN","GA","FL"],
+  AK:[],
+  AZ:["CA","NV","UT","CO","NM"],
+  AR:["MO","TN","MS","LA","TX","OK"],
+  CA:["OR","NV","AZ"],
+  CO:["WY","NE","KS","OK","NM","AZ","UT"],
+  CT:["NY","MA","RI"],
+  DE:["MD","PA","NJ"],
+  FL:["GA","AL"],
+  GA:["FL","AL","TN","NC","SC"],
+  HI:[],
+  ID:["WA","OR","NV","UT","WY","MT"],
+  IL:["WI","IA","MO","KY","IN"],
+  IN:["MI","OH","KY","IL"],
+  IA:["MN","WI","IL","MO","NE","SD"],
+  KS:["NE","MO","OK","CO"],
+  KY:["IL","IN","OH","WV","VA","TN","MO"],
+  LA:["TX","AR","MS"],
+  ME:["NH"],
+  MD:["PA","DE","VA","WV","DC"],
+  MA:["RI","CT","NY","VT","NH"],
+  MI:["OH","IN","WI"],
+  MN:["ND","SD","IA","WI"],
+  MS:["LA","AR","TN","AL"],
+  MO:["IA","IL","KY","TN","AR","OK","KS","NE"],
+  MT:["ID","WY","SD","ND"],
+  NE:["SD","IA","MO","KS","CO","WY"],
+  NV:["CA","OR","ID","UT","AZ"],
+  NH:["ME","MA","VT"],
+  NJ:["NY","PA","DE"],
+  NM:["AZ","CO","OK","TX"],
+  NY:["PA","NJ","CT","MA","VT"],
+  NC:["VA","TN","GA","SC"],
+  ND:["MT","SD","MN"],
+  OH:["MI","IN","KY","WV","PA"],
+  OK:["KS","MO","AR","TX","NM","CO"],
+  OR:["WA","ID","NV","CA"],
+  PA:["NY","NJ","DE","MD","WV","OH"],
+  RI:["CT","MA"],
+  SC:["NC","GA"],
+  SD:["ND","MN","IA","NE","WY","MT"],
+  TN:["KY","VA","NC","GA","AL","MS","AR","MO"],
+  TX:["NM","OK","AR","LA"],
+  UT:["ID","WY","CO","NM","AZ","NV"],
+  VT:["NY","MA","NH"],
+  VA:["NC","TN","KY","WV","MD"],
+  WA:["OR","ID"],
+  WV:["OH","PA","MD","VA","KY"],
+  WI:["MI","MN","IA","IL"],
+  WY:["MT","SD","NE","CO","UT","ID"]
+};
+
+var popularRouteHints = {
+  "MI-FL":["MI","OH","KY","TN","GA","FL"],
+  "FL-MI":["FL","GA","TN","KY","OH","MI"],
+  "MI-TX":["MI","IN","IL","MO","OK","TX"],
+  "TX-MI":["TX","OK","MO","IL","IN","MI"],
+  "MI-AZ":["MI","IN","IL","MO","OK","TX","NM","AZ"],
+  "AZ-MI":["AZ","NM","TX","OK","MO","IL","IN","MI"],
+  "MI-NC":["MI","OH","WV","VA","NC"],
+  "NC-MI":["NC","VA","WV","OH","MI"],
+  "MI-SC":["MI","OH","WV","VA","NC","SC"],
+  "SC-MI":["SC","NC","VA","WV","OH","MI"],
+  "MI-GA":["MI","OH","KY","TN","GA"],
+  "GA-MI":["GA","TN","KY","OH","MI"],
+  "MI-PA":["MI","OH","PA"],
+  "PA-MI":["PA","OH","MI"],
+  "MI-NY":["MI","OH","PA","NY"],
+  "NY-MI":["NY","PA","OH","MI"],
+  "MI-NJ":["MI","OH","PA","NJ"],
+  "NJ-MI":["NJ","PA","OH","MI"]
+};
+
+function findPlannedRoute(start, destination){
+  if(!start || !destination) return [];
+  if(start === destination) return [start];
+  var hint = popularRouteHints[start + "-" + destination];
+  if(hint && hint.length) return hint.slice();
+  if(start === "AK" || destination === "AK" || start === "HI" || destination === "HI") return [start,destination];
+
+  var queue = [[start]];
+  var visited = {};
+  visited[start] = true;
+
+  while(queue.length){
+    var path = queue.shift();
+    var last = path[path.length - 1];
+    var neighbors = routeGraph[last] || [];
+    for(var i=0;i<neighbors.length;i++){
+      var next = neighbors[i];
+      if(next === "DC") continue;
+      if(visited[next]) continue;
+      var newPath = path.concat([next]);
+      if(next === destination) return newPath;
+      visited[next] = true;
+      queue.push(newPath);
+    }
+  }
+  return [start,destination];
+}
+
+function routeWarningForState(permitState, abbr){
+  var status = stateStatus(permitState, abbr);
+  var law = stateLawData[abbr] || {};
+  var qk = law.quick || {};
+  var warnings = [];
+  if(status === "not_recognized") warnings.push("Selected permit is NOT honored here. Do not carry on that permit alone.");
+  if(status !== "recognized" && status !== "not_recognized") warnings.push("Reciprocity is not fully verified here. Confirm before travel.");
+  if(qk.vehicleCarry) warnings.push("Vehicle / transport: " + qk.vehicleCarry);
+  if(qk.dutyToInform) warnings.push("Police contact: " + qk.dutyToInform);
+  if(qk.privateSigns) warnings.push("Private property: " + qk.privateSigns);
+  return warnings.slice(0,4);
+}
+
+function renderTravelMode(){
+  var permitEl = q("state");
+  var permitState = permitEl ? permitEl.value : (currentUser && currentUser.permitState) || "MI";
+  var startEl = q("travelStart");
+  var destEl = q("travelDestination");
+  var output = q("travelResult");
+  if(!startEl || !destEl || !output) return;
+
+  var start = startEl.value;
+  var destination = destEl.value;
+  var route = findPlannedRoute(start, destination);
+
+  if(!route.length){
+    output.innerHTML = '<div class="warn">No route could be generated. Select a start and destination state.</div>';
+    return;
+  }
+
+  var notHonored = route.filter(function(abbr){ return stateStatus(permitState, abbr) === "not_recognized"; });
+  var verifyStates = route.filter(function(abbr){ var s = stateStatus(permitState, abbr); return s !== "recognized" && s !== "not_recognized"; });
+
+  var html = '<div class="travelRouteHeader">' +
+    '<h3>' + escapeHtml(stateName(start)) + ' → ' + escapeHtml(stateName(destination)) + '</h3>' +
+    '<p><b>Permit selected:</b> ' + escapeHtml(stateName(permitState)) + '. This is a planning tool, not GPS tracking or legal advice. Confirm your actual route and current law before travel.</p>' +
+    '<div class="routeLine">' + route.map(function(abbr){ return '<span class="routeDot">' + abbr + '</span>'; }).join('') + '</div>' +
+  '</div>';
+
+  if(notHonored.length || verifyStates.length){
+    html += '<div class="travelWarningList">';
+    notHonored.forEach(function(abbr){
+      html += '<div class="travelWarningItem"><b>' + escapeHtml(stateName(abbr)) + ':</b> selected permit is not honored. Do not carry on that permit alone.</div>';
+    });
+    verifyStates.forEach(function(abbr){
+      html += '<div class="travelWarningItem"><b>' + escapeHtml(stateName(abbr)) + ':</b> verify reciprocity and carry rules before travel.</div>';
+    });
+    html += '</div>';
+  }
+
+  html += '<div class="travelStateGrid">';
+  route.forEach(function(abbr){
+    var status = stateStatus(permitState, abbr);
+    var cls = statusClass(status);
+    var law = stateLawData[abbr] || {};
+    var qk = law.quick || {};
+    var warnings = routeWarningForState(permitState, abbr);
+    html += '<div class="travelStateCard">' +
+      '<h4>' + abbr + ' — ' + escapeHtml(stateName(abbr)) + '</h4>' +
+      '<span class="travelPill ' + cls + '">' + statusLabelByStatus(status) + '</span>' +
+      '<p><b>Vehicle:</b> ' + escapeHtml(qk.vehicleCarry || 'Verify vehicle carry / transport rules.') + '</p>' +
+      '<p><b>Restricted & Sensitive Locations:</b> ' + escapeHtml((law.travelAlerts && law.travelAlerts[0]) || 'Check schools, courts, federal property, posted property, and sensitive locations.') + '</p>';
+    warnings.forEach(function(w){ html += '<p>• ' + escapeHtml(w) + '</p>'; });
+    html += '<button type="button" onclick="openTravelState(\\\'' + abbr + '\\\')">Open State Intelligence</button>' +
+    '</div>';
+  });
+  html += '</div>';
+  output.innerHTML = html;
+}
+
+function openTravelState(abbr){
+  selectedMapState = abbr;
+  updateReciprocity();
+  var box = q("reciprocityBox");
+  if(box) box.scrollIntoView({behavior:"smooth", block:"start"});
+}
+
+
 function showLocked(user){
   user = user || {};
 
@@ -11851,6 +12110,20 @@ async function showDashboard(){
         '</div>' +
 
         '<div class="card">' +
+          '<div class="brand">Travel Mode</div>' +
+          '<h2>Planned Route Carry Check</h2>' +
+          '<p class="small">Select a start state and destination. The app will show a route-state checklist with reciprocity, vehicle/transport cautions, and quick links into the State Intelligence Panel.</p>' +
+          '<div class="travelBuilder">' +
+            '<div class="travelControls">' +
+              '<div><label class="small"><b>Start State</b></label><select id="travelStart">' + buildStateOptions(selectedState || "MI") + '</select></div>' +
+              '<div><label class="small"><b>Destination State</b></label><select id="travelDestination">' + buildStateOptions("FL") + '</select></div>' +
+              '<button id="buildTravelBtn" class="primary" type="button">Build Route Check</button>' +
+            '</div>' +
+            '<div id="travelResult" class="travelResult"></div>' +
+          '</div>' +
+        '</div>' +
+
+        '<div class="card">' +
           '<div class="brand">Michigan Ultra Guide</div>' +
           '<h2>Michigan CPL & Firearms Law Intelligence</h2>' +
           '<p class="small">Open the expanded Michigan guide with detailed sections, decision blocks, common mistakes, restricted-location guidance, plain-English reality checks, and before-carry checklists.</p>' +
@@ -11888,6 +12161,7 @@ async function showDashboard(){
     q("state").onchange = function(){
       selectedMapState = q("state").value;
       updateReciprocity();
+      renderTravelMode();
     };
 
     q("saveBtn").onclick = saveProfile;
@@ -11901,6 +12175,10 @@ async function showDashboard(){
       selectedMapState = "MI";
       showStateLawFull("MI");
     };
+    if(q("buildTravelBtn")) q("buildTravelBtn").onclick = renderTravelMode;
+    if(q("travelStart")) q("travelStart").onchange = renderTravelMode;
+    if(q("travelDestination")) q("travelDestination").onchange = renderTravelMode;
+    renderTravelMode();
 
   }catch(e){
     localStorage.removeItem("pd_token");
