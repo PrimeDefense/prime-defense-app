@@ -797,12 +797,12 @@ var reciprocityData = {
     verifiedDate: "May 2, 2026",
     sourceNote: "Recognition does not mean identical laws. Follow the law of the state you are physically in. Michigan MSP advises CPL holders to check the destination state directly before travel.",
     recognized: [
-      "AL","AK","AZ","AR","CO","FL","GA","HI","ID","IN","IA","KS","KY","LA","ME","MN","MS",
+      "AL","AK","AZ","AR","CO","FL","GA","ID","IN","IA","KS","KY","LA","ME","MN","MS",
       "MO","MT","NE","NH","NM","NC","ND","OH","OK","PA","SC","SD","TN","TX","UT","VA","VT",
       "WA","WV","WI","WY"
     ],
     restricted: ["NV"],
-    notRecognized: ["CA","CT","DE","IL","MD","MA","NJ","NY","OR","RI"],
+    notRecognized: ["CA","CT","DE","HI","IL","MD","MA","NJ","NY","OR","RI"],
     warnings: [
       "This is an outbound Michigan CPL travel reference, not a substitute for destination-state law.",
       "Recognition can depend on residency, age, permit type, current state law, and state-specific restrictions.",
@@ -4763,6 +4763,4709 @@ var stateLawData = {
     ["Nevada recognition verified within 24-48 hours of travel.", "Permit/ID carried if legally carrying.", "NRS 202.3673 locations checked.", "Casino/hotel/event rules checked.", "Vehicle carry method checked.", "Federal property checked."],
     [ { myth: "Nevada definitely honors Michigan CPL, so I can just carry in Vegas.", reality: "Nevada official sources conflict. This app flags Nevada as VERIFY BEFORE TRAVEL until the active recognition list is confirmed." } ]
   ),
+  AL: makeProfile(
+    "Alabama",
+    "Law-Backed Ultra Expanded Travel State",
+    "Alabama is a common southern travel state and a useful state for members because it has permitless carry, optional permits, broad recognition of out-of-state permits, and important restrictions involving prohibited persons, schools, law enforcement facilities, courthouses, secure government buildings, private property, federal property, and defensive conduct. Alabama is generally permissive, but it is not rule-free.",
+    {
+      reciprocity: "Alabama recognizes any valid out-of-state permit under Alabama Code § 13A-11-85. Michigan CPL should be treated as recognized, but Alabama law controls while physically in Alabama.",
+      permitlessCarry: "Alabama Code § 13A-11-74.1: Alabama does not impose a general prohibition on carrying a pistol without a permit.",
+      concealedCarry: "Alabama allows permitless carry for eligible persons, but prohibited-person rules and location restrictions still apply.",
+      openCarry: "Open carry may be lawful for eligible persons, but restricted locations, disorderly conduct, private property, and police contact still matter.",
+      vehicleCarry: "Alabama permitless carry includes vehicle carry considerations, but federal property, schools, courthouses, and restricted premises remain separate issues.",
+      dutyToInform: "Verify current Alabama police-contact duties. Keep hands visible and answer lawful questions truthfully.",
+      privateSigns: "Private property owners may restrict firearms and require persons to leave.",
+      forceLaw: "Alabama self-defense law is fact-specific and does not excuse unlawful possession, unlawful carry, or reckless conduct."
+    },
+    [
+      "Alabama is generally permissive, but permitless carry does not mean carry anywhere.",
+      "Alabama recognizes valid out-of-state permits, but users must still follow Alabama law.",
+      "Schools, courthouses, law enforcement facilities, detention facilities, secure government buildings, federal property, and private property remain major warning areas.",
+      "A permit may still matter for reciprocity when leaving Alabama, documentation, and certain practical interactions.",
+      "Travelers should treat event venues, beaches, bars, stadiums, government property, and posted private locations as verify-first areas."
+    ],
+    [
+      {
+        title: "Permitless Carry / Carrying Without Permit",
+        risk: "Core Carry Rule",
+        body: [
+          "STATUTE: Alabama Code § 13A-11-74.1.",
+          "SUMMARY: Alabama law states that the availability of a pistol permit or recognition of a nonresident license does not impose a general prohibition on otherwise lawful carrying of a pistol without a permit.",
+          "GUIDANCE: Permitless carry only helps people who may lawfully possess and carry. Prohibited persons, restricted places, intoxication, criminal activity, and federal restrictions can still make carry unlawful."
+        ],
+        source: "Alabama Code § 13A-11-74.1."
+      },
+      {
+        title: "Optional Alabama Pistol Permit",
+        risk: "Permit / Reciprocity Context",
+        body: [
+          "STATUTE: Alabama Code § 13A-11-75.",
+          "SUMMARY: Alabama maintains an optional pistol permit system through county sheriffs.",
+          "GUIDANCE: Even in a permitless carry state, a permit can still matter for reciprocity outside Alabama, documentation, and proving permit status when traveling."
+        ],
+        source: "Alabama Code § 13A-11-75; Alabama Law Enforcement Agency gun laws guidance."
+      },
+      {
+        title: "Out-of-State Permit Recognition",
+        risk: "Travel Recognition Rule",
+        body: [
+          "STATUTE: Alabama Code § 13A-11-85.",
+          "SUMMARY: Alabama recognizes any valid permit or license issued by another state.",
+          "GUIDANCE: Michigan CPL should be treated as recognized in Alabama, but recognition does not override Alabama restricted places, federal law, or private property control."
+        ],
+        source: "Alabama Code § 13A-11-85; Alabama Law Enforcement Agency gun laws guidance."
+      },
+      {
+        title: "Prohibited Persons / Persons Forbidden to Possess",
+        risk: "Disqualification Risk",
+        body: [
+          "STATUTE: Alabama Code § 13A-11-72.",
+          "SUMMARY: Alabama law identifies categories of people prohibited from owning, possessing, or controlling pistols or firearms in certain circumstances.",
+          "GUIDANCE: Domestic violence issues, felony history, protection orders, mental health adjudications, pending cases, bond conditions, or federal prohibitions require legal review before possession or carry."
+        ],
+        source: "Alabama Code § 13A-11-72."
+      },
+      {
+        title: "Schools / K-12 Premises",
+        risk: "Extreme Risk Area",
+        body: [
+          "STATUTE: Alabama Code § 13A-11-72(d) and related school weapons framework.",
+          "SUMMARY: Alabama restricts possession of deadly weapons on school premises under statutory conditions and exceptions.",
+          "GUIDANCE: School buildings, buses, school property, events, pickup/drop-off, and athletic activities should be treated as verify-first areas. Do not assume permitless carry solves a school issue."
+        ],
+        source: "Alabama Code § 13A-11-72(d); Alabama school weapons framework."
+      },
+      {
+        title: "Courthouses / Court Facilities",
+        risk: "Hard Stop Area",
+        body: [
+          "STATUTE / SOURCE: Alabama court security and prohibited-location framework.",
+          "SUMMARY: Courthouses and court facilities are high-risk restricted locations and may be controlled by court order, security screening, and local facility rules.",
+          "GUIDANCE: Do not approach court security armed. Secure lawfully before arrival or do not bring the firearm."
+        ],
+        source: "Alabama court security/prohibited premises framework."
+      },
+      {
+        title: "Law Enforcement / Detention / Correctional Facilities",
+        risk: "Restricted Facility Risk",
+        body: [
+          "STATUTE / SOURCE: Alabama prohibited-location and correctional facility framework.",
+          "SUMMARY: Police stations, sheriff offices, jails, detention facilities, prisons, and correctional settings create serious legal and security risk.",
+          "GUIDANCE: Treat these locations as restricted unless a clear legal exception applies. Do not walk into a police or jail facility armed without verifying."
+        ],
+        source: "Alabama law enforcement/detention facility framework."
+      },
+      {
+        title: "Private Property / Posted Locations",
+        risk: "Property Control",
+        body: [
+          "STATUTE / SOURCE: Alabama property and trespass framework.",
+          "SUMMARY: Private property owners may restrict firearms and require a person to leave.",
+          "GUIDANCE: Posted businesses, event venues, churches, hotels, beaches, stadiums, and private properties should be respected. If asked to leave, leave immediately."
+        ],
+        source: "Alabama property/trespass framework."
+      },
+      {
+        title: "Vehicle Carry / Road Trip Issues",
+        risk: "Travel Carry Risk",
+        body: [
+          "STATUTE / SOURCE: Alabama Code § 13A-11-74.1; Alabama pistol carry framework.",
+          "SUMMARY: Alabama permitless carry reduces the old permit barrier for pistol carry, but vehicle carry still interacts with eligibility, location restrictions, officer safety, and federal property.",
+          "GUIDANCE: Keep hands visible during police contact, avoid reaching, answer lawful questions truthfully, and do not assume a vehicle cures a school, court, or federal property problem."
+        ],
+        source: "Alabama Code § 13A-11-74.1; Alabama firearm travel framework."
+      },
+      {
+        title: "Federal Property / Post Offices / Military Installations",
+        risk: "Federal Law Overlay",
+        body: [
+          "STATUTE / SOURCE: Federal facility, postal property, and military installation framework.",
+          "SUMMARY: Alabama carry permission does not override federal buildings, post offices, secure federal facilities, military bases, or federal court rules.",
+          "GUIDANCE: Check federal property separately. Military installations and federal facilities are not controlled by Alabama permitless carry."
+        ],
+        source: "Federal facility, postal property, and military installation framework."
+      },
+      {
+        title: "Use of Force / Self-Defense",
+        risk: "Fact-Specific Legal Risk",
+        body: [
+          "STATUTE / SOURCE: Alabama self-defense framework.",
+          "SUMMARY: Defensive force must be justified under Alabama law and the facts. Carry law does not decide whether force was lawful.",
+          "GUIDANCE: Avoid confrontation, call 911, identify evidence/witnesses when necessary, request counsel, and avoid detailed statements under stress."
+        ],
+        source: "Alabama self-defense law framework."
+      }
+    ],
+    [
+      {
+        title: "Alabama Carry Checklist",
+        steps: [
+          "1. Confirm legal eligibility to possess and carry.",
+          "2. Confirm Alabama recognition/permitless status under §§ 13A-11-74.1 and 13A-11-85.",
+          "3. Check schools under § 13A-11-72 and related rules.",
+          "4. Check courts, law enforcement facilities, and secure government buildings.",
+          "5. Check private property, hotels, beaches, stadiums, and event rules.",
+          "6. Check federal property and military installations separately."
+        ]
+      }
+    ],
+    [
+      {
+        title: "Gulf Coast / Vacation Travel",
+        summary: "Alabama travel often includes beaches, hotels, restaurants, events, alcohol, and vehicle storage.",
+        guidance: [
+          "Check hotel and venue policy.",
+          "Do not leave firearms unsecured in vehicles.",
+          "Check federal property and military-area rules.",
+          "Do not mix alcohol and carry."
+        ]
+      }
+    ],
+    [
+      "Assuming permitless carry means no prohibited places.",
+      "Ignoring school premises.",
+      "Ignoring federal property or military installations.",
+      "Arguing with private property/security staff.",
+      "Leaving firearms unsecured in vehicles during travel.",
+      "Assuming recognition overrides Alabama law."
+    ],
+    [
+      "Eligibility checked.",
+      "Permitless/recognition rule checked.",
+      "School property checked.",
+      "Court/government/law enforcement facilities checked.",
+      "Private property checked.",
+      "Federal/military property checked.",
+      "Vehicle storage plan ready."
+    ],
+    [
+      {
+        myth: "Alabama is permitless, so there are no restrictions.",
+        reality: "No. Permitless carry does not override prohibited persons, schools, courts, federal property, private property, or other restricted locations."
+      }
+    ]
+  ),
+
+  SC: makeProfile(
+    "South Carolina",
+    "Law-Backed Ultra Expanded Travel State",
+    "South Carolina is an important southern travel state because it recently adopted constitutional carry while still keeping significant location restrictions. South Carolina law no longer requires a CWP for ordinary carry by eligible persons, but firearms remain prohibited in many places, including schools, churches unless allowed, law enforcement and correctional facilities, medical procedure areas, courthouses, public buildings, and posted locations.",
+    {
+      reciprocity: "South Carolina should be treated as recognized/permitless for eligible Michigan travelers, but South Carolina law controls while physically in the state.",
+      permitlessCarry: "South Carolina constitutional carry took effect in 2024; eligible persons may carry without a CWP subject to restrictions.",
+      concealedCarry: "CWP is no longer required for ordinary eligible carry, but CWP remains useful for reciprocity/training and some legal contexts.",
+      openCarry: "Open carry is allowed for eligible persons, subject to prohibited locations and property restrictions.",
+      vehicleCarry: "Vehicle carry is generally more permissive after constitutional carry, but restricted places, private property, and officer safety still matter.",
+      dutyToInform: "SLED guidance states a CWP holder is not required to disclose CWP status to law enforcement under the new law.",
+      privateSigns: "S.C. Code § 23-31-235 controls signage requirements for premises where concealed weapons are prohibited.",
+      forceLaw: "South Carolina self-defense law is fact-specific and does not excuse unlawful carry or reckless display."
+    },
+    [
+      "South Carolina constitutional carry does not mean carry anywhere.",
+      "SLED specifically warns that firearms remain prohibited in many locations after constitutional carry.",
+      "Schools, churches, law enforcement facilities, correctional facilities, medical procedure areas, courthouses, public buildings, and posted locations need special caution.",
+      "A CWP may still matter for reciprocity when traveling outside South Carolina.",
+      "Private property and event security rules should be treated seriously."
+    ],
+    [
+      {
+        title: "Constitutional Carry / Permitless Carry",
+        risk: "Core Carry Rule",
+        body: [
+          "STATUTE / SOURCE: South Carolina constitutional carry law; SLED constitutional carry guidance.",
+          "SUMMARY: South Carolina no longer requires a CWP for ordinary eligible carry, but firearm restrictions still apply in many locations.",
+          "GUIDANCE: Do not teach South Carolina as ruleless. Eligible carry still requires location awareness and lawful conduct."
+        ],
+        source: "South Carolina Law Enforcement Division constitutional carry guidance."
+      },
+      {
+        title: "SLED Prohibited Location Warning",
+        risk: "Major Location Restriction",
+        body: [
+          "STATUTE / SOURCE: SLED constitutional carry guidance; S.C. Code Title 16 and Title 23 firearms framework.",
+          "SUMMARY: SLED states firearms are still prohibited in many locations, including schools, churches, law enforcement facilities, detention/correctional facilities, places where medical procedures are performed, courthouses, public buildings, and clearly marked places prohibiting firearms.",
+          "GUIDANCE: Treat these as high-risk verify-first locations before entering armed."
+        ],
+        source: "South Carolina Law Enforcement Division constitutional carry guidance."
+      },
+      {
+        title: "Carrying Weapon on School Property",
+        risk: "Extreme Risk Area",
+        body: [
+          "STATUTE: S.C. Code § 16-23-430.",
+          "SUMMARY: South Carolina law restricts carrying weapons on elementary or secondary school property, subject to statutory exceptions.",
+          "GUIDANCE: School buildings, school grounds, buses, parking lots, events, and student activities should be treated as verify-first areas."
+        ],
+        source: "S.C. Code § 16-23-430."
+      },
+      {
+        title: "Prohibited Locations / CWP Restrictions",
+        risk: "Location Restriction",
+        body: [
+          "STATUTE: S.C. Code § 23-31-215(M) and related 2024 changes.",
+          "SUMMARY: South Carolina law has historically identified locations where concealed weapons may not be carried, and 2024 guidance confirms many location restrictions remain.",
+          "GUIDANCE: Review schools, churches unless allowed, courthouses, public buildings, detention/correctional facilities, medical-procedure locations, and posted areas before entry."
+        ],
+        source: "S.C. Code § 23-31-215; SLED constitutional carry guidance."
+      },
+      {
+        title: "Places of Worship",
+        risk: "Permission Required",
+        body: [
+          "STATUTE / SOURCE: SLED constitutional carry guidance and South Carolina location-restriction framework.",
+          "SUMMARY: SLED lists churches among locations where firearms remain prohibited unless carry is allowed by the appropriate authority or exception.",
+          "GUIDANCE: Do not assume church carry is allowed. Verify with the governing authority or security policy."
+        ],
+        source: "SLED constitutional carry guidance; South Carolina location-restriction framework."
+      },
+      {
+        title: "Courthouses / Public Buildings",
+        risk: "Hard Stop Area",
+        body: [
+          "STATUTE / SOURCE: SLED guidance and South Carolina public building/court security framework.",
+          "SUMMARY: Courthouses and public buildings remain high-risk restricted locations under South Carolina law and policy.",
+          "GUIDANCE: Do not approach courthouse or public-building security armed unless a clear legal exception applies."
+        ],
+        source: "SLED constitutional carry guidance; South Carolina court/public building framework."
+      },
+      {
+        title: "Private Property / Signage",
+        risk: "Posted Premises Rule",
+        body: [
+          "STATUTE: S.C. Code § 23-31-235.",
+          "SUMMARY: South Carolina law specifies signage requirements for premises where concealed weapons are prohibited.",
+          "GUIDANCE: Posted signs and property-owner instructions should be followed. Leave immediately if asked."
+        ],
+        source: "S.C. Code § 23-31-235."
+      },
+      {
+        title: "Law Enforcement / Correctional Facilities",
+        risk: "Restricted Facility Risk",
+        body: [
+          "STATUTE / SOURCE: SLED constitutional carry guidance and South Carolina facility restrictions.",
+          "SUMMARY: SLED specifically lists law enforcement facilities, detention facilities, and correctional facilities as prohibited locations.",
+          "GUIDANCE: Do not enter police, jail, detention, or correctional facilities armed unless a clear exception applies."
+        ],
+        source: "SLED constitutional carry guidance."
+      },
+      {
+        title: "Medical Procedure Locations",
+        risk: "Healthcare Location Risk",
+        body: [
+          "STATUTE / SOURCE: SLED constitutional carry guidance.",
+          "SUMMARY: SLED includes places where medical procedures are performed among prohibited areas.",
+          "GUIDANCE: Hospitals, surgery centers, clinics, procedure areas, and medical campuses should be verified before entry."
+        ],
+        source: "SLED constitutional carry guidance."
+      },
+      {
+        title: "Federal Property / Post Offices / Military Bases",
+        risk: "Federal Law Overlay",
+        body: [
+          "STATUTE / SOURCE: Federal facility and postal property framework.",
+          "SUMMARY: South Carolina carry permission does not override federal buildings, post offices, secure federal facilities, or military installations.",
+          "GUIDANCE: Federal property must be checked separately from South Carolina law."
+        ],
+        source: "Federal facility, postal property, and military installation framework."
+      },
+      {
+        title: "Use of Force / Self-Defense",
+        risk: "Fact-Specific Legal Risk",
+        body: [
+          "STATUTE / SOURCE: South Carolina Protection of Persons and Property Act / self-defense framework.",
+          "SUMMARY: Defensive force must be justified under South Carolina law and the facts. Carry permission does not decide whether force was lawful.",
+          "GUIDANCE: Avoid confrontation, call 911, identify evidence/witnesses when necessary, request counsel, and avoid detailed statements under stress."
+        ],
+        source: "South Carolina self-defense law framework."
+      }
+    ],
+    [
+      {
+        title: "South Carolina Carry Checklist",
+        steps: [
+          "1. Confirm eligibility to possess and carry.",
+          "2. Confirm constitutional carry status and remaining location restrictions.",
+          "3. Check S.C. Code § 16-23-430 for school property.",
+          "4. Check churches, law enforcement, correctional facilities, medical-procedure locations, courthouses, and public buildings.",
+          "5. Check signs under § 23-31-235.",
+          "6. Check federal property separately."
+        ]
+      }
+    ],
+    [
+      {
+        title: "Myrtle Beach / Charleston Travel",
+        summary: "South Carolina travel often includes hotels, beaches, bars, churches, public events, medical facilities, and private security.",
+        guidance: [
+          "Check posted properties.",
+          "Do not carry into prohibited public buildings.",
+          "Avoid alcohol/carry combinations.",
+          "Follow private security instructions."
+        ]
+      }
+    ],
+    [
+      "Assuming constitutional carry means carry anywhere.",
+      "Ignoring SLED prohibited-location guidance.",
+      "Ignoring school property.",
+      "Ignoring churches and medical-procedure locations.",
+      "Ignoring posted private property signs.",
+      "Assuming federal property follows South Carolina law."
+    ],
+    [
+      "Eligibility checked.",
+      "SLED prohibited locations checked.",
+      "School property checked.",
+      "Church policy checked.",
+      "Medical/courthouse/public building checked.",
+      "Private signs checked.",
+      "Federal property checked."
+    ],
+    [
+      {
+        myth: "South Carolina constitutional carry means I can carry anywhere.",
+        reality: "No. SLED guidance makes clear that many locations remain prohibited even after constitutional carry."
+      }
+    ]
+  ),
+
+  VA: makeProfile(
+    "Virginia",
+    "Law-Backed Ultra Expanded Travel State",
+    "Virginia is a common travel state for Michigan CPL holders and has a recognized concealed handgun permit framework with permit reciprocity, strict school rules, public/capitol area restrictions, courthouse concerns, airport/secure-area issues, alcohol and restaurant issues, private property rules, and local government/event limitations. Virginia law controls while physically in Virginia.",
+    {
+      reciprocity: "Virginia recognizes out-of-state concealed handgun permits that meet Virginia statutory conditions under Va. Code § 18.2-308.014.",
+      permitlessCarry: "No general permitless concealed handgun carry. Concealed handgun carry generally requires a valid permit or statutory exception.",
+      concealedCarry: "Va. Code § 18.2-308 and Article 6.1 govern concealed weapons and permits.",
+      openCarry: "Open carry may be lawful in many circumstances, but local restrictions, schools, courthouses, private property, and public-event rules matter.",
+      vehicleCarry: "Vehicle carry must be analyzed under Virginia concealed-carry rules and exceptions.",
+      dutyToInform: "Virginia does not generally use Michigan-style automatic disclosure, but permit/ID must be displayed upon demand under reciprocity conditions.",
+      privateSigns: "Private property owners can restrict firearms and require persons to leave.",
+      forceLaw: "Virginia self-defense law is fact-specific and rooted substantially in case-law principles."
+    },
+    [
+      "Virginia recognizes out-of-state permits if statutory conditions are met, but the person must carry permit and photo ID and display them upon demand.",
+      "Virginia is not permitless concealed carry.",
+      "School property, courthouses, airport terminals/secure areas, capitol/government areas, and certain public events require careful review.",
+      "Open carry is not the same as lawful carry everywhere.",
+      "Private property, employer rules, and local ordinances can create separate consequences."
+    ],
+    [
+      {
+        title: "Concealed Carry Permit / Reciprocity",
+        risk: "Core Recognition Rule",
+        body: [
+          "STATUTE: Va. Code § 18.2-308.014.",
+          "SUMMARY: Virginia recognizes valid out-of-state concealed handgun permits if statutory conditions are satisfied, including permit and photo identification display upon demand and no prior Virginia permit revocation.",
+          "GUIDANCE: Michigan CPL holders should carry physical permit and government photo ID and be prepared to display them upon lawful demand."
+        ],
+        source: "Va. Code § 18.2-308.014."
+      },
+      {
+        title: "Concealed Weapons General Rule",
+        risk: "Core Carry Rule",
+        body: [
+          "STATUTE: Va. Code § 18.2-308.",
+          "SUMMARY: Virginia restricts carrying concealed weapons, including handguns, unless a permit or statutory exception applies.",
+          "GUIDANCE: Do not treat Virginia as permitless concealed carry. Verify permit recognition and carry documentation."
+        ],
+        source: "Va. Code § 18.2-308."
+      },
+      {
+        title: "Permit Must Be Carried / Displayed",
+        risk: "Documentation Requirement",
+        body: [
+          "STATUTE: Va. Code § 18.2-308.014 and Article 6.1 framework.",
+          "SUMMARY: Virginia’s reciprocity statute requires the permit holder to carry the permit/license and photo identification and display them upon demand by law enforcement.",
+          "GUIDANCE: Carry physical permit and photo ID. Do not rely on screenshots or memory."
+        ],
+        source: "Va. Code § 18.2-308.014."
+      },
+      {
+        title: "Schools / School Property",
+        risk: "Extreme Risk Area",
+        body: [
+          "STATUTE: Va. Code § 18.2-308.1.",
+          "SUMMARY: Virginia restricts possession of firearms and weapons on school property and school buses, subject to statutory exceptions.",
+          "GUIDANCE: Schools, school events, buses, parking areas, and activities should be treated as verify-first locations."
+        ],
+        source: "Va. Code § 18.2-308.1."
+      },
+      {
+        title: "Courthouses",
+        risk: "Hard Stop Area",
+        body: [
+          "STATUTE: Va. Code § 18.2-283.1.",
+          "SUMMARY: Virginia restricts weapons in courthouses and courtrooms, subject to exceptions.",
+          "GUIDANCE: Do not approach courthouse security armed. Plan lawful storage before arrival."
+        ],
+        source: "Va. Code § 18.2-283.1."
+      },
+      {
+        title: "Air Carrier Airport Terminal",
+        risk: "Airport / Transportation Risk",
+        body: [
+          "STATUTE: Va. Code § 18.2-287.01.",
+          "SUMMARY: Virginia restricts carrying weapons in air carrier airport terminals, subject to statutory details and exceptions.",
+          "GUIDANCE: Airport carry and airline checked transport are different. Know TSA/airline procedures before arrival."
+        ],
+        source: "Va. Code § 18.2-287.01."
+      },
+      {
+        title: "Capitol Square / Government Buildings / Local Events",
+        risk: "Government and Local Restriction Risk",
+        body: [
+          "STATUTE / SOURCE: Virginia state/local government firearms restrictions framework, including Va. Code § 15.2-915 authority in certain public spaces/events.",
+          "SUMMARY: Virginia allows certain local firearm restrictions in government buildings, parks, recreation/community centers, and permitted events under statutory limits.",
+          "GUIDANCE: Public buildings, city events, protests, parades, parks, and community centers should be checked before carrying."
+        ],
+        source: "Va. Code § 15.2-915; Virginia local firearms restrictions framework."
+      },
+      {
+        title: "Restaurants / Alcohol",
+        risk: "Alcohol Location Risk",
+        body: [
+          "STATUTE / SOURCE: Virginia concealed handgun and alcohol-related restrictions framework.",
+          "SUMMARY: Virginia has rules involving concealed handguns, alcohol consumption, and restaurants/clubs where alcohol is served.",
+          "GUIDANCE: If drinking is part of the plan, carrying should not be. Verify alcohol-related restrictions before entering bars, restaurants, clubs, stadiums, or events."
+        ],
+        source: "Virginia alcohol/firearm restrictions framework."
+      },
+      {
+        title: "Private Property / Posted Locations",
+        risk: "Property Control",
+        body: [
+          "STATUTE / SOURCE: Virginia property and trespass framework.",
+          "SUMMARY: Private property owners may restrict firearms and require a person to leave.",
+          "GUIDANCE: If posted or instructed to leave, leave immediately. Do not debate staff or security."
+        ],
+        source: "Virginia property/trespass framework."
+      },
+      {
+        title: "Federal Property / Post Offices / Military Installations",
+        risk: "Federal Law Overlay",
+        body: [
+          "STATUTE / SOURCE: Federal facility, postal property, and military installation framework.",
+          "SUMMARY: Virginia carry permission does not override federal property, military installation, federal courthouse, postal, or secure federal facility restrictions.",
+          "GUIDANCE: Federal property must be checked separately. Northern Virginia travel often involves federal facilities and secure government areas."
+        ],
+        source: "Federal facility, postal property, and military installation framework."
+      },
+      {
+        title: "Use of Force / Self-Defense",
+        risk: "Fact-Specific Legal Risk",
+        body: [
+          "STATUTE / SOURCE: Virginia self-defense case-law and statutory framework.",
+          "SUMMARY: Virginia self-defense is fact-specific and depends on reasonableness, fault, necessity, proportionality, and circumstances.",
+          "GUIDANCE: Avoid confrontation, disengage if safely possible, call 911, request counsel, and avoid detailed statements under stress."
+        ],
+        source: "Virginia self-defense law framework."
+      }
+    ],
+    [
+      {
+        title: "Virginia Carry Checklist",
+        steps: [
+          "1. Verify permit recognition under § 18.2-308.014.",
+          "2. Carry physical permit and government photo ID.",
+          "3. Check schools under § 18.2-308.1.",
+          "4. Check courthouses under § 18.2-283.1.",
+          "5. Check airports under § 18.2-287.01.",
+          "6. Check local government/event restrictions.",
+          "7. Check alcohol, private property, and federal property."
+        ]
+      }
+    ],
+    [
+      {
+        title: "Northern Virginia / DC Border Travel",
+        summary: "Virginia travel near DC creates major risk because federal property and DC law may be nearby.",
+        guidance: [
+          "Know whether you are in Virginia, DC, federal property, or private property.",
+          "Carry permit and photo ID.",
+          "Do not cross into DC armed without separate legal review.",
+          "Check federal buildings and parking areas."
+        ]
+      }
+    ],
+    [
+      "Assuming Virginia is permitless concealed carry.",
+      "Failing to carry permit and photo ID.",
+      "Ignoring schools, courthouses, airports, and government/event restrictions.",
+      "Crossing into DC accidentally while armed.",
+      "Ignoring private property and employer policies."
+    ],
+    [
+      "Permit recognition checked.",
+      "Permit and photo ID carried.",
+      "School property checked.",
+      "Courthouse/airport checked.",
+      "Local government/event rules checked.",
+      "Federal/DC boundary risks checked."
+    ],
+    [
+      {
+        myth: "Virginia honors my permit, so I can carry anywhere in Virginia.",
+        reality: "No. Permit recognition does not override schools, courthouses, airports, government/event restrictions, private property, federal property, or DC boundary risks."
+      }
+    ]
+  ),
+
+  MO: makeProfile(
+    "Missouri",
+    "Law-Backed Ultra Expanded Travel State",
+    "Missouri is a major Midwest travel state with permitless concealed carry for many eligible persons, but the state still maintains a detailed prohibited-location framework, local open-carry issues, school restrictions, court/government restrictions, private property signage, vehicle/employer rules, alcohol/event concerns, and self-defense considerations. Missouri is generally permissive but not unrestricted.",
+    {
+      reciprocity: "Missouri generally recognizes valid permits and also has permitless carry, but Missouri law controls while physically in Missouri.",
+      permitlessCarry: "Missouri has allowed permitless concealed carry for eligible persons since 2017, subject to prohibited locations and other laws.",
+      concealedCarry: "RSMo § 571.107 lists locations where concealed carry authorization does not apply.",
+      openCarry: "Open carry may be affected by local ordinances, especially for persons without a permit Missouri honors.",
+      vehicleCarry: "Missouri permitless carry and permit rules can apply in vehicles, but employer-owned vehicles and prohibited locations require review.",
+      dutyToInform: "Verify current Missouri police-contact rules. Keep hands visible and answer lawful questions truthfully.",
+      privateSigns: "RSMo § 571.107 includes private-property signage rules and vehicle-on-premises language.",
+      forceLaw: "Missouri self-defense law is fact-specific and does not excuse unlawful carry or reckless display."
+    },
+    [
+      "Missouri is permitless carry, but § 571.107 remains the core prohibited-location warning statute.",
+      "Private property signage has detailed rules, including vehicle-on-premises treatment.",
+      "Local open-carry restrictions may matter for persons without a valid permit recognized by Missouri.",
+      "Schools, courts, law enforcement facilities, polling places, government meetings, bars, hospitals, amusement parks, casinos, and churches require careful review.",
+      "Permitless carry does not mean no consequences."
+    ],
+    [
+      {
+        title: "Permitless Carry / Missouri Carry Framework",
+        risk: "Core Carry Rule",
+        body: [
+          "STATUTE / SOURCE: Missouri weapons statutes, including RSMo Chapter 571.",
+          "SUMMARY: Missouri allows permitless concealed carry for eligible persons, while still issuing permits for reciprocity and other purposes.",
+          "GUIDANCE: Permitless carry does not override prohibited places, private property signs, local open-carry rules, or prohibited-person laws."
+        ],
+        source: "RSMo Chapter 571; Missouri permitless carry framework."
+      },
+      {
+        title: "Prohibited Locations",
+        risk: "Major Location Restriction",
+        body: [
+          "STATUTE: RSMo § 571.107.",
+          "SUMMARY: Missouri law lists locations where concealed carry authorization does not apply, including law enforcement facilities, polling places, correctional facilities, courthouses, government meetings, schools, child care facilities, bars, airports, hospitals, amusement parks, churches, private posted property, stadiums/arenas, casinos, and higher education premises, subject to statutory details and exceptions.",
+          "GUIDANCE: Treat § 571.107 as the main Missouri location checklist before entering armed."
+        ],
+        source: "RSMo § 571.107."
+      },
+      {
+        title: "Private Property / Posted Locations",
+        risk: "Posted Property Rule",
+        body: [
+          "STATUTE: RSMo § 571.107(15).",
+          "SUMMARY: Missouri allows private property owners to post premises as off-limits to concealed firearms with signs meeting statutory requirements; the statute also addresses firearms in vehicles on posted premises.",
+          "GUIDANCE: If posted or asked to leave, leave immediately. Do not remove or brandish a firearm from a vehicle on posted premises."
+        ],
+        source: "RSMo § 571.107(15)."
+      },
+      {
+        title: "Schools / Child Care Facilities",
+        risk: "Extreme Risk Area",
+        body: [
+          "STATUTE: RSMo § 571.107 and Missouri school weapons framework.",
+          "SUMMARY: Missouri restricts carry in schools and child care facilities under § 571.107 and related laws, subject to statutory details and exceptions.",
+          "GUIDANCE: School buildings, grounds, buses, events, child care facilities, and parking areas should be treated as verify-first locations."
+        ],
+        source: "RSMo § 571.107; Missouri school weapons framework."
+      },
+      {
+        title: "Courts / Government Meetings / Polling Places",
+        risk: "Government Function Risk",
+        body: [
+          "STATUTE: RSMo § 571.107.",
+          "SUMMARY: Missouri restricts carry in courthouses, courtrooms, government meetings, and polling places under the prohibited-location framework.",
+          "GUIDANCE: Do not approach court security or polling places armed without checking current law and facility rules."
+        ],
+        source: "RSMo § 571.107."
+      },
+      {
+        title: "Law Enforcement / Correctional Facilities",
+        risk: "Restricted Facility Risk",
+        body: [
+          "STATUTE: RSMo § 571.107.",
+          "SUMMARY: Missouri restricts carry in police, sheriff, highway patrol, and correctional/detention facilities under the prohibited-location framework.",
+          "GUIDANCE: Treat police stations, jails, detention centers, and correctional facilities as restricted unless a clear exception applies."
+        ],
+        source: "RSMo § 571.107."
+      },
+      {
+        title: "Bars / Alcohol / Casinos / Amusement Parks",
+        risk: "Entertainment and Alcohol Risk",
+        body: [
+          "STATUTE: RSMo § 571.107.",
+          "SUMMARY: Missouri’s prohibited-location statute includes restrictions involving bars, amusement parks, gambling facilities, stadiums, and similar venues under statutory details.",
+          "GUIDANCE: Entertainment venues, casinos, stadiums, bars, and alcohol-centered locations should be checked carefully. Do not carry while impaired."
+        ],
+        source: "RSMo § 571.107."
+      },
+      {
+        title: "Open Carry / Local Ordinances",
+        risk: "Local Rule Risk",
+        body: [
+          "STATUTE / SOURCE: Missouri open carry and local ordinance framework.",
+          "SUMMARY: Missouri generally permits open carry, but local governments may restrict open carry for persons without a valid permit recognized by Missouri.",
+          "GUIDANCE: Do not assume open carry is uniformly accepted statewide. Check local ordinances, especially in cities and event areas."
+        ],
+        source: "Missouri local open-carry framework; RSMo Chapter 21/571 preemption framework."
+      },
+      {
+        title: "Vehicle Carry / Employer Vehicles",
+        risk: "Vehicle and Employment Risk",
+        body: [
+          "STATUTE: RSMo § 571.107 and Missouri vehicle/employer framework.",
+          "SUMMARY: Missouri law includes vehicle-related rules in the private-property subsection and allows employers to restrict firearms in employer-owned vehicles.",
+          "GUIDANCE: Company vehicles, job sites, posted premises, and customer locations should be checked separately from ordinary public carry."
+        ],
+        source: "RSMo § 571.107(15)."
+      },
+      {
+        title: "Federal Property / Post Offices",
+        risk: "Federal Law Overlay",
+        body: [
+          "STATUTE / SOURCE: Federal facility and postal property framework.",
+          "SUMMARY: Missouri carry permission does not override federal buildings, post offices, federal courthouses, or secure federal facilities.",
+          "GUIDANCE: Federal property must be checked separately from Missouri law."
+        ],
+        source: "Federal facility and postal property framework."
+      },
+      {
+        title: "Use of Force / Self-Defense",
+        risk: "Fact-Specific Legal Risk",
+        body: [
+          "STATUTE / SOURCE: Missouri self-defense framework.",
+          "SUMMARY: Defensive force must be justified under Missouri law and the facts. Permitless carry does not decide whether force was lawful.",
+          "GUIDANCE: Avoid confrontation, call 911, identify evidence/witnesses when necessary, request counsel, and avoid detailed statements under stress."
+        ],
+        source: "Missouri self-defense law framework."
+      }
+    ],
+    [
+      {
+        title: "Missouri Carry Checklist",
+        steps: [
+          "1. Confirm legal eligibility to possess and carry.",
+          "2. Check RSMo § 571.107 before entering any location.",
+          "3. Check posted property under § 571.107(15).",
+          "4. Check schools, child care, courts, government meetings, law enforcement facilities, and polling places.",
+          "5. Check bars, casinos, amusement parks, stadiums, hospitals, and churches.",
+          "6. Check local open carry rules and federal property."
+        ]
+      }
+    ],
+    [
+      {
+        title: "St. Louis / Kansas City Travel",
+        summary: "Large-city travel may involve local open-carry rules, stadiums, hospitals, casinos, bars, posted private property, and government buildings.",
+        guidance: [
+          "Check § 571.107.",
+          "Check local open carry rules.",
+          "Watch for posted premises.",
+          "Do not carry while impaired."
+        ]
+      }
+    ],
+    [
+      "Assuming permitless carry means no prohibited places.",
+      "Ignoring § 571.107.",
+      "Ignoring posted private property signs.",
+      "Ignoring local open carry ordinances.",
+      "Carrying into bars, casinos, stadiums, schools, courts, or government meetings without checking.",
+      "Assuming employer-owned vehicles are treated like personal vehicles."
+    ],
+    [
+      "Eligibility checked.",
+      "RSMo § 571.107 checked.",
+      "Private signs checked.",
+      "Local open carry checked.",
+      "School/court/government functions checked.",
+      "Federal property checked.",
+      "Vehicle/employer policy checked."
+    ],
+    [
+      {
+        myth: "Missouri permitless carry means I can carry anywhere.",
+        reality: "No. RSMo § 571.107 lists many prohibited/restricted locations and private property rules still apply."
+      }
+    ]
+  ),
+
+  IA: makeProfile(
+    "Iowa",
+    "Law-Backed Ultra Expanded Travel State",
+    "Iowa is a Midwest travel state with permitless carry for otherwise lawful persons, but it still has important restrictions involving schools, weapons-free zones, intoxication, minors, prohibited persons, permits for reciprocity, private property, state capitol rules, vehicles, and federal property. Iowa is permissive, but not consequence-free.",
+    {
+      reciprocity: "Iowa recognizes valid permits/licenses issued by other states for nonresidents under Iowa Code § 724.11A, and Iowa also has permitless carry under § 724.5.",
+      permitlessCarry: "Iowa Code § 724.5 states that permit availability shall not be construed to prohibit otherwise lawful unlicensed carrying or transport, openly or concealed, including a loaded firearm.",
+      concealedCarry: "Permitless carry exists for otherwise lawful persons, but prohibited places and disqualifications still apply.",
+      openCarry: "Open carry may be lawful for eligible persons, but state capitol rules, local/property rules, schools, and disorderly conduct concerns matter.",
+      vehicleCarry: "Iowa Code § 724.5 includes otherwise lawful unlicensed carrying or transport, including a loaded firearm, but other restrictions still apply.",
+      dutyToInform: "Iowa has a duty-to-cooperate statute in Iowa Code § 724.4D; keep hands visible and answer lawful questions truthfully.",
+      privateSigns: "Private property and trespass rules matter. Leave if asked.",
+      forceLaw: "Iowa self-defense law is fact-specific and does not excuse unlawful carry or reckless display."
+    },
+    [
+      "Iowa permitless carry took effect through 2021 law changes and is reflected in § 724.5.",
+      "Permitless carry applies only when the carry or transport is otherwise lawful.",
+      "Schools, weapons-free zones, intoxication, minors, and prohibited-person rules still matter.",
+      "Iowa permits remain useful for reciprocity outside Iowa and documentation.",
+      "State capitol, public buildings, posted private property, federal property, and event security should be checked separately."
+    ],
+    [
+      {
+        title: "Permitless Carry / Availability of Permit Not a Ban",
+        risk: "Core Carry Rule",
+        body: [
+          "STATUTE: Iowa Code § 724.5.",
+          "SUMMARY: Iowa law states that the availability of a professional or nonprofessional permit shall not be construed to impose a general prohibition on otherwise lawful unlicensed carrying or transport, whether openly or concealed, of a dangerous weapon, including a loaded firearm.",
+          "GUIDANCE: The key phrase is otherwise lawful. Permitless carry does not protect prohibited persons, restricted locations, intoxication, minors, or criminal conduct."
+        ],
+        source: "Iowa Code § 724.5; Iowa Department of Public Safety weapon permit guidance."
+      },
+      {
+        title: "Out-of-State Permit Recognition",
+        risk: "Travel Recognition Rule",
+        body: [
+          "STATUTE: Iowa Code § 724.11A.",
+          "SUMMARY: Iowa recognizes a valid permit or license issued by another state to a nonresident of Iowa, subject to Iowa law.",
+          "GUIDANCE: Michigan CPL should be treated as recognized for Iowa travel, but Iowa law controls while physically in Iowa."
+        ],
+        source: "Iowa Code § 724.11A."
+      },
+      {
+        title: "Nonprofessional Permit / Permit Still Useful",
+        risk: "Permit / Reciprocity Context",
+        body: [
+          "STATUTE: Iowa Code § 724.7; § 724.11.",
+          "SUMMARY: Iowa still issues nonprofessional permits to carry weapons even after permitless carry law changes.",
+          "GUIDANCE: A permit may matter for reciprocity outside Iowa, documentation, and certain federal or interstate issues."
+        ],
+        source: "Iowa Code §§ 724.7, 724.11; Iowa DPS weapon permits guidance."
+      },
+      {
+        title: "Carrying Firearms on School Grounds",
+        risk: "Extreme Risk Area",
+        body: [
+          "STATUTE: Iowa Code § 724.4B.",
+          "SUMMARY: Iowa law restricts carrying firearms on school grounds, subject to statutory exceptions.",
+          "GUIDANCE: School buildings, grounds, buses, parking areas, and events should be treated as verify-first areas. Do not assume permitless carry solves school issues."
+        ],
+        source: "Iowa Code § 724.4B."
+      },
+      {
+        title: "Weapons-Free Zones / Enhanced Penalties",
+        risk: "Enhanced Penalty Area",
+        body: [
+          "STATUTE: Iowa Code § 724.4A.",
+          "SUMMARY: Iowa law provides enhanced penalties for certain weapons offenses committed in weapons-free zones.",
+          "GUIDANCE: Schools and other designated areas can increase legal exposure even when the user thinks the underlying conduct is minor."
+        ],
+        source: "Iowa Code § 724.4A."
+      },
+      {
+        title: "Carrying While Under the Influence",
+        risk: "Intoxication Risk",
+        body: [
+          "STATUTE: Iowa Code § 724.4C.",
+          "SUMMARY: Iowa law addresses possession or carrying of dangerous weapons while under the influence.",
+          "GUIDANCE: If alcohol or drugs are part of the plan, carrying should not be part of the plan. Impairment can destroy an otherwise lawful carry situation."
+        ],
+        source: "Iowa Code § 724.4C."
+      },
+      {
+        title: "Duty to Cooperate / Police Contact",
+        risk: "Police Contact Risk",
+        body: [
+          "STATUTE: Iowa Code § 724.4D.",
+          "SUMMARY: Iowa law includes a duty-to-cooperate provision involving dangerous weapons and reasonable suspicion.",
+          "GUIDANCE: During police contact, keep hands visible, do not reach, and answer lawful questions truthfully. Do not argue roadside about the statute."
+        ],
+        source: "Iowa Code § 724.4D."
+      },
+      {
+        title: "Minors / Age Issues",
+        risk: "Age-Based Risk",
+        body: [
+          "STATUTE: Iowa Code § 724.4E and related age/prohibited person framework.",
+          "SUMMARY: Iowa law addresses possession of dangerous weapons and loaded firearms by minors and related restrictions.",
+          "GUIDANCE: Do not assume permitless carry applies the same to minors or younger adults. Verify age and eligibility."
+        ],
+        source: "Iowa Code § 724.4E."
+      },
+      {
+        title: "State Capitol / Government Buildings",
+        risk: "Government Facility Risk",
+        body: [
+          "STATUTE / SOURCE: Iowa state capitol and public-building firearms framework.",
+          "SUMMARY: Iowa government buildings, the capitol complex, and security-controlled public buildings may have special rules.",
+          "GUIDANCE: Treat capitol grounds, government buildings, courthouses, and public meetings as verify-first locations."
+        ],
+        source: "Iowa public-building/state capitol firearms framework."
+      },
+      {
+        title: "Private Property / Posted Locations",
+        risk: "Property Control",
+        body: [
+          "STATUTE / SOURCE: Iowa property and trespass framework.",
+          "SUMMARY: Private property owners can control access and require persons to leave.",
+          "GUIDANCE: If posted or asked to leave, leave immediately. Do not turn a carry question into a trespass or disorderly conduct issue."
+        ],
+        source: "Iowa property/trespass framework."
+      },
+      {
+        title: "Federal Property / Post Offices",
+        risk: "Federal Law Overlay",
+        body: [
+          "STATUTE / SOURCE: Federal facility and postal property framework.",
+          "SUMMARY: Iowa carry permission does not override federal buildings, post offices, federal courthouses, or secure federal facilities.",
+          "GUIDANCE: Federal property must be checked separately from Iowa law."
+        ],
+        source: "Federal facility and postal property framework."
+      },
+      {
+        title: "Use of Force / Self-Defense",
+        risk: "Fact-Specific Legal Risk",
+        body: [
+          "STATUTE / SOURCE: Iowa self-defense framework.",
+          "SUMMARY: Defensive force must be justified under Iowa law and the facts. Permitless carry does not decide whether force was lawful.",
+          "GUIDANCE: Avoid confrontation, call 911, identify evidence/witnesses when necessary, request counsel, and avoid detailed statements under stress."
+        ],
+        source: "Iowa self-defense law framework."
+      }
+    ],
+    [
+      {
+        title: "Iowa Carry Checklist",
+        steps: [
+          "1. Confirm the carry or transport is otherwise lawful under § 724.5.",
+          "2. Verify recognition under § 724.11A if relying on Michigan CPL.",
+          "3. Check school grounds under § 724.4B.",
+          "4. Check weapons-free zones under § 724.4A.",
+          "5. Check intoxication under § 724.4C.",
+          "6. Check police contact/duty to cooperate under § 724.4D.",
+          "7. Check private, government, and federal property."
+        ]
+      }
+    ],
+    [
+      {
+        title: "Iowa Road Trip / College Town",
+        summary: "Iowa travel can involve colleges, schools, state property, restaurants, and rural vehicle travel.",
+        guidance: [
+          "Check school grounds.",
+          "Check government/capitol rules.",
+          "Do not carry while impaired.",
+          "Treat college-town events as verify-first."
+        ]
+      }
+    ],
+    [
+      "Assuming otherwise lawful in § 724.5 means everything is allowed.",
+      "Ignoring school grounds under § 724.4B.",
+      "Ignoring intoxication under § 724.4C.",
+      "Ignoring weapons-free zone enhanced penalties.",
+      "Ignoring state capitol/government rules.",
+      "Assuming private property signs or instructions do not matter."
+    ],
+    [
+      "Eligibility checked.",
+      "§ 724.5 otherwise-lawful status checked.",
+      "School grounds checked.",
+      "Weapons-free zones checked.",
+      "Intoxication risk checked.",
+      "Private/government/federal property checked.",
+      "Police-contact behavior plan ready."
+    ],
+    [
+      {
+        myth: "Iowa permitless carry means I can carry anywhere.",
+        reality: "No. § 724.5 only protects otherwise lawful carry or transport. Schools, intoxication, weapons-free zones, prohibited persons, private property, and federal property still matter."
+      }
+    ]
+  ),
+
+  MN: makeProfile(
+    "Minnesota",
+    "Law-Backed Ultra Expanded Travel State",
+    "Minnesota is a high-priority Great Lakes travel state for Michigan CPL holders because it generally requires a valid permit to carry a pistol in public, has detailed school-property rules, police disclosure upon request, private-posted-premises rules, public-building/employer policy issues, vehicle transport rules without a permit, and strict caution around alcohol, federal property, parks, and government facilities.",
+    {
+      reciprocity: "Minnesota honors certain out-of-state permits only if listed by Minnesota. Michigan CPL recognition must be verified before travel.",
+      permitlessCarry: "No general permitless public pistol carry. Minnesota generally requires a valid permit to carry a pistol in public under Minn. Stat. § 624.714.",
+      concealedCarry: "Minnesota’s permit to carry applies to carrying a pistol; it is not limited to concealed carry.",
+      openCarry: "Open carry of a pistol in public generally requires a valid permit unless an exception applies.",
+      vehicleCarry: "Without a valid permit, Minnesota vehicle transport generally requires unloaded and properly cased/trunk transport under statutory exceptions.",
+      dutyToInform: "Minn. Stat. § 624.714 requires permit holders to disclose whether they are carrying if requested by a peace officer.",
+      privateSigns: "Minnesota has posted-premises rules under § 624.714 and private property/employer policy concerns.",
+      forceLaw: "Minnesota self-defense law is fact-specific and does not excuse unlawful carry."
+    },
+    [
+      "Minnesota is not permitless public pistol carry.",
+      "Out-of-state permit recognition must be checked against Minnesota’s current list.",
+      "A permit holder must disclose whether they are carrying if a peace officer requests it.",
+      "School property is a major statutory risk area.",
+      "Vehicle transport without a permit requires careful compliance."
+    ],
+    [
+      {
+        title: "Permit to Carry Requirement",
+        risk: "Core Carry Rule",
+        body: [
+          "STATUTE: Minn. Stat. § 624.714.",
+          "SUMMARY: Minnesota’s permit-to-carry statute governs who may carry a pistol in public and the process for obtaining a permit.",
+          "GUIDANCE: Do not treat Minnesota as permitless carry. Verify Michigan CPL recognition before travel and carry permit/ID documentation."
+        ],
+        source: "Minn. Stat. § 624.714."
+      },
+      {
+        title: "Out-of-State Permit Recognition",
+        risk: "Recognition List Risk",
+        body: [
+          "STATUTE / SOURCE: Minn. Stat. § 624.714 and Minnesota permit reciprocity framework.",
+          "SUMMARY: Minnesota honors out-of-state permits only when the state is recognized by Minnesota under its permit standards.",
+          "GUIDANCE: Verify current Minnesota reciprocity before travel. Do not assume Michigan CPL is honored without checking the active list."
+        ],
+        source: "Minn. Stat. § 624.714; Minnesota DPS/BCA permit reciprocity framework."
+      },
+      {
+        title: "Disclosure Upon Request by Peace Officer",
+        risk: "Police Contact Requirement",
+        body: [
+          "STATUTE: Minn. Stat. § 624.714, subd. 1b(d).",
+          "SUMMARY: Upon request of a peace officer, a permit holder shall disclose whether or not the permit holder is currently carrying a firearm.",
+          "GUIDANCE: Minnesota is not automatic Michigan-style disclosure, but if asked, answer truthfully. Keep hands visible and do not reach."
+        ],
+        source: "Minn. Stat. § 624.714, subd. 1b(d)."
+      },
+      {
+        title: "Permit / ID Display Upon Demand",
+        risk: "Documentation Requirement",
+        body: [
+          "STATUTE: Minn. Stat. § 624.714.",
+          "SUMMARY: Minnesota permit holders must comply with statutory permit/identification display requirements when lawfully demanded by a peace officer.",
+          "GUIDANCE: Carry physical permit and government photo ID. Do not rely on a screenshot."
+        ],
+        source: "Minn. Stat. § 624.714."
+      },
+      {
+        title: "Carrying Without a Permit / Exceptions",
+        risk: "Unlicensed Carry Risk",
+        body: [
+          "STATUTE: Minn. Stat. § 624.714, subd. 9 and related transport statutes.",
+          "SUMMARY: Minnesota has specific exceptions where a permit is not required, but these are limited and fact-specific.",
+          "GUIDANCE: Do not treat exceptions as a general carry right. Verify home/business, transport, hunting/range, and vehicle exceptions carefully."
+        ],
+        source: "Minn. Stat. § 624.714, subd. 9."
+      },
+      {
+        title: "School Property",
+        risk: "Extreme Risk Area",
+        body: [
+          "STATUTE: Minn. Stat. § 609.66, subd. 1d.",
+          "SUMMARY: Minnesota restricts possession, storage, and keeping of firearms while knowingly on school property, subject to statutory exceptions.",
+          "GUIDANCE: Schools, school parking areas, buses, events, and school-controlled property should be treated as verify-first areas."
+        ],
+        source: "Minn. Stat. § 609.66, subd. 1d."
+      },
+      {
+        title: "Vehicle Transport Without Permit",
+        risk: "Transport Trap",
+        body: [
+          "STATUTE / SOURCE: Minn. Stat. § 624.714, subd. 9; Minnesota transport framework.",
+          "SUMMARY: Without a valid permit, Minnesota transport rules generally require careful unloaded/cased/trunk or otherwise lawful transport methods depending on the facts.",
+          "GUIDANCE: If permit recognition is uncertain, do not carry loaded/accessible in a vehicle. Treat it as transport and verify the exact rule."
+        ],
+        source: "Minn. Stat. § 624.714, subd. 9; Minnesota transport law framework."
+      },
+      {
+        title: "Posted Private Establishments",
+        risk: "Posted Premises / Trespass Risk",
+        body: [
+          "STATUTE: Minn. Stat. § 624.714, subd. 17.",
+          "SUMMARY: Minnesota law addresses private establishments posting against firearms and the legal effect of notice and refusal to leave.",
+          "GUIDANCE: Posted signs and direct instructions should be followed. If asked to leave, leave immediately."
+        ],
+        source: "Minn. Stat. § 624.714, subd. 17."
+      },
+      {
+        title: "Employer Policies / Public Employers",
+        risk: "Employment and Policy Risk",
+        body: [
+          "STATUTE: Minn. Stat. § 624.714, subd. 18.",
+          "SUMMARY: Minnesota law addresses employer policies restricting carry or possession by employees while acting in the course and scope of employment.",
+          "GUIDANCE: Criminal carry legality and employment consequences are separate. Company vehicles, job sites, and government employment settings require separate review."
+        ],
+        source: "Minn. Stat. § 624.714, subd. 18."
+      },
+      {
+        title: "State Colleges / Universities",
+        risk: "Campus Policy Risk",
+        body: [
+          "STATUTE / SOURCE: Minn. Stat. § 624.714 and Minnesota State Colleges and Universities policy framework.",
+          "SUMMARY: Minnesota campus carry can involve state law, institutional policy, employment status, dormitory/residence issues, and event security.",
+          "GUIDANCE: Do not assume a permit allows carry everywhere on campus. Verify the institution and location."
+        ],
+        source: "Minn. Stat. § 624.714; Minnesota State 5.21 firearms policy framework."
+      },
+      {
+        title: "Alcohol / Impairment",
+        risk: "Impairment Risk",
+        body: [
+          "STATUTE / SOURCE: Minnesota weapons and impairment framework.",
+          "SUMMARY: Carrying while impaired creates legal, tactical, and evidentiary risk.",
+          "GUIDANCE: If drinking or impairment is part of the plan, carrying should not be. Bars, restaurants, stadiums, and festivals should also be checked for posted rules."
+        ],
+        source: "Minnesota weapons/intoxication framework."
+      },
+      {
+        title: "Federal Property / Post Offices / Public Land",
+        risk: "Federal/Public Land Overlay",
+        body: [
+          "STATUTE / SOURCE: Federal facility, postal property, and public land framework.",
+          "SUMMARY: Minnesota carry permission does not override federal buildings, post offices, federal courthouses, secure federal facilities, or federal land/building rules.",
+          "GUIDANCE: Check federal property separately. National parks/forests and federal buildings are not the same analysis."
+        ],
+        source: "Federal facility, postal property, and public land framework."
+      },
+      {
+        title: "Use of Force / Self-Defense",
+        risk: "Fact-Specific Legal Risk",
+        body: [
+          "STATUTE / SOURCE: Minnesota self-defense framework.",
+          "SUMMARY: Defensive force must be justified under Minnesota law and the facts. A permit to carry does not decide whether force was lawful.",
+          "GUIDANCE: Avoid confrontation, disengage when safe, call 911, identify evidence/witnesses when necessary, request counsel, and avoid detailed statements under stress."
+        ],
+        source: "Minnesota self-defense law framework."
+      }
+    ],
+    [
+      {
+        title: "Minnesota Carry Checklist",
+        steps: [
+          "1. Verify Michigan CPL recognition on Minnesota’s current list.",
+          "2. Carry permit and government photo ID.",
+          "3. Know disclosure upon request under § 624.714.",
+          "4. Check school property under § 609.66, subd. 1d.",
+          "5. Check posted premises under § 624.714, subd. 17.",
+          "6. Check employer/campus/public building policies.",
+          "7. If recognition is uncertain, use lawful transport rules instead of carry."
+        ]
+      }
+    ],
+    [
+      {
+        title: "Minnesota Road Trip / Twin Cities Visit",
+        summary: "Minnesota travel often involves schools, campuses, public buildings, posted businesses, stadiums, restaurants, and federal/public land.",
+        guidance: [
+          "Verify reciprocity first.",
+          "Know the disclosure-upon-request rule.",
+          "Check posted premises and schools.",
+          "Do not assume vehicle carry is lawful without a recognized permit."
+        ]
+      }
+    ],
+    [
+      "Assuming Minnesota is permitless carry.",
+      "Assuming Michigan CPL is honored without checking Minnesota’s current list.",
+      "Failing to disclose when asked by a peace officer.",
+      "Ignoring school property under § 609.66.",
+      "Ignoring posted premises under § 624.714.",
+      "Ignoring vehicle transport rules if permit recognition is uncertain.",
+      "Assuming campus/employer policies do not matter."
+    ],
+    [
+      "Recognition checked.",
+      "Permit and ID carried.",
+      "Disclosure-upon-request rule understood.",
+      "School property checked.",
+      "Vehicle transport checked.",
+      "Posted premises checked.",
+      "Campus/employer/federal property checked."
+    ],
+    [
+      {
+        myth: "Minnesota is close to Michigan, so my CPL should be fine everywhere.",
+        reality: "No. Minnesota uses its own permit recognition rules and has specific disclosure, school, posted-premises, and transport requirements."
+      }
+    ]
+  ),
+
+
+  AZ: makeProfile(
+    "Arizona",
+    "Law-Backed Ultra Expanded Travel State",
+    "Arizona is a high-priority western travel state with broad lawful carry for eligible adults and a state concealed weapons permit program. Arizona is generally permitless for adults who may lawfully possess and carry, but members must understand age limits, police-contact truthfulness, school grounds, alcohol-serving establishments, polling places, prohibited possessors, tribal/federal property, vehicle carry, and defensive display risk.",
+    {
+      reciprocity: "Michigan CPL should be verified before travel, but Arizona generally recognizes valid permits and also has permitless carry for eligible adults.",
+      permitlessCarry: "A.R.S. § 13-3102 is the main misconduct-involving-weapons statute. Arizona broadly permits carry for eligible adults, with restrictions and age limits.",
+      concealedCarry: "A.R.S. § 13-3102 and § 13-3112: Arizona issues concealed weapons permits, but eligible adults may have permitless carry authority subject to restrictions.",
+      openCarry: "Open carry is generally lawful for eligible adults, but restricted places, tribal/federal property, private property, and police-contact issues still matter.",
+      vehicleCarry: "A.R.S. § 13-3102 addresses concealed weapons within immediate control in or on a means of transportation and includes important police-contact requirements.",
+      dutyToInform: "Arizona requires accurate answer if a law enforcement officer asks whether the person is carrying a concealed deadly weapon.",
+      privateSigns: "Private property owners may restrict firearms and ask a person to leave. Posted alcohol establishments require special caution.",
+      forceLaw: "Arizona self-defense law is fact-specific. Defensive force must be legally justified by the circumstances."
+    },
+    [
+      "Arizona is permissive, but not rule-free.",
+      "A.R.S. § 13-3102 is a core statute for prohibited conduct, including concealed carry issues, vehicle-related issues, and answering law enforcement accurately when asked.",
+      "Arizona schools, alcohol-serving establishments, polling places, federal property, tribal lands, and private property can create carry restrictions.",
+      "Arizona travel often involves tribal land, national parks, federal facilities, border areas, and desert recreation; each may change the legal analysis.",
+      "Do not assume permitless carry means carry anywhere or ignore posted property."
+    ],
+    [
+      {
+        title: "Permitless Carry / Concealed Weapons Framework",
+        risk: "Core Carry Rule",
+        body: [
+          "STATUTE: A.R.S. § 13-3102; A.R.S. § 13-3112.",
+          "SUMMARY: Arizona broadly allows eligible adults to carry, and Arizona also maintains a concealed weapons permit program under § 13-3112.",
+          "GUIDANCE: Permitless carry does not apply to prohibited possessors, underage persons, restricted locations, tribal/federal property, or situations involving unlawful conduct."
+        ],
+        source: "A.R.S. § 13-3102; A.R.S. § 13-3112; Arizona DPS concealed weapons permit program."
+      },
+      {
+        title: "Police Contact / Accurate Answer Requirement",
+        risk: "Officer Contact Risk",
+        body: [
+          "STATUTE: A.R.S. § 13-3102.",
+          "SUMMARY: Arizona law includes misconduct for failing to accurately answer a law enforcement officer if asked whether the person is carrying a concealed deadly weapon.",
+          "GUIDANCE: If asked, answer truthfully and calmly. Keep hands visible and do not reach. Recommended wording: Officer, I am lawfully carrying. How would you like me to proceed?"
+        ],
+        source: "A.R.S. § 13-3102."
+      },
+      {
+        title: "Under 21 Concealed Carry Risk",
+        risk: "Age-Based Restriction",
+        body: [
+          "STATUTE: A.R.S. § 13-3102.",
+          "SUMMARY: Arizona's misconduct statute includes restrictions involving persons under 21 carrying concealed deadly weapons on the person or within immediate control in or on transportation, subject to statutory details and exceptions.",
+          "GUIDANCE: Do not assume an 18–20-year-old can concealed carry in Arizona the same way a 21+ eligible adult can."
+        ],
+        source: "A.R.S. § 13-3102."
+      },
+      {
+        title: "School Grounds",
+        risk: "Extreme Risk Area",
+        body: [
+          "STATUTE: A.R.S. § 13-3102.",
+          "SUMMARY: Arizona law restricts firearms on school grounds, subject to statutory exceptions.",
+          "GUIDANCE: School buildings, parking areas, school events, and pickup/drop-off situations should be treated as verify-first locations."
+        ],
+        source: "A.R.S. § 13-3102."
+      },
+      {
+        title: "Alcohol-Serving Establishments",
+        risk: "Posted Premises / Alcohol Risk",
+        body: [
+          "STATUTE: A.R.S. § 13-3102; Arizona liquor/firearms framework.",
+          "SUMMARY: Arizona law includes restrictions involving firearms in establishments licensed to serve alcohol and specific treatment of posted premises and permit holders.",
+          "GUIDANCE: Bars, restaurants, breweries, events, and posted alcohol establishments require careful checking. Do not consume alcohol while carrying."
+        ],
+        source: "A.R.S. § 13-3102; Arizona liquor/firearms framework."
+      },
+      {
+        title: "Polling Places and Public Events",
+        risk: "Election / Public Gathering Risk",
+        body: [
+          "STATUTE: A.R.S. § 13-3102 and Arizona election/public-place framework.",
+          "SUMMARY: Arizona law includes restrictions related to polling places on election day and certain public locations or events.",
+          "GUIDANCE: Voting locations, government-controlled event spaces, and security-screened public events should be checked before entering armed."
+        ],
+        source: "A.R.S. § 13-3102; Arizona election/public-place framework."
+      },
+      {
+        title: "Tribal Land / Federal Property",
+        risk: "Separate Sovereign / Federal Overlay",
+        body: [
+          "STATUTE / SOURCE: Tribal law and federal facility framework.",
+          "SUMMARY: Arizona state carry permission does not automatically control tribal land, federal buildings, post offices, federal courthouses, military installations, or secure federal facilities.",
+          "GUIDANCE: Arizona travel often crosses tribal land and federal land. Verify the specific jurisdiction before carrying."
+        ],
+        source: "Tribal law; federal facility and postal property framework."
+      },
+      {
+        title: "Vehicle Carry",
+        risk: "Vehicle / Police Contact Risk",
+        body: [
+          "STATUTE: A.R.S. § 13-3102.",
+          "SUMMARY: Arizona law addresses concealed weapons within immediate control in or on a means of transportation, including age and police-contact issues.",
+          "GUIDANCE: Keep hands visible during traffic stops, answer accurately if asked, and do not reach for documents near a firearm without instruction."
+        ],
+        source: "A.R.S. § 13-3102."
+      },
+      {
+        title: "Prohibited Possessors",
+        risk: "Disqualification Risk",
+        body: [
+          "STATUTE / SOURCE: A.R.S. § 13-3101; A.R.S. § 13-3102.",
+          "SUMMARY: Arizona law defines prohibited possessors and criminalizes certain weapons conduct by disqualified persons.",
+          "GUIDANCE: Court orders, felony history, domestic violence issues, mental health restrictions, drug-related disqualifiers, and federal prohibitions must be checked before carrying."
+        ],
+        source: "A.R.S. § 13-3101; A.R.S. § 13-3102."
+      },
+      {
+        title: "Use of Force / Defensive Display",
+        risk: "Fact-Specific Legal Risk",
+        body: [
+          "STATUTE / SOURCE: Arizona justification and criminal-threat framework.",
+          "SUMMARY: Defensive force and defensive display must be justified by the facts; displaying to intimidate or win an argument can create criminal exposure.",
+          "GUIDANCE: If a defensive display was necessary due to an immediate threat, call 911 first, identify the threat, identify evidence and witnesses, request counsel, and avoid long statements."
+        ],
+        source: "Arizona justification law framework; Prime Defense aftermath protocol."
+      }
+    ],
+    [
+      {
+        title: "Arizona Carry Checklist",
+        steps: [
+          "1. Confirm eligibility and age.",
+          "2. Check A.R.S. § 13-3102 restricted conduct.",
+          "3. Check school grounds.",
+          "4. Check alcohol-serving/posting rules.",
+          "5. Check tribal and federal property separately.",
+          "6. Know the accurate-answer rule for police contact.",
+          "7. Verify vehicle carry before travel."
+        ]
+      }
+    ],
+    [
+      {
+        title: "Traffic Stop in Arizona",
+        summary: "Arizona requires accurate answers if law enforcement asks about a concealed deadly weapon.",
+        guidance: [
+          "Keep hands visible.",
+          "Do not reach.",
+          "Answer accurately if asked.",
+          "Ask how the officer wants you to proceed."
+        ]
+      },
+      {
+        title: "Restaurant or Bar",
+        summary: "Arizona alcohol-serving establishments can involve posting and permit-related rules.",
+        guidance: [
+          "Check for signs.",
+          "Do not drink while armed.",
+          "Leave if asked.",
+          "Do not assume permitless carry solves alcohol-location issues."
+        ]
+      }
+    ],
+    [
+      "Assuming Arizona permitless carry means carry anywhere.",
+      "Failing to answer accurately if asked by law enforcement.",
+      "Ignoring school grounds.",
+      "Ignoring posted alcohol establishments.",
+      "Assuming Arizona law controls tribal land or federal property.",
+      "Assuming an 18–20-year-old may concealed carry the same as a 21+ adult."
+    ],
+    [
+      "Eligibility and age checked.",
+      "A.R.S. § 13-3102 checked.",
+      "School grounds checked.",
+      "Alcohol/posting rules checked.",
+      "Tribal/federal property checked.",
+      "Police-contact script ready."
+    ],
+    [
+      {
+        myth: "Arizona is permitless, so there are no restrictions.",
+        reality: "No. Arizona still has restricted places, age issues, prohibited-person rules, alcohol-location rules, tribal/federal overlays, and police-contact requirements."
+      }
+    ]
+  ),
+
+  CO: makeProfile(
+    "Colorado",
+    "Law-Backed Ultra Expanded Travel State",
+    "Colorado is a high-priority western travel state with a concealed handgun permit system, resident-permit reciprocity limitations, school and college restrictions, magazine limits, and increasing local-law complexity. Michigan travelers must understand that Colorado is not permitless concealed carry and that local restrictions may exist in addition to state law.",
+    {
+      reciprocity: "Colorado reciprocity must be verified carefully. Colorado generally honors only resident permits from states with reciprocity agreements.",
+      permitlessCarry: "No general permitless concealed carry. C.R.S. § 18-12-105 restricts carrying concealed without legal authority.",
+      concealedCarry: "Colorado concealed handgun permits are governed by C.R.S. § 18-12-203 and related sections; reciprocity is limited.",
+      openCarry: "Open carry may be lawful in many areas, but local restrictions, Denver-area issues, schools, government buildings, and private property matter.",
+      vehicleCarry: "Vehicle carry must be analyzed under Colorado concealed/open carry and local-law framework.",
+      dutyToInform: "Verify current Colorado police-contact rules. Keep hands visible and answer lawful questions truthfully.",
+      privateSigns: "Private property and local rules can restrict carry. Leave immediately if asked.",
+      forceLaw: "Colorado self-defense is fact-specific and must be legally justified."
+    },
+    [
+      "Colorado is not permitless concealed carry.",
+      "Colorado reciprocity is more limited than many states and may depend on resident permits.",
+      "Schools, colleges/universities, public buildings, polling places, private property, and federal lands require separate review.",
+      "Colorado has magazine capacity restrictions under state law.",
+      "Local ordinances can create traps, especially for travelers who assume statewide uniformity."
+    ],
+    [
+      {
+        title: "Concealed Carry Without Permit",
+        risk: "Core Carry Rule",
+        body: [
+          "STATUTE: C.R.S. § 18-12-105.",
+          "SUMMARY: Colorado law restricts carrying a concealed weapon without legal authority.",
+          "GUIDANCE: Do not treat Colorado as permitless concealed carry. Verify Michigan CPL recognition and whether Colorado honors the user’s specific permit."
+        ],
+        source: "C.R.S. § 18-12-105."
+      },
+      {
+        title: "Colorado Permit / Reciprocity Framework",
+        risk: "Recognition Risk",
+        body: [
+          "STATUTE / SOURCE: C.R.S. § 18-12-203; Colorado Bureau of Investigation reciprocity guidance.",
+          "SUMMARY: Colorado maintains a concealed handgun permit framework and generally honors resident permits from states with reciprocity agreements.",
+          "GUIDANCE: Michigan travelers should verify recognition before travel and should not assume nonresident permits are honored."
+        ],
+        source: "C.R.S. § 18-12-203; Colorado CBI reciprocity guidance."
+      },
+      {
+        title: "Schools / Colleges / Universities",
+        risk: "Extreme Risk Area",
+        body: [
+          "STATUTE: C.R.S. § 18-12-105.5.",
+          "SUMMARY: Colorado restricts unlawfully carrying or possessing weapons on school, college, or university grounds, subject to statutory exceptions.",
+          "GUIDANCE: K-12 schools, colleges, universities, campus buildings, events, and parking areas require careful review before carrying."
+        ],
+        source: "C.R.S. § 18-12-105.5."
+      },
+      {
+        title: "Local Restrictions / Denver Warning",
+        risk: "Local Law Risk",
+        body: [
+          "STATUTE / SOURCE: Colorado state and local firearms regulation framework.",
+          "SUMMARY: Colorado has local-law complexity, and certain municipalities may regulate aspects of firearms possession or carry.",
+          "GUIDANCE: Treat Denver and other local jurisdictions as verify-first areas. Do not assume statewide rules are the only rules."
+        ],
+        source: "Colorado local firearms regulation framework."
+      },
+      {
+        title: "Magazine Capacity Restriction",
+        risk: "Equipment Risk",
+        body: [
+          "STATUTE: C.R.S. § 18-12-302.",
+          "SUMMARY: Colorado restricts large-capacity magazines under state law.",
+          "GUIDANCE: Check magazine capacity before travel. Equipment legal in Michigan may create risk in Colorado."
+        ],
+        source: "C.R.S. § 18-12-302."
+      },
+      {
+        title: "Vehicle Carry",
+        risk: "Vehicle / Local Law Risk",
+        body: [
+          "STATUTE / SOURCE: C.R.S. § 18-12-105 and Colorado vehicle/open carry framework.",
+          "SUMMARY: Colorado vehicle carry can differ depending on whether the firearm is concealed, loaded, carried on the person, or stored in the vehicle.",
+          "GUIDANCE: Verify vehicle carry before travel, especially if entering Denver or local jurisdictions with special rules."
+        ],
+        source: "C.R.S. § 18-12-105; Colorado firearms transport framework."
+      },
+      {
+        title: "Public Buildings / Security Screening",
+        risk: "Government Facility Risk",
+        body: [
+          "STATUTE / SOURCE: Colorado restricted-location and public-building framework.",
+          "SUMMARY: Public buildings, government facilities, courthouses, and security-screened locations may restrict firearms.",
+          "GUIDANCE: Do not approach screening armed. Verify before entering any government building, court facility, or posted public property."
+        ],
+        source: "Colorado public-building firearms framework."
+      },
+      {
+        title: "Federal Land / National Parks",
+        risk: "Federal Overlay",
+        body: [
+          "STATUTE / SOURCE: Federal facility and public lands framework.",
+          "SUMMARY: Colorado has extensive federal land; state carry permission does not override federal buildings, visitor centers, federal courthouses, post offices, or secure facilities.",
+          "GUIDANCE: Distinguish outdoor land rules from federal buildings and visitor centers."
+        ],
+        source: "Federal facility and public lands framework."
+      },
+      {
+        title: "Private Property / Posted Locations",
+        risk: "Property Control",
+        body: [
+          "STATUTE / SOURCE: Colorado property/trespass framework.",
+          "SUMMARY: Private property owners may restrict firearms and require people to leave.",
+          "GUIDANCE: Posted signs and staff/security instructions should be followed immediately."
+        ],
+        source: "Colorado property/trespass framework."
+      },
+      {
+        title: "Use of Force / Self-Defense",
+        risk: "Fact-Specific Legal Risk",
+        body: [
+          "STATUTE / SOURCE: Colorado self-defense and defense-of-premises framework.",
+          "SUMMARY: Colorado defensive force law is fact-specific and depends on reasonableness, necessity, and the circumstances.",
+          "GUIDANCE: Avoid escalation, disengage when safely possible, call 911, identify evidence/witnesses, request counsel, and avoid detailed statements under stress."
+        ],
+        source: "Colorado self-defense law framework."
+      }
+    ],
+    [
+      {
+        title: "Colorado Carry Checklist",
+        steps: [
+          "1. Verify Colorado honors the permit being used.",
+          "2. Check C.R.S. § 18-12-105 concealed carry restrictions.",
+          "3. Check C.R.S. § 18-12-105.5 schools/colleges.",
+          "4. Check magazine capacity under § 18-12-302.",
+          "5. Check Denver/local restrictions.",
+          "6. Check federal property and national park buildings separately.",
+          "7. Check vehicle carry before travel."
+        ]
+      }
+    ],
+    [
+      {
+        title: "Colorado Road Trip",
+        summary: "Colorado travel often involves Denver, mountain towns, national parks, college campuses, and local ordinances.",
+        guidance: [
+          "Verify reciprocity before entering.",
+          "Check magazine capacity.",
+          "Check Denver/local restrictions.",
+          "Separate outdoor public land from federal buildings."
+        ]
+      }
+    ],
+    [
+      "Assuming Colorado is permitless concealed carry.",
+      "Ignoring resident-permit reciprocity limitations.",
+      "Ignoring Denver/local rules.",
+      "Ignoring magazine capacity limits.",
+      "Ignoring schools/college grounds.",
+      "Assuming national park land equals federal building permission."
+    ],
+    [
+      "Reciprocity checked.",
+      "Concealed carry statute checked.",
+      "Schools/colleges checked.",
+      "Magazine capacity checked.",
+      "Denver/local law checked.",
+      "Federal property checked."
+    ],
+    [
+      {
+        myth: "Colorado is western and gun-friendly, so my permit automatically works everywhere.",
+        reality: "No. Colorado has permit recognition limits, local-law issues, school restrictions, and magazine restrictions."
+      }
+    ]
+  ),
+
+  UT: makeProfile(
+    "Utah",
+    "Law-Backed Ultra Expanded Travel State",
+    "Utah is a high-priority western travel state with permitless carry for qualifying adults and a well-known concealed firearm permit system. Utah is generally friendly to lawful carry, but users must understand age rules, loaded firearm rules, school premises, secure areas, churches/places of worship, private property, vehicles, federal property, and use-of-force realities.",
+    {
+      reciprocity: "Utah generally recognizes permits and also allows permitless concealed carry for qualifying adults, but Utah law controls while physically in Utah.",
+      permitlessCarry: "Utah allows permitless carry for qualifying adults, but age, loaded firearm, school, secure-area, and restricted-person rules still apply.",
+      concealedCarry: "Utah concealed firearm permits are governed by Utah Code Title 53, Chapter 5, Part 7, and carry rules are in Utah Code Title 76, Chapter 10.",
+      openCarry: "Open carry may be lawful in many circumstances, but loaded/unloaded status, vehicles, schools, secure areas, and private property matter.",
+      vehicleCarry: "Utah Code § 76-10-505 addresses loaded firearms in vehicles and on streets, with exceptions for vehicle possession/consent.",
+      dutyToInform: "Verify current Utah police-contact rules. Keep hands visible and answer lawful questions truthfully.",
+      privateSigns: "Private property and posted/restricted locations can matter. Leave if asked.",
+      forceLaw: "Utah self-defense law is fact-specific and must be legally justified."
+    },
+    [
+      "Utah is permissive, but not rule-free.",
+      "Loaded firearm rules, school premises, secure areas, and restricted-person laws are key Utah issues.",
+      "Utah permits can still matter for reciprocity and for exceptions in certain contexts.",
+      "Outdoor recreation, national parks, federal buildings, churches, and universities require separate review.",
+      "Do not assume permitless carry eliminates location restrictions."
+    ],
+    [
+      {
+        title: "Permitless Carry / Concealed Firearm Framework",
+        risk: "Core Carry Rule",
+        body: [
+          "STATUTE / SOURCE: Utah Code Title 76, Chapter 10; Utah Concealed Firearm Act framework.",
+          "SUMMARY: Utah allows permitless carry for qualifying adults, while still issuing concealed firearm permits for reciprocity and other legal advantages.",
+          "GUIDANCE: Confirm age, eligibility, restricted-person status, location, loaded status, and whether a permit creates an exception in the specific context."
+        ],
+        source: "Utah Code Title 76, Chapter 10; Utah Code Title 53, Chapter 5, Part 7."
+      },
+      {
+        title: "Loaded Firearm in Vehicle or on Street",
+        risk: "Vehicle / Loaded Carry Rule",
+        body: [
+          "STATUTE: Utah Code § 76-10-505.",
+          "SUMMARY: Utah law regulates carrying loaded firearms in or on vehicles and on streets, with statutory exceptions including lawful possession/consent of the vehicle.",
+          "GUIDANCE: Vehicle carry is not just a concealed carry question. Verify loaded status and vehicle authority before relying on permitless carry."
+        ],
+        source: "Utah Code § 76-10-505."
+      },
+      {
+        title: "School Premises",
+        risk: "Extreme Risk Area",
+        body: [
+          "STATUTE: Utah Code § 76-10-505.5.",
+          "SUMMARY: Utah law restricts dangerous weapons and firearms on or about school premises, subject to statutory exceptions.",
+          "GUIDANCE: K-12 schools, higher education, school grounds, events, and parking areas require careful review. Do not assume permitless carry solves school premises."
+        ],
+        source: "Utah Code § 76-10-505.5."
+      },
+      {
+        title: "Persons Exempt / Permit Advantages",
+        risk: "Exception Framework",
+        body: [
+          "STATUTE: Utah Code § 76-10-523.",
+          "SUMMARY: Utah law identifies persons exempt from certain weapons laws, including permit-related exceptions and law enforcement categories.",
+          "GUIDANCE: A Utah or recognized permit may still matter for specific exceptions even though Utah allows permitless carry."
+        ],
+        source: "Utah Code § 76-10-523."
+      },
+      {
+        title: "Secure Areas / Airports / Correctional Facilities",
+        risk: "Restricted Facility Risk",
+        body: [
+          "STATUTE / SOURCE: Utah secure-area and federal transportation framework.",
+          "SUMMARY: Secure areas of airports, correctional facilities, mental health facilities, law enforcement/courthouse environments, and posted secure areas may restrict carry.",
+          "GUIDANCE: Do not approach security screening armed. Verify secure-area rules before entering."
+        ],
+        source: "Utah secure area and federal transportation framework."
+      },
+      {
+        title: "Churches / Houses of Worship",
+        risk: "Notice / Property Control",
+        body: [
+          "STATUTE / SOURCE: Utah church and private-property firearm framework.",
+          "SUMMARY: Utah law includes special treatment for houses of worship and private property notices in certain contexts.",
+          "GUIDANCE: Verify church policy before carrying. Do not assume a place of worship allows carry."
+        ],
+        source: "Utah church/private property firearms framework."
+      },
+      {
+        title: "National Parks / Federal Property",
+        risk: "Federal Overlay",
+        body: [
+          "STATUTE / SOURCE: Federal facility and public lands framework.",
+          "SUMMARY: Utah has extensive federal land. State carry permission does not override federal buildings, visitor centers, post offices, courthouses, or secure federal facilities.",
+          "GUIDANCE: Distinguish outdoor land rules from buildings, visitor centers, ranger stations, and secure facilities."
+        ],
+        source: "Federal facility and public lands framework."
+      },
+      {
+        title: "Alcohol / Impairment",
+        risk: "Impairment Risk",
+        body: [
+          "STATUTE / SOURCE: Utah weapons and impairment framework.",
+          "SUMMARY: Carrying while impaired or using a firearm while intoxicated can create serious criminal and civil risk.",
+          "GUIDANCE: If alcohol or impairing substances are part of the plan, carrying should not be."
+        ],
+        source: "Utah weapons/intoxication framework."
+      },
+      {
+        title: "Private Property / Posted Locations",
+        risk: "Property Control",
+        body: [
+          "STATUTE / SOURCE: Utah private property and trespass framework.",
+          "SUMMARY: Private property owners can control access and may restrict firearms.",
+          "GUIDANCE: If posted or instructed to leave, leave immediately. Do not argue with staff/security."
+        ],
+        source: "Utah private property/trespass framework."
+      },
+      {
+        title: "Use of Force / Self-Defense",
+        risk: "Fact-Specific Legal Risk",
+        body: [
+          "STATUTE / SOURCE: Utah self-defense law framework.",
+          "SUMMARY: Utah defensive force law is fact-specific and requires legal justification under the circumstances.",
+          "GUIDANCE: Avoid escalation, disengage when safe, call 911, identify evidence/witnesses, request counsel, and avoid detailed statements under stress."
+        ],
+        source: "Utah self-defense law framework."
+      }
+    ],
+    [
+      {
+        title: "Utah Carry Checklist",
+        steps: [
+          "1. Confirm eligibility and age.",
+          "2. Check loaded firearm rules under § 76-10-505.",
+          "3. Check school premises under § 76-10-505.5.",
+          "4. Check whether permit-based exceptions apply under § 76-10-523.",
+          "5. Check secure areas and airports.",
+          "6. Check church/private property policy.",
+          "7. Check federal land/buildings separately."
+        ]
+      }
+    ],
+    [
+      {
+        title: "Utah National Park Trip",
+        summary: "Utah travel often involves federal land, visitor centers, trailheads, hotels, and vehicles.",
+        guidance: [
+          "Separate outdoor federal land from federal buildings.",
+          "Check visitor centers and ranger stations.",
+          "Check vehicle loaded status.",
+          "Secure firearms from unauthorized access."
+        ]
+      }
+    ],
+    [
+      "Assuming Utah permitless carry means carry anywhere.",
+      "Ignoring loaded firearm rules in vehicles/on streets.",
+      "Ignoring school premises.",
+      "Ignoring church/private property notices.",
+      "Assuming national park land means federal building carry is allowed.",
+      "Ignoring secure airport areas."
+    ],
+    [
+      "Eligibility and age checked.",
+      "Loaded firearm rules checked.",
+      "School premises checked.",
+      "Permit exceptions checked.",
+      "Secure areas checked.",
+      "Federal property checked."
+    ],
+    [
+      {
+        myth: "Utah is permitless, so there are no rules.",
+        reality: "No. Loaded firearm rules, school premises, secure areas, private property, and federal property still matter."
+      }
+    ]
+  ),
+
+  NM: makeProfile(
+    "New Mexico",
+    "Law-Backed Ultra Expanded Travel State",
+    "New Mexico is a high-priority southwestern travel state with a concealed handgun license system and no general permitless concealed carry. Open carry may be lawful for eligible persons, but concealed carry requires a license, and travelers must understand license possession, reciprocity, schools, universities, liquor establishments, vehicles, tribal/federal land, private property, and self-defense issues.",
+    {
+      reciprocity: "New Mexico reciprocity must be verified through New Mexico DPS. New Mexico law controls while physically in New Mexico.",
+      permitlessCarry: "No general permitless concealed handgun carry. New Mexico requires a concealed handgun license for concealed carry.",
+      concealedCarry: "NMSA 1978, § 29-19-9 requires the licensee to have the concealed handgun license in possession while carrying concealed.",
+      openCarry: "Open carry may be lawful for eligible persons, but prohibited places, private property, tribal land, federal property, and disorderly conduct issues still matter.",
+      vehicleCarry: "New Mexico vehicle carry has separate treatment from concealed carry on the person and should be verified before travel.",
+      dutyToInform: "Verify current New Mexico police-contact rules. Carry physical license when carrying concealed and answer lawful questions truthfully.",
+      privateSigns: "Private property owners may restrict firearms. Leave if asked.",
+      forceLaw: "New Mexico self-defense law is fact-specific and should be verified before relying on any summary."
+    },
+    [
+      "New Mexico is not permitless concealed carry.",
+      "New Mexico DPS states concealed carry is not permitted without the physical license on your person.",
+      "New Mexico has tribal land, federal land, national parks, border areas, and rural travel considerations that can change the legal analysis.",
+      "Schools, universities, liquor establishments, and posted private property require special caution.",
+      "Reciprocity should be verified directly with New Mexico DPS before travel."
+    ],
+    [
+      {
+        title: "Concealed Handgun License Required",
+        risk: "Core Carry Rule",
+        body: [
+          "STATUTE: NMSA 1978, § 29-19-9; New Mexico Concealed Handgun Carry Act.",
+          "SUMMARY: New Mexico requires a concealed handgun license for concealed carry, and licensees must have the license in possession while carrying concealed.",
+          "GUIDANCE: Do not treat New Mexico as permitless concealed carry. Carry the physical license and photo ID when relying on reciprocity."
+        ],
+        source: "NMSA 1978, § 29-19-9; New Mexico DPS concealed carry guidance."
+      },
+      {
+        title: "Reciprocity / Recognition",
+        risk: "Recognition Risk",
+        body: [
+          "STATUTE: NMSA 1978, § 29-19-12.",
+          "SUMMARY: New Mexico DPS administers reciprocity and recognition of other states’ concealed handgun licenses under the Concealed Handgun Carry Act framework.",
+          "GUIDANCE: Verify reciprocity before travel and do not rely on outdated maps."
+        ],
+        source: "NMSA 1978, § 29-19-12; New Mexico DPS concealed carry licenses."
+      },
+      {
+        title: "Physical License Possession",
+        risk: "Documentation Risk",
+        body: [
+          "STATUTE: NMSA 1978, § 29-19-9.",
+          "SUMMARY: A licensee must have the concealed handgun license in possession at all times while carrying a concealed handgun.",
+          "GUIDANCE: Do not rely on a photo, email, or memory of the permit number. Carry the physical license."
+        ],
+        source: "NMSA 1978, § 29-19-9; New Mexico DPS guidance."
+      },
+      {
+        title: "Schools",
+        risk: "Extreme Risk Area",
+        body: [
+          "STATUTE: NMSA 1978, § 30-7-2.1.",
+          "SUMMARY: New Mexico restricts unlawful carrying of deadly weapons on school premises, subject to statutory exceptions.",
+          "GUIDANCE: School buildings, school grounds, events, and parking areas should be treated as verify-first locations."
+        ],
+        source: "NMSA 1978, § 30-7-2.1."
+      },
+      {
+        title: "University Premises",
+        risk: "Higher Education Risk",
+        body: [
+          "STATUTE: NMSA 1978, § 30-7-2.4.",
+          "SUMMARY: New Mexico restricts carrying firearms on university premises, subject to statutory exceptions.",
+          "GUIDANCE: Treat college/university campuses, events, buildings, and parking areas as verify-first locations."
+        ],
+        source: "NMSA 1978, § 30-7-2.4."
+      },
+      {
+        title: "Liquor Establishments / Alcohol",
+        risk: "Alcohol Location Risk",
+        body: [
+          "STATUTE: NMSA 1978, § 30-7-3 and New Mexico alcohol/firearms framework.",
+          "SUMMARY: New Mexico restricts firearms in certain establishments licensed to dispense alcoholic beverages, subject to exceptions.",
+          "GUIDANCE: Bars, restaurants, breweries, casinos, resorts, and events with alcohol require careful checking. Do not drink while carrying."
+        ],
+        source: "NMSA 1978, § 30-7-3; New Mexico alcohol/firearms framework."
+      },
+      {
+        title: "One Concealed Handgun Limitation / License Scope",
+        risk: "License Scope Risk",
+        body: [
+          "STATUTE / SOURCE: New Mexico Administrative Code concealed handgun carry rules.",
+          "SUMMARY: New Mexico license rules include scope and carry limitations that may affect how many concealed handguns may be carried and what is covered by the license.",
+          "GUIDANCE: Verify license scope before carrying multiple concealed handguns or non-handgun weapons."
+        ],
+        source: "N.M. Admin. Code concealed handgun carry rules; New Mexico DPS guidance."
+      },
+      {
+        title: "Vehicle Carry",
+        risk: "Vehicle / Transport Risk",
+        body: [
+          "STATUTE / SOURCE: New Mexico firearms and vehicle carry framework.",
+          "SUMMARY: New Mexico vehicle carry may be treated differently from concealed carry on the person.",
+          "GUIDANCE: Verify vehicle carry rules before travel. Keep hands visible during police contact and do not reach near a firearm without instruction."
+        ],
+        source: "New Mexico vehicle carry/firearms framework."
+      },
+      {
+        title: "Tribal Land / Federal Property",
+        risk: "Separate Jurisdiction Overlay",
+        body: [
+          "STATUTE / SOURCE: Tribal law and federal facility/public lands framework.",
+          "SUMMARY: New Mexico state carry permission does not automatically control tribal land, federal buildings, post offices, military installations, federal courthouses, or secure federal facilities.",
+          "GUIDANCE: New Mexico travel often crosses tribal and federal land. Verify the specific jurisdiction before carrying."
+        ],
+        source: "Tribal law; federal facility and public lands framework."
+      },
+      {
+        title: "Use of Force / Self-Defense",
+        risk: "Fact-Specific Legal Risk",
+        body: [
+          "STATUTE / SOURCE: New Mexico self-defense law framework.",
+          "SUMMARY: Defensive force must be legally justified under the facts and circumstances.",
+          "GUIDANCE: Avoid escalation, disengage when safe, call 911, identify evidence/witnesses, request counsel, and avoid detailed statements under stress."
+        ],
+        source: "New Mexico self-defense law framework."
+      }
+    ],
+    [
+      {
+        title: "New Mexico Carry Checklist",
+        steps: [
+          "1. Verify reciprocity with New Mexico DPS.",
+          "2. Carry physical concealed handgun license.",
+          "3. Check school premises under § 30-7-2.1.",
+          "4. Check university premises under § 30-7-2.4.",
+          "5. Check liquor establishments under § 30-7-3.",
+          "6. Check tribal and federal land separately.",
+          "7. Verify vehicle carry before travel."
+        ]
+      }
+    ],
+    [
+      {
+        title: "Southwest Road Trip",
+        summary: "New Mexico travel often involves tribal land, federal land, parks, casinos, hotels, and long vehicle routes.",
+        guidance: [
+          "Verify reciprocity first.",
+          "Carry physical license.",
+          "Check tribal/federal property.",
+          "Check alcohol/casino locations."
+        ]
+      }
+    ],
+    [
+      "Assuming New Mexico is permitless concealed carry.",
+      "Failing to carry the physical license.",
+      "Ignoring schools and university premises.",
+      "Ignoring liquor establishment rules.",
+      "Assuming state law controls tribal land.",
+      "Assuming national park land equals federal building permission."
+    ],
+    [
+      "Reciprocity checked with DPS.",
+      "Physical license carried.",
+      "Schools checked.",
+      "Universities checked.",
+      "Liquor establishments checked.",
+      "Tribal/federal property checked."
+    ],
+    [
+      {
+        myth: "New Mexico open carry means concealed carry is permitless too.",
+        reality: "No. New Mexico requires a concealed handgun license for concealed carry."
+      }
+    ]
+  ),
+
+  WY: makeProfile(
+    "Wyoming",
+    "Law-Backed Ultra Expanded Travel State",
+    "Wyoming is a permissive carry state that allows permitless concealed carry for U.S. residents who may legally possess firearms, but travelers must still understand eligibility, restricted locations, schools, universities/campus rules, vehicles, federal land, national parks, private property, and self-defense realities.",
+    {
+      reciprocity: "Michigan CPL recognition should be verified, but Wyoming also allows permitless concealed carry for qualifying U.S. residents.",
+      permitlessCarry: "Wyo. Stat. § 6-8-104 and Wyoming DCI guidance: Wyoming allows qualifying U.S. residents to carry concealed without a permit.",
+      concealedCarry: "Wyoming maintains a concealed firearm permit system under § 6-8-104, but permitless carry may apply to eligible U.S. residents.",
+      openCarry: "Open carry may be lawful for eligible persons, but restricted places, private property, federal property, and police contact still matter.",
+      vehicleCarry: "Vehicle carry must be analyzed under Wyoming concealed/open carry and restricted-location rules.",
+      dutyToInform: "Verify current Wyoming police-contact rules. Keep hands visible and answer lawful questions truthfully.",
+      privateSigns: "Private property owners may restrict firearms. Leave if asked.",
+      forceLaw: "Wyoming self-defense law is fact-specific and must be legally justified."
+    },
+    [
+      "Wyoming is permissive, but not rule-free.",
+      "Wyoming DCI states that effective July 1, 2021, any U.S. resident legally allowed to possess firearms may carry concealed in Wyoming without a concealed firearms permit.",
+      "A Wyoming permit may still matter for reciprocity outside Wyoming.",
+      "Federal land, national parks, visitor centers, post offices, schools, universities, and private property require separate review.",
+      "Outdoor recreation does not eliminate secure-building or federal-facility restrictions."
+    ],
+    [
+      {
+        title: "Permitless Concealed Carry",
+        risk: "Core Eligibility Rule",
+        body: [
+          "STATUTE: Wyo. Stat. § 6-8-104; Wyoming DCI guidance.",
+          "SUMMARY: Wyoming allows qualifying U.S. residents who are legally allowed to possess firearms to carry concealed without a concealed firearms permit.",
+          "GUIDANCE: Confirm eligibility, residency/status, prohibited-person status, age, and restricted locations before carrying."
+        ],
+        source: "Wyo. Stat. § 6-8-104; Wyoming DCI CFP FAQ."
+      },
+      {
+        title: "Concealed Firearm Permit / Reciprocity Context",
+        risk: "License / Travel Rule",
+        body: [
+          "STATUTE: Wyo. Stat. § 6-8-104.",
+          "SUMMARY: Wyoming still issues concealed firearm permits and recognizes permits under the statutory framework.",
+          "GUIDANCE: Even if permitless carry applies in Wyoming, a permit can matter when traveling to other states."
+        ],
+        source: "Wyo. Stat. § 6-8-104."
+      },
+      {
+        title: "Eligibility / Prohibited Persons",
+        risk: "Disqualification Risk",
+        body: [
+          "STATUTE: Wyo. Stat. § 6-8-104 and federal prohibited-person framework.",
+          "SUMMARY: Permitless carry only helps people who may legally possess firearms and are not disqualified.",
+          "GUIDANCE: Criminal history, protection orders, domestic violence issues, controlled-substance issues, mental health adjudications, and federal prohibitions should be checked before carrying."
+        ],
+        source: "Wyo. Stat. § 6-8-104; federal prohibited-person framework."
+      },
+      {
+        title: "Schools / Universities / Campus Rules",
+        risk: "Extreme Risk Area",
+        body: [
+          "STATUTE / SOURCE: Wyoming school and campus carry framework; Wyo. Stat. § 6-8-104 references.",
+          "SUMMARY: Wyoming schools, university facilities, and campus rules can involve specific restrictions and exceptions.",
+          "GUIDANCE: Check K-12 schools, universities, events, buildings, parking, and posted campus rules before carrying."
+        ],
+        source: "Wyoming school/campus carry framework; University of Wyoming campus carry guidance."
+      },
+      {
+        title: "Federal Land / National Parks",
+        risk: "Federal Overlay",
+        body: [
+          "STATUTE / SOURCE: Federal facility and public lands framework.",
+          "SUMMARY: Wyoming has extensive federal land and national parks. State carry permission does not override federal buildings, visitor centers, post offices, federal courthouses, or secure facilities.",
+          "GUIDANCE: Distinguish outdoor land from federal buildings and visitor centers. Yellowstone/Grand Teton travel requires careful building-by-building awareness."
+        ],
+        source: "Federal facility and public lands framework."
+      },
+      {
+        title: "Vehicle Carry",
+        risk: "Road Trip / Wildlife Area Risk",
+        body: [
+          "STATUTE / SOURCE: Wyo. Stat. § 6-8-104 and Wyoming vehicle/firearms framework.",
+          "SUMMARY: Vehicle carry may be lawful for eligible persons but still interacts with restricted locations, federal lands, wildlife/hunting rules, and police contact.",
+          "GUIDANCE: Keep hands visible during traffic stops and check DNR/game rules when hunting, camping, or transporting firearms in the field."
+        ],
+        source: "Wyo. Stat. § 6-8-104; Wyoming vehicle/firearms framework."
+      },
+      {
+        title: "Private Property / Posted Locations",
+        risk: "Property Control",
+        body: [
+          "STATUTE / SOURCE: Wyoming property/trespass framework.",
+          "SUMMARY: Private property owners may control access and restrict firearms.",
+          "GUIDANCE: If posted or asked to leave, leave immediately. Ranches, lodges, events, and private recreation properties may have their own rules."
+        ],
+        source: "Wyoming property/trespass framework."
+      },
+      {
+        title: "Alcohol / Impairment",
+        risk: "Impairment Risk",
+        body: [
+          "STATUTE / SOURCE: Wyoming weapons and intoxication framework.",
+          "SUMMARY: Carrying while impaired creates legal, tactical, and evidentiary risk.",
+          "GUIDANCE: If drinking or impairing substances are part of the plan, carrying should not be."
+        ],
+        source: "Wyoming weapons/intoxication framework."
+      },
+      {
+        title: "Use of Force / Self-Defense",
+        risk: "Fact-Specific Legal Risk",
+        body: [
+          "STATUTE / SOURCE: Wyoming self-defense law framework.",
+          "SUMMARY: Defensive force must be justified under the facts and applicable Wyoming law.",
+          "GUIDANCE: Avoid escalation, disengage when safe, call 911, identify evidence/witnesses, request counsel, and avoid detailed statements under stress."
+        ],
+        source: "Wyoming self-defense law framework."
+      }
+    ],
+    [
+      {
+        title: "Wyoming Carry Checklist",
+        steps: [
+          "1. Confirm eligibility and prohibited-person status.",
+          "2. Check Wyo. Stat. § 6-8-104.",
+          "3. Check school/campus rules.",
+          "4. Check federal land/buildings separately.",
+          "5. Check private property and lodges/events.",
+          "6. Check hunting/DNR rules if outdoors.",
+          "7. Plan safe vehicle storage."
+        ]
+      }
+    ],
+    [
+      {
+        title: "Yellowstone / Grand Teton Trip",
+        summary: "Wyoming travel often involves federal land, visitor centers, hotels, vehicles, and outdoor recreation.",
+        guidance: [
+          "Separate park land from federal buildings.",
+          "Check visitor centers and ranger stations.",
+          "Secure firearms in vehicles/hotels.",
+          "Check hunting and wildlife rules separately."
+        ]
+      }
+    ],
+    [
+      "Assuming Wyoming permitless carry means carry anywhere.",
+      "Ignoring federal buildings in national parks.",
+      "Ignoring campus/school rules.",
+      "Ignoring hunting/DNR rules.",
+      "Ignoring private lodge/event property.",
+      "Assuming a permit is useless just because Wyoming is permitless."
+    ],
+    [
+      "Eligibility checked.",
+      "§ 6-8-104 checked.",
+      "School/campus rules checked.",
+      "Federal property checked.",
+      "Private property checked.",
+      "Vehicle/outdoor rules checked."
+    ],
+    [
+      {
+        myth: "Wyoming is permitless, so a permit never matters.",
+        reality: "No. Permitless carry may apply inside Wyoming, but a permit can still matter for reciprocity and specific exceptions outside Wyoming."
+      }
+    ]
+  ),
+
+  MT: makeProfile(
+    "Montana",
+    "Law-Backed Ultra Expanded Travel State",
+    "Montana is a permissive carry state with permitless concealed carry, but members must still understand school buildings, local public-building authority, private property, federal land, national parks, tribal land, vehicles, alcohol/impairment, and self-defense realities. Montana is especially important for travelers because outdoor recreation and federal/public lands can create jurisdictional confusion.",
+    {
+      reciprocity: "Michigan CPL recognition should be verified, but Montana also has permitless concealed carry for eligible persons.",
+      permitlessCarry: "MCA § 45-8-316 and Montana carry framework: Montana no longer generally requires a permit for eligible persons to carry concealed, subject to restrictions.",
+      concealedCarry: "Montana still issues permits for reciprocity and certain legal advantages, but permitless carry may apply inside Montana.",
+      openCarry: "Open carry may be lawful for eligible persons, but school buildings, publicly owned buildings, private property, federal/tribal land, and conduct still matter.",
+      vehicleCarry: "Vehicle carry must be analyzed with Montana carry rules, school/property restrictions, federal/tribal land, and hunting/outdoor rules.",
+      dutyToInform: "Verify current Montana police-contact rules. Keep hands visible and answer lawful questions truthfully.",
+      privateSigns: "Private property owners may restrict firearms. Leave immediately if asked.",
+      forceLaw: "Montana self-defense law is fact-specific and must be legally justified."
+    },
+    [
+      "Montana is permissive, but not rule-free.",
+      "MCA § 45-8-361 restricts weapons in school buildings, subject to exceptions.",
+      "MCA § 45-8-351 addresses local-government regulation and public-building authority.",
+      "Montana travel often involves national parks, federal lands, tribal lands, hunting, camping, lodges, and vehicles.",
+      "Federal/tribal property and school buildings are the most important carry traps for travelers."
+    ],
+    [
+      {
+        title: "Permitless Concealed Carry",
+        risk: "Core Carry Rule",
+        body: [
+          "STATUTE: MCA § 45-8-316; Montana carry framework.",
+          "SUMMARY: Montana no longer generally requires a permit for eligible persons to carry concealed, subject to restrictions and exceptions.",
+          "GUIDANCE: Confirm eligibility and restricted locations. Permitless carry does not override school buildings, private property, public-building rules, federal property, or tribal land."
+        ],
+        source: "MCA § 45-8-316; Montana carry framework."
+      },
+      {
+        title: "Permit / Reciprocity Context",
+        risk: "Travel License Rule",
+        body: [
+          "STATUTE / SOURCE: Montana concealed weapon permit framework.",
+          "SUMMARY: Montana still issues concealed weapon permits that may matter for reciprocity outside Montana and certain legal advantages.",
+          "GUIDANCE: A permit can still be useful even in a permitless carry state. Do not discard permit considerations for multi-state travel."
+        ],
+        source: "Montana concealed weapon permit framework."
+      },
+      {
+        title: "School Buildings",
+        risk: "Extreme Risk Area",
+        body: [
+          "STATUTE: MCA § 45-8-361.",
+          "SUMMARY: Montana restricts possession, carrying, or storage of weapons in school buildings, subject to exceptions.",
+          "GUIDANCE: K-12 school buildings and school activities should be treated as hard verify-first areas. Do not assume permitless carry applies inside a school building."
+        ],
+        source: "MCA § 45-8-361."
+      },
+      {
+        title: "Local Public Buildings / Preemption",
+        risk: "Public Building Risk",
+        body: [
+          "STATUTE: MCA § 45-8-351.",
+          "SUMMARY: Montana restricts local government firearms regulation but allows certain local authority involving discharge and carrying in publicly owned and occupied buildings under local jurisdiction.",
+          "GUIDANCE: City/county buildings, parks, public assemblies, and posted public facilities require verification."
+        ],
+        source: "MCA § 45-8-351."
+      },
+      {
+        title: "Federal Land / National Parks",
+        risk: "Federal Overlay",
+        body: [
+          "STATUTE / SOURCE: Federal facility and public lands framework.",
+          "SUMMARY: Montana has extensive federal land and national parks. State carry permission does not override federal buildings, visitor centers, post offices, federal courthouses, or secure federal facilities.",
+          "GUIDANCE: Glacier and Yellowstone-region travel requires awareness of federal building boundaries, visitor centers, ranger stations, and park facilities."
+        ],
+        source: "Federal facility and public lands framework."
+      },
+      {
+        title: "Tribal Land",
+        risk: "Separate Sovereign Overlay",
+        body: [
+          "STATUTE / SOURCE: Tribal law framework.",
+          "SUMMARY: Montana state carry rules do not automatically control tribal lands or tribal facilities.",
+          "GUIDANCE: Verify tribal law before carrying on reservations, tribal casinos, tribal offices, and tribal events."
+        ],
+        source: "Tribal law framework."
+      },
+      {
+        title: "Vehicle Carry / Outdoor Travel",
+        risk: "Vehicle / Hunting / Recreation Risk",
+        body: [
+          "STATUTE / SOURCE: Montana carry, hunting, and vehicle framework.",
+          "SUMMARY: Vehicle carry may be lawful for eligible persons, but hunting, wildlife, public land, private land, tribal land, and federal facility rules may change the analysis.",
+          "GUIDANCE: Check Montana FWP/hunting rules when carrying while hunting, camping, fishing, boating, or crossing public/private land."
+        ],
+        source: "Montana carry and outdoor recreation framework."
+      },
+      {
+        title: "Private Property / Posted Locations",
+        risk: "Property Control",
+        body: [
+          "STATUTE / SOURCE: Montana property/trespass framework.",
+          "SUMMARY: Private property owners may control access and restrict firearms.",
+          "GUIDANCE: If posted or asked to leave, leave immediately. Ranches, lodges, outfitters, hotels, private events, and leased lands may have their own rules."
+        ],
+        source: "Montana property/trespass framework."
+      },
+      {
+        title: "Alcohol / Impairment",
+        risk: "Impairment Risk",
+        body: [
+          "STATUTE / SOURCE: Montana weapons and impairment framework.",
+          "SUMMARY: Carrying while impaired can create legal, tactical, and evidentiary risk.",
+          "GUIDANCE: If alcohol or impairing substances are part of the plan, carrying should not be."
+        ],
+        source: "Montana weapons/intoxication framework."
+      },
+      {
+        title: "Use of Force / Self-Defense",
+        risk: "Fact-Specific Legal Risk",
+        body: [
+          "STATUTE / SOURCE: Montana self-defense law framework.",
+          "SUMMARY: Defensive force must be legally justified under the facts and applicable Montana law.",
+          "GUIDANCE: Avoid escalation, disengage when safe, call 911, identify evidence/witnesses, request counsel, and avoid detailed statements under stress."
+        ],
+        source: "Montana self-defense law framework."
+      }
+    ],
+    [
+      {
+        title: "Montana Carry Checklist",
+        steps: [
+          "1. Confirm eligibility.",
+          "2. Check MCA § 45-8-316 carry framework.",
+          "3. Check school buildings under § 45-8-361.",
+          "4. Check public buildings/local rules under § 45-8-351.",
+          "5. Check federal and tribal land separately.",
+          "6. Check private property and lodge/event rules.",
+          "7. Check hunting/outdoor rules if applicable."
+        ]
+      }
+    ],
+    [
+      {
+        title: "Glacier / Yellowstone Region Travel",
+        summary: "Montana travel often involves federal land, tribal land, park facilities, lodges, vehicles, and outdoor recreation.",
+        guidance: [
+          "Separate outdoor land from federal buildings.",
+          "Verify tribal land rules.",
+          "Check school/public building rules.",
+          "Check hunting/outdoor regulations."
+        ]
+      }
+    ],
+    [
+      "Assuming Montana permitless carry means carry anywhere.",
+      "Ignoring school buildings under § 45-8-361.",
+      "Ignoring public building/local authority under § 45-8-351.",
+      "Assuming state law controls tribal land.",
+      "Assuming national park land equals visitor center permission.",
+      "Ignoring hunting/outdoor rules."
+    ],
+    [
+      "Eligibility checked.",
+      "Carry framework checked.",
+      "School buildings checked.",
+      "Public buildings/local rules checked.",
+      "Federal/tribal property checked.",
+      "Outdoor/hunting rules checked."
+    ],
+    [
+      {
+        myth: "Montana permitless carry means there are no restrictions.",
+        reality: "No. School buildings, public buildings, private property, federal land, tribal land, and outdoor rules still matter."
+      }
+    ]
+  ),
+
+  ID: makeProfile(
+    "Idaho",
+    "Law-Backed Ultra Expanded Travel State",
+    "Idaho is a generally permitless-carry state for eligible adults, but Idaho still has important restrictions involving school property, courthouses, jails, private property, alcohol/impairment, tribal land, federal property, vehicles, and enhanced-license reciprocity. Michigan members should not treat Idaho as rule-free simply because it is firearm-friendly.",
+    {
+      reciprocity: "Michigan CPL recognition should be verified before travel. Idaho also allows permitless carry for eligible persons under Idaho Code § 18-3302.",
+      permitlessCarry: "Idaho Code § 18-3302: eligible persons may carry concealed without a license in many circumstances, subject to statutory restrictions.",
+      concealedCarry: "Idaho recognizes concealed carry licenses and also has standard and enhanced concealed weapon license systems.",
+      openCarry: "Open carry is generally lawful for eligible persons, but prohibited places, private property, and public conduct still matter.",
+      vehicleCarry: "Vehicle carry must still comply with Idaho law, school restrictions, private property, and federal/tribal land overlays.",
+      dutyToInform: "Verify current Idaho police-contact rules. Keep hands visible and answer lawful questions truthfully.",
+      privateSigns: "Private property owners may restrict firearms. Leave immediately if asked.",
+      forceLaw: "Idaho self-defense law is fact-specific and must be evaluated under the circumstances."
+    },
+    [
+      "Idaho is generally permissive, but not unrestricted.",
+      "Schools, courthouses, jails, juvenile detention facilities, private property, federal buildings, and tribal land require separate analysis.",
+      "An Idaho enhanced license can matter for reciprocity outside Idaho, but permitless carry inside Idaho does not automatically travel to other states.",
+      "Federal school-zone law may still matter, especially for unlicensed carry near schools.",
+      "Outdoor travel can involve state land, federal land, tribal land, hunting rules, and private ranch/property restrictions."
+    ],
+    [
+      {
+        title: "Permitless Concealed Carry",
+        risk: "Core Eligibility Rule",
+        body: [
+          "STATUTE: Idaho Code § 18-3302.",
+          "SUMMARY: Idaho law includes exceptions to the concealed-weapon license requirement and generally permits concealed carry by eligible persons under the statutory framework.",
+          "GUIDANCE: Do not teach Idaho as no-rules carry. Eligibility, age, prohibited-person status, prohibited locations, school zones, private property, and federal/tribal overlays still matter."
+        ],
+        source: "Idaho Code § 18-3302."
+      },
+      {
+        title: "Standard and Enhanced Concealed Weapon Licenses",
+        risk: "License / Reciprocity Context",
+        body: [
+          "STATUTE: Idaho Code § 18-3302 and § 18-3302K.",
+          "SUMMARY: Idaho has concealed weapon license provisions, including enhanced license provisions that may affect reciprocity outside Idaho.",
+          "GUIDANCE: Even in a permitless state, a license can matter for travel, reciprocity, federal school-zone exceptions, and documentation."
+        ],
+        source: "Idaho Code § 18-3302; Idaho Code § 18-3302K."
+      },
+      {
+        title: "Schools / Federal School Zone Overlay",
+        risk: "Extreme Risk Area",
+        body: [
+          "STATUTE / SOURCE: Idaho school weapons framework; federal Gun-Free School Zones Act.",
+          "SUMMARY: School property and school-zone areas are high-risk locations. Federal law can add restrictions separate from Idaho carry permission.",
+          "GUIDANCE: Do not assume permitless carry resolves school-zone issues. School pickup, events, parking lots, and school-adjacent travel should be verify-first situations."
+        ],
+        source: "Idaho school weapons framework; 18 U.S.C. § 922(q)."
+      },
+      {
+        title: "Courthouses / Jails / Detention Facilities",
+        risk: "Hard Stop Area",
+        body: [
+          "STATUTE / SOURCE: Idaho prohibited-place and facility framework.",
+          "SUMMARY: Courthouses, jails, juvenile detention facilities, correctional facilities, and secure government facilities may restrict weapons.",
+          "GUIDANCE: Do not approach screening or controlled facility entrances armed unless a clear legal exception applies."
+        ],
+        source: "Idaho weapons/prohibited-place framework."
+      },
+      {
+        title: "Private Property / Posted Locations",
+        risk: "Property Control",
+        body: [
+          "STATUTE / SOURCE: Idaho property/trespass framework.",
+          "SUMMARY: Private property owners and businesses may restrict firearms and require people to leave.",
+          "GUIDANCE: If posted or asked to leave, leave immediately. Do not argue with staff, security, landowners, or event personnel."
+        ],
+        source: "Idaho property/trespass framework."
+      },
+      {
+        title: "Federal / Tribal / Outdoor Land",
+        risk: "Land Jurisdiction Risk",
+        body: [
+          "STATUTE / SOURCE: Federal facility, national park, tribal, and public land framework.",
+          "SUMMARY: Idaho carry permission does not override federal buildings, tribal law, national park facility rules, visitor centers, post offices, or private ranch/property restrictions.",
+          "GUIDANCE: Separate the land you are on from the building you enter. Federal land, tribal land, and private land can change the legal analysis."
+        ],
+        source: "Federal facility framework; tribal law framework; Idaho public/private land framework."
+      },
+      {
+        title: "Alcohol / Impairment",
+        risk: "Impairment Risk",
+        body: [
+          "STATUTE / SOURCE: Idaho weapons and impairment framework.",
+          "SUMMARY: Carrying while intoxicated or impaired can create legal, tactical, and evidentiary risk.",
+          "GUIDANCE: If alcohol or impairing substances are part of the plan, carrying should not be."
+        ],
+        source: "Idaho weapons/intoxication framework."
+      },
+      {
+        title: "Use of Force / Self-Defense",
+        risk: "Fact-Specific Legal Risk",
+        body: [
+          "STATUTE / SOURCE: Idaho self-defense law framework.",
+          "SUMMARY: Defensive force must be legally justified under the facts and applicable Idaho law.",
+          "GUIDANCE: Avoid escalation, disengage when safe, call 911, identify evidence/witnesses, request counsel, and avoid detailed statements under stress."
+        ],
+        source: "Idaho self-defense law framework."
+      }
+    ],
+    [
+      {
+        title: "Idaho Carry Checklist",
+        steps: [
+          "1. Confirm eligibility under Idaho Code § 18-3302.",
+          "2. Check whether a license is needed for reciprocity or federal school-zone purposes.",
+          "3. Check school property and school-zone issues.",
+          "4. Check courthouses, jails, and secure government facilities.",
+          "5. Check private property, tribal land, federal buildings, and outdoor land rules.",
+          "6. Avoid carry while impaired."
+        ]
+      }
+    ],
+    [
+      {
+        title: "Idaho Outdoor / Mountain Travel",
+        summary: "Idaho travel often involves highways, parks, federal land, tribal land, private ranches, and outdoor recreation.",
+        guidance: [
+          "Verify the jurisdiction of the land and building.",
+          "Check school-zone issues near towns.",
+          "Check private property and ranch/lodge policies.",
+          "Do not assume federal or tribal property follows Idaho law."
+        ]
+      }
+    ],
+    [
+      "Assuming Idaho permitless carry means carry anywhere.",
+      "Ignoring federal school-zone issues.",
+      "Ignoring courthouses, jails, and detention facilities.",
+      "Assuming state law controls tribal land.",
+      "Assuming national park land equals visitor center permission.",
+      "Ignoring private property and ranch/lodge rules."
+    ],
+    [
+      "Eligibility checked.",
+      "License/reciprocity needs checked.",
+      "School-zone issues checked.",
+      "Court/jail/government facilities checked.",
+      "Federal/tribal/private property checked.",
+      "Outdoor/hunting rules checked."
+    ],
+    [
+      {
+        myth: "Idaho is permitless, so there are no restrictions.",
+        reality: "No. Idaho is permissive, but schools, federal property, tribal land, private property, jails, courts, and impairment rules still matter."
+      }
+    ]
+  ),
+
+  ND: makeProfile(
+    "North Dakota",
+    "Law-Backed Ultra Expanded Travel State",
+    "North Dakota allows constitutional concealed carry for eligible individuals within North Dakota, but the state still has important requirements involving eligibility, identification, police notification, restricted locations, school property, private property, vehicles, and reciprocity outside North Dakota.",
+    {
+      reciprocity: "Michigan CPL recognition should be verified before travel. North Dakota also has constitutional concealed carry for eligible individuals within North Dakota.",
+      permitlessCarry: "N.D. constitutional carry allows concealed carry by eligible individuals within North Dakota, subject to identification and eligibility requirements.",
+      concealedCarry: "N.D.C.C. Chapter 62.1-04 governs concealed weapons and concealed weapon licenses.",
+      openCarry: "Open carry and firearm possession must still comply with North Dakota weapons law and restricted-location rules.",
+      vehicleCarry: "Vehicle carry must be analyzed under North Dakota weapons law and police-contact requirements.",
+      dutyToInform: "North Dakota constitutional carry has a law-enforcement notification requirement for permitless concealed carry.",
+      privateSigns: "Private property owners may restrict firearms. Leave if asked.",
+      forceLaw: "North Dakota self-defense law is fact-specific."
+    },
+    [
+      "North Dakota constitutional carry is within North Dakota only and does not create reciprocity in other states.",
+      "The Attorney General warns that a concealed weapon license is needed for reciprocity outside North Dakota.",
+      "Eligible permitless carriers must understand identification and law-enforcement notification requirements.",
+      "Schools, courts, posted private property, federal property, and tribal property require separate analysis.",
+      "A North Dakota license may still matter for travel even if permitless carry exists inside North Dakota."
+    ],
+    [
+      {
+        title: "Constitutional Concealed Carry",
+        risk: "Core Eligibility Rule",
+        body: [
+          "STATUTE / SOURCE: N.D.C.C. Chapter 62.1-04; North Dakota Attorney General constitutional carry guidance.",
+          "SUMMARY: North Dakota allows constitutional concealed carry by eligible individuals within North Dakota, subject to statutory requirements.",
+          "GUIDANCE: Constitutional carry does not apply outside North Dakota and does not replace a license for reciprocity in other states."
+        ],
+        source: "N.D.C.C. Chapter 62.1-04; North Dakota Attorney General constitutional carry guidance."
+      },
+      {
+        title: "Identification and Police Notification",
+        risk: "Police Contact Requirement",
+        body: [
+          "STATUTE / SOURCE: N.D.C.C. § 62.1-04-02 and Attorney General guidance.",
+          "SUMMARY: North Dakota permitless concealed carry requires eligible individuals to carry qualifying identification and notify law enforcement during stops under the constitutional carry framework.",
+          "GUIDANCE: Keep hands visible and disclose calmly if stopped while carrying under permitless carry. Do not reach for ID or the firearm until instructed."
+        ],
+        source: "N.D.C.C. § 62.1-04-02; North Dakota Attorney General guidance."
+      },
+      {
+        title: "Concealed Weapon License / Reciprocity",
+        risk: "Travel Outside State",
+        body: [
+          "STATUTE: N.D.C.C. § 62.1-04-03.",
+          "SUMMARY: North Dakota issues concealed weapon licenses, including Class 1 and Class 2 licenses, under the statutory framework.",
+          "GUIDANCE: A license may be necessary for reciprocity outside North Dakota. Permitless carry inside North Dakota does not travel with the user."
+        ],
+        source: "N.D.C.C. § 62.1-04-03; North Dakota Attorney General concealed weapon license guidance."
+      },
+      {
+        title: "Schools / Educational Property",
+        risk: "Extreme Risk Area",
+        body: [
+          "STATUTE / SOURCE: North Dakota school weapons framework; federal school-zone framework.",
+          "SUMMARY: Schools and school-related property are high-risk areas under state and federal law.",
+          "GUIDANCE: Do not rely on a short reciprocity or permitless carry summary for school pickup, events, or campus areas. Verify before entering armed."
+        ],
+        source: "North Dakota weapons/school framework; 18 U.S.C. § 922(q)."
+      },
+      {
+        title: "Restricted Locations / Government Facilities",
+        risk: "Location Restriction",
+        body: [
+          "STATUTE / SOURCE: North Dakota weapons and facility framework.",
+          "SUMMARY: Courts, jails, law-enforcement facilities, government buildings, schools, federal property, and tribal property may restrict firearms.",
+          "GUIDANCE: Treat controlled facilities and screened entrances as verify-first locations."
+        ],
+        source: "North Dakota weapons/prohibited-place framework."
+      },
+      {
+        title: "Private Property / Posted Locations",
+        risk: "Property Control",
+        body: [
+          "STATUTE / SOURCE: North Dakota property/trespass framework.",
+          "SUMMARY: Private property owners may restrict firearms and require armed persons to leave.",
+          "GUIDANCE: If posted or asked to leave, leave immediately."
+        ],
+        source: "North Dakota property/trespass framework."
+      },
+      {
+        title: "Tribal Land / Federal Property",
+        risk: "Jurisdiction Overlay",
+        body: [
+          "STATUTE / SOURCE: Federal facility, postal property, tribal law, and North Dakota public land framework.",
+          "SUMMARY: North Dakota carry permission does not override federal buildings, post offices, tribal law, or other jurisdictional restrictions.",
+          "GUIDANCE: Verify tribal law and federal rules before carrying on reservations, tribal casinos, federal buildings, or posted federal property."
+        ],
+        source: "Federal facility framework; tribal law framework."
+      },
+      {
+        title: "Use of Force / Self-Defense",
+        risk: "Fact-Specific Legal Risk",
+        body: [
+          "STATUTE / SOURCE: North Dakota self-defense law framework.",
+          "SUMMARY: Defensive force must be legally justified under the facts and applicable North Dakota law.",
+          "GUIDANCE: Avoid escalation, disengage when safe, call 911, identify evidence/witnesses, request counsel, and avoid detailed statements under stress."
+        ],
+        source: "North Dakota self-defense law framework."
+      }
+    ],
+    [
+      {
+        title: "North Dakota Carry Checklist",
+        steps: [
+          "1. Confirm eligibility for constitutional carry.",
+          "2. Carry qualifying ID if relying on permitless carry.",
+          "3. Know the law-enforcement notification rule.",
+          "4. Check schools, courts, jails, and government facilities.",
+          "5. Check tribal and federal property separately.",
+          "6. Remember permitless carry does not create out-of-state reciprocity."
+        ]
+      }
+    ],
+    [
+      {
+        title: "Rural / Tribal Land Travel",
+        summary: "North Dakota travel may involve rural highways, tribal land, federal facilities, and long-distance vehicle travel.",
+        guidance: [
+          "Verify tribal jurisdiction.",
+          "Carry ID if permitless carrying.",
+          "Know notification requirements.",
+          "Check federal and private property."
+        ]
+      }
+    ],
+    [
+      "Assuming constitutional carry works outside North Dakota.",
+      "Failing to carry ID while permitless carrying.",
+      "Failing to notify law enforcement when required.",
+      "Ignoring tribal land.",
+      "Ignoring federal property.",
+      "Assuming permitless carry replaces a license for reciprocity."
+    ],
+    [
+      "Eligibility checked.",
+      "ID carried.",
+      "Police notification rule understood.",
+      "Schools/courts/government facilities checked.",
+      "Tribal/federal property checked.",
+      "Reciprocity outside ND checked."
+    ],
+    [
+      {
+        myth: "North Dakota constitutional carry lets me carry in other states.",
+        reality: "No. North Dakota Attorney General guidance says constitutional carry is within North Dakota; reciprocity outside the state requires a valid license."
+      }
+    ]
+  ),
+
+  SD: makeProfile(
+    "South Dakota",
+    "Law-Backed Ultra Expanded Travel State",
+    "South Dakota is a permitless carry state for eligible persons, but it still has important restrictions involving schools, county courthouses, the State Capitol, vehicles, private property, tribal land, federal property, and self-defense conduct. South Dakota also issues regular, gold card, and enhanced permits that may matter for reciprocity outside the state.",
+    {
+      reciprocity: "Michigan CPL recognition should be verified before travel. South Dakota also allows permitless carry for eligible persons.",
+      permitlessCarry: "S.D. Codified Laws Chapter 23-7: South Dakota does not impose a general permit requirement for carrying a concealed pistol.",
+      concealedCarry: "South Dakota issues concealed pistol permits, including enhanced permits, but eligible persons may carry without a permit inside the state subject to restrictions.",
+      openCarry: "Open carry may be lawful for eligible persons, but restricted locations and conduct still matter.",
+      vehicleCarry: "Vehicle carry is generally permissive for eligible persons, but schools, courthouses, tribal land, and federal property still require analysis.",
+      dutyToInform: "Verify current South Dakota police-contact rules. Keep hands visible and answer lawful questions truthfully.",
+      privateSigns: "Private property and posted locations still matter. Leave if asked.",
+      forceLaw: "South Dakota self-defense law is fact-specific."
+    },
+    [
+      "South Dakota permitless carry does not mean unrestricted carry.",
+      "County courthouses, the State Capitol, and elementary/secondary schools are key restricted areas.",
+      "Tribal land can have separate rules and should be verified before carry.",
+      "South Dakota permits may still matter for reciprocity in other states.",
+      "Outdoor travel, hunting, federal land, and private ranch/property rules should be checked separately."
+    ],
+    [
+      {
+        title: "Permitless Carry / Concealed Pistol Framework",
+        risk: "Core Eligibility Rule",
+        body: [
+          "STATUTE: S.D. Codified Laws Chapter 23-7.",
+          "SUMMARY: South Dakota law does not impose a general prohibition on carrying a concealed pistol without a permit, subject to legal eligibility and location restrictions.",
+          "GUIDANCE: Do not treat permitless carry as carry anywhere. Restricted locations and prohibited-person rules still matter."
+        ],
+        source: "S.D. Codified Laws Chapter 23-7."
+      },
+      {
+        title: "Concealed Pistol Permits / Reciprocity",
+        risk: "Travel Outside State",
+        body: [
+          "STATUTE: S.D. Codified Laws § 23-7-7 and related permit statutes.",
+          "SUMMARY: South Dakota issues concealed pistol permits through county sheriffs, including enhanced permit options.",
+          "GUIDANCE: A South Dakota permit may matter for reciprocity outside the state even if permitless carry applies inside South Dakota."
+        ],
+        source: "S.D. Codified Laws § 23-7-7; South Dakota Secretary of State concealed pistol permit guidance."
+      },
+      {
+        title: "Schools",
+        risk: "Extreme Risk Area",
+        body: [
+          "STATUTE: S.D. Codified Laws § 13-32-7.",
+          "SUMMARY: South Dakota restricts firearms on elementary and secondary school premises, subject to statutory provisions and exceptions.",
+          "GUIDANCE: School buildings, school events, school vehicles, and school property should be treated as verify-first locations."
+        ],
+        source: "S.D. Codified Laws § 13-32-7."
+      },
+      {
+        title: "County Courthouses and State Capitol",
+        risk: "Hard Stop Area",
+        body: [
+          "STATUTE: S.D. Codified Laws § 22-14-22 and related Capitol rules.",
+          "SUMMARY: South Dakota restricts firearms in county courthouses and has specific requirements for carry in the State Capitol.",
+          "GUIDANCE: Do not enter courthouse or Capitol-controlled areas armed unless the current law clearly allows the exact conduct."
+        ],
+        source: "S.D. Codified Laws § 22-14-22; S.D. Codified Laws § 22-14-24."
+      },
+      {
+        title: "Vehicle Carry",
+        risk: "Travel / Vehicle Rule",
+        body: [
+          "STATUTE / SOURCE: S.D. Codified Laws Chapter 23-7 and South Dakota vehicle carry framework.",
+          "SUMMARY: Vehicle carry is generally permissive for eligible persons, but location restrictions and jurisdiction overlays still apply.",
+          "GUIDANCE: Vehicle carry does not override schools, courthouses, tribal land, federal property, or private property rules."
+        ],
+        source: "S.D. Codified Laws Chapter 23-7; South Dakota vehicle carry framework."
+      },
+      {
+        title: "Tribal Land / Federal Property",
+        risk: "Jurisdiction Overlay",
+        body: [
+          "STATUTE / SOURCE: Tribal law; federal facility and postal property framework.",
+          "SUMMARY: South Dakota carry permission does not override tribal law or federal property restrictions.",
+          "GUIDANCE: Verify tribal law before carrying on reservations, tribal casinos, tribal offices, and tribal events. Federal buildings and post offices must be checked separately."
+        ],
+        source: "Tribal law framework; federal facility framework."
+      },
+      {
+        title: "Private Property / Posted Locations",
+        risk: "Property Control",
+        body: [
+          "STATUTE / SOURCE: South Dakota property/trespass framework.",
+          "SUMMARY: Private property owners may restrict access and require armed persons to leave.",
+          "GUIDANCE: If posted or asked to leave, leave immediately."
+        ],
+        source: "South Dakota property/trespass framework."
+      },
+      {
+        title: "Use of Force / Self-Defense",
+        risk: "Fact-Specific Legal Risk",
+        body: [
+          "STATUTE / SOURCE: South Dakota self-defense law framework.",
+          "SUMMARY: Defensive force must be legally justified under the facts and applicable South Dakota law.",
+          "GUIDANCE: Avoid escalation, disengage when safe, call 911, identify evidence/witnesses, request counsel, and avoid detailed statements under stress."
+        ],
+        source: "South Dakota self-defense law framework."
+      }
+    ],
+    [
+      {
+        title: "South Dakota Carry Checklist",
+        steps: [
+          "1. Confirm eligibility.",
+          "2. Check schools under § 13-32-7.",
+          "3. Check county courthouse and State Capitol restrictions.",
+          "4. Check tribal land and federal property separately.",
+          "5. Check private property and event rules.",
+          "6. Consider whether a permit is needed for reciprocity outside South Dakota."
+        ]
+      }
+    ],
+    [
+      {
+        title: "Black Hills / Tribal Land Travel",
+        summary: "South Dakota travel may involve tribal land, national parks, state parks, private tourist properties, and long vehicle trips.",
+        guidance: [
+          "Separate state land, federal land, and tribal land.",
+          "Check park buildings and visitor centers separately.",
+          "Check courthouse and school restrictions.",
+          "Check private property and lodging policies."
+        ]
+      }
+    ],
+    [
+      "Assuming South Dakota permitless carry means carry anywhere.",
+      "Ignoring schools under § 13-32-7.",
+      "Ignoring county courthouses and Capitol rules.",
+      "Assuming state law controls tribal land.",
+      "Assuming national park land equals visitor center permission.",
+      "Ignoring reciprocity needs outside South Dakota."
+    ],
+    [
+      "Eligibility checked.",
+      "School restrictions checked.",
+      "Courthouse/Capitol rules checked.",
+      "Federal/tribal property checked.",
+      "Private property checked.",
+      "Out-of-state reciprocity needs checked."
+    ],
+    [
+      {
+        myth: "South Dakota is permitless, so all public places are okay.",
+        reality: "No. Schools, courthouses, Capitol rules, tribal land, federal property, and private property still matter."
+      }
+    ]
+  ),
+
+  NE: makeProfile(
+    "Nebraska",
+    "Law-Backed Ultra Expanded Travel State",
+    "Nebraska adopted permitless concealed carry effective September 2, 2023, but the state still has detailed prohibited-location rules, school restrictions, public-building issues, alcohol-location restrictions, private property rules, local-preemption history, and vehicle/travel concerns. Nebraska remains a state where users must carefully separate general carry permission from prohibited places.",
+    {
+      reciprocity: "Michigan CPL recognition should be verified before travel. Nebraska also has permitless concealed carry for eligible persons 21 and older under LB 77 framework.",
+      permitlessCarry: "Nebraska permitless carry took effect September 2, 2023, but prohibited places remain extensive.",
+      concealedCarry: "Nebraska concealed handgun permit law remains important for reciprocity, federal school-zone issues, and documentation.",
+      openCarry: "Open carry may be lawful for eligible persons, but location restrictions, vehicle visibility, and local/public-building issues still matter.",
+      vehicleCarry: "Vehicle carry must be analyzed under Nebraska concealed handgun and prohibited-place rules.",
+      dutyToInform: "Verify current Nebraska police-contact rules. Keep hands visible and answer lawful questions truthfully.",
+      privateSigns: "Private property owners may restrict firearms. Leave if asked.",
+      forceLaw: "Nebraska self-defense law is fact-specific."
+    },
+    [
+      "Nebraska permitless carry did not erase prohibited places.",
+      "Nebraska has a detailed statutory list of places where concealed handguns remain prohibited.",
+      "Schools, courts, law-enforcement facilities, banks, hospitals, places of worship, polling places, athletic events, and alcohol-heavy locations require careful review.",
+      "A Nebraska permit may still matter for reciprocity and federal school-zone considerations.",
+      "Recent Nebraska local/public-building controversies make current verification important."
+    ],
+    [
+      {
+        title: "Permitless Carry / LB 77 Framework",
+        risk: "Core Eligibility Rule",
+        body: [
+          "STATUTE / SOURCE: Nebraska LB 77 framework; Nebraska State Patrol CHP guidance.",
+          "SUMMARY: Nebraska permitless concealed carry took effect September 2, 2023, allowing eligible persons to carry concealed without a Nebraska concealed handgun permit, subject to restrictions.",
+          "GUIDANCE: Do not treat Nebraska as unrestricted. The prohibited-place list remains critical."
+        ],
+        source: "Nebraska State Patrol CHP FAQ; Nebraska LB 77 framework."
+      },
+      {
+        title: "Prohibited Places",
+        risk: "Major Location Restriction",
+        body: [
+          "STATUTE: Neb. Rev. Stat. § 28-1202.01.",
+          "SUMMARY: Nebraska law identifies many places where concealed handguns remain prohibited, including law-enforcement offices, detention facilities, courtrooms/courthouse buildings, polling places, public meetings, financial institutions, athletic events, schools, places of worship, hospitals, political events, certain alcohol establishments, and places prohibited by state or federal law.",
+          "GUIDANCE: Nebraska's prohibited-place list is one of the most important parts of the state profile. Users should check destination type before carrying."
+        ],
+        source: "Neb. Rev. Stat. § 28-1202.01."
+      },
+      {
+        title: "Schools / School Activities",
+        risk: "Extreme Risk Area",
+        body: [
+          "STATUTE: Neb. Rev. Stat. § 28-1202.01 and Nebraska school weapons framework.",
+          "SUMMARY: Nebraska restricts concealed handguns in or on school buildings, grounds, vehicles, sponsored activities, and athletic events.",
+          "GUIDANCE: School pickup, school sports, parking lots, events, and school vehicles should be treated as verify-first areas."
+        ],
+        source: "Neb. Rev. Stat. § 28-1202.01."
+      },
+      {
+        title: "Courts / Law Enforcement / Detention Facilities",
+        risk: "Hard Stop Area",
+        body: [
+          "STATUTE: Neb. Rev. Stat. § 28-1202.01.",
+          "SUMMARY: Nebraska restricts concealed handguns in police/sheriff/State Patrol offices, detention facilities, prisons, jails, courtrooms, and buildings containing courtrooms.",
+          "GUIDANCE: Do not approach courthouse, jail, or law-enforcement entrances armed unless a clear exception applies."
+        ],
+        source: "Neb. Rev. Stat. § 28-1202.01."
+      },
+      {
+        title: "Banks / Hospitals / Churches / Athletic Events",
+        risk: "Common Destination Trap",
+        body: [
+          "STATUTE: Neb. Rev. Stat. § 28-1202.01.",
+          "SUMMARY: Nebraska's prohibited-place list includes financial institutions, hospitals/emergency rooms/trauma centers, places of worship, and professional or semiprofessional athletic events.",
+          "GUIDANCE: These everyday destinations are easy to overlook. Do not assume permitless carry makes routine errands lawful."
+        ],
+        source: "Neb. Rev. Stat. § 28-1202.01."
+      },
+      {
+        title: "Alcohol Establishments",
+        risk: "Alcohol Location Risk",
+        body: [
+          "STATUTE: Neb. Rev. Stat. § 28-1202.01.",
+          "SUMMARY: Nebraska prohibits concealed handguns in establishments licensed under the Nebraska Liquor Control Act that derive over one-half of total income from alcoholic liquor sales.",
+          "GUIDANCE: Bars and alcohol-heavy venues should be treated as verify-first locations. If drinking is part of the plan, carrying should not be."
+        ],
+        source: "Neb. Rev. Stat. § 28-1202.01."
+      },
+      {
+        title: "Vehicle Carry / Open Carry Visibility",
+        risk: "Vehicle / Travel Risk",
+        body: [
+          "STATUTE / SOURCE: Nebraska carry and vehicle framework.",
+          "SUMMARY: Vehicle carry must be analyzed under Nebraska concealed carry and open carry rules, plus prohibited-place rules.",
+          "GUIDANCE: Do not assume vehicle carry is simple. Check prohibited destinations, school zones, and police-contact behavior."
+        ],
+        source: "Nebraska vehicle/carry framework; Neb. Rev. Stat. § 28-1202.01."
+      },
+      {
+        title: "Private Property / Posted Locations",
+        risk: "Property Control",
+        body: [
+          "STATUTE / SOURCE: Nebraska property/trespass framework.",
+          "SUMMARY: Private property owners may restrict firearms and require people to leave.",
+          "GUIDANCE: If posted or asked to leave, leave immediately."
+        ],
+        source: "Nebraska property/trespass framework."
+      },
+      {
+        title: "Federal Property / Post Offices",
+        risk: "Federal Law Overlay",
+        body: [
+          "STATUTE / SOURCE: Federal facility and postal property framework.",
+          "SUMMARY: Nebraska carry permission does not override federal restrictions.",
+          "GUIDANCE: Federal buildings, federal courthouses, post offices, and secure federal property must be checked separately."
+        ],
+        source: "Federal facility and postal property framework."
+      },
+      {
+        title: "Use of Force / Self-Defense",
+        risk: "Fact-Specific Legal Risk",
+        body: [
+          "STATUTE / SOURCE: Nebraska self-defense law framework.",
+          "SUMMARY: Defensive force must be legally justified under the facts and applicable Nebraska law.",
+          "GUIDANCE: Avoid escalation, disengage when safe, call 911, identify evidence/witnesses, request counsel, and avoid detailed statements under stress."
+        ],
+        source: "Nebraska self-defense law framework."
+      }
+    ],
+    [
+      {
+        title: "Nebraska Carry Checklist",
+        steps: [
+          "1. Confirm eligibility under Nebraska permitless carry/LB 77 framework.",
+          "2. Check Neb. Rev. Stat. § 28-1202.01 prohibited places.",
+          "3. Check schools, courts, law-enforcement facilities, hospitals, churches, banks, athletic events, and alcohol-heavy locations.",
+          "4. Check private property and signs.",
+          "5. Check federal property separately.",
+          "6. Consider whether a permit is needed for reciprocity or federal school-zone purposes."
+        ]
+      }
+    ],
+    [
+      {
+        title: "Omaha / Lincoln / Public Building Travel",
+        summary: "Nebraska permitless carry exists, but public buildings and prohibited-location issues still require careful review.",
+        guidance: [
+          "Check current state law and local/public-building rules.",
+          "Check the § 28-1202.01 prohibited-place list.",
+          "Do not assume routine errands are lawful.",
+          "Plan storage before entering restricted buildings."
+        ]
+      }
+    ],
+    [
+      "Assuming Nebraska permitless carry means unrestricted carry.",
+      "Ignoring the long prohibited-place list in § 28-1202.01.",
+      "Ignoring banks, hospitals, places of worship, and athletic events.",
+      "Ignoring schools and school activities.",
+      "Ignoring alcohol-heavy establishments.",
+      "Assuming permitless carry solves reciprocity or federal school-zone issues."
+    ],
+    [
+      "Eligibility checked.",
+      "Prohibited places checked under § 28-1202.01.",
+      "Schools/courts/law enforcement facilities checked.",
+      "Banks/hospitals/churches/events checked.",
+      "Alcohol establishments checked.",
+      "Federal/private property checked."
+    ],
+    [
+      {
+        myth: "Nebraska has permitless carry now, so there are no location restrictions.",
+        reality: "No. Nebraska has an extensive prohibited-place list, including schools, courts, law-enforcement facilities, banks, hospitals, places of worship, athletic events, and certain alcohol establishments."
+      }
+    ]
+  ),
+
+  KS: makeProfile(
+    "Kansas",
+    "Law-Backed Ultra Expanded Travel State",
+    "Kansas allows permitless concealed carry for eligible adults and recognizes out-of-state permits for nonresidents, but important restrictions remain for school zones, public buildings, buildings with adequate security, private property, state/local facilities, vehicles, and federal property. Kansas is permissive, but school-zone and building-security rules are major practical concerns.",
+    {
+      reciprocity: "Kansas recognizes valid carry licenses/permits issued by other jurisdictions for nonresidents under K.S.A. 75-7c03.",
+      permitlessCarry: "Kansas allows permitless concealed carry for eligible adults, but school zones and buildings with restrictions still matter.",
+      concealedCarry: "K.S.A. 75-7c03 governs Kansas concealed handgun licenses and recognition of licenses issued by other jurisdictions.",
+      openCarry: "Open carry is generally lawful for eligible persons, but restrictions and private property still matter.",
+      vehicleCarry: "Vehicle carry is generally permissive for eligible persons, but school zones and prohibited buildings must be checked.",
+      dutyToInform: "Verify current Kansas police-contact rules. Keep hands visible and answer lawful questions truthfully.",
+      privateSigns: "Private property and posted locations still matter. Leave if asked.",
+      forceLaw: "Kansas self-defense law is fact-specific."
+    },
+    [
+      "Kansas is generally permissive, but school zones are a major issue for unlicensed concealed carry.",
+      "Kansas AG guidance states unlicensed concealed carry is not allowed in a school zone within 1,000 feet of a K-12 school.",
+      "A valid Kansas CCHL or recognized license may matter for school-zone travel and reciprocity.",
+      "Public buildings and buildings with adequate security measures may restrict firearms.",
+      "Private property and federal property must be checked separately."
+    ],
+    [
+      {
+        title: "License Recognition / Concealed Handgun License",
+        risk: "License / Reciprocity Rule",
+        body: [
+          "STATUTE: K.S.A. 75-7c03.",
+          "SUMMARY: Kansas law provides for concealed handgun licenses and recognition of valid licenses/permits issued by other jurisdictions for nonresidents.",
+          "GUIDANCE: A Michigan CPL may be recognized for nonresident travel, but Kansas law controls while in Kansas."
+        ],
+        source: "K.S.A. 75-7c03; Kansas Attorney General concealed carry guidance."
+      },
+      {
+        title: "Permitless Carry",
+        risk: "Core Eligibility Rule",
+        body: [
+          "STATUTE / SOURCE: Kansas concealed carry framework; Kansas Attorney General guidance.",
+          "SUMMARY: Kansas generally allows eligible adults to carry concealed without a Kansas license, subject to restricted locations and federal/state school-zone issues.",
+          "GUIDANCE: Do not assume unlicensed carry is equal to licensed carry in every situation. School zones are especially important."
+        ],
+        source: "Kansas Attorney General concealed carry FAQs; Kansas concealed carry framework."
+      },
+      {
+        title: "School Zones",
+        risk: "Extreme Risk Area",
+        body: [
+          "STATUTE / SOURCE: Kansas Attorney General concealed carry FAQs; federal Gun-Free School Zones Act.",
+          "SUMMARY: Kansas AG guidance states unlicensed concealed carry is not allowed in a school zone within 1,000 feet of a K-12 school; recognized licenses may affect school-zone travel.",
+          "GUIDANCE: School zones are the biggest Kansas trap for unlicensed carry. Verify school buildings, grounds, events, and travel through school zones."
+        ],
+        source: "Kansas Attorney General concealed carry FAQs; 18 U.S.C. § 922(q)."
+      },
+      {
+        title: "Public Buildings / Adequate Security Measures",
+        risk: "Building Restriction",
+        body: [
+          "STATUTE / SOURCE: Kansas Personal and Family Protection Act framework.",
+          "SUMMARY: Kansas law includes rules for public buildings, signage, and adequate security measures that may restrict firearms in certain buildings.",
+          "GUIDANCE: Do not assume a public building is carry-friendly. Look for signage, screening, metal detectors, and posted restrictions."
+        ],
+        source: "Kansas Personal and Family Protection Act framework; Kansas AG guidance."
+      },
+      {
+        title: "Private Property / Posted Locations",
+        risk: "Property Control",
+        body: [
+          "STATUTE / SOURCE: Kansas property/posting framework.",
+          "SUMMARY: Private property owners may restrict firearms and require people to leave.",
+          "GUIDANCE: If posted or asked to leave, leave immediately."
+        ],
+        source: "Kansas property/trespass framework."
+      },
+      {
+        title: "College / University Buildings",
+        risk: "Campus Building Rules",
+        body: [
+          "STATUTE / SOURCE: Kansas campus carry and adequate-security framework.",
+          "SUMMARY: Kansas campus carry rules can depend on building security measures and posted restrictions.",
+          "GUIDANCE: Universities and public buildings should be checked by building, not guessed from the general state carry rule."
+        ],
+        source: "Kansas campus carry/adequate security framework."
+      },
+      {
+        title: "Vehicle Carry",
+        risk: "Travel / School Zone Risk",
+        body: [
+          "STATUTE / SOURCE: Kansas carry and vehicle framework.",
+          "SUMMARY: Vehicle carry is generally permissive for eligible persons, but school zones, public buildings, private property, and federal property can change the analysis.",
+          "GUIDANCE: Keep hands visible during police contact and avoid reaching until instructed."
+        ],
+        source: "Kansas carry/vehicle framework."
+      },
+      {
+        title: "Federal Property / Post Offices",
+        risk: "Federal Law Overlay",
+        body: [
+          "STATUTE / SOURCE: Federal facility and postal property framework.",
+          "SUMMARY: Kansas carry permission does not override federal restrictions.",
+          "GUIDANCE: Federal buildings, post offices, federal courthouses, and secure federal property must be checked separately."
+        ],
+        source: "Federal facility and postal property framework."
+      },
+      {
+        title: "Use of Force / Self-Defense",
+        risk: "Fact-Specific Legal Risk",
+        body: [
+          "STATUTE / SOURCE: Kansas self-defense law framework.",
+          "SUMMARY: Defensive force must be legally justified under the facts and applicable Kansas law.",
+          "GUIDANCE: Avoid escalation, disengage when safe, call 911, identify evidence/witnesses, request counsel, and avoid detailed statements under stress."
+        ],
+        source: "Kansas self-defense law framework."
+      }
+    ],
+    [
+      {
+        title: "Kansas Carry Checklist",
+        steps: [
+          "1. Verify recognition under K.S.A. 75-7c03 if relying on Michigan CPL.",
+          "2. Check school-zone issues before unlicensed carry.",
+          "3. Check public buildings and adequate security measures.",
+          "4. Check private property and signs.",
+          "5. Check campus/public building rules by building.",
+          "6. Check federal property separately."
+        ]
+      }
+    ],
+    [
+      {
+        title: "Kansas Road Trip / School-Zone Travel",
+        summary: "Kansas is permissive, but school-zone issues can be a major trap for unlicensed carry.",
+        guidance: [
+          "Verify whether a recognized license affects your school-zone status.",
+          "Check buildings with security measures.",
+          "Check private property and posted locations.",
+          "Do not assume permitless carry solves every location."
+        ]
+      }
+    ],
+    [
+      "Assuming Kansas permitless carry has no school-zone limits.",
+      "Ignoring public-building security/signage rules.",
+      "Ignoring campus building rules.",
+      "Assuming recognition overrides private property.",
+      "Ignoring federal property and post offices."
+    ],
+    [
+      "Recognition checked.",
+      "School-zone issues checked.",
+      "Public buildings/security measures checked.",
+      "Campus buildings checked.",
+      "Private/federal property checked.",
+      "Vehicle/police-contact plan ready."
+    ],
+    [
+      {
+        myth: "Kansas is permitless, so school zones do not matter.",
+        reality: "No. Kansas AG guidance specifically flags school-zone limits for unlicensed concealed carry."
+      }
+    ]
+  ),
+
+  OK: makeProfile(
+    "Oklahoma",
+    "Law-Backed Ultra Expanded Travel State",
+    "Oklahoma allows permitless carry for eligible persons and honors other states' permits, but Oklahoma law still has detailed restrictions involving prohibited places, schools, government buildings, bars, sports arenas, colleges, vehicle conduct, tribal land, private property, federal property, and defensive display/use-of-force conduct.",
+    {
+      reciprocity: "Oklahoma generally honors other states' carry permits and also has permitless carry for eligible persons under the Oklahoma Self-Defense Act framework.",
+      permitlessCarry: "21 O.S. § 1272 and the Oklahoma Self-Defense Act framework allow eligible persons to carry openly or concealed, subject to prohibited locations.",
+      concealedCarry: "Oklahoma carry authority does not override prohibited places under 21 O.S. § 1277 or other law.",
+      openCarry: "Open carry may be lawful for eligible persons, but prohibited places, private property, and public conduct still matter.",
+      vehicleCarry: "Vehicle carry is generally permissive for eligible persons, but schools, prohibited places, tribal land, and police-contact conduct still matter.",
+      dutyToInform: "Verify current Oklahoma police-contact rules. Keep hands visible and answer lawful questions truthfully.",
+      privateSigns: "Private property owners may restrict firearms. Leave if asked.",
+      forceLaw: "Oklahoma self-defense law is fact-specific."
+    },
+    [
+      "Oklahoma permitless carry does not override prohibited places.",
+      "21 O.S. § 1277 is the key prohibited-location statute.",
+      "Schools, government buildings, bars, sports arenas, colleges/universities, jails, and courthouses require careful review.",
+      "Tribal land can have separate rules and is especially important in Oklahoma.",
+      "Private property and federal property remain separate legal issues."
+    ],
+    [
+      {
+        title: "Permitless Carry / Unlawful Carry Framework",
+        risk: "Core Eligibility Rule",
+        body: [
+          "STATUTE: 21 O.S. § 1272.",
+          "SUMMARY: Oklahoma law allows eligible persons to carry firearms openly or concealed under the constitutional/permitless carry framework, subject to prohibited places and other restrictions.",
+          "GUIDANCE: Do not treat Oklahoma as unrestricted. § 1272 itself points users back to prohibited places and other limits."
+        ],
+        source: "21 O.S. § 1272; Oklahoma Self-Defense Act."
+      },
+      {
+        title: "Prohibited Places",
+        risk: "Major Location Restriction",
+        body: [
+          "STATUTE: 21 O.S. § 1277.",
+          "SUMMARY: Oklahoma law lists places where carrying firearms is prohibited, with exceptions specified in the statute.",
+          "GUIDANCE: Treat government buildings, schools, courthouses, jails/prisons, sports arenas, bars, colleges/universities, and other listed locations as verify-first areas."
+        ],
+        source: "21 O.S. § 1277."
+      },
+      {
+        title: "Schools",
+        risk: "Extreme Risk Area",
+        body: [
+          "STATUTE: 21 O.S. § 1277 and Oklahoma school weapons framework.",
+          "SUMMARY: Oklahoma restricts firearms in schools and school-related places, subject to limited statutory exceptions.",
+          "GUIDANCE: School pickup, school events, school parking, and school activities should be treated as verify-first."
+        ],
+        source: "21 O.S. § 1277; Oklahoma school weapons framework."
+      },
+      {
+        title: "Bars / Alcohol Locations",
+        risk: "Alcohol Location Risk",
+        body: [
+          "STATUTE: 21 O.S. § 1277 and Oklahoma alcohol-location framework.",
+          "SUMMARY: Oklahoma restricts firearms in certain places where alcoholic beverages are consumed or where the primary purpose involves alcohol, subject to statutory language and exceptions.",
+          "GUIDANCE: Bars, clubs, event venues, restaurants with bars, casinos with alcohol service, and festivals should be checked carefully. If drinking is part of the plan, carrying should not be."
+        ],
+        source: "21 O.S. § 1277; Oklahoma Self-Defense Act."
+      },
+      {
+        title: "Colleges / Universities",
+        risk: "Campus Restriction",
+        body: [
+          "STATUTE: 21 O.S. § 1277 and Oklahoma higher-education firearms framework.",
+          "SUMMARY: Oklahoma restricts carry on college, university, and technology center property except as authorized by law or policy.",
+          "GUIDANCE: Campus property, events, dorms, classrooms, and parking should be checked before carrying."
+        ],
+        source: "21 O.S. § 1277; Oklahoma campus firearms framework."
+      },
+      {
+        title: "Sports Arenas / Government Buildings / Courthouses",
+        risk: "Public Venue Risk",
+        body: [
+          "STATUTE: 21 O.S. § 1277.",
+          "SUMMARY: Oklahoma's prohibited-place framework includes public venue and government-related restrictions, with statutory exceptions.",
+          "GUIDANCE: Do not enter sports arenas, courthouses, jail facilities, or government-controlled buildings armed unless a clear legal exception applies."
+        ],
+        source: "21 O.S. § 1277."
+      },
+      {
+        title: "Tribal Land / Casinos",
+        risk: "Jurisdiction Overlay",
+        body: [
+          "STATUTE / SOURCE: Tribal law framework; Oklahoma public/private property framework.",
+          "SUMMARY: Oklahoma travel commonly involves tribal land and casinos, which may have separate rules, security policies, and jurisdictional issues.",
+          "GUIDANCE: Verify tribal and casino policies before carrying. Leave immediately if instructed by security."
+        ],
+        source: "Tribal law framework; Oklahoma casino/property framework."
+      },
+      {
+        title: "Vehicle Carry",
+        risk: "Travel / Police Contact Risk",
+        body: [
+          "STATUTE / SOURCE: Oklahoma carry and vehicle framework.",
+          "SUMMARY: Vehicle carry is generally permissive for eligible persons, but prohibited locations, school property, tribal land, and police-contact conduct still matter.",
+          "GUIDANCE: Keep hands visible during traffic stops and avoid reaching until instructed."
+        ],
+        source: "Oklahoma Self-Defense Act; Oklahoma vehicle carry framework."
+      },
+      {
+        title: "Private Property / Posted Locations",
+        risk: "Property Control",
+        body: [
+          "STATUTE / SOURCE: Oklahoma property/trespass framework.",
+          "SUMMARY: Private property owners may restrict firearms and require armed persons to leave.",
+          "GUIDANCE: If posted or asked to leave, leave immediately."
+        ],
+        source: "Oklahoma property/trespass framework."
+      },
+      {
+        title: "Use of Force / Self-Defense",
+        risk: "Fact-Specific Legal Risk",
+        body: [
+          "STATUTE / SOURCE: Oklahoma self-defense law framework.",
+          "SUMMARY: Defensive force must be legally justified under the facts and applicable Oklahoma law.",
+          "GUIDANCE: Avoid escalation, disengage when safe, call 911, identify evidence/witnesses, request counsel, and avoid detailed statements under stress."
+        ],
+        source: "Oklahoma self-defense law framework."
+      }
+    ],
+    [
+      {
+        title: "Oklahoma Carry Checklist",
+        steps: [
+          "1. Confirm eligibility under Oklahoma carry framework.",
+          "2. Check prohibited places under 21 O.S. § 1277.",
+          "3. Check schools, campuses, bars, sports arenas, government buildings, jails, and courthouses.",
+          "4. Check tribal land and casino policies.",
+          "5. Check private/federal property separately.",
+          "6. Avoid carry while impaired."
+        ]
+      }
+    ],
+    [
+      {
+        title: "Casino / Tribal Land Travel",
+        summary: "Oklahoma travel often involves tribal land, casinos, alcohol service, event venues, and private security.",
+        guidance: [
+          "Verify tribal jurisdiction.",
+          "Check casino security policy.",
+          "Check alcohol-location rules.",
+          "Leave immediately if instructed by security."
+        ]
+      }
+    ],
+    [
+      "Assuming Oklahoma permitless carry means carry anywhere.",
+      "Ignoring prohibited places under § 1277.",
+      "Ignoring tribal land and casino policies.",
+      "Ignoring school and campus restrictions.",
+      "Ignoring bars/alcohol locations.",
+      "Assuming private property signs can be debated."
+    ],
+    [
+      "Eligibility checked.",
+      "Prohibited places under § 1277 checked.",
+      "Schools/campuses checked.",
+      "Bars/alcohol locations checked.",
+      "Tribal/casino rules checked.",
+      "Private/federal property checked."
+    ],
+    [
+      {
+        myth: "Oklahoma is constitutional carry, so I can carry anywhere.",
+        reality: "No. Oklahoma has specific prohibited-place laws, especially 21 O.S. § 1277, and tribal/private/federal restrictions still matter."
+      }
+    ]
+  ),
+
+
+  LA: makeProfile(
+    "Louisiana",
+    "Law-Backed Ultra Expanded Travel State",
+    "Louisiana is a high-priority southern travel state with permitless concealed carry for eligible adults 18 and older, effective July 4, 2024. Louisiana still has important statutory restrictions involving schools, firearm-free zones, concealed handgun permit restrictions, private residences, alcohol-related locations, parades/demonstrations, government buildings, federal property, and local travel issues such as New Orleans/French Quarter rules.",
+    {
+      reciprocity: "Louisiana generally recognizes valid out-of-state permits under its reciprocity framework, but Louisiana law controls while physically in Louisiana.",
+      permitlessCarry: "Louisiana Act 1 / La. R.S. 14:95 framework: eligible adults 18+ may carry concealed without a permit effective July 4, 2024, subject to restrictions.",
+      concealedCarry: "La. R.S. 40:1379.3 governs statewide concealed handgun permits and lists places where a permit does not authorize carry.",
+      openCarry: "Open carry may be lawful for eligible persons, but prohibited places, local issues, and police-contact realities still matter.",
+      vehicleCarry: "Vehicle carry must be analyzed with Louisiana prohibited-place rules, school/firearm-free zones, and safe storage concerns.",
+      dutyToInform: "Verify current Louisiana police-contact rules. Keep hands visible and answer lawful questions truthfully.",
+      privateSigns: "Private property and private residences matter. Louisiana law specifically addresses entering another person's private residence with a concealed handgun.",
+      forceLaw: "Louisiana self-defense law is fact-specific and should be verified before relying on a summary."
+    },
+    [
+      "Louisiana permitless carry does not mean carry anywhere.",
+      "Permitless concealed carry became effective July 4, 2024 for eligible adults 18 and older, but prohibited locations remain in effect.",
+      "Schools, school-sponsored functions, firearm-free zones, courthouses, law-enforcement facilities, private residences, alcohol-related locations, parades, demonstrations, and federal property require careful review.",
+      "New Orleans and the French Quarter have generated special local attention around permitless carry and firearm-free zones; travelers should verify current local conditions before carrying.",
+      "A recognized permit or permitless authority does not override Louisiana’s restricted-location rules."
+    ],
+    [
+      {
+        title: "Permitless Concealed Carry",
+        risk: "Core Eligibility Rule",
+        body: [
+          "STATUTE / SOURCE: Louisiana Act 1 of 2024; La. R.S. 14:95 framework.",
+          "SUMMARY: Louisiana law now provides an exemption to illegal carrying of weapons for eligible persons 18 or older who are not prohibited from possessing firearms under state or federal law.",
+          "GUIDANCE: Permitless carry is not ruleless carry. The user must still be eligible and must avoid prohibited places and restricted conduct."
+        ],
+        source: "Louisiana Act 1 of 2024; La. R.S. 14:95 framework."
+      },
+      {
+        title: "Statewide Concealed Handgun Permit / Prohibited Places",
+        risk: "Major Location Restriction",
+        body: [
+          "STATUTE: La. R.S. 40:1379.3.",
+          "SUMMARY: Louisiana’s concealed handgun permit statute identifies locations where no concealed handgun may be carried and where a permit does not authorize carry.",
+          "GUIDANCE: Users should check the Louisiana prohibited-place list before entering any government building, school area, courthouse, law-enforcement facility, polling place, parade/demonstration, alcohol-related location, or other listed area."
+        ],
+        source: "La. R.S. 40:1379.3."
+      },
+      {
+        title: "Schools / Firearm-Free Zones",
+        risk: "Extreme Risk Area",
+        body: [
+          "STATUTE: La. R.S. 14:95.2.",
+          "SUMMARY: Louisiana restricts carrying firearms or dangerous weapons on school property, at school-sponsored functions, and in firearm-free zones, subject to statutory exceptions.",
+          "GUIDANCE: Schools, school buses, school-sponsored events, college/university property, and the surrounding firearm-free zone framework should be treated as verify-first areas."
+        ],
+        source: "La. R.S. 14:95.2."
+      },
+      {
+        title: "Private Residence Consent",
+        risk: "Private Residence Restriction",
+        body: [
+          "STATUTE: La. R.S. 40:1379.3.",
+          "SUMMARY: Louisiana concealed handgun law addresses carrying a concealed handgun into another person’s private residence without first receiving that person’s consent.",
+          "GUIDANCE: Do not assume a permit or permitless carry lets you enter someone else’s home armed without permission."
+        ],
+        source: "La. R.S. 40:1379.3."
+      },
+      {
+        title: "Alcohol-Related Locations",
+        risk: "Alcohol Location Risk",
+        body: [
+          "STATUTE / SOURCE: La. R.S. 40:1379.3 prohibited-place framework and Louisiana alcohol/firearm rules.",
+          "SUMMARY: Louisiana law restricts concealed handgun carry in certain alcohol-related locations and under certain conditions.",
+          "GUIDANCE: Bars, restaurants, festivals, entertainment districts, stadium events, and French Quarter nightlife should be checked carefully. If drinking is part of the plan, carrying should not be."
+        ],
+        source: "La. R.S. 40:1379.3; Louisiana alcohol/firearm framework."
+      },
+      {
+        title: "Parades / Demonstrations / Public Events",
+        risk: "Event Risk",
+        body: [
+          "STATUTE / SOURCE: La. R.S. 40:1379.3 prohibited-place framework.",
+          "SUMMARY: Louisiana concealed handgun restrictions can apply to certain parades, demonstrations, and public gatherings.",
+          "GUIDANCE: Mardi Gras events, festivals, parades, protests, and large public gatherings should be treated as high-risk verify-first locations."
+        ],
+        source: "La. R.S. 40:1379.3."
+      },
+      {
+        title: "Courthouses / Government / Law Enforcement Facilities",
+        risk: "Hard Stop Area",
+        body: [
+          "STATUTE / SOURCE: La. R.S. 40:1379.3 prohibited-place framework.",
+          "SUMMARY: Louisiana restricts concealed carry in courthouses, law-enforcement facilities, and other listed government or secure locations.",
+          "GUIDANCE: Do not approach courthouse security, police stations, jails, or secure government facilities armed unless a specific legal exception clearly applies."
+        ],
+        source: "La. R.S. 40:1379.3."
+      },
+      {
+        title: "Vehicle Carry / New Orleans Travel",
+        risk: "Travel and Storage Risk",
+        body: [
+          "STATUTE / SOURCE: Louisiana carry framework; local New Orleans travel considerations.",
+          "SUMMARY: Vehicle carry may be lawful for eligible persons, but firearm-free zones, local event districts, vehicle storage, and theft risk must be considered.",
+          "GUIDANCE: Do not leave firearms unsecured in vehicles. Verify local restrictions before entering entertainment districts or firearm-free zones."
+        ],
+        source: "Louisiana carry framework; New Orleans public safety guidance."
+      },
+      {
+        title: "Federal Property / Post Offices",
+        risk: "Federal Law Overlay",
+        body: [
+          "STATUTE / SOURCE: Federal facility and postal property framework.",
+          "SUMMARY: Louisiana carry permission does not override federal restrictions.",
+          "GUIDANCE: Federal buildings, federal courthouses, post offices, and secure federal property must be checked separately."
+        ],
+        source: "Federal facility and postal property framework."
+      },
+      {
+        title: "Use of Force / Self-Defense",
+        risk: "Fact-Specific Legal Risk",
+        body: [
+          "STATUTE / SOURCE: Louisiana self-defense and justifiable-force framework.",
+          "SUMMARY: Defensive force must be justified under the facts and applicable Louisiana law.",
+          "GUIDANCE: Avoid escalation, call 911 when safe, identify evidence/witnesses when necessary, request counsel, and avoid detailed statements under stress."
+        ],
+        source: "Louisiana self-defense law framework."
+      }
+    ],
+    [
+      {
+        title: "Louisiana Carry Checklist",
+        steps: [
+          "1. Confirm eligibility under Louisiana permitless carry law.",
+          "2. Check La. R.S. 40:1379.3 prohibited locations.",
+          "3. Check school/firearm-free zones under La. R.S. 14:95.2.",
+          "4. Check alcohol/event/parade restrictions.",
+          "5. Get consent before entering another person's private residence armed.",
+          "6. Check federal property separately.",
+          "7. Verify local conditions in New Orleans/French Quarter."
+        ]
+      }
+    ],
+    [
+      {
+        title: "New Orleans / French Quarter Visit",
+        summary: "Louisiana permitless carry does not make entertainment districts simple.",
+        guidance: [
+          "Check current local restrictions.",
+          "Watch for firearm-free zones.",
+          "Avoid carrying while drinking.",
+          "Do not leave firearms unsecured in vehicles."
+        ]
+      },
+      {
+        title: "Mardi Gras / Parade Event",
+        summary: "Parades and public gatherings require special caution.",
+        guidance: [
+          "Check event-specific restrictions.",
+          "Check La. R.S. 40:1379.3.",
+          "Avoid carrying in alcohol-heavy environments."
+        ]
+      }
+    ],
+    [
+      "Assuming Louisiana permitless carry means carry anywhere.",
+      "Ignoring school/firearm-free zones.",
+      "Ignoring New Orleans local issues.",
+      "Carrying into another person's private residence without consent.",
+      "Carrying while drinking or in alcohol-heavy event areas.",
+      "Leaving firearms unsecured in vehicles."
+    ],
+    [
+      "Eligibility checked.",
+      "La. R.S. 40:1379.3 prohibited places checked.",
+      "La. R.S. 14:95.2 school/firearm-free zones checked.",
+      "Private residence consent considered.",
+      "Alcohol/event restrictions checked.",
+      "Federal property checked."
+    ],
+    [
+      {
+        myth: "Louisiana has permitless carry, so I can carry everywhere in New Orleans.",
+        reality: "No. Prohibited places, firearm-free zones, local event areas, alcohol locations, private property, and federal property still matter."
+      }
+    ]
+  ),
+
+  MS: makeProfile(
+    "Mississippi",
+    "Law-Backed Ultra Expanded Travel State",
+    "Mississippi is a permitless carry state with a standard and enhanced permit structure. It is generally permissive, but users must still understand restricted locations, enhanced endorsement differences, schools, courthouses, police stations, detention facilities, polling places, government meetings, nuisance places, posted private property, vehicle carry, and federal property.",
+    {
+      reciprocity: "Michigan CPL recognition should be verified, but Mississippi also has permitless carry options for eligible persons.",
+      permitlessCarry: "Mississippi allows permitless carry for eligible persons, but location restrictions still apply.",
+      concealedCarry: "Miss. Code § 45-9-101 governs concealed carry licenses and enhanced endorsements.",
+      openCarry: "Open carry may be lawful for eligible persons, but location restrictions and conduct still matter.",
+      vehicleCarry: "Vehicle carry must be analyzed under Mississippi weapons and prohibited-location rules.",
+      dutyToInform: "Verify current Mississippi police-contact rules. Keep hands visible and answer lawful questions truthfully.",
+      privateSigns: "Private property and posted locations matter. Leave if asked.",
+      forceLaw: "Mississippi self-defense law is fact-specific."
+    },
+    [
+      "Mississippi is permissive, but not unrestricted.",
+      "Enhanced endorsement rules can differ from standard permit or permitless carry rules.",
+      "Schools, courthouses, police stations, jails, detention facilities, polling places, government meetings, and posted private property require caution.",
+      "A permissive carry state still has legal traps for travelers.",
+      "Federal property remains separate from Mississippi carry permission."
+    ],
+    [
+      {
+        title: "Permitless Carry / Carry Framework",
+        risk: "Core Eligibility Rule",
+        body: [
+          "STATUTE / SOURCE: Mississippi weapons and concealed carry framework; Miss. Code § 45-9-101.",
+          "SUMMARY: Mississippi allows permitless carry for eligible persons, while also maintaining a licensing and enhanced endorsement system.",
+          "GUIDANCE: Do not assume permitless carry removes location restrictions. Eligibility, prohibited places, and private property still matter."
+        ],
+        source: "Miss. Code § 45-9-101; Mississippi weapons law framework."
+      },
+      {
+        title: "Standard Permit and Enhanced Endorsement",
+        risk: "Permit Type Difference",
+        body: [
+          "STATUTE: Miss. Code § 45-9-101.",
+          "SUMMARY: Mississippi has a concealed carry license framework and an enhanced endorsement system tied to approved training.",
+          "GUIDANCE: Enhanced carry may allow carry in some locations where standard carry is restricted, but the exact scope must be verified before relying on it."
+        ],
+        source: "Miss. Code § 45-9-101; Mississippi DPS enhanced endorsement guidance."
+      },
+      {
+        title: "Prohibited / Restricted Locations",
+        risk: "Major Location Restriction",
+        body: [
+          "STATUTE / SOURCE: Miss. Code § 45-9-101 restricted-location framework.",
+          "SUMMARY: Mississippi law identifies locations where carry authority may not authorize carry, including places such as police/sheriff/highway patrol stations, detention facilities, courthouses/courtrooms, polling places, government meetings, and nuisance places.",
+          "GUIDANCE: Check whether you are relying on permitless carry, a standard permit, or enhanced endorsement before entering any restricted area."
+        ],
+        source: "Miss. Code § 45-9-101."
+      },
+      {
+        title: "Schools / Educational Property",
+        risk: "Extreme Risk Area",
+        body: [
+          "STATUTE / SOURCE: Mississippi school weapons framework.",
+          "SUMMARY: Mississippi restricts weapons on educational property subject to statutory exceptions and permit/endorsement distinctions.",
+          "GUIDANCE: Schools, campuses, school events, parking lots, and student activities should be treated as verify-first locations."
+        ],
+        source: "Mississippi school weapons law framework."
+      },
+      {
+        title: "Courthouses / Courtrooms",
+        risk: "Hard Stop Area",
+        body: [
+          "STATUTE / SOURCE: Miss. Code § 45-9-101 restricted-location framework.",
+          "SUMMARY: Mississippi restricts carry in courthouses and courtrooms under its carry-location rules, with narrow exceptions for authorized persons.",
+          "GUIDANCE: Do not approach courthouse security armed unless a clear legal exception applies."
+        ],
+        source: "Miss. Code § 45-9-101."
+      },
+      {
+        title: "Police Stations / Detention Facilities",
+        risk: "Restricted Facility Risk",
+        body: [
+          "STATUTE / SOURCE: Miss. Code § 45-9-101 restricted-location framework.",
+          "SUMMARY: Police, sheriff, highway patrol stations, detention facilities, prisons, and jails are restricted or high-risk locations.",
+          "GUIDANCE: Do not enter these facilities armed unless a specific legal exception clearly applies."
+        ],
+        source: "Miss. Code § 45-9-101."
+      },
+      {
+        title: "Polling Places / Government Meetings",
+        risk: "Civic Location Risk",
+        body: [
+          "STATUTE / SOURCE: Miss. Code § 45-9-101 restricted-location framework.",
+          "SUMMARY: Mississippi carry restrictions include polling places and meeting places of governing bodies, subject to the details of the statute and permit type.",
+          "GUIDANCE: Election locations, city/county board meetings, and government meetings should be treated as verify-first locations."
+        ],
+        source: "Miss. Code § 45-9-101."
+      },
+      {
+        title: "Private Property / Posted Locations",
+        risk: "Property Control",
+        body: [
+          "STATUTE / SOURCE: Mississippi property and posted premises framework.",
+          "SUMMARY: Private property owners may restrict firearms and require armed persons to leave.",
+          "GUIDANCE: If posted or asked to leave, leave immediately. Do not turn a carry issue into a trespass or disorderly conduct issue."
+        ],
+        source: "Mississippi property/trespass framework."
+      },
+      {
+        title: "Vehicle Carry",
+        risk: "Travel / Storage Risk",
+        body: [
+          "STATUTE / SOURCE: Mississippi weapons and carry framework.",
+          "SUMMARY: Vehicle carry may be lawful for eligible persons, but prohibited places, school property, and safe storage still matter.",
+          "GUIDANCE: Keep hands visible during traffic stops, do not reach, and avoid leaving firearms unsecured in vehicles."
+        ],
+        source: "Mississippi weapons law framework."
+      },
+      {
+        title: "Federal Property / Post Offices",
+        risk: "Federal Law Overlay",
+        body: [
+          "STATUTE / SOURCE: Federal facility and postal property framework.",
+          "SUMMARY: Mississippi carry permission does not override federal restrictions.",
+          "GUIDANCE: Federal buildings, federal courthouses, post offices, and secure federal property must be checked separately."
+        ],
+        source: "Federal facility and postal property framework."
+      }
+    ],
+    [
+      {
+        title: "Mississippi Carry Checklist",
+        steps: [
+          "1. Confirm eligibility to possess/carry.",
+          "2. Identify whether relying on permitless carry, standard permit, or enhanced endorsement.",
+          "3. Check Miss. Code § 45-9-101 restricted locations.",
+          "4. Check schools and educational property.",
+          "5. Check courthouses, police stations, jails, and polling places.",
+          "6. Check private signs and federal property."
+        ]
+      }
+    ],
+    [
+      {
+        title: "Gulf Coast / Casino / Event Travel",
+        summary: "Mississippi travel often involves casinos, restaurants, hotels, beaches, events, and vehicles.",
+        guidance: [
+          "Check private property policies.",
+          "Check alcohol/event restrictions.",
+          "Understand permitless vs enhanced carry distinctions.",
+          "Secure firearms from unauthorized access."
+        ]
+      }
+    ],
+    [
+      "Assuming Mississippi permitless carry means no restricted places.",
+      "Confusing standard permit and enhanced endorsement authority.",
+      "Ignoring courthouses and courtrooms.",
+      "Ignoring police stations and detention facilities.",
+      "Ignoring polling places and government meetings.",
+      "Ignoring posted private property."
+    ],
+    [
+      "Eligibility checked.",
+      "Carry authority type identified.",
+      "Restricted locations checked.",
+      "School property checked.",
+      "Court/police/jail locations checked.",
+      "Private/federal property checked."
+    ],
+    [
+      {
+        myth: "Mississippi is permitless, so restrictions do not matter.",
+        reality: "No. Mississippi still has restricted locations, enhanced endorsement distinctions, private property rules, and federal property restrictions."
+      }
+    ]
+  ),
+
+  AR: makeProfile(
+    "Arkansas",
+    "Law-Backed Ultra Expanded Travel State",
+    "Arkansas is a generally permissive carry state with a concealed handgun licensing system and enhanced carry endorsement structure. Members must understand prohibited places, enhanced endorsement exceptions, schools, public buildings, places of worship, alcohol-related locations, private property, vehicles, and federal property before relying on Arkansas carry rights.",
+    {
+      reciprocity: "Michigan CPL recognition should be verified, and Arkansas has its own carry and license framework.",
+      permitlessCarry: "Arkansas is generally permissive for carry by eligible persons, but prohibited locations still apply.",
+      concealedCarry: "Ark. Code § 5-73-306 lists places where a concealed handgun license does not authorize carry; enhanced endorsement may change some rules.",
+      openCarry: "Open carry may be lawful depending on circumstances, but conduct, intent, and prohibited places still matter.",
+      vehicleCarry: "Vehicle carry must be analyzed under Arkansas carry law, prohibited places, and safe storage concerns.",
+      dutyToInform: "Verify current Arkansas police-contact rules. Keep hands visible and answer lawful questions truthfully.",
+      privateSigns: "Arkansas recognizes notice/signage restrictions in its concealed carry prohibited-place framework.",
+      forceLaw: "Arkansas self-defense law is fact-specific."
+    },
+    [
+      "Arkansas is permissive, but not unrestricted.",
+      "Ark. Code § 5-73-306 is a key prohibited-places statute.",
+      "Enhanced carry endorsement can change some location rules but does not make carry unlimited.",
+      "Schools, public buildings, law enforcement facilities, detention facilities, places of worship, bars, private signs, and federal property require review.",
+      "Do not rely on a one-sentence summary for Arkansas location rules."
+    ],
+    [
+      {
+        title: "Concealed Handgun License / Prohibited Places",
+        risk: "Major Location Restriction",
+        body: [
+          "STATUTE: Ark. Code § 5-73-306.",
+          "SUMMARY: Arkansas lists places where a concealed handgun license does not authorize carrying a concealed handgun, subject to exceptions and enhanced endorsement rules.",
+          "GUIDANCE: Check the full prohibited-place list before entering police stations, jails, courthouses, schools, bars, airports, places of worship, posted property, or public buildings."
+        ],
+        source: "Ark. Code § 5-73-306."
+      },
+      {
+        title: "Enhanced Carry Endorsement",
+        risk: "Permit Type Difference",
+        body: [
+          "STATUTE: Ark. Code § 5-73-322.",
+          "SUMMARY: Arkansas enhanced endorsement can allow carry in some places that are otherwise restricted, subject to statutory limits and signage/notice rules.",
+          "GUIDANCE: Do not assume enhanced carry means carry anywhere. The endorsement must be checked against each specific restricted location."
+        ],
+        source: "Ark. Code § 5-73-322."
+      },
+      {
+        title: "Schools / School Property",
+        risk: "Extreme Risk Area",
+        body: [
+          "STATUTE / SOURCE: Ark. Code § 5-73-119 and § 5-73-306 framework.",
+          "SUMMARY: Arkansas restricts firearms on school property, with specific exceptions and enhanced-endorsement nuances.",
+          "GUIDANCE: Schools, school buses, school events, and K-12/private school policies should be treated as verify-first areas."
+        ],
+        source: "Ark. Code § 5-73-119; Ark. Code § 5-73-306."
+      },
+      {
+        title: "Public Buildings / Government Locations",
+        risk: "Public Facility Risk",
+        body: [
+          "STATUTE: Ark. Code § 5-73-122; Ark. Code § 5-73-306.",
+          "SUMMARY: Arkansas restricts carry in certain publicly owned buildings and government-controlled facilities, with enhanced-endorsement exceptions in some contexts.",
+          "GUIDANCE: Do not assume a public building is lawful. Check whether enhanced endorsement changes the answer and whether signs prohibit carry."
+        ],
+        source: "Ark. Code § 5-73-122; Ark. Code § 5-73-306."
+      },
+      {
+        title: "Police Stations / Jails / Detention Facilities",
+        risk: "Restricted Facility Risk",
+        body: [
+          "STATUTE: Ark. Code § 5-73-306.",
+          "SUMMARY: Arkansas prohibited-place law includes law enforcement and detention-related facilities.",
+          "GUIDANCE: Police stations, sheriff stations, jails, prisons, detention centers, and correctional facilities should be treated as hard-stop verify-first locations."
+        ],
+        source: "Ark. Code § 5-73-306."
+      },
+      {
+        title: "Places of Worship",
+        risk: "Property / Permission Risk",
+        body: [
+          "STATUTE: Ark. Code § 5-73-306.",
+          "SUMMARY: Arkansas law recognizes that churches and places of worship may determine who may carry on their property, with notice/signage rules relevant to enhanced carry.",
+          "GUIDANCE: Verify policy with the proper authority before carrying into a church or place of worship."
+        ],
+        source: "Ark. Code § 5-73-306."
+      },
+      {
+        title: "Alcohol Locations / Bars",
+        risk: "Alcohol Location Risk",
+        body: [
+          "STATUTE: Ark. Code § 5-73-306.",
+          "SUMMARY: Arkansas prohibited-place law includes certain alcohol-related locations and bars, subject to statutory language and exceptions.",
+          "GUIDANCE: If drinking is part of the plan, carrying should not be. Restaurants, bars, clubs, festivals, and event venues should be checked carefully."
+        ],
+        source: "Ark. Code § 5-73-306."
+      },
+      {
+        title: "Private Property / Posted Locations",
+        risk: "Signage and Notice Risk",
+        body: [
+          "STATUTE: Ark. Code § 5-73-306.",
+          "SUMMARY: Arkansas recognizes written notice and other notice prohibiting concealed carry at physical locations.",
+          "GUIDANCE: Posted signs and verbal instructions matter. Leave immediately if asked."
+        ],
+        source: "Ark. Code § 5-73-306."
+      },
+      {
+        title: "Vehicle Carry",
+        risk: "Travel / Storage Risk",
+        body: [
+          "STATUTE / SOURCE: Arkansas carry and weapons law framework.",
+          "SUMMARY: Vehicle carry may be lawful for eligible persons, but prohibited places, school property, and safe storage concerns still matter.",
+          "GUIDANCE: Keep hands visible during police contact and do not leave firearms unsecured in vehicles."
+        ],
+        source: "Arkansas weapons law framework."
+      },
+      {
+        title: "Federal Property / Post Offices",
+        risk: "Federal Law Overlay",
+        body: [
+          "STATUTE / SOURCE: Federal facility and postal property framework.",
+          "SUMMARY: Arkansas carry permission does not override federal restrictions.",
+          "GUIDANCE: Federal buildings, federal courthouses, post offices, and secure federal property must be checked separately."
+        ],
+        source: "Federal facility and postal property framework."
+      }
+    ],
+    [
+      {
+        title: "Arkansas Carry Checklist",
+        steps: [
+          "1. Confirm eligibility and carry authority.",
+          "2. Check Ark. Code § 5-73-306 prohibited places.",
+          "3. Identify whether enhanced endorsement applies.",
+          "4. Check school property under § 5-73-119.",
+          "5. Check public buildings under § 5-73-122.",
+          "6. Check private signs and federal property."
+        ]
+      }
+    ],
+    [
+      {
+        title: "Enhanced Carry Assumption",
+        summary: "Enhanced carry gives added authority in some places but not everywhere.",
+        guidance: [
+          "Check the specific statute.",
+          "Check signs/notice.",
+          "Do not assume enhanced equals unlimited."
+        ]
+      }
+    ],
+    [
+      "Assuming Arkansas is unrestricted carry.",
+      "Ignoring Ark. Code § 5-73-306 prohibited places.",
+      "Assuming enhanced endorsement overrides all signs.",
+      "Ignoring school property restrictions.",
+      "Ignoring places of worship policy.",
+      "Ignoring alcohol-related locations."
+    ],
+    [
+      "Eligibility checked.",
+      "Prohibited places checked.",
+      "Enhanced endorsement status checked.",
+      "School/public building rules checked.",
+      "Private signs checked.",
+      "Federal property checked."
+    ],
+    [
+      {
+        myth: "Arkansas enhanced carry means I can carry anywhere.",
+        reality: "No. Enhanced endorsement can change some location rules, but signs, prohibited places, schools, private property, and federal law still matter."
+      }
+    ]
+  ),
+
+  ME: makeProfile(
+    "Maine",
+    "Law-Backed Ultra Expanded Travel State",
+    "Maine allows permitless concealed carry for eligible persons, but the state has an important duty-to-inform rule for permitless carriers and still restricts schools, courthouses, certain state/federal properties, posted private property, vehicles, parks, and other sensitive locations. Michigan travelers should treat Maine as permissive but not unrestricted.",
+    {
+      reciprocity: "Maine has permitless carry for eligible persons, but permit recognition and documentation should still be verified for travel and reciprocity purposes.",
+      permitlessCarry: "Maine allows eligible persons to carry concealed without a permit, subject to restrictions.",
+      concealedCarry: "Maine concealed handgun permits remain available and may affect reciprocity and duty-to-inform context.",
+      openCarry: "Open carry may be lawful for eligible persons, but location restrictions and public-contact realities still matter.",
+      vehicleCarry: "Vehicle carry must be analyzed with Maine carry rules, prohibited places, and police-contact duties.",
+      dutyToInform: "Maine State Police guidance says a person carrying concealed without a permit has a duty to immediately inform law enforcement during a routine stop, detention, or arrest.",
+      privateSigns: "Posted private property and instructions to leave matter.",
+      forceLaw: "Maine self-defense law is fact-specific."
+    },
+    [
+      "Maine permitless carry has a specific police-contact duty for permitless concealed carriers.",
+      "A Maine permit may still matter for reciprocity and documentation.",
+      "Schools, courthouses, federal property, state/federal parks, posted private property, and vehicles require review.",
+      "Travelers should not assume rural/permissive means no restrictions.",
+      "If carrying without a permit and stopped/detained/arrested, duty-to-inform is a critical Maine issue."
+    ],
+    [
+      {
+        title: "Permitless Concealed Carry",
+        risk: "Core Carry Rule",
+        body: [
+          "STATUTE / SOURCE: Maine concealed carry framework; Maine State Police concealed carry guidance.",
+          "SUMMARY: Maine allows eligible persons to carry concealed handguns without a permit, subject to restrictions.",
+          "GUIDANCE: Permitless carry does not override prohibited places, private property, federal property, or police-contact duties."
+        ],
+        source: "Maine State Police concealed carry guidance."
+      },
+      {
+        title: "Duty to Inform for Permitless Carry",
+        risk: "Police Contact Requirement",
+        body: [
+          "STATUTE / SOURCE: Maine State Police concealed carry guidance.",
+          "SUMMARY: Maine State Police guidance states that an individual carrying a concealed handgun without a permit has a duty, during a routine stop, detention, or arrest, to immediately inform the law enforcement officer that the individual is carrying concealed.",
+          "GUIDANCE: Recommended script: Officer, I am carrying concealed without a permit under Maine law. How would you like me to proceed? Keep hands visible and do not reach."
+        ],
+        source: "Maine State Police concealed carry guidance."
+      },
+      {
+        title: "Concealed Handgun Permit",
+        risk: "Permit / Reciprocity Context",
+        body: [
+          "STATUTE / SOURCE: Maine concealed handgun permit framework.",
+          "SUMMARY: Maine still issues concealed handgun permits even though permitless carry exists.",
+          "GUIDANCE: A permit may matter for reciprocity, documentation, and police-contact context when traveling."
+        ],
+        source: "Maine concealed handgun permit framework."
+      },
+      {
+        title: "Schools",
+        risk: "Extreme Risk Area",
+        body: [
+          "STATUTE / SOURCE: Maine school weapons framework.",
+          "SUMMARY: Maine restricts firearms and dangerous weapons in schools and school-related areas subject to exceptions.",
+          "GUIDANCE: School buildings, school grounds, buses, events, and parking areas should be treated as verify-first locations."
+        ],
+        source: "Maine school weapons law framework."
+      },
+      {
+        title: "Courthouses / Court Facilities",
+        risk: "Hard Stop Area",
+        body: [
+          "STATUTE / SOURCE: Maine court facility weapons framework.",
+          "SUMMARY: Maine restricts weapons in courthouses and court facilities under court/security rules and applicable law.",
+          "GUIDANCE: Do not approach courthouse security armed unless a clear legal exception applies."
+        ],
+        source: "Maine court facility weapons framework."
+      },
+      {
+        title: "State Parks / Public Lands / Outdoors",
+        risk: "Parks and Land Management Risk",
+        body: [
+          "STATUTE / SOURCE: Maine public land, park, and firearms framework.",
+          "SUMMARY: Outdoor carry may involve state park rules, federal land rules, hunting regulations, camping rules, and private land access issues.",
+          "GUIDANCE: Verify whether the land is state, federal, municipal, private, or tribal before relying on general carry rules."
+        ],
+        source: "Maine parks/public lands firearms framework."
+      },
+      {
+        title: "Private Property / Posted Locations",
+        risk: "Property Control",
+        body: [
+          "STATUTE / SOURCE: Maine property/trespass framework.",
+          "SUMMARY: Private property owners may control access and require armed persons to leave.",
+          "GUIDANCE: If posted or asked to leave, leave immediately. Do not debate policy at the doorway."
+        ],
+        source: "Maine property/trespass framework."
+      },
+      {
+        title: "Vehicle Carry",
+        risk: "Travel / Police Contact Risk",
+        body: [
+          "STATUTE / SOURCE: Maine carry and motor vehicle framework.",
+          "SUMMARY: Vehicle carry may be lawful for eligible persons, but police contact, restricted locations, and safe storage remain important.",
+          "GUIDANCE: If carrying concealed without a permit, remember Maine’s duty-to-inform guidance during a stop, detention, or arrest."
+        ],
+        source: "Maine carry and vehicle framework."
+      },
+      {
+        title: "Federal Property / Post Offices",
+        risk: "Federal Law Overlay",
+        body: [
+          "STATUTE / SOURCE: Federal facility and postal property framework.",
+          "SUMMARY: Maine carry permission does not override federal restrictions.",
+          "GUIDANCE: Federal buildings, federal courthouses, post offices, and secure federal property must be checked separately."
+        ],
+        source: "Federal facility and postal property framework."
+      },
+      {
+        title: "Use of Force / Self-Defense",
+        risk: "Fact-Specific Legal Risk",
+        body: [
+          "STATUTE / SOURCE: Maine self-defense framework.",
+          "SUMMARY: Defensive force must be justified under the facts and applicable Maine law.",
+          "GUIDANCE: Avoid confrontation, disengage if safe, call 911, request counsel, and avoid long statements under adrenaline."
+        ],
+        source: "Maine self-defense law framework."
+      }
+    ],
+    [
+      {
+        title: "Maine Carry Checklist",
+        steps: [
+          "1. Confirm eligibility to carry.",
+          "2. Determine whether carrying with or without a permit.",
+          "3. If permitless, remember duty to inform during stop/detention/arrest.",
+          "4. Check schools and courthouses.",
+          "5. Check public lands, parks, federal land, and private property.",
+          "6. Check federal property separately."
+        ]
+      }
+    ],
+    [
+      {
+        title: "Routine Traffic Stop While Permitless Carrying",
+        summary: "Maine’s duty-to-inform rule is a major difference from many states.",
+        guidance: [
+          "Keep hands visible.",
+          "Immediately inform if carrying concealed without a permit.",
+          "Do not reach until instructed.",
+          "Answer calmly."
+        ]
+      }
+    ],
+    [
+      "Forgetting Maine's duty to inform when permitless carrying.",
+      "Assuming permitless carry means no prohibited places.",
+      "Ignoring schools and court facilities.",
+      "Assuming state park rules equal federal land rules.",
+      "Ignoring posted private property."
+    ],
+    [
+      "Eligibility checked.",
+      "Permit vs permitless status identified.",
+      "Duty-to-inform plan ready.",
+      "Schools/courts checked.",
+      "Public/private/federal land status checked.",
+      "Private signs checked."
+    ],
+    [
+      {
+        myth: "Maine permitless carry means I do not have to say anything during a stop.",
+        reality: "Maine State Police guidance states permitless concealed carriers have a duty to immediately inform during a routine stop, detention, or arrest."
+      }
+    ]
+  ),
+
+  NH: makeProfile(
+    "New Hampshire",
+    "Law-Backed Ultra Expanded Travel State",
+    "New Hampshire is a permitless carry state and one of the more permissive states in the Northeast, but members still need to understand eligibility, courthouses/courtrooms, schools/federal school-zone overlay, private property, vehicles, federal property, universities/colleges, and use-of-force conduct.",
+    {
+      reciprocity: "New Hampshire has permitless carry for eligible persons and also issues pistol/revolver licenses for reciprocity purposes.",
+      permitlessCarry: "New Hampshire generally allows eligible persons to carry openly or concealed without a license.",
+      concealedCarry: "New Hampshire pistol/revolver licenses remain available, mostly for reciprocity and documentation purposes.",
+      openCarry: "Open carry may be lawful for eligible persons, but restricted locations and public-contact issues still matter.",
+      vehicleCarry: "Vehicle carry is generally permissive for eligible persons, but police-contact behavior and restricted locations still matter.",
+      dutyToInform: "Verify current New Hampshire police-contact rules. Keep hands visible and answer lawful questions truthfully.",
+      privateSigns: "Private property and instructions to leave matter.",
+      forceLaw: "New Hampshire self-defense law is fact-specific."
+    },
+    [
+      "New Hampshire is permissive, but not restriction-free.",
+      "Courthouses/courtrooms are a major New Hampshire restriction.",
+      "Federal school-zone law, federal property, private property, and university policies still matter.",
+      "A New Hampshire license may matter for reciprocity even if not required for in-state carry.",
+      "Travelers should not treat New Hampshire as a no-rules state."
+    ],
+    [
+      {
+        title: "Permitless Carry / License Optional",
+        risk: "Core Carry Rule",
+        body: [
+          "STATUTE / SOURCE: New Hampshire RSA Chapter 159 framework.",
+          "SUMMARY: New Hampshire generally allows eligible persons to carry openly or concealed without a pistol/revolver license.",
+          "GUIDANCE: Eligibility and restricted locations still matter. A license may still be useful for reciprocity outside New Hampshire."
+        ],
+        source: "New Hampshire RSA Chapter 159 framework."
+      },
+      {
+        title: "Pistol / Revolver License",
+        risk: "Reciprocity Context",
+        body: [
+          "STATUTE: RSA 159:6.",
+          "SUMMARY: New Hampshire issues pistol/revolver licenses even though a license is generally not required for in-state carry by eligible persons.",
+          "GUIDANCE: The license can matter for reciprocity and documentation when traveling outside New Hampshire."
+        ],
+        source: "RSA 159:6."
+      },
+      {
+        title: "Courthouses / Courtrooms",
+        risk: "Hard Stop Area",
+        body: [
+          "STATUTE: RSA 159:19.",
+          "SUMMARY: New Hampshire restricts firearms and other dangerous weapons in courtrooms and areas used by a court.",
+          "GUIDANCE: Do not enter courthouse/courtroom areas armed unless a clear legal exception applies."
+        ],
+        source: "RSA 159:19."
+      },
+      {
+        title: "Schools / Federal School-Zone Overlay",
+        risk: "School Zone Risk",
+        body: [
+          "STATUTE / SOURCE: Federal Gun-Free School Zones Act; New Hampshire school property policies/framework.",
+          "SUMMARY: New Hampshire state law is generally permissive, but federal school-zone law and school policies may still apply.",
+          "GUIDANCE: Schools, campuses, events, and parking areas should be checked carefully before carrying."
+        ],
+        source: "Federal school-zone framework; New Hampshire education/property rules."
+      },
+      {
+        title: "Private Property / Posted Locations",
+        risk: "Property Control",
+        body: [
+          "STATUTE / SOURCE: New Hampshire property/trespass framework.",
+          "SUMMARY: Private property owners may control access and require armed persons to leave.",
+          "GUIDANCE: Leave immediately if asked. Do not turn a carry issue into a trespass or disorderly conduct issue."
+        ],
+        source: "New Hampshire property/trespass framework."
+      },
+      {
+        title: "Vehicle Carry",
+        risk: "Travel / Police Contact Risk",
+        body: [
+          "STATUTE / SOURCE: New Hampshire RSA Chapter 159 framework.",
+          "SUMMARY: New Hampshire vehicle carry is generally permissive for eligible persons, but restricted places and police-contact behavior still matter.",
+          "GUIDANCE: During police contact, keep hands visible, do not reach, and answer lawful questions truthfully."
+        ],
+        source: "New Hampshire RSA Chapter 159 framework."
+      },
+      {
+        title: "Federal Property / Post Offices",
+        risk: "Federal Law Overlay",
+        body: [
+          "STATUTE / SOURCE: Federal facility and postal property framework.",
+          "SUMMARY: New Hampshire carry permission does not override federal restrictions.",
+          "GUIDANCE: Federal buildings, federal courthouses, post offices, and secure federal property must be checked separately."
+        ],
+        source: "Federal facility and postal property framework."
+      },
+      {
+        title: "Colleges / Universities / Employer Rules",
+        risk: "Policy Risk",
+        body: [
+          "STATUTE / SOURCE: New Hampshire property, campus, and employer policy framework.",
+          "SUMMARY: Even where criminal law is permissive, campus, employer, and property policies can create removal, discipline, or access consequences.",
+          "GUIDANCE: Verify campus or employer policy separately from criminal carry law."
+        ],
+        source: "New Hampshire property/campus/employer framework."
+      },
+      {
+        title: "Use of Force / Self-Defense",
+        risk: "Fact-Specific Legal Risk",
+        body: [
+          "STATUTE / SOURCE: New Hampshire self-defense framework.",
+          "SUMMARY: Defensive force must be justified under the facts and applicable New Hampshire law.",
+          "GUIDANCE: Avoid escalation, call 911 when safe, identify evidence/witnesses if necessary, request counsel, and avoid detailed statements under stress."
+        ],
+        source: "New Hampshire self-defense law framework."
+      }
+    ],
+    [
+      {
+        title: "New Hampshire Carry Checklist",
+        steps: [
+          "1. Confirm eligibility to possess/carry.",
+          "2. Check courthouse/courtroom areas under RSA 159:19.",
+          "3. Check federal school-zone issues.",
+          "4. Check private property and workplace/campus policies.",
+          "5. Check federal property separately.",
+          "6. Consider whether a pistol/revolver license is needed for reciprocity outside New Hampshire."
+        ]
+      }
+    ],
+    [
+      {
+        title: "Courthouse Errand",
+        summary: "New Hampshire is permissive, but court areas are a hard-stop issue.",
+        guidance: [
+          "Check RSA 159:19.",
+          "Do not approach court security armed.",
+          "Secure lawfully before arrival."
+        ]
+      }
+    ],
+    [
+      "Assuming permitless carry means no restricted places.",
+      "Ignoring courthouse/courtroom restrictions.",
+      "Ignoring federal school-zone issues.",
+      "Ignoring private property instructions.",
+      "Ignoring campus or employer policies."
+    ],
+    [
+      "Eligibility checked.",
+      "Court restrictions checked.",
+      "School/federal overlay checked.",
+      "Private property checked.",
+      "Federal property checked.",
+      "Reciprocity/license needs checked."
+    ],
+    [
+      {
+        myth: "New Hampshire has permitless carry, so there are no restrictions.",
+        reality: "No. Courthouses, federal property, school-zone overlays, private property, and policy restrictions still matter."
+      }
+    ]
+  ),
+
+  VT: makeProfile(
+    "Vermont",
+    "Law-Backed Ultra Expanded Travel State",
+    "Vermont is a constitutional carry state and does not issue carry permits for ordinary defensive carry, but members still need to understand school building/school bus restrictions, court/security rules, intent-based weapon offenses, private property, vehicles, federal property, parks/public lands, and the limits of permitless carry when traveling into other states.",
+    {
+      reciprocity: "Vermont does not issue ordinary carry permits. Reciprocity generally matters when traveling out of Vermont, not for carrying in Vermont.",
+      permitlessCarry: "Vermont allows eligible persons to carry without a permit, subject to restrictions.",
+      concealedCarry: "No Vermont carry permit is generally required or issued for ordinary carry by law-abiding eligible persons.",
+      openCarry: "Open carry may be lawful for eligible persons, but restricted locations and conduct still matter.",
+      vehicleCarry: "Vehicle carry should be analyzed with Vermont weapons law, school restrictions, and safe storage concerns.",
+      dutyToInform: "Verify current Vermont police-contact rules. Keep hands visible and answer lawful questions truthfully.",
+      privateSigns: "Private property and instructions to leave matter.",
+      forceLaw: "Vermont self-defense law is fact-specific."
+    },
+    [
+      "Vermont is permissive, but not no-rules.",
+      "Vermont does not issue ordinary carry permits, so reciprocity has special meaning for travelers.",
+      "School buildings and school buses have specific statutory restrictions.",
+      "Court facilities, federal property, private property, and employer/campus policies still matter.",
+      "Intent-based weapon offenses can matter if conduct appears threatening or unlawful."
+    ],
+    [
+      {
+        title: "Permitless Carry / No Ordinary Permit System",
+        risk: "Core Carry Rule",
+        body: [
+          "STATUTE / SOURCE: Vermont firearms law framework.",
+          "SUMMARY: Vermont generally allows eligible persons to carry without a permit and does not issue ordinary concealed carry permits for reciprocity-style carry.",
+          "GUIDANCE: Permitless carry still requires eligibility and compliance with restricted-location and conduct laws."
+        ],
+        source: "Vermont firearms law framework."
+      },
+      {
+        title: "School Buildings and School Buses",
+        risk: "Extreme Risk Area",
+        body: [
+          "STATUTE: 13 V.S.A. § 4004.",
+          "SUMMARY: Vermont law restricts possessing a firearm or dangerous/deadly weapon within a school building or on a school bus.",
+          "GUIDANCE: Schools, school buses, school events, and school-controlled areas should be treated as verify-first locations."
+        ],
+        source: "13 V.S.A. § 4004."
+      },
+      {
+        title: "Intent-Based Weapon Offenses",
+        risk: "Conduct / Threat Risk",
+        body: [
+          "STATUTE: 13 V.S.A. § 4003.",
+          "SUMMARY: Vermont law addresses carrying a dangerous or deadly weapon with intent to injure another.",
+          "GUIDANCE: Lawful carry can become criminal exposure if the facts show threats, intimidation, unlawful intent, or escalation."
+        ],
+        source: "13 V.S.A. § 4003."
+      },
+      {
+        title: "Courthouses / Court Facilities",
+        risk: "Hard Stop Area",
+        body: [
+          "STATUTE / SOURCE: Vermont court/security weapons framework.",
+          "SUMMARY: Vermont court facilities and security-controlled judicial locations may restrict weapons by statute, court rule, or security order.",
+          "GUIDANCE: Do not approach court security armed unless a clear legal exception applies."
+        ],
+        source: "Vermont court/security weapons framework."
+      },
+      {
+        title: "Private Property / Posted Locations",
+        risk: "Property Control",
+        body: [
+          "STATUTE / SOURCE: Vermont property/trespass framework.",
+          "SUMMARY: Private property owners may control access and require armed persons to leave.",
+          "GUIDANCE: If posted or asked to leave, leave immediately. Do not debate firearm policy at the doorway."
+        ],
+        source: "Vermont property/trespass framework."
+      },
+      {
+        title: "Vehicle Carry / Storage",
+        risk: "Vehicle / Storage Risk",
+        body: [
+          "STATUTE / SOURCE: Vermont firearms and vehicle framework.",
+          "SUMMARY: Vehicle carry may be lawful for eligible persons, but schools, private property, safe storage, and police-contact behavior still matter.",
+          "GUIDANCE: Avoid leaving firearms unsecured in vehicles and keep hands visible during police contact."
+        ],
+        source: "Vermont firearms and vehicle framework."
+      },
+      {
+        title: "Public Lands / Outdoor Activity",
+        risk: "Hunting / Land Management Risk",
+        body: [
+          "STATUTE / SOURCE: Vermont hunting, public land, and firearms framework.",
+          "SUMMARY: Outdoor carry can involve hunting rules, park rules, private land permission, state land, federal land, and seasonal restrictions.",
+          "GUIDANCE: Verify whether the location is state, federal, municipal, private, or tribal land before relying on general carry assumptions."
+        ],
+        source: "Vermont public lands and hunting/firearms framework."
+      },
+      {
+        title: "Federal Property / Post Offices",
+        risk: "Federal Law Overlay",
+        body: [
+          "STATUTE / SOURCE: Federal facility and postal property framework.",
+          "SUMMARY: Vermont carry permission does not override federal restrictions.",
+          "GUIDANCE: Federal buildings, federal courthouses, post offices, and secure federal property must be checked separately."
+        ],
+        source: "Federal facility and postal property framework."
+      },
+      {
+        title: "Use of Force / Self-Defense",
+        risk: "Fact-Specific Legal Risk",
+        body: [
+          "STATUTE / SOURCE: Vermont self-defense framework.",
+          "SUMMARY: Defensive force must be justified under the facts and applicable Vermont law.",
+          "GUIDANCE: Avoid escalation, call 911 when safe, identify evidence/witnesses if necessary, request counsel, and avoid detailed statements under stress."
+        ],
+        source: "Vermont self-defense law framework."
+      }
+    ],
+    [
+      {
+        title: "Vermont Carry Checklist",
+        steps: [
+          "1. Confirm eligibility to possess/carry.",
+          "2. Check 13 V.S.A. § 4004 school building/school bus restrictions.",
+          "3. Avoid threatening or intent-based conduct under § 4003.",
+          "4. Check court/security-controlled facilities.",
+          "5. Check private property and federal property.",
+          "6. Check land status for outdoor activity."
+        ]
+      }
+    ],
+    [
+      {
+        title: "Ski Trip / Rural Travel",
+        summary: "Vermont is permissive, but hotels, private property, federal land, and school areas can still create restrictions.",
+        guidance: [
+          "Check private property policy.",
+          "Check school/campus areas.",
+          "Check federal land separately.",
+          "Avoid threatening display."
+        ]
+      }
+    ],
+    [
+      "Assuming constitutional carry means no prohibited places.",
+      "Ignoring school building/school bus restrictions.",
+      "Ignoring intent-based weapon offenses.",
+      "Ignoring private property instructions.",
+      "Assuming Vermont issues permits for reciprocity.",
+      "Ignoring federal property."
+    ],
+    [
+      "Eligibility checked.",
+      "School restrictions checked.",
+      "Intent/threat risk understood.",
+      "Court/private/federal property checked.",
+      "Outdoor land status checked."
+    ],
+    [
+      {
+        myth: "Vermont constitutional carry means there are no firearm laws.",
+        reality: "No. Vermont still restricts schools, threatening/intent-based conduct, courts/security locations, private property, federal property, and other specific situations."
+      }
+    ]
+  ),
+
+  AK: makeProfile(
+    "Alaska",
+    "Law-Backed Ultra Expanded Travel State",
+    "Alaska is a high-value travel and outdoor state for Michigan CPL holders because it has broad permitless carry for eligible adults, but it also has important restrictions involving age, prohibited persons, police-contact duties, schools, courts, domestic violence shelters, child care facilities, federal lands, tribal/local property, aircraft/ferry travel, vehicle storage, and wildlife/public-land contexts.",
+    {
+      reciprocity: "Alaska is treated as recognized / lawful for Michigan CPL travel in this app because Alaska has broad permitless carry and recognizes permits from other states, but Alaska law controls while physically in Alaska.",
+      permitlessCarry: "Alaska generally allows eligible adults 21+ who may lawfully possess firearms to carry without a permit, subject to Alaska restrictions.",
+      concealedCarry: "Alaska has permitless concealed carry for eligible adults, with an optional concealed handgun permit system under AS 18.65.700.",
+      openCarry: "Open carry is generally lawful for eligible adults, but restricted places, police contact, threatening conduct, and property rules still matter.",
+      vehicleCarry: "Vehicle carry is generally permissive for eligible adults, but schools, federal property, ferry/airline rules, private property, and wildlife/public-land rules require separate review.",
+      dutyToInform: "Alaska has police-contact duties for concealed carry. Treat official law-enforcement contact as an immediate disclosure/visible-hands situation.",
+      privateSigns: "Private property owners may control access. Leave immediately if asked.",
+      forceLaw: "Alaska self-defense law is fact-specific. Force must still be justified under the facts."
+    },
+    [
+      "Alaska permitless carry does not mean carry everywhere.",
+      "Outdoor travel, ferries, aircraft, national parks, wildlife areas, tribal/local property, and remote lodging create special legal and practical issues.",
+      "Police-contact duties should be treated seriously because Alaska has concealment-related notification language.",
+      "Federal property and federal land buildings are separate from Alaska state carry permission.",
+      "Travelers should verify current Alaska law and official state guidance before relying on any summary."
+    ],
+    [
+      {
+        title: "Permitless Carry / Concealed Carry Authority",
+        risk: "Core Carry Rule",
+        body: [
+          "STATUTE / SOURCE: Alaska weapons law framework; optional permit system under AS 18.65.700.",
+          "SUMMARY: Alaska generally allows eligible adults to carry concealed without a permit, and Alaska maintains an optional concealed handgun permit system for people who want a credential for reciprocity or other purposes.",
+          "GUIDANCE: Do not teach Alaska as ruleless. The user must still be old enough, legally eligible, not prohibited, not in a restricted place, and not using the firearm unlawfully."
+        ],
+        source: "AS 18.65.700; Alaska weapons law framework."
+      },
+      {
+        title: "Optional Alaska Concealed Handgun Permit",
+        risk: "License / Reciprocity Context",
+        body: [
+          "STATUTE: AS 18.65.700.",
+          "SUMMARY: Alaska law provides a process for the Department of Public Safety to issue concealed handgun permits to qualified applicants.",
+          "GUIDANCE: Even where Alaska permitless carry is available, an optional permit may matter for travel to other states, documentation, and reciprocity."
+        ],
+        source: "AS 18.65.700."
+      },
+      {
+        title: "Age / Eligibility / Prohibited Persons",
+        risk: "Disqualification Risk",
+        body: [
+          "STATUTE / SOURCE: Alaska weapons eligibility and prohibited-person framework.",
+          "SUMMARY: Permitless carry does not apply to people who are legally prohibited from possessing firearms under state or federal law.",
+          "GUIDANCE: Domestic violence restrictions, court orders, felony history, mental health restrictions, intoxication, and federal prohibitions should be checked before carrying."
+        ],
+        source: "Alaska weapons law and federal prohibited-person framework."
+      },
+      {
+        title: "Police Contact / Duty to Inform",
+        risk: "Officer Safety / Compliance Risk",
+        body: [
+          "STATUTE / SOURCE: Alaska concealed carry and law-enforcement contact framework.",
+          "SUMMARY: Alaska has notification-style obligations connected to carrying concealed during official law-enforcement contact.",
+          "GUIDANCE: Treat Alaska police contact as an immediate visible-hands and disclosure situation. Suggested language: Officer, I am lawfully carrying. How would you like me to proceed?"
+        ],
+        source: "Alaska concealed carry law-enforcement contact framework."
+      },
+      {
+        title: "Schools / School Property",
+        risk: "Extreme Risk Area",
+        body: [
+          "STATUTE / SOURCE: Alaska misconduct involving weapons and school-location framework.",
+          "SUMMARY: Alaska restricts firearms in certain school-related locations and educational settings, subject to exceptions.",
+          "GUIDANCE: School buildings, school grounds, school events, school buses, and parking situations should be treated as verify-first areas."
+        ],
+        source: "Alaska misconduct involving weapons / school property framework."
+      },
+      {
+        title: "Courts / Courthouses / Justice Facilities",
+        risk: "Hard Stop Area",
+        body: [
+          "STATUTE / SOURCE: Alaska court/security facility framework.",
+          "SUMMARY: Court facilities, law-enforcement-controlled buildings, and security-screened government facilities may prohibit weapons regardless of general carry permission.",
+          "GUIDANCE: Do not approach a courthouse or security checkpoint armed unless a clear legal exception applies."
+        ],
+        source: "Alaska court and security facility framework."
+      },
+      {
+        title: "Child Care Facilities / Domestic Violence Shelters",
+        risk: "Sensitive Location Risk",
+        body: [
+          "STATUTE / SOURCE: Alaska sensitive-location framework.",
+          "SUMMARY: Alaska law and facility rules may restrict weapons in sensitive facilities such as child care facilities or domestic violence/shelter settings.",
+          "GUIDANCE: Treat shelters, child care facilities, and social-service facilities as verify-first locations and follow posted/property rules."
+        ],
+        source: "Alaska sensitive-location and property framework."
+      },
+      {
+        title: "Federal Lands, National Parks, Post Offices, and Federal Buildings",
+        risk: "Federal Law Overlay",
+        body: [
+          "STATUTE / SOURCE: Federal facility and federal public-land framework.",
+          "SUMMARY: Alaska has significant federal land, but state carry permission does not override federal building, post office, courthouse, airport, or secure-facility restrictions.",
+          "GUIDANCE: In national parks, federal buildings and visitor centers must be checked separately. Post offices and secure federal facilities are not controlled by Alaska permitless carry."
+        ],
+        source: "Federal facility, postal property, and National Park Service firearms framework."
+      },
+      {
+        title: "Air Travel, Ferries, Cruise Ships, and Remote Transport",
+        risk: "Transportation-Specific Risk",
+        body: [
+          "STATUTE / SOURCE: Federal aviation/TSA rules, maritime/ferry operator rules, and Alaska transport framework.",
+          "SUMMARY: Airline, ferry, cruise, and remote transport rules may restrict carry or require separate locked/unloaded transport procedures.",
+          "GUIDANCE: Do not assume Alaska permitless carry applies on aircraft, cruise ships, ferries, port facilities, or private carriers. Verify before travel."
+        ],
+        source: "TSA/firearm transport framework; carrier and maritime transport rules."
+      },
+      {
+        title: "Hunting, Fishing, Wildlife, and Public Lands",
+        risk: "DNR / Wildlife Law Overlay",
+        body: [
+          "STATUTE / SOURCE: Alaska fish and game/public-land framework.",
+          "SUMMARY: Carry for personal protection does not replace hunting, fishing, wildlife, seasons, species, guide, transport, or land-management rules.",
+          "GUIDANCE: If the trip involves hunting, fishing, bear country, boats, ATVs, guides, aircraft, or public land, check fish/game and land-management rules separately."
+        ],
+        source: "Alaska fish and game/public-land framework."
+      },
+      {
+        title: "Use of Force / Self-Defense",
+        risk: "Fact-Specific Legal Risk",
+        body: [
+          "STATUTE / SOURCE: Alaska self-defense law framework.",
+          "SUMMARY: Alaska self-defense law is fact-specific and depends on threat, necessity, proportionality, and reasonableness.",
+          "GUIDANCE: Avoid confrontation when safe, call 911 when possible, preserve evidence/witness information, request counsel, and do not give long emotional statements under stress."
+        ],
+        source: "Alaska self-defense law framework."
+      }
+    ],
+    [
+      {
+        title: "Alaska Travel Checklist",
+        steps: [
+          "1. Confirm age and legal eligibility.",
+          "2. Confirm school/sensitive-location status.",
+          "3. Check federal land/building rules.",
+          "4. Check ferry, cruise, airport, and carrier rules.",
+          "5. Check hunting/fishing/public-land rules.",
+          "6. Know the law-enforcement disclosure script."
+        ]
+      }
+    ],
+    [
+      {
+        title: "Remote Outdoor Trip",
+        summary: "Alaska travel often involves federal land, guides, boats, aircraft, wildlife areas, and remote lodging.",
+        guidance: [
+          "Check who controls the land or facility.",
+          "Verify airline/ferry/cruise rules.",
+          "Check fish and game rules separately.",
+          "Do not assume permitless carry applies everywhere."
+        ]
+      }
+    ],
+    [
+      "Assuming Alaska permitless carry means no prohibited places.",
+      "Ignoring police-contact disclosure duties.",
+      "Ignoring federal buildings on federal land.",
+      "Ignoring ferries, aircraft, and cruise restrictions.",
+      "Ignoring wildlife, hunting, or public-land rules."
+    ],
+    [
+      "Age and eligibility checked.",
+      "Police-contact script ready.",
+      "School/sensitive locations checked.",
+      "Federal property checked.",
+      "Transport carrier rules checked.",
+      "Outdoor land/fish/game rules checked."
+    ],
+    [
+      {
+        myth: "Alaska is permitless, so there are no rules.",
+        reality: "No. Alaska is permissive, but age, eligibility, schools, sensitive locations, police-contact duties, federal property, transportation rules, and outdoor regulations still matter."
+      }
+    ]
+  ),
+
+  HI: makeProfile(
+    "Hawaii",
+    "Law-Backed Ultra Expanded High-Risk Travel State",
+    "Hawaii is a high-risk non-recognition travel state for Michigan CPL holders. Hawaii does not provide broad out-of-state carry reciprocity, requires a Hawaii license to carry, has strict firearm registration and transport rules, and has detailed sensitive-place, disclosure, private-property, vehicle-storage, and carry-conduct requirements under Chapter 134.",
+    {
+      reciprocity: "Michigan CPL is treated as not recognized for ordinary carry in Hawaii in this app travel engine. A Hawaii-issued license is required for carry.",
+      permitlessCarry: "No permitless carry. Hawaii requires a license under HRS § 134-9 for public carry.",
+      concealedCarry: "HRS § 134-9 governs Hawaii licenses to carry pistols or revolvers concealed on the person.",
+      openCarry: "HRS § 134-9 separately addresses unconcealed carry licensing and imposes additional criteria.",
+      vehicleCarry: "Hawaii transport and vehicle rules are strict. Carrying loaded or accessible firearms without proper authority can create serious felony risk.",
+      dutyToInform: "HRS § 134-9.2 imposes license-possession and disclosure duties for licensees.",
+      privateSigns: "HRS § 134-9.5 restricts carrying or possessing firearms on private property of another without authorization.",
+      forceLaw: "Hawaii self-defense law is fact-specific and should be verified from current statutes/case law."
+    },
+    [
+      "Hawaii should be treated as a non-recognition/high-risk travel state for Michigan CPL holders.",
+      "A Michigan CPL does not authorize public carry in Hawaii.",
+      "Hawaii requires registration and tightly controls transport, carry licensing, sensitive places, private property, and vehicle storage.",
+      "Hawaii law has recently changed and continues to be litigated in federal courts, especially private-property carry restrictions.",
+      "Travelers should verify current Hawaii law and county police/firearms instructions before bringing any firearm into the state."
+    ],
+    [
+      {
+        title: "No Michigan CPL Reciprocity / Hawaii License Required",
+        risk: "Do Not Carry on Michigan CPL",
+        body: [
+          "STATUTE: HRS § 134-9.",
+          "SUMMARY: Hawaii licenses to carry are issued by the chief of police of a county to qualified applicants under Hawaii law. Hawaii does not treat a Michigan CPL as public carry authority.",
+          "GUIDANCE: Do not carry in Hawaii on a Michigan CPL alone. Verify county police requirements before bringing or possessing a firearm."
+        ],
+        source: "HRS § 134-9."
+      },
+      {
+        title: "Hawaii License to Carry Eligibility",
+        risk: "License / Eligibility Rule",
+        body: [
+          "STATUTE: HRS § 134-9.",
+          "SUMMARY: Hawaii concealed carry licensing requires statutory eligibility, background checks, training, registration, age 21+, and other criteria. Unconcealed carry has separate statutory requirements.",
+          "GUIDANCE: Hawaii carry licensing is not a tourist-friendly reciprocity system. Michigan members should assume no carry unless they have Hawaii-issued authority."
+        ],
+        source: "HRS § 134-9."
+      },
+      {
+        title: "Registration / Possession Basics",
+        risk: "Registration and Transport Risk",
+        body: [
+          "STATUTE / SOURCE: HRS Chapter 134 registration and possession framework.",
+          "SUMMARY: Hawaii regulates firearm registration, possession, and transport more strictly than most states.",
+          "GUIDANCE: Anyone bringing a firearm to Hawaii should review county police registration procedures before arrival. Do not assume airline check-in compliance equals Hawaii legal possession."
+        ],
+        source: "HRS Chapter 134; county police firearms registration guidance."
+      },
+      {
+        title: "Sensitive Places / Prohibited Locations",
+        risk: "Major Carry Restriction",
+        body: [
+          "STATUTE: HRS § 134-9.1.",
+          "SUMMARY: Hawaii law prohibits carrying or possessing firearms in certain locations and premises, subject to statutory language and ongoing litigation considerations.",
+          "GUIDANCE: Treat schools, government buildings, courts, bars/restaurants serving alcohol, parks/beaches, public transportation, and other sensitive places as verify-first/no-carry areas unless current law clearly permits otherwise."
+        ],
+        source: "HRS § 134-9.1; Hawaii Act 52 framework."
+      },
+      {
+        title: "License Possession and Duty to Disclose",
+        risk: "Police Contact Requirement",
+        body: [
+          "STATUTE: HRS § 134-9.2.",
+          "SUMMARY: Hawaii imposes duties to maintain possession of the carry license while carrying and to disclose information when stopped by law enforcement.",
+          "GUIDANCE: Hawaii licensees should keep license/ID on person and disclose calmly during police contact. Michigan CPL alone is not enough."
+        ],
+        source: "HRS § 134-9.2."
+      },
+      {
+        title: "Unsecured Firearm in Vehicle",
+        risk: "Vehicle Storage Risk",
+        body: [
+          "STATUTE: HRS § 134-9.3.",
+          "SUMMARY: Hawaii law addresses leaving unsecured firearms in unattended vehicles.",
+          "GUIDANCE: Do not leave firearms loose in rental cars, hotel valet situations, beach parking lots, or tourist areas. Vehicle storage is a major theft and criminal exposure point."
+        ],
+        source: "HRS § 134-9.3."
+      },
+      {
+        title: "Unlawful Conduct While Carrying",
+        risk: "Conduct-Based Risk",
+        body: [
+          "STATUTE: HRS § 134-9.4.",
+          "SUMMARY: Hawaii imposes penalties for unlawful conduct while carrying a firearm.",
+          "GUIDANCE: Carry, if lawfully licensed, must be paired with sober, restrained, non-threatening conduct. Avoid arguments, alcohol, road rage, and any display not tied to a lawful imminent threat."
+        ],
+        source: "HRS § 134-9.4."
+      },
+      {
+        title: "Private Property Requires Authorization",
+        risk: "Private Property Trap",
+        body: [
+          "STATUTE: HRS § 134-9.5.",
+          "SUMMARY: Hawaii restricts carrying or possessing a firearm on private property of another person without authorization. The private-property rule has also been the subject of federal litigation.",
+          "GUIDANCE: Do not carry into hotels, stores, restaurants, rental properties, businesses, or other private property unless current law and property authorization clearly allow it."
+        ],
+        source: "HRS § 134-9.5; ongoing federal litigation regarding Hawaii private-property carry restrictions."
+      },
+      {
+        title: "Failure to Conceal",
+        risk: "Concealment Compliance Risk",
+        body: [
+          "STATUTE: HRS § 134-9.7.",
+          "SUMMARY: Hawaii imposes penalties for failure to conceal by a concealed carry licensee.",
+          "GUIDANCE: If a person has a Hawaii concealed carry license, accidental exposure can create legal risk. Carry method and cover garment discipline matter."
+        ],
+        source: "HRS § 134-9.7."
+      },
+      {
+        title: "Air Travel / Inter-Island Travel / Hotels",
+        risk: "Travel Logistics Risk",
+        body: [
+          "STATUTE / SOURCE: TSA/firearm transport rules and Hawaii county police registration/transport framework.",
+          "SUMMARY: Airline transport, inter-island travel, hotels, rental cars, and police registration procedures create separate compliance issues.",
+          "GUIDANCE: Plan firearm travel before arrival. Do not bring a firearm unless you understand airline, Hawaii registration, transport, hotel, rental vehicle, and storage requirements."
+        ],
+        source: "TSA firearm transport framework; Hawaii county police firearms procedures."
+      },
+      {
+        title: "Federal Property / Military Installations / National Parks",
+        risk: "Federal Law Overlay",
+        body: [
+          "STATUTE / SOURCE: Federal facility, military installation, postal property, and National Park Service framework.",
+          "SUMMARY: Hawaii has military bases, federal buildings, national parks, ports, airports, and federal property where state carry permission does not control.",
+          "GUIDANCE: Treat federal property as separate. Do not rely on any state carry permission for military bases, post offices, secure federal buildings, or airport sterile areas."
+        ],
+        source: "Federal facility, postal, military installation, TSA, and NPS firearms framework."
+      },
+      {
+        title: "Use of Force / Civil Exposure",
+        risk: "Fact-Specific Legal Risk",
+        body: [
+          "STATUTE / SOURCE: Hawaii self-defense and civil-liability framework, including HRS § 663-9.5 noted in carry-license affidavit language.",
+          "SUMMARY: Hawaii carry-license law requires applicants to acknowledge firearm-use laws and liability concepts. Unjustified discharge can create severe criminal and civil consequences.",
+          "GUIDANCE: Avoid conflict, call 911, identify evidence/witnesses, request counsel, and avoid detailed statements under stress."
+        ],
+        source: "HRS § 134-9; HRS § 663-9.5 reference in carry-license affidavit framework."
+      }
+    ],
+    [
+      {
+        title: "Hawaii Travel Checklist",
+        steps: [
+          "1. Do not rely on Michigan CPL.",
+          "2. Verify Hawaii licensing and county police procedures.",
+          "3. Verify registration requirements before bringing a firearm.",
+          "4. Check HRS §§ 134-9.1 through 134-9.7.",
+          "5. Check hotel/rental/private-property authorization.",
+          "6. Check federal/military/airport/park rules separately."
+        ]
+      }
+    ],
+    [
+      {
+        title: "Vacation / Hotel / Rental Car Scenario",
+        summary: "Hawaii firearm travel is not like a mainland road trip. Licensing, registration, transport, hotel/private property, vehicle storage, and federal/military property can all create risk.",
+        guidance: [
+          "Do not rely on Michigan CPL.",
+          "Check county police registration before arrival.",
+          "Do not leave firearms unsecured in rental vehicles.",
+          "Check hotel/private-property authorization."
+        ]
+      }
+    ],
+    [
+      "Assuming Michigan CPL works in Hawaii.",
+      "Ignoring firearm registration requirements.",
+      "Ignoring HRS § 134-9.5 private-property authorization rules.",
+      "Leaving a firearm unsecured in a rental car.",
+      "Ignoring sensitive-place restrictions and federal/military property."
+    ],
+    [
+      "No-reciprocity warning understood.",
+      "Hawaii license/registration requirements checked.",
+      "Sensitive places checked.",
+      "Private property authorization checked.",
+      "Vehicle storage rules checked.",
+      "Federal/military/airport rules checked."
+    ],
+    [
+      {
+        myth: "I can carry in Hawaii because I have a Michigan CPL.",
+        reality: "No. Hawaii is treated as a non-recognition state in this app. Hawaii public carry requires Hawaii authority and compliance with Chapter 134."
+      }
+    ]
+  ),
+
+  WA: makeProfile(
+    "Washington",
+    "Law-Backed Ultra Expanded Travel State",
+    "Washington is a priority correction state because the Washington Attorney General lists Michigan as meeting Washington reciprocity requirements, while many other states are not recognized. Washington still has important restrictions involving concealed pistol licensing, vehicle carry, loaded pistols, schools, courthouses, child care premises, voting facilities, government/legislative locations, demonstrations, private property, federal property, and use-of-force conduct.",
+    {
+      reciprocity: "Washington Attorney General lists Michigan as recognized / meeting Washington requirements, but Michigan CPL holders must follow Washington law while physically in Washington.",
+      permitlessCarry: "No general permitless concealed pistol carry. Concealed pistol carry generally requires a Washington CPL or a recognized out-of-state license.",
+      concealedCarry: "RCW 9.41.050 governs carrying pistols and concealed pistol carry, including loaded pistols in vehicles.",
+      openCarry: "Open carry may be lawful in some contexts, but Washington restricts open carry in specific places and circumstances.",
+      vehicleCarry: "RCW 9.41.050(2)(a): loaded pistol in a vehicle generally requires a license and specific conditions.",
+      dutyToInform: "Washington does not use Michigan’s exact immediate-disclosure rule, but police-contact behavior still matters. Keep hands visible and answer lawful questions truthfully.",
+      privateSigns: "Private property owners may control access. Leave immediately if asked.",
+      forceLaw: "Washington self-defense law is fact-specific. Force must be justified under the circumstances."
+    },
+    [
+      "Washington officially lists Michigan as recognized for Washington CPL reciprocity purposes.",
+      "Recognition does not override Washington restricted places, vehicle rules, school rules, federal property, or private property.",
+      "Loaded pistol vehicle rules are a major Washington travel issue.",
+      "Schools, child care premises, voting facilities, courts, capitol/municipal buildings, and demonstrations require special caution.",
+      "Michigan members should be warned that Washington does not recognize many other states, so reciprocity must be checked permit-by-permit."
+    ],
+    [
+      {
+        title: "Michigan CPL Recognition in Washington",
+        risk: "Reciprocity Rule",
+        body: [
+          "STATUTE / SOURCE: Washington Attorney General reciprocity list; RCW 9.41.073 framework.",
+          "SUMMARY: Washington Attorney General’s reciprocity page lists Michigan as meeting Washington requirements for recognition.",
+          "GUIDANCE: Treat Michigan CPL as recognized in Washington, but Washington law controls all conduct while physically in the state."
+        ],
+        source: "Washington Attorney General Concealed Pistol License Reciprocity; RCW 9.41.073 framework."
+      },
+      {
+        title: "Concealed Pistol Carry / License Requirement",
+        risk: "Core Carry Rule",
+        body: [
+          "STATUTE: RCW 9.41.050.",
+          "SUMMARY: Washington law regulates carrying pistols and concealed pistol carry. Concealed carry generally requires a Washington CPL or recognized out-of-state license.",
+          "GUIDANCE: Do not treat Washington as permitless concealed carry. Carry permit/ID documentation and verify current recognition before travel."
+        ],
+        source: "RCW 9.41.050."
+      },
+      {
+        title: "Loaded Pistol in Vehicle",
+        risk: "High-Risk Vehicle Rule",
+        body: [
+          "STATUTE: RCW 9.41.050(2)(a).",
+          "SUMMARY: A person generally may not carry or place a loaded pistol in a vehicle unless licensed and one of the statutory conditions is met, such as the pistol being on the licensee's person, the licensee being in the vehicle, or the pistol being locked in the vehicle and concealed from view when the licensee is away.",
+          "GUIDANCE: Washington vehicle carry is not casual. Keep the permit/ID available, avoid reaching during stops, and secure the firearm properly if leaving the vehicle."
+        ],
+        source: "RCW 9.41.050(2)(a)."
+      },
+      {
+        title: "School Facilities",
+        risk: "Extreme Risk Area",
+        body: [
+          "STATUTE: RCW 9.41.280.",
+          "SUMMARY: Washington prohibits possessing firearms and other dangerous weapons on public or private elementary or secondary school premises, school-provided transportation, and areas used exclusively by schools, subject to statutory exceptions.",
+          "GUIDANCE: School pickup, school events, parking lots, and school meetings should be treated as verify-first areas."
+        ],
+        source: "RCW 9.41.280."
+      },
+      {
+        title: "Child Care Premises",
+        risk: "Sensitive Location Risk",
+        body: [
+          "STATUTE: RCW 9.41.282.",
+          "SUMMARY: Washington restricts dangerous weapons on child care premises, subject to statutory exceptions.",
+          "GUIDANCE: Treat child care centers, daycare-related facilities, and child care premises as verify-first/no-carry areas unless a clear exception applies."
+        ],
+        source: "RCW 9.41.282."
+      },
+      {
+        title: "Voting Facilities",
+        risk: "Election Location Risk",
+        body: [
+          "STATUTE: RCW 9.41.284.",
+          "SUMMARY: Washington restricts dangerous weapons at voting facilities, subject to statutory language and exceptions.",
+          "GUIDANCE: Ballot drop sites, vote centers, election offices, and voting facilities should be checked before carrying."
+        ],
+        source: "RCW 9.41.284."
+      },
+      {
+        title: "Weapons Prohibited in Certain Places",
+        risk: "Major Location Restriction",
+        body: [
+          "STATUTE: RCW 9.41.300.",
+          "SUMMARY: Washington prohibits weapons in certain places and addresses local laws/ordinances and exceptions under the statutory framework.",
+          "GUIDANCE: Check jails, law-enforcement facilities, court-related spaces, mental health facilities, restricted government areas, and other listed locations before entering."
+        ],
+        source: "RCW 9.41.300."
+      },
+      {
+        title: "Open Carry at Capitol Grounds / Municipal Buildings / Demonstrations",
+        risk: "Public Event / Government Location Risk",
+        body: [
+          "STATUTE: RCW 9.41.305.",
+          "SUMMARY: Washington restricts open carry of weapons on state capitol grounds and municipal buildings under specified circumstances.",
+          "GUIDANCE: Protests, public hearings, municipal buildings, capitol grounds, and permitted demonstrations should be treated as high-risk areas."
+        ],
+        source: "RCW 9.41.305."
+      },
+      {
+        title: "Private Property / Posted Locations",
+        risk: "Property Control",
+        body: [
+          "STATUTE / SOURCE: Washington property and trespass framework.",
+          "SUMMARY: Private property owners may control access and require armed persons to leave.",
+          "GUIDANCE: If posted or asked to leave, leave immediately. Do not argue with staff or security."
+        ],
+        source: "Washington property/trespass framework."
+      },
+      {
+        title: "Federal Property / Post Offices / Military Installations",
+        risk: "Federal Law Overlay",
+        body: [
+          "STATUTE / SOURCE: Federal facility, postal property, and military installation framework.",
+          "SUMMARY: Washington recognition of a Michigan CPL does not override federal property restrictions.",
+          "GUIDANCE: Federal buildings, post offices, federal courthouses, military bases, secure port/airport areas, and federal facilities must be checked separately."
+        ],
+        source: "Federal facility, postal property, military installation, and TSA framework."
+      },
+      {
+        title: "Use of Force / Self-Defense",
+        risk: "Fact-Specific Legal Risk",
+        body: [
+          "STATUTE / SOURCE: Washington self-defense law framework.",
+          "SUMMARY: Washington self-defense law is fact-specific and depends on necessity, reasonableness, and the circumstances.",
+          "GUIDANCE: Avoid confrontation, disengage when safe, call 911, identify evidence/witnesses if necessary, request counsel, and avoid long statements under stress."
+        ],
+        source: "Washington self-defense law framework."
+      }
+    ],
+    [
+      {
+        title: "Washington Carry Checklist",
+        steps: [
+          "1. Verify Michigan CPL recognition using Washington AG list.",
+          "2. Check RCW 9.41.050 for concealed/vehicle carry.",
+          "3. Check RCW 9.41.280 school facilities.",
+          "4. Check RCW 9.41.282 child care premises.",
+          "5. Check RCW 9.41.284 voting facilities.",
+          "6. Check RCW 9.41.300 prohibited places.",
+          "7. Check RCW 9.41.305 open carry/government/demonstration restrictions."
+        ]
+      }
+    ],
+    [
+      {
+        title: "Driving Around Seattle / Tacoma / Olympia",
+        summary: "Washington recognition helps, but vehicle carry, government buildings, protests, schools, child care premises, and private property still create risk.",
+        guidance: [
+          "Carry permit and photo ID.",
+          "Follow loaded pistol vehicle rules.",
+          "Avoid government/protest carry issues.",
+          "Check schools and child care premises."
+        ]
+      }
+    ],
+    [
+      "Assuming Washington is permitless concealed carry.",
+      "Ignoring loaded pistol vehicle rules under RCW 9.41.050.",
+      "Ignoring schools under RCW 9.41.280.",
+      "Ignoring child care premises under RCW 9.41.282.",
+      "Ignoring voting facilities under RCW 9.41.284.",
+      "Ignoring public demonstration/government building restrictions."
+    ],
+    [
+      "Michigan recognition verified.",
+      "Permit/ID carried.",
+      "Vehicle carry checked.",
+      "Schools/child care/voting facilities checked.",
+      "Government/demonstration restrictions checked.",
+      "Federal property checked."
+    ],
+    [
+      {
+        myth: "Washington is green on the map, so I can carry anywhere.",
+        reality: "No. Washington recognizes Michigan CPL according to the AG list, but Washington vehicle rules, school rules, prohibited places, private property, and federal property still apply."
+      }
+    ]
+  ),
+
 };
 
 var additionalHighRiskStates = {
