@@ -9957,6 +9957,530 @@ function renderIntelPanel(permitState, travelState){
   return html;
 }
 
+
+var eliteDeepAddons = {
+  "MI": [
+    {
+      "title": "Elite Deep Transport / Vehicle Carry",
+      "risk": "Top Michigan Arrest Risk",
+      "body": [
+        "STATUTE: MCL 750.227; Michigan Firearms Laws transport framework.",
+        "SUMMARY: A pistol in a vehicle is treated very differently than carry on foot. Without a CPL, a pistol in a vehicle must be treated as lawful transport only, not ready-access carry.",
+        "GUIDANCE: Without a CPL, keep the pistol unloaded, secured in a case, inaccessible, and tied to a lawful destination. A center console, glove box, seat, door pocket, purse, or backpack inside the passenger area can create serious exposure."
+      ],
+      "source": "MCL 750.227; Michigan Firearms Laws publication."
+    },
+    {
+      "title": "Elite Deep Police Interaction",
+      "risk": "Immediate Disclosure Required",
+      "body": [
+        "STATUTE: MCL 28.425f.",
+        "SUMMARY: A Michigan CPL holder carrying concealed and stopped by a peace officer must immediately disclose that they are carrying.",
+        "GUIDANCE: Keep hands visible and say: Officer, I have a CPL and I am carrying. How would you like me to proceed? Do not reach for the firearm, wallet, registration, console, glove box, or purse until instructed."
+      ],
+      "source": "MCL 28.425f."
+    },
+    {
+      "title": "Michigan-Specific Legal Traps",
+      "risk": "State-Specific Traps",
+      "body": [
+        "STATUTE: MCL 28.425o; MCL 750.234d; MCL 750.237a; MCL 28.429.",
+        "SUMMARY: Michigan carry errors often come from overlapping statutes: CPL pistol-free zones, general firearm-prohibited premises, weapon-free school zones, vehicle carry rules, and secure storage requirements.",
+        "GUIDANCE: Do not rely on one summary. Schools, hospitals, casinos, federal property, court-related locations, alcohol-centered locations, and child-access storage situations must each be checked separately."
+      ],
+      "source": "MCL 28.425o; MCL 750.234d; MCL 750.237a; MCL 28.429."
+    },
+    {
+      "title": "Michigan Defensive Display / Brandishing",
+      "risk": "Display Risk",
+      "body": [
+        "STATUTE: MCL 750.234e; MCL 780.972.",
+        "SUMMARY: Displaying a firearm in public can create criminal exposure unless the display is legally justified under self-defense principles.",
+        "GUIDANCE: Do not display to scare, intimidate, win an argument, protect pride, or control a non-deadly dispute. If display was necessary due to an immediate unlawful threat, call 911 first and report the attack or attempted attack."
+      ],
+      "source": "MCL 750.234e; MCL 780.972."
+    },
+    {
+      "title": "Civil Liability / Aftermath",
+      "risk": "Elite Deep Aftermath Warning",
+      "body": [
+        "STATUTE / SOURCE: MCL 780.972; MCL 600.2922; Michigan civil liability/self-defense framework.",
+        "SUMMARY: A defensive incident can create criminal investigation, civil lawsuit exposure, loss of employment, licensing consequences, and public-record consequences even when the defender believes the force was justified.",
+        "GUIDANCE: Call 911 when safe, request police and medical if needed, identify the attacker/evidence/witnesses only as necessary, request counsel, and avoid detailed statements until legal guidance is present. Do not post online or discuss the incident publicly."
+      ],
+      "source": "MCL 780.972; MCL 600.2922; Michigan civil liability/self-defense framework"
+    }
+  ],
+  "IL": [
+    {
+      "title": "Elite Deep Illinois Non-Resident Vehicle Rule",
+      "risk": "Major Traveler Trap",
+      "body": [
+        "STATUTE: 430 ILCS 66/40; Illinois Firearm Concealed Carry Act.",
+        "SUMMARY: Illinois does not treat a Michigan CPL as ordinary statewide carry authority. Non-resident vehicle possession rules are narrow and should not be confused with walking around armed in Illinois.",
+        "GUIDANCE: A Michigan member should treat Illinois as a transport/vehicle-only caution state unless they have specific Illinois authority. If leaving the vehicle unattended, the firearm must be secured under the applicable Illinois framework."
+      ],
+      "source": "430 ILCS 66/40; Illinois State Police concealed carry guidance."
+    },
+    {
+      "title": "Elite Deep Illinois Transport / FOID Confusion",
+      "risk": "Transport Law Trap",
+      "body": [
+        "STATUTE: 430 ILCS 65; 430 ILCS 66; Illinois transport guidance.",
+        "SUMMARY: Illinois transport rules, FOID concepts, non-resident rules, ammunition possession issues, and vehicle carry exceptions are frequently misunderstood by travelers.",
+        "GUIDANCE: Do not store a loaded magazine in the firearm or ammunition in a revolver cylinder when relying on transport rules. Non-residents should verify current Illinois State Police guidance before entering Illinois with firearms or ammunition."
+      ],
+      "source": "Illinois State Police firearm transport guidance; 430 ILCS 65; 430 ILCS 66."
+    },
+    {
+      "title": "Elite Deep Illinois Restricted & Sensitive Locations",
+      "risk": "Strict Location Risk",
+      "body": [
+        "STATUTE: 430 ILCS 66/65.",
+        "SUMMARY: Illinois lists many prohibited areas for concealed carry, including schools, government buildings, courthouses, public transportation, bars, parks/playgrounds in certain circumstances, hospitals, libraries, airports, and posted locations.",
+        "GUIDANCE: In Illinois, assume the location needs verification before carry. Posted signs and public facilities carry serious risk."
+      ],
+      "source": "430 ILCS 66/65."
+    },
+    {
+      "title": "Elite Deep Illinois Police Interaction",
+      "risk": "Officer Contact Risk",
+      "body": [
+        "STATUTE: 430 ILCS 66/10(h).",
+        "SUMMARY: During an investigative stop, licensees and qualifying non-residents must disclose/identify firearm location and permit safe securing of the firearm upon officer request under the Illinois framework.",
+        "GUIDANCE: Keep hands visible, do not reach, and answer questions calmly. Illinois police-contact issues can escalate quickly if the person argues or moves toward the firearm."
+      ],
+      "source": "430 ILCS 66/10(h)."
+    },
+    {
+      "title": "Civil Liability / Aftermath",
+      "risk": "Elite Deep Aftermath Warning",
+      "body": [
+        "STATUTE / SOURCE: Illinois self-defense and civil liability framework; 720 ILCS 5/7-1; 740 ILCS civil action framework.",
+        "SUMMARY: A defensive incident can create criminal investigation, civil lawsuit exposure, loss of employment, licensing consequences, and public-record consequences even when the defender believes the force was justified.",
+        "GUIDANCE: Call 911 when safe, request police and medical if needed, identify the attacker/evidence/witnesses only as necessary, request counsel, and avoid detailed statements until legal guidance is present. Do not post online or discuss the incident publicly."
+      ],
+      "source": "Illinois self-defense and civil liability framework; 720 ILCS 5/7-1; 740 ILCS civil action framework"
+    }
+  ],
+  "OH": [
+    {
+      "title": "Elite Deep Ohio Permitless Carry Limits",
+      "risk": "Qualifying Adult Required",
+      "body": [
+        "STATUTE: ORC 2923.111.",
+        "SUMMARY: Ohio permitless carry applies to a qualifying adult and does not erase disqualifiers, restricted locations, vehicle-specific laws, or intoxication-related risks.",
+        "GUIDANCE: Do not teach Ohio as ruleless. Confirm qualifying-adult status, sobriety, lawful possession, and lawful location before carry."
+      ],
+      "source": "ORC 2923.111."
+    },
+    {
+      "title": "Elite Deep Ohio Vehicle / Improper Handling",
+      "risk": "Vehicle-Specific Risk",
+      "body": [
+        "STATUTE: ORC 2923.16.",
+        "SUMMARY: Ohio has a specific improper-handling-in-a-motor-vehicle statute, so vehicle carry should not be treated as identical to carry on foot.",
+        "GUIDANCE: Keep hands visible during stops. Do not reach. If asked, answer truthfully and calmly identify that you are lawfully carrying."
+      ],
+      "source": "ORC 2923.16; Ohio Attorney General concealed carry guidance."
+    },
+    {
+      "title": "Elite Deep Ohio Restricted & Sensitive Locations",
+      "risk": "Location Restriction",
+      "body": [
+        "STATUTE: ORC 2923.126; ORC 2923.122; ORC 2923.123; ORC 2923.121.",
+        "SUMMARY: Ohio still restricts carry in schools, courthouses, certain government facilities, law-enforcement/correctional facilities, liquor-permit premises, places of worship unless permitted, and posted private property.",
+        "GUIDANCE: Permitless carry and Michigan CPL recognition do not override these locations. Verify before entering."
+      ],
+      "source": "ORC 2923.126; ORC 2923.122; ORC 2923.123; ORC 2923.121."
+    },
+    {
+      "title": "Elite Deep Ohio Police Interaction",
+      "risk": "Different From Michigan",
+      "body": [
+        "STATUTE / SOURCE: Ohio Attorney General concealed carry guidance; ORC 2923.111.",
+        "SUMMARY: Ohio no longer uses the old automatic prompt-notification model, but carriers must answer truthfully if asked by law enforcement.",
+        "GUIDANCE: Recommended script: Officer, I am lawfully carrying. How would you like me to proceed? Keep hands visible and avoid legal debate during the stop."
+      ],
+      "source": "Ohio Attorney General concealed carry guidance; ORC 2923.111."
+    },
+    {
+      "title": "Civil Liability / Aftermath",
+      "risk": "Elite Deep Aftermath Warning",
+      "body": [
+        "STATUTE / SOURCE: Ohio self-defense statutes and case-law framework.",
+        "SUMMARY: A defensive incident can create criminal investigation, civil lawsuit exposure, loss of employment, licensing consequences, and public-record consequences even when the defender believes the force was justified.",
+        "GUIDANCE: Call 911 when safe, request police and medical if needed, identify the attacker/evidence/witnesses only as necessary, request counsel, and avoid detailed statements until legal guidance is present. Do not post online or discuss the incident publicly."
+      ],
+      "source": "Ohio self-defense statutes and case-law framework"
+    }
+  ],
+  "FL": [
+    {
+      "title": "Elite Deep Florida Permitless Carry Limits",
+      "risk": "Qualified Person Required",
+      "body": [
+        "STATUTE: F.S. 790.01; F.S. 790.06.",
+        "SUMMARY: Florida allows permitless concealed carry for qualified persons, but the person must still meet eligibility rules and obey prohibited-location restrictions.",
+        "GUIDANCE: Do not confuse permitless concealed carry with open carry or carry-anywhere authority. Verify eligibility, location, and sobriety."
+      ],
+      "source": "Florida Statutes 790.01; 790.06."
+    },
+    {
+      "title": "Elite Deep Florida Prohibited Locations",
+      "risk": "Strict Location List",
+      "body": [
+        "STATUTE: F.S. 790.06(12)(a).",
+        "SUMMARY: Florida lists places where a person cannot carry a concealed weapon or firearm, including police/sheriff/highway patrol stations, detention facilities, courthouses, polling places, certain government meetings, school/college/professional athletic events, school property, career centers, bars or bar portions, airport passenger terminals/sterile areas, and other listed places.",
+        "GUIDANCE: Florida is travel-friendly but location-sensitive. Theme parks, resorts, airports, bars, schools, and government meetings require careful checking."
+      ],
+      "source": "F.S. 790.06(12)(a); Florida Department of Agriculture and Consumer Services possession restrictions."
+    },
+    {
+      "title": "Elite Deep Florida Vehicle / Travel Storage",
+      "risk": "Vacation Travel Risk",
+      "body": [
+        "STATUTE / SOURCE: Florida Chapter 790 framework.",
+        "SUMMARY: Vehicle carry and storage can be lawful for qualified persons, but rental cars, valet, hotel rooms, beaches, pools, and theme-park parking lots create theft and possession risk.",
+        "GUIDANCE: Do not leave a firearm unsecured in a rental car or hotel room. Plan lawful storage before visiting venues with screening or firearm restrictions."
+      ],
+      "source": "Florida Chapter 790 framework."
+    },
+    {
+      "title": "Elite Deep Florida Open Carry Trap",
+      "risk": "Open Carry Restriction",
+      "body": [
+        "STATUTE: F.S. 790.053.",
+        "SUMMARY: Florida generally restricts open carry, with specific exceptions. Permitless concealed carry does not mean open carry is allowed.",
+        "GUIDANCE: Keep carry concealed if lawful. Do not let vacation comfort, beach clothing, or vehicle handling create accidental open display."
+      ],
+      "source": "F.S. 790.053."
+    },
+    {
+      "title": "Civil Liability / Aftermath",
+      "risk": "Elite Deep Aftermath Warning",
+      "body": [
+        "STATUTE / SOURCE: Florida self-defense and civil immunity framework, including Chapter 776.",
+        "SUMMARY: A defensive incident can create criminal investigation, civil lawsuit exposure, loss of employment, licensing consequences, and public-record consequences even when the defender believes the force was justified.",
+        "GUIDANCE: Call 911 when safe, request police and medical if needed, identify the attacker/evidence/witnesses only as necessary, request counsel, and avoid detailed statements until legal guidance is present. Do not post online or discuss the incident publicly."
+      ],
+      "source": "Florida self-defense and civil immunity framework, including Chapter 776"
+    }
+  ],
+  "TX": [
+    {
+      "title": "Elite Deep Texas Permitless Carry Limits",
+      "risk": "Eligible Person Required",
+      "body": [
+        "STATUTE: Texas Penal Code Chapter 46.",
+        "SUMMARY: Texas allows permitless carry for eligible persons in many circumstances, but eligibility, prohibited places, signage, alcohol rules, and school/event restrictions still matter.",
+        "GUIDANCE: Do not treat Texas as carry-anywhere. Eligibility and location rules are still critical."
+      ],
+      "source": "Texas Penal Code Chapter 46."
+    },
+    {
+      "title": "Elite Deep Texas Prohibited Places",
+      "risk": "Statutory No-Go Zones",
+      "body": [
+        "STATUTE: Texas Penal Code \u00a7 46.03.",
+        "SUMMARY: Texas prohibits firearms in specified places, including schools and school activities, polling places, courts, racetracks, secure airport areas, correctional facilities, certain civil commitment facilities, and other specified locations.",
+        "GUIDANCE: Check schools, polling places, courts, airports, correctional facilities, and events before carrying."
+      ],
+      "source": "Texas Penal Code \u00a7 46.03."
+    },
+    {
+      "title": "Elite Deep Texas Signage Trap",
+      "risk": "Private Property Signage",
+      "body": [
+        "STATUTE: Texas Penal Code \u00a7\u00a7 30.05, 30.06, 30.07 and related signage framework.",
+        "SUMMARY: Texas has specific signage rules that can restrict carry generally, concealed carry, open carry, or different firearm categories depending on the notice given.",
+        "GUIDANCE: Do not ignore Texas signs because they look technical. If posted or told to leave, leave immediately."
+      ],
+      "source": "Texas Penal Code \u00a7\u00a7 30.05, 30.06, 30.07."
+    },
+    {
+      "title": "Elite Deep Texas Alcohol / 51 Percent Locations",
+      "risk": "Alcohol Location Risk",
+      "body": [
+        "STATUTE: Texas Penal Code Chapter 46; Texas alcohol-location signage framework.",
+        "SUMMARY: Certain alcohol-related locations and 51 percent locations create major carry restrictions.",
+        "GUIDANCE: Look for required signs. Do not carry while impaired. Restaurants, bars, festivals, rodeos, concerts, and stadium events should be checked."
+      ],
+      "source": "Texas Penal Code Chapter 46; Texas Alcoholic Beverage Commission signage framework."
+    },
+    {
+      "title": "Civil Liability / Aftermath",
+      "risk": "Elite Deep Aftermath Warning",
+      "body": [
+        "STATUTE / SOURCE: Texas Penal Code Chapter 9 self-defense framework; civil liability framework.",
+        "SUMMARY: A defensive incident can create criminal investigation, civil lawsuit exposure, loss of employment, licensing consequences, and public-record consequences even when the defender believes the force was justified.",
+        "GUIDANCE: Call 911 when safe, request police and medical if needed, identify the attacker/evidence/witnesses only as necessary, request counsel, and avoid detailed statements until legal guidance is present. Do not post online or discuss the incident publicly."
+      ],
+      "source": "Texas Penal Code Chapter 9 self-defense framework; civil liability framework"
+    }
+  ],
+  "PA": [
+    {
+      "title": "Elite Deep Pennsylvania Vehicle Carry",
+      "risk": "Major Traveler Trap",
+      "body": [
+        "STATUTE: 18 Pa.C.S. \u00a7 6106.",
+        "SUMMARY: Pennsylvania generally requires a valid license to carry concealed or carry a firearm in a vehicle unless a statutory exception applies.",
+        "GUIDANCE: Treat vehicle carry as license-required unless a clear exception applies. Do not assume open carry rules on foot apply inside a vehicle."
+      ],
+      "source": "18 Pa.C.S. \u00a7 6106."
+    },
+    {
+      "title": "Elite Deep Philadelphia / Emergency Restrictions",
+      "risk": "City and Emergency Trap",
+      "body": [
+        "STATUTE: 18 Pa.C.S. \u00a7 6108; 18 Pa.C.S. \u00a7 6107.",
+        "SUMMARY: Philadelphia and declared emergency conditions have specific restrictions that can affect public carry.",
+        "GUIDANCE: If your route enters Philadelphia or a declared emergency area, verify before carrying. Michigan CPL recognition does not erase these restrictions."
+      ],
+      "source": "18 Pa.C.S. \u00a7 6108; 18 Pa.C.S. \u00a7 6107."
+    },
+    {
+      "title": "Elite Deep Pennsylvania Schools / Courts",
+      "risk": "Hard Stop Areas",
+      "body": [
+        "STATUTE: 18 Pa.C.S. \u00a7 912; 18 Pa.C.S. \u00a7 913.",
+        "SUMMARY: Pennsylvania restricts weapons on school property and in court facilities, subject to statutory language and defenses/exceptions.",
+        "GUIDANCE: School parking lots, events, courthouses, and court-related buildings must be treated as verify-first locations."
+      ],
+      "source": "18 Pa.C.S. \u00a7 912; 18 Pa.C.S. \u00a7 913."
+    },
+    {
+      "title": "Elite Deep Pennsylvania Transport vs Carry",
+      "risk": "Interstate Travel Issue",
+      "body": [
+        "STATUTE / SOURCE: 18 Pa.C.S. \u00a7 6106; federal interstate transport framework.",
+        "SUMMARY: Transporting through Pennsylvania and carrying in Pennsylvania are not the same legal question.",
+        "GUIDANCE: If relying on transport, keep the firearm unloaded, secured, and inaccessible consistent with applicable law. Avoid unnecessary stops or handling when passing through restrictive jurisdictions."
+      ],
+      "source": "18 Pa.C.S. \u00a7 6106; 18 U.S.C. \u00a7 926A framework."
+    },
+    {
+      "title": "Civil Liability / Aftermath",
+      "risk": "Elite Deep Aftermath Warning",
+      "body": [
+        "STATUTE / SOURCE: Pennsylvania self-defense and civil liability framework.",
+        "SUMMARY: A defensive incident can create criminal investigation, civil lawsuit exposure, loss of employment, licensing consequences, and public-record consequences even when the defender believes the force was justified.",
+        "GUIDANCE: Call 911 when safe, request police and medical if needed, identify the attacker/evidence/witnesses only as necessary, request counsel, and avoid detailed statements until legal guidance is present. Do not post online or discuss the incident publicly."
+      ],
+      "source": "Pennsylvania self-defense and civil liability framework"
+    }
+  ],
+  "NV": [
+    {
+      "title": "Elite Deep Nevada Reciprocity Verification",
+      "risk": "Changing Recognition Risk",
+      "body": [
+        "STATUTE: NRS 202.3689.",
+        "SUMMARY: Nevada recognition depends on Nevada's official recognition list and can change. Nevada official pages have shown Michigan recognition, but recognition should be verified before travel.",
+        "GUIDANCE: Treat Nevada as verify-before-carry. Carry the recognized permit physically while carrying and confirm the current Nevada RCCD recognition list before travel."
+      ],
+      "source": "NRS 202.3689; Nevada RCCD out-of-state CCW recognition."
+    },
+    {
+      "title": "Elite Deep Nevada Prohibited Locations",
+      "risk": "Location Restriction",
+      "body": [
+        "STATUTE: NRS 202.3673; NRS 202.265.",
+        "SUMMARY: Nevada restricts concealed carry in certain public buildings, airport secure areas, schools, child-care facilities, and other posted or statutory locations.",
+        "GUIDANCE: Casinos are not the only Nevada concern. Airports, schools, public buildings, posted areas, university system buildings, and private property policies must be checked."
+      ],
+      "source": "NRS 202.3673; NRS 202.265."
+    },
+    {
+      "title": "Elite Deep Nevada Casinos / Private Property",
+      "risk": "Private Security Risk",
+      "body": [
+        "STATUTE / SOURCE: Nevada property/trespass framework; NRS 202.3673 public-building rules.",
+        "SUMMARY: Nevada casino and resort properties are often private property with security policies, surveillance, alcohol, events, and posted or instructed restrictions.",
+        "GUIDANCE: If security asks you to leave or disarm, leave calmly. Do not debate private security on the gaming floor or at a hotel entrance."
+      ],
+      "source": "Nevada private property/trespass framework."
+    },
+    {
+      "title": "Elite Deep Nevada Vehicle / Desert Travel",
+      "risk": "Vehicle and Storage Risk",
+      "body": [
+        "STATUTE / SOURCE: Nevada concealed/firearm possession framework.",
+        "SUMMARY: Vehicle possession, concealed carry, hotel storage, rental cars, parks, tribal lands, and federal land can raise different legal questions.",
+        "GUIDANCE: Verify whether you are on state, federal, tribal, private, casino, park, or airport property before relying on general Nevada carry rules."
+      ],
+      "source": "Nevada firearms framework; federal/tribal property framework."
+    },
+    {
+      "title": "Civil Liability / Aftermath",
+      "risk": "Elite Deep Aftermath Warning",
+      "body": [
+        "STATUTE / SOURCE: Nevada self-defense and civil liability framework.",
+        "SUMMARY: A defensive incident can create criminal investigation, civil lawsuit exposure, loss of employment, licensing consequences, and public-record consequences even when the defender believes the force was justified.",
+        "GUIDANCE: Call 911 when safe, request police and medical if needed, identify the attacker/evidence/witnesses only as necessary, request counsel, and avoid detailed statements until legal guidance is present. Do not post online or discuss the incident publicly."
+      ],
+      "source": "Nevada self-defense and civil liability framework"
+    }
+  ],
+  "CA": [
+    {
+      "title": "Elite Deep California Non-Recognition Warning",
+      "risk": "Do Not Carry on Michigan CPL",
+      "body": [
+        "STATUTE / SOURCE: California CCW licensing framework; California does not recognize out-of-state carry permits.",
+        "SUMMARY: A Michigan CPL does not authorize concealed carry in California.",
+        "GUIDANCE: Treat California as a no-carry-on-Michigan-CPL state. Verify transport, ammunition, magazine, sensitive-place, and local rules before travel."
+      ],
+      "source": "California Penal Code CCW licensing framework."
+    },
+    {
+      "title": "Elite Deep California Sensitive Places",
+      "risk": "Extensive Location Restrictions",
+      "body": [
+        "STATUTE: California Penal Code \u00a7 26230; Penal Code \u00a7 626.9.",
+        "SUMMARY: California has extensive sensitive-location restrictions for licensed carriers and strict school-zone rules.",
+        "GUIDANCE: Even California permit holders face broad location restrictions. Out-of-state travelers should not assume any carry authority."
+      ],
+      "source": "California Penal Code \u00a7 26230; Penal Code \u00a7 626.9."
+    },
+    {
+      "title": "Elite Deep California Transport",
+      "risk": "Strict Transport Planning",
+      "body": [
+        "STATUTE / SOURCE: California firearm transport framework.",
+        "SUMMARY: California transport commonly requires unloaded firearms secured in a locked container or otherwise transported according to California law, with separate rules for handguns, long guns, ammunition, and prohibited items.",
+        "GUIDANCE: Plan transport before entering California. Avoid unnecessary stops or handling. Verify magazine, ammunition, assault-weapon, and local restrictions."
+      ],
+      "source": "California Department of Justice firearms transport framework; California Penal Code transport provisions."
+    },
+    {
+      "title": "Elite Deep California Ammunition / Magazine / Local Traps",
+      "risk": "Equipment Risk",
+      "body": [
+        "STATUTE / SOURCE: California ammunition, magazine, and prohibited weapon framework.",
+        "SUMMARY: Firearm equipment that is ordinary in other states can create California-specific risk.",
+        "GUIDANCE: Before entering California, verify magazines, ammunition, firearm configuration, registration/status issues, and local restrictions."
+      ],
+      "source": "California Penal Code firearms/ammunition framework."
+    },
+    {
+      "title": "Civil Liability / Aftermath",
+      "risk": "Elite Deep Aftermath Warning",
+      "body": [
+        "STATUTE / SOURCE: California self-defense, criminal investigation, and civil liability framework.",
+        "SUMMARY: A defensive incident can create criminal investigation, civil lawsuit exposure, loss of employment, licensing consequences, and public-record consequences even when the defender believes the force was justified.",
+        "GUIDANCE: Call 911 when safe, request police and medical if needed, identify the attacker/evidence/witnesses only as necessary, request counsel, and avoid detailed statements until legal guidance is present. Do not post online or discuss the incident publicly."
+      ],
+      "source": "California self-defense, criminal investigation, and civil liability framework"
+    }
+  ],
+  "NY": [
+    {
+      "title": "Elite Deep New York Non-Recognition Warning",
+      "risk": "Do Not Carry on Michigan CPL",
+      "body": [
+        "STATUTE / SOURCE: New York Penal Law Article 400 and Article 265 framework.",
+        "SUMMARY: A Michigan CPL does not authorize concealed carry in New York.",
+        "GUIDANCE: Treat New York as a no-carry-on-Michigan-CPL state. New York City requires separate caution and has its own licensing/enforcement environment."
+      ],
+      "source": "New York Penal Law Articles 265 and 400."
+    },
+    {
+      "title": "Elite Deep New York Sensitive Locations",
+      "risk": "Strict Location Risk",
+      "body": [
+        "STATUTE: New York Penal Law \u00a7 265.01-e.",
+        "SUMMARY: New York law identifies numerous sensitive locations where firearm possession is restricted, including government locations, health care settings, schools, public transportation, Times Square, entertainment venues, bars/restaurants serving alcohol, and many other categories.",
+        "GUIDANCE: Do not rely on general carry concepts in New York. Sensitive-location law must be checked before any possession/carry decision."
+      ],
+      "source": "New York Penal Law \u00a7 265.01-e."
+    },
+    {
+      "title": "Elite Deep New York Transport / Passing Through",
+      "risk": "Interstate Travel Trap",
+      "body": [
+        "STATUTE / SOURCE: New York firearm possession framework; 18 U.S.C. \u00a7 926A federal transport framework.",
+        "SUMMARY: Transporting through New York and carrying in New York are entirely different legal questions. Federal transport protection can be narrow and fact-specific.",
+        "GUIDANCE: Avoid unnecessary stops, deviations, or handling. Airports, hotels, New York City, and vehicle stops are major risk points."
+      ],
+      "source": "New York Penal Law Article 265; 18 U.S.C. \u00a7 926A framework."
+    },
+    {
+      "title": "Elite Deep New York Ammunition / Magazine / NYC Trap",
+      "risk": "Equipment and Local Risk",
+      "body": [
+        "STATUTE / SOURCE: New York firearm, ammunition, magazine, and New York City licensing framework.",
+        "SUMMARY: New York and New York City can impose significant rules involving firearm possession, licensing, magazines, ammunition, and transport.",
+        "GUIDANCE: Check New York City separately. Do not assume upstate rules, federal transport concepts, or another state's permit will protect you."
+      ],
+      "source": "New York Penal Law Article 265; New York City firearms framework."
+    },
+    {
+      "title": "Civil Liability / Aftermath",
+      "risk": "Elite Deep Aftermath Warning",
+      "body": [
+        "STATUTE / SOURCE: New York self-defense and civil liability framework.",
+        "SUMMARY: A defensive incident can create criminal investigation, civil lawsuit exposure, loss of employment, licensing consequences, and public-record consequences even when the defender believes the force was justified.",
+        "GUIDANCE: Call 911 when safe, request police and medical if needed, identify the attacker/evidence/witnesses only as necessary, request counsel, and avoid detailed statements until legal guidance is present. Do not post online or discuss the incident publicly."
+      ],
+      "source": "New York self-defense and civil liability framework"
+    }
+  ],
+  "NJ": [
+    {
+      "title": "Elite Deep New Jersey Non-Recognition Warning",
+      "risk": "Do Not Carry on Michigan CPL",
+      "body": [
+        "STATUTE / SOURCE: N.J.S.A. 2C:58-4; 2C:58-4.6.",
+        "SUMMARY: A Michigan CPL does not authorize concealed carry in New Jersey.",
+        "GUIDANCE: Treat New Jersey as no carry on Michigan CPL. Verify New Jersey permit, transport, ammunition, sensitive-place, and local requirements before travel."
+      ],
+      "source": "N.J.S.A. 2C:58-4; N.J.S.A. 2C:58-4.6."
+    },
+    {
+      "title": "Elite Deep New Jersey Sensitive Places",
+      "risk": "Strict Location Risk",
+      "body": [
+        "STATUTE: N.J.S.A. 2C:58-4.6.",
+        "SUMMARY: New Jersey lists numerous sensitive places where carry is prohibited or restricted for permit holders.",
+        "GUIDANCE: New Jersey location rules are broad. Do not assume a permit or transport exception allows carry in public places, events, government property, schools, or private property."
+      ],
+      "source": "N.J.S.A. 2C:58-4.6."
+    },
+    {
+      "title": "Elite Deep New Jersey Transport",
+      "risk": "Direct Travel Trap",
+      "body": [
+        "STATUTE: N.J.S.A. 2C:39-6.",
+        "SUMMARY: New Jersey transport exceptions are narrow and often tied to direct travel between specific lawful places.",
+        "GUIDANCE: Avoid casual stops, unnecessary deviations, hotel handling, and loaded/accessible configurations. Treat New Jersey transport as strict, direct, and exception-based."
+      ],
+      "source": "N.J.S.A. 2C:39-6."
+    },
+    {
+      "title": "Elite Deep New Jersey Hollow Point / Ammunition Trap",
+      "risk": "Equipment Risk",
+      "body": [
+        "STATUTE: N.J.S.A. 2C:39-3(f); N.J.S.A. 2C:39-6.",
+        "SUMMARY: New Jersey restricts hollow nose/dum-dum ammunition possession except in limited circumstances such as home, certain property, range, hunting, or direct travel connected to lawful exceptions.",
+        "GUIDANCE: Do not carry hollow points for ordinary concealed carry in New Jersey. Verify ammunition, magazine, and firearm configuration before entering."
+      ],
+      "source": "N.J.S.A. 2C:39-3(f); N.J.S.A. 2C:39-6."
+    },
+    {
+      "title": "Civil Liability / Aftermath",
+      "risk": "Elite Deep Aftermath Warning",
+      "body": [
+        "STATUTE / SOURCE: New Jersey self-defense and civil liability framework.",
+        "SUMMARY: A defensive incident can create criminal investigation, civil lawsuit exposure, loss of employment, licensing consequences, and public-record consequences even when the defender believes the force was justified.",
+        "GUIDANCE: Call 911 when safe, request police and medical if needed, identify the attacker/evidence/witnesses only as necessary, request counsel, and avoid detailed statements until legal guidance is present. Do not post online or discuss the incident publicly."
+      ],
+      "source": "New Jersey self-defense and civil liability framework"
+    }
+  ]
+};
+
 function renderLegalSection(section){
   var cat = sectionCategory(section);
   var html = '<div class="legalItem ' + cat + '">' +
@@ -9997,6 +10521,7 @@ function renderLawProfile(abbr){
   var html = '<div class="detailBox">' +
     '<h3>' + abbr + ' — ' + escapeHtml(law.name || stateName(abbr)) + '</h3>' +
     '<span class="lawPill green">' + escapeHtml(law.profileStatus || "Profile") + '</span>' +
+    (eliteDeepAddons[abbr] ? '<span class="lawPill yellow">Elite Deep</span>' : '') +
     '<span class="lawPill gray">Reviewed: ' + escapeHtml(law.lastReviewed || "Verify") + '</span>' +
     '<p>' + escapeHtml(law.summary || "") + '</p>';
 
@@ -10007,6 +10532,12 @@ function renderLawProfile(abbr){
     law.legalSections.forEach(function(section){ html += renderLegalSection(section); });
   } else {
     html += '<div class="legalItem"><p>No expanded legal sections are built for this state yet.</p></div>';
+  }
+
+  var deepSections = eliteDeepAddons[abbr] || [];
+  if(deepSections.length){
+    html += '<div class="sectionHeader"><h3>Elite Deep Upgrade</h3><p>Transport detail, state-specific traps, police-contact nuance, and post-incident liability warnings.</p></div>';
+    deepSections.forEach(function(section){ html += renderLegalSection(section); });
   }
 
   html += '<div id="pd-decision-blocks" class="sectionHeader"><h3>Decision Blocks / Checklists</h3><p>Fast field checks before carrying or traveling.</p></div>';
