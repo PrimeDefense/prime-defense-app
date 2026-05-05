@@ -9638,6 +9638,876 @@ var stateLawData = {
 
 };
 
+
+// Elite Deep Final Batch Addendum - verified rebuild from Set 3 base.
+var eliteDeepFinalBatchAddendum = {
+  "KS": {
+    "alerts": [
+      "Kansas recognizes many out-of-state licenses for nonresidents, but Kansas residents cannot rely on an out-of-state permit as a substitute for Kansas law.",
+      "Kansas has permitless carry, but federal school-zone rules and posted/security-controlled buildings remain major traps.",
+      "Schools, universities, courthouses, secure public buildings, medical facilities, jails, and posted private property should be checked before entry."
+    ],
+    "sections": [
+      {
+        "title": "Elite Deep: Permitless Carry and Recognition",
+        "risk": "Core Eligibility Rule",
+        "body": [
+          "STATUTE / SOURCE: Kan. Stat. Ann. 75-7c03 and Kansas Attorney General recognition guidance.",
+          "SUMMARY: Kansas allows permitless concealed carry for eligible persons, and Kansas recognizes valid out-of-state licenses for qualifying nonresidents, but recognition rules differ for Kansas residents.",
+          "GUIDANCE: Michigan members traveling through Kansas should still carry permit/ID, verify eligibility, and remember that permitless carry does not override restricted locations."
+        ],
+        "source": "Kansas Attorney General concealed carry recognition guidance; K.S.A. 75-7c03."
+      },
+      {
+        "title": "Elite Deep: Federal School-Zone Trap",
+        "risk": "High Consequence Travel Trap",
+        "body": [
+          "STATUTE / SOURCE: Federal Gun-Free School Zones Act; Kansas AG concealed carry FAQ.",
+          "SUMMARY: Unlicensed concealed carry can create school-zone problems, while a recognized license may affect the federal school-zone analysis when passing through a school zone.",
+          "GUIDANCE: Do not treat permitless carry as a universal school-zone solution. When school property or the 1,000-foot federal zone is involved, verify before carrying."
+        ],
+        "source": "Kansas Attorney General concealed carry FAQ; 18 U.S.C. 922(q)."
+      },
+      {
+        "title": "Elite Deep: Restricted and Sensitive Locations",
+        "risk": "Location Restriction",
+        "body": [
+          "STATUTE / SOURCE: K.S.A. 75-7c10 and related Kansas public-building/security framework.",
+          "SUMMARY: Kansas law and public-building rules can restrict carry in certain buildings, especially when adequate security measures or required postings are used.",
+          "GUIDANCE: Treat courthouses, secure government buildings, jails, law enforcement facilities, medical/care facilities, universities, race tracks, and posted locations as verify-first areas."
+        ],
+        "source": "K.S.A. 75-7c10; Kansas Attorney General concealed carry materials."
+      },
+      {
+        "title": "Elite Deep: Vehicle Carry and Roadside Conduct",
+        "risk": "Vehicle / Police Contact Risk",
+        "body": [
+          "STATUTE / SOURCE: Kansas weapons and concealed carry framework.",
+          "SUMMARY: Vehicle carry may be lawful for eligible persons, but traffic stops remain a practical risk point.",
+          "GUIDANCE: Keep hands visible, do not reach, and answer lawful questions calmly. A lawful carry situation can become dangerous if the member moves unpredictably."
+        ],
+        "source": "Kansas concealed carry framework."
+      },
+      {
+        "title": "Elite Deep: Campus and Public Building Nuance",
+        "risk": "Campus / Building Trap",
+        "body": [
+          "STATUTE / SOURCE: Kansas public building and university concealed carry framework.",
+          "SUMMARY: Kansas campus and public-building carry rules can depend on signage, restricted access, adequate security measures, and property-specific policy.",
+          "GUIDANCE: Do not assume that a green reciprocity status answers university, public-building, lab, stadium, event, or restricted-access questions."
+        ],
+        "source": "Kansas Board of Regents / Kansas public building concealed carry framework."
+      },
+      {
+        "title": "Elite Deep: Aftermath and Civil Exposure",
+        "risk": "Post-Incident Risk",
+        "body": [
+          "STATUTE / SOURCE: Kansas self-defense and civil/criminal procedure framework.",
+          "SUMMARY: A defensive act can still lead to investigation, arrest, prosecution review, or civil exposure depending on the facts.",
+          "GUIDANCE: Call 911, report the attack, identify evidence and witnesses only as necessary, request counsel, and avoid detailed statements under stress."
+        ],
+        "source": "Kansas self-defense and post-incident framework."
+      }
+    ],
+    "mistakes": [
+      "Assuming permitless carry solves federal school-zone issues.",
+      "Ignoring secure public building postings and screening.",
+      "Assuming a nonresident recognition rule applies the same way to Kansas residents.",
+      "Treating universities and public buildings as ordinary private property.",
+      "Arguing at a posted location instead of leaving."
+    ],
+    "checklist": [
+      "Kansas eligibility verified.",
+      "Michigan permit recognition/ID verified.",
+      "School-zone status checked.",
+      "Public building/security status checked.",
+      "Vehicle stop plan ready.",
+      "Federal property checked separately."
+    ]
+  },
+  "OK": {
+    "alerts": [
+      "Oklahoma is permitless for eligible persons, but prohibited places under the Self-Defense Act remain important.",
+      "Oklahoma has detailed restricted-location rules including schools, courthouses, government meetings, jails, prisons, sports arenas, and posted locations.",
+      "Tribal lands, casinos, federal property, and private property require separate analysis."
+    ],
+    "sections": [
+      {
+        "title": "Elite Deep: Permitless Carry and Eligibility",
+        "risk": "Core Eligibility Rule",
+        "body": [
+          "STATUTE / SOURCE: 21 O.S. 1272 and Oklahoma Self-Defense Act.",
+          "SUMMARY: Oklahoma allows eligible persons to carry without a handgun license, but prohibited persons and restricted places remain excluded.",
+          "GUIDANCE: Do not teach Oklahoma as carry-anywhere. Eligibility, location, tribal/federal property, and private property still control."
+        ],
+        "source": "Oklahoma Self-Defense Act; 21 O.S. 1272."
+      },
+      {
+        "title": "Elite Deep: Prohibited Places",
+        "risk": "Major Location Restriction",
+        "body": [
+          "STATUTE / SOURCE: 21 O.S. 1277.",
+          "SUMMARY: Oklahoma law lists places where firearms may not be carried, including certain government, school, court, correctional, sports, and other sensitive locations.",
+          "GUIDANCE: Use Section 1277 as the primary Oklahoma restricted-location checklist before entering buildings or events."
+        ],
+        "source": "21 O.S. 1277; Oklahoma Self-Defense Act materials."
+      },
+      {
+        "title": "Elite Deep: School and Campus Nuance",
+        "risk": "School / Campus Trap",
+        "body": [
+          "STATUTE / SOURCE: 21 O.S. 1277; Oklahoma school and higher education framework.",
+          "SUMMARY: School property and higher education locations can have specific restrictions and authorization requirements.",
+          "GUIDANCE: A parking lot, campus event, stadium, or university building should never be treated casually."
+        ],
+        "source": "Oklahoma Self-Defense Act; Oklahoma school/campus framework."
+      },
+      {
+        "title": "Elite Deep: Vehicle Carry and Police Contact",
+        "risk": "Vehicle / Stop Risk",
+        "body": [
+          "STATUTE / SOURCE: Oklahoma Self-Defense Act vehicle and carry framework.",
+          "SUMMARY: Vehicle carry may be lawful for eligible persons, but a traffic stop can become dangerous if the member reaches or argues.",
+          "GUIDANCE: Keep hands visible, avoid reaching near any defensive tool, and follow officer instructions."
+        ],
+        "source": "Oklahoma Self-Defense Act."
+      },
+      {
+        "title": "Elite Deep: Tribal, Casino, and Federal Overlay",
+        "risk": "Jurisdiction Trap",
+        "body": [
+          "STATUTE / SOURCE: Federal, tribal, casino, and property law framework.",
+          "SUMMARY: Oklahoma travel can involve tribal lands, casinos, and federal property where ordinary state carry assumptions may not control.",
+          "GUIDANCE: Verify tribal/casino policy and federal restrictions separately. A state carry rule is not a universal pass."
+        ],
+        "source": "Federal/tribal/casino property framework."
+      },
+      {
+        "title": "Elite Deep: Defensive Display and Aftermath",
+        "risk": "Statement / Display Risk",
+        "body": [
+          "STATUTE / SOURCE: Oklahoma criminal law and self-defense framework.",
+          "SUMMARY: Displaying a firearm without legal justification can still create criminal exposure, even if no shot is fired.",
+          "GUIDANCE: If force or display is necessary, call 911 first, report the attack, identify evidence/witnesses if necessary, request counsel, and stop talking."
+        ],
+        "source": "Oklahoma self-defense and criminal law framework."
+      }
+    ],
+    "mistakes": [
+      "Assuming Oklahoma permitless carry overrides Section 1277.",
+      "Ignoring tribal or casino property rules.",
+      "Assuming campus or school parking areas are always safe.",
+      "Carrying into government meetings or courthouses without checking.",
+      "Treating defensive display as harmless because no shot was fired."
+    ],
+    "checklist": [
+      "Eligibility verified.",
+      "21 O.S. 1277 restricted places checked.",
+      "School/campus status checked.",
+      "Tribal/casino/federal property checked.",
+      "Vehicle stop plan ready.",
+      "Private posting checked."
+    ]
+  },
+  "LA": {
+    "alerts": [
+      "Louisiana permitless concealed carry changed recently and must be verified against current law.",
+      "New Orleans and local/event realities can create confusion even when state law is permissive.",
+      "Schools, courthouses, polling places, alcohol locations, parades/events, private property, and federal property require special caution."
+    ],
+    "sections": [
+      {
+        "title": "Elite Deep: Permitless Concealed Carry",
+        "risk": "Recent Law Change",
+        "body": [
+          "STATUTE / SOURCE: Louisiana Act 1 of 2024; La. R.S. 14:95 and La. R.S. 40:1379.3 framework.",
+          "SUMMARY: Louisiana enacted permitless concealed carry for eligible persons, but the change does not erase prohibited places, age/eligibility rules, or other restrictions.",
+          "GUIDANCE: Because the law is recent, verify current Louisiana State Police and statutory guidance before relying on a summary."
+        ],
+        "source": "Louisiana Act 1 of 2024; Louisiana State Police concealed handgun materials."
+      },
+      {
+        "title": "Elite Deep: Reciprocity and Permit Value",
+        "risk": "Travel / Documentation Rule",
+        "body": [
+          "STATUTE / SOURCE: La. R.S. 40:1379.3 reciprocity framework.",
+          "SUMMARY: Louisiana recognizes certain out-of-state permits under reciprocity rules, and a permit may still matter for travel outside Louisiana and for documentation.",
+          "GUIDANCE: Michigan members should keep their CPL and ID with them even if relying on permitless carry."
+        ],
+        "source": "La. R.S. 40:1379.3; Louisiana State Police concealed handgun information."
+      },
+      {
+        "title": "Elite Deep: Restricted and Sensitive Locations",
+        "risk": "Location Restriction",
+        "body": [
+          "STATUTE / SOURCE: La. R.S. 14:95 and concealed handgun permit restriction framework.",
+          "SUMMARY: Louisiana restricts carry in various places, including schools, courthouses, law enforcement facilities, places where alcohol issues arise, polling places, and other sensitive locations.",
+          "GUIDANCE: Treat schools, courts, government/security buildings, parades, festivals, alcohol-centered locations, and posted private property as verify-first areas."
+        ],
+        "source": "Louisiana weapons and concealed handgun framework."
+      },
+      {
+        "title": "Elite Deep: New Orleans and Event Reality",
+        "risk": "Local / Event Trap",
+        "body": [
+          "STATUTE / SOURCE: Louisiana state preemption and New Orleans/event enforcement framework.",
+          "SUMMARY: New Orleans travel often involves dense crowds, alcohol, events, parades, French Quarter rules, police presence, and property restrictions.",
+          "GUIDANCE: Do not assume state permitless carry makes crowded entertainment districts, parades, bars, or posted venues safe carry locations."
+        ],
+        "source": "Louisiana/New Orleans event and property framework."
+      },
+      {
+        "title": "Elite Deep: Vehicle and Hotel Travel",
+        "risk": "Travel Storage Risk",
+        "body": [
+          "STATUTE / SOURCE: Louisiana carry and transport framework.",
+          "SUMMARY: Road trips often involve hotels, parking garages, restaurants, and vehicle storage, all of which can create practical and theft risks.",
+          "GUIDANCE: Avoid leaving firearms unsecured in vehicles. Verify hotel, casino, event, and private-property rules."
+        ],
+        "source": "Louisiana carry/transport framework."
+      },
+      {
+        "title": "Elite Deep: Aftermath and Civil Exposure",
+        "risk": "Post-Incident Risk",
+        "body": [
+          "STATUTE / SOURCE: Louisiana self-defense/civil law framework.",
+          "SUMMARY: Even where force is justified, a defensive incident can result in police investigation, arrest, civil claims, or media attention.",
+          "GUIDANCE: Use short emergency statements, request medical/police help, preserve evidence, request counsel, and avoid emotional explanations."
+        ],
+        "source": "Louisiana self-defense and civil liability framework."
+      }
+    ],
+    "mistakes": [
+      "Assuming recent permitless carry means no restrictions.",
+      "Ignoring New Orleans/event/alcohol realities.",
+      "Assuming parades or festivals are ordinary public spaces.",
+      "Leaving a firearm unsecured in a vehicle in tourist areas.",
+      "Ignoring private property and casino policies."
+    ],
+    "checklist": [
+      "Eligibility verified.",
+      "Current Louisiana permitless carry law checked.",
+      "New Orleans/event restrictions checked.",
+      "Schools/courts/alcohol locations checked.",
+      "Hotel/casino/private property checked.",
+      "Vehicle storage plan ready."
+    ]
+  },
+  "MS": {
+    "alerts": [
+      "Mississippi has permitless and enhanced-permit concepts; location rules can differ depending on permit status.",
+      "Schools, courthouses, police stations, detention facilities, polling places, bars, and posted property remain important.",
+      "Travelers should not assume every permissive southern state has identical rules."
+    ],
+    "sections": [
+      {
+        "title": "Elite Deep: Permitless Carry and Enhanced Permit Difference",
+        "risk": "Core Carry Framework",
+        "body": [
+          "STATUTE / SOURCE: Miss. Code Ann. 45-9-101 and 97-37 framework.",
+          "SUMMARY: Mississippi has permissive carry rules, but enhanced permit concepts can affect where a person may carry and what restrictions apply.",
+          "GUIDANCE: Members should understand whether they are relying on permitless carry, ordinary permit recognition, or enhanced-permit privileges."
+        ],
+        "source": "Mississippi concealed carry/enhanced permit framework."
+      },
+      {
+        "title": "Elite Deep: Restricted and Sensitive Locations",
+        "risk": "Location Restriction",
+        "body": [
+          "STATUTE / SOURCE: Mississippi weapons and enhanced permit location framework.",
+          "SUMMARY: Mississippi law restricts firearms in certain places, and some rules differ for ordinary permit holders, enhanced permit holders, and permitless carriers.",
+          "GUIDANCE: Verify schools, courthouses, police/sheriff stations, detention facilities, bars, polling places, athletic events, and posted private property."
+        ],
+        "source": "Mississippi weapons and concealed carry framework."
+      },
+      {
+        "title": "Elite Deep: Schools and Educational Property",
+        "risk": "School Trap",
+        "body": [
+          "STATUTE / SOURCE: Mississippi school weapons framework.",
+          "SUMMARY: School property and school events remain high-risk locations even in permissive carry states.",
+          "GUIDANCE: Do not rely on general permitless carry or open carry assumptions around schools, school sports, parking areas, or educational events."
+        ],
+        "source": "Mississippi school weapons framework."
+      },
+      {
+        "title": "Elite Deep: Vehicle Carry and Road Trips",
+        "risk": "Vehicle / Storage Risk",
+        "body": [
+          "STATUTE / SOURCE: Mississippi vehicle carry framework.",
+          "SUMMARY: Vehicle carry may be lawful for eligible persons, but storage, handling, and police contact still create risk.",
+          "GUIDANCE: Keep hands visible during stops, avoid reaching, and do not leave firearms unsecured in vehicles."
+        ],
+        "source": "Mississippi carry/vehicle framework."
+      },
+      {
+        "title": "Elite Deep: Posted Property and Private Control",
+        "risk": "Property Control",
+        "body": [
+          "STATUTE / SOURCE: Mississippi private property/trespass framework.",
+          "SUMMARY: Private property owners can restrict firearms and control access to their property.",
+          "GUIDANCE: If posted or asked to leave, leave immediately and avoid debate."
+        ],
+        "source": "Mississippi property/trespass framework."
+      },
+      {
+        "title": "Elite Deep: Aftermath and Self-Defense",
+        "risk": "Post-Incident Risk",
+        "body": [
+          "STATUTE / SOURCE: Mississippi self-defense and civil/criminal procedure framework.",
+          "SUMMARY: A defensive incident can still trigger investigation or civil claims even where the defender believes the act was lawful.",
+          "GUIDANCE: Call 911, identify yourself as the complainant if accurate, preserve evidence and witnesses, request counsel, and avoid detailed statements."
+        ],
+        "source": "Mississippi self-defense framework."
+      }
+    ],
+    "mistakes": [
+      "Confusing permitless carry with enhanced-permit privileges.",
+      "Ignoring posted property.",
+      "Assuming school property is safe because the state is permissive.",
+      "Leaving firearms unsecured in vehicles.",
+      "Ignoring alcohol/location restrictions."
+    ],
+    "checklist": [
+      "Permit/permitless status understood.",
+      "Enhanced permit issue checked.",
+      "Schools/courts/police facilities checked.",
+      "Posted property checked.",
+      "Vehicle storage plan ready.",
+      "Alcohol/event locations checked."
+    ]
+  },
+  "AR": {
+    "alerts": [
+      "Arkansas has changed significantly over time; current carry status should be verified before travel.",
+      "Arkansas has detailed prohibited places under its concealed handgun framework.",
+      "Enhanced carry endorsements and ordinary carry may differ in practical effect."
+    ],
+    "sections": [
+      {
+        "title": "Elite Deep: Carry Authority and Current Law",
+        "risk": "Core Carry Framework",
+        "body": [
+          "STATUTE / SOURCE: Ark. Code 5-73 and concealed handgun licensing framework.",
+          "SUMMARY: Arkansas carry law has evolved, and eligible persons may have broader carry ability than older summaries suggest.",
+          "GUIDANCE: Verify current Arkansas State Police and statutory guidance before relying on old articles or outdated apps."
+        ],
+        "source": "Arkansas Code Title 5, Chapter 73; Arkansas State Police CHCL materials."
+      },
+      {
+        "title": "Elite Deep: Prohibited Places",
+        "risk": "Major Location Restriction",
+        "body": [
+          "STATUTE / SOURCE: Ark. Code 5-73-306.",
+          "SUMMARY: Arkansas law lists locations where concealed carry is prohibited or restricted.",
+          "GUIDANCE: Use Section 5-73-306 as a core Arkansas restricted-location checklist before entering buildings, schools, court facilities, jails, and posted locations."
+        ],
+        "source": "Ark. Code 5-73-306."
+      },
+      {
+        "title": "Elite Deep: Enhanced Carry Nuance",
+        "risk": "Permit Tier Trap",
+        "body": [
+          "STATUTE / SOURCE: Arkansas enhanced concealed carry framework.",
+          "SUMMARY: Arkansas enhanced carry training/endorsement can affect where a person may carry under state law.",
+          "GUIDANCE: Do not assume a Michigan CPL is equivalent to an Arkansas enhanced endorsement. Verify whether the specific location requires enhanced status or remains prohibited."
+        ],
+        "source": "Arkansas enhanced concealed carry framework."
+      },
+      {
+        "title": "Elite Deep: Vehicle Carry and Police Contact",
+        "risk": "Vehicle / Stop Risk",
+        "body": [
+          "STATUTE / SOURCE: Arkansas carry/vehicle framework.",
+          "SUMMARY: Vehicle carry may be lawful for eligible persons, but police contact remains a practical risk point.",
+          "GUIDANCE: Keep hands visible, avoid reaching, and answer lawful questions calmly."
+        ],
+        "source": "Arkansas weapons/carry framework."
+      },
+      {
+        "title": "Elite Deep: Alcohol, Events, and Posted Property",
+        "risk": "Event / Property Risk",
+        "body": [
+          "STATUTE / SOURCE: Arkansas prohibited-place and property framework.",
+          "SUMMARY: Alcohol-centered locations, events, publicly owned buildings, and posted private property may create restrictions.",
+          "GUIDANCE: Verify before entering restaurants with bars, events, stadiums, posted businesses, and government facilities."
+        ],
+        "source": "Arkansas prohibited-place/property framework."
+      },
+      {
+        "title": "Elite Deep: Aftermath and Civil Exposure",
+        "risk": "Post-Incident Risk",
+        "body": [
+          "STATUTE / SOURCE: Arkansas self-defense and civil/criminal procedure framework.",
+          "SUMMARY: Even justified force can lead to investigation, detention, or civil claims depending on the facts.",
+          "GUIDANCE: Call 911, report the emergency, identify evidence/witnesses if necessary, request counsel, and avoid extended statements."
+        ],
+        "source": "Arkansas self-defense framework."
+      }
+    ],
+    "mistakes": [
+      "Using outdated Arkansas carry summaries.",
+      "Assuming Michigan CPL equals Arkansas enhanced carry.",
+      "Ignoring Ark. Code 5-73-306 prohibited places.",
+      "Assuming vehicle carry means no police-contact risk.",
+      "Ignoring posted private property."
+    ],
+    "checklist": [
+      "Current Arkansas carry status verified.",
+      "Prohibited places under 5-73-306 checked.",
+      "Enhanced carry issue checked.",
+      "Vehicle rules checked.",
+      "Alcohol/event/property rules checked.",
+      "Federal property checked separately."
+    ]
+  },
+  "ME": {
+    "alerts": [
+      "Maine has permitless carry for eligible adults, but duty-to-inform rules and location restrictions still matter.",
+      "Acadia/National Park, federal property, schools, state parks, and private property create separate analysis.",
+      "Maine travel often involves outdoor recreation, boating, lodging, and vehicle storage."
+    ],
+    "sections": [
+      {
+        "title": "Elite Deep: Permitless Carry",
+        "risk": "Core Eligibility Rule",
+        "body": [
+          "STATUTE / SOURCE: Maine concealed handgun permit/permitless carry framework.",
+          "SUMMARY: Maine allows eligible persons to carry concealed without a permit, but eligibility and location restrictions still apply.",
+          "GUIDANCE: A Michigan member should still carry permit/ID if available and verify current Maine State Police guidance before travel."
+        ],
+        "source": "Maine State Police concealed handgun permit guidance."
+      },
+      {
+        "title": "Elite Deep: Duty to Inform",
+        "risk": "Police Contact Requirement",
+        "body": [
+          "STATUTE / SOURCE: Maine permitless carry disclosure framework.",
+          "SUMMARY: Maine has a duty-to-inform concept for persons carrying concealed without a permit when interacting with law enforcement.",
+          "GUIDANCE: Members should know whether they are carrying under permitless authority or a recognized permit and should disclose when required."
+        ],
+        "source": "Maine State Police concealed handgun guidance."
+      },
+      {
+        "title": "Elite Deep: Restricted and Sensitive Locations",
+        "risk": "Location Restriction",
+        "body": [
+          "STATUTE / SOURCE: Maine weapons and concealed carry framework.",
+          "SUMMARY: Maine restricts firearms in certain places, and federal property rules remain separate.",
+          "GUIDANCE: Check schools, courthouses, federal facilities, state/federal parks, posted private property, and alcohol/event locations."
+        ],
+        "source": "Maine weapons/concealed carry framework."
+      },
+      {
+        "title": "Elite Deep: Parks, Public Lands, and Outdoor Travel",
+        "risk": "Outdoor Recreation Trap",
+        "body": [
+          "STATUTE / SOURCE: Maine state/federal land framework.",
+          "SUMMARY: Maine travel often involves state parks, federal parks, wildlife areas, boats, campgrounds, and lodging.",
+          "GUIDANCE: Verify whether the land is state, federal, private, or tribal. Federal buildings/visitor centers are not controlled by Maine carry permission."
+        ],
+        "source": "Maine public lands and federal lands framework."
+      },
+      {
+        "title": "Elite Deep: Vehicle and Lodging Storage",
+        "risk": "Travel Storage Risk",
+        "body": [
+          "STATUTE / SOURCE: Maine carry/transport/property framework.",
+          "SUMMARY: Road trips and lodging create storage and theft risks even where carry is lawful.",
+          "GUIDANCE: Use secure storage, avoid leaving firearms visible or unsecured in vehicles, and verify hotel/Airbnb policies."
+        ],
+        "source": "Maine carry/property framework."
+      },
+      {
+        "title": "Elite Deep: Aftermath and Legal Exposure",
+        "risk": "Post-Incident Risk",
+        "body": [
+          "STATUTE / SOURCE: Maine self-defense and criminal/civil procedure framework.",
+          "SUMMARY: A defensive incident can still result in investigation or civil claims.",
+          "GUIDANCE: Call 911, request aid, identify evidence/witnesses if necessary, request counsel, and avoid detailed statements under adrenaline."
+        ],
+        "source": "Maine self-defense framework."
+      }
+    ],
+    "mistakes": [
+      "Forgetting Maine duty-to-inform differences.",
+      "Assuming permitless carry overrides schools or federal property.",
+      "Treating national park visitor centers like ordinary state land.",
+      "Ignoring lodging/private property rules.",
+      "Leaving firearms unsecured during outdoor travel."
+    ],
+    "checklist": [
+      "Eligibility verified.",
+      "Duty-to-inform status understood.",
+      "Schools/courts/federal property checked.",
+      "State/federal land status checked.",
+      "Vehicle/lodging storage plan ready.",
+      "Private posting checked."
+    ]
+  },
+  "NH": {
+    "alerts": [
+      "New Hampshire is permitless for eligible persons, but restricted places, schools, courts, federal property, and private property still matter.",
+      "Travel into neighboring Massachusetts, Maine, or Vermont can change the law instantly.",
+      "Vehicle and lodging storage are practical risk points."
+    ],
+    "sections": [
+      {
+        "title": "Elite Deep: Permitless Carry",
+        "risk": "Core Eligibility Rule",
+        "body": [
+          "STATUTE / SOURCE: N.H. firearms and pistol/revolver license framework.",
+          "SUMMARY: New Hampshire allows eligible persons to carry concealed without a license, while also maintaining a license system.",
+          "GUIDANCE: Permitless carry does not apply to prohibited persons and does not override restricted places or other states' laws."
+        ],
+        "source": "New Hampshire firearms licensing/carry framework."
+      },
+      {
+        "title": "Elite Deep: Recognition and Border Travel",
+        "risk": "Neighboring State Trap",
+        "body": [
+          "STATUTE / SOURCE: New Hampshire reciprocity and neighboring-state framework.",
+          "SUMMARY: New Hampshire may be permissive, but nearby states can be much stricter.",
+          "GUIDANCE: Do not cross into Massachusetts or other states assuming New Hampshire rules follow you."
+        ],
+        "source": "New Hampshire and regional reciprocity framework."
+      },
+      {
+        "title": "Elite Deep: Restricted and Sensitive Locations",
+        "risk": "Location Restriction",
+        "body": [
+          "STATUTE / SOURCE: New Hampshire weapons/location framework.",
+          "SUMMARY: New Hampshire still has restrictions involving certain government, school, court, and federal locations.",
+          "GUIDANCE: Check schools, courts, federal property, posted private property, airports, and event venues before entry."
+        ],
+        "source": "New Hampshire weapons/location framework."
+      },
+      {
+        "title": "Elite Deep: Vehicle Carry and Police Contact",
+        "risk": "Vehicle / Stop Risk",
+        "body": [
+          "STATUTE / SOURCE: New Hampshire carry/vehicle framework.",
+          "SUMMARY: Vehicle carry may be lawful for eligible persons, but traffic stops require careful behavior.",
+          "GUIDANCE: Keep hands visible, do not reach, and answer lawful questions calmly."
+        ],
+        "source": "New Hampshire carry/vehicle framework."
+      },
+      {
+        "title": "Elite Deep: Outdoor Recreation and Federal Land",
+        "risk": "Outdoor / Federal Overlay",
+        "body": [
+          "STATUTE / SOURCE: Federal and New Hampshire public land framework.",
+          "SUMMARY: New Hampshire travel often involves mountains, parks, federal areas, trailheads, lodging, and vehicles.",
+          "GUIDANCE: Verify federal buildings, visitor centers, posted facilities, and private property separately."
+        ],
+        "source": "New Hampshire public land/federal property framework."
+      },
+      {
+        "title": "Elite Deep: Aftermath and Civil Exposure",
+        "risk": "Post-Incident Risk",
+        "body": [
+          "STATUTE / SOURCE: New Hampshire self-defense/criminal procedure framework.",
+          "SUMMARY: Even in permissive carry states, a defensive incident can result in legal investigation and civil exposure.",
+          "GUIDANCE: Call 911, request aid, preserve evidence/witnesses, request counsel, and avoid unnecessary statements."
+        ],
+        "source": "New Hampshire self-defense framework."
+      }
+    ],
+    "mistakes": [
+      "Assuming New Hampshire rules apply after crossing into Massachusetts.",
+      "Ignoring schools, courts, and federal property.",
+      "Assuming permitless means no eligibility restrictions.",
+      "Leaving firearms unsecured in vehicles at trailheads.",
+      "Ignoring private property postings."
+    ],
+    "checklist": [
+      "Eligibility verified.",
+      "Neighboring state route checked.",
+      "Schools/courts/federal locations checked.",
+      "Vehicle stop plan ready.",
+      "Outdoor/federal land status checked.",
+      "Private property checked."
+    ]
+  },
+  "VT": {
+    "alerts": [
+      "Vermont is permitless and does not issue traditional resident carry permits, but prohibited places and federal property still matter.",
+      "School property, courthouses, federal buildings, and private property require separate analysis.",
+      "Travel into New York, Massachusetts, or Canada creates severe legal changes."
+    ],
+    "sections": [
+      {
+        "title": "Elite Deep: Permitless Carry Framework",
+        "risk": "Core Carry Rule",
+        "body": [
+          "STATUTE / SOURCE: 13 V.S.A. weapons framework.",
+          "SUMMARY: Vermont generally allows eligible persons to carry without a permit, but prohibited persons and restricted locations remain controlled by law.",
+          "GUIDANCE: Do not treat Vermont as consequence-free. Eligibility, location, conduct, and neighboring jurisdictions still matter."
+        ],
+        "source": "13 V.S.A. firearms/weapons framework."
+      },
+      {
+        "title": "Elite Deep: No Traditional Permit and Reciprocity Reality",
+        "risk": "Travel / Documentation Trap",
+        "body": [
+          "STATUTE / SOURCE: Vermont licensing/permit framework.",
+          "SUMMARY: Vermont's lack of a traditional resident permit affects reciprocity and travel planning.",
+          "GUIDANCE: A person traveling beyond Vermont must analyze the next state independently. Vermont permissiveness does not help in New York or Massachusetts."
+        ],
+        "source": "Vermont firearms licensing and reciprocity framework."
+      },
+      {
+        "title": "Elite Deep: Restricted and Sensitive Locations",
+        "risk": "Location Restriction",
+        "body": [
+          "STATUTE / SOURCE: Vermont school/court/federal/property framework.",
+          "SUMMARY: Vermont still restricts weapons in certain locations and federal property rules remain separate.",
+          "GUIDANCE: Check schools, courthouses, state buildings, federal facilities, posted private property, and event venues before entry."
+        ],
+        "source": "Vermont restricted-location framework."
+      },
+      {
+        "title": "Elite Deep: School Property",
+        "risk": "School Trap",
+        "body": [
+          "STATUTE / SOURCE: Vermont school weapons framework.",
+          "SUMMARY: School property remains a high-consequence area regardless of the state's permissive carry reputation.",
+          "GUIDANCE: Do not rely on general permitless carry around schools, school events, buses, or parking areas without verifying current law."
+        ],
+        "source": "Vermont school weapons framework."
+      },
+      {
+        "title": "Elite Deep: Border and Canada Risk",
+        "risk": "International / Neighboring State Trap",
+        "body": [
+          "STATUTE / SOURCE: Federal, New York, Massachusetts, and Canadian law frameworks.",
+          "SUMMARY: Vermont travel can quickly involve New York, Massachusetts, New Hampshire, Maine, or Canada, each with different rules.",
+          "GUIDANCE: Never approach the Canadian border or cross into another state with firearms based only on Vermont rules."
+        ],
+        "source": "Federal/international/neighboring state travel framework."
+      },
+      {
+        "title": "Elite Deep: Aftermath and Self-Defense",
+        "risk": "Post-Incident Risk",
+        "body": [
+          "STATUTE / SOURCE: Vermont self-defense and criminal/civil procedure framework.",
+          "SUMMARY: A defensive incident can still be investigated even where carry itself was lawful.",
+          "GUIDANCE: Call 911, request aid, identify evidence/witnesses if necessary, request counsel, and do not give long statements under stress."
+        ],
+        "source": "Vermont self-defense framework."
+      }
+    ],
+    "mistakes": [
+      "Assuming Vermont permitless carry applies in New York or Massachusetts.",
+      "Ignoring school property.",
+      "Ignoring federal facilities and border issues.",
+      "Assuming no permit means no restrictions.",
+      "Failing to plan for Canada/border travel."
+    ],
+    "checklist": [
+      "Eligibility verified.",
+      "Schools/courts checked.",
+      "Federal property checked.",
+      "Neighboring state route checked.",
+      "Canada/border risk checked.",
+      "Private property checked."
+    ]
+  },
+  "AK": {
+    "alerts": [
+      "Alaska is permitless for eligible persons, but federal land/buildings, schools, alcohol locations, tribal/local property, and wildlife/public land rules still matter.",
+      "Alaska travel frequently involves remote areas, aircraft, boats, lodges, parks, and wildlife rules.",
+      "A defensive firearm decision may interact with hunting, wildlife, and transportation rules."
+    ],
+    "sections": [
+      {
+        "title": "Elite Deep: Permitless Carry and License Value",
+        "risk": "Core Carry Rule",
+        "body": [
+          "STATUTE / SOURCE: Alaska Stat. 18.65 and Alaska weapons framework.",
+          "SUMMARY: Alaska allows eligible persons to carry concealed without a permit and also offers permits that may help with reciprocity in other states.",
+          "GUIDANCE: A Michigan member should still verify eligibility and understand that Alaska permitless carry does not control federal or private property."
+        ],
+        "source": "Alaska concealed handgun permit and weapons framework."
+      },
+      {
+        "title": "Elite Deep: Duty to Inform / Police Contact",
+        "risk": "Police Contact Requirement",
+        "body": [
+          "STATUTE / SOURCE: Alaska concealed carry and police contact framework.",
+          "SUMMARY: Alaska has important police-contact expectations for armed persons, especially during stops or official encounters.",
+          "GUIDANCE: Keep hands visible and disclose/answer as required by current Alaska law and officer instructions."
+        ],
+        "source": "Alaska firearms/police contact framework."
+      },
+      {
+        "title": "Elite Deep: Restricted and Sensitive Locations",
+        "risk": "Location Restriction",
+        "body": [
+          "STATUTE / SOURCE: Alaska weapons/restricted places framework.",
+          "SUMMARY: Alaska restricts firearms in certain locations, and federal property rules remain separate.",
+          "GUIDANCE: Check schools, courthouses, domestic violence shelters, alcohol-related places, federal buildings, airports, and posted private property before entry."
+        ],
+        "source": "Alaska weapons/restricted places framework."
+      },
+      {
+        "title": "Elite Deep: Parks, Wildlife, and Public Land",
+        "risk": "Outdoor / Wildlife Trap",
+        "body": [
+          "STATUTE / SOURCE: Alaska public land, wildlife, hunting, and federal land framework.",
+          "SUMMARY: Alaska carry may intersect with wildlife defense, hunting seasons, guide/lodge rules, aircraft/boat transport, and federal land restrictions.",
+          "GUIDANCE: Do not treat carry, hunting, transport, and wildlife-defense rules as the same thing. Verify land manager and DNR/federal rules."
+        ],
+        "source": "Alaska DNR/federal public land and wildlife framework."
+      },
+      {
+        "title": "Elite Deep: Vehicle, Aircraft, Boat, and Remote Travel",
+        "risk": "Transport / Remote Travel Risk",
+        "body": [
+          "STATUTE / SOURCE: Alaska transport and property framework.",
+          "SUMMARY: Remote Alaska travel often involves aircraft, boats, lodges, rentals, and vehicles, each with its own rules and practical storage issues.",
+          "GUIDANCE: Verify carrier/lodge policies, secure firearms from unauthorized access, and plan for emergency communication."
+        ],
+        "source": "Alaska transport/property framework."
+      },
+      {
+        "title": "Elite Deep: Aftermath and Emergency Communication",
+        "risk": "Post-Incident / Remote Response Risk",
+        "body": [
+          "STATUTE / SOURCE: Alaska self-defense and emergency response framework.",
+          "SUMMARY: Remote defensive incidents can involve delayed law enforcement response and complex evidence preservation issues.",
+          "GUIDANCE: Call for help as soon as possible, preserve evidence, identify witnesses, request medical if needed, and avoid broad statements before counsel."
+        ],
+        "source": "Alaska self-defense/emergency response framework."
+      }
+    ],
+    "mistakes": [
+      "Assuming permitless carry overrides federal land/building restrictions.",
+      "Confusing carry law with hunting/wildlife law.",
+      "Ignoring aircraft, boat, lodge, or rental policies.",
+      "Failing to plan secure storage in remote travel.",
+      "Ignoring alcohol-location restrictions."
+    ],
+    "checklist": [
+      "Eligibility verified.",
+      "Police-contact duty checked.",
+      "Federal/state/tribal/private land status checked.",
+      "Wildlife/hunting/transport rules checked.",
+      "Aircraft/boat/lodge policies checked.",
+      "Emergency communication plan ready."
+    ]
+  },
+  "WA": {
+    "alerts": [
+      "Washington recognizes Michigan CPL under current Washington reciprocity guidance, but Washington law controls while in Washington.",
+      "Washington has strict prohibited-place, school, court, public building, airport, and magazine/firearm-related restrictions compared to many permissive states.",
+      "Vehicle carry and loaded pistol rules are major travel issues."
+    ],
+    "sections": [
+      {
+        "title": "Elite Deep: Michigan CPL Recognition",
+        "risk": "Reciprocity / Documentation Rule",
+        "body": [
+          "STATUTE / SOURCE: Washington Attorney General reciprocity list; RCW 9.41 framework.",
+          "SUMMARY: Washington lists Michigan as recognized under its concealed pistol license reciprocity guidance, but recognition does not override Washington law.",
+          "GUIDANCE: Carry your Michigan CPL and photo ID, verify current Washington AG reciprocity before travel, and follow Washington restrictions."
+        ],
+        "source": "Washington Attorney General CPL reciprocity list; RCW 9.41."
+      },
+      {
+        "title": "Elite Deep: Concealed Pistol and Vehicle Carry",
+        "risk": "Vehicle Carry Trap",
+        "body": [
+          "STATUTE / SOURCE: RCW 9.41.050.",
+          "SUMMARY: Washington law restricts carrying a pistol concealed on the person and carrying/placing a loaded pistol in a vehicle unless licensing and statutory conditions are met.",
+          "GUIDANCE: This is a major travel issue. Verify loaded vehicle carry rules before entering Washington."
+        ],
+        "source": "RCW 9.41.050."
+      },
+      {
+        "title": "Elite Deep: Restricted and Sensitive Locations",
+        "risk": "Major Location Restriction",
+        "body": [
+          "STATUTE / SOURCE: RCW 9.41.300 and related Washington restrictions.",
+          "SUMMARY: Washington restricts firearms in various places including schools, court facilities, restricted law enforcement/correctional areas, certain public buildings, airport areas, and other sensitive locations.",
+          "GUIDANCE: Use RCW 9.41.300 as a primary restricted-location checklist, then check federal and private property separately."
+        ],
+        "source": "RCW 9.41.300; Washington firearms restrictions framework."
+      },
+      {
+        "title": "Elite Deep: Schools and Public Buildings",
+        "risk": "School / Public Facility Trap",
+        "body": [
+          "STATUTE / SOURCE: RCW 9.41.280; RCW 9.41.300.",
+          "SUMMARY: Washington school and public-building restrictions can apply even when the person has a recognized permit.",
+          "GUIDANCE: School property, school events, government buildings, libraries, transit facilities, and posted/security-controlled areas should be verified before entry."
+        ],
+        "source": "RCW 9.41.280; RCW 9.41.300."
+      },
+      {
+        "title": "Elite Deep: Equipment and Magazine Restrictions",
+        "risk": "Equipment Risk",
+        "body": [
+          "STATUTE / SOURCE: Washington firearm and magazine restrictions framework.",
+          "SUMMARY: Washington has restrictions that may affect certain firearms, magazines, and equipment beyond basic carry permission.",
+          "GUIDANCE: Check equipment before travel. A green reciprocity status does not mean every firearm/magazine/accessory is lawful."
+        ],
+        "source": "Washington firearm/magazine restriction framework."
+      },
+      {
+        "title": "Elite Deep: Police Contact and Aftermath",
+        "risk": "Stop / Statement Risk",
+        "body": [
+          "STATUTE / SOURCE: Washington criminal procedure and self-defense framework.",
+          "SUMMARY: Even when carry is lawful, a stop or defensive incident can create legal exposure based on conduct and statements.",
+          "GUIDANCE: Keep hands visible during police contact. After an incident, call 911, identify evidence/witnesses if necessary, request counsel, and avoid long statements."
+        ],
+        "source": "Washington self-defense and criminal procedure framework."
+      }
+    ],
+    "mistakes": [
+      "Assuming recognition means Washington has Michigan-style rules.",
+      "Ignoring loaded pistol vehicle rules under RCW 9.41.050.",
+      "Ignoring equipment/magazine restrictions.",
+      "Ignoring schools/public buildings.",
+      "Assuming federal land/buildings follow Washington carry law."
+    ],
+    "checklist": [
+      "Michigan CPL recognition verified.",
+      "RCW 9.41.050 vehicle carry checked.",
+      "RCW 9.41.300 restricted places checked.",
+      "School/public building rules checked.",
+      "Equipment/magazine restrictions checked.",
+      "Federal/private property checked separately."
+    ]
+  }
+};
+
+function applyEliteDeepFinalBatchAddendum() {
+  Object.keys(eliteDeepFinalBatchAddendum).forEach(function(abbr){
+    var patch = eliteDeepFinalBatchAddendum[abbr];
+    if (!stateLawData[abbr]) return;
+    stateLawData[abbr].profileStatus = "Elite Deep";
+    stateLawData[abbr].lastReviewed = "May 5, 2026";
+    if (stateLawData[abbr].summary && stateLawData[abbr].summary.indexOf("Elite Deep update:") === -1) {
+      stateLawData[abbr].summary += " Elite Deep update: This profile includes expanded transport, restricted-location, police-contact, state-specific trap, and post-incident guidance.";
+    }
+    if (patch.alerts && patch.alerts.length) {
+      stateLawData[abbr].travelAlerts = (stateLawData[abbr].travelAlerts || []).concat(patch.alerts);
+    }
+    if (patch.sections && patch.sections.length) {
+      stateLawData[abbr].legalSections = (stateLawData[abbr].legalSections || []).concat(patch.sections);
+    }
+    if (patch.mistakes && patch.mistakes.length) {
+      stateLawData[abbr].commonMistakes = (stateLawData[abbr].commonMistakes || []).concat(patch.mistakes);
+    }
+    if (patch.checklist && patch.checklist.length) {
+      stateLawData[abbr].beforeCarryChecklist = (stateLawData[abbr].beforeCarryChecklist || []).concat(patch.checklist);
+    }
+  });
+}
+applyEliteDeepFinalBatchAddendum();
+
 var additionalHighRiskStates = {
   DE: "Delaware",
   OR: "Oregon",
