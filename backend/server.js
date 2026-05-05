@@ -813,6 +813,65 @@ button{
   border:1px solid rgba(16,19,24,.08);
 }
 .sectionHeader h3{margin:0;color:#11151b}
+
+.modeToggleCard{
+  background:linear-gradient(135deg,#ffffff,#f7f8fa);
+  border:1px solid rgba(16,19,24,.10);
+  border-radius:22px;
+  padding:18px;
+  margin-top:14px;
+}
+.modeToggleHeader{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:14px;
+  flex-wrap:wrap;
+}
+.modeToggleButtons{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+}
+.modeToggleButtons button{
+  min-width:150px;
+  border:1px solid rgba(16,19,24,.12);
+  background:#fff;
+  color:#11151b;
+}
+.modeToggleButtons button.active{
+  background:#11151b;
+  color:#fff;
+  box-shadow:0 10px 24px rgba(16,19,24,.16);
+}
+.travelModePanel{
+  display:none;
+  margin-top:14px;
+}
+.travelModePanel.active{display:block;}
+.detailToggleCard{
+  background:linear-gradient(135deg,#fff,#f7f8fa);
+  border:1px solid rgba(16,19,24,.10);
+  border-radius:20px;
+  padding:18px;
+  margin-top:14px;
+  box-shadow:0 8px 24px rgba(16,19,24,.06);
+}
+.detailToggleCard h3{margin:0 0 8px;}
+.detailToggleCard p{color:#626975;line-height:1.5;}
+.detailToggleCard .actions{margin-top:12px;}
+.compactHint{
+  background:rgba(215,25,32,.08);
+  border:1px solid rgba(215,25,32,.18);
+  border-radius:16px;
+  padding:12px 14px;
+  color:#7f1d1d;
+  font-size:13px;
+  font-weight:800;
+  line-height:1.45;
+  margin-top:10px;
+}
+
 .sectionHeader p{margin:5px 0 0;color:#626975;font-size:13px}
 .legalItem.critical{border-left:5px solid #d71920}
 .legalItem.vehicle{border-left:5px solid #d97706}
@@ -841,6 +900,7 @@ var token = localStorage.getItem("pd_token");
 var authMode = "login";
 var currentUser = null;
 var selectedMapState = "";
+var travelModeActive = false;
 
 var states = [
   ["AL","Alabama"],["AK","Alaska"],["AZ","Arizona"],["AR","Arkansas"],["CA","California"],
@@ -11049,9 +11109,9 @@ function renderIntelPanel(permitState, travelState){
   }
 
   html += '<div class="jumpNav">' +
-    '<button type="button" onclick="document.getElementById(\\'pd-legal-details\\').scrollIntoView({behavior:\\'smooth\\'})">Detailed Law</button>' +
-    '<button type="button" onclick="document.getElementById(\\'pd-decision-blocks\\').scrollIntoView({behavior:\\'smooth\\'})">Checklists</button>' +
-    '<button type="button" onclick="document.getElementById(\\'pd-common-mistakes\\').scrollIntoView({behavior:\\'smooth\\'})">Common Mistakes</button>' +
+    '<button type="button" onclick="openStateLawSection(\\'' + travelState + '\\',\\'pd-legal-details\\')">Open Detailed Law</button>' +
+    '<button type="button" onclick="openStateLawSection(\\'' + travelState + '\\',\\'pd-decision-blocks\\')">Checklists</button>' +
+    '<button type="button" onclick="openStateLawSection(\\'' + travelState + '\\',\\'pd-common-mistakes\\')">Common Mistakes</button>' +
   '</div>';
 
   return html;
@@ -11672,7 +11732,23 @@ function renderLawProfile(abbr){
 }
 
 function getStateDetailHtml(permitState, travelState){
-  return renderIntelPanel(permitState, travelState) + renderLawProfile(travelState);
+  return renderIntelPanel(permitState, travelState) +
+    '<div class="detailToggleCard">' +
+      '<h3>Detailed Legal Library</h3>' +
+      '<p>The quick intelligence panel above is designed for fast decisions. Open the full legal profile when you want statutes, checklists, common mistakes, and deeper state-specific detail.</p>' +
+      '<div class="compactHint">This keeps the dashboard cleaner while preserving the full legal data for every state.</div>' +
+      '<div class="actions">' +
+        '<button class="primary" type="button" onclick="showStateLawFull(\\'' + travelState + '\\')">Open Full ' + escapeHtml(stateName(travelState)) + ' Legal Detail</button>' +
+      '</div>' +
+    '</div>';
+}
+
+function openStateLawSection(abbr, sectionId){
+  showStateLawFull(abbr);
+  setTimeout(function(){
+    var el = document.getElementById(sectionId);
+    if(el) el.scrollIntoView({behavior:"smooth", block:"start"});
+  }, 75);
 }
 
 function getReciprocityHtml(state){
@@ -12017,6 +12093,21 @@ function openTravelState(abbr){
   if(box) box.scrollIntoView({behavior:"smooth", block:"start"});
 }
 
+function setDashboardMode(mode){
+  travelModeActive = mode === "travel";
+  var singleBtn = q("singleStateModeBtn");
+  var travelBtn = q("travelModeBtn");
+  var panel = q("travelModePanel");
+  var modeText = q("currentModeText");
+
+  if(singleBtn) singleBtn.className = travelModeActive ? "" : "active";
+  if(travelBtn) travelBtn.className = travelModeActive ? "active" : "";
+  if(panel) panel.className = travelModeActive ? "travelModePanel active" : "travelModePanel";
+  if(modeText) modeText.innerText = travelModeActive ? "Travel Mode is on. Plan a route and review each state before you leave." : "Single State Mode is on. Click any state on the map for its State Intelligence Panel.";
+
+  if(travelModeActive) renderTravelMode();
+}
+
 
 function showLocked(user){
   user = user || {};
@@ -12110,16 +12201,27 @@ async function showDashboard(){
         '</div>' +
 
         '<div class="card">' +
-          '<div class="brand">Travel Mode</div>' +
-          '<h2>Planned Route Carry Check</h2>' +
-          '<p class="small">Select a start state and destination. The app will show a route-state checklist with reciprocity, vehicle/transport cautions, and quick links into the State Intelligence Panel.</p>' +
-          '<div class="travelBuilder">' +
-            '<div class="travelControls">' +
-              '<div><label class="small"><b>Start State</b></label><select id="travelStart">' + buildStateOptions(selectedState || "MI") + '</select></div>' +
-              '<div><label class="small"><b>Destination State</b></label><select id="travelDestination">' + buildStateOptions("FL") + '</select></div>' +
-              '<button id="buildTravelBtn" class="primary" type="button">Build Route Check</button>' +
+          '<div class="brand">Dashboard Mode</div>' +
+          '<h2>Choose How You Want to Use the App</h2>' +
+          '<p class="small">Single State Mode keeps the screen clean for quick map checks. Travel Mode opens only when you want to plan a route.</p>' +
+          '<div class="modeToggleCard">' +
+            '<div class="modeToggleHeader">' +
+              '<div><h3 style="margin:0 0 4px">Current View</h3><p id="currentModeText" class="small" style="margin:0">Single State Mode is on. Click any state on the map for its State Intelligence Panel.</p></div>' +
+              '<div class="modeToggleButtons">' +
+                '<button id="singleStateModeBtn" class="active" type="button">Single State</button>' +
+                '<button id="travelModeBtn" type="button">Travel Mode</button>' +
+              '</div>' +
             '</div>' +
-            '<div id="travelResult" class="travelResult"></div>' +
+            '<div id="travelModePanel" class="travelModePanel">' +
+              '<div class="travelBuilder">' +
+                '<div class="travelControls">' +
+                  '<div><label class="small"><b>Start State</b></label><select id="travelStart">' + buildStateOptions(selectedState || "MI") + '</select></div>' +
+                  '<div><label class="small"><b>Destination State</b></label><select id="travelDestination">' + buildStateOptions("FL") + '</select></div>' +
+                  '<button id="buildTravelBtn" class="primary" type="button">Build Route Check</button>' +
+                '</div>' +
+                '<div id="travelResult" class="travelResult"></div>' +
+              '</div>' +
+            '</div>' +
           '</div>' +
         '</div>' +
 
@@ -12161,7 +12263,7 @@ async function showDashboard(){
     q("state").onchange = function(){
       selectedMapState = q("state").value;
       updateReciprocity();
-      renderTravelMode();
+      if(travelModeActive) renderTravelMode();
     };
 
     q("saveBtn").onclick = saveProfile;
@@ -12175,10 +12277,12 @@ async function showDashboard(){
       selectedMapState = "MI";
       showStateLawFull("MI");
     };
+    if(q("singleStateModeBtn")) q("singleStateModeBtn").onclick = function(){ setDashboardMode("single"); };
+    if(q("travelModeBtn")) q("travelModeBtn").onclick = function(){ setDashboardMode("travel"); };
     if(q("buildTravelBtn")) q("buildTravelBtn").onclick = renderTravelMode;
-    if(q("travelStart")) q("travelStart").onchange = renderTravelMode;
-    if(q("travelDestination")) q("travelDestination").onchange = renderTravelMode;
-    renderTravelMode();
+    if(q("travelStart")) q("travelStart").onchange = function(){ if(travelModeActive) renderTravelMode(); };
+    if(q("travelDestination")) q("travelDestination").onchange = function(){ if(travelModeActive) renderTravelMode(); };
+    setDashboardMode("single");
 
   }catch(e){
     localStorage.removeItem("pd_token");
