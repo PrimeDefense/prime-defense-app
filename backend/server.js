@@ -915,158 +915,184 @@ function starterProfile(abbr, name, recognizedText) {
 var stateLawData = {
   MI: makeProfile(
     "Michigan",
-    "Ultra Expanded",
-    "Michigan is not permitless for concealed pistol carry. A CPL is generally required for concealed carry and ready-access pistol carry in a vehicle. Michigan carry decisions require careful attention to disclosure, prohibited premises, weapon-free school zones, safe storage, transport rules, prohibited-person status, ERPOs, civil liability, and post-incident conduct.",
+    "Elite Level – Michigan CPL Core State",
+    "Michigan is the core state for Prime Defense members. Michigan is a CPL-based concealed carry state with strong self-defense protections, but it also has specific carry restrictions, vehicle rules, police-contact duties, prohibited-location laws, storage duties, and post-incident risks. This elite Michigan profile is built to help members understand where the law creates exposure before they make a carry, transport, storage, or self-defense decision.",
     {
-      reciprocity: "Home state profile.",
-      permitlessCarry: "No permitless concealed pistol carry.",
-      concealedCarry: "Michigan generally requires a valid CPL to carry a concealed pistol.",
-      openCarry: "Generally lawful for eligible people, but location, vehicle, intent, and prohibited-person status matter.",
-      vehicleCarry: "A CPL is generally required for ready-access pistol carry in a vehicle. Without a CPL, treat it as lawful transport only.",
-      dutyToInform: "Yes. A CPL holder carrying concealed and stopped by a peace officer must immediately disclose.",
-      privateSigns: "Private property rules matter. Refusal to leave after notice can create trespass exposure.",
-      forceLaw: "Deadly force requires an honest and reasonable belief of imminent death, great bodily harm, or sexual assault, plus other statutory conditions."
+      reciprocity: "Home state profile. Michigan CPL controls Michigan concealed pistol carry for eligible license holders, but location restrictions and other state/federal laws still apply.",
+      permitlessCarry: "No general permitless concealed pistol carry. Michigan generally requires a CPL to carry a concealed pistol.",
+      concealedCarry: "MCL 28.425c and Michigan CPL framework: a valid CPL is generally required to carry a concealed pistol.",
+      openCarry: "Open carry may be lawful for eligible persons, but restricted locations, vehicle rules, brandishing, disturbing-the-peace concerns, and private property still matter.",
+      vehicleCarry: "MCL 750.227 and Michigan transport rules: carrying a pistol in a vehicle without a CPL is a major legal trap unless strict transport rules apply.",
+      dutyToInform: "MCL 28.425f: a CPL holder carrying concealed and stopped by a peace officer must immediately disclose that they are carrying.",
+      privateSigns: "Private property owners may require you to leave. Refusal after notice can create trespass exposure.",
+      forceLaw: "MCL 780.972: deadly force requires an honest and reasonable belief that it is necessary to prevent imminent death, great bodily harm, or sexual assault."
     },
     [
-      "Michigan has multiple overlapping location rules. CPL pistol-free zones, general firearm-prohibited premises, federal property, casinos, schools, and private property must be analyzed separately.",
-      "Vehicle carry is a major dividing line. Without a CPL, treat pistol movement in a vehicle as lawful transport only.",
-      "Police disclosure is mandatory for CPL holders carrying concealed during a stop.",
-      "School property and school zones are high-risk areas that should not be handled from memory or word-of-mouth.",
-      "Safe storage and child access rules create both legal and moral responsibility."
+      "Restricted & sensitive locations: schools, hospitals, sports arenas, certain bars, places of worship without permission, casinos, courts, federal property, school zones, and posted/private property all require careful analysis.",
+      "Vehicle carry is one of the biggest Michigan legal traps. Without a CPL, do not treat a pistol in a vehicle as carry; treat it as lawful transport only.",
+      "Duty to inform is immediate during a lawful police stop when carrying concealed under a CPL. Hands visible. No reaching.",
+      "Open carry does not solve every location issue and does not override vehicle rules, schools, private property, federal property, courts, or brandishing laws.",
+      "Secure storage and child access rules are now a major Michigan responsibility area.",
+      "Self-defense law is not a permission slip to escalate, chase, threaten, punish, or use force over property."
     ],
     [
       {
-        title: "Michigan CPL Basics",
-        risk: "Core Rule",
+        title: "Michigan CPL Authority",
+        risk: "Core Carry Rule",
         body: [
-          "A Michigan CPL allows a qualified license holder to carry a concealed pistol, but only within the limits of Michigan law.",
-          "A CPL does not override federal law, court rules, school rules, private property restrictions, employer rules, tribal rules, secure facility rules, or the laws of another state.",
-          "The correct mindset is not: I have a CPL, so I can carry. The correct mindset is: I have a CPL, and now I must verify whether this location, method of carry, and circumstance are lawful.",
-          "Prime Defense field rule: before carrying, ask: Am I eligible today? Is this location lawful? Is my method of carry lawful? Am I emotionally and mentally prepared to avoid conflict?"
+          "STATUTE / SOURCE: MCL 28.425c; Michigan CPL framework.",
+          "SUMMARY: Michigan generally requires a valid CPL to carry a concealed pistol. A CPL allows concealed carry only within the limits of Michigan law.",
+          "GUIDANCE: A CPL is not unlimited permission. The user must still verify location, vehicle status, police-contact duties, prohibited-person status, and federal/private-property restrictions before carrying."
         ],
-        source: "Michigan Firearms Laws publication; MCL 28.425f; MCL 28.425o."
+        source: "MCL 28.425c; Michigan Firearms Laws publication."
       },
       {
-        title: "Duty to Disclose During Police Contact",
-        risk: "High-Risk Stop",
+        title: "Restricted & Sensitive Locations",
+        risk: "Location Restriction",
         body: [
-          "If you are carrying concealed under a CPL and are stopped by a peace officer, Michigan law requires immediate disclosure that you are carrying.",
-          "Recommended wording: Officer, I have a CPL and I am currently carrying. How would you like me to proceed?",
-          "Keep your hands visible. Do not reach for your firearm, wallet, purse, registration, glove box, center console, or pocket until instructed.",
-          "Do not assume the officer already knows. Do not wait until later in the stop. Do not say it casually while reaching.",
-          "If passengers are present, stay calm and do not allow the vehicle to become chaotic.",
-          "Prime Defense field rule: disclosure should be early, calm, clear, and paired with visible hands."
-        ],
-        source: "MCL 28.425f."
-      },
-      {
-        title: "CPL Pistol-Free Zones / Concealed Carry Restricted Premises",
-        risk: "Major Carry Restriction",
-        body: [
-          "MCL 28.425o lists places where a CPL holder generally may not carry a concealed pistol, subject to statutory language and exceptions.",
-          "Common listed categories include schools and school property, public or private child care centers, sports arenas or stadiums, certain bars and taverns, places of worship unless allowed by the presiding official, certain entertainment facilities, hospitals, and college or university dormitories and classrooms.",
-          "Exact statutory wording matters. A summary is useful for education, but not enough for a close-call carry decision.",
-          "Do not treat every restriction the same. A statutory pistol-free zone, private no-firearm sign, employer policy, court rule, school policy, casino rule, and federal restriction can all operate differently.",
-          "Prime Defense field rule: if the location is school-related, court-related, government-related, medical, alcohol-centered, worship-related, entertainment-related, casino-related, security-controlled, or posted, stop and verify before entering armed."
+          "STATUTE: MCL 28.425o.",
+          "SUMMARY: Michigan restricts CPL holders from carrying concealed in designated pistol-free zones, subject to statutory language and exceptions.",
+          "GUIDANCE: Treat schools, school property, child care centers, sports arenas/stadiums, certain bars/taverns, places of worship without permission, entertainment facilities, hospitals, and college/university dormitories/classrooms as verify-before-entry locations. Do not rely on memory or internet summaries for close calls."
         ],
         source: "MCL 28.425o; Michigan State Police prohibited premises guidance."
       },
       {
         title: "General Firearm-Prohibited Premises",
-        risk: "Separate Legal Framework",
+        risk: "Separate Location Law",
         body: [
-          "Michigan also has general firearm-prohibited premises under MCL 750.234d. This is separate from the CPL-specific pistol-free zone statute.",
-          "General prohibited premises can include places such as depository financial institutions, churches or houses of worship, courts, theatres, sports arenas, day care centers, hospitals, and establishments licensed under the Liquor Control Code, subject to statutory exceptions.",
-          "A CPL may change the analysis in certain situations, but it should not be treated as a universal pass.",
-          "This is one reason Michigan carry law can be confusing: one statute may address CPL concealed carry, while another statute may address possession on certain premises more broadly.",
-          "Prime Defense field rule: identify the location first, then identify which legal framework applies."
+          "STATUTE: MCL 750.234d.",
+          "SUMMARY: Michigan has a separate statute restricting possession of firearms on certain premises. This statute is different from the CPL-specific pistol-free-zone statute.",
+          "GUIDANCE: A CPL may affect the analysis in some situations, but do not assume it overrides every premises restriction. Identify the location first, then determine which statute applies."
         ],
         source: "MCL 750.234d."
       },
       {
-        title: "Schools & Weapon-Free School Zones",
-        risk: "Extreme Risk Area",
+        title: "Duty to Inform Police",
+        risk: "Immediate Police-Contact Duty",
         body: [
-          "Schools and school property are among the most legally dangerous places for carry mistakes.",
-          "Michigan law includes both CPL prohibited-premises rules and weapon-free school zone rules. Those are related but not identical.",
-          "School property can involve buildings, parking lots, school vehicles, school events, school property used for school purposes, and other fact-specific questions.",
-          "Parent pickup and drop-off can be misunderstood. Do not rely on what another parent, internet comment, or old article says.",
-          "Open carry, concealed carry, vehicle presence, student events, extracurricular activities, and school-owned property can all change the analysis.",
-          "Prime Defense field rule: if school property is involved, verify the exact statute and exception before carrying. When uncertain, do not enter armed."
+          "STATUTE: MCL 28.425f.",
+          "SUMMARY: A CPL holder who is carrying a concealed pistol and is stopped by a peace officer must immediately disclose that they are carrying a concealed pistol upon their person or in their vehicle.",
+          "GUIDANCE: Keep hands visible. Do not reach. Recommended wording: Officer, I have a CPL and I am currently carrying. How would you like me to proceed? Wait for instructions before touching wallet, purse, glove box, center console, registration, or firearm."
+        ],
+        source: "MCL 28.425f."
+      },
+      {
+        title: "Vehicle Carry With a CPL",
+        risk: "Traffic Stop / Vehicle Carry Risk",
+        body: [
+          "STATUTE / SOURCE: MCL 28.425f; Michigan CPL vehicle-carry framework.",
+          "SUMMARY: A valid CPL generally allows a license holder to carry a concealed pistol in a vehicle, but disclosure, location restrictions, prohibited-person rules, and officer-safety conduct still apply.",
+          "GUIDANCE: During a stop, visible hands and controlled movement are critical. Do not reach near the firearm, center console, glove box, bag, or pocket until instructed."
+        ],
+        source: "MCL 28.425f; Michigan Firearms Laws publication."
+      },
+      {
+        title: "Transport Without a CPL",
+        risk: "Top Arrest Trap",
+        body: [
+          "STATUTE / SOURCE: MCL 750.227; Michigan pistol transport framework.",
+          "SUMMARY: Carrying a pistol in a vehicle without a CPL can create serious criminal exposure unless the person is transporting lawfully under the applicable statutory rules and exceptions.",
+          "GUIDANCE: Without a CPL, treat a pistol in a vehicle as transport only: unloaded, secured, inaccessible, and connected to a lawful purpose. Do not keep it loaded in a glove box, center console, backpack, purse, door pocket, or within ready reach."
+        ],
+        source: "MCL 750.227; Michigan Firearms Laws publication."
+      },
+      {
+        title: "Open Carry Reality",
+        risk: "Often Misunderstood",
+        body: [
+          "STATUTE / SOURCE: Michigan firearms law framework; MCL 750.234d; MCL 750.234e; vehicle carry rules.",
+          "SUMMARY: Open carry may be lawful for eligible persons in some circumstances, but it does not override restricted locations, vehicle carry laws, school rules, brandishing laws, private property, or federal property.",
+          "GUIDANCE: Open carry should not be used to test boundaries, make a point, pressure a business, or escalate a tense encounter. Once a person enters a vehicle, the legal analysis changes."
+        ],
+        source: "Michigan Firearms Laws publication; MCL 750.234d; MCL 750.234e."
+      },
+      {
+        title: "Brandishing / Defensive Display",
+        risk: "Common Criminal Allegation",
+        body: [
+          "STATUTE: MCL 750.234e.",
+          "SUMMARY: Michigan prohibits willfully and knowingly brandishing a firearm in public, except as otherwise provided by law, including lawful self-defense circumstances.",
+          "GUIDANCE: Do not display, wave, point, expose, or touch a firearm to scare someone, win an argument, stop a verbal dispute, protect pride, or intimidate. If display was necessary due to an immediate threat, call 911 first and report the attack or attempted attack."
+        ],
+        source: "MCL 750.234e."
+      },
+      {
+        title: "Schools and Weapon-Free School Zones",
+        risk: "Extreme Location Risk",
+        body: [
+          "STATUTE: MCL 28.425o; MCL 750.237a.",
+          "SUMMARY: Michigan school property and weapon-free school-zone rules can involve multiple statutes and fact-specific exceptions.",
+          "GUIDANCE: School buildings, parking lots, school events, school vehicles, student pickup/drop-off, and school-controlled property should be treated as verify-before-entry areas. Do not rely on what another parent, online comment, or old article says."
         ],
         source: "MCL 28.425o; MCL 750.237a."
       },
       {
-        title: "Secure Storage / Child Access",
-        risk: "Criminal & Civil Exposure",
+        title: "Alcohol Locations and Impairment",
+        risk: "Judgment / Location Risk",
         body: [
-          "Michigan secure storage law requires special care when minors are likely to be present.",
-          "A firearm that is unattended should be unloaded and locked with a locking device or stored in a locked box or container if it is reasonably known that a minor is likely to be present.",
-          "High-risk locations include vehicles, nightstands, purses, backpacks, range bags, unlocked closets, garages, and bedside tables.",
-          "Responsible carry does not end when the firearm leaves your holster. Storage decisions can create criminal liability, civil liability, family consequences, and community harm.",
-          "Vehicle storage deserves special attention. A locked vehicle is not a gun safe. Vehicle theft is predictable and common.",
-          "Prime Defense field rule: when a firearm is unattended, ask: could a child, guest, roommate, prohibited person, contractor, visitor, or thief access it?"
+          "STATUTE / SOURCE: MCL 28.425o; MCL 750.234d; Michigan alcohol/carry framework.",
+          "SUMMARY: Certain bar/tavern and alcohol-related premises can be restricted depending on the statutory category, and impairment creates serious legal, tactical, and evidentiary risk.",
+          "GUIDANCE: If drinking is part of the plan, carrying should not be. Restaurants, bars, breweries, event venues, stadiums, and private events should be checked before entry."
         ],
-        source: "MCL 28.429; Michigan secure storage framework."
-      },
-      {
-        title: "EMD / Stun Gun Disclosure & Carry",
-        risk: "Less Lethal Does Not Mean Legally Simple",
-        body: [
-          "Michigan law includes electro-muscular disruption devices in portions of the defensive tool and prohibited premises framework.",
-          "A device being less lethal does not mean it is legally casual. Possession, carry method, disclosure, prohibited places, and use-of-force principles still matter.",
-          "Disclosure obligations may apply depending on the device, carry authority, and police contact circumstances.",
-          "Recommended wording during police contact: Officer, I have a CPL and I am carrying an electronic defensive device. How would you like me to proceed?",
-          "Prime Defense field rule: treat EMD and stun gun carry with the same seriousness as any defensive tool. Less lethal does not mean consequence-free."
-        ],
-        source: "Michigan EMD/stun gun and CPL statutory framework."
+        source: "MCL 28.425o; MCL 750.234d; Michigan Firearms Laws publication."
       },
       {
         title: "Casinos",
-        risk: "Special Prohibited Location Concern",
+        risk: "Special Michigan Trap",
         body: [
-          "Michigan State Police prohibited-premises guidance specifically flags casinos and notes that a pistol is subject to seizure in a casino whether carried concealed or exposed.",
-          "Casinos may also involve private property rules, gaming regulations, tribal considerations, alcohol, event security, and surveillance.",
-          "The legal risk is not just whether you are allowed to possess. It is also whether you are violating property rules, gaming rules, or a specific restricted-area rule.",
-          "Prime Defense field rule: do not assume your CPL authorizes casino carry. Verify the specific property. If instructed to leave, leave calmly and immediately."
+          "STATUTE / SOURCE: Michigan State Police prohibited premises guidance; gaming/property-control framework.",
+          "SUMMARY: Michigan State Police guidance flags casinos as prohibited premises and notes seizure risk for pistols in casinos whether carried concealed or exposed.",
+          "GUIDANCE: Do not assume a CPL authorizes casino carry. Casinos can involve gaming rules, private property, tribal property, alcohol, surveillance, security screening, and separate regulatory issues."
         ],
         source: "Michigan State Police prohibited premises guidance."
+      },
+      {
+        title: "Places of Worship",
+        risk: "Permission Required / Property Control",
+        body: [
+          "STATUTE: MCL 28.425o; MCL 750.234d.",
+          "SUMMARY: Michigan law includes restrictions involving churches and other houses of religious worship, with statutory language and permission issues that must be checked carefully.",
+          "GUIDANCE: Do not assume carry is allowed at a place of worship. Verify permission or policy from the proper authority, especially for events, schools, daycares, security teams, and posted property."
+        ],
+        source: "MCL 28.425o; MCL 750.234d."
       },
       {
         title: "Federal Buildings / Post Offices",
         risk: "Federal Law Overlay",
         body: [
-          "Federal property can be governed by federal law, not Michigan CPL law.",
-          "Post offices, federal agency buildings, federal courthouses, secure federal facilities, and posted federal property are high-risk locations.",
-          "A Michigan CPL does not override federal property restrictions.",
-          "Postal property is a classic trap area because people may think they are simply running a quick errand.",
-          "Prime Defense field rule: if the property is federal, stop using a Michigan-only carry analysis. Verify federal law and posted instructions."
+          "STATUTE / SOURCE: Federal facility and postal property framework.",
+          "SUMMARY: Michigan CPL authority does not override federal property restrictions.",
+          "GUIDANCE: Post offices, federal courthouses, federal agency buildings, secure federal facilities, and posted federal property must be checked separately from Michigan law."
         ],
-        source: "Federal facility and postal property legal framework."
+        source: "Federal facility and postal property framework."
       },
       {
-        title: "Transport Without CPL",
-        risk: "Vehicle Mistake Zone",
+        title: "Secure Storage / Child Access",
+        risk: "Storage and Unauthorized Access",
         body: [
-          "Without a CPL, do not treat a pistol in a vehicle as carry. Treat it as lawful transport only.",
-          "Practical transport method: unloaded, secured, inaccessible, and connected to a lawful purpose or destination.",
-          "Common lawful transport contexts may include going to or from a range, repair, lawful sale, purchase, hunting-related lawful activity, or another lawful destination.",
-          "A common mistake is open carrying on foot, then entering a vehicle with the pistol accessible.",
-          "Another common mistake is keeping a pistol loaded in a center console or glove box without a CPL.",
-          "Prime Defense field rule: the moment you enter a vehicle, your legal analysis changes."
+          "STATUTE: MCL 28.429.",
+          "SUMMARY: Michigan secure storage law requires firearms to be secured when minors are, or are likely to be, present under the statutory conditions.",
+          "GUIDANCE: Vehicle storage, nightstands, purses, backpacks, range bags, closets, and bedside tables are common failure points. A locked vehicle is not a gun safe. If a firearm is unattended, ask who could access it."
         ],
-        source: "Michigan Firearms Laws publication."
+        source: "MCL 28.429."
       },
       {
-        title: "Prohibited Persons / Domestic Violence / PPOs",
-        risk: "Possession Eligibility Warning",
+        title: "EMD / Stun Gun Carry",
+        risk: "Less-Lethal Tool Misunderstanding",
         body: [
-          "Not everyone who owns or wants a firearm is legally allowed to possess one.",
-          "Possible disqualifiers can include felony convictions, certain misdemeanor convictions, domestic violence restrictions, mental health adjudications, court orders, personal protection orders, bond conditions, probation or parole restrictions, and federal prohibitions.",
-          "Domestic violence-related cases can trigger both state and federal firearm restrictions.",
-          "A PPO or bond condition can create restrictions even when the person thinks they have not been convicted of anything.",
-          "Do not assume you are still eligible because you physically still possess your CPL card.",
-          "Prime Defense field rule: if there is a pending case, domestic dispute, PPO, bond condition, court order, prior conviction, or mental health adjudication, get legal guidance before possessing or carrying."
+          "STATUTE / SOURCE: Michigan CPL and electro-muscular disruption device framework.",
+          "SUMMARY: Michigan law includes electro-muscular disruption devices in parts of the defensive-tool and prohibited-premises framework.",
+          "GUIDANCE: Less lethal does not mean consequence-free. Possession, carry method, disclosure, prohibited premises, and use-of-force principles still matter."
+        ],
+        source: "Michigan EMD/stun gun statutory framework; Michigan State Police prohibited premises guidance."
+      },
+      {
+        title: "Prohibited Persons / PPOs / Domestic Violence",
+        risk: "Possession Eligibility Risk",
+        body: [
+          "STATUTE / SOURCE: Michigan and federal prohibited-person framework.",
+          "SUMMARY: A person may be legally prohibited from possessing or carrying due to felony history, certain misdemeanors, domestic violence restrictions, PPOs, bond conditions, probation/parole restrictions, court orders, mental health adjudications, or federal prohibitions.",
+          "GUIDANCE: Do not assume physical possession of a CPL card means current eligibility. If any court order, pending case, PPO, domestic dispute, bond condition, or prior conviction is involved, get qualified legal guidance before possessing or carrying."
         ],
         source: "Michigan and federal prohibited-person framework."
       },
@@ -1074,60 +1100,39 @@ var stateLawData = {
         title: "ERPO / Red Flag Orders",
         risk: "Court Order Emergency",
         body: [
-          "Michigan has an Extreme Risk Protection Order framework commonly referred to as ERPO or red flag law.",
-          "An ERPO can temporarily prevent a person from possessing or purchasing firearms and can require surrender or removal under court order.",
-          "Violating an ERPO can create serious criminal exposure and long-term firearms consequences.",
-          "Do not hide firearms, transfer property casually, argue during service, or post about the situation online.",
-          "Prime Defense field rule: if served with a firearm-related court order, comply safely at the scene and contact qualified legal counsel immediately."
+          "STATUTE: Michigan Extreme Risk Protection Order Act; MCL 691.1801 to MCL 691.1821 framework.",
+          "SUMMARY: Michigan ERPO law can temporarily restrict possession, purchase, and access to firearms under court order.",
+          "GUIDANCE: If served with an ERPO or firearm-related court order, comply safely at the scene, do not hide or transfer firearms casually, do not argue during service, and contact qualified counsel immediately."
         ],
-        source: "Michigan Extreme Risk Protection Order Act; MCL 691.1801 to MCL 691.1821 framework."
+        source: "MCL 691.1801 to MCL 691.1821."
       },
       {
-        title: "Purchase / Registration Basics",
-        risk: "Paperwork & Transfer Risk",
+        title: "Pistol Purchase / Transfer / Registration Basics",
+        risk: "Paperwork and Transfer Risk",
         body: [
-          "Michigan pistol acquisition and transfer rules involve paperwork and record requirements that can vary based on CPL status, transaction type, and where the pistol is obtained.",
-          "A private sale is not complete just because money changed hands.",
-          "Keep copies of purchase records, sales records, registration paperwork, transfer documents, and receipts organized.",
-          "Mistakes can happen during private transfers, inherited firearms, gifts, family transfers, and out-of-state purchases.",
-          "Prime Defense field rule: if buying, selling, inheriting, gifting, or transferring a pistol, verify the required Michigan process before the transfer."
+          "STATUTE / SOURCE: Michigan pistol purchase, transfer, and record framework.",
+          "SUMMARY: Michigan pistol acquisition and transfer rules involve paperwork and record obligations that depend on the transaction and the person's status.",
+          "GUIDANCE: Private sales, gifts, inherited firearms, family transfers, out-of-state purchases, and used pistols require process verification before transfer. Keep records organized."
         ],
         source: "Michigan Firearms Laws publication."
       },
       {
-        title: "Civil Liability / Wrongful Death Exposure",
-        risk: "Financial & Legal Exposure",
-        body: [
-          "Even if no criminal charge is filed, a defensive incident can still trigger civil litigation.",
-          "Potential civil claims may involve wrongful death, personal injury, negligence, emotional distress, property damage, or claims from the attacker or attacker’s family.",
-          "Michigan law includes civil-liability protection language for qualifying lawful self-defense situations, but whether it applies depends on the facts.",
-          "Your behavior before, during, and after the incident may all be examined.",
-          "Social media posts, angry texts, prior threats, bad training statements, reckless behavior, and inconsistent statements can hurt you.",
-          "Prime Defense field rule: self-defense is not only a trigger-pull decision. It is a total-facts investigation."
-        ],
-        source: "MCL 780.972; MCL 600.2922 framework."
-      },
-      {
-        title: "Hunting / DNR Context",
+        title: "Hunting / DNR / Public Land Context",
         risk: "CPL Does Not Replace DNR Rules",
         body: [
-          "Hunting, public land, state land, DNR rules, species seasons, transport rules, ORVs, boats, and firearm-type rules can affect what is lawful.",
-          "A CPL does not replace hunting laws, game laws, trespass rules, DNR restrictions, or public-land rules.",
-          "Long guns, pistols, loaded firearms, vehicles, blinds, boats, ORVs, and public land may each involve different rules.",
-          "Prime Defense field rule: if carrying or transporting during hunting, scouting, camping, boating, ORV use, or public-land activity, check DNR rules in addition to CPL law."
+          "STATUTE / SOURCE: Michigan DNR and firearms transport/hunting framework.",
+          "SUMMARY: Hunting, public land, state land, ORVs, boats, blinds, seasons, species rules, and firearm-type restrictions can affect what is lawful.",
+          "GUIDANCE: A CPL does not replace hunting rules, trespass law, DNR regulations, or public-land restrictions. Check DNR rules separately when carrying or transporting during outdoor activity."
         ],
         source: "Michigan DNR and firearms transport/hunting framework."
       },
       {
-        title: "Use of Force / Deadly Force",
-        risk: "Life-Altering Standard",
+        title: "Use of Deadly Force",
+        risk: "Life-Altering Legal Standard",
         body: [
-          "Deadly force may be justified only if the person honestly and reasonably believes it is necessary to prevent imminent death, great bodily harm, or sexual assault, and other statutory conditions are met.",
-          "Honest belief means you actually believed the threat was real.",
-          "Reasonable belief means a reasonable person in the same circumstances would likely understand the danger similarly.",
-          "Imminent means happening now or immediately about to happen. A past threat, vague future threat, insult, fear, property dispute, or anger is not enough by itself.",
-          "Necessity means deadly force was needed to stop the qualifying threat. It is not punishment, revenge, warning, control, or intimidation.",
-          "Prime Defense field rule: the legal question is not whether you were scared. The legal question is whether the facts support an honest and reasonable belief that deadly force was immediately necessary."
+          "STATUTE: MCL 780.972.",
+          "SUMMARY: Michigan law allows deadly force under statutory conditions when a person honestly and reasonably believes it is necessary to prevent imminent death, great bodily harm, or sexual assault, and the person is not engaged in the commission of a crime.",
+          "GUIDANCE: Deadly force is not for arguments, insults, warning shots, property disputes, road rage, punishment, intimidation, or ego. The legal question is whether the facts support an honest and reasonable belief that deadly force was immediately necessary."
         ],
         source: "MCL 780.972."
       },
@@ -1135,62 +1140,77 @@ var stateLawData = {
         title: "Defense of Others",
         risk: "Third-Party Uncertainty",
         body: [
-          "Defense of another person can be lawful under the same type of honest, reasonable, imminent-threat analysis.",
-          "The threshold is not lower because someone else is involved.",
-          "The danger is that you may not know who started the fight, who escalated it, who is the aggressor, or whether the person you are defending is legally innocent.",
-          "High-risk mistake: jumping into a third-party fight based on emotion or incomplete information.",
-          "Prime Defense field rule: defense of others is legally and tactically dangerous because you may not know the whole story."
+          "STATUTE: MCL 780.972.",
+          "SUMMARY: Defense of another person can be analyzed under the same honest, reasonable, imminent-threat framework, but third-party situations are often factually unclear.",
+          "GUIDANCE: Do not jump into a third-party fight unless the legal threshold is clearly met. You may not know who started it, who escalated it, who is armed, or whether the person you are helping is legally innocent."
         ],
         source: "MCL 780.972."
       },
       {
-        title: "Stand Your Ground / No Duty to Retreat",
-        risk: "Often Misunderstood",
+        title: "Civil Liability / Wrongful Death Exposure",
+        risk: "Aftermath and Financial Risk",
         body: [
-          "Michigan law may remove a duty to retreat in qualifying lawful self-defense situations where the person has a legal right to be.",
-          "No duty to retreat does not mean permission to escalate, chase, provoke, re-engage, threaten, or use force over pride or property.",
-          "No duty to retreat does not eliminate the requirement that force be honest, reasonable, imminent, and necessary.",
-          "Leaving safely, creating distance, and avoiding conflict can still help show reasonableness.",
-          "Prime Defense field rule: avoidance is not weakness. Avoidance is often excellent evidence."
+          "STATUTE / SOURCE: MCL 780.972; MCL 600.2922 framework; Michigan civil liability framework.",
+          "SUMMARY: A defensive incident can create civil exposure even when criminal charges are not filed or are later dismissed.",
+          "GUIDANCE: The defender's behavior before, during, and after the incident may all matter. Angry texts, social posts, prior threats, inconsistent statements, reckless behavior, or bad training comments can become evidence."
         ],
-        source: "Michigan Self-Defense Act framework."
+        source: "MCL 780.972; MCL 600.2922 framework."
       },
       {
-        title: "Attorney / Contact-After-Incident Reminders",
-        risk: "Words Become Evidence",
+        title: "Aftermath / Attorney Contact",
+        risk: "Post-Incident Statement Risk",
         body: [
-          "After a defensive incident: get safe, call 911, request police and medical, then contact legal-defense support or attorney guidance as soon as practical.",
-          "Contact one trusted family member only if safe and appropriate.",
-          "Do not text a group, post online, call multiple friends, argue with bystanders, talk to media, or repeatedly explain what happened.",
-          "Family script: I was involved in a defensive incident. I am safe. Please do not discuss this with anyone. I am waiting for legal guidance.",
-          "Prime Defense field rule: short, factual, rights-protecting communications are safer than emotional explanations."
+          "STATUTE / SOURCE: General criminal procedure, evidence, and self-defense investigation framework.",
+          "SUMMARY: Statements after a defensive incident can become evidence and may be made while the defender is under extreme stress.",
+          "GUIDANCE: Call 911, request police and medical, identify the attacker/evidence/witnesses if necessary, state that you will cooperate after counsel, then stop talking. Do not post online, argue with bystanders, or give repeated explanations."
         ],
-        source: "Prime Defense aftermath protocol."
+        source: "Prime Defense aftermath protocol; general criminal procedure/evidence framework."
       }
     ],
     [
       {
-        title: "Can I Carry Here?",
+        title: "Michigan Carry Decision Checklist",
         steps: [
-          "1. Am I legally allowed to possess today?",
-          "2. Is my CPL valid, current, and not restricted?",
-          "3. Am I carrying concealed, openly, in a vehicle, or transporting?",
-          "4. Is this a CPL pistol-free zone under MCL 28.425o?",
-          "5. Is this a general firearm-prohibited premise under MCL 750.234d?",
-          "6. Is this school-related, court-related, federal, casino-related, hospital-related, worship-related, alcohol-related, private property, tribal, employer-controlled, or security-controlled?",
-          "7. Are there signs, verbal instructions, event rules, bag checks, or security screening?",
-          "8. If any answer is uncertain, do not enter armed until verified."
+          "1. Am I legally eligible to possess and carry today?",
+          "2. Is my CPL valid, current, and physically available?",
+          "3. Am I under any PPO, bond condition, ERPO, probation/parole condition, domestic violence restriction, or court order?",
+          "4. Is this location restricted under MCL 28.425o, MCL 750.234d, school-zone law, court rules, casino/property rules, federal law, or private policy?",
+          "5. Am I carrying in a vehicle, and do I understand the vehicle rules?",
+          "6. Do I know my immediate police disclosure script?",
+          "7. Am I sober, calm, and prepared to avoid conflict?",
+          "8. If anything is uncertain, do not enter armed until verified."
         ]
       },
       {
-        title: "Should I Display My Defensive Tool?",
+        title: "Traffic Stop Script",
         steps: [
-          "1. Is there an immediate threat of death, great bodily harm, sexual assault, or serious unlawful force?",
-          "2. Is display necessary to stop the threat right now?",
-          "3. Am I displaying from fear and necessity, or from anger and intimidation?",
-          "4. Can I safely leave, create distance, lock a door, drive away, or call 911?",
-          "5. If displayed, call 911 first and report the attack or attempted attack.",
-          "6. Do not say: I showed it to scare him. Say only necessary facts and wait for legal guidance."
+          "1. Pull over safely.",
+          "2. Turn the vehicle off if appropriate.",
+          "3. Keep both hands visible.",
+          "4. Immediately disclose: Officer, I have a CPL and I am currently carrying. How would you like me to proceed?",
+          "5. Do not reach for anything until instructed.",
+          "6. Move slowly and narrate only as needed."
+        ]
+      },
+      {
+        title: "Restricted Location Decision",
+        steps: [
+          "1. Is it school-related, court-related, federal, hospital, casino, sports arena, place of worship, alcohol-centered, college/university, daycare, posted, or security-screened?",
+          "2. Does MCL 28.425o apply?",
+          "3. Does MCL 750.234d apply?",
+          "4. Does federal law, private property policy, employer policy, or event security apply?",
+          "5. If uncertain, do not enter armed."
+        ]
+      },
+      {
+        title: "No Shots Fired / Defensive Display Decision",
+        steps: [
+          "1. Was there an immediate unlawful threat?",
+          "2. Was display necessary to stop the threat right now?",
+          "3. Was I acting from fear and necessity, not anger or intimidation?",
+          "4. Can I safely leave, lock a door, drive away, or call 911 instead?",
+          "5. If displayed lawfully, call 911 first and report the attack or attempted attack.",
+          "6. Do not say: I showed it to scare him."
         ]
       },
       {
@@ -1200,138 +1220,128 @@ var stateLawData = {
           "2. Call 911 and request police and medical.",
           "3. Keep hands visible when police arrive.",
           "4. Identify the attacker, evidence, and witnesses only as necessary.",
-          "5. State that you will cooperate after speaking with counsel.",
-          "6. Do not argue, speculate, exaggerate, apologize, explain repeatedly, or post online."
-        ]
-      },
-      {
-        title: "Transport Without CPL",
-        steps: [
-          "1. Confirm you are legally eligible to possess.",
-          "2. Confirm the destination is lawful.",
-          "3. Unload the pistol.",
-          "4. Secure it in a lawful transport configuration.",
-          "5. Keep it inaccessible and separate from ammunition where appropriate.",
-          "6. Do not treat the vehicle as carry. Treat it as transport only."
+          "5. State that you will cooperate fully after speaking with counsel.",
+          "6. Stop talking and do not post online."
         ]
       }
     ],
     [
       {
-        title: "Parking Lot Confrontation",
-        summary: "Parking lots create distance, vehicle, witness, lighting, and escape-route issues. Most bad cases start as avoidable arguments.",
+        title: "Traffic Stop With CPL",
+        summary: "Michigan's immediate disclosure rule makes traffic stops one of the most important CPL scenarios.",
         guidance: [
-          "Stay mobile.",
-          "Create distance.",
-          "Do not argue over parking, gestures, insults, or disrespect.",
-          "Use your vehicle as an escape tool when safe.",
-          "If you display, be ready to explain the immediate threat that made it necessary.",
-          "Call 911 first if you were attacked or threatened."
+          "Disclose immediately.",
+          "Keep hands visible.",
+          "Do not reach for license, registration, wallet, phone, or firearm until instructed.",
+          "Ask how the officer wants you to proceed."
         ]
       },
       {
-        title: "Road Rage",
-        summary: "Road rage is one of the worst legal contexts for armed citizens because both sides may look like aggressors.",
+        title: "School Pickup or Drop-Off",
+        summary: "School property and school-zone issues are among the most confusing Michigan carry topics.",
         guidance: [
-          "Do not follow.",
-          "Do not brake-check.",
-          "Do not gesture.",
-          "Do not get out unless absolutely necessary for safety.",
-          "Drive to a safe public place or police station if needed.",
-          "Call 911 if there is an active threat."
-        ]
-      },
-      {
-        title: "Home Defense",
-        summary: "Castle Doctrine concepts do not eliminate the need for reasonableness, target identification, and post-incident discipline.",
-        guidance: [
-          "Identify before acting.",
-          "Do not shoot at sounds or shadows.",
-          "Use lights, verbal commands, barriers, and 911 when safe.",
-          "Avoid chasing outside after the threat leaves.",
-          "Preserve evidence and wait for counsel before detailed statements."
-        ]
-      },
-      {
-        title: "School Pickup / Drop-Off",
-        summary: "School property is a high-risk legal environment with multiple overlapping rules.",
-        guidance: [
-          "Verify statute and exceptions before carrying.",
-          "Do not rely on what another parent says.",
-          "Understand the difference between parking lot, building, vehicle, school event, and school property contexts.",
+          "Verify MCL 28.425o and MCL 750.237a before entering school property armed.",
+          "Parking lots, events, school vehicles, and extracurricular activities can change the analysis.",
           "When uncertain, choose the safest lawful option."
         ]
       },
       {
-        title: "No Shots Fired / Defensive Display",
-        summary: "The person who calls 911 first often frames the incident first. If you lawfully displayed due to a threat, report the attack or attempted attack immediately.",
+        title: "Restaurant, Bar, or Brewery",
+        summary: "Alcohol-related locations require more than a quick yes/no answer.",
         guidance: [
-          "Call 911.",
-          "Report the threat.",
-          "Give suspect description and direction.",
-          "Do not over-explain before legal guidance.",
-          "Do not say you displayed to scare someone."
+          "Check whether the location is a pistol-free zone under MCL 28.425o.",
+          "Check whether MCL 750.234d or private property rules apply.",
+          "Do not carry while impaired. If alcohol is part of the plan, carrying should not be."
         ]
       },
       {
-        title: "Third-Party Fight",
-        summary: "Defense of others may be lawful, but third-party fights are dangerous because you may not know who the aggressor is.",
+        title: "Casino Night",
+        summary: "Casinos are a special trap area in Michigan and are specifically flagged by Michigan State Police guidance.",
         guidance: [
-          "Create distance and call 911 when possible.",
-          "Look for weapons, disparity of force, and imminent serious harm.",
-          "Do not assume the loudest person is the bad guy.",
-          "Do not intervene with deadly force unless the legal threshold is clearly met."
+          "Do not assume your CPL authorizes casino carry.",
+          "Expect security, surveillance, alcohol, private property rules, gaming rules, and possible seizure risk.",
+          "Verify before arrival, not at the door."
+        ]
+      },
+      {
+        title: "Road Rage or Parking Lot Confrontation",
+        summary: "These situations often make both sides look like aggressors and create bad evidence.",
+        guidance: [
+          "Do not gesture, follow, challenge, or get out to argue.",
+          "Create distance and leave if safe.",
+          "Call 911 if actively threatened.",
+          "Do not display a firearm unless the immediate threat legally justifies it."
+        ]
+      },
+      {
+        title: "Home Defense",
+        summary: "Michigan self-defense law may protect lawful defenders, but target identification and post-incident discipline still matter.",
+        guidance: [
+          "Identify before acting.",
+          "Do not shoot at sounds or shadows.",
+          "Use lights, barriers, verbal commands, and 911 when safe.",
+          "Do not chase after the threat has left."
+        ]
+      },
+      {
+        title: "Unsecured Firearm in Vehicle",
+        summary: "Vehicle storage is a major theft and child-access risk.",
+        guidance: [
+          "Avoid leaving firearms in vehicles whenever possible.",
+          "If unavoidable, lock and secure in a purpose-built container.",
+          "Do not rely on a glove box or center console as responsible storage."
         ]
       }
     ],
     [
-      "Assuming open carry answers every location question.",
-      "Forgetting that vehicle carry changes the legal analysis.",
-      "Failing to immediately disclose during police contact.",
-      "Carrying in a prohibited location because a summary seemed unclear.",
-      "Displaying a firearm during an argument rather than an immediate threat.",
-      "Saying: I showed it to scare him.",
-      "Intervening in a third-party fight without knowing the aggressor.",
-      "Using or threatening deadly force over property.",
+      "Failing to immediately disclose during a police stop.",
+      "Reaching during a traffic stop before being instructed.",
+      "Carrying into a restricted or sensitive location without checking MCL 28.425o and MCL 750.234d.",
+      "Assuming open carry avoids all restrictions.",
+      "Carrying in a vehicle without understanding CPL vs transport rules.",
+      "Assuming a private sign or instruction to leave can be debated at the door.",
+      "Carrying while drinking or impaired.",
+      "Displaying a firearm to scare someone during a non-deadly dispute.",
+      "Using or threatening deadly force over property, anger, or road rage.",
       "Talking too much after an incident.",
-      "Posting online after an incident.",
-      "Ignoring PPO, bond condition, domestic violence, or prohibited-person issues.",
-      "Assuming a CPL overrides school rules, federal rules, casino rules, or employer rules.",
-      "Leaving a firearm unsecured in a vehicle.",
-      "Relying on old reciprocity information before travel."
+      "Posting about an incident online.",
+      "Ignoring PPOs, ERPOs, domestic violence restrictions, bond conditions, or other eligibility problems.",
+      "Leaving a firearm unsecured where a child, thief, guest, or prohibited person can access it."
     ],
     [
-      "Am I legally eligible to possess today?",
-      "Is my CPL valid and not expired?",
-      "Am I under any PPO, bond condition, court order, ERPO, probation, parole, or domestic violence restriction?",
-      "Am I entering a school, hospital, casino, court, federal property, alcohol-heavy location, place of worship, posted private property, or employer-controlled location?",
-      "Am I carrying in a vehicle or merely transporting?",
-      "Do I know my disclosure script if stopped?",
-      "Is my defensive tool secured from children and unauthorized access?",
-      "Am I emotionally calm enough to avoid unnecessary confrontation?",
-      "Do I have my emergency contact and legal-defense contact ready?",
-      "Do I know what I will say and what I will not say after an incident?"
+      "CPL valid and physically available.",
+      "State ID/driver license available.",
+      "Eligibility confirmed today.",
+      "No PPO, ERPO, bond condition, domestic violence restriction, or court order issue.",
+      "Restricted & sensitive locations checked.",
+      "Vehicle carry/transport rules checked.",
+      "Duty-to-inform script ready.",
+      "Private property/posting checked.",
+      "Federal property checked separately.",
+      "Safe storage plan in place.",
+      "Emergency contact/legal-defense contact ready.",
+      "Aftermath statement plan understood."
     ],
     [
       {
-        myth: "Stand your ground means I can shoot if I feel threatened.",
-        reality: "No. You still need an honest and reasonable belief that deadly force is immediately necessary to stop a qualifying threat."
+        myth: "My CPL means I can carry anywhere in Michigan.",
+        reality: "No. Michigan has restricted and sensitive locations, pistol-free zones, federal property limits, court rules, private property rules, and vehicle-related restrictions."
       },
       {
-        myth: "Open carry is legal, so I can open carry anywhere.",
-        reality: "No. Location restrictions, vehicle rules, prohibited-person rules, private property, schools, casinos, courts, and federal property still matter."
+        myth: "Open carry avoids CPL restrictions.",
+        reality: "No. Open carry can still be restricted by location, vehicle rules, schools, private property, courts, federal property, and brandishing/display laws."
       },
       {
-        myth: "A CPL lets me carry everywhere.",
-        reality: "No. A CPL is permission under limits, not unlimited authority."
+        myth: "If I do not fire, it is not serious.",
+        reality: "A defensive display can still create criminal allegations if it was not legally justified."
       },
       {
-        myth: "If I do not fire, it is not a big deal.",
-        reality: "A defensive display can still create brandishing, assault, disorderly conduct, or intimidation allegations if not justified."
+        myth: "Stand your ground means I can use force whenever I feel threatened.",
+        reality: "No. Michigan deadly-force law still requires an honest and reasonable belief that force is necessary to prevent imminent death, great bodily harm, or sexual assault."
       },
       {
         myth: "If the shooting is justified, I do not need to worry about civil court.",
-        reality: "Civil claims can still be filed, and whether immunity applies depends on the facts."
+        reality: "Civil claims can still be filed, and the defender's conduct before, during, and after the incident may all matter."
       }
     ]
   ),
@@ -9571,6 +9581,118 @@ states.forEach(function(s){
   }
 });
 
+function hasSection(profile, title){
+  return (profile.legalSections || []).some(function(section){
+    return String(section.title || "").toLowerCase() === String(title || "").toLowerCase();
+  });
+}
+
+function pushSectionIfMissing(profile, title, risk, body, source){
+  profile.legalSections = profile.legalSections || [];
+  if(!hasSection(profile, title)){
+    profile.legalSections.push({ title: title, risk: risk, body: body, source: source });
+  }
+}
+
+function pushUnique(list, value){
+  if(!list) return;
+  if(list.indexOf(value) === -1) list.push(value);
+}
+
+function applyEliteLiteAllStates(){
+  Object.keys(stateLawData).forEach(function(abbr){
+    var profile = stateLawData[abbr];
+    if(!profile) return;
+
+    var qk = profile.quick || {};
+    profile.profileStatus = profile.profileStatus && profile.profileStatus.indexOf("Elite") !== -1 ? profile.profileStatus : "Elite Lite Expanded State";
+    profile.scenarios = [];
+
+    pushSectionIfMissing(profile,
+      "Reciprocity / Permit Recognition",
+      "Travel Authority Check",
+      [
+        "STATUTE / SOURCE: State reciprocity and permit-recognition framework.",
+        "SUMMARY: Permit recognition only answers whether the selected permit may provide carry authority in this state. It does not override state law, prohibited places, transport rules, federal restrictions, private property, or police-contact obligations.",
+        "GUIDANCE: Treat the map color as the first step, not the final answer. Before carrying, verify recognition, age, residency, permit type, location, vehicle status, and whether any exception or restriction applies."
+      ],
+      "State permit-recognition framework; official state reciprocity resources."
+    );
+
+    pushSectionIfMissing(profile,
+      "Restricted & Sensitive Locations",
+      "Location Restriction Review",
+      [
+        "STATUTE / SOURCE: State prohibited-place, restricted-location, and property-control framework.",
+        "SUMMARY: Carry authority does not authorize carry in every location. Schools, courts, government buildings, police or correctional facilities, alcohol-related locations, places of worship, private posted property, secure areas, and federal property may be restricted depending on state law.",
+        "GUIDANCE: This is the most important practical check before entering a building or event. If the location is school-related, court-related, government-controlled, alcohol-centered, posted, security-screened, or federal, verify before entering armed."
+      ],
+      "State restricted-location framework; federal facility and property law overlay."
+    );
+
+    pushSectionIfMissing(profile,
+      "Vehicle Carry / Transport Rules",
+      "Vehicle and Travel Risk",
+      [
+        "STATUTE / SOURCE: State vehicle-carry and firearm-transport framework.",
+        "SUMMARY: Vehicle carry is often treated differently from carry on foot. Some states allow loaded accessible vehicle carry with a permit or qualifying status, while others require unloaded, secured, inaccessible, or case/locked-container transport unless a permit or exception applies.",
+        "GUIDANCE: Do not assume the same rules apply once you enter a vehicle. Check loaded vs. unloaded status, accessibility, trunk vs. passenger compartment, glovebox/console issues, ammunition rules where applicable, and whether the person is carrying or merely transporting."
+      ],
+      "State vehicle-carry and firearm-transport framework."
+    );
+
+    pushSectionIfMissing(profile,
+      "Police Contact / Officer Interaction",
+      "Stop and Disclosure Risk",
+      [
+        "STATUTE / SOURCE: State duty-to-inform, permit-display, and police-contact framework.",
+        "SUMMARY: Police-contact duties vary by state. Some states require immediate disclosure, some require disclosure when asked, and some require permit/ID display upon lawful demand.",
+        "GUIDANCE: Use the conservative field rule: hands visible, no reaching, calm voice, truthful answers, and ask for instructions before moving. If the state requires disclosure, disclose immediately using a clear script."
+      ],
+      "State police-contact and permit-display framework."
+    );
+
+    pushSectionIfMissing(profile,
+      "Storage, Hotels, and Temporary Lodging",
+      "Unauthorized Access Risk",
+      [
+        "STATUTE / SOURCE: State storage, child-access, property, and general possession framework.",
+        "SUMMARY: Hotels, rentals, vehicles, campsites, and temporary lodging can create possession, storage, theft, child-access, and private-property issues. A hotel room or rental is not always legally identical to a permanent residence for every purpose.",
+        "GUIDANCE: Secure unattended firearms against unauthorized access. Check hotel/rental policies, vehicle-storage risk, minors/unauthorized persons, and whether the location is private, state, federal, tribal, school-related, or otherwise restricted."
+      ],
+      "State storage/property framework; federal and private-property overlay."
+    );
+
+    pushSectionIfMissing(profile,
+      "Civil Liability / Aftermath Discipline",
+      "Post-Incident Exposure",
+      [
+        "STATUTE / SOURCE: State self-defense, civil-liability, criminal procedure, and evidence framework.",
+        "SUMMARY: Even when force may be legally justified, the defender may still face investigation, arrest, prosecution risk, civil claims, employment consequences, and public-record or media exposure depending on the facts.",
+        "GUIDANCE: After a defensive incident, get safe, call 911, request police/medical, identify attacker/evidence/witnesses if necessary, request counsel, and avoid detailed statements under stress. Do not post online or discuss the incident publicly."
+      ],
+      "State self-defense and civil-liability framework; Prime Defense aftermath protocol."
+    );
+
+    profile.commonMistakes = profile.commonMistakes || [];
+    pushUnique(profile.commonMistakes, "Assuming reciprocity means carry anywhere in the state.");
+    pushUnique(profile.commonMistakes, "Ignoring vehicle-carry and transport rules.");
+    pushUnique(profile.commonMistakes, "Ignoring restricted or sensitive locations.");
+    pushUnique(profile.commonMistakes, "Assuming private property signs or staff instructions do not matter.");
+    pushUnique(profile.commonMistakes, "Talking too much after a defensive incident.");
+
+    profile.beforeCarryChecklist = profile.beforeCarryChecklist || [];
+    pushUnique(profile.beforeCarryChecklist, "Permit recognition / carry authority checked.");
+    pushUnique(profile.beforeCarryChecklist, "Vehicle carry and transport rules checked.");
+    pushUnique(profile.beforeCarryChecklist, "Restricted & sensitive locations checked.");
+    pushUnique(profile.beforeCarryChecklist, "Police-contact / duty-to-inform rules checked.");
+    pushUnique(profile.beforeCarryChecklist, "Federal property, private property, and posted-location issues checked.");
+    pushUnique(profile.beforeCarryChecklist, "Aftermath plan and legal-defense contact ready.");
+  });
+}
+
+applyEliteLiteAllStates();
+
 function q(id){ return document.getElementById(id); }
 
 function setMsg(text){
@@ -9818,7 +9940,7 @@ function renderIntelPanel(permitState, travelState){
   }
 
   if(intel.highRisk.length){
-    html += '<div class="detailBox"><h3>High-Risk Areas in This State</h3><div class="riskStack">';
+    html += '<div class="detailBox"><h3>Restricted & Sensitive Locations</h3><div class="riskStack">';
     intel.highRisk.forEach(function(section){
       var summary = firstLineByPrefix(section,"SUMMARY:") || (section.body && section.body[0]) || "Review this section before travel.";
       html += '<div class="riskCard"><strong>' + escapeHtml(section.title) + '</strong><p>' + escapeHtml(summary) + '</p></div>';
@@ -9829,7 +9951,6 @@ function renderIntelPanel(permitState, travelState){
   html += '<div class="jumpNav">' +
     '<button type="button" onclick="document.getElementById(\\'pd-legal-details\\').scrollIntoView({behavior:\\'smooth\\'})">Detailed Law</button>' +
     '<button type="button" onclick="document.getElementById(\\'pd-decision-blocks\\').scrollIntoView({behavior:\\'smooth\\'})">Checklists</button>' +
-    '<button type="button" onclick="document.getElementById(\\'pd-scenarios\\').scrollIntoView({behavior:\\'smooth\\'})">Scenarios</button>' +
     '<button type="button" onclick="document.getElementById(\\'pd-common-mistakes\\').scrollIntoView({behavior:\\'smooth\\'})">Common Mistakes</button>' +
   '</div>';
 
@@ -9879,7 +10000,7 @@ function renderLawProfile(abbr){
     '<span class="lawPill gray">Reviewed: ' + escapeHtml(law.lastReviewed || "Verify") + '</span>' +
     '<p>' + escapeHtml(law.summary || "") + '</p>';
 
-  html += renderList("Red Flag Travel Alerts", law.travelAlerts);
+  html += renderList("Important Carry Warnings", law.travelAlerts);
 
   html += '<div id="pd-legal-details" class="sectionHeader"><h3>Detailed Legal Intelligence</h3><p>Statute-backed sections, summaries, and Prime Defense practical guidance.</p></div>';
   if(law.legalSections && law.legalSections.length){
@@ -9897,17 +10018,6 @@ function renderLawProfile(abbr){
     });
   } else {
     html += '<div class="legalItem"><p>No state-specific decision blocks built yet.</p></div>';
-  }
-
-  html += '<div id="pd-scenarios" class="sectionHeader"><h3>High-Risk Scenarios</h3><p>Real-world traps and common member travel situations.</p></div>';
-  if(law.scenarios && law.scenarios.length){
-    law.scenarios.forEach(function(s){
-      html += '<div class="scenario"><h3>' + escapeHtml(s.title) + '</h3><p>' + escapeHtml(s.summary || "") + '</p>';
-      (s.guidance || []).forEach(function(g){ html += '<p class="small">• ' + escapeHtml(g) + '</p>'; });
-      html += '</div>';
-    });
-  } else {
-    html += '<div class="scenario"><p>No state-specific scenarios built yet.</p></div>';
   }
 
   html += '<div id="pd-common-mistakes" class="sectionHeader"><h3>Common Mistakes & Final Checklist</h3><p>Things members should avoid before they create legal exposure.</p></div>';
@@ -10190,7 +10300,7 @@ async function showDashboard(){
         '<div class="card">' +
           '<div class="brand">Michigan Ultra Guide</div>' +
           '<h2>Michigan CPL & Firearms Law Intelligence</h2>' +
-          '<p class="small">Open the expanded Michigan guide with detailed sections, decision blocks, common mistakes, scenarios, plain-English reality checks, and before-carry checklists.</p>' +
+          '<p class="small">Open the expanded Michigan guide with detailed sections, decision blocks, common mistakes, restricted-location guidance, plain-English reality checks, and before-carry checklists.</p>' +
           '<button id="miGuideBtn" class="primary" type="button">Open Michigan Ultra Guide</button>' +
         '</div>' +
 
