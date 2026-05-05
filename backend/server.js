@@ -5841,1666 +5841,1891 @@ var stateLawData = {
 
   AZ: makeProfile(
     "Arizona",
-    "Law-Backed Ultra Expanded Travel State",
-    "Arizona is a high-priority western travel state with broad lawful carry for eligible adults and a state concealed weapons permit program. Arizona is generally permitless for adults who may lawfully possess and carry, but members must understand age limits, police-contact truthfulness, school grounds, alcohol-serving establishments, polling places, prohibited possessors, tribal/federal property, vehicle carry, and defensive display risk.",
+    "Elite Deep Travel State",
+    "Arizona is a permitless carry state for eligible adults, but it still has important restrictions involving prohibited possessors, school grounds, polling places, correctional facilities, secured public establishments/events, alcohol-licensee premises, tribal/federal land, private property, and vehicle conduct. Arizona is generally permissive, but travelers should not confuse permitless carry with unrestricted carry.",
     {
-      reciprocity: "Michigan CPL should be verified before travel, but Arizona generally recognizes valid permits and also has permitless carry for eligible adults.",
-      permitlessCarry: "A.R.S. § 13-3102 is the main misconduct-involving-weapons statute. Arizona broadly permits carry for eligible adults, with restrictions and age limits.",
-      concealedCarry: "A.R.S. § 13-3102 and § 13-3112: Arizona issues concealed weapons permits, but eligible adults may have permitless carry authority subject to restrictions.",
-      openCarry: "Open carry is generally lawful for eligible adults, but restricted places, tribal/federal property, private property, and police-contact issues still matter.",
-      vehicleCarry: "A.R.S. § 13-3102 addresses concealed weapons within immediate control in or on a means of transportation and includes important police-contact requirements.",
-      dutyToInform: "Arizona requires accurate answer if a law enforcement officer asks whether the person is carrying a concealed deadly weapon.",
-      privateSigns: "Private property owners may restrict firearms and ask a person to leave. Posted alcohol establishments require special caution.",
-      forceLaw: "Arizona self-defense law is fact-specific. Defensive force must be legally justified by the circumstances."
+      reciprocity: "Michigan CPL is treated as recognized in this app travel engine; Arizona also allows permitless carry for eligible adults.",
+      permitlessCarry: "Arizona allows permitless open and concealed carry for eligible adults, subject to prohibited-person and location restrictions.",
+      concealedCarry: "A permit is not generally required for eligible adults, but an Arizona CCW permit can matter for reciprocity, school-zone exceptions, and documentation.",
+      openCarry: "Open carry is generally lawful for eligible persons but restricted locations, private property, tribal land, and public events still matter.",
+      vehicleCarry: "Vehicle carry is generally permissive for eligible adults, but schools, tribal/federal areas, prohibited possessors, and police-contact behavior still matter.",
+      dutyToInform: "Arizona does not use Michigan-style automatic disclosure, but users should answer lawful questions truthfully and avoid reaching.",
+      privateSigns: "Private property and posted alcohol-licensee premises matter. Leave immediately if asked.",
+      forceLaw: "Arizona self-defense law is fact-specific; force must still be justified under the circumstances."
     },
     [
-      "Arizona is permissive, but not rule-free.",
-      "A.R.S. § 13-3102 is a core statute for prohibited conduct, including concealed carry issues, vehicle-related issues, and answering law enforcement accurately when asked.",
-      "Arizona schools, alcohol-serving establishments, polling places, federal property, tribal lands, and private property can create carry restrictions.",
-      "Arizona travel often involves tribal land, national parks, federal facilities, border areas, and desert recreation; each may change the legal analysis.",
-      "Do not assume permitless carry means carry anywhere or ignore posted property."
+      "Permitless carry does not apply to prohibited possessors or people under legal disability.",
+      "Arizona alcohol-licensee premises can post signs prohibiting firearms under A.R.S. § 4-229.",
+      "School grounds, polling places on election day, correctional facilities, federal/tribal property, and secured public establishments/events require special caution.",
+      "A permit may still matter for reciprocity outside Arizona and certain exceptions."
     ],
     [
       {
-        title: "Permitless Carry / Concealed Weapons Framework",
+        title: "Permitless Carry / Eligibility",
         risk: "Core Carry Rule",
         body: [
-          "STATUTE: A.R.S. § 13-3102; A.R.S. § 13-3112.",
-          "SUMMARY: Arizona broadly allows eligible adults to carry, and Arizona also maintains a concealed weapons permit program under § 13-3112.",
-          "GUIDANCE: Permitless carry does not apply to prohibited possessors, underage persons, restricted locations, tribal/federal property, or situations involving unlawful conduct."
-        ],
-        source: "A.R.S. § 13-3102; A.R.S. § 13-3112; Arizona DPS concealed weapons permit program."
+            "STATUTE / SOURCE: A.R.S. §§ 13-3102, 13-3112 framework.",
+            "SUMMARY: Arizona generally allows eligible adults to carry openly or concealed without a permit, subject to prohibited-person and location restrictions.",
+            "GUIDANCE: Permitless carry is not legal permission for prohibited possessors, intoxicated conduct, or restricted places.",
+            "ELITE NOTE: Verify eligibility first. A permissive state still has serious criminal exposure for prohibited locations and unlawful conduct."
+          ],
+        source: "A.R.S. §§ 13-3102, 13-3112 framework"
       },
       {
-        title: "Police Contact / Accurate Answer Requirement",
-        risk: "Officer Contact Risk",
+        title: "Concealed Weapon Permit Value",
+        risk: "Permit / Reciprocity Value",
         body: [
-          "STATUTE: A.R.S. § 13-3102.",
-          "SUMMARY: Arizona law includes misconduct for failing to accurately answer a law enforcement officer if asked whether the person is carrying a concealed deadly weapon.",
-          "GUIDANCE: If asked, answer truthfully and calmly. Keep hands visible and do not reach. Recommended wording: Officer, I am lawfully carrying. How would you like me to proceed?"
-        ],
-        source: "A.R.S. § 13-3102."
+            "STATUTE / SOURCE: A.R.S. § 13-3112.",
+            "SUMMARY: Arizona issues concealed weapons permits under A.R.S. § 13-3112.",
+            "GUIDANCE: Even when permitless carry is available, a permit can matter for reciprocity, documentation, and certain federal/state exception analysis.",
+            "ELITE NOTE: Michigan travelers should not assume permitless carry replaces carrying permit/ID documentation."
+          ],
+        source: "A.R.S. § 13-3112"
       },
       {
-        title: "Under 21 Concealed Carry Risk",
-        risk: "Age-Based Restriction",
+        title: "Misconduct Involving Weapons / Restricted Conduct",
+        risk: "Major Legal Trap",
         body: [
-          "STATUTE: A.R.S. § 13-3102.",
-          "SUMMARY: Arizona's misconduct statute includes restrictions involving persons under 21 carrying concealed deadly weapons on the person or within immediate control in or on transportation, subject to statutory details and exceptions.",
-          "GUIDANCE: Do not assume an 18–20-year-old can concealed carry in Arizona the same way a 21+ eligible adult can."
-        ],
-        source: "A.R.S. § 13-3102."
+            "STATUTE / SOURCE: A.R.S. § 13-3102.",
+            "SUMMARY: Arizona misconduct-involving-weapons law contains several important restrictions, including certain prohibited locations and conduct.",
+            "GUIDANCE: Travelers should check schools, polling places, correctional facilities, public establishments/events, and restricted areas before carrying.",
+            "ELITE NOTE: Treat A.R.S. § 13-3102 as a primary Arizona carry-risk statute."
+          ],
+        source: "A.R.S. § 13-3102"
       },
       {
-        title: "School Grounds",
-        risk: "Extreme Risk Area",
+        title: "Alcohol-Licensee Premises",
+        risk: "Alcohol / Posted Premises Risk",
         body: [
-          "STATUTE: A.R.S. § 13-3102.",
-          "SUMMARY: Arizona law restricts firearms on school grounds, subject to statutory exceptions.",
-          "GUIDANCE: School buildings, parking areas, school events, and pickup/drop-off situations should be treated as verify-first locations."
-        ],
-        source: "A.R.S. § 13-3102."
+            "STATUTE / SOURCE: A.R.S. § 4-229.",
+            "SUMMARY: Arizona law allows concealed handgun carry in certain alcohol-licensee premises unless the licensee posts the statutory prohibition sign.",
+            "GUIDANCE: Carrying while consuming alcohol or while impaired creates separate legal and tactical risk.",
+            "ELITE NOTE: Check for posted signs before entering restaurants, bars, breweries, stadiums, and event venues."
+          ],
+        source: "A.R.S. § 4-229"
       },
       {
-        title: "Alcohol-Serving Establishments",
-        risk: "Posted Premises / Alcohol Risk",
+        title: "Schools and School Grounds",
+        risk: "Extreme Location Risk",
         body: [
-          "STATUTE: A.R.S. § 13-3102; Arizona liquor/firearms framework.",
-          "SUMMARY: Arizona law includes restrictions involving firearms in establishments licensed to serve alcohol and specific treatment of posted premises and permit holders.",
-          "GUIDANCE: Bars, restaurants, breweries, events, and posted alcohol establishments require careful checking. Do not consume alcohol while carrying."
-        ],
-        source: "A.R.S. § 13-3102; Arizona liquor/firearms framework."
+            "STATUTE / SOURCE: A.R.S. § 13-3102; federal school-zone framework.",
+            "SUMMARY: Arizona school-related carry is highly fact-specific and can involve both state and federal law.",
+            "GUIDANCE: Permitless carry does not mean school grounds are safe to enter armed.",
+            "ELITE NOTE: School buildings, parking areas, events, and pickup/drop-off should be treated as verify-first locations."
+          ],
+        source: "A.R.S. § 13-3102; federal school-zone framework"
       },
       {
-        title: "Polling Places and Public Events",
-        risk: "Election / Public Gathering Risk",
-        body: [
-          "STATUTE: A.R.S. § 13-3102 and Arizona election/public-place framework.",
-          "SUMMARY: Arizona law includes restrictions related to polling places on election day and certain public locations or events.",
-          "GUIDANCE: Voting locations, government-controlled event spaces, and security-screened public events should be checked before entering armed."
-        ],
-        source: "A.R.S. § 13-3102; Arizona election/public-place framework."
-      },
-      {
-        title: "Tribal Land / Federal Property",
-        risk: "Separate Sovereign / Federal Overlay",
-        body: [
-          "STATUTE / SOURCE: Tribal law and federal facility framework.",
-          "SUMMARY: Arizona state carry permission does not automatically control tribal land, federal buildings, post offices, federal courthouses, military installations, or secure federal facilities.",
-          "GUIDANCE: Arizona travel often crosses tribal land and federal land. Verify the specific jurisdiction before carrying."
-        ],
-        source: "Tribal law; federal facility and postal property framework."
-      },
-      {
-        title: "Vehicle Carry",
+        title: "Vehicle Carry and Stops",
         risk: "Vehicle / Police Contact Risk",
         body: [
-          "STATUTE: A.R.S. § 13-3102.",
-          "SUMMARY: Arizona law addresses concealed weapons within immediate control in or on a means of transportation, including age and police-contact issues.",
-          "GUIDANCE: Keep hands visible during traffic stops, answer accurately if asked, and do not reach for documents near a firearm without instruction."
-        ],
-        source: "A.R.S. § 13-3102."
+            "STATUTE / SOURCE: A.R.S. § 13-3102 framework.",
+            "SUMMARY: Arizona vehicle carry is generally permissive for eligible adults, but prohibited-person status, school property, tribal/federal land, and restricted locations still matter.",
+            "GUIDANCE: Police-contact behavior is critical even where carry is lawful.",
+            "ELITE NOTE: Keep hands visible, do not reach, and answer lawful questions truthfully."
+          ],
+        source: "A.R.S. § 13-3102 framework"
       },
       {
-        title: "Prohibited Possessors",
-        risk: "Disqualification Risk",
+        title: "Tribal Land and Federal Property",
+        risk: "Separate Sovereignty / Federal Overlay",
         body: [
-          "STATUTE / SOURCE: A.R.S. § 13-3101; A.R.S. § 13-3102.",
-          "SUMMARY: Arizona law defines prohibited possessors and criminalizes certain weapons conduct by disqualified persons.",
-          "GUIDANCE: Court orders, felony history, domestic violence issues, mental health restrictions, drug-related disqualifiers, and federal prohibitions must be checked before carrying."
-        ],
-        source: "A.R.S. § 13-3101; A.R.S. § 13-3102."
+            "STATUTE / SOURCE: Tribal law and federal facility framework.",
+            "SUMMARY: Arizona includes extensive tribal land and federal land/facility issues. State carry permission may not control.",
+            "GUIDANCE: National parks, federal buildings, post offices, tribal property, and secured federal areas must be checked separately.",
+            "ELITE NOTE: If the land or building is tribal or federal, stop using only the Arizona analysis."
+          ],
+        source: "Tribal law and federal facility framework"
       },
       {
-        title: "Use of Force / Defensive Display",
-        risk: "Fact-Specific Legal Risk",
+        title: "Private Property / Posted Locations",
+        risk: "Property Control",
         body: [
-          "STATUTE / SOURCE: Arizona justification and criminal-threat framework.",
-          "SUMMARY: Defensive force and defensive display must be justified by the facts; displaying to intimidate or win an argument can create criminal exposure.",
-          "GUIDANCE: If a defensive display was necessary due to an immediate threat, call 911 first, identify the threat, identify evidence and witnesses, request counsel, and avoid long statements."
-        ],
-        source: "Arizona justification law framework; Prime Defense aftermath protocol."
+            "STATUTE / SOURCE: Arizona trespass/property framework.",
+            "SUMMARY: Private property owners may control access and require armed persons to leave.",
+            "GUIDANCE: Posted locations and direct instructions should be followed immediately.",
+            "ELITE NOTE: Leave first; challenge policy later, not at the doorway."
+          ],
+        source: "Arizona trespass/property framework"
+      },
+      {
+        title: "State-Specific Traps",
+        risk: "Arizona-Specific Trap List",
+        body: [
+            "STATUTE / SOURCE: A.R.S. §§ 4-229, 13-3102, 13-3112.",
+            "SUMMARY: Common traps include assuming alcohol signs do not matter, entering school property under permitless carry assumptions, ignoring tribal land, and thinking a permitless state has no location restrictions.",
+            "GUIDANCE: Arizona is permissive, not consequence-free."
+          ],
+        source: "A.R.S. §§ 4-229, 13-3102, 13-3112"
+      },
+      {
+        title: "Civil Liability / Aftermath",
+        risk: "Post-Incident Risk",
+        body: [
+            "STATUTE / SOURCE: Arizona criminal/civil self-defense framework.",
+            "SUMMARY: A defensive act can still be investigated, charged, or litigated even where the defender believes the act was justified.",
+            "GUIDANCE: Statements, social media, intoxication, prior conflict, and poor avoidance can become evidence.",
+            "ELITE NOTE: Call 911, request help, identify evidence/witnesses only as needed, request counsel, and avoid detailed statements under stress."
+          ],
+        source: "Arizona criminal/civil self-defense framework"
       }
     ],
     [
       {
-        title: "Arizona Carry Checklist",
+        title: "Arizona Carry Decision Checklist",
         steps: [
-          "1. Confirm eligibility and age.",
-          "2. Check A.R.S. § 13-3102 restricted conduct.",
-          "3. Check school grounds.",
-          "4. Check alcohol-serving/posting rules.",
-          "5. Check tribal and federal property separately.",
-          "6. Know the accurate-answer rule for police contact.",
-          "7. Verify vehicle carry before travel."
-        ]
-      }
-    ],
-    [
-      {
-        title: "Traffic Stop in Arizona",
-        summary: "Arizona requires accurate answers if law enforcement asks about a concealed deadly weapon.",
-        guidance: [
-          "Keep hands visible.",
-          "Do not reach.",
-          "Answer accurately if asked.",
-          "Ask how the officer wants you to proceed."
-        ]
+            "1. Confirm eligibility and prohibited-person status.",
+            "2. Confirm whether permitless carry, recognized permit carry, or license-only carry applies.",
+            "3. Check Restricted & Sensitive Locations before entering.",
+            "4. Check vehicle carry and transport rules separately.",
+            "5. Check schools, courts, government/security-controlled locations, alcohol locations, private property, federal property, and tribal/campus/local restrictions where relevant.",
+            "6. During police contact, keep hands visible, do not reach, and answer lawful questions truthfully.",
+            "7. If any answer is uncertain, do not enter armed until verified."
+          ]
       },
       {
-        title: "Restaurant or Bar",
-        summary: "Arizona alcohol-serving establishments can involve posting and permit-related rules.",
-        guidance: [
-          "Check for signs.",
-          "Do not drink while armed.",
-          "Leave if asked.",
-          "Do not assume permitless carry solves alcohol-location issues."
-        ]
+        title: "Arizona Vehicle / Travel Checklist",
+        steps: [
+            "1. Verify whether the firearm may be loaded and accessible in the vehicle.",
+            "2. Verify whether the destination creates a prohibited-location issue.",
+            "3. Distinguish vehicle possession from entering a building or property armed.",
+            "4. Check federal, tribal, campus, school, and posted property rules separately.",
+            "5. Keep permit/ID documentation available where relevant, but do not reach during a stop without instructions."
+          ]
       }
     ],
+    [],
     [
-      "Assuming Arizona permitless carry means carry anywhere.",
-      "Failing to answer accurately if asked by law enforcement.",
-      "Ignoring school grounds.",
-      "Ignoring posted alcohol establishments.",
-      "Assuming Arizona law controls tribal land or federal property.",
-      "Assuming an 18–20-year-old may concealed carry the same as a 21+ adult."
+      "Assuming a permissive state means carry anywhere.",
+      "Assuming reciprocity overrides restricted locations.",
+      "Ignoring school, court, government, alcohol, private property, federal, tribal, or campus restrictions.",
+      "Treating vehicle carry the same as carry on foot.",
+      "Failing to carry permit/ID documentation where relevant.",
+      "Reaching during a traffic stop.",
+      "Carrying while impaired.",
+      "Displaying a firearm to intimidate, win an argument, or end a non-deadly dispute.",
+      "Talking too much after a defensive incident."
     ],
     [
-      "Eligibility and age checked.",
-      "A.R.S. § 13-3102 checked.",
-      "School grounds checked.",
-      "Alcohol/posting rules checked.",
-      "Tribal/federal property checked.",
-      "Police-contact script ready."
+      "Eligibility checked.",
+      "Permit/reciprocity status checked.",
+      "Restricted & Sensitive Locations checked.",
+      "Vehicle carry/transport checked.",
+      "School/campus rules checked.",
+      "Court/government/security-controlled locations checked.",
+      "Alcohol/impaired carry risk checked.",
+      "Private property/posting checked.",
+      "Federal/tribal/local overlay checked where relevant.",
+      "Police-contact plan ready.",
+      "Legal-defense contact ready."
     ],
     [
       {
-        myth: "Arizona is permitless, so there are no restrictions.",
-        reality: "No. Arizona still has restricted places, age issues, prohibited-person rules, alcohol-location rules, tribal/federal overlays, and police-contact requirements."
+        myth: "Permitless carry means no rules.",
+        reality: "No. Permitless carry still depends on eligibility, location restrictions, private property, federal law, and the facts of the situation."
+      },
+      {
+        myth: "If my Michigan CPL is honored, I can carry anywhere.",
+        reality: "No. Reciprocity only answers recognition. It does not override restricted locations, vehicle rules, or state-specific prohibitions."
+      },
+      {
+        myth: "If I do not fire, display is not serious.",
+        reality: "No. A defensive display can still create criminal, civil, and evidentiary problems if not legally justified."
       }
     ]
   ),
 
   CO: makeProfile(
     "Colorado",
-    "Law-Backed Ultra Expanded Travel State",
-    "Colorado is a high-priority western travel state with a concealed handgun permit system, resident-permit reciprocity limitations, school and college restrictions, magazine limits, and increasing local-law complexity. Michigan travelers must understand that Colorado is not permitless concealed carry and that local restrictions may exist in addition to state law.",
+    "Elite Deep Travel State",
+    "Colorado has a permit-based concealed carry system and recognizes certain out-of-state permits, but it is less uniform than many travelers expect. Colorado has important restrictions involving schools, public buildings, local government rules, Denver-area restrictions, parks/open space rules, alcohol/impaired carry, vehicles, federal land, and posted/private property.",
     {
-      reciprocity: "Colorado reciprocity must be verified carefully. Colorado generally honors only resident permits from states with reciprocity agreements.",
-      permitlessCarry: "No general permitless concealed carry. C.R.S. § 18-12-105 restricts carrying concealed without legal authority.",
-      concealedCarry: "Colorado concealed handgun permits are governed by C.R.S. § 18-12-203 and related sections; reciprocity is limited.",
-      openCarry: "Open carry may be lawful in many areas, but local restrictions, Denver-area issues, schools, government buildings, and private property matter.",
-      vehicleCarry: "Vehicle carry must be analyzed under Colorado concealed/open carry and local-law framework.",
-      dutyToInform: "Verify current Colorado police-contact rules. Keep hands visible and answer lawful questions truthfully.",
-      privateSigns: "Private property and local rules can restrict carry. Leave immediately if asked.",
-      forceLaw: "Colorado self-defense is fact-specific and must be legally justified."
+      reciprocity: "Michigan CPL recognition must be verified against Colorado’s current reciprocity rules; Colorado law controls while physically in Colorado.",
+      permitlessCarry: "No general permitless concealed carry. Colorado concealed carry generally requires a valid recognized permit.",
+      concealedCarry: "C.R.S. § 18-12-105 and § 18-12-214 are key concealed carry references.",
+      openCarry: "Open carry may be lawful in many places, but Denver/local restrictions, public buildings, schools, private property, and federal land matter.",
+      vehicleCarry: "Colorado vehicle carry is more permissive than concealed carry on foot in some respects, but schools, local rules, and police-contact behavior matter.",
+      dutyToInform: "Colorado does not use Michigan-style automatic disclosure, but permit/ID and officer safety conduct matter.",
+      privateSigns: "Private property and posted rules should be obeyed; leave if asked.",
+      forceLaw: "Colorado self-defense law is fact-specific and location/context dependent."
     },
     [
-      "Colorado is not permitless concealed carry.",
-      "Colorado reciprocity is more limited than many states and may depend on resident permits.",
-      "Schools, colleges/universities, public buildings, polling places, private property, and federal lands require separate review.",
-      "Colorado has magazine capacity restrictions under state law.",
-      "Local ordinances can create traps, especially for travelers who assume statewide uniformity."
+      "Colorado is not one-size-fits-all; local restrictions can matter, especially Denver.",
+      "A recognized permit does not override schools, federal property, secure public buildings, private property, or local restrictions.",
+      "Open carry assumptions can be especially dangerous in Denver and other restricted areas.",
+      "National parks/federal lands/buildings require separate analysis."
     ],
     [
       {
-        title: "Concealed Carry Without Permit",
+        title: "Concealed Carry Permit Framework",
         risk: "Core Carry Rule",
         body: [
-          "STATUTE: C.R.S. § 18-12-105.",
-          "SUMMARY: Colorado law restricts carrying a concealed weapon without legal authority.",
-          "GUIDANCE: Do not treat Colorado as permitless concealed carry. Verify Michigan CPL recognition and whether Colorado honors the user’s specific permit."
-        ],
-        source: "C.R.S. § 18-12-105."
+            "STATUTE / SOURCE: C.R.S. §§ 18-12-105, 18-12-203, 18-12-214.",
+            "SUMMARY: Colorado generally prohibits carrying concealed without lawful authority or a valid recognized permit.",
+            "GUIDANCE: Colorado reciprocity and permit validity must be checked before carrying concealed.",
+            "ELITE NOTE: Do not treat Colorado as permitless concealed carry."
+          ],
+        source: "C.R.S. §§ 18-12-105, 18-12-203, 18-12-214"
       },
       {
-        title: "Colorado Permit / Reciprocity Framework",
-        risk: "Recognition Risk",
+        title: "Reciprocity and Permit Recognition",
+        risk: "Travel Recognition Rule",
         body: [
-          "STATUTE / SOURCE: C.R.S. § 18-12-203; Colorado Bureau of Investigation reciprocity guidance.",
-          "SUMMARY: Colorado maintains a concealed handgun permit framework and generally honors resident permits from states with reciprocity agreements.",
-          "GUIDANCE: Michigan travelers should verify recognition before travel and should not assume nonresident permits are honored."
-        ],
-        source: "C.R.S. § 18-12-203; Colorado CBI reciprocity guidance."
+            "STATUTE / SOURCE: C.R.S. § 18-12-213 / Colorado reciprocity framework.",
+            "SUMMARY: Colorado’s recognition rules should be verified before travel; not every out-of-state permit is treated the same.",
+            "GUIDANCE: Residency, age, and permit type can affect recognition.",
+            "ELITE NOTE: Carry permit and government ID, and verify recognition before entering the state."
+          ],
+        source: "C.R.S. § 18-12-213 / Colorado reciprocity framework"
       },
       {
-        title: "Schools / Colleges / Universities",
-        risk: "Extreme Risk Area",
+        title: "Open Carry and Local Restrictions",
+        risk: "Local Trap",
         body: [
-          "STATUTE: C.R.S. § 18-12-105.5.",
-          "SUMMARY: Colorado restricts unlawfully carrying or possessing weapons on school, college, or university grounds, subject to statutory exceptions.",
-          "GUIDANCE: K-12 schools, colleges, universities, campus buildings, events, and parking areas require careful review before carrying."
-        ],
-        source: "C.R.S. § 18-12-105.5."
+            "STATUTE / SOURCE: Colorado state/local firearms framework; Denver restrictions.",
+            "SUMMARY: Open carry may be lawful in many Colorado areas, but local restrictions and home-rule issues can create traps.",
+            "GUIDANCE: Denver has historically been a major open-carry restriction area.",
+            "ELITE NOTE: Avoid open-carry assumptions in urban areas; verify local rules before open carry."
+          ],
+        source: "Colorado state/local firearms framework; Denver restrictions"
       },
       {
-        title: "Local Restrictions / Denver Warning",
-        risk: "Local Law Risk",
+        title: "Schools / Educational Property",
+        risk: "Extreme Location Risk",
         body: [
-          "STATUTE / SOURCE: Colorado state and local firearms regulation framework.",
-          "SUMMARY: Colorado has local-law complexity, and certain municipalities may regulate aspects of firearms possession or carry.",
-          "GUIDANCE: Treat Denver and other local jurisdictions as verify-first areas. Do not assume statewide rules are the only rules."
-        ],
-        source: "Colorado local firearms regulation framework."
+            "STATUTE / SOURCE: C.R.S. § 18-12-105.5.",
+            "SUMMARY: Colorado restricts firearms on school grounds, subject to exceptions.",
+            "GUIDANCE: School parking, campus boundaries, events, and vehicle presence can complicate the analysis.",
+            "ELITE NOTE: Treat K-12 schools and school events as verify-first locations."
+          ],
+        source: "C.R.S. § 18-12-105.5"
       },
       {
-        title: "Magazine Capacity Restriction",
-        risk: "Equipment Risk",
+        title: "Public Buildings and Security Screening",
+        risk: "Restricted/Sensitive Location",
         body: [
-          "STATUTE: C.R.S. § 18-12-302.",
-          "SUMMARY: Colorado restricts large-capacity magazines under state law.",
-          "GUIDANCE: Check magazine capacity before travel. Equipment legal in Michigan may create risk in Colorado."
-        ],
-        source: "C.R.S. § 18-12-302."
+            "STATUTE / SOURCE: C.R.S. § 18-12-214; local public-building framework.",
+            "SUMMARY: Colorado restricts concealed carry in certain public buildings and areas with security screening.",
+            "GUIDANCE: Local government facilities can have additional rules.",
+            "ELITE NOTE: If there is screening, government control, or posted public-building signage, stop and verify."
+          ],
+        source: "C.R.S. § 18-12-214; local public-building framework"
       },
       {
         title: "Vehicle Carry",
-        risk: "Vehicle / Local Law Risk",
+        risk: "Vehicle Rule",
         body: [
-          "STATUTE / SOURCE: C.R.S. § 18-12-105 and Colorado vehicle/open carry framework.",
-          "SUMMARY: Colorado vehicle carry can differ depending on whether the firearm is concealed, loaded, carried on the person, or stored in the vehicle.",
-          "GUIDANCE: Verify vehicle carry before travel, especially if entering Denver or local jurisdictions with special rules."
-        ],
-        source: "C.R.S. § 18-12-105; Colorado firearms transport framework."
+            "STATUTE / SOURCE: Colorado firearms/vehicle carry framework.",
+            "SUMMARY: Colorado vehicle carry can be more permissive than concealed carry on foot, but it does not override school, local, federal, or prohibited-person rules.",
+            "GUIDANCE: Vehicle carry during traffic stops still requires calm, visible-hands behavior.",
+            "ELITE NOTE: Do not reach for documents near a firearm; follow instructions."
+          ],
+        source: "Colorado firearms/vehicle carry framework"
       },
       {
-        title: "Public Buildings / Security Screening",
-        risk: "Government Facility Risk",
+        title: "Alcohol / Impairment",
+        risk: "Impairment Risk",
         body: [
-          "STATUTE / SOURCE: Colorado restricted-location and public-building framework.",
-          "SUMMARY: Public buildings, government facilities, courthouses, and security-screened locations may restrict firearms.",
-          "GUIDANCE: Do not approach screening armed. Verify before entering any government building, court facility, or posted public property."
-        ],
-        source: "Colorado public-building firearms framework."
+            "STATUTE / SOURCE: Colorado weapons/intoxication framework.",
+            "SUMMARY: Carrying while impaired creates legal, tactical, and civil exposure.",
+            "GUIDANCE: Bars, breweries, ski areas, events, and private venues can also create posted/private restrictions.",
+            "ELITE NOTE: If alcohol is part of the plan, do not carry."
+          ],
+        source: "Colorado weapons/intoxication framework"
       },
       {
-        title: "Federal Land / National Parks",
-        risk: "Federal Overlay",
+        title: "Federal Land, Parks, and Ski/Outdoor Areas",
+        risk: "Federal / Property Overlay",
         body: [
-          "STATUTE / SOURCE: Federal facility and public lands framework.",
-          "SUMMARY: Colorado has extensive federal land; state carry permission does not override federal buildings, visitor centers, federal courthouses, post offices, or secure facilities.",
-          "GUIDANCE: Distinguish outdoor land rules from federal buildings and visitor centers."
-        ],
-        source: "Federal facility and public lands framework."
+            "STATUTE / SOURCE: Federal facility, NPS, and Colorado property framework.",
+            "SUMMARY: Colorado travel often involves federal land, national parks, forests, ski resorts, and private/outdoor venues.",
+            "GUIDANCE: Federal buildings and secure areas remain restricted even if state carry is otherwise lawful.",
+            "ELITE NOTE: Distinguish outdoor land possession from buildings, visitor centers, resorts, and private property."
+          ],
+        source: "Federal facility, NPS, and Colorado property framework"
       },
       {
-        title: "Private Property / Posted Locations",
-        risk: "Property Control",
+        title: "State-Specific Traps",
+        risk: "Colorado Trap List",
         body: [
-          "STATUTE / SOURCE: Colorado property/trespass framework.",
-          "SUMMARY: Private property owners may restrict firearms and require people to leave.",
-          "GUIDANCE: Posted signs and staff/security instructions should be followed immediately."
-        ],
-        source: "Colorado property/trespass framework."
+            "STATUTE / SOURCE: C.R.S. §§ 18-12-105, 18-12-105.5, 18-12-214.",
+            "SUMMARY: Common traps include assuming Denver follows general open-carry rules, treating vehicle carry as universal permission, ignoring school grounds, and failing to distinguish public land from federal buildings.",
+            "GUIDANCE: Colorado requires local/context analysis."
+          ],
+        source: "C.R.S. §§ 18-12-105, 18-12-105.5, 18-12-214"
       },
       {
-        title: "Use of Force / Self-Defense",
-        risk: "Fact-Specific Legal Risk",
+        title: "Civil Liability / Aftermath",
+        risk: "Post-Incident Risk",
         body: [
-          "STATUTE / SOURCE: Colorado self-defense and defense-of-premises framework.",
-          "SUMMARY: Colorado defensive force law is fact-specific and depends on reasonableness, necessity, and the circumstances.",
-          "GUIDANCE: Avoid escalation, disengage when safely possible, call 911, identify evidence/witnesses, request counsel, and avoid detailed statements under stress."
-        ],
-        source: "Colorado self-defense law framework."
+            "STATUTE / SOURCE: Colorado self-defense and civil liability framework.",
+            "SUMMARY: A defensive incident can trigger criminal investigation and civil exposure.",
+            "GUIDANCE: Outdoor/recreational settings can create witness, alcohol, property-line, and escalation issues.",
+            "ELITE NOTE: Report the emergency, identify evidence/witnesses, request counsel, and avoid detailed statements."
+          ],
+        source: "Colorado self-defense and civil liability framework"
       }
     ],
     [
       {
-        title: "Colorado Carry Checklist",
+        title: "Colorado Carry Decision Checklist",
         steps: [
-          "1. Verify Colorado honors the permit being used.",
-          "2. Check C.R.S. § 18-12-105 concealed carry restrictions.",
-          "3. Check C.R.S. § 18-12-105.5 schools/colleges.",
-          "4. Check magazine capacity under § 18-12-302.",
-          "5. Check Denver/local restrictions.",
-          "6. Check federal property and national park buildings separately.",
-          "7. Check vehicle carry before travel."
-        ]
+            "1. Confirm eligibility and prohibited-person status.",
+            "2. Confirm whether permitless carry, recognized permit carry, or license-only carry applies.",
+            "3. Check Restricted & Sensitive Locations before entering.",
+            "4. Check vehicle carry and transport rules separately.",
+            "5. Check schools, courts, government/security-controlled locations, alcohol locations, private property, federal property, and tribal/campus/local restrictions where relevant.",
+            "6. During police contact, keep hands visible, do not reach, and answer lawful questions truthfully.",
+            "7. If any answer is uncertain, do not enter armed until verified."
+          ]
+      },
+      {
+        title: "Colorado Vehicle / Travel Checklist",
+        steps: [
+            "1. Verify whether the firearm may be loaded and accessible in the vehicle.",
+            "2. Verify whether the destination creates a prohibited-location issue.",
+            "3. Distinguish vehicle possession from entering a building or property armed.",
+            "4. Check federal, tribal, campus, school, and posted property rules separately.",
+            "5. Keep permit/ID documentation available where relevant, but do not reach during a stop without instructions."
+          ]
       }
+    ],
+    [],
+    [
+      "Assuming a permissive state means carry anywhere.",
+      "Assuming reciprocity overrides restricted locations.",
+      "Ignoring school, court, government, alcohol, private property, federal, tribal, or campus restrictions.",
+      "Treating vehicle carry the same as carry on foot.",
+      "Failing to carry permit/ID documentation where relevant.",
+      "Reaching during a traffic stop.",
+      "Carrying while impaired.",
+      "Displaying a firearm to intimidate, win an argument, or end a non-deadly dispute.",
+      "Talking too much after a defensive incident."
+    ],
+    [
+      "Eligibility checked.",
+      "Permit/reciprocity status checked.",
+      "Restricted & Sensitive Locations checked.",
+      "Vehicle carry/transport checked.",
+      "School/campus rules checked.",
+      "Court/government/security-controlled locations checked.",
+      "Alcohol/impaired carry risk checked.",
+      "Private property/posting checked.",
+      "Federal/tribal/local overlay checked where relevant.",
+      "Police-contact plan ready.",
+      "Legal-defense contact ready."
     ],
     [
       {
-        title: "Colorado Road Trip",
-        summary: "Colorado travel often involves Denver, mountain towns, national parks, college campuses, and local ordinances.",
-        guidance: [
-          "Verify reciprocity before entering.",
-          "Check magazine capacity.",
-          "Check Denver/local restrictions.",
-          "Separate outdoor public land from federal buildings."
-        ]
-      }
-    ],
-    [
-      "Assuming Colorado is permitless concealed carry.",
-      "Ignoring resident-permit reciprocity limitations.",
-      "Ignoring Denver/local rules.",
-      "Ignoring magazine capacity limits.",
-      "Ignoring schools/college grounds.",
-      "Assuming national park land equals federal building permission."
-    ],
-    [
-      "Reciprocity checked.",
-      "Concealed carry statute checked.",
-      "Schools/colleges checked.",
-      "Magazine capacity checked.",
-      "Denver/local law checked.",
-      "Federal property checked."
-    ],
-    [
+        myth: "Permitless carry means no rules.",
+        reality: "No. Permitless carry still depends on eligibility, location restrictions, private property, federal law, and the facts of the situation."
+      },
       {
-        myth: "Colorado is western and gun-friendly, so my permit automatically works everywhere.",
-        reality: "No. Colorado has permit recognition limits, local-law issues, school restrictions, and magazine restrictions."
+        myth: "If my Michigan CPL is honored, I can carry anywhere.",
+        reality: "No. Reciprocity only answers recognition. It does not override restricted locations, vehicle rules, or state-specific prohibitions."
+      },
+      {
+        myth: "If I do not fire, display is not serious.",
+        reality: "No. A defensive display can still create criminal, civil, and evidentiary problems if not legally justified."
       }
     ]
   ),
 
   UT: makeProfile(
     "Utah",
-    "Law-Backed Ultra Expanded Travel State",
-    "Utah is a high-priority western travel state with permitless carry for qualifying adults and a well-known concealed firearm permit system. Utah is generally friendly to lawful carry, but users must understand age rules, loaded firearm rules, school premises, secure areas, churches/places of worship, private property, vehicles, federal property, and use-of-force realities.",
+    "Elite Deep Travel State",
+    "Utah is generally permissive and allows permitless concealed carry for adults 21 and older, but it has important statutory restrictions involving secure areas, airports, houses of worship/private residences that prohibit weapons, schools/campus rules, prohibited persons, vehicles, alcohol/impaired carry, and federal property. Utah permit law can also matter for 18–20-year-olds and reciprocity outside Utah.",
     {
-      reciprocity: "Utah generally recognizes permits and also allows permitless concealed carry for qualifying adults, but Utah law controls while physically in Utah.",
-      permitlessCarry: "Utah allows permitless carry for qualifying adults, but age, loaded firearm, school, secure-area, and restricted-person rules still apply.",
-      concealedCarry: "Utah concealed firearm permits are governed by Utah Code Title 53, Chapter 5, Part 7, and carry rules are in Utah Code Title 76, Chapter 10.",
-      openCarry: "Open carry may be lawful in many circumstances, but loaded/unloaded status, vehicles, schools, secure areas, and private property matter.",
-      vehicleCarry: "Utah Code § 76-10-505 addresses loaded firearms in vehicles and on streets, with exceptions for vehicle possession/consent.",
-      dutyToInform: "Verify current Utah police-contact rules. Keep hands visible and answer lawful questions truthfully.",
-      privateSigns: "Private property and posted/restricted locations can matter. Leave if asked.",
-      forceLaw: "Utah self-defense law is fact-specific and must be legally justified."
+      reciprocity: "Michigan CPL is treated as recognized in this app travel engine; Utah also allows permitless carry for eligible adults 21+.",
+      permitlessCarry: "Utah allows permitless concealed carry for eligible adults 21+, subject to restrictions.",
+      concealedCarry: "Utah permit law remains important for 18–20-year-olds, reciprocity, and restricted-area exceptions.",
+      openCarry: "Open carry rules vary by loaded/unloaded status and age/eligibility; verify current Utah law.",
+      vehicleCarry: "Vehicle carry is generally permissive for eligible adults, but secure areas, schools, and federal property matter.",
+      dutyToInform: "Utah does not use Michigan-style automatic disclosure, but users should answer lawful questions truthfully.",
+      privateSigns: "Houses of worship and private residences can prohibit dangerous weapons under Utah law.",
+      forceLaw: "Utah self-defense law is fact-specific."
     },
     [
-      "Utah is permissive, but not rule-free.",
-      "Loaded firearm rules, school premises, secure areas, and restricted-person laws are key Utah issues.",
-      "Utah permits can still matter for reciprocity and for exceptions in certain contexts.",
-      "Outdoor recreation, national parks, federal buildings, churches, and universities require separate review.",
-      "Do not assume permitless carry eliminates location restrictions."
+      "Utah’s secure-area rules are a major trap.",
+      "Houses of worship and private residences can prohibit dangerous weapons under statute.",
+      "Airport secure areas and federal property require separate review.",
+      "Permitless carry 21+ does not erase school/campus and restricted-area rules."
     ],
     [
       {
-        title: "Permitless Carry / Concealed Firearm Framework",
+        title: "Permitless Carry / Age and Eligibility",
         risk: "Core Carry Rule",
         body: [
-          "STATUTE / SOURCE: Utah Code Title 76, Chapter 10; Utah Concealed Firearm Act framework.",
-          "SUMMARY: Utah allows permitless carry for qualifying adults, while still issuing concealed firearm permits for reciprocity and other legal advantages.",
-          "GUIDANCE: Confirm age, eligibility, restricted-person status, location, loaded status, and whether a permit creates an exception in the specific context."
-        ],
-        source: "Utah Code Title 76, Chapter 10; Utah Code Title 53, Chapter 5, Part 7."
+            "STATUTE / SOURCE: Utah Code §§ 76-10-523, 53-5-704 framework.",
+            "SUMMARY: Utah allows eligible adults 21 and older to carry concealed without a permit in many circumstances.",
+            "GUIDANCE: Permits still matter for 18–20-year-olds, reciprocity, and certain legal contexts.",
+            "ELITE NOTE: Verify age, eligibility, and location before relying on permitless carry."
+          ],
+        source: "Utah Code §§ 76-10-523, 53-5-704 framework"
       },
       {
-        title: "Loaded Firearm in Vehicle or on Street",
-        risk: "Vehicle / Loaded Carry Rule",
+        title: "Concealed Firearm Permit Restrictions",
+        risk: "Permit Restriction Rule",
         body: [
-          "STATUTE: Utah Code § 76-10-505.",
-          "SUMMARY: Utah law regulates carrying loaded firearms in or on vehicles and on streets, with statutory exceptions including lawful possession/consent of the vehicle.",
-          "GUIDANCE: Vehicle carry is not just a concealed carry question. Verify loaded status and vehicle authority before relying on permitless carry."
-        ],
-        source: "Utah Code § 76-10-505."
+            "STATUTE / SOURCE: Utah Code § 53-5-710.",
+            "SUMMARY: Utah law identifies locations where a concealed firearm permit holder may not carry, including certain secure areas, airport secure areas, and houses of worship/private residences prohibiting dangerous weapons.",
+            "GUIDANCE: Treat § 53-5-710 as a key Utah restriction statute."
+          ],
+        source: "Utah Code § 53-5-710"
       },
       {
-        title: "School Premises",
-        risk: "Extreme Risk Area",
+        title: "Secure Areas",
+        risk: "Major Restricted Location",
         body: [
-          "STATUTE: Utah Code § 76-10-505.5.",
-          "SUMMARY: Utah law restricts dangerous weapons and firearms on or about school premises, subject to statutory exceptions.",
-          "GUIDANCE: K-12 schools, higher education, school grounds, events, and parking areas require careful review. Do not assume permitless carry solves school premises."
-        ],
-        source: "Utah Code § 76-10-505.5."
+            "STATUTE / SOURCE: Utah Code §§ 76-8-311.1, 53-5-710.",
+            "SUMMARY: Utah secure areas can prohibit dangerous weapons when properly established and posted.",
+            "GUIDANCE: Courthouses, mental health facilities, correctional settings, and secure government areas require special review.",
+            "ELITE NOTE: If a location is marked secure, screened, or controlled, verify before entering."
+          ],
+        source: "Utah Code §§ 76-8-311.1, 53-5-710"
       },
       {
-        title: "Persons Exempt / Permit Advantages",
-        risk: "Exception Framework",
+        title: "Airport Secure Areas",
+        risk: "Transportation Security Risk",
         body: [
-          "STATUTE: Utah Code § 76-10-523.",
-          "SUMMARY: Utah law identifies persons exempt from certain weapons laws, including permit-related exceptions and law enforcement categories.",
-          "GUIDANCE: A Utah or recognized permit may still matter for specific exceptions even though Utah allows permitless carry."
-        ],
-        source: "Utah Code § 76-10-523."
+            "STATUTE / SOURCE: Utah Code § 76-10-529; § 53-5-710.",
+            "SUMMARY: Utah restricts firearms in airport secure areas.",
+            "GUIDANCE: Airline/TSA checked transport is different from carrying into a sterile area.",
+            "ELITE NOTE: Do not bring a defensive tool to airport screening."
+          ],
+        source: "Utah Code § 76-10-529; § 53-5-710"
       },
       {
-        title: "Secure Areas / Airports / Correctional Facilities",
-        risk: "Restricted Facility Risk",
+        title: "Houses of Worship / Private Residences",
+        risk: "Property Restriction",
         body: [
-          "STATUTE / SOURCE: Utah secure-area and federal transportation framework.",
-          "SUMMARY: Secure areas of airports, correctional facilities, mental health facilities, law enforcement/courthouse environments, and posted secure areas may restrict carry.",
-          "GUIDANCE: Do not approach security screening armed. Verify secure-area rules before entering."
-        ],
-        source: "Utah secure area and federal transportation framework."
+            "STATUTE / SOURCE: Utah Code § 76-10-530; § 53-5-710.",
+            "SUMMARY: Utah allows houses of worship and private residences to prohibit firearms/dangerous weapons under statutory procedures.",
+            "GUIDANCE: Verify policy before carrying into a church, temple, mosque, synagogue, or private residence."
+          ],
+        source: "Utah Code § 76-10-530; § 53-5-710"
       },
       {
-        title: "Churches / Houses of Worship",
-        risk: "Notice / Property Control",
+        title: "Schools and Campus",
+        risk: "Education Location Risk",
         body: [
-          "STATUTE / SOURCE: Utah church and private-property firearm framework.",
-          "SUMMARY: Utah law includes special treatment for houses of worship and private property notices in certain contexts.",
-          "GUIDANCE: Verify church policy before carrying. Do not assume a place of worship allows carry."
-        ],
-        source: "Utah church/private property firearms framework."
+            "STATUTE / SOURCE: Utah school/campus firearms framework.",
+            "SUMMARY: Utah education-related rules can be more nuanced than other states and may involve permit status, campus policies, secure areas, and recent statutory changes.",
+            "GUIDANCE: Verify the exact school, campus, building, and permit status before carrying."
+          ],
+        source: "Utah school/campus firearms framework"
       },
       {
-        title: "National Parks / Federal Property",
-        risk: "Federal Overlay",
+        title: "Vehicle Carry",
+        risk: "Vehicle Rule",
         body: [
-          "STATUTE / SOURCE: Federal facility and public lands framework.",
-          "SUMMARY: Utah has extensive federal land. State carry permission does not override federal buildings, visitor centers, post offices, courthouses, or secure federal facilities.",
-          "GUIDANCE: Distinguish outdoor land rules from buildings, visitor centers, ranger stations, and secure facilities."
-        ],
-        source: "Federal facility and public lands framework."
+            "STATUTE / SOURCE: Utah firearms carry framework.",
+            "SUMMARY: Utah vehicle carry is generally permissive for eligible adults, but secure areas, school/campus property, federal property, and private property still matter.",
+            "GUIDANCE: Keep hands visible during police contact and avoid reaching."
+          ],
+        source: "Utah firearms carry framework"
       },
       {
         title: "Alcohol / Impairment",
         risk: "Impairment Risk",
         body: [
-          "STATUTE / SOURCE: Utah weapons and impairment framework.",
-          "SUMMARY: Carrying while impaired or using a firearm while intoxicated can create serious criminal and civil risk.",
-          "GUIDANCE: If alcohol or impairing substances are part of the plan, carrying should not be."
-        ],
-        source: "Utah weapons/intoxication framework."
+            "STATUTE / SOURCE: Utah weapons/intoxication framework.",
+            "SUMMARY: Carrying while impaired creates serious legal and tactical risk.",
+            "GUIDANCE: If drinking or impaired, do not carry."
+          ],
+        source: "Utah weapons/intoxication framework"
       },
       {
-        title: "Private Property / Posted Locations",
-        risk: "Property Control",
+        title: "State-Specific Traps",
+        risk: "Utah Trap List",
         body: [
-          "STATUTE / SOURCE: Utah private property and trespass framework.",
-          "SUMMARY: Private property owners can control access and may restrict firearms.",
-          "GUIDANCE: If posted or instructed to leave, leave immediately. Do not argue with staff/security."
-        ],
-        source: "Utah private property/trespass framework."
+            "STATUTE / SOURCE: Utah Code §§ 53-5-710, 76-10-529, 76-10-530.",
+            "SUMMARY: Common traps include ignoring house-of-worship restrictions, entering secure areas, misunderstanding campus rules, and assuming permitless carry applies to everyone.",
+            "GUIDANCE: Utah is permissive but location-specific."
+          ],
+        source: "Utah Code §§ 53-5-710, 76-10-529, 76-10-530"
       },
       {
-        title: "Use of Force / Self-Defense",
-        risk: "Fact-Specific Legal Risk",
+        title: "Civil Liability / Aftermath",
+        risk: "Post-Incident Risk",
         body: [
-          "STATUTE / SOURCE: Utah self-defense law framework.",
-          "SUMMARY: Utah defensive force law is fact-specific and requires legal justification under the circumstances.",
-          "GUIDANCE: Avoid escalation, disengage when safe, call 911, identify evidence/witnesses, request counsel, and avoid detailed statements under stress."
-        ],
-        source: "Utah self-defense law framework."
+            "STATUTE / SOURCE: Utah self-defense framework.",
+            "SUMMARY: A defensive incident can still generate criminal and civil exposure.",
+            "GUIDANCE: Call 911, request medical/police, identify evidence/witnesses, request counsel, and avoid detailed statements."
+          ],
+        source: "Utah self-defense framework"
       }
     ],
     [
       {
-        title: "Utah Carry Checklist",
+        title: "Utah Carry Decision Checklist",
         steps: [
-          "1. Confirm eligibility and age.",
-          "2. Check loaded firearm rules under § 76-10-505.",
-          "3. Check school premises under § 76-10-505.5.",
-          "4. Check whether permit-based exceptions apply under § 76-10-523.",
-          "5. Check secure areas and airports.",
-          "6. Check church/private property policy.",
-          "7. Check federal land/buildings separately."
-        ]
+            "1. Confirm eligibility and prohibited-person status.",
+            "2. Confirm whether permitless carry, recognized permit carry, or license-only carry applies.",
+            "3. Check Restricted & Sensitive Locations before entering.",
+            "4. Check vehicle carry and transport rules separately.",
+            "5. Check schools, courts, government/security-controlled locations, alcohol locations, private property, federal property, and tribal/campus/local restrictions where relevant.",
+            "6. During police contact, keep hands visible, do not reach, and answer lawful questions truthfully.",
+            "7. If any answer is uncertain, do not enter armed until verified."
+          ]
+      },
+      {
+        title: "Utah Vehicle / Travel Checklist",
+        steps: [
+            "1. Verify whether the firearm may be loaded and accessible in the vehicle.",
+            "2. Verify whether the destination creates a prohibited-location issue.",
+            "3. Distinguish vehicle possession from entering a building or property armed.",
+            "4. Check federal, tribal, campus, school, and posted property rules separately.",
+            "5. Keep permit/ID documentation available where relevant, but do not reach during a stop without instructions."
+          ]
       }
+    ],
+    [],
+    [
+      "Assuming a permissive state means carry anywhere.",
+      "Assuming reciprocity overrides restricted locations.",
+      "Ignoring school, court, government, alcohol, private property, federal, tribal, or campus restrictions.",
+      "Treating vehicle carry the same as carry on foot.",
+      "Failing to carry permit/ID documentation where relevant.",
+      "Reaching during a traffic stop.",
+      "Carrying while impaired.",
+      "Displaying a firearm to intimidate, win an argument, or end a non-deadly dispute.",
+      "Talking too much after a defensive incident."
+    ],
+    [
+      "Eligibility checked.",
+      "Permit/reciprocity status checked.",
+      "Restricted & Sensitive Locations checked.",
+      "Vehicle carry/transport checked.",
+      "School/campus rules checked.",
+      "Court/government/security-controlled locations checked.",
+      "Alcohol/impaired carry risk checked.",
+      "Private property/posting checked.",
+      "Federal/tribal/local overlay checked where relevant.",
+      "Police-contact plan ready.",
+      "Legal-defense contact ready."
     ],
     [
       {
-        title: "Utah National Park Trip",
-        summary: "Utah travel often involves federal land, visitor centers, trailheads, hotels, and vehicles.",
-        guidance: [
-          "Separate outdoor federal land from federal buildings.",
-          "Check visitor centers and ranger stations.",
-          "Check vehicle loaded status.",
-          "Secure firearms from unauthorized access."
-        ]
-      }
-    ],
-    [
-      "Assuming Utah permitless carry means carry anywhere.",
-      "Ignoring loaded firearm rules in vehicles/on streets.",
-      "Ignoring school premises.",
-      "Ignoring church/private property notices.",
-      "Assuming national park land means federal building carry is allowed.",
-      "Ignoring secure airport areas."
-    ],
-    [
-      "Eligibility and age checked.",
-      "Loaded firearm rules checked.",
-      "School premises checked.",
-      "Permit exceptions checked.",
-      "Secure areas checked.",
-      "Federal property checked."
-    ],
-    [
+        myth: "Permitless carry means no rules.",
+        reality: "No. Permitless carry still depends on eligibility, location restrictions, private property, federal law, and the facts of the situation."
+      },
       {
-        myth: "Utah is permitless, so there are no rules.",
-        reality: "No. Loaded firearm rules, school premises, secure areas, private property, and federal property still matter."
+        myth: "If my Michigan CPL is honored, I can carry anywhere.",
+        reality: "No. Reciprocity only answers recognition. It does not override restricted locations, vehicle rules, or state-specific prohibitions."
+      },
+      {
+        myth: "If I do not fire, display is not serious.",
+        reality: "No. A defensive display can still create criminal, civil, and evidentiary problems if not legally justified."
       }
     ]
   ),
 
   NM: makeProfile(
     "New Mexico",
-    "Law-Backed Ultra Expanded Travel State",
-    "New Mexico is a high-priority southwestern travel state with a concealed handgun license system and no general permitless concealed carry. Open carry may be lawful for eligible persons, but concealed carry requires a license, and travelers must understand license possession, reciprocity, schools, universities, liquor establishments, vehicles, tribal/federal land, private property, and self-defense issues.",
+    "Elite Deep Travel State",
+    "New Mexico has a concealed handgun licensing system and recognizes some out-of-state permits, but it has strict rules involving alcohol, impairment, schools, universities, tribal land, federal land, parks, private property, and display of license on demand. New Mexico is a major trap state for travelers because restaurants/alcohol locations and tribal/federal land can change the analysis quickly.",
     {
-      reciprocity: "New Mexico reciprocity must be verified through New Mexico DPS. New Mexico law controls while physically in New Mexico.",
-      permitlessCarry: "No general permitless concealed handgun carry. New Mexico requires a concealed handgun license for concealed carry.",
-      concealedCarry: "NMSA 1978, § 29-19-9 requires the licensee to have the concealed handgun license in possession while carrying concealed.",
-      openCarry: "Open carry may be lawful for eligible persons, but prohibited places, private property, tribal land, federal property, and disorderly conduct issues still matter.",
-      vehicleCarry: "New Mexico vehicle carry has separate treatment from concealed carry on the person and should be verified before travel.",
-      dutyToInform: "Verify current New Mexico police-contact rules. Carry physical license when carrying concealed and answer lawful questions truthfully.",
-      privateSigns: "Private property owners may restrict firearms. Leave if asked.",
-      forceLaw: "New Mexico self-defense law is fact-specific and should be verified before relying on any summary."
+      reciprocity: "Michigan CPL recognition must be verified against New Mexico’s current reciprocity list.",
+      permitlessCarry: "No general permitless concealed handgun carry. A valid recognized license is generally required for concealed carry.",
+      concealedCarry: "NMSA concealed handgun framework and DPS rules control license carry.",
+      openCarry: "Open carry may be lawful in many places, but local emergency orders, schools, alcohol locations, tribal/federal land, and private property matter.",
+      vehicleCarry: "Vehicle carry is generally more permissive, but concealed carry on person and restricted locations must be checked.",
+      dutyToInform: "Licensee must display license upon demand by a peace officer under New Mexico administrative rules.",
+      privateSigns: "Private property and posted alcohol locations matter.",
+      forceLaw: "New Mexico self-defense law is fact-specific."
     },
     [
-      "New Mexico is not permitless concealed carry.",
-      "New Mexico DPS states concealed carry is not permitted without the physical license on your person.",
-      "New Mexico has tribal land, federal land, national parks, border areas, and rural travel considerations that can change the legal analysis.",
-      "Schools, universities, liquor establishments, and posted private property require special caution.",
-      "Reciprocity should be verified directly with New Mexico DPS before travel."
+      "New Mexico alcohol rules are a major trap.",
+      "No alcohol consumption while carrying concealed under DPS rules.",
+      "University premises, schools, tribal land, and federal property require separate review.",
+      "Display license upon demand if carrying under the license framework."
     ],
     [
       {
-        title: "Concealed Handgun License Required",
+        title: "Concealed Handgun License Framework",
         risk: "Core Carry Rule",
         body: [
-          "STATUTE: NMSA 1978, § 29-19-9; New Mexico Concealed Handgun Carry Act.",
-          "SUMMARY: New Mexico requires a concealed handgun license for concealed carry, and licensees must have the license in possession while carrying concealed.",
-          "GUIDANCE: Do not treat New Mexico as permitless concealed carry. Carry the physical license and photo ID when relying on reciprocity."
-        ],
-        source: "NMSA 1978, § 29-19-9; New Mexico DPS concealed carry guidance."
+            "STATUTE / SOURCE: NMSA 1978 Chapter 29, Article 19; NMDPS rules.",
+            "SUMMARY: New Mexico concealed handgun carry generally depends on a valid license or recognized out-of-state license.",
+            "GUIDANCE: Verify reciprocity before carrying concealed."
+          ],
+        source: "NMSA 1978 Chapter 29, Article 19; NMDPS rules"
       },
       {
-        title: "Reciprocity / Recognition",
-        risk: "Recognition Risk",
+        title: "Alcohol / Impairment",
+        risk: "Major State Trap",
         body: [
-          "STATUTE: NMSA 1978, § 29-19-12.",
-          "SUMMARY: New Mexico DPS administers reciprocity and recognition of other states’ concealed handgun licenses under the Concealed Handgun Carry Act framework.",
-          "GUIDANCE: Verify reciprocity before travel and do not rely on outdated maps."
-        ],
-        source: "NMSA 1978, § 29-19-12; New Mexico DPS concealed carry licenses."
+            "STATUTE / SOURCE: NMSA 1978 § 30-7-4; 10.8.2.16 NMAC.",
+            "SUMMARY: New Mexico prohibits carrying a concealed handgun while impaired, and DPS rules prohibit alcohol consumption while carrying concealed.",
+            "GUIDANCE: If alcohol is part of the plan, do not carry. This is one of New Mexico’s biggest traps."
+          ],
+        source: "NMSA 1978 § 30-7-4; 10.8.2.16 NMAC"
       },
       {
-        title: "Physical License Possession",
-        risk: "Documentation Risk",
+        title: "Liquor Establishments",
+        risk: "Restricted Location",
         body: [
-          "STATUTE: NMSA 1978, § 29-19-9.",
-          "SUMMARY: A licensee must have the concealed handgun license in possession at all times while carrying a concealed handgun.",
-          "GUIDANCE: Do not rely on a photo, email, or memory of the permit number. Carry the physical license."
-        ],
-        source: "NMSA 1978, § 29-19-9; New Mexico DPS guidance."
+            "STATUTE / SOURCE: NMSA 1978 § 30-7-3; NMDPS booklet/rules.",
+            "SUMMARY: New Mexico restricts firearms in establishments licensed to dispense alcoholic beverages, subject to statutory exceptions.",
+            "GUIDANCE: Restaurants, bars, breweries, and event venues require careful review; do not assume food sales make carry lawful."
+          ],
+        source: "NMSA 1978 § 30-7-3; NMDPS booklet/rules"
       },
       {
-        title: "Schools",
-        risk: "Extreme Risk Area",
+        title: "Schools and Preschools",
+        risk: "Extreme Location Risk",
         body: [
-          "STATUTE: NMSA 1978, § 30-7-2.1.",
-          "SUMMARY: New Mexico restricts unlawful carrying of deadly weapons on school premises, subject to statutory exceptions.",
-          "GUIDANCE: School buildings, school grounds, events, and parking areas should be treated as verify-first locations."
-        ],
-        source: "NMSA 1978, § 30-7-2.1."
+            "STATUTE / SOURCE: NMSA 1978 § 30-7-2.1.",
+            "SUMMARY: New Mexico restricts deadly weapons on school premises, subject to exceptions.",
+            "GUIDANCE: School pickup/drop-off, parking areas, and school events are verify-first locations."
+          ],
+        source: "NMSA 1978 § 30-7-2.1"
       },
       {
         title: "University Premises",
-        risk: "Higher Education Risk",
+        risk: "Campus Restriction",
         body: [
-          "STATUTE: NMSA 1978, § 30-7-2.4.",
-          "SUMMARY: New Mexico restricts carrying firearms on university premises, subject to statutory exceptions.",
-          "GUIDANCE: Treat college/university campuses, events, buildings, and parking areas as verify-first locations."
-        ],
-        source: "NMSA 1978, § 30-7-2.4."
+            "STATUTE / SOURCE: New Mexico Concealed Handgun Act / NMDPS rules.",
+            "SUMMARY: New Mexico DPS guidance states carrying on university premises is prohibited except as allowed by law.",
+            "GUIDANCE: Treat college/university property as restricted unless a clear exception applies."
+          ],
+        source: "New Mexico Concealed Handgun Act / NMDPS rules"
       },
       {
-        title: "Liquor Establishments / Alcohol",
-        risk: "Alcohol Location Risk",
+        title: "Display of License on Demand",
+        risk: "Police Contact Rule",
         body: [
-          "STATUTE: NMSA 1978, § 30-7-3 and New Mexico alcohol/firearms framework.",
-          "SUMMARY: New Mexico restricts firearms in certain establishments licensed to dispense alcoholic beverages, subject to exceptions.",
-          "GUIDANCE: Bars, restaurants, breweries, casinos, resorts, and events with alcohol require careful checking. Do not drink while carrying."
-        ],
-        source: "NMSA 1978, § 30-7-3; New Mexico alcohol/firearms framework."
-      },
-      {
-        title: "One Concealed Handgun Limitation / License Scope",
-        risk: "License Scope Risk",
-        body: [
-          "STATUTE / SOURCE: New Mexico Administrative Code concealed handgun carry rules.",
-          "SUMMARY: New Mexico license rules include scope and carry limitations that may affect how many concealed handguns may be carried and what is covered by the license.",
-          "GUIDANCE: Verify license scope before carrying multiple concealed handguns or non-handgun weapons."
-        ],
-        source: "N.M. Admin. Code concealed handgun carry rules; New Mexico DPS guidance."
+            "STATUTE / SOURCE: 10.8.2.16 NMAC.",
+            "SUMMARY: A New Mexico concealed handgun licensee carrying in public must display the license upon demand by a peace officer.",
+            "GUIDANCE: Carry license and ID; keep hands visible and comply calmly."
+          ],
+        source: "10.8.2.16 NMAC"
       },
       {
         title: "Vehicle Carry",
-        risk: "Vehicle / Transport Risk",
+        risk: "Vehicle / Travel Rule",
         body: [
-          "STATUTE / SOURCE: New Mexico firearms and vehicle carry framework.",
-          "SUMMARY: New Mexico vehicle carry may be treated differently from concealed carry on the person.",
-          "GUIDANCE: Verify vehicle carry rules before travel. Keep hands visible during police contact and do not reach near a firearm without instruction."
-        ],
-        source: "New Mexico vehicle carry/firearms framework."
+            "STATUTE / SOURCE: New Mexico firearms and vehicle carry framework.",
+            "SUMMARY: New Mexico vehicle carry may be treated differently from concealed carry on person, but restricted locations, schools, tribal land, federal property, and impairment still matter.",
+            "GUIDANCE: Distinguish vehicle possession from concealed carry into buildings."
+          ],
+        source: "New Mexico firearms and vehicle carry framework"
       },
       {
-        title: "Tribal Land / Federal Property",
-        risk: "Separate Jurisdiction Overlay",
+        title: "Tribal and Federal Land",
+        risk: "Separate Sovereignty / Federal Overlay",
         body: [
-          "STATUTE / SOURCE: Tribal law and federal facility/public lands framework.",
-          "SUMMARY: New Mexico state carry permission does not automatically control tribal land, federal buildings, post offices, military installations, federal courthouses, or secure federal facilities.",
-          "GUIDANCE: New Mexico travel often crosses tribal and federal land. Verify the specific jurisdiction before carrying."
-        ],
-        source: "Tribal law; federal facility and public lands framework."
+            "STATUTE / SOURCE: Tribal law and federal facility framework.",
+            "SUMMARY: New Mexico includes extensive tribal land and federal land/facility issues. State carry permission may not control.",
+            "GUIDANCE: Verify tribal/federal rules separately."
+          ],
+        source: "Tribal law and federal facility framework"
       },
       {
-        title: "Use of Force / Self-Defense",
-        risk: "Fact-Specific Legal Risk",
+        title: "State-Specific Traps",
+        risk: "New Mexico Trap List",
         body: [
-          "STATUTE / SOURCE: New Mexico self-defense law framework.",
-          "SUMMARY: Defensive force must be legally justified under the facts and circumstances.",
-          "GUIDANCE: Avoid escalation, disengage when safe, call 911, identify evidence/witnesses, request counsel, and avoid detailed statements under stress."
-        ],
-        source: "New Mexico self-defense law framework."
+            "STATUTE / SOURCE: NMSA §§ 30-7-2.1, 30-7-3, 30-7-4; 10.8.2.16 NMAC.",
+            "SUMMARY: Common traps include alcohol consumption while carrying, assuming restaurants are always okay, carrying on university premises, ignoring tribal land, and failing to display license on demand.",
+            "GUIDANCE: New Mexico is not a casual-carry state for travelers."
+          ],
+        source: "NMSA §§ 30-7-2.1, 30-7-3, 30-7-4; 10.8.2.16 NMAC"
+      },
+      {
+        title: "Civil Liability / Aftermath",
+        risk: "Post-Incident Risk",
+        body: [
+            "STATUTE / SOURCE: New Mexico self-defense framework.",
+            "SUMMARY: A defensive incident can produce criminal investigation and civil exposure.",
+            "GUIDANCE: Report the emergency, identify evidence/witnesses, request counsel, and avoid detailed statements."
+          ],
+        source: "New Mexico self-defense framework"
       }
     ],
     [
       {
-        title: "New Mexico Carry Checklist",
+        title: "New Mexico Carry Decision Checklist",
         steps: [
-          "1. Verify reciprocity with New Mexico DPS.",
-          "2. Carry physical concealed handgun license.",
-          "3. Check school premises under § 30-7-2.1.",
-          "4. Check university premises under § 30-7-2.4.",
-          "5. Check liquor establishments under § 30-7-3.",
-          "6. Check tribal and federal land separately.",
-          "7. Verify vehicle carry before travel."
-        ]
+            "1. Confirm eligibility and prohibited-person status.",
+            "2. Confirm whether permitless carry, recognized permit carry, or license-only carry applies.",
+            "3. Check Restricted & Sensitive Locations before entering.",
+            "4. Check vehicle carry and transport rules separately.",
+            "5. Check schools, courts, government/security-controlled locations, alcohol locations, private property, federal property, and tribal/campus/local restrictions where relevant.",
+            "6. During police contact, keep hands visible, do not reach, and answer lawful questions truthfully.",
+            "7. If any answer is uncertain, do not enter armed until verified."
+          ]
+      },
+      {
+        title: "New Mexico Vehicle / Travel Checklist",
+        steps: [
+            "1. Verify whether the firearm may be loaded and accessible in the vehicle.",
+            "2. Verify whether the destination creates a prohibited-location issue.",
+            "3. Distinguish vehicle possession from entering a building or property armed.",
+            "4. Check federal, tribal, campus, school, and posted property rules separately.",
+            "5. Keep permit/ID documentation available where relevant, but do not reach during a stop without instructions."
+          ]
       }
+    ],
+    [],
+    [
+      "Assuming a permissive state means carry anywhere.",
+      "Assuming reciprocity overrides restricted locations.",
+      "Ignoring school, court, government, alcohol, private property, federal, tribal, or campus restrictions.",
+      "Treating vehicle carry the same as carry on foot.",
+      "Failing to carry permit/ID documentation where relevant.",
+      "Reaching during a traffic stop.",
+      "Carrying while impaired.",
+      "Displaying a firearm to intimidate, win an argument, or end a non-deadly dispute.",
+      "Talking too much after a defensive incident."
+    ],
+    [
+      "Eligibility checked.",
+      "Permit/reciprocity status checked.",
+      "Restricted & Sensitive Locations checked.",
+      "Vehicle carry/transport checked.",
+      "School/campus rules checked.",
+      "Court/government/security-controlled locations checked.",
+      "Alcohol/impaired carry risk checked.",
+      "Private property/posting checked.",
+      "Federal/tribal/local overlay checked where relevant.",
+      "Police-contact plan ready.",
+      "Legal-defense contact ready."
     ],
     [
       {
-        title: "Southwest Road Trip",
-        summary: "New Mexico travel often involves tribal land, federal land, parks, casinos, hotels, and long vehicle routes.",
-        guidance: [
-          "Verify reciprocity first.",
-          "Carry physical license.",
-          "Check tribal/federal property.",
-          "Check alcohol/casino locations."
-        ]
-      }
-    ],
-    [
-      "Assuming New Mexico is permitless concealed carry.",
-      "Failing to carry the physical license.",
-      "Ignoring schools and university premises.",
-      "Ignoring liquor establishment rules.",
-      "Assuming state law controls tribal land.",
-      "Assuming national park land equals federal building permission."
-    ],
-    [
-      "Reciprocity checked with DPS.",
-      "Physical license carried.",
-      "Schools checked.",
-      "Universities checked.",
-      "Liquor establishments checked.",
-      "Tribal/federal property checked."
-    ],
-    [
+        myth: "Permitless carry means no rules.",
+        reality: "No. Permitless carry still depends on eligibility, location restrictions, private property, federal law, and the facts of the situation."
+      },
       {
-        myth: "New Mexico open carry means concealed carry is permitless too.",
-        reality: "No. New Mexico requires a concealed handgun license for concealed carry."
+        myth: "If my Michigan CPL is honored, I can carry anywhere.",
+        reality: "No. Reciprocity only answers recognition. It does not override restricted locations, vehicle rules, or state-specific prohibitions."
+      },
+      {
+        myth: "If I do not fire, display is not serious.",
+        reality: "No. A defensive display can still create criminal, civil, and evidentiary problems if not legally justified."
       }
     ]
   ),
 
   WY: makeProfile(
     "Wyoming",
-    "Law-Backed Ultra Expanded Travel State",
-    "Wyoming is a permissive carry state that allows permitless concealed carry for U.S. residents who may legally possess firearms, but travelers must still understand eligibility, restricted locations, schools, universities/campus rules, vehicles, federal land, national parks, private property, and self-defense realities.",
+    "Elite Deep Travel State",
+    "Wyoming is generally permissive and allows permitless concealed carry for eligible people, but it still has important restrictions involving prohibited persons, schools/campus developments, government meetings/facilities, courts, jails, police stations, hospitals, private property, alcohol/impaired conduct, and federal land. Wyoming is permissive, but remote travel and public land create extra practical issues.",
     {
-      reciprocity: "Michigan CPL recognition should be verified, but Wyoming also allows permitless concealed carry for qualifying U.S. residents.",
-      permitlessCarry: "Wyo. Stat. § 6-8-104 and Wyoming DCI guidance: Wyoming allows qualifying U.S. residents to carry concealed without a permit.",
-      concealedCarry: "Wyoming maintains a concealed firearm permit system under § 6-8-104, but permitless carry may apply to eligible U.S. residents.",
-      openCarry: "Open carry may be lawful for eligible persons, but restricted places, private property, federal property, and police contact still matter.",
-      vehicleCarry: "Vehicle carry must be analyzed under Wyoming concealed/open carry and restricted-location rules.",
-      dutyToInform: "Verify current Wyoming police-contact rules. Keep hands visible and answer lawful questions truthfully.",
-      privateSigns: "Private property owners may restrict firearms. Leave if asked.",
-      forceLaw: "Wyoming self-defense law is fact-specific and must be legally justified."
+      reciprocity: "Michigan CPL is treated as recognized in this app; Wyoming also allows permitless concealed carry for eligible persons.",
+      permitlessCarry: "Wyoming allows permitless concealed carry for eligible persons under W.S. § 6-8-104 framework.",
+      concealedCarry: "Permitless carry exists, but permits can matter for reciprocity and some restricted contexts.",
+      openCarry: "Open carry is generally lawful for eligible persons, but restricted places and private property matter.",
+      vehicleCarry: "Vehicle carry is generally permissive for eligible persons, but federal lands/buildings, schools, and prohibited locations matter.",
+      dutyToInform: "Verify current Wyoming police-contact rules; keep hands visible and answer lawful questions truthfully.",
+      privateSigns: "Private property owners may restrict carry; leave if asked.",
+      forceLaw: "Wyoming self-defense law is fact-specific."
     },
     [
-      "Wyoming is permissive, but not rule-free.",
-      "Wyoming DCI states that effective July 1, 2021, any U.S. resident legally allowed to possess firearms may carry concealed in Wyoming without a concealed firearms permit.",
-      "A Wyoming permit may still matter for reciprocity outside Wyoming.",
-      "Federal land, national parks, visitor centers, post offices, schools, universities, and private property require separate review.",
-      "Outdoor recreation does not eliminate secure-building or federal-facility restrictions."
-    ],
-    [
-      {
-        title: "Permitless Concealed Carry",
-        risk: "Core Eligibility Rule",
-        body: [
-          "STATUTE: Wyo. Stat. § 6-8-104; Wyoming DCI guidance.",
-          "SUMMARY: Wyoming allows qualifying U.S. residents who are legally allowed to possess firearms to carry concealed without a concealed firearms permit.",
-          "GUIDANCE: Confirm eligibility, residency/status, prohibited-person status, age, and restricted locations before carrying."
-        ],
-        source: "Wyo. Stat. § 6-8-104; Wyoming DCI CFP FAQ."
-      },
-      {
-        title: "Concealed Firearm Permit / Reciprocity Context",
-        risk: "License / Travel Rule",
-        body: [
-          "STATUTE: Wyo. Stat. § 6-8-104.",
-          "SUMMARY: Wyoming still issues concealed firearm permits and recognizes permits under the statutory framework.",
-          "GUIDANCE: Even if permitless carry applies in Wyoming, a permit can matter when traveling to other states."
-        ],
-        source: "Wyo. Stat. § 6-8-104."
-      },
-      {
-        title: "Eligibility / Prohibited Persons",
-        risk: "Disqualification Risk",
-        body: [
-          "STATUTE: Wyo. Stat. § 6-8-104 and federal prohibited-person framework.",
-          "SUMMARY: Permitless carry only helps people who may legally possess firearms and are not disqualified.",
-          "GUIDANCE: Criminal history, protection orders, domestic violence issues, controlled-substance issues, mental health adjudications, and federal prohibitions should be checked before carrying."
-        ],
-        source: "Wyo. Stat. § 6-8-104; federal prohibited-person framework."
-      },
-      {
-        title: "Schools / Universities / Campus Rules",
-        risk: "Extreme Risk Area",
-        body: [
-          "STATUTE / SOURCE: Wyoming school and campus carry framework; Wyo. Stat. § 6-8-104 references.",
-          "SUMMARY: Wyoming schools, university facilities, and campus rules can involve specific restrictions and exceptions.",
-          "GUIDANCE: Check K-12 schools, universities, events, buildings, parking, and posted campus rules before carrying."
-        ],
-        source: "Wyoming school/campus carry framework; University of Wyoming campus carry guidance."
-      },
-      {
-        title: "Federal Land / National Parks",
-        risk: "Federal Overlay",
-        body: [
-          "STATUTE / SOURCE: Federal facility and public lands framework.",
-          "SUMMARY: Wyoming has extensive federal land and national parks. State carry permission does not override federal buildings, visitor centers, post offices, federal courthouses, or secure facilities.",
-          "GUIDANCE: Distinguish outdoor land from federal buildings and visitor centers. Yellowstone/Grand Teton travel requires careful building-by-building awareness."
-        ],
-        source: "Federal facility and public lands framework."
-      },
-      {
-        title: "Vehicle Carry",
-        risk: "Road Trip / Wildlife Area Risk",
-        body: [
-          "STATUTE / SOURCE: Wyo. Stat. § 6-8-104 and Wyoming vehicle/firearms framework.",
-          "SUMMARY: Vehicle carry may be lawful for eligible persons but still interacts with restricted locations, federal lands, wildlife/hunting rules, and police contact.",
-          "GUIDANCE: Keep hands visible during traffic stops and check DNR/game rules when hunting, camping, or transporting firearms in the field."
-        ],
-        source: "Wyo. Stat. § 6-8-104; Wyoming vehicle/firearms framework."
-      },
-      {
-        title: "Private Property / Posted Locations",
-        risk: "Property Control",
-        body: [
-          "STATUTE / SOURCE: Wyoming property/trespass framework.",
-          "SUMMARY: Private property owners may control access and restrict firearms.",
-          "GUIDANCE: If posted or asked to leave, leave immediately. Ranches, lodges, events, and private recreation properties may have their own rules."
-        ],
-        source: "Wyoming property/trespass framework."
-      },
-      {
-        title: "Alcohol / Impairment",
-        risk: "Impairment Risk",
-        body: [
-          "STATUTE / SOURCE: Wyoming weapons and intoxication framework.",
-          "SUMMARY: Carrying while impaired creates legal, tactical, and evidentiary risk.",
-          "GUIDANCE: If drinking or impairing substances are part of the plan, carrying should not be."
-        ],
-        source: "Wyoming weapons/intoxication framework."
-      },
-      {
-        title: "Use of Force / Self-Defense",
-        risk: "Fact-Specific Legal Risk",
-        body: [
-          "STATUTE / SOURCE: Wyoming self-defense law framework.",
-          "SUMMARY: Defensive force must be justified under the facts and applicable Wyoming law.",
-          "GUIDANCE: Avoid escalation, disengage when safe, call 911, identify evidence/witnesses, request counsel, and avoid detailed statements under stress."
-        ],
-        source: "Wyoming self-defense law framework."
-      }
-    ],
-    [
-      {
-        title: "Wyoming Carry Checklist",
-        steps: [
-          "1. Confirm eligibility and prohibited-person status.",
-          "2. Check Wyo. Stat. § 6-8-104.",
-          "3. Check school/campus rules.",
-          "4. Check federal land/buildings separately.",
-          "5. Check private property and lodges/events.",
-          "6. Check hunting/DNR rules if outdoors.",
-          "7. Plan safe vehicle storage."
-        ]
-      }
-    ],
-    [
-      {
-        title: "Yellowstone / Grand Teton Trip",
-        summary: "Wyoming travel often involves federal land, visitor centers, hotels, vehicles, and outdoor recreation.",
-        guidance: [
-          "Separate park land from federal buildings.",
-          "Check visitor centers and ranger stations.",
-          "Secure firearms in vehicles/hotels.",
-          "Check hunting and wildlife rules separately."
-        ]
-      }
-    ],
-    [
-      "Assuming Wyoming permitless carry means carry anywhere.",
-      "Ignoring federal buildings in national parks.",
-      "Ignoring campus/school rules.",
-      "Ignoring hunting/DNR rules.",
-      "Ignoring private lodge/event property.",
-      "Assuming a permit is useless just because Wyoming is permitless."
-    ],
-    [
-      "Eligibility checked.",
-      "§ 6-8-104 checked.",
-      "School/campus rules checked.",
-      "Federal property checked.",
-      "Private property checked.",
-      "Vehicle/outdoor rules checked."
-    ],
-    [
-      {
-        myth: "Wyoming is permitless, so a permit never matters.",
-        reality: "No. Permitless carry may apply inside Wyoming, but a permit can still matter for reciprocity and specific exceptions outside Wyoming."
-      }
-    ]
-  ),
-
-  MT: makeProfile(
-    "Montana",
-    "Law-Backed Ultra Expanded Travel State",
-    "Montana is a permissive carry state with permitless concealed carry, but members must still understand school buildings, local public-building authority, private property, federal land, national parks, tribal land, vehicles, alcohol/impairment, and self-defense realities. Montana is especially important for travelers because outdoor recreation and federal/public lands can create jurisdictional confusion.",
-    {
-      reciprocity: "Michigan CPL recognition should be verified, but Montana also has permitless concealed carry for eligible persons.",
-      permitlessCarry: "MCA § 45-8-316 and Montana carry framework: Montana no longer generally requires a permit for eligible persons to carry concealed, subject to restrictions.",
-      concealedCarry: "Montana still issues permits for reciprocity and certain legal advantages, but permitless carry may apply inside Montana.",
-      openCarry: "Open carry may be lawful for eligible persons, but school buildings, publicly owned buildings, private property, federal/tribal land, and conduct still matter.",
-      vehicleCarry: "Vehicle carry must be analyzed with Montana carry rules, school/property restrictions, federal/tribal land, and hunting/outdoor rules.",
-      dutyToInform: "Verify current Montana police-contact rules. Keep hands visible and answer lawful questions truthfully.",
-      privateSigns: "Private property owners may restrict firearms. Leave immediately if asked.",
-      forceLaw: "Montana self-defense law is fact-specific and must be legally justified."
-    },
-    [
-      "Montana is permissive, but not rule-free.",
-      "MCA § 45-8-361 restricts weapons in school buildings, subject to exceptions.",
-      "MCA § 45-8-351 addresses local-government regulation and public-building authority.",
-      "Montana travel often involves national parks, federal lands, tribal lands, hunting, camping, lodges, and vehicles.",
-      "Federal/tribal property and school buildings are the most important carry traps for travelers."
+      "Permitless carry does not override prohibited-person laws or restricted locations.",
+      "Wyoming schools/campus/government-meeting rules have changed and should be verified before reliance.",
+      "Federal land/buildings and national parks require separate analysis.",
+      "Private property and hospitals/courts/jails/police stations require caution."
     ],
     [
       {
         title: "Permitless Concealed Carry",
         risk: "Core Carry Rule",
         body: [
-          "STATUTE: MCA § 45-8-316; Montana carry framework.",
-          "SUMMARY: Montana no longer generally requires a permit for eligible persons to carry concealed, subject to restrictions and exceptions.",
-          "GUIDANCE: Confirm eligibility and restricted locations. Permitless carry does not override school buildings, private property, public-building rules, federal property, or tribal land."
-        ],
-        source: "MCA § 45-8-316; Montana carry framework."
+            "STATUTE / SOURCE: W.S. § 6-8-104.",
+            "SUMMARY: Wyoming allows eligible persons to carry concealed without a permit under its statutory framework.",
+            "GUIDANCE: Verify eligibility and restricted locations before relying on permitless carry."
+          ],
+        source: "W.S. § 6-8-104"
       },
       {
-        title: "Permit / Reciprocity Context",
-        risk: "Travel License Rule",
+        title: "Permit Value / Reciprocity",
+        risk: "Permit Usefulness",
         body: [
-          "STATUTE / SOURCE: Montana concealed weapon permit framework.",
-          "SUMMARY: Montana still issues concealed weapon permits that may matter for reciprocity outside Montana and certain legal advantages.",
-          "GUIDANCE: A permit can still be useful even in a permitless carry state. Do not discard permit considerations for multi-state travel."
-        ],
-        source: "Montana concealed weapon permit framework."
+            "STATUTE / SOURCE: W.S. § 6-8-104.",
+            "SUMMARY: A Wyoming or recognized permit can still matter for reciprocity outside Wyoming and certain specific contexts.",
+            "GUIDANCE: Do not assume permitless carry helps once crossing state lines."
+          ],
+        source: "W.S. § 6-8-104"
       },
       {
-        title: "School Buildings",
-        risk: "Extreme Risk Area",
+        title: "Restricted Locations / Gun-Free Zone Changes",
+        risk: "Location Restriction",
         body: [
-          "STATUTE: MCA § 45-8-361.",
-          "SUMMARY: Montana restricts possession, carrying, or storage of weapons in school buildings, subject to exceptions.",
-          "GUIDANCE: K-12 school buildings and school activities should be treated as hard verify-first areas. Do not assume permitless carry applies inside a school building."
-        ],
-        source: "MCA § 45-8-361."
+            "STATUTE / SOURCE: W.S. § 6-8-105 and current Wyoming legislation.",
+            "SUMMARY: Wyoming law has changed regarding state-issued permits and certain areas. Current law should be checked for schools, government meetings, campuses, and facility-specific restrictions.",
+            "GUIDANCE: Verify current law before carrying in schools, public meetings, or campus facilities."
+          ],
+        source: "W.S. § 6-8-105 and current Wyoming legislation"
       },
       {
-        title: "Local Public Buildings / Preemption",
-        risk: "Public Building Risk",
+        title: "Courts / Jails / Police Stations / Hospitals",
+        risk: "Hard Stop Areas",
         body: [
-          "STATUTE: MCA § 45-8-351.",
-          "SUMMARY: Montana restricts local government firearms regulation but allows certain local authority involving discharge and carrying in publicly owned and occupied buildings under local jurisdiction.",
-          "GUIDANCE: City/county buildings, parks, public assemblies, and posted public facilities require verification."
-        ],
-        source: "MCA § 45-8-351."
+            "STATUTE / SOURCE: Wyoming restricted facility framework.",
+            "SUMMARY: Courts, jails, police stations, correctional facilities, and hospitals can remain restricted depending on current statute and facility rules.",
+            "GUIDANCE: Treat these as verify-first locations."
+          ],
+        source: "Wyoming restricted facility framework"
+      },
+      {
+        title: "Schools and School Employees",
+        risk: "School Location Risk",
+        body: [
+            "STATUTE / SOURCE: W.S. § 21-3-132; Wyoming school firearms framework.",
+            "SUMMARY: Wyoming allows certain school-district-authorized employee carry under specific conditions, but that is not general public permission.",
+            "GUIDANCE: Do not assume visitor carry is lawful on school property."
+          ],
+        source: "W.S. § 21-3-132; Wyoming school firearms framework"
+      },
+      {
+        title: "Vehicle Carry",
+        risk: "Vehicle / Rural Travel Rule",
+        body: [
+            "STATUTE / SOURCE: W.S. § 6-8-104 framework.",
+            "SUMMARY: Vehicle carry is generally permissive for eligible persons, but schools, private property, federal areas, and prohibited-person status still matter.",
+            "GUIDANCE: In traffic stops, keep hands visible and avoid reaching."
+          ],
+        source: "W.S. § 6-8-104 framework"
       },
       {
         title: "Federal Land / National Parks",
         risk: "Federal Overlay",
         body: [
-          "STATUTE / SOURCE: Federal facility and public lands framework.",
-          "SUMMARY: Montana has extensive federal land and national parks. State carry permission does not override federal buildings, visitor centers, post offices, federal courthouses, or secure federal facilities.",
-          "GUIDANCE: Glacier and Yellowstone-region travel requires awareness of federal building boundaries, visitor centers, ranger stations, and park facilities."
-        ],
-        source: "Federal facility and public lands framework."
-      },
-      {
-        title: "Tribal Land",
-        risk: "Separate Sovereign Overlay",
-        body: [
-          "STATUTE / SOURCE: Tribal law framework.",
-          "SUMMARY: Montana state carry rules do not automatically control tribal lands or tribal facilities.",
-          "GUIDANCE: Verify tribal law before carrying on reservations, tribal casinos, tribal offices, and tribal events."
-        ],
-        source: "Tribal law framework."
-      },
-      {
-        title: "Vehicle Carry / Outdoor Travel",
-        risk: "Vehicle / Hunting / Recreation Risk",
-        body: [
-          "STATUTE / SOURCE: Montana carry, hunting, and vehicle framework.",
-          "SUMMARY: Vehicle carry may be lawful for eligible persons, but hunting, wildlife, public land, private land, tribal land, and federal facility rules may change the analysis.",
-          "GUIDANCE: Check Montana FWP/hunting rules when carrying while hunting, camping, fishing, boating, or crossing public/private land."
-        ],
-        source: "Montana carry and outdoor recreation framework."
-      },
-      {
-        title: "Private Property / Posted Locations",
-        risk: "Property Control",
-        body: [
-          "STATUTE / SOURCE: Montana property/trespass framework.",
-          "SUMMARY: Private property owners may control access and restrict firearms.",
-          "GUIDANCE: If posted or asked to leave, leave immediately. Ranches, lodges, outfitters, hotels, private events, and leased lands may have their own rules."
-        ],
-        source: "Montana property/trespass framework."
+            "STATUTE / SOURCE: Federal facility and NPS framework.",
+            "SUMMARY: Wyoming travel often involves national parks, federal land, visitor centers, and federal buildings. State carry law does not override federal facility restrictions.",
+            "GUIDANCE: Distinguish outdoor carry from buildings/visitor centers/secure facilities."
+          ],
+        source: "Federal facility and NPS framework"
       },
       {
         title: "Alcohol / Impairment",
         risk: "Impairment Risk",
         body: [
-          "STATUTE / SOURCE: Montana weapons and impairment framework.",
-          "SUMMARY: Carrying while impaired can create legal, tactical, and evidentiary risk.",
-          "GUIDANCE: If alcohol or impairing substances are part of the plan, carrying should not be."
-        ],
-        source: "Montana weapons/intoxication framework."
+            "STATUTE / SOURCE: Wyoming weapons/intoxication framework.",
+            "SUMMARY: Carrying while impaired creates legal and tactical risk.",
+            "GUIDANCE: If drinking or impaired, do not carry."
+          ],
+        source: "Wyoming weapons/intoxication framework"
       },
       {
-        title: "Use of Force / Self-Defense",
-        risk: "Fact-Specific Legal Risk",
+        title: "State-Specific Traps",
+        risk: "Wyoming Trap List",
         body: [
-          "STATUTE / SOURCE: Montana self-defense law framework.",
-          "SUMMARY: Defensive force must be legally justified under the facts and applicable Montana law.",
-          "GUIDANCE: Avoid escalation, disengage when safe, call 911, identify evidence/witnesses, request counsel, and avoid detailed statements under stress."
-        ],
-        source: "Montana self-defense law framework."
+            "STATUTE / SOURCE: W.S. §§ 6-8-104, 6-8-105, 21-3-132.",
+            "SUMMARY: Common traps include assuming school employee rules apply to the public, ignoring federal/national park building restrictions, and thinking permitless carry applies across state lines.",
+            "GUIDANCE: Wyoming is permissive but context-specific."
+          ],
+        source: "W.S. §§ 6-8-104, 6-8-105, 21-3-132"
+      },
+      {
+        title: "Civil Liability / Aftermath",
+        risk: "Post-Incident Risk",
+        body: [
+            "STATUTE / SOURCE: Wyoming self-defense framework.",
+            "SUMMARY: A defensive incident can still create investigation and civil exposure.",
+            "GUIDANCE: Call 911, request help, identify evidence/witnesses, request counsel, and avoid detailed statements."
+          ],
+        source: "Wyoming self-defense framework"
       }
     ],
     [
       {
-        title: "Montana Carry Checklist",
+        title: "Wyoming Carry Decision Checklist",
         steps: [
-          "1. Confirm eligibility.",
-          "2. Check MCA § 45-8-316 carry framework.",
-          "3. Check school buildings under § 45-8-361.",
-          "4. Check public buildings/local rules under § 45-8-351.",
-          "5. Check federal and tribal land separately.",
-          "6. Check private property and lodge/event rules.",
-          "7. Check hunting/outdoor rules if applicable."
-        ]
-      }
-    ],
-    [
+            "1. Confirm eligibility and prohibited-person status.",
+            "2. Confirm whether permitless carry, recognized permit carry, or license-only carry applies.",
+            "3. Check Restricted & Sensitive Locations before entering.",
+            "4. Check vehicle carry and transport rules separately.",
+            "5. Check schools, courts, government/security-controlled locations, alcohol locations, private property, federal property, and tribal/campus/local restrictions where relevant.",
+            "6. During police contact, keep hands visible, do not reach, and answer lawful questions truthfully.",
+            "7. If any answer is uncertain, do not enter armed until verified."
+          ]
+      },
       {
-        title: "Glacier / Yellowstone Region Travel",
-        summary: "Montana travel often involves federal land, tribal land, park facilities, lodges, vehicles, and outdoor recreation.",
-        guidance: [
-          "Separate outdoor land from federal buildings.",
-          "Verify tribal land rules.",
-          "Check school/public building rules.",
-          "Check hunting/outdoor regulations."
-        ]
+        title: "Wyoming Vehicle / Travel Checklist",
+        steps: [
+            "1. Verify whether the firearm may be loaded and accessible in the vehicle.",
+            "2. Verify whether the destination creates a prohibited-location issue.",
+            "3. Distinguish vehicle possession from entering a building or property armed.",
+            "4. Check federal, tribal, campus, school, and posted property rules separately.",
+            "5. Keep permit/ID documentation available where relevant, but do not reach during a stop without instructions."
+          ]
       }
     ],
+    [],
     [
-      "Assuming Montana permitless carry means carry anywhere.",
-      "Ignoring school buildings under § 45-8-361.",
-      "Ignoring public building/local authority under § 45-8-351.",
-      "Assuming state law controls tribal land.",
-      "Assuming national park land equals visitor center permission.",
-      "Ignoring hunting/outdoor rules."
+      "Assuming a permissive state means carry anywhere.",
+      "Assuming reciprocity overrides restricted locations.",
+      "Ignoring school, court, government, alcohol, private property, federal, tribal, or campus restrictions.",
+      "Treating vehicle carry the same as carry on foot.",
+      "Failing to carry permit/ID documentation where relevant.",
+      "Reaching during a traffic stop.",
+      "Carrying while impaired.",
+      "Displaying a firearm to intimidate, win an argument, or end a non-deadly dispute.",
+      "Talking too much after a defensive incident."
     ],
     [
       "Eligibility checked.",
-      "Carry framework checked.",
-      "School buildings checked.",
-      "Public buildings/local rules checked.",
-      "Federal/tribal property checked.",
-      "Outdoor/hunting rules checked."
+      "Permit/reciprocity status checked.",
+      "Restricted & Sensitive Locations checked.",
+      "Vehicle carry/transport checked.",
+      "School/campus rules checked.",
+      "Court/government/security-controlled locations checked.",
+      "Alcohol/impaired carry risk checked.",
+      "Private property/posting checked.",
+      "Federal/tribal/local overlay checked where relevant.",
+      "Police-contact plan ready.",
+      "Legal-defense contact ready."
     ],
     [
       {
-        myth: "Montana permitless carry means there are no restrictions.",
-        reality: "No. School buildings, public buildings, private property, federal land, tribal land, and outdoor rules still matter."
+        myth: "Permitless carry means no rules.",
+        reality: "No. Permitless carry still depends on eligibility, location restrictions, private property, federal law, and the facts of the situation."
+      },
+      {
+        myth: "If my Michigan CPL is honored, I can carry anywhere.",
+        reality: "No. Reciprocity only answers recognition. It does not override restricted locations, vehicle rules, or state-specific prohibitions."
+      },
+      {
+        myth: "If I do not fire, display is not serious.",
+        reality: "No. A defensive display can still create criminal, civil, and evidentiary problems if not legally justified."
+      }
+    ]
+  ),
+
+  MT: makeProfile(
+    "Montana",
+    "Elite Deep Travel State",
+    "Montana is generally permitless and permissive for eligible adults, but important restrictions still apply in schools, government buildings, courts, correctional facilities, private property, federal land, national parks/buildings, alcohol/impaired contexts, and certain local or facility-specific settings. Montana’s outdoor/recreation context makes federal/property boundaries especially important.",
+    {
+      reciprocity: "Michigan CPL is treated as recognized; Montana also allows permitless carry for eligible persons.",
+      permitlessCarry: "Montana allows permitless carry for eligible persons in many places, subject to restrictions.",
+      concealedCarry: "A permit can still matter for reciprocity and specific legal contexts.",
+      openCarry: "Open carry is generally lawful for eligible persons, but restricted locations and private property matter.",
+      vehicleCarry: "Vehicle carry is generally permissive for eligible persons but federal/tribal/property restrictions matter.",
+      dutyToInform: "Verify current Montana police-contact rules; keep hands visible and answer lawful questions truthfully.",
+      privateSigns: "Private property owners may restrict access and ask armed persons to leave.",
+      forceLaw: "Montana self-defense law is fact-specific."
+    },
+    [
+      "Permitless carry does not mean carry anywhere.",
+      "Federal land, national parks/buildings, tribal land, and private ranch/property boundaries are major Montana issues.",
+      "Schools, courts, correctional facilities, and secure facilities require verification.",
+      "A permit may still matter outside Montana."
+    ],
+    [
+      {
+        title: "Permitless Carry / Eligibility",
+        risk: "Core Carry Rule",
+        body: [
+            "STATUTE / SOURCE: Montana firearms statutes / MCA Title 45 framework.",
+            "SUMMARY: Montana generally allows eligible persons to carry without a permit in many circumstances.",
+            "GUIDANCE: Verify eligibility, prohibited locations, and property/federal land status."
+          ],
+        source: "Montana firearms statutes / MCA Title 45 framework"
+      },
+      {
+        title: "Concealed Weapon Permit Value",
+        risk: "Permit / Reciprocity Context",
+        body: [
+            "STATUTE / SOURCE: MCA concealed weapon permit framework.",
+            "SUMMARY: Montana permits still matter for reciprocity outside Montana and may provide documentation value.",
+            "GUIDANCE: Permitless carry inside Montana does not travel into other states."
+          ],
+        source: "MCA concealed weapon permit framework"
+      },
+      {
+        title: "Restricted Locations",
+        risk: "Location Restriction",
+        body: [
+            "STATUTE / SOURCE: MCA firearms prohibited-place framework.",
+            "SUMMARY: Montana still restricts weapons in certain sensitive locations and facilities.",
+            "GUIDANCE: Verify schools, courts, correctional facilities, government/security-controlled buildings, and posted property."
+          ],
+        source: "MCA firearms prohibited-place framework"
+      },
+      {
+        title: "Schools",
+        risk: "Extreme Location Risk",
+        body: [
+            "STATUTE / SOURCE: Montana school firearms framework.",
+            "SUMMARY: School property and activities can create serious legal exposure.",
+            "GUIDANCE: Do not rely on permitless carry for school property."
+          ],
+        source: "Montana school firearms framework"
+      },
+      {
+        title: "Federal Land / National Parks / Tribal Land",
+        risk: "Federal and Separate Sovereignty Overlay",
+        body: [
+            "STATUTE / SOURCE: Federal, NPS, tribal law framework.",
+            "SUMMARY: Montana travel often involves federal land, national parks, forests, and tribal land. State carry permission may not control buildings, visitor centers, tribal property, or secure facilities.",
+            "GUIDANCE: Verify land ownership and building rules before carrying."
+          ],
+        source: "Federal, NPS, tribal law framework"
+      },
+      {
+        title: "Vehicle Carry",
+        risk: "Vehicle / Outdoor Travel Rule",
+        body: [
+            "STATUTE / SOURCE: Montana firearms/vehicle framework.",
+            "SUMMARY: Vehicle carry is generally permissive for eligible persons, but property boundaries, federal/tribal land, schools, and restricted facilities matter.",
+            "GUIDANCE: Rural travel does not remove legal boundaries."
+          ],
+        source: "Montana firearms/vehicle framework"
+      },
+      {
+        title: "Alcohol / Impairment",
+        risk: "Impairment Risk",
+        body: [
+            "STATUTE / SOURCE: Montana weapons/intoxication framework.",
+            "SUMMARY: Carrying while impaired creates legal and tactical risk.",
+            "GUIDANCE: If drinking or impaired, do not carry."
+          ],
+        source: "Montana weapons/intoxication framework"
+      },
+      {
+        title: "Private Property / Ranch Land",
+        risk: "Property Control",
+        body: [
+            "STATUTE / SOURCE: Montana trespass/property framework.",
+            "SUMMARY: Private landowners can control access and impose firearm restrictions.",
+            "GUIDANCE: Trespass/property disputes while armed are high-risk. Leave if asked."
+          ],
+        source: "Montana trespass/property framework"
+      },
+      {
+        title: "State-Specific Traps",
+        risk: "Montana Trap List",
+        body: [
+            "STATUTE / SOURCE: Montana firearms/property/federal land framework.",
+            "SUMMARY: Common traps include confusing public land with federal buildings, ignoring tribal land, carrying on private ranch land without permission, and assuming permitless carry overrides schools/courts.",
+            "GUIDANCE: Montana requires land/status awareness."
+          ],
+        source: "Montana firearms/property/federal land framework"
+      },
+      {
+        title: "Civil Liability / Aftermath",
+        risk: "Post-Incident Risk",
+        body: [
+            "STATUTE / SOURCE: Montana self-defense/civil framework.",
+            "SUMMARY: A defensive incident can still create investigation and civil exposure.",
+            "GUIDANCE: Call 911, request help, identify evidence/witnesses, request counsel, and avoid detailed statements."
+          ],
+        source: "Montana self-defense/civil framework"
+      }
+    ],
+    [
+      {
+        title: "Montana Carry Decision Checklist",
+        steps: [
+            "1. Confirm eligibility and prohibited-person status.",
+            "2. Confirm whether permitless carry, recognized permit carry, or license-only carry applies.",
+            "3. Check Restricted & Sensitive Locations before entering.",
+            "4. Check vehicle carry and transport rules separately.",
+            "5. Check schools, courts, government/security-controlled locations, alcohol locations, private property, federal property, and tribal/campus/local restrictions where relevant.",
+            "6. During police contact, keep hands visible, do not reach, and answer lawful questions truthfully.",
+            "7. If any answer is uncertain, do not enter armed until verified."
+          ]
+      },
+      {
+        title: "Montana Vehicle / Travel Checklist",
+        steps: [
+            "1. Verify whether the firearm may be loaded and accessible in the vehicle.",
+            "2. Verify whether the destination creates a prohibited-location issue.",
+            "3. Distinguish vehicle possession from entering a building or property armed.",
+            "4. Check federal, tribal, campus, school, and posted property rules separately.",
+            "5. Keep permit/ID documentation available where relevant, but do not reach during a stop without instructions."
+          ]
+      }
+    ],
+    [],
+    [
+      "Assuming a permissive state means carry anywhere.",
+      "Assuming reciprocity overrides restricted locations.",
+      "Ignoring school, court, government, alcohol, private property, federal, tribal, or campus restrictions.",
+      "Treating vehicle carry the same as carry on foot.",
+      "Failing to carry permit/ID documentation where relevant.",
+      "Reaching during a traffic stop.",
+      "Carrying while impaired.",
+      "Displaying a firearm to intimidate, win an argument, or end a non-deadly dispute.",
+      "Talking too much after a defensive incident."
+    ],
+    [
+      "Eligibility checked.",
+      "Permit/reciprocity status checked.",
+      "Restricted & Sensitive Locations checked.",
+      "Vehicle carry/transport checked.",
+      "School/campus rules checked.",
+      "Court/government/security-controlled locations checked.",
+      "Alcohol/impaired carry risk checked.",
+      "Private property/posting checked.",
+      "Federal/tribal/local overlay checked where relevant.",
+      "Police-contact plan ready.",
+      "Legal-defense contact ready."
+    ],
+    [
+      {
+        myth: "Permitless carry means no rules.",
+        reality: "No. Permitless carry still depends on eligibility, location restrictions, private property, federal law, and the facts of the situation."
+      },
+      {
+        myth: "If my Michigan CPL is honored, I can carry anywhere.",
+        reality: "No. Reciprocity only answers recognition. It does not override restricted locations, vehicle rules, or state-specific prohibitions."
+      },
+      {
+        myth: "If I do not fire, display is not serious.",
+        reality: "No. A defensive display can still create criminal, civil, and evidentiary problems if not legally justified."
       }
     ]
   ),
 
   ID: makeProfile(
     "Idaho",
-    "Law-Backed Ultra Expanded Travel State",
-    "Idaho is a generally permitless-carry state for eligible adults, but Idaho still has important restrictions involving school property, courthouses, jails, private property, alcohol/impairment, tribal land, federal property, vehicles, and enhanced-license reciprocity. Michigan members should not treat Idaho as rule-free simply because it is firearm-friendly.",
+    "Elite Deep Travel State",
+    "Idaho allows permitless concealed carry for eligible adults, with enhanced/non-enhanced licensing still important for reciprocity and certain location exceptions. Idaho remains strict in places such as courthouses, jails, juvenile detention facilities, schools, private property, federal property, and while impaired. Idaho is permissive, but schools and courthouses are major traps.",
     {
-      reciprocity: "Michigan CPL recognition should be verified before travel. Idaho also allows permitless carry for eligible persons under Idaho Code § 18-3302.",
-      permitlessCarry: "Idaho Code § 18-3302: eligible persons may carry concealed without a license in many circumstances, subject to statutory restrictions.",
-      concealedCarry: "Idaho recognizes concealed carry licenses and also has standard and enhanced concealed weapon license systems.",
-      openCarry: "Open carry is generally lawful for eligible persons, but prohibited places, private property, and public conduct still matter.",
-      vehicleCarry: "Vehicle carry must still comply with Idaho law, school restrictions, private property, and federal/tribal land overlays.",
-      dutyToInform: "Verify current Idaho police-contact rules. Keep hands visible and answer lawful questions truthfully.",
-      privateSigns: "Private property owners may restrict firearms. Leave immediately if asked.",
-      forceLaw: "Idaho self-defense law is fact-specific and must be evaluated under the circumstances."
+      reciprocity: "Michigan CPL is treated as recognized; Idaho also has permitless concealed carry for eligible adults.",
+      permitlessCarry: "Idaho Code § 18-3302 allows permitless concealed carry for eligible adults under statutory conditions.",
+      concealedCarry: "Permitless carry exists, but Idaho licenses still matter for reciprocity and enhanced-permit contexts.",
+      openCarry: "Open carry is generally lawful for eligible persons, but prohibited places and private property matter.",
+      vehicleCarry: "Vehicle carry is generally permissive for eligible persons but restricted locations and school issues matter.",
+      dutyToInform: "Verify current Idaho police-contact rules; keep hands visible and answer lawful questions truthfully.",
+      privateSigns: "Private property owners may restrict carry; leave if asked.",
+      forceLaw: "Idaho self-defense law is fact-specific."
     },
     [
-      "Idaho is generally permissive, but not unrestricted.",
-      "Schools, courthouses, jails, juvenile detention facilities, private property, federal buildings, and tribal land require separate analysis.",
-      "An Idaho enhanced license can matter for reciprocity outside Idaho, but permitless carry inside Idaho does not automatically travel to other states.",
-      "Federal school-zone law may still matter, especially for unlicensed carry near schools.",
-      "Outdoor travel can involve state land, federal land, tribal land, hunting rules, and private ranch/property restrictions."
+      "Idaho permitless carry does not override courthouses, jails, juvenile detention facilities, or schools.",
+      "Enhanced license rules may matter in specific contexts.",
+      "Federal school-zone law can matter near schools.",
+      "Do not carry while consuming alcohol or under influence."
     ],
     [
       {
-        title: "Permitless Concealed Carry",
-        risk: "Core Eligibility Rule",
+        title: "Permitless Carry / Eligibility",
+        risk: "Core Carry Rule",
         body: [
-          "STATUTE: Idaho Code § 18-3302.",
-          "SUMMARY: Idaho law includes exceptions to the concealed-weapon license requirement and generally permits concealed carry by eligible persons under the statutory framework.",
-          "GUIDANCE: Do not teach Idaho as no-rules carry. Eligibility, age, prohibited-person status, prohibited locations, school zones, private property, and federal/tribal overlays still matter."
-        ],
-        source: "Idaho Code § 18-3302."
+            "STATUTE / SOURCE: Idaho Code § 18-3302.",
+            "SUMMARY: Idaho allows eligible adults to carry concealed without a license under statutory conditions.",
+            "GUIDANCE: Verify age, eligibility, and location restrictions before relying on permitless carry."
+          ],
+        source: "Idaho Code § 18-3302"
       },
       {
-        title: "Standard and Enhanced Concealed Weapon Licenses",
-        risk: "License / Reciprocity Context",
+        title: "Concealed Weapons License / Enhanced License",
+        risk: "Permit Value",
         body: [
-          "STATUTE: Idaho Code § 18-3302 and § 18-3302K.",
-          "SUMMARY: Idaho has concealed weapon license provisions, including enhanced license provisions that may affect reciprocity outside Idaho.",
-          "GUIDANCE: Even in a permitless state, a license can matter for travel, reciprocity, federal school-zone exceptions, and documentation."
-        ],
-        source: "Idaho Code § 18-3302; Idaho Code § 18-3302K."
+            "STATUTE / SOURCE: Idaho Code §§ 18-3302, 18-3302K framework.",
+            "SUMMARY: Idaho licensing, including enhanced licensing, can matter for reciprocity and specific legal contexts.",
+            "GUIDANCE: Permitless carry inside Idaho does not replace the value of licensing for travel."
+          ],
+        source: "Idaho Code §§ 18-3302, 18-3302K framework"
       },
       {
-        title: "Schools / Federal School Zone Overlay",
-        risk: "Extreme Risk Area",
+        title: "Prohibited Conduct / Restricted Locations",
+        risk: "Major Location Restriction",
         body: [
-          "STATUTE / SOURCE: Idaho school weapons framework; federal Gun-Free School Zones Act.",
-          "SUMMARY: School property and school-zone areas are high-risk locations. Federal law can add restrictions separate from Idaho carry permission.",
-          "GUIDANCE: Do not assume permitless carry resolves school-zone issues. School pickup, events, parking lots, and school-adjacent travel should be verify-first situations."
-        ],
-        source: "Idaho school weapons framework; 18 U.S.C. § 922(q)."
+            "STATUTE / SOURCE: Idaho Code § 18-3302C.",
+            "SUMMARY: Idaho restricts concealed weapons in places such as courthouses, juvenile detention facilities, jails, and schools, subject to exceptions.",
+            "GUIDANCE: Treat § 18-3302C as a primary Idaho carry-risk statute."
+          ],
+        source: "Idaho Code § 18-3302C"
       },
       {
-        title: "Courthouses / Jails / Detention Facilities",
-        risk: "Hard Stop Area",
+        title: "Schools",
+        risk: "Extreme Location Risk",
         body: [
-          "STATUTE / SOURCE: Idaho prohibited-place and facility framework.",
-          "SUMMARY: Courthouses, jails, juvenile detention facilities, correctional facilities, and secure government facilities may restrict weapons.",
-          "GUIDANCE: Do not approach screening or controlled facility entrances armed unless a clear legal exception applies."
-        ],
-        source: "Idaho weapons/prohibited-place framework."
+            "STATUTE / SOURCE: Idaho Code §§ 18-3302C, 18-3302D; federal school-zone framework.",
+            "SUMMARY: School rules are a major trap in Idaho, especially for permitless carry and federal school-zone issues.",
+            "GUIDANCE: School buildings, grounds, events, and parking areas should be verify-first."
+          ],
+        source: "Idaho Code §§ 18-3302C, 18-3302D; federal school-zone framework"
       },
       {
-        title: "Private Property / Posted Locations",
-        risk: "Property Control",
+        title: "Courthouses / Jails / Juvenile Detention",
+        risk: "Hard Stop Areas",
         body: [
-          "STATUTE / SOURCE: Idaho property/trespass framework.",
-          "SUMMARY: Private property owners and businesses may restrict firearms and require people to leave.",
-          "GUIDANCE: If posted or asked to leave, leave immediately. Do not argue with staff, security, landowners, or event personnel."
-        ],
-        source: "Idaho property/trespass framework."
+            "STATUTE / SOURCE: Idaho Code § 18-3302C.",
+            "SUMMARY: Idaho restricts concealed carry in courthouses, jails, and juvenile detention facilities.",
+            "GUIDANCE: Do not approach courthouse or detention security armed unless a specific exception applies."
+          ],
+        source: "Idaho Code § 18-3302C"
       },
       {
-        title: "Federal / Tribal / Outdoor Land",
-        risk: "Land Jurisdiction Risk",
+        title: "Vehicle Carry",
+        risk: "Vehicle Rule",
         body: [
-          "STATUTE / SOURCE: Federal facility, national park, tribal, and public land framework.",
-          "SUMMARY: Idaho carry permission does not override federal buildings, tribal law, national park facility rules, visitor centers, post offices, or private ranch/property restrictions.",
-          "GUIDANCE: Separate the land you are on from the building you enter. Federal land, tribal land, and private land can change the legal analysis."
-        ],
-        source: "Federal facility framework; tribal law framework; Idaho public/private land framework."
+            "STATUTE / SOURCE: Idaho Code § 18-3302 framework.",
+            "SUMMARY: Vehicle carry is generally permissive for eligible persons, but schools, private property, and restricted facilities still matter.",
+            "GUIDANCE: Keep hands visible during stops and avoid reaching."
+          ],
+        source: "Idaho Code § 18-3302 framework"
       },
       {
         title: "Alcohol / Impairment",
         risk: "Impairment Risk",
         body: [
-          "STATUTE / SOURCE: Idaho weapons and impairment framework.",
-          "SUMMARY: Carrying while intoxicated or impaired can create legal, tactical, and evidentiary risk.",
-          "GUIDANCE: If alcohol or impairing substances are part of the plan, carrying should not be."
-        ],
-        source: "Idaho weapons/intoxication framework."
+            "STATUTE / SOURCE: Idaho concealed carry / weapons framework.",
+            "SUMMARY: Carrying while consuming alcohol or under the influence can create legal risk.",
+            "GUIDANCE: If drinking or impaired, do not carry."
+          ],
+        source: "Idaho concealed carry / weapons framework"
       },
       {
-        title: "Use of Force / Self-Defense",
-        risk: "Fact-Specific Legal Risk",
+        title: "Private Property",
+        risk: "Property Control",
         body: [
-          "STATUTE / SOURCE: Idaho self-defense law framework.",
-          "SUMMARY: Defensive force must be legally justified under the facts and applicable Idaho law.",
-          "GUIDANCE: Avoid escalation, disengage when safe, call 911, identify evidence/witnesses, request counsel, and avoid detailed statements under stress."
-        ],
-        source: "Idaho self-defense law framework."
+            "STATUTE / SOURCE: Idaho property/trespass framework.",
+            "SUMMARY: Private property owners and businesses may restrict weapons on their property.",
+            "GUIDANCE: Leave immediately if asked."
+          ],
+        source: "Idaho property/trespass framework"
+      },
+      {
+        title: "State-Specific Traps",
+        risk: "Idaho Trap List",
+        body: [
+            "STATUTE / SOURCE: Idaho Code §§ 18-3302, 18-3302C, 18-3302D.",
+            "SUMMARY: Common traps include carrying into courthouses, assuming permitless carry solves school-zone issues, and ignoring enhanced-permit distinctions.",
+            "GUIDANCE: Idaho is permissive but not unrestricted."
+          ],
+        source: "Idaho Code §§ 18-3302, 18-3302C, 18-3302D"
+      },
+      {
+        title: "Civil Liability / Aftermath",
+        risk: "Post-Incident Risk",
+        body: [
+            "STATUTE / SOURCE: Idaho self-defense framework.",
+            "SUMMARY: A defensive incident can still be investigated and litigated.",
+            "GUIDANCE: Call 911, request help, identify evidence/witnesses, request counsel, and avoid detailed statements."
+          ],
+        source: "Idaho self-defense framework"
       }
     ],
     [
       {
-        title: "Idaho Carry Checklist",
+        title: "Idaho Carry Decision Checklist",
         steps: [
-          "1. Confirm eligibility under Idaho Code § 18-3302.",
-          "2. Check whether a license is needed for reciprocity or federal school-zone purposes.",
-          "3. Check school property and school-zone issues.",
-          "4. Check courthouses, jails, and secure government facilities.",
-          "5. Check private property, tribal land, federal buildings, and outdoor land rules.",
-          "6. Avoid carry while impaired."
-        ]
-      }
-    ],
-    [
+            "1. Confirm eligibility and prohibited-person status.",
+            "2. Confirm whether permitless carry, recognized permit carry, or license-only carry applies.",
+            "3. Check Restricted & Sensitive Locations before entering.",
+            "4. Check vehicle carry and transport rules separately.",
+            "5. Check schools, courts, government/security-controlled locations, alcohol locations, private property, federal property, and tribal/campus/local restrictions where relevant.",
+            "6. During police contact, keep hands visible, do not reach, and answer lawful questions truthfully.",
+            "7. If any answer is uncertain, do not enter armed until verified."
+          ]
+      },
       {
-        title: "Idaho Outdoor / Mountain Travel",
-        summary: "Idaho travel often involves highways, parks, federal land, tribal land, private ranches, and outdoor recreation.",
-        guidance: [
-          "Verify the jurisdiction of the land and building.",
-          "Check school-zone issues near towns.",
-          "Check private property and ranch/lodge policies.",
-          "Do not assume federal or tribal property follows Idaho law."
-        ]
+        title: "Idaho Vehicle / Travel Checklist",
+        steps: [
+            "1. Verify whether the firearm may be loaded and accessible in the vehicle.",
+            "2. Verify whether the destination creates a prohibited-location issue.",
+            "3. Distinguish vehicle possession from entering a building or property armed.",
+            "4. Check federal, tribal, campus, school, and posted property rules separately.",
+            "5. Keep permit/ID documentation available where relevant, but do not reach during a stop without instructions."
+          ]
       }
     ],
+    [],
     [
-      "Assuming Idaho permitless carry means carry anywhere.",
-      "Ignoring federal school-zone issues.",
-      "Ignoring courthouses, jails, and detention facilities.",
-      "Assuming state law controls tribal land.",
-      "Assuming national park land equals visitor center permission.",
-      "Ignoring private property and ranch/lodge rules."
+      "Assuming a permissive state means carry anywhere.",
+      "Assuming reciprocity overrides restricted locations.",
+      "Ignoring school, court, government, alcohol, private property, federal, tribal, or campus restrictions.",
+      "Treating vehicle carry the same as carry on foot.",
+      "Failing to carry permit/ID documentation where relevant.",
+      "Reaching during a traffic stop.",
+      "Carrying while impaired.",
+      "Displaying a firearm to intimidate, win an argument, or end a non-deadly dispute.",
+      "Talking too much after a defensive incident."
     ],
     [
       "Eligibility checked.",
-      "License/reciprocity needs checked.",
-      "School-zone issues checked.",
-      "Court/jail/government facilities checked.",
-      "Federal/tribal/private property checked.",
-      "Outdoor/hunting rules checked."
+      "Permit/reciprocity status checked.",
+      "Restricted & Sensitive Locations checked.",
+      "Vehicle carry/transport checked.",
+      "School/campus rules checked.",
+      "Court/government/security-controlled locations checked.",
+      "Alcohol/impaired carry risk checked.",
+      "Private property/posting checked.",
+      "Federal/tribal/local overlay checked where relevant.",
+      "Police-contact plan ready.",
+      "Legal-defense contact ready."
     ],
     [
       {
-        myth: "Idaho is permitless, so there are no restrictions.",
-        reality: "No. Idaho is permissive, but schools, federal property, tribal land, private property, jails, courts, and impairment rules still matter."
+        myth: "Permitless carry means no rules.",
+        reality: "No. Permitless carry still depends on eligibility, location restrictions, private property, federal law, and the facts of the situation."
+      },
+      {
+        myth: "If my Michigan CPL is honored, I can carry anywhere.",
+        reality: "No. Reciprocity only answers recognition. It does not override restricted locations, vehicle rules, or state-specific prohibitions."
+      },
+      {
+        myth: "If I do not fire, display is not serious.",
+        reality: "No. A defensive display can still create criminal, civil, and evidentiary problems if not legally justified."
       }
     ]
   ),
 
   ND: makeProfile(
     "North Dakota",
-    "Law-Backed Ultra Expanded Travel State",
-    "North Dakota allows constitutional concealed carry for eligible individuals within North Dakota, but the state still has important requirements involving eligibility, identification, police notification, restricted locations, school property, private property, vehicles, and reciprocity outside North Dakota.",
+    "Elite Deep Travel State",
+    "North Dakota allows constitutional concealed carry for eligible adults, including certain nonresidents under updated rules, but it still has restrictions involving prohibited persons, schools, public gatherings, alcohol establishments, correctional facilities, courthouses, private property, vehicles, and federal property. North Dakota is permissive, but carrying without understanding location rules can still create serious exposure.",
     {
-      reciprocity: "Michigan CPL recognition should be verified before travel. North Dakota also has constitutional concealed carry for eligible individuals within North Dakota.",
-      permitlessCarry: "N.D. constitutional carry allows concealed carry by eligible individuals within North Dakota, subject to identification and eligibility requirements.",
-      concealedCarry: "N.D.C.C. Chapter 62.1-04 governs concealed weapons and concealed weapon licenses.",
-      openCarry: "Open carry and firearm possession must still comply with North Dakota weapons law and restricted-location rules.",
-      vehicleCarry: "Vehicle carry must be analyzed under North Dakota weapons law and police-contact requirements.",
-      dutyToInform: "North Dakota constitutional carry has a law-enforcement notification requirement for permitless concealed carry.",
-      privateSigns: "Private property owners may restrict firearms. Leave if asked.",
+      reciprocity: "Michigan CPL is treated as recognized; North Dakota also has constitutional concealed carry for eligible adults.",
+      permitlessCarry: "N.D.C.C. § 62.1-04-02 and AG guidance describe constitutional concealed carry eligibility.",
+      concealedCarry: "Permitless carry applies only to eligible persons; licenses still matter for reciprocity.",
+      openCarry: "Open carry may have time/place and loaded/unloaded distinctions; verify current law.",
+      vehicleCarry: "Vehicle carry must be checked against loaded firearm and concealed carry rules.",
+      dutyToInform: "Verify current North Dakota contact rules; keep hands visible and answer lawful questions truthfully.",
+      privateSigns: "Private property and posted restrictions matter.",
       forceLaw: "North Dakota self-defense law is fact-specific."
     },
     [
-      "North Dakota constitutional carry is within North Dakota only and does not create reciprocity in other states.",
-      "The Attorney General warns that a concealed weapon license is needed for reciprocity outside North Dakota.",
-      "Eligible permitless carriers must understand identification and law-enforcement notification requirements.",
-      "Schools, courts, posted private property, federal property, and tribal property require separate analysis.",
-      "A North Dakota license may still matter for travel even if permitless carry exists inside North Dakota."
+      "Constitutional carry has eligibility requirements.",
+      "Open carry and vehicle carry can involve distinct rules.",
+      "Schools, public gatherings, alcohol establishments, courthouses, and correctional settings require verification.",
+      "A license can still matter for travel outside North Dakota."
     ],
     [
       {
         title: "Constitutional Concealed Carry",
-        risk: "Core Eligibility Rule",
+        risk: "Core Carry Rule",
         body: [
-          "STATUTE / SOURCE: N.D.C.C. Chapter 62.1-04; North Dakota Attorney General constitutional carry guidance.",
-          "SUMMARY: North Dakota allows constitutional concealed carry by eligible individuals within North Dakota, subject to statutory requirements.",
-          "GUIDANCE: Constitutional carry does not apply outside North Dakota and does not replace a license for reciprocity in other states."
-        ],
-        source: "N.D.C.C. Chapter 62.1-04; North Dakota Attorney General constitutional carry guidance."
+            "STATUTE / SOURCE: N.D.C.C. § 62.1-04-02; ND Attorney General guidance.",
+            "SUMMARY: North Dakota allows qualifying individuals to carry concealed without a permit under constitutional carry rules.",
+            "GUIDANCE: Verify eligibility and location restrictions before relying on permitless carry."
+          ],
+        source: "N.D.C.C. § 62.1-04-02; ND Attorney General guidance"
       },
       {
-        title: "Identification and Police Notification",
-        risk: "Police Contact Requirement",
+        title: "License Value / Reciprocity",
+        risk: "Permit Usefulness",
         body: [
-          "STATUTE / SOURCE: N.D.C.C. § 62.1-04-02 and Attorney General guidance.",
-          "SUMMARY: North Dakota permitless concealed carry requires eligible individuals to carry qualifying identification and notify law enforcement during stops under the constitutional carry framework.",
-          "GUIDANCE: Keep hands visible and disclose calmly if stopped while carrying under permitless carry. Do not reach for ID or the firearm until instructed."
-        ],
-        source: "N.D.C.C. § 62.1-04-02; North Dakota Attorney General guidance."
+            "STATUTE / SOURCE: N.D.C.C. § 62.1-04-03 framework.",
+            "SUMMARY: North Dakota licenses still matter for reciprocity outside the state and documentation.",
+            "GUIDANCE: Permitless carry inside North Dakota does not travel everywhere."
+          ],
+        source: "N.D.C.C. § 62.1-04-03 framework"
       },
       {
-        title: "Concealed Weapon License / Reciprocity",
-        risk: "Travel Outside State",
-        body: [
-          "STATUTE: N.D.C.C. § 62.1-04-03.",
-          "SUMMARY: North Dakota issues concealed weapon licenses, including Class 1 and Class 2 licenses, under the statutory framework.",
-          "GUIDANCE: A license may be necessary for reciprocity outside North Dakota. Permitless carry inside North Dakota does not travel with the user."
-        ],
-        source: "N.D.C.C. § 62.1-04-03; North Dakota Attorney General concealed weapon license guidance."
-      },
-      {
-        title: "Schools / Educational Property",
-        risk: "Extreme Risk Area",
-        body: [
-          "STATUTE / SOURCE: North Dakota school weapons framework; federal school-zone framework.",
-          "SUMMARY: Schools and school-related property are high-risk areas under state and federal law.",
-          "GUIDANCE: Do not rely on a short reciprocity or permitless carry summary for school pickup, events, or campus areas. Verify before entering armed."
-        ],
-        source: "North Dakota weapons/school framework; 18 U.S.C. § 922(q)."
-      },
-      {
-        title: "Restricted Locations / Government Facilities",
+        title: "Prohibited Places / Public Gatherings",
         risk: "Location Restriction",
         body: [
-          "STATUTE / SOURCE: North Dakota weapons and facility framework.",
-          "SUMMARY: Courts, jails, law-enforcement facilities, government buildings, schools, federal property, and tribal property may restrict firearms.",
-          "GUIDANCE: Treat controlled facilities and screened entrances as verify-first locations."
-        ],
-        source: "North Dakota weapons/prohibited-place framework."
+            "STATUTE / SOURCE: N.D.C.C. firearms prohibited-place framework.",
+            "SUMMARY: North Dakota law restricts firearms in certain locations and contexts, including schools and other sensitive/public settings.",
+            "GUIDANCE: Verify the destination before carrying into public gatherings, government settings, or controlled facilities."
+          ],
+        source: "N.D.C.C. firearms prohibited-place framework"
       },
       {
-        title: "Private Property / Posted Locations",
+        title: "Schools",
+        risk: "Extreme Location Risk",
+        body: [
+            "STATUTE / SOURCE: N.D.C.C. school weapons framework.",
+            "SUMMARY: School property and school activities can create serious legal exposure.",
+            "GUIDANCE: Treat schools, parking areas, buses, and activities as verify-first."
+          ],
+        source: "N.D.C.C. school weapons framework"
+      },
+      {
+        title: "Vehicle Carry",
+        risk: "Vehicle / Loaded Firearm Risk",
+        body: [
+            "STATUTE / SOURCE: North Dakota vehicle firearms framework.",
+            "SUMMARY: Vehicle carry can involve loaded/unloaded and accessibility issues.",
+            "GUIDANCE: Do not assume constitutional concealed carry answers every vehicle question."
+          ],
+        source: "North Dakota vehicle firearms framework"
+      },
+      {
+        title: "Alcohol / Impairment",
+        risk: "Impairment Risk",
+        body: [
+            "STATUTE / SOURCE: North Dakota weapons/intoxication framework.",
+            "SUMMARY: Carrying in alcohol-related locations or while impaired can create serious risk.",
+            "GUIDANCE: If drinking or impaired, do not carry."
+          ],
+        source: "North Dakota weapons/intoxication framework"
+      },
+      {
+        title: "Courts / Correctional Facilities",
+        risk: "Hard Stop Areas",
+        body: [
+            "STATUTE / SOURCE: North Dakota restricted facility framework.",
+            "SUMMARY: Courthouses, jails, correctional facilities, and law-enforcement controlled buildings require special caution.",
+            "GUIDANCE: Verify before entering any security-controlled facility."
+          ],
+        source: "North Dakota restricted facility framework"
+      },
+      {
+        title: "Private Property",
         risk: "Property Control",
         body: [
-          "STATUTE / SOURCE: North Dakota property/trespass framework.",
-          "SUMMARY: Private property owners may restrict firearms and require armed persons to leave.",
-          "GUIDANCE: If posted or asked to leave, leave immediately."
-        ],
-        source: "North Dakota property/trespass framework."
+            "STATUTE / SOURCE: North Dakota property/trespass framework.",
+            "SUMMARY: Private property owners may restrict carry and require armed persons to leave.",
+            "GUIDANCE: Leave immediately if asked."
+          ],
+        source: "North Dakota property/trespass framework"
       },
       {
-        title: "Tribal Land / Federal Property",
-        risk: "Jurisdiction Overlay",
+        title: "State-Specific Traps",
+        risk: "North Dakota Trap List",
         body: [
-          "STATUTE / SOURCE: Federal facility, postal property, tribal law, and North Dakota public land framework.",
-          "SUMMARY: North Dakota carry permission does not override federal buildings, post offices, tribal law, or other jurisdictional restrictions.",
-          "GUIDANCE: Verify tribal law and federal rules before carrying on reservations, tribal casinos, federal buildings, or posted federal property."
-        ],
-        source: "Federal facility framework; tribal law framework."
+            "STATUTE / SOURCE: N.D.C.C. § 62.1-04-02 and firearms framework.",
+            "SUMMARY: Common traps include assuming constitutional carry applies to everyone, ignoring vehicle loaded-firearm rules, and treating school/public gathering restrictions casually.",
+            "GUIDANCE: Constitutional carry is conditional carry."
+          ],
+        source: "N.D.C.C. § 62.1-04-02 and firearms framework"
       },
       {
-        title: "Use of Force / Self-Defense",
-        risk: "Fact-Specific Legal Risk",
+        title: "Civil Liability / Aftermath",
+        risk: "Post-Incident Risk",
         body: [
-          "STATUTE / SOURCE: North Dakota self-defense law framework.",
-          "SUMMARY: Defensive force must be legally justified under the facts and applicable North Dakota law.",
-          "GUIDANCE: Avoid escalation, disengage when safe, call 911, identify evidence/witnesses, request counsel, and avoid detailed statements under stress."
-        ],
-        source: "North Dakota self-defense law framework."
+            "STATUTE / SOURCE: North Dakota self-defense framework.",
+            "SUMMARY: A defensive incident can still trigger investigation and civil exposure.",
+            "GUIDANCE: Call 911, request help, identify evidence/witnesses, request counsel, and avoid detailed statements."
+          ],
+        source: "North Dakota self-defense framework"
       }
     ],
     [
       {
-        title: "North Dakota Carry Checklist",
+        title: "North Dakota Carry Decision Checklist",
         steps: [
-          "1. Confirm eligibility for constitutional carry.",
-          "2. Carry qualifying ID if relying on permitless carry.",
-          "3. Know the law-enforcement notification rule.",
-          "4. Check schools, courts, jails, and government facilities.",
-          "5. Check tribal and federal property separately.",
-          "6. Remember permitless carry does not create out-of-state reciprocity."
-        ]
-      }
-    ],
-    [
+            "1. Confirm eligibility and prohibited-person status.",
+            "2. Confirm whether permitless carry, recognized permit carry, or license-only carry applies.",
+            "3. Check Restricted & Sensitive Locations before entering.",
+            "4. Check vehicle carry and transport rules separately.",
+            "5. Check schools, courts, government/security-controlled locations, alcohol locations, private property, federal property, and tribal/campus/local restrictions where relevant.",
+            "6. During police contact, keep hands visible, do not reach, and answer lawful questions truthfully.",
+            "7. If any answer is uncertain, do not enter armed until verified."
+          ]
+      },
       {
-        title: "Rural / Tribal Land Travel",
-        summary: "North Dakota travel may involve rural highways, tribal land, federal facilities, and long-distance vehicle travel.",
-        guidance: [
-          "Verify tribal jurisdiction.",
-          "Carry ID if permitless carrying.",
-          "Know notification requirements.",
-          "Check federal and private property."
-        ]
+        title: "North Dakota Vehicle / Travel Checklist",
+        steps: [
+            "1. Verify whether the firearm may be loaded and accessible in the vehicle.",
+            "2. Verify whether the destination creates a prohibited-location issue.",
+            "3. Distinguish vehicle possession from entering a building or property armed.",
+            "4. Check federal, tribal, campus, school, and posted property rules separately.",
+            "5. Keep permit/ID documentation available where relevant, but do not reach during a stop without instructions."
+          ]
       }
     ],
+    [],
     [
-      "Assuming constitutional carry works outside North Dakota.",
-      "Failing to carry ID while permitless carrying.",
-      "Failing to notify law enforcement when required.",
-      "Ignoring tribal land.",
-      "Ignoring federal property.",
-      "Assuming permitless carry replaces a license for reciprocity."
+      "Assuming a permissive state means carry anywhere.",
+      "Assuming reciprocity overrides restricted locations.",
+      "Ignoring school, court, government, alcohol, private property, federal, tribal, or campus restrictions.",
+      "Treating vehicle carry the same as carry on foot.",
+      "Failing to carry permit/ID documentation where relevant.",
+      "Reaching during a traffic stop.",
+      "Carrying while impaired.",
+      "Displaying a firearm to intimidate, win an argument, or end a non-deadly dispute.",
+      "Talking too much after a defensive incident."
     ],
     [
       "Eligibility checked.",
-      "ID carried.",
-      "Police notification rule understood.",
-      "Schools/courts/government facilities checked.",
-      "Tribal/federal property checked.",
-      "Reciprocity outside ND checked."
+      "Permit/reciprocity status checked.",
+      "Restricted & Sensitive Locations checked.",
+      "Vehicle carry/transport checked.",
+      "School/campus rules checked.",
+      "Court/government/security-controlled locations checked.",
+      "Alcohol/impaired carry risk checked.",
+      "Private property/posting checked.",
+      "Federal/tribal/local overlay checked where relevant.",
+      "Police-contact plan ready.",
+      "Legal-defense contact ready."
     ],
     [
       {
-        myth: "North Dakota constitutional carry lets me carry in other states.",
-        reality: "No. North Dakota Attorney General guidance says constitutional carry is within North Dakota; reciprocity outside the state requires a valid license."
+        myth: "Permitless carry means no rules.",
+        reality: "No. Permitless carry still depends on eligibility, location restrictions, private property, federal law, and the facts of the situation."
+      },
+      {
+        myth: "If my Michigan CPL is honored, I can carry anywhere.",
+        reality: "No. Reciprocity only answers recognition. It does not override restricted locations, vehicle rules, or state-specific prohibitions."
+      },
+      {
+        myth: "If I do not fire, display is not serious.",
+        reality: "No. A defensive display can still create criminal, civil, and evidentiary problems if not legally justified."
       }
     ]
   ),
 
   SD: makeProfile(
     "South Dakota",
-    "Law-Backed Ultra Expanded Travel State",
-    "South Dakota is a permitless carry state for eligible persons, but it still has important restrictions involving schools, county courthouses, the State Capitol, vehicles, private property, tribal land, federal property, and self-defense conduct. South Dakota also issues regular, gold card, and enhanced permits that may matter for reciprocity outside the state.",
+    "Elite Deep Travel State",
+    "South Dakota is a permitless carry state for eligible persons, but it still has restrictions involving schools, courthouses, public buildings, alcohol/impaired conduct, vehicles, private property, tribal land, federal property, and permit value for reciprocity. South Dakota is permissive, but state and tribal/federal boundaries matter.",
     {
-      reciprocity: "Michigan CPL recognition should be verified before travel. South Dakota also allows permitless carry for eligible persons.",
-      permitlessCarry: "S.D. Codified Laws Chapter 23-7: South Dakota does not impose a general permit requirement for carrying a concealed pistol.",
-      concealedCarry: "South Dakota issues concealed pistol permits, including enhanced permits, but eligible persons may carry without a permit inside the state subject to restrictions.",
-      openCarry: "Open carry may be lawful for eligible persons, but restricted locations and conduct still matter.",
-      vehicleCarry: "Vehicle carry is generally permissive for eligible persons, but schools, courthouses, tribal land, and federal property still require analysis.",
-      dutyToInform: "Verify current South Dakota police-contact rules. Keep hands visible and answer lawful questions truthfully.",
-      privateSigns: "Private property and posted locations still matter. Leave if asked.",
+      reciprocity: "Michigan CPL is treated as recognized; South Dakota also allows permitless carry for eligible persons.",
+      permitlessCarry: "South Dakota allows permitless concealed carry for eligible persons under state law.",
+      concealedCarry: "Permitless carry exists, but permits still matter for reciprocity and documentation.",
+      openCarry: "Open carry is generally lawful for eligible persons, subject to restricted places and private property.",
+      vehicleCarry: "Vehicle carry is generally permissive but still subject to prohibited-person, school, tribal/federal, and property restrictions.",
+      dutyToInform: "Verify current South Dakota police-contact rules; keep hands visible and answer lawful questions truthfully.",
+      privateSigns: "Private property and posted locations matter.",
       forceLaw: "South Dakota self-defense law is fact-specific."
     },
     [
-      "South Dakota permitless carry does not mean unrestricted carry.",
-      "County courthouses, the State Capitol, and elementary/secondary schools are key restricted areas.",
-      "Tribal land can have separate rules and should be verified before carry.",
-      "South Dakota permits may still matter for reciprocity in other states.",
-      "Outdoor travel, hunting, federal land, and private ranch/property rules should be checked separately."
+      "Permitless carry does not override schools, courthouses, tribal land, or federal property.",
+      "South Dakota travel often involves tribal land and federal/national park areas that require separate analysis.",
+      "A permit may still matter outside South Dakota.",
+      "Impairment and alcohol contexts create significant risk."
     ],
     [
       {
-        title: "Permitless Carry / Concealed Pistol Framework",
-        risk: "Core Eligibility Rule",
+        title: "Permitless Carry",
+        risk: "Core Carry Rule",
         body: [
-          "STATUTE: S.D. Codified Laws Chapter 23-7.",
-          "SUMMARY: South Dakota law does not impose a general prohibition on carrying a concealed pistol without a permit, subject to legal eligibility and location restrictions.",
-          "GUIDANCE: Do not treat permitless carry as carry anywhere. Restricted locations and prohibited-person rules still matter."
-        ],
-        source: "S.D. Codified Laws Chapter 23-7."
+            "STATUTE / SOURCE: S.D. concealed pistol permit / permitless carry framework.",
+            "SUMMARY: South Dakota allows eligible persons to carry concealed without a permit under state law.",
+            "GUIDANCE: Verify eligibility and restricted places before carrying."
+          ],
+        source: "S.D. concealed pistol permit / permitless carry framework"
       },
       {
-        title: "Concealed Pistol Permits / Reciprocity",
-        risk: "Travel Outside State",
+        title: "Permit Value / Reciprocity",
+        risk: "Permit Usefulness",
         body: [
-          "STATUTE: S.D. Codified Laws § 23-7-7 and related permit statutes.",
-          "SUMMARY: South Dakota issues concealed pistol permits through county sheriffs, including enhanced permit options.",
-          "GUIDANCE: A South Dakota permit may matter for reciprocity outside the state even if permitless carry applies inside South Dakota."
-        ],
-        source: "S.D. Codified Laws § 23-7-7; South Dakota Secretary of State concealed pistol permit guidance."
+            "STATUTE / SOURCE: S.D. concealed pistol permit framework.",
+            "SUMMARY: South Dakota permits can still matter for reciprocity outside the state and documentation.",
+            "GUIDANCE: Permitless carry does not travel across state lines automatically."
+          ],
+        source: "S.D. concealed pistol permit framework"
       },
       {
         title: "Schools",
-        risk: "Extreme Risk Area",
+        risk: "Extreme Location Risk",
         body: [
-          "STATUTE: S.D. Codified Laws § 13-32-7.",
-          "SUMMARY: South Dakota restricts firearms on elementary and secondary school premises, subject to statutory provisions and exceptions.",
-          "GUIDANCE: School buildings, school events, school vehicles, and school property should be treated as verify-first locations."
-        ],
-        source: "S.D. Codified Laws § 13-32-7."
+            "STATUTE / SOURCE: S.D. school weapons framework.",
+            "SUMMARY: South Dakota restricts firearms on school property subject to exceptions.",
+            "GUIDANCE: Schools, events, parking, and activities should be verify-first."
+          ],
+        source: "S.D. school weapons framework"
       },
       {
-        title: "County Courthouses and State Capitol",
-        risk: "Hard Stop Area",
+        title: "Courthouses / Public Buildings",
+        risk: "Hard Stop Risk",
         body: [
-          "STATUTE: S.D. Codified Laws § 22-14-22 and related Capitol rules.",
-          "SUMMARY: South Dakota restricts firearms in county courthouses and has specific requirements for carry in the State Capitol.",
-          "GUIDANCE: Do not enter courthouse or Capitol-controlled areas armed unless the current law clearly allows the exact conduct."
-        ],
-        source: "S.D. Codified Laws § 22-14-22; S.D. Codified Laws § 22-14-24."
+            "STATUTE / SOURCE: South Dakota restricted location framework.",
+            "SUMMARY: Courthouses and certain public/security-controlled buildings can be restricted.",
+            "GUIDANCE: Verify before entering any court or security-controlled government facility."
+          ],
+        source: "South Dakota restricted location framework"
       },
       {
         title: "Vehicle Carry",
-        risk: "Travel / Vehicle Rule",
+        risk: "Vehicle Rule",
         body: [
-          "STATUTE / SOURCE: S.D. Codified Laws Chapter 23-7 and South Dakota vehicle carry framework.",
-          "SUMMARY: Vehicle carry is generally permissive for eligible persons, but location restrictions and jurisdiction overlays still apply.",
-          "GUIDANCE: Vehicle carry does not override schools, courthouses, tribal land, federal property, or private property rules."
-        ],
-        source: "S.D. Codified Laws Chapter 23-7; South Dakota vehicle carry framework."
+            "STATUTE / SOURCE: South Dakota firearms/vehicle framework.",
+            "SUMMARY: Vehicle carry is generally permissive, but schools, prohibited persons, property restrictions, tribal land, and federal land still matter.",
+            "GUIDANCE: Keep hands visible during stops and avoid reaching."
+          ],
+        source: "South Dakota firearms/vehicle framework"
       },
       {
-        title: "Tribal Land / Federal Property",
-        risk: "Jurisdiction Overlay",
+        title: "Tribal and Federal Land",
+        risk: "Separate Sovereignty / Federal Overlay",
         body: [
-          "STATUTE / SOURCE: Tribal law; federal facility and postal property framework.",
-          "SUMMARY: South Dakota carry permission does not override tribal law or federal property restrictions.",
-          "GUIDANCE: Verify tribal law before carrying on reservations, tribal casinos, tribal offices, and tribal events. Federal buildings and post offices must be checked separately."
-        ],
-        source: "Tribal law framework; federal facility framework."
+            "STATUTE / SOURCE: Tribal law and federal facility framework.",
+            "SUMMARY: South Dakota includes tribal land and federal/national park areas where state carry permission may not control.",
+            "GUIDANCE: Verify tribal and federal rules separately."
+          ],
+        source: "Tribal law and federal facility framework"
       },
       {
-        title: "Private Property / Posted Locations",
+        title: "Alcohol / Impairment",
+        risk: "Impairment Risk",
+        body: [
+            "STATUTE / SOURCE: South Dakota weapons/intoxication framework.",
+            "SUMMARY: Carrying while impaired creates legal and tactical risk.",
+            "GUIDANCE: If drinking or impaired, do not carry."
+          ],
+        source: "South Dakota weapons/intoxication framework"
+      },
+      {
+        title: "Private Property",
         risk: "Property Control",
         body: [
-          "STATUTE / SOURCE: South Dakota property/trespass framework.",
-          "SUMMARY: Private property owners may restrict access and require armed persons to leave.",
-          "GUIDANCE: If posted or asked to leave, leave immediately."
-        ],
-        source: "South Dakota property/trespass framework."
+            "STATUTE / SOURCE: South Dakota property/trespass framework.",
+            "SUMMARY: Private property owners may restrict weapons and require armed persons to leave.",
+            "GUIDANCE: Leave immediately if asked."
+          ],
+        source: "South Dakota property/trespass framework"
       },
       {
-        title: "Use of Force / Self-Defense",
-        risk: "Fact-Specific Legal Risk",
+        title: "State-Specific Traps",
+        risk: "South Dakota Trap List",
         body: [
-          "STATUTE / SOURCE: South Dakota self-defense law framework.",
-          "SUMMARY: Defensive force must be legally justified under the facts and applicable South Dakota law.",
-          "GUIDANCE: Avoid escalation, disengage when safe, call 911, identify evidence/witnesses, request counsel, and avoid detailed statements under stress."
-        ],
-        source: "South Dakota self-defense law framework."
+            "STATUTE / SOURCE: S.D. firearms / tribal / federal framework.",
+            "SUMMARY: Common traps include ignoring tribal land, assuming permitless carry applies across state lines, and treating schools/courthouses casually.",
+            "GUIDANCE: South Dakota is permissive but boundary-sensitive."
+          ],
+        source: "S.D. firearms / tribal / federal framework"
+      },
+      {
+        title: "Civil Liability / Aftermath",
+        risk: "Post-Incident Risk",
+        body: [
+            "STATUTE / SOURCE: South Dakota self-defense framework.",
+            "SUMMARY: A defensive incident can still trigger investigation and civil exposure.",
+            "GUIDANCE: Call 911, request help, identify evidence/witnesses, request counsel, and avoid detailed statements."
+          ],
+        source: "South Dakota self-defense framework"
       }
     ],
     [
       {
-        title: "South Dakota Carry Checklist",
+        title: "South Dakota Carry Decision Checklist",
         steps: [
-          "1. Confirm eligibility.",
-          "2. Check schools under § 13-32-7.",
-          "3. Check county courthouse and State Capitol restrictions.",
-          "4. Check tribal land and federal property separately.",
-          "5. Check private property and event rules.",
-          "6. Consider whether a permit is needed for reciprocity outside South Dakota."
-        ]
-      }
-    ],
-    [
+            "1. Confirm eligibility and prohibited-person status.",
+            "2. Confirm whether permitless carry, recognized permit carry, or license-only carry applies.",
+            "3. Check Restricted & Sensitive Locations before entering.",
+            "4. Check vehicle carry and transport rules separately.",
+            "5. Check schools, courts, government/security-controlled locations, alcohol locations, private property, federal property, and tribal/campus/local restrictions where relevant.",
+            "6. During police contact, keep hands visible, do not reach, and answer lawful questions truthfully.",
+            "7. If any answer is uncertain, do not enter armed until verified."
+          ]
+      },
       {
-        title: "Black Hills / Tribal Land Travel",
-        summary: "South Dakota travel may involve tribal land, national parks, state parks, private tourist properties, and long vehicle trips.",
-        guidance: [
-          "Separate state land, federal land, and tribal land.",
-          "Check park buildings and visitor centers separately.",
-          "Check courthouse and school restrictions.",
-          "Check private property and lodging policies."
-        ]
+        title: "South Dakota Vehicle / Travel Checklist",
+        steps: [
+            "1. Verify whether the firearm may be loaded and accessible in the vehicle.",
+            "2. Verify whether the destination creates a prohibited-location issue.",
+            "3. Distinguish vehicle possession from entering a building or property armed.",
+            "4. Check federal, tribal, campus, school, and posted property rules separately.",
+            "5. Keep permit/ID documentation available where relevant, but do not reach during a stop without instructions."
+          ]
       }
     ],
+    [],
     [
-      "Assuming South Dakota permitless carry means carry anywhere.",
-      "Ignoring schools under § 13-32-7.",
-      "Ignoring county courthouses and Capitol rules.",
-      "Assuming state law controls tribal land.",
-      "Assuming national park land equals visitor center permission.",
-      "Ignoring reciprocity needs outside South Dakota."
+      "Assuming a permissive state means carry anywhere.",
+      "Assuming reciprocity overrides restricted locations.",
+      "Ignoring school, court, government, alcohol, private property, federal, tribal, or campus restrictions.",
+      "Treating vehicle carry the same as carry on foot.",
+      "Failing to carry permit/ID documentation where relevant.",
+      "Reaching during a traffic stop.",
+      "Carrying while impaired.",
+      "Displaying a firearm to intimidate, win an argument, or end a non-deadly dispute.",
+      "Talking too much after a defensive incident."
     ],
     [
       "Eligibility checked.",
-      "School restrictions checked.",
-      "Courthouse/Capitol rules checked.",
-      "Federal/tribal property checked.",
-      "Private property checked.",
-      "Out-of-state reciprocity needs checked."
+      "Permit/reciprocity status checked.",
+      "Restricted & Sensitive Locations checked.",
+      "Vehicle carry/transport checked.",
+      "School/campus rules checked.",
+      "Court/government/security-controlled locations checked.",
+      "Alcohol/impaired carry risk checked.",
+      "Private property/posting checked.",
+      "Federal/tribal/local overlay checked where relevant.",
+      "Police-contact plan ready.",
+      "Legal-defense contact ready."
     ],
     [
       {
-        myth: "South Dakota is permitless, so all public places are okay.",
-        reality: "No. Schools, courthouses, Capitol rules, tribal land, federal property, and private property still matter."
+        myth: "Permitless carry means no rules.",
+        reality: "No. Permitless carry still depends on eligibility, location restrictions, private property, federal law, and the facts of the situation."
+      },
+      {
+        myth: "If my Michigan CPL is honored, I can carry anywhere.",
+        reality: "No. Reciprocity only answers recognition. It does not override restricted locations, vehicle rules, or state-specific prohibitions."
+      },
+      {
+        myth: "If I do not fire, display is not serious.",
+        reality: "No. A defensive display can still create criminal, civil, and evidentiary problems if not legally justified."
       }
     ]
   ),
 
   NE: makeProfile(
     "Nebraska",
-    "Law-Backed Ultra Expanded Travel State",
-    "Nebraska adopted permitless concealed carry effective September 2, 2023, but the state still has detailed prohibited-location rules, school restrictions, public-building issues, alcohol-location restrictions, private property rules, local-preemption history, and vehicle/travel concerns. Nebraska remains a state where users must carefully separate general carry permission from prohibited places.",
+    "Elite Deep Travel State",
+    "Nebraska now allows eligible adults to carry concealed with or without a permit, but Nebraska still has one of the more detailed prohibited-location lists. Travelers must understand § 28-1202.01, schools, courts, police stations, detention facilities, public meetings, financial institutions, athletic events, hospitals/ER/trauma centers, liquor establishments, posted premises, vehicles, and local/federal overlays.",
     {
-      reciprocity: "Michigan CPL recognition should be verified before travel. Nebraska also has permitless concealed carry for eligible persons 21 and older under LB 77 framework.",
-      permitlessCarry: "Nebraska permitless carry took effect September 2, 2023, but prohibited places remain extensive.",
-      concealedCarry: "Nebraska concealed handgun permit law remains important for reciprocity, federal school-zone issues, and documentation.",
-      openCarry: "Open carry may be lawful for eligible persons, but location restrictions, vehicle visibility, and local/public-building issues still matter.",
-      vehicleCarry: "Vehicle carry must be analyzed under Nebraska concealed handgun and prohibited-place rules.",
-      dutyToInform: "Verify current Nebraska police-contact rules. Keep hands visible and answer lawful questions truthfully.",
-      privateSigns: "Private property owners may restrict firearms. Leave if asked.",
+      reciprocity: "Michigan CPL is treated as recognized; Nebraska also allows concealed carry for non-minor, non-prohibited persons under § 28-1202.01.",
+      permitlessCarry: "Neb. Rev. Stat. § 28-1202.01 allows concealed carry with or without a permit for non-minor, non-prohibited persons, subject to restrictions.",
+      concealedCarry: "Permitless carry exists but prohibited places remain extensive.",
+      openCarry: "Open carry may be lawful in many places, but location and property restrictions matter.",
+      vehicleCarry: "Vehicle carry must be checked against Nebraska concealed carry and prohibited-location rules.",
+      dutyToInform: "Verify current Nebraska police-contact rules; keep hands visible and answer lawful questions truthfully.",
+      privateSigns: "Posted premises and private property restrictions matter.",
       forceLaw: "Nebraska self-defense law is fact-specific."
     },
     [
-      "Nebraska permitless carry did not erase prohibited places.",
-      "Nebraska has a detailed statutory list of places where concealed handguns remain prohibited.",
-      "Schools, courts, law-enforcement facilities, banks, hospitals, places of worship, polling places, athletic events, and alcohol-heavy locations require careful review.",
-      "A Nebraska permit may still matter for reciprocity and federal school-zone considerations.",
-      "Recent Nebraska local/public-building controversies make current verification important."
+      "Nebraska’s prohibited-location list is extensive.",
+      "Permitless concealed carry does not override § 28-1202.01 restricted places.",
+      "Schools, courts, public meetings, financial institutions, hospitals/ER/trauma centers, liquor establishments, and posted premises require special caution.",
+      "Nebraska can be permissive overall but strict in listed places."
     ],
     [
       {
-        title: "Permitless Carry / LB 77 Framework",
-        risk: "Core Eligibility Rule",
+        title: "Permitless Concealed Carry",
+        risk: "Core Carry Rule",
         body: [
-          "STATUTE / SOURCE: Nebraska LB 77 framework; Nebraska State Patrol CHP guidance.",
-          "SUMMARY: Nebraska permitless concealed carry took effect September 2, 2023, allowing eligible persons to carry concealed without a Nebraska concealed handgun permit, subject to restrictions.",
-          "GUIDANCE: Do not treat Nebraska as unrestricted. The prohibited-place list remains critical."
-        ],
-        source: "Nebraska State Patrol CHP FAQ; Nebraska LB 77 framework."
+            "STATUTE / SOURCE: Neb. Rev. Stat. § 28-1202.01.",
+            "SUMMARY: Nebraska allows a person who is not a minor or prohibited person to carry a concealed handgun anywhere in Nebraska, with or without a permit, except in restricted locations.",
+            "GUIDANCE: The exception list is where members get in trouble."
+          ],
+        source: "Neb. Rev. Stat. § 28-1202.01"
       },
       {
-        title: "Prohibited Places",
+        title: "Extensive Prohibited Locations",
         risk: "Major Location Restriction",
         body: [
-          "STATUTE: Neb. Rev. Stat. § 28-1202.01.",
-          "SUMMARY: Nebraska law identifies many places where concealed handguns remain prohibited, including law-enforcement offices, detention facilities, courtrooms/courthouse buildings, polling places, public meetings, financial institutions, athletic events, schools, places of worship, hospitals, political events, certain alcohol establishments, and places prohibited by state or federal law.",
-          "GUIDANCE: Nebraska's prohibited-place list is one of the most important parts of the state profile. Users should check destination type before carrying."
-        ],
-        source: "Neb. Rev. Stat. § 28-1202.01."
+            "STATUTE / SOURCE: Neb. Rev. Stat. § 28-1202.01(3).",
+            "SUMMARY: Nebraska lists many places where concealed handguns may not be carried, including law-enforcement offices, detention facilities, courtrooms/buildings with courtrooms, polling places, public meetings, financial institutions, athletic events, schools, places of worship, hospitals/ER/trauma centers, certain liquor establishments, and places prohibited by state/federal law.",
+            "GUIDANCE: Treat Nebraska as permitless but location-heavy."
+          ],
+        source: "Neb. Rev. Stat. § 28-1202.01(3)"
       },
       {
-        title: "Schools / School Activities",
-        risk: "Extreme Risk Area",
+        title: "Schools and School Activities",
+        risk: "Extreme Location Risk",
         body: [
-          "STATUTE: Neb. Rev. Stat. § 28-1202.01 and Nebraska school weapons framework.",
-          "SUMMARY: Nebraska restricts concealed handguns in or on school buildings, grounds, vehicles, sponsored activities, and athletic events.",
-          "GUIDANCE: School pickup, school sports, parking lots, events, and school vehicles should be treated as verify-first areas."
-        ],
-        source: "Neb. Rev. Stat. § 28-1202.01."
+            "STATUTE / SOURCE: Neb. Rev. Stat. § 28-1202.01; school weapons framework.",
+            "SUMMARY: Nebraska restricts concealed handguns in buildings, grounds, vehicles, sponsored activities, or athletic events of schools.",
+            "GUIDANCE: School parking, events, and vehicles need careful review."
+          ],
+        source: "Neb. Rev. Stat. § 28-1202.01; school weapons framework"
       },
       {
-        title: "Courts / Law Enforcement / Detention Facilities",
-        risk: "Hard Stop Area",
+        title: "Courts / Law Enforcement / Detention",
+        risk: "Hard Stop Areas",
         body: [
-          "STATUTE: Neb. Rev. Stat. § 28-1202.01.",
-          "SUMMARY: Nebraska restricts concealed handguns in police/sheriff/State Patrol offices, detention facilities, prisons, jails, courtrooms, and buildings containing courtrooms.",
-          "GUIDANCE: Do not approach courthouse, jail, or law-enforcement entrances armed unless a clear exception applies."
-        ],
-        source: "Neb. Rev. Stat. § 28-1202.01."
+            "STATUTE / SOURCE: Neb. Rev. Stat. § 28-1202.01.",
+            "SUMMARY: Nebraska restricts concealed carry in police/sheriff/State Patrol offices, detention facilities, prisons, jails, courtrooms, and buildings containing courtrooms.",
+            "GUIDANCE: Do not approach security-controlled justice facilities armed."
+          ],
+        source: "Neb. Rev. Stat. § 28-1202.01"
       },
       {
-        title: "Banks / Hospitals / Churches / Athletic Events",
-        risk: "Common Destination Trap",
+        title: "Public Meetings / Polling Places",
+        risk: "Public Process Risk",
         body: [
-          "STATUTE: Neb. Rev. Stat. § 28-1202.01.",
-          "SUMMARY: Nebraska's prohibited-place list includes financial institutions, hospitals/emergency rooms/trauma centers, places of worship, and professional or semiprofessional athletic events.",
-          "GUIDANCE: These everyday destinations are easy to overlook. Do not assume permitless carry makes routine errands lawful."
-        ],
-        source: "Neb. Rev. Stat. § 28-1202.01."
+            "STATUTE / SOURCE: Neb. Rev. Stat. § 28-1202.01.",
+            "SUMMARY: Nebraska restricts concealed handguns at polling places during bona fide elections and certain meetings of governing bodies/Legislature committees.",
+            "GUIDANCE: Government/civic events require review before carrying."
+          ],
+        source: "Neb. Rev. Stat. § 28-1202.01"
       },
       {
-        title: "Alcohol Establishments",
-        risk: "Alcohol Location Risk",
+        title: "Financial Institutions / Hospitals / Liquor Establishments",
+        risk: "Common Destination Traps",
         body: [
-          "STATUTE: Neb. Rev. Stat. § 28-1202.01.",
-          "SUMMARY: Nebraska prohibits concealed handguns in establishments licensed under the Nebraska Liquor Control Act that derive over one-half of total income from alcoholic liquor sales.",
-          "GUIDANCE: Bars and alcohol-heavy venues should be treated as verify-first locations. If drinking is part of the plan, carrying should not be."
-        ],
-        source: "Neb. Rev. Stat. § 28-1202.01."
+            "STATUTE / SOURCE: Neb. Rev. Stat. § 28-1202.01.",
+            "SUMMARY: Nebraska includes financial institutions, hospitals/ER/trauma centers, and certain liquor establishments in the prohibited list.",
+            "GUIDANCE: Banks, hospitals, emergency rooms, and alcohol-centered locations are not casual stops while armed."
+          ],
+        source: "Neb. Rev. Stat. § 28-1202.01"
       },
       {
-        title: "Vehicle Carry / Open Carry Visibility",
-        risk: "Vehicle / Travel Risk",
+        title: "Vehicle Carry",
+        risk: "Vehicle Rule",
         body: [
-          "STATUTE / SOURCE: Nebraska carry and vehicle framework.",
-          "SUMMARY: Vehicle carry must be analyzed under Nebraska concealed carry and open carry rules, plus prohibited-place rules.",
-          "GUIDANCE: Do not assume vehicle carry is simple. Check prohibited destinations, school zones, and police-contact behavior."
-        ],
-        source: "Nebraska vehicle/carry framework; Neb. Rev. Stat. § 28-1202.01."
+            "STATUTE / SOURCE: Neb. Rev. Stat. § 28-1202.01 framework.",
+            "SUMMARY: Vehicle carry is generally available to eligible persons but does not override listed prohibited places or posted property.",
+            "GUIDANCE: Pay attention to destination before exiting the vehicle armed."
+          ],
+        source: "Neb. Rev. Stat. § 28-1202.01 framework"
       },
       {
-        title: "Private Property / Posted Locations",
+        title: "Private / Posted Premises",
         risk: "Property Control",
         body: [
-          "STATUTE / SOURCE: Nebraska property/trespass framework.",
-          "SUMMARY: Private property owners may restrict firearms and require people to leave.",
-          "GUIDANCE: If posted or asked to leave, leave immediately."
-        ],
-        source: "Nebraska property/trespass framework."
+            "STATUTE / SOURCE: Neb. Rev. Stat. § 28-1202.01 posting framework.",
+            "SUMMARY: Nebraska recognizes posted premises where concealed handguns are prohibited.",
+            "GUIDANCE: If posted or asked to leave, leave immediately."
+          ],
+        source: "Neb. Rev. Stat. § 28-1202.01 posting framework"
       },
       {
-        title: "Federal Property / Post Offices",
-        risk: "Federal Law Overlay",
+        title: "State-Specific Traps",
+        risk: "Nebraska Trap List",
         body: [
-          "STATUTE / SOURCE: Federal facility and postal property framework.",
-          "SUMMARY: Nebraska carry permission does not override federal restrictions.",
-          "GUIDANCE: Federal buildings, federal courthouses, post offices, and secure federal property must be checked separately."
-        ],
-        source: "Federal facility and postal property framework."
+            "STATUTE / SOURCE: Neb. Rev. Stat. § 28-1202.01.",
+            "SUMMARY: Common traps include assuming permitless means anywhere, missing the long prohibited-place list, carrying into banks/hospitals/public meetings, and ignoring posted premises.",
+            "GUIDANCE: In Nebraska, the list matters."
+          ],
+        source: "Neb. Rev. Stat. § 28-1202.01"
       },
       {
-        title: "Use of Force / Self-Defense",
-        risk: "Fact-Specific Legal Risk",
+        title: "Civil Liability / Aftermath",
+        risk: "Post-Incident Risk",
         body: [
-          "STATUTE / SOURCE: Nebraska self-defense law framework.",
-          "SUMMARY: Defensive force must be legally justified under the facts and applicable Nebraska law.",
-          "GUIDANCE: Avoid escalation, disengage when safe, call 911, identify evidence/witnesses, request counsel, and avoid detailed statements under stress."
-        ],
-        source: "Nebraska self-defense law framework."
+            "STATUTE / SOURCE: Nebraska self-defense framework.",
+            "SUMMARY: A defensive incident can still create investigation and civil exposure.",
+            "GUIDANCE: Call 911, request help, identify evidence/witnesses, request counsel, and avoid detailed statements."
+          ],
+        source: "Nebraska self-defense framework"
       }
     ],
     [
       {
-        title: "Nebraska Carry Checklist",
+        title: "Nebraska Carry Decision Checklist",
         steps: [
-          "1. Confirm eligibility under Nebraska permitless carry/LB 77 framework.",
-          "2. Check Neb. Rev. Stat. § 28-1202.01 prohibited places.",
-          "3. Check schools, courts, law-enforcement facilities, hospitals, churches, banks, athletic events, and alcohol-heavy locations.",
-          "4. Check private property and signs.",
-          "5. Check federal property separately.",
-          "6. Consider whether a permit is needed for reciprocity or federal school-zone purposes."
-        ]
-      }
-    ],
-    [
+            "1. Confirm eligibility and prohibited-person status.",
+            "2. Confirm whether permitless carry, recognized permit carry, or license-only carry applies.",
+            "3. Check Restricted & Sensitive Locations before entering.",
+            "4. Check vehicle carry and transport rules separately.",
+            "5. Check schools, courts, government/security-controlled locations, alcohol locations, private property, federal property, and tribal/campus/local restrictions where relevant.",
+            "6. During police contact, keep hands visible, do not reach, and answer lawful questions truthfully.",
+            "7. If any answer is uncertain, do not enter armed until verified."
+          ]
+      },
       {
-        title: "Omaha / Lincoln / Public Building Travel",
-        summary: "Nebraska permitless carry exists, but public buildings and prohibited-location issues still require careful review.",
-        guidance: [
-          "Check current state law and local/public-building rules.",
-          "Check the § 28-1202.01 prohibited-place list.",
-          "Do not assume routine errands are lawful.",
-          "Plan storage before entering restricted buildings."
-        ]
+        title: "Nebraska Vehicle / Travel Checklist",
+        steps: [
+            "1. Verify whether the firearm may be loaded and accessible in the vehicle.",
+            "2. Verify whether the destination creates a prohibited-location issue.",
+            "3. Distinguish vehicle possession from entering a building or property armed.",
+            "4. Check federal, tribal, campus, school, and posted property rules separately.",
+            "5. Keep permit/ID documentation available where relevant, but do not reach during a stop without instructions."
+          ]
       }
     ],
+    [],
     [
-      "Assuming Nebraska permitless carry means unrestricted carry.",
-      "Ignoring the long prohibited-place list in § 28-1202.01.",
-      "Ignoring banks, hospitals, places of worship, and athletic events.",
-      "Ignoring schools and school activities.",
-      "Ignoring alcohol-heavy establishments.",
-      "Assuming permitless carry solves reciprocity or federal school-zone issues."
+      "Assuming a permissive state means carry anywhere.",
+      "Assuming reciprocity overrides restricted locations.",
+      "Ignoring school, court, government, alcohol, private property, federal, tribal, or campus restrictions.",
+      "Treating vehicle carry the same as carry on foot.",
+      "Failing to carry permit/ID documentation where relevant.",
+      "Reaching during a traffic stop.",
+      "Carrying while impaired.",
+      "Displaying a firearm to intimidate, win an argument, or end a non-deadly dispute.",
+      "Talking too much after a defensive incident."
     ],
     [
       "Eligibility checked.",
-      "Prohibited places checked under § 28-1202.01.",
-      "Schools/courts/law enforcement facilities checked.",
-      "Banks/hospitals/churches/events checked.",
-      "Alcohol establishments checked.",
-      "Federal/private property checked."
+      "Permit/reciprocity status checked.",
+      "Restricted & Sensitive Locations checked.",
+      "Vehicle carry/transport checked.",
+      "School/campus rules checked.",
+      "Court/government/security-controlled locations checked.",
+      "Alcohol/impaired carry risk checked.",
+      "Private property/posting checked.",
+      "Federal/tribal/local overlay checked where relevant.",
+      "Police-contact plan ready.",
+      "Legal-defense contact ready."
     ],
     [
       {
-        myth: "Nebraska has permitless carry now, so there are no location restrictions.",
-        reality: "No. Nebraska has an extensive prohibited-place list, including schools, courts, law-enforcement facilities, banks, hospitals, places of worship, athletic events, and certain alcohol establishments."
+        myth: "Permitless carry means no rules.",
+        reality: "No. Permitless carry still depends on eligibility, location restrictions, private property, federal law, and the facts of the situation."
+      },
+      {
+        myth: "If my Michigan CPL is honored, I can carry anywhere.",
+        reality: "No. Reciprocity only answers recognition. It does not override restricted locations, vehicle rules, or state-specific prohibitions."
+      },
+      {
+        myth: "If I do not fire, display is not serious.",
+        reality: "No. A defensive display can still create criminal, civil, and evidentiary problems if not legally justified."
       }
     ]
   ),
