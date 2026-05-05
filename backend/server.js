@@ -764,6 +764,9 @@ var authMode = "login";
 var currentUser = null;
 var selectedMapState = "";
 
+window.addEventListener("error", function(e){ console.error("Prime Defense UI error:", e.message || e.error || e); renderEmergencyLoginFallback(); });
+window.addEventListener("unhandledrejection", function(e){ console.error("Prime Defense promise error:", e.reason || e); });
+
 var states = [
   ["AL","Alabama"],["AK","Alaska"],["AZ","Arizona"],["AR","Arkansas"],["CA","California"],
   ["CO","Colorado"],["CT","Connecticut"],["DE","Delaware"],["FL","Florida"],["GA","Georgia"],
@@ -5126,10 +5129,10 @@ function renderIntelPanel(permitState, travelState){
   }
 
   html += '<div class="jumpNav">' +
-    '<button type="button" onclick="document.getElementById(\'pd-legal-details\').scrollIntoView({behavior:\'smooth\'})">Detailed Law</button>' +
-    '<button type="button" onclick="document.getElementById(\'pd-decision-blocks\').scrollIntoView({behavior:\'smooth\'})">Checklists</button>' +
-    '<button type="button" onclick="document.getElementById(\'pd-scenarios\').scrollIntoView({behavior:\'smooth\'})">Scenarios</button>' +
-    '<button type="button" onclick="document.getElementById(\'pd-common-mistakes\').scrollIntoView({behavior:\'smooth\'})">Common Mistakes</button>' +
+    '<button type="button" data-scroll-target="pd-legal-details">Detailed Law</button>' +
+    '<button type="button" data-scroll-target="pd-decision-blocks">Checklists</button>' +
+    '<button type="button" data-scroll-target="pd-scenarios">Scenarios</button>' +
+    '<button type="button" data-scroll-target="pd-common-mistakes">Common Mistakes</button>' +
   '</div>';
 
   return html;
@@ -5266,6 +5269,28 @@ function getReciprocityHtml(state){
 function selectMapState(abbr){
   selectedMapState = abbr;
   updateReciprocity();
+}
+
+
+function attachJumpNavHandlers(){
+  var buttons = document.querySelectorAll ? document.querySelectorAll('[data-scroll-target]') : [];
+  for(var i=0;i<buttons.length;i++){
+    buttons[i].onclick = function(){
+      var id = this.getAttribute('data-scroll-target');
+      var target = document.getElementById(id);
+      if(target && target.scrollIntoView){
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
+    };
+  }
+}
+
+function renderEmergencyLoginFallback(){
+  try{
+    var appEl = document.getElementById('app');
+    if(!appEl) return;
+    appEl.innerHTML = '<div class="container"><div class="brand">Prime Defense Training</div><h1>Prime Defense Protection</h1><p class="subtitle">The app had trouble loading your session. Clear the saved session and log in again.</p><button class="primary" type="button" onclick="localStorage.removeItem(\'pd_token\'); location.reload();">Reset Login</button></div>';
+  }catch(e){}
 }
 
 function showAuth(){
@@ -5550,6 +5575,7 @@ function updateReciprocity(){
   var box = q("reciprocityBox");
   if(!stateEl || !box) return;
   box.innerHTML = getReciprocityHtml(stateEl.value);
+  attachJumpNavHandlers();
 }
 
 async function saveProfile(){
@@ -5595,6 +5621,7 @@ function showStateLawFull(abbr){
       '</div>' +
       renderLawProfile(abbr) +
     '</div>';
+  attachJumpNavHandlers();
 }
 
 function openEmergency(){
@@ -5719,8 +5746,14 @@ function openAftermath(){
     '</div>';
 }
 
-if(token) showDashboard();
-else showAuth();
+try {
+  if(token) showDashboard();
+  else showAuth();
+} catch(e) {
+  console.error("Startup error:", e);
+  localStorage.removeItem("pd_token");
+  renderEmergencyLoginFallback();
+}
 </script>
 </body>
 </html>
