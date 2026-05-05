@@ -794,20 +794,16 @@ var realStateLabels = {"AK":[191.1,529.6],"AL":[552.9,358.7],"AR":[463.8,328.4],
 var reciprocityData = {
   MI: {
     title: "Michigan CPL Reciprocity & Travel Guide",
-    verifiedDate: "May 2, 2026",
-    sourceNote: "Recognition does not mean identical laws. Follow the law of the state you are physically in. Michigan MSP advises CPL holders to check the destination state directly before travel.",
-    recognized: [
-      "AL","AK","AZ","AR","CO","FL","GA","ID","IN","IA","KS","KY","LA","ME","MN","MS",
-      "MO","MT","NE","NH","NM","NC","ND","OH","OK","PA","SC","SD","TN","TX","UT","VA","VT",
-      "WA","WV","WI","WY"
-    ],
-    restricted: ["NV"],
-    notRecognized: ["CA","CT","DE","HI","IL","MD","MA","NJ","NY","OR","RI"],
+    verifiedDate: "May 5, 2026",
+    sourceNote: "Map status is based on the selected permit state. Recognition does not mean identical laws. Follow the law of the state you are physically in.",
+    recognized: ["AL", "AK", "AZ", "AR", "CO", "DE", "FL", "GA", "ID", "IN", "IA", "KS", "KY", "LA", "ME", "MN", "MS", "MO", "MT", "NE", "NV", "NH", "NM", "NC", "ND", "OH", "OK", "PA", "SC", "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY"],
+    restricted: [],
+    notRecognized: ["CA", "CT", "HI", "IL", "MD", "MA", "NJ", "NY", "OR", "RI"],
     warnings: [
       "This is an outbound Michigan CPL travel reference, not a substitute for destination-state law.",
-      "Recognition can depend on residency, age, permit type, current state law, and state-specific restrictions.",
-      "Nevada has conflicting official online references regarding Michigan CPL recognition; this app flags Nevada as VERIFY before travel, not clean green.",
-      "A recognized permit does not override prohibited places, vehicle rules, alcohol rules, duty-to-inform rules, private-property rules, federal property, court rules, tribal property, or local restrictions.",
+      "A green state means the Michigan CPL is treated as recognized in this app's current reciprocity engine.",
+      "A red state means the Michigan CPL is treated as not recognized in this app's current reciprocity engine.",
+      "Recognition does not override prohibited places, vehicle rules, alcohol rules, duty-to-inform rules, private-property rules, federal property, court rules, tribal property, local restrictions, or use-of-force law.",
       "Before traveling, verify the destination state using official state resources."
     ]
   }
@@ -1658,223 +1654,188 @@ var stateLawData = {
 
   IN: makeProfile(
     "Indiana",
-    "Law-Backed Ultra Expanded Travel State",
-    "Indiana is a high-priority travel state for Michigan CPL holders. Indiana has permitless carry for a proper person, but carry remains subject to prohibited-person rules, restricted locations, school property, courthouse and airport issues, private property, vehicle considerations, and use-of-force law.",
+    "Elite Deep Travel State",
+    "Indiana is an important neighboring travel state for Michigan members. Indiana has permitless carry for a proper person, but eligibility, school property, courts, secure areas, private property, vehicle conduct, and use-of-force law still matter.",
     {
-          "reciprocity": "Michigan CPL treated as recognized in this app travel engine. Indiana also has permitless carry for a proper person.",
-          "permitlessCarry": "IC 35-47-2-1.5 / Indiana State Police guidance: permitless carry is available only if the person meets proper-person criteria.",
-          "concealedCarry": "Indiana permitless carry may allow concealed handgun carry by a proper person, but restrictions still apply.",
-          "openCarry": "Indiana carry may be lawful for a proper person, but location and conduct restrictions matter.",
-          "vehicleCarry": "Indiana permitless carry affects carrying, concealing, and transporting a handgun, but the person must not be prohibited.",
-          "dutyToInform": "Verify Indiana police-contact requirements; keep hands visible and follow commands.",
-          "privateSigns": "Private property instructions and posted restrictions can matter; leave if asked.",
-          "forceLaw": "Indiana self-defense law is fact-specific and should be verified from Indiana Code."
+    "reciprocity": "Michigan CPL is treated as recognized in this app unless the reciprocity engine shows otherwise. State law controls while physically in this state.",
+    "permitlessCarry": "Indiana allows carry without a license for a proper person, but prohibited-person status and restricted locations still apply.",
+    "concealedCarry": "Indiana concealed carry depends on proper-person eligibility and does not override restricted/sensitive locations.",
+    "openCarry": "Open carry may be lawful for eligible persons, but restricted/sensitive locations, vehicles, private property, and police contact still matter.",
+    "vehicleCarry": "Vehicle carry may be lawful for eligible persons, but police-contact conduct and restricted locations still matter.",
+    "dutyToInform": "Verify current Indiana police-contact rules; keep hands visible and answer lawful questions truthfully.",
+    "privateSigns": "Private property and posted/instructed restrictions matter. Leave immediately if asked.",
+    "forceLaw": "Use of force is fact-specific. Justification depends on necessity, reasonableness, imminence, proportionality, and the defender’s conduct."
+},
+    [
+    "Recognition or permitless carry does not override restricted and sensitive locations.",
+    "Vehicle carry and transport rules should be checked before crossing state lines.",
+    "Federal property, tribal property, airports, schools, courts, and private property require separate analysis.",
+    "Use-of-force law is separate from carry law; lawful carry does not make every defensive act lawful."
+],
+    [
+    {
+        "title": "Carry Authority / Permit Framework",
+        "risk": "Core Carry Rule",
+        "body": [
+            "STATUTE / SOURCE: Indiana Code § 35-47-2-1 and Indiana proper-person/license framework",
+            "SUMMARY: Indiana removed the license requirement for a proper person to carry a handgun, while retaining eligibility and restriction rules.",
+            "GUIDANCE: Confirm proper-person status, age, prohibited-person status, court orders, and destination restrictions before carrying."
+        ],
+        "source": "Indiana Code § 35-47-2-1 and Indiana proper-person/license framework"
     },
+    {
+        "title": "Transport and Vehicle Carry",
+        "risk": "Vehicle / Transport Deep Dive",
+        "body": [
+            "STATUTE / SOURCE: Indiana Code Title 35, Article 47 handgun and vehicle carry framework",
+            "SUMMARY: Indiana vehicle carry is generally permissive for eligible persons, but restricted locations and police-contact behavior remain important.",
+            "GUIDANCE: Do not reach during a stop. Securely handle firearms around schools, government facilities, and private property."
+        ],
+        "source": "Indiana Code Title 35, Article 47 handgun and vehicle carry framework"
+    },
+    {
+        "title": "Restricted & Sensitive Locations",
+        "risk": "Location Restrictions",
+        "body": [
+            "STATUTE / SOURCE: Indiana Code restricted-location framework",
+            "SUMMARY: Indiana law and property rules restrict carry in certain locations such as schools, courthouses, secured facilities, airports, and private property.",
+            "GUIDANCE: Treat sensitive locations as verify-first locations even in a permitless state."
+        ],
+        "source": "Indiana Code restricted-location framework"
+    },
+    {
+        "title": "Schools and Educational Property",
+        "risk": "Extreme Risk Area",
+        "body": [
+            "STATUTE / SOURCE: Indiana Code § 35-47-9-2",
+            "SUMMARY: Indiana restricts firearms on school property, subject to statutory exceptions.",
+            "GUIDANCE: Do not assume parking lots, school events, or pickup/drop-off are automatically safe."
+        ],
+        "source": "Indiana Code § 35-47-9-2"
+    },
+    {
+        "title": "Courts / Government / Secure Facilities",
+        "risk": "Hard Stop Area",
+        "body": [
+            "STATUTE / SOURCE: Indiana Code restricted-location framework",
+            "SUMMARY: Court, law-enforcement, detention, and secure government facilities can be prohibited or heavily restricted depending on the exact site and statute.",
+            "GUIDANCE: Do not approach security screening armed. Verify the specific facility before arrival."
+        ],
+        "source": "Indiana Code restricted-location framework"
+    },
+    {
+        "title": "Alcohol, Bars, Events, and Impairment",
+        "risk": "Alcohol / Event Risk",
+        "body": [
+            "STATUTE / SOURCE: State alcohol-location and impairment framework",
+            "SUMMARY: Alcohol-related locations, ticketed events, stadiums, festivals, or impairment may create separate legal and practical risk.",
+            "GUIDANCE: If drinking is part of the plan, carrying should not be. Check venue rules and statutory restrictions before entering."
+        ],
+        "source": "State alcohol-location and impairment framework"
+    },
+    {
+        "title": "Private Property / Posted Premises",
+        "risk": "Property Control",
+        "body": [
+            "STATUTE / SOURCE: State private property and trespass framework",
+            "SUMMARY: Private property owners, employers, venues, and persons in control of premises may restrict firearms or require the person to leave.",
+            "GUIDANCE: Follow signs and instructions. Leave immediately if asked; do not create a trespass, disorderly conduct, or public confrontation issue."
+        ],
+        "source": "State private property and trespass framework"
+    },
+    {
+        "title": "Police Interaction / Traffic Stops",
+        "risk": "Police Contact",
+        "body": [
+            "STATUTE / SOURCE: State police-contact and concealed carry guidance",
+            "SUMMARY: Police-contact duties vary by state. Even where no affirmative duty to inform exists, truthful answers, visible hands, and calm compliance are critical.",
+            "GUIDANCE: Keep hands visible, do not reach, answer lawful questions truthfully, and ask how the officer wants you to proceed."
+        ],
+        "source": "State police-contact and concealed carry guidance"
+    },
+    {
+        "title": "Federal, Tribal, Airport, and Interstate Travel Overlay",
+        "risk": "Separate Legal System",
+        "body": [
+            "STATUTE / SOURCE: Federal law; TSA/airport rules; tribal-property framework; interstate travel framework",
+            "SUMMARY: State carry permission does not override federal buildings, post offices, secure airport areas, tribal-government rules, or the laws of the next state on the route.",
+            "GUIDANCE: Check federal/tribal/airport rules separately. When crossing state lines, re-check reciprocity, vehicle carry, magazine/ammunition rules, and sensitive-place laws before entering the next state."
+        ],
+        "source": "Federal facility, TSA, tribal-property, and interstate travel framework"
+    },
+    {
+        "title": "State-Specific Traps",
+        "risk": "Common Legal Traps",
+        "body": [
+            "STATUTE / SOURCE: State-specific legal framework",
+            "SUMMARY: The major Indiana trap is assuming permitless carry eliminates school, courthouse, airport, private-property, or federal restrictions.",
+            "GUIDANCE: Teach Indiana as eligibility-based carry with real restricted locations, not as no-rules carry."
+        ],
+        "source": "State-specific legal framework"
+    },
+    {
+        "title": "Civil Liability / Aftermath",
+        "risk": "Post-Incident Exposure",
+        "body": [
+            "STATUTE / SOURCE: Civil liability, criminal procedure, and self-defense investigation framework",
+            "SUMMARY: A lawful carry status does not prevent arrest, investigation, prosecution review, civil claims, employment consequences, or administrative issues after a defensive incident.",
+            "GUIDANCE: Report the emergency, request police/medical if needed, identify attacker/evidence/witnesses only as necessary, request counsel, then avoid detailed statements until represented."
+        ],
+        "source": "General civil liability and post-incident framework"
+    },
+    {
+        "title": "Use of Force / Self-Defense",
+        "risk": "Life-Altering Legal Risk",
+        "body": [
+            "STATUTE / SOURCE: State self-defense and use-of-force framework",
+            "SUMMARY: Defensive force must be justified under state law and the facts known at the time. Deadly force is not for anger, property disputes, warning shots, intimidation, or punishment.",
+            "GUIDANCE: Avoid, disengage, create distance, call 911 when safe, preserve evidence, and understand that justified does not mean consequence-free."
+        ],
+        "source": "State self-defense and use-of-force framework"
+    }
+],
     [
-          "Indiana law controls while the user is physically in Indiana.",
-          "A green map status is only a starting point for reciprocity, not a location-by-location authorization.",
-          "Every section below is tied to a statute or official source where possible.",
-          "Users should verify current law before relying on any summary."
-    ],
+    {
+        "title": "Indiana Elite Deep Carry Checklist",
+        "steps": [
+            "1. Check reciprocity/current permit recognition before entering the state.",
+            "2. Confirm eligibility, age, prohibited-person status, and whether permitless carry applies.",
+            "3. Check vehicle carry/transport rules before crossing the state line.",
+            "4. Check restricted and sensitive locations before entering any building, event, school, court, government facility, airport, or posted property.",
+            "5. Know police-contact rules and keep hands visible during stops.",
+            "6. Check federal, tribal, airport, and interstate-travel overlays separately.",
+            "7. Separate carry legality from use-of-force legality; both must be lawful."
+        ]
+    }
+],
+    [],
     [
-          {
-                "title": "Permitless Carry / Proper Person",
-                "risk": "Core Eligibility Rule",
-                "body": [
-                      "STATUTE / SOURCE: IC 35-47-2-1.5; Indiana State Police permitless carry guidance.",
-                      "SUMMARY: Indiana no longer requires a handgun permit for a proper person to carry, conceal, or transport a handgun within the state.",
-                      "GUIDANCE: The user must not be a prohibited person. If the user's status is uncertain, they should not carry until qualified legal counsel confirms eligibility."
-                ],
-                "source": "IC 35-47-2-1.5; Indiana State Police Firearms Licensing guidance."
-          },
-          {
-                "title": "Prohibited Persons",
-                "risk": "Disqualification Risk",
-                "body": [
-                      "STATUTE / SOURCE: IC 35-47-2-1.5; IC 35-47 framework.",
-                      "SUMMARY: Indiana permitless carry does not apply to prohibited persons.",
-                      "GUIDANCE: Felony history, domestic violence, protection orders, mental health adjudications, substance issues, or other disqualifiers require attorney review before carrying."
-                ],
-                "source": "IC 35-47-2-1.5; Indiana State Police permitless carry notice."
-          },
-          {
-                "title": "License / Permit Still Has Value",
-                "risk": "Travel and Documentation",
-                "body": [
-                      "STATUTE / SOURCE: Indiana handgun licensing framework.",
-                      "SUMMARY: Indiana permitless carry does not make a license useless; a license may still matter for travel, reciprocity, documentation, and certain practical situations.",
-                      "GUIDANCE: A Michigan CPL holder should still maintain current license documentation and should not assume permitless carry in Indiana helps in the next state."
-                ],
-                "source": "Indiana State Police Firearms Licensing guidance."
-          },
-          {
-                "title": "School Property and School Functions",
-                "risk": "Extreme Risk Area",
-                "body": [
-                      "STATUTE / SOURCE: Indiana school weapons statutes; IC 35-47 framework.",
-                      "SUMMARY: Schools and school-related property remain high-risk restricted areas.",
-                      "GUIDANCE: Do not rely on a one-line permitless carry summary for school parking lots, events, buses, or school-controlled property."
-                ],
-                "source": "Indiana Code school weapons framework."
-          },
-          {
-                "title": "Courthouses / Government / Secure Buildings",
-                "risk": "Hard Stop Area",
-                "body": [
-                      "STATUTE / SOURCE: Indiana Code restricted premises framework.",
-                      "SUMMARY: Court and secure government buildings may restrict weapons regardless of carry eligibility.",
-                      "GUIDANCE: Treat court, jail, police, correctional, and security-screened buildings as verify-first or avoid-carry locations."
-                ],
-                "source": "Indiana Code restricted-location framework."
-          },
-          {
-                "title": "Airports / Aircraft / Secure Areas",
-                "risk": "Transportation Security Risk",
-                "body": [
-                      "STATUTE / SOURCE: Indiana law and federal airport/TSA framework.",
-                      "SUMMARY: Airport secure areas and aircraft are governed by federal and state restrictions.",
-                      "GUIDANCE: Checked transport is different from carry into a secure area. Know the airline/TSA process before arriving."
-                ],
-                "source": "Federal TSA framework; Indiana restricted-location framework."
-          },
-          {
-                "title": "Private Property / Posted Locations",
-                "risk": "Property Control",
-                "body": [
-                      "STATUTE / SOURCE: Indiana trespass and private-property framework.",
-                      "SUMMARY: Private property owners and event venues may restrict weapons and direct a person to leave.",
-                      "GUIDANCE: Leave if asked. Do not turn a carry issue into trespass or disorderly conduct."
-                ],
-                "source": "Indiana private property/trespass framework."
-          },
-          {
-                "title": "Vehicle Carry / Transport",
-                "risk": "Travel Risk",
-                "body": [
-                      "STATUTE / SOURCE: IC 35-47-2-1.5; Indiana State Police guidance.",
-                      "SUMMARY: Indiana permitless carry impacts carrying, concealing, and transporting a handgun for proper persons.",
-                      "GUIDANCE: Keep hands visible during police contact and do not reach. Verify storage rules if crossing into another state."
-                ],
-                "source": "Indiana State Police Firearms Licensing guidance."
-          },
-          {
-                "title": "Alcohol / Impairment",
-                "risk": "Judgment and Criminal Risk",
-                "body": [
-                      "STATUTE / SOURCE: Indiana weapons and intoxication framework.",
-                      "SUMMARY: Carrying while impaired can create serious legal and evidentiary risk.",
-                      "GUIDANCE: If drinking or impaired, do not carry. Avoid alcohol-centered locations when armed."
-                ],
-                "source": "Indiana weapons/intoxication framework."
-          },
-          {
-                "title": "Federal Property / Post Offices",
-                "risk": "Federal Law Overlay",
-                "body": [
-                      "STATUTE / SOURCE: Federal facility and postal property framework.",
-                      "SUMMARY: Indiana carry permission does not override federal restrictions.",
-                      "GUIDANCE: Federal buildings, post offices, and secure federal property require separate federal-law analysis."
-                ],
-                "source": "Federal facility and postal property framework."
-          },
-          {
-                "title": "Use of Force / Defense of Self and Others",
-                "risk": "Force Law",
-                "body": [
-                      "STATUTE / SOURCE: Indiana self-defense statutes and case law framework.",
-                      "SUMMARY: Indiana self-defense law may justify force in specific factual circumstances, but force must still be legally justified.",
-                      "GUIDANCE: Do not use force over insults, ego, property disputes, road rage, or punishment. Avoid and call 911 when safe."
-                ],
-                "source": "Indiana self-defense law framework."
-          },
-          {
-                "title": "Aftermath / Statements",
-                "risk": "Post-Incident Risk",
-                "body": [
-                      "STATUTE / SOURCE: Criminal procedure and evidence framework.",
-                      "SUMMARY: Statements after an incident can become evidence.",
-                      "GUIDANCE: Report the emergency, request help, identify evidence/witnesses if necessary, request counsel, then stop talking."
-                ],
-                "source": "Prime Defense aftermath protocol; Indiana criminal procedure framework."
-          }
-    ],
+    "Assuming reciprocity means carry anywhere.",
+    "Ignoring vehicle carry and transport rules.",
+    "Ignoring schools, courts, secure facilities, airports, and federal property.",
+    "Arguing with staff/security instead of leaving posted or restricted property.",
+    "Thinking lawful carry automatically justifies defensive display or force.",
+    "Talking too much after a defensive incident before legal counsel."
+],
     [
-          {
-                "title": "Can I Carry Here in Indiana?",
-                "steps": [
-                      "1. Am I a proper person under Indiana law?",
-                      "2. Am I prohibited under state or federal law?",
-                      "3. Is this school-related, court-related, government-secure, airport-secure, posted, federal, or employer-controlled?",
-                      "4. Am I in a vehicle or crossing into another state?",
-                      "5. If uncertain, do not enter armed."
-                ]
-          },
-          {
-                "title": "Indiana Traffic Stop / Police Contact",
-                "steps": [
-                      "1. Pull over or stop safely.",
-                      "2. Keep hands visible.",
-                      "3. Do not reach for anything until instructed.",
-                      "4. Follow state-specific disclosure or identification rules.",
-                      "5. Answer lawful questions truthfully and wait for legal guidance before detailed statements."
-                ]
-          }
-    ],
+    "Reciprocity checked.",
+    "Eligibility checked.",
+    "Vehicle carry checked.",
+    "Restricted & sensitive locations checked.",
+    "Police-contact rule checked.",
+    "Federal/tribal/airport overlay checked.",
+    "Aftermath plan ready."
+],
     [
-          {
-                "title": "Michigan Driver Crossing Into Indiana",
-                "summary": "Rules change at the state line even though Indiana is close to Michigan.",
-                "guidance": [
-                      "Confirm proper-person status.",
-                      "Check vehicle carry.",
-                      "Check destination restrictions.",
-                      "Do not rely on Michigan school or disclosure rules."
-                ]
-          },
-          {
-                "title": "Indiana School Event",
-                "summary": "School-related locations are high-risk.",
-                "guidance": [
-                      "Verify before arrival.",
-                      "Do not rely on permitless carry.",
-                      "When uncertain, do not enter armed."
-                ]
-          }
-    ],
-    [
-          "Assuming Michigan rules apply outside Michigan.",
-          "Ignoring prohibited places.",
-          "Ignoring private-property or signage rules.",
-          "Ignoring vehicle carry differences.",
-          "Ignoring school-zone restrictions.",
-          "Ignoring alcohol-location rules.",
-          "Assuming federal property follows state carry rules.",
-          "Relying on old reciprocity information.",
-          "Assuming proper-person status without checking disqualifiers.",
-          "Assuming Indiana rules apply in Illinois, Ohio, or Kentucky after crossing the next state line."
-    ],
-    [
-          "Permit recognition checked.",
-          "Eligibility checked.",
-          "Prohibited places checked.",
-          "School rules checked.",
-          "Vehicle carry checked.",
-          "Private property/signage checked.",
-          "Alcohol-related restrictions checked.",
-          "Federal property checked separately.",
-          "Use-of-force standards reviewed.",
-          "Next state on trip route checked."
-    ],
-    [
-          {
-                "myth": "If my Michigan CPL is recognized, Michigan law follows me into Indiana.",
-                "reality": "No. Indiana law controls once you are physically in Indiana."
-          },
-          {
-                "myth": "A recognized permit means I can carry anywhere.",
-                "reality": "No. Recognition does not override prohibited places, private property, federal property, schools, alcohol rules, or vehicle restrictions."
-          }
-    ]
+    {
+        "myth": "If the map is green, I can carry anywhere in Indiana.",
+        "reality": "No. Green only means permit recognition in the app engine. Restricted/sensitive locations, vehicle rules, private property, federal property, and use-of-force law still control."
+    },
+    {
+        "myth": "Permitless carry means no rules.",
+        "reality": "No. Permitless carry only affects the licensing requirement for eligible people. It does not erase location restrictions, prohibited-person rules, vehicle rules, or use-of-force standards."
+    }
+]
   ),
 
   FL: makeProfile(
@@ -2370,464 +2331,374 @@ var stateLawData = {
 
   KY: makeProfile(
     "Kentucky",
-    "Law-Backed Ultra Expanded Travel State",
-    "Kentucky is a common travel state for Michigan members and has permitless concealed carry for eligible adults, but users must still understand KRS 237.110, KRS 527.020, school restrictions, court/government buildings, posted private property, federal property, vehicle issues, and use-of-force law.",
+    "Elite Deep Travel State",
+    "Kentucky is a common travel state for Michigan members and allows permitless concealed carry for eligible adults 21 and older, but restricted locations, schools, courts, private property, and federal-property rules remain important.",
     {
-          "reciprocity": "Michigan CPL treated as recognized in this app travel engine. Kentucky also has permitless concealed carry for eligible adults.",
-          "permitlessCarry": "KRS 237.110 / KRS 527.020 framework: Kentucky permitless concealed carry is available to eligible persons under statutory conditions.",
-          "concealedCarry": "Kentucky concealed carry may be lawful, but prohibited places still apply.",
-          "openCarry": "Kentucky generally recognizes open carry, but location, vehicle, private property, and conduct restrictions matter.",
-          "vehicleCarry": "Vehicle carry must comply with Kentucky law and changes when crossing state lines.",
-          "dutyToInform": "Verify current Kentucky officer-contact rules; keep hands visible and follow commands.",
-          "privateSigns": "KRS 237.110 and Kentucky property rules: posted premises and private instructions can matter.",
-          "forceLaw": "Kentucky self-protection law is fact-specific and should be verified from KRS Chapter 503."
+    "reciprocity": "Michigan CPL is treated as recognized in this app unless the reciprocity engine shows otherwise. State law controls while physically in this state.",
+    "permitlessCarry": "KRS 237.109: eligible adults 21+ may carry concealed without a license in many places where license holders may carry.",
+    "concealedCarry": "KRS 237.109 and KRS 237.110: concealed carry is allowed for eligible adults, but statutory restrictions still apply.",
+    "openCarry": "Open carry may be lawful for eligible persons, but restricted/sensitive locations, vehicles, private property, and police contact still matter.",
+    "vehicleCarry": "Kentucky vehicle carry is generally permissive for eligible persons, but restricted locations and property rules still matter.",
+    "dutyToInform": "Verify Kentucky police-contact rules; keep hands visible and answer lawful questions truthfully.",
+    "privateSigns": "Private property and posted/instructed restrictions matter. Leave immediately if asked.",
+    "forceLaw": "Use of force is fact-specific. Justification depends on necessity, reasonableness, imminence, proportionality, and the defender’s conduct."
+},
+    [
+    "Recognition or permitless carry does not override restricted and sensitive locations.",
+    "Vehicle carry and transport rules should be checked before crossing state lines.",
+    "Federal property, tribal property, airports, schools, courts, and private property require separate analysis.",
+    "Use-of-force law is separate from carry law; lawful carry does not make every defensive act lawful."
+],
+    [
+    {
+        "title": "Carry Authority / Permit Framework",
+        "risk": "Core Carry Rule",
+        "body": [
+            "STATUTE / SOURCE: KRS 237.109; KRS 237.110",
+            "SUMMARY: Kentucky authorizes eligible persons 21 and older to carry concealed without a license in many places where a licensee may carry.",
+            "GUIDANCE: Confirm eligibility, age, prohibited-person status, and destination restrictions before carrying."
+        ],
+        "source": "KRS 237.109; KRS 237.110"
     },
+    {
+        "title": "Transport and Vehicle Carry",
+        "risk": "Vehicle / Transport Deep Dive",
+        "body": [
+            "STATUTE / SOURCE: KRS 237.109; Kentucky vehicle carry framework",
+            "SUMMARY: Vehicle carry may be lawful for eligible persons, but it does not override schools, courts, federal property, or private property.",
+            "GUIDANCE: Do not treat a vehicle as a free zone. Check employer/property/school rules and remain calm during stops."
+        ],
+        "source": "KRS 237.109; Kentucky vehicle carry framework"
+    },
+    {
+        "title": "Restricted & Sensitive Locations",
+        "risk": "Location Restrictions",
+        "body": [
+            "STATUTE / SOURCE: KRS 237.110 and Kentucky restricted-location framework",
+            "SUMMARY: Kentucky law identifies locations where concealed deadly weapons may not be carried or may be restricted.",
+            "GUIDANCE: Check schools, courthouses, government facilities, detention facilities, police facilities, posted premises, and federal property."
+        ],
+        "source": "KRS 237.110 and Kentucky restricted-location framework"
+    },
+    {
+        "title": "Schools and Educational Property",
+        "risk": "Extreme Risk Area",
+        "body": [
+            "STATUTE / SOURCE: KRS 527.070 and Kentucky school weapons framework",
+            "SUMMARY: Kentucky restricts weapons on school property and school-related settings subject to statutory exceptions.",
+            "GUIDANCE: Treat school buildings, school events, and school parking areas as verify-first."
+        ],
+        "source": "KRS 527.070 and Kentucky school weapons framework"
+    },
+    {
+        "title": "Courts / Government / Secure Facilities",
+        "risk": "Hard Stop Area",
+        "body": [
+            "STATUTE / SOURCE: KRS 237.110 and Kentucky restricted-location framework",
+            "SUMMARY: Court, law-enforcement, detention, and secure government facilities can be prohibited or heavily restricted depending on the exact site and statute.",
+            "GUIDANCE: Do not approach security screening armed. Verify the specific facility before arrival."
+        ],
+        "source": "KRS 237.110 and Kentucky restricted-location framework"
+    },
+    {
+        "title": "Alcohol, Bars, Events, and Impairment",
+        "risk": "Alcohol / Event Risk",
+        "body": [
+            "STATUTE / SOURCE: State alcohol-location and impairment framework",
+            "SUMMARY: Alcohol-related locations, ticketed events, stadiums, festivals, or impairment may create separate legal and practical risk.",
+            "GUIDANCE: If drinking is part of the plan, carrying should not be. Check venue rules and statutory restrictions before entering."
+        ],
+        "source": "State alcohol-location and impairment framework"
+    },
+    {
+        "title": "Private Property / Posted Premises",
+        "risk": "Property Control",
+        "body": [
+            "STATUTE / SOURCE: State private property and trespass framework",
+            "SUMMARY: Private property owners, employers, venues, and persons in control of premises may restrict firearms or require the person to leave.",
+            "GUIDANCE: Follow signs and instructions. Leave immediately if asked; do not create a trespass, disorderly conduct, or public confrontation issue."
+        ],
+        "source": "State private property and trespass framework"
+    },
+    {
+        "title": "Police Interaction / Traffic Stops",
+        "risk": "Police Contact",
+        "body": [
+            "STATUTE / SOURCE: State police-contact and concealed carry guidance",
+            "SUMMARY: Police-contact duties vary by state. Even where no affirmative duty to inform exists, truthful answers, visible hands, and calm compliance are critical.",
+            "GUIDANCE: Keep hands visible, do not reach, answer lawful questions truthfully, and ask how the officer wants you to proceed."
+        ],
+        "source": "State police-contact and concealed carry guidance"
+    },
+    {
+        "title": "Federal, Tribal, Airport, and Interstate Travel Overlay",
+        "risk": "Separate Legal System",
+        "body": [
+            "STATUTE / SOURCE: Federal law; TSA/airport rules; tribal-property framework; interstate travel framework",
+            "SUMMARY: State carry permission does not override federal buildings, post offices, secure airport areas, tribal-government rules, or the laws of the next state on the route.",
+            "GUIDANCE: Check federal/tribal/airport rules separately. When crossing state lines, re-check reciprocity, vehicle carry, magazine/ammunition rules, and sensitive-place laws before entering the next state."
+        ],
+        "source": "Federal facility, TSA, tribal-property, and interstate travel framework"
+    },
+    {
+        "title": "State-Specific Traps",
+        "risk": "Common Legal Traps",
+        "body": [
+            "STATUTE / SOURCE: State-specific legal framework",
+            "SUMMARY: The Kentucky trap is thinking permitless concealed carry applies to every person and every place.",
+            "GUIDANCE: Teach Kentucky as permissive but not unrestricted; restricted locations and age/eligibility still control."
+        ],
+        "source": "State-specific legal framework"
+    },
+    {
+        "title": "Civil Liability / Aftermath",
+        "risk": "Post-Incident Exposure",
+        "body": [
+            "STATUTE / SOURCE: Civil liability, criminal procedure, and self-defense investigation framework",
+            "SUMMARY: A lawful carry status does not prevent arrest, investigation, prosecution review, civil claims, employment consequences, or administrative issues after a defensive incident.",
+            "GUIDANCE: Report the emergency, request police/medical if needed, identify attacker/evidence/witnesses only as necessary, request counsel, then avoid detailed statements until represented."
+        ],
+        "source": "General civil liability and post-incident framework"
+    },
+    {
+        "title": "Use of Force / Self-Defense",
+        "risk": "Life-Altering Legal Risk",
+        "body": [
+            "STATUTE / SOURCE: State self-defense and use-of-force framework",
+            "SUMMARY: Defensive force must be justified under state law and the facts known at the time. Deadly force is not for anger, property disputes, warning shots, intimidation, or punishment.",
+            "GUIDANCE: Avoid, disengage, create distance, call 911 when safe, preserve evidence, and understand that justified does not mean consequence-free."
+        ],
+        "source": "State self-defense and use-of-force framework"
+    }
+],
     [
-          "Kentucky law controls while the user is physically in Kentucky.",
-          "A green map status is only a starting point for reciprocity, not a location-by-location authorization.",
-          "Every section below is tied to a statute or official source where possible.",
-          "Users should verify current law before relying on any summary."
-    ],
+    {
+        "title": "Kentucky Elite Deep Carry Checklist",
+        "steps": [
+            "1. Check reciprocity/current permit recognition before entering the state.",
+            "2. Confirm eligibility, age, prohibited-person status, and whether permitless carry applies.",
+            "3. Check vehicle carry/transport rules before crossing the state line.",
+            "4. Check restricted and sensitive locations before entering any building, event, school, court, government facility, airport, or posted property.",
+            "5. Know police-contact rules and keep hands visible during stops.",
+            "6. Check federal, tribal, airport, and interstate-travel overlays separately.",
+            "7. Separate carry legality from use-of-force legality; both must be lawful."
+        ]
+    }
+],
+    [],
     [
-          {
-                "title": "Permitless Concealed Carry",
-                "risk": "Core Eligibility Rule",
-                "body": [
-                      "STATUTE / SOURCE: KRS 237.110; KRS 527.020.",
-                      "SUMMARY: Kentucky allows eligible persons to carry concealed deadly weapons without a license in many circumstances.",
-                      "GUIDANCE: Eligibility still matters. Permitless does not mean prohibited persons or restricted locations are allowed."
-                ],
-                "source": "KRS 237.110; KRS 527.020; Kentucky State Police permitless carry guidance."
-          },
-          {
-                "title": "CCDW License Still Has Value",
-                "risk": "Travel / Reciprocity",
-                "body": [
-                      "STATUTE / SOURCE: KRS 237.110.",
-                      "SUMMARY: A Kentucky CCDW license may still matter for reciprocity, documentation, and travel outside Kentucky.",
-                      "GUIDANCE: A Michigan traveler should not assume Kentucky permitless carry helps in the next state."
-                ],
-                "source": "KRS 237.110; Kentucky State Police CCDW guidance."
-          },
-          {
-                "title": "Prohibited Places",
-                "risk": "Major Location Restriction",
-                "body": [
-                      "STATUTE / SOURCE: KRS 237.110; KRS 527.020.",
-                      "SUMMARY: Kentucky law identifies locations where concealed deadly weapons may not be carried or may be restricted.",
-                      "GUIDANCE: Schools, courthouses, detention facilities, police stations, federal property, and posted/private property require verification."
-                ],
-                "source": "KRS 237.110; KRS 527.020."
-          },
-          {
-                "title": "Schools / School Property",
-                "risk": "Extreme Risk Area",
-                "body": [
-                      "STATUTE / SOURCE: Kentucky school weapons statutes; KRS framework.",
-                      "SUMMARY: School property and school activities remain high-risk restricted locations.",
-                      "GUIDANCE: Do not rely on permitless carry for school parking lots, events, or school-controlled property without verifying law."
-                ],
-                "source": "Kentucky school weapons framework."
-          },
-          {
-                "title": "Courthouses / Courtrooms",
-                "risk": "Hard Stop Area",
-                "body": [
-                      "STATUTE / SOURCE: Kentucky court/security framework.",
-                      "SUMMARY: Courthouses and courtrooms can be restricted and security-screened.",
-                      "GUIDANCE: Do not bring a weapon to a courthouse unless a clear legal exception applies."
-                ],
-                "source": "Kentucky court/security framework."
-          },
-          {
-                "title": "Private Property / Posted Premises",
-                "risk": "Property Control",
-                "body": [
-                      "STATUTE / SOURCE: KRS 237.110; Kentucky private-property framework.",
-                      "SUMMARY: Private businesses and property owners may restrict weapons on their premises.",
-                      "GUIDANCE: If posted or told to leave, leave immediately."
-                ],
-                "source": "KRS 237.110; Kentucky private property framework."
-          },
-          {
-                "title": "Government Buildings",
-                "risk": "Public Building Risk",
-                "body": [
-                      "STATUTE / SOURCE: KRS 237.115.",
-                      "SUMMARY: Kentucky law addresses local government restrictions and public buildings.",
-                      "GUIDANCE: Government buildings should be treated as verify-first locations; do not assume public property means lawful carry."
-                ],
-                "source": "KRS 237.115."
-          },
-          {
-                "title": "Vehicle Carry / Travel",
-                "risk": "Travel Risk",
-                "body": [
-                      "STATUTE / SOURCE: KRS Chapter 237 and 527 framework.",
-                      "SUMMARY: Kentucky vehicle carry can differ from Michigan and from neighboring states.",
-                      "GUIDANCE: Verify storage, accessibility, and route. Check Ohio, Indiana, Tennessee, Illinois, or West Virginia if crossing borders."
-                ],
-                "source": "Kentucky firearms carry framework."
-          },
-          {
-                "title": "Alcohol / Impairment",
-                "risk": "Intoxication Risk",
-                "body": [
-                      "STATUTE / SOURCE: Kentucky weapons and intoxication framework.",
-                      "SUMMARY: Carrying while impaired can create serious criminal and civil risk.",
-                      "GUIDANCE: If drinking is part of the plan, carrying should not be."
-                ],
-                "source": "Kentucky weapons/intoxication framework."
-          },
-          {
-                "title": "Federal Property / Post Offices",
-                "risk": "Federal Law Overlay",
-                "body": [
-                      "STATUTE / SOURCE: Federal facility and postal property framework.",
-                      "SUMMARY: Kentucky carry permission does not override federal restrictions.",
-                      "GUIDANCE: Post offices, federal buildings, federal courthouses, and secure federal property require separate analysis."
-                ],
-                "source": "Federal facility and postal property framework."
-          },
-          {
-                "title": "Use of Force / Self-Protection",
-                "risk": "Force Law",
-                "body": [
-                      "STATUTE / SOURCE: KRS Chapter 503.",
-                      "SUMMARY: Kentucky self-protection and defense-of-others law is fact-specific.",
-                      "GUIDANCE: Do not use force over insults, ego, property disputes, road rage, warning shots, or punishment."
-                ],
-                "source": "KRS Chapter 503."
-          },
-          {
-                "title": "Aftermath / Statements",
-                "risk": "Post-Incident Risk",
-                "body": [
-                      "STATUTE / SOURCE: Criminal procedure and evidence framework.",
-                      "SUMMARY: Statements after a defensive incident can become evidence.",
-                      "GUIDANCE: Call 911, request help, identify evidence/witnesses if necessary, request counsel, then stop talking."
-                ],
-                "source": "Prime Defense aftermath protocol; Kentucky criminal procedure framework."
-          }
-    ],
+    "Assuming reciprocity means carry anywhere.",
+    "Ignoring vehicle carry and transport rules.",
+    "Ignoring schools, courts, secure facilities, airports, and federal property.",
+    "Arguing with staff/security instead of leaving posted or restricted property.",
+    "Thinking lawful carry automatically justifies defensive display or force.",
+    "Talking too much after a defensive incident before legal counsel."
+],
     [
-          {
-                "title": "Can I Carry Here in Kentucky?",
-                "steps": [
-                      "1. Am I legally eligible to possess and carry?",
-                      "2. Is this restricted by KRS 237.110, KRS 527.020, or another Kentucky law?",
-                      "3. Is this school-related, court-related, government-controlled, posted/private, federal, or alcohol-related?",
-                      "4. Am I crossing into another state?",
-                      "5. If uncertain, do not enter armed."
-                ]
-          },
-          {
-                "title": "Kentucky Traffic Stop / Police Contact",
-                "steps": [
-                      "1. Pull over or stop safely.",
-                      "2. Keep hands visible.",
-                      "3. Do not reach for anything until instructed.",
-                      "4. Follow state-specific disclosure or identification rules.",
-                      "5. Answer lawful questions truthfully and wait for legal guidance before detailed statements."
-                ]
-          }
-    ],
+    "Reciprocity checked.",
+    "Eligibility checked.",
+    "Vehicle carry checked.",
+    "Restricted & sensitive locations checked.",
+    "Police-contact rule checked.",
+    "Federal/tribal/airport overlay checked.",
+    "Aftermath plan ready."
+],
     [
-          {
-                "title": "Kentucky Road Trip",
-                "summary": "Rules change from Michigan, Ohio, Indiana, and Tennessee.",
-                "guidance": [
-                      "Check route states.",
-                      "Check vehicle carry.",
-                      "Check destination rules."
-                ]
-          },
-          {
-                "title": "Posted Business",
-                "summary": "Private property restrictions can matter.",
-                "guidance": [
-                      "Look for signs.",
-                      "Leave if instructed.",
-                      "Do not argue with staff."
-                ]
-          }
-    ],
-    [
-          "Assuming Michigan rules apply outside Michigan.",
-          "Ignoring prohibited places.",
-          "Ignoring private-property or signage rules.",
-          "Ignoring vehicle carry differences.",
-          "Ignoring school-zone restrictions.",
-          "Ignoring alcohol-location rules.",
-          "Assuming federal property follows state carry rules.",
-          "Relying on old reciprocity information.",
-          "Assuming Kentucky permitless carry applies to every person.",
-          "Ignoring KRS 237.110 location restrictions.",
-          "Ignoring government building rules under KRS 237.115."
-    ],
-    [
-          "Permit recognition checked.",
-          "Eligibility checked.",
-          "Prohibited places checked.",
-          "School rules checked.",
-          "Vehicle carry checked.",
-          "Private property/signage checked.",
-          "Alcohol-related restrictions checked.",
-          "Federal property checked separately.",
-          "Use-of-force standards reviewed.",
-          "Next state on trip route checked."
-    ],
-    [
-          {
-                "myth": "If my Michigan CPL is recognized, Michigan law follows me into Kentucky.",
-                "reality": "No. Kentucky law controls once you are physically in Kentucky."
-          },
-          {
-                "myth": "A recognized permit means I can carry anywhere.",
-                "reality": "No. Recognition does not override prohibited places, private property, federal property, schools, alcohol rules, or vehicle restrictions."
-          }
-    ]
+    {
+        "myth": "If the map is green, I can carry anywhere in Kentucky.",
+        "reality": "No. Green only means permit recognition in the app engine. Restricted/sensitive locations, vehicle rules, private property, federal property, and use-of-force law still control."
+    },
+    {
+        "myth": "Permitless carry means no rules.",
+        "reality": "No. Permitless carry only affects the licensing requirement for eligible people. It does not erase location restrictions, prohibited-person rules, vehicle rules, or use-of-force standards."
+    }
+]
   ),
 
   TN: makeProfile(
     "Tennessee",
-    "Law-Backed Ultra Expanded Travel State",
-    "Tennessee is a common travel state and has permitless handgun carry for people who meet statutory requirements, but users must understand TCA Title 39 Chapter 17 Part 13, prohibited locations, school property, posted private property, government buildings, vehicle issues, alcohol/impairment, and the current evolving legal landscape around parks and public recreational areas.",
+    "Elite Deep Travel State",
+    "Tennessee is a major travel corridor with permitless handgun carry for eligible persons, but it has detailed rules for prohibited locations, schools, posted property, parks, alcohol/events, and law-enforcement interaction.",
     {
-          "reciprocity": "Michigan CPL treated as recognized in this app travel engine. Tennessee also has permitless handgun carry for qualifying persons.",
-          "permitlessCarry": "TCA 39-17-1307 framework: Tennessee permits many qualifying persons to carry a handgun without a permit, subject to restrictions.",
-          "concealedCarry": "Concealed carry may be lawful for qualifying persons, but prohibited places and posting rules still apply.",
-          "openCarry": "Tennessee permitless carry applies to handguns for qualifying persons, but open carry may still create practical and location-specific issues.",
-          "vehicleCarry": "Tennessee vehicle carry must comply with state law and route-state rules.",
-          "dutyToInform": "Verify Tennessee officer-contact rules; keep hands visible and follow commands.",
-          "privateSigns": "TCA 39-17-1359: posted property rules can restrict carry.",
-          "forceLaw": "Tennessee self-defense law is fact-specific and should be verified from current TCA provisions."
+    "reciprocity": "Michigan CPL is treated as recognized in this app unless the reciprocity engine shows otherwise. State law controls while physically in this state.",
+    "permitlessCarry": "Tennessee allows certain eligible adults to carry a handgun without a permit, but eligibility and restricted locations still apply.",
+    "concealedCarry": "Tennessee handgun carry is generally permissive for eligible persons, subject to statutory restrictions and posted locations.",
+    "openCarry": "Open carry may be lawful for eligible persons, but restricted/sensitive locations, vehicles, private property, and police contact still matter.",
+    "vehicleCarry": "Vehicle carry can be lawful for eligible persons, but schools, posted property, federal property, and police-contact conduct still matter.",
+    "dutyToInform": "Verify Tennessee police-contact rules; keep hands visible and answer lawful questions truthfully.",
+    "privateSigns": "Private property and posted/instructed restrictions matter. Leave immediately if asked.",
+    "forceLaw": "Use of force is fact-specific. Justification depends on necessity, reasonableness, imminence, proportionality, and the defender’s conduct."
+},
+    [
+    "Recognition or permitless carry does not override restricted and sensitive locations.",
+    "Vehicle carry and transport rules should be checked before crossing state lines.",
+    "Federal property, tribal property, airports, schools, courts, and private property require separate analysis.",
+    "Use-of-force law is separate from carry law; lawful carry does not make every defensive act lawful."
+],
+    [
+    {
+        "title": "Carry Authority / Permit Framework",
+        "risk": "Core Carry Rule",
+        "body": [
+            "STATUTE / SOURCE: Tenn. Code Ann. § 39-17-1307",
+            "SUMMARY: Tennessee law addresses carrying handguns and permitless carry eligibility for qualifying adults.",
+            "GUIDANCE: Confirm eligibility, age, prohibited-person status, and whether the destination is prohibited or posted."
+        ],
+        "source": "Tenn. Code Ann. § 39-17-1307"
     },
+    {
+        "title": "Transport and Vehicle Carry",
+        "risk": "Vehicle / Transport Deep Dive",
+        "body": [
+            "STATUTE / SOURCE: Tenn. Code Ann. § 39-17-1307 and Tennessee vehicle carry framework",
+            "SUMMARY: Tennessee vehicle carry is generally permissive for eligible persons but still subject to restricted places and unlawful possession rules.",
+            "GUIDANCE: Do not assume a firearm may be carried onto school property or into posted/secure locations simply because it is in a vehicle."
+        ],
+        "source": "Tenn. Code Ann. § 39-17-1307 and Tennessee vehicle carry framework"
+    },
+    {
+        "title": "Restricted & Sensitive Locations",
+        "risk": "Location Restrictions",
+        "body": [
+            "STATUTE / SOURCE: Tenn. Code Ann. §§ 39-17-1309, 39-17-1359, and Tennessee prohibited-place framework",
+            "SUMMARY: Tennessee restricts weapons in schools, certain parks/facilities, posted premises, court/government settings, and other locations.",
+            "GUIDANCE: Check posted signs carefully; Tennessee posting law can matter."
+        ],
+        "source": "Tenn. Code Ann. §§ 39-17-1309, 39-17-1359, and Tennessee prohibited-place framework"
+    },
+    {
+        "title": "Schools and Educational Property",
+        "risk": "Extreme Risk Area",
+        "body": [
+            "STATUTE / SOURCE: Tenn. Code Ann. § 39-17-1309",
+            "SUMMARY: Tennessee restricts carrying weapons on school property and school-related facilities subject to exceptions.",
+            "GUIDANCE: Treat school property, school events, and school parking areas as verify-first."
+        ],
+        "source": "Tenn. Code Ann. § 39-17-1309"
+    },
+    {
+        "title": "Courts / Government / Secure Facilities",
+        "risk": "Hard Stop Area",
+        "body": [
+            "STATUTE / SOURCE: Tenn. Code Ann. §§ 39-17-1309, 39-17-1359, and Tennessee prohibited-place framework",
+            "SUMMARY: Court, law-enforcement, detention, and secure government facilities can be prohibited or heavily restricted depending on the exact site and statute.",
+            "GUIDANCE: Do not approach security screening armed. Verify the specific facility before arrival."
+        ],
+        "source": "Tenn. Code Ann. §§ 39-17-1309, 39-17-1359, and Tennessee prohibited-place framework"
+    },
+    {
+        "title": "Alcohol, Bars, Events, and Impairment",
+        "risk": "Alcohol / Event Risk",
+        "body": [
+            "STATUTE / SOURCE: State alcohol-location and impairment framework",
+            "SUMMARY: Alcohol-related locations, ticketed events, stadiums, festivals, or impairment may create separate legal and practical risk.",
+            "GUIDANCE: If drinking is part of the plan, carrying should not be. Check venue rules and statutory restrictions before entering."
+        ],
+        "source": "State alcohol-location and impairment framework"
+    },
+    {
+        "title": "Private Property / Posted Premises",
+        "risk": "Property Control",
+        "body": [
+            "STATUTE / SOURCE: State private property and trespass framework",
+            "SUMMARY: Private property owners, employers, venues, and persons in control of premises may restrict firearms or require the person to leave.",
+            "GUIDANCE: Follow signs and instructions. Leave immediately if asked; do not create a trespass, disorderly conduct, or public confrontation issue."
+        ],
+        "source": "State private property and trespass framework"
+    },
+    {
+        "title": "Police Interaction / Traffic Stops",
+        "risk": "Police Contact",
+        "body": [
+            "STATUTE / SOURCE: State police-contact and concealed carry guidance",
+            "SUMMARY: Police-contact duties vary by state. Even where no affirmative duty to inform exists, truthful answers, visible hands, and calm compliance are critical.",
+            "GUIDANCE: Keep hands visible, do not reach, answer lawful questions truthfully, and ask how the officer wants you to proceed."
+        ],
+        "source": "State police-contact and concealed carry guidance"
+    },
+    {
+        "title": "Federal, Tribal, Airport, and Interstate Travel Overlay",
+        "risk": "Separate Legal System",
+        "body": [
+            "STATUTE / SOURCE: Federal law; TSA/airport rules; tribal-property framework; interstate travel framework",
+            "SUMMARY: State carry permission does not override federal buildings, post offices, secure airport areas, tribal-government rules, or the laws of the next state on the route.",
+            "GUIDANCE: Check federal/tribal/airport rules separately. When crossing state lines, re-check reciprocity, vehicle carry, magazine/ammunition rules, and sensitive-place laws before entering the next state."
+        ],
+        "source": "Federal facility, TSA, tribal-property, and interstate travel framework"
+    },
+    {
+        "title": "State-Specific Traps",
+        "risk": "Common Legal Traps",
+        "body": [
+            "STATUTE / SOURCE: State-specific legal framework",
+            "SUMMARY: The Tennessee trap is ignoring posted-premises law and assuming permitless carry overrides schools or government facilities.",
+            "GUIDANCE: Teach users to look for signs and to verify schools, courts, government facilities, and parks before carrying."
+        ],
+        "source": "State-specific legal framework"
+    },
+    {
+        "title": "Civil Liability / Aftermath",
+        "risk": "Post-Incident Exposure",
+        "body": [
+            "STATUTE / SOURCE: Civil liability, criminal procedure, and self-defense investigation framework",
+            "SUMMARY: A lawful carry status does not prevent arrest, investigation, prosecution review, civil claims, employment consequences, or administrative issues after a defensive incident.",
+            "GUIDANCE: Report the emergency, request police/medical if needed, identify attacker/evidence/witnesses only as necessary, request counsel, then avoid detailed statements until represented."
+        ],
+        "source": "General civil liability and post-incident framework"
+    },
+    {
+        "title": "Use of Force / Self-Defense",
+        "risk": "Life-Altering Legal Risk",
+        "body": [
+            "STATUTE / SOURCE: State self-defense and use-of-force framework",
+            "SUMMARY: Defensive force must be justified under state law and the facts known at the time. Deadly force is not for anger, property disputes, warning shots, intimidation, or punishment.",
+            "GUIDANCE: Avoid, disengage, create distance, call 911 when safe, preserve evidence, and understand that justified does not mean consequence-free."
+        ],
+        "source": "State self-defense and use-of-force framework"
+    }
+],
     [
-          "Tennessee law controls while the user is physically in Tennessee.",
-          "A green map status is only a starting point for reciprocity, not a location-by-location authorization.",
-          "Every section below is tied to a statute or official source where possible.",
-          "Users should verify current law before relying on any summary."
-    ],
+    {
+        "title": "Tennessee Elite Deep Carry Checklist",
+        "steps": [
+            "1. Check reciprocity/current permit recognition before entering the state.",
+            "2. Confirm eligibility, age, prohibited-person status, and whether permitless carry applies.",
+            "3. Check vehicle carry/transport rules before crossing the state line.",
+            "4. Check restricted and sensitive locations before entering any building, event, school, court, government facility, airport, or posted property.",
+            "5. Know police-contact rules and keep hands visible during stops.",
+            "6. Check federal, tribal, airport, and interstate-travel overlays separately.",
+            "7. Separate carry legality from use-of-force legality; both must be lawful."
+        ]
+    }
+],
+    [],
     [
-          {
-                "title": "Permitless Handgun Carry",
-                "risk": "Core Eligibility Rule",
-                "body": [
-                      "STATUTE / SOURCE: TCA 39-17-1307; Tennessee Department of Safety guidance.",
-                      "SUMMARY: Tennessee allows many qualifying persons to carry a handgun without a permit, subject to statutory requirements and restrictions.",
-                      "GUIDANCE: Permitless carry is not universal and does not apply to everyone or every location."
-                ],
-                "source": "TCA 39-17-1307; Tennessee Department of Safety handgun carry guidance."
-          },
-          {
-                "title": "Handgun Permits Still Matter",
-                "risk": "Travel / Reciprocity",
-                "body": [
-                      "STATUTE / SOURCE: Tennessee Department of Safety handgun permit framework.",
-                      "SUMMARY: Tennessee permits may still matter for reciprocity, documentation, and travel outside Tennessee.",
-                      "GUIDANCE: A Michigan traveler should not assume Tennessee permitless carry helps in the next state."
-                ],
-                "source": "Tennessee Department of Safety handgun permit guidance."
-          },
-          {
-                "title": "Prohibited Places",
-                "risk": "Major Location Restriction",
-                "body": [
-                      "STATUTE / SOURCE: TCA Title 39, Chapter 17, Part 13.",
-                      "SUMMARY: Tennessee law identifies locations where firearms or handguns are prohibited or restricted.",
-                      "GUIDANCE: Check schools, courtrooms, public buildings, posted private property, federal property, and other sensitive places before entering."
-                ],
-                "source": "TCA Title 39, Chapter 17, Part 13."
-          },
-          {
-                "title": "Schools / School Property",
-                "risk": "Extreme Risk Area",
-                "body": [
-                      "STATUTE / SOURCE: TCA 39-17-1309 and related school-property framework.",
-                      "SUMMARY: Tennessee law restricts firearms on school property and school-related locations, subject to statutory provisions.",
-                      "GUIDANCE: Do not assume permitless carry or a Michigan CPL solves school property, parking, event, or student activity issues."
-                ],
-                "source": "TCA 39-17-1309."
-          },
-          {
-                "title": "Posted Property / Private Signs",
-                "risk": "Property Control",
-                "body": [
-                      "STATUTE / SOURCE: TCA 39-17-1359.",
-                      "SUMMARY: Tennessee law allows property to be posted against firearms under statutory requirements.",
-                      "GUIDANCE: Look for signs. If posted or instructed to leave, leave immediately."
-                ],
-                "source": "TCA 39-17-1359."
-          },
-          {
-                "title": "Government Buildings / Security Screening",
-                "risk": "Public Building Risk",
-                "body": [
-                      "STATUTE / SOURCE: TCA 39-17-1359 and local-government building framework.",
-                      "SUMMARY: Some local government properties may restrict handguns only if statutory security measures are provided, but exceptions and special locations apply.",
-                      "GUIDANCE: Government buildings, libraries, schools, law-enforcement facilities, courtrooms, and mental health/substance facilities require careful verification."
-                ],
-                "source": "TCA 39-17-1359; Tennessee public building framework."
-          },
-          {
-                "title": "Courthouses / Courtrooms",
-                "risk": "Hard Stop Area",
-                "body": [
-                      "STATUTE / SOURCE: Tennessee court/security framework.",
-                      "SUMMARY: Courtrooms and court facilities can be restricted and security-screened.",
-                      "GUIDANCE: Do not bring a firearm to a courtroom or courthouse unless a clear legal exception applies."
-                ],
-                "source": "Tennessee court/security framework."
-          },
-          {
-                "title": "Parks / Recreation Areas",
-                "risk": "Evolving Law Warning",
-                "body": [
-                      "STATUTE / SOURCE: Recent Tennessee court decisions and TCA framework.",
-                      "SUMMARY: Tennessee restrictions involving parks and public recreation areas have been subject to recent litigation and legal changes.",
-                      "GUIDANCE: Because this area is evolving, verify current law before relying on older summaries."
-                ],
-                "source": "Recent Tennessee litigation and TCA public recreation framework."
-          },
-          {
-                "title": "Vehicle Carry / Travel",
-                "risk": "Travel Risk",
-                "body": [
-                      "STATUTE / SOURCE: TCA Title 39, Chapter 17, Part 13 framework.",
-                      "SUMMARY: Tennessee vehicle carry may be lawful for qualifying persons but remains subject to eligibility and location restrictions.",
-                      "GUIDANCE: Check vehicle rules and the next state on the route."
-                ],
-                "source": "TCA Title 39, Chapter 17, Part 13."
-          },
-          {
-                "title": "Alcohol / Impairment",
-                "risk": "Intoxication Risk",
-                "body": [
-                      "STATUTE / SOURCE: Tennessee weapons/intoxication framework.",
-                      "SUMMARY: Weapons and impairment create serious criminal and civil risk.",
-                      "GUIDANCE: If drinking is part of the plan, carrying should not be."
-                ],
-                "source": "Tennessee weapons/intoxication framework."
-          },
-          {
-                "title": "Federal Property / Post Offices",
-                "risk": "Federal Law Overlay",
-                "body": [
-                      "STATUTE / SOURCE: Federal facility and postal property framework.",
-                      "SUMMARY: Tennessee carry permission does not override federal restrictions.",
-                      "GUIDANCE: Post offices, federal buildings, federal courthouses, and secure federal property require separate federal-law analysis."
-                ],
-                "source": "Federal facility and postal property framework."
-          },
-          {
-                "title": "Use of Force / Self-Defense",
-                "risk": "Force Law",
-                "body": [
-                      "STATUTE / SOURCE: Tennessee self-defense statutes and case law framework.",
-                      "SUMMARY: Tennessee self-defense law is fact-specific and must be verified from current law.",
-                      "GUIDANCE: Avoid slogans. Deadly force is not for insults, ego, property disputes, road rage, warning shots, or punishment."
-                ],
-                "source": "Tennessee self-defense framework."
-          },
-          {
-                "title": "Aftermath / Statements",
-                "risk": "Post-Incident Risk",
-                "body": [
-                      "STATUTE / SOURCE: Criminal procedure and evidence framework.",
-                      "SUMMARY: Statements after an incident can become evidence.",
-                      "GUIDANCE: Call 911, request help, identify evidence/witnesses if necessary, request counsel, then stop talking."
-                ],
-                "source": "Prime Defense aftermath protocol; Tennessee criminal procedure framework."
-          }
-    ],
+    "Assuming reciprocity means carry anywhere.",
+    "Ignoring vehicle carry and transport rules.",
+    "Ignoring schools, courts, secure facilities, airports, and federal property.",
+    "Arguing with staff/security instead of leaving posted or restricted property.",
+    "Thinking lawful carry automatically justifies defensive display or force.",
+    "Talking too much after a defensive incident before legal counsel."
+],
     [
-          {
-                "title": "Can I Carry Here in Tennessee?",
-                "steps": [
-                      "1. Am I legally eligible under Tennessee law?",
-                      "2. Is this prohibited under TCA Title 39, Chapter 17, Part 13?",
-                      "3. Is this school-related under TCA 39-17-1309?",
-                      "4. Is this posted under TCA 39-17-1359?",
-                      "5. Is this government, courtroom, law-enforcement, federal, alcohol-related, or security-controlled?",
-                      "6. If uncertain, do not enter armed."
-                ]
-          },
-          {
-                "title": "Tennessee Traffic Stop / Police Contact",
-                "steps": [
-                      "1. Pull over or stop safely.",
-                      "2. Keep hands visible.",
-                      "3. Do not reach for anything until instructed.",
-                      "4. Follow state-specific disclosure or identification rules.",
-                      "5. Answer lawful questions truthfully and wait for legal guidance before detailed statements."
-                ]
-          }
-    ],
+    "Reciprocity checked.",
+    "Eligibility checked.",
+    "Vehicle carry checked.",
+    "Restricted & sensitive locations checked.",
+    "Police-contact rule checked.",
+    "Federal/tribal/airport overlay checked.",
+    "Aftermath plan ready."
+],
     [
-          {
-                "title": "Nashville / Memphis Venue",
-                "summary": "Entertainment venues often combine private signs, alcohol, crowds, and security screening.",
-                "guidance": [
-                      "Check posted signs.",
-                      "Do not drink while armed.",
-                      "Do not argue with security."
-                ]
-          },
-          {
-                "title": "School or University Event",
-                "summary": "School-related property remains high-risk.",
-                "guidance": [
-                      "Check TCA 39-17-1309.",
-                      "Do not rely on permitless carry.",
-                      "When uncertain, do not enter armed."
-                ]
-          },
-          {
-                "title": "Public Park or Recreation Area",
-                "summary": "Tennessee law in this area has been evolving.",
-                "guidance": [
-                      "Verify current law before relying on older summaries.",
-                      "Check whether a school event or government facility is involved.",
-                      "Follow posted restrictions and current legal guidance."
-                ]
-          }
-    ],
-    [
-          "Assuming Michigan rules apply outside Michigan.",
-          "Ignoring prohibited places.",
-          "Ignoring private-property or signage rules.",
-          "Ignoring vehicle carry differences.",
-          "Ignoring school-zone restrictions.",
-          "Ignoring alcohol-location rules.",
-          "Assuming federal property follows state carry rules.",
-          "Relying on old reciprocity information.",
-          "Assuming permitless handgun carry applies to every person.",
-          "Ignoring TCA 39-17-1359 posted property rules.",
-          "Relying on outdated Tennessee parks/recreation summaries."
-    ],
-    [
-          "Permit recognition checked.",
-          "Eligibility checked.",
-          "Prohibited places checked.",
-          "School rules checked.",
-          "Vehicle carry checked.",
-          "Private property/signage checked.",
-          "Alcohol-related restrictions checked.",
-          "Federal property checked separately.",
-          "Use-of-force standards reviewed.",
-          "Next state on trip route checked."
-    ],
-    [
-          {
-                "myth": "If my Michigan CPL is recognized, Michigan law follows me into Tennessee.",
-                "reality": "No. Tennessee law controls once you are physically in Tennessee."
-          },
-          {
-                "myth": "A recognized permit means I can carry anywhere.",
-                "reality": "No. Recognition does not override prohibited places, private property, federal property, schools, alcohol rules, or vehicle restrictions."
-          }
-    ]
+    {
+        "myth": "If the map is green, I can carry anywhere in Tennessee.",
+        "reality": "No. Green only means permit recognition in the app engine. Restricted/sensitive locations, vehicle rules, private property, federal property, and use-of-force law still control."
+    },
+    {
+        "myth": "Permitless carry means no rules.",
+        "reality": "No. Permitless carry only affects the licensing requirement for eligible people. It does not erase location restrictions, prohibited-person rules, vehicle rules, or use-of-force standards."
+    }
+]
   ),
 
   PA: makeProfile(
@@ -3015,692 +2886,746 @@ var stateLawData = {
 
   WI: makeProfile(
     "Wisconsin",
-    "Law-Backed Ultra Expanded Travel State",
-    "Wisconsin is a high-priority Great Lakes travel state for Michigan CPL holders. Wisconsin has a concealed carry licensing system and recognizes qualifying out-of-state licenses, but users must understand license/ID possession, prohibited places, school zones, vehicles, government buildings, alcohol-related issues, private property, and federal property restrictions.",
+    "Elite Deep Travel State",
+    "Wisconsin is a license/recognized-permit state with important ID/documentation duties, school-zone restrictions, vehicle/concealed carry rules, posted property, government facilities, and federal overlays.",
     {
-      reciprocity: "Michigan CPL recognition should be verified before travel. Wisconsin law controls while physically in Wisconsin.",
-      permitlessCarry: "No general permitless concealed carry. Wisconsin generally requires a valid Wisconsin CCW license or recognized out-of-state license for concealed carry.",
-      concealedCarry: "Wis. Stat. § 175.60 governs Wisconsin concealed carry licensing and recognition.",
-      openCarry: "Open carry may be lawful in some circumstances, but restricted places, vehicles, disorderly conduct, and private property still matter.",
-      vehicleCarry: "Vehicle carry must be analyzed under Wisconsin concealed carry and transport laws.",
-      dutyToInform: "Wisconsin requires license/ID possession and display upon lawful request when carrying concealed under the license framework.",
-      privateSigns: "Private property owners may restrict carry. Leave immediately if asked.",
-      forceLaw: "Wisconsin self-defense law is fact-specific and must be verified before relying on any summary."
+    "reciprocity": "Michigan CPL is treated as recognized in this app unless the reciprocity engine shows otherwise. State law controls while physically in this state.",
+    "permitlessCarry": "No general permitless concealed carry. Wisconsin generally requires a valid Wisconsin CCW license or recognized out-of-state license for concealed carry.",
+    "concealedCarry": "Wis. Stat. § 175.60 governs concealed carry licensing and recognition.",
+    "openCarry": "Open carry may be lawful for eligible persons, but restricted/sensitive locations, vehicles, private property, and police contact still matter.",
+    "vehicleCarry": "Vehicle carry must be analyzed under Wisconsin concealed carry, transport, and license-recognition rules.",
+    "dutyToInform": "Wisconsin requires license/ID possession and display upon lawful request when carrying concealed under the license framework.",
+    "privateSigns": "Private property and posted/instructed restrictions matter. Leave immediately if asked.",
+    "forceLaw": "Use of force is fact-specific. Justification depends on necessity, reasonableness, imminence, proportionality, and the defender’s conduct."
+},
+    [
+    "Recognition or permitless carry does not override restricted and sensitive locations.",
+    "Vehicle carry and transport rules should be checked before crossing state lines.",
+    "Federal property, tribal property, airports, schools, courts, and private property require separate analysis.",
+    "Use-of-force law is separate from carry law; lawful carry does not make every defensive act lawful."
+],
+    [
+    {
+        "title": "Carry Authority / Permit Framework",
+        "risk": "Core Carry Rule",
+        "body": [
+            "STATUTE / SOURCE: Wis. Stat. § 175.60; Wis. Stat. § 941.23",
+            "SUMMARY: Wisconsin concealed carry is license-based, with recognized out-of-state licenses and specific documentation rules.",
+            "GUIDANCE: Carry permit and photo ID when relying on recognition."
+        ],
+        "source": "Wis. Stat. § 175.60; Wis. Stat. § 941.23"
     },
+    {
+        "title": "Transport and Vehicle Carry",
+        "risk": "Vehicle / Transport Deep Dive",
+        "body": [
+            "STATUTE / SOURCE: Wis. Stat. § 941.23; Wis. Stat. § 175.60",
+            "SUMMARY: Vehicle carry can become concealed carry depending on firearm placement and accessibility, and should be analyzed with license recognition.",
+            "GUIDANCE: Do not assume vehicle carry is automatically lawful. Carry license/ID and avoid reaching during stops."
+        ],
+        "source": "Wis. Stat. § 941.23; Wis. Stat. § 175.60"
+    },
+    {
+        "title": "Restricted & Sensitive Locations",
+        "risk": "Location Restrictions",
+        "body": [
+            "STATUTE / SOURCE: Wis. Stat. § 175.60 and Wisconsin DOJ CCW guidance",
+            "SUMMARY: Wisconsin restricts carry in certain buildings/facilities and allows certain posted restrictions.",
+            "GUIDANCE: Check law-enforcement facilities, jails, courthouses, schools, federal property, and posted locations."
+        ],
+        "source": "Wis. Stat. § 175.60 and Wisconsin DOJ CCW guidance"
+    },
+    {
+        "title": "Schools and Educational Property",
+        "risk": "Extreme Risk Area",
+        "body": [
+            "STATUTE / SOURCE: Wis. Stat. § 948.605",
+            "SUMMARY: Wisconsin restricts firearms in school zones subject to statutory exceptions.",
+            "GUIDANCE: School buildings, grounds, events, and parking areas require exact verification."
+        ],
+        "source": "Wis. Stat. § 948.605"
+    },
+    {
+        "title": "Courts / Government / Secure Facilities",
+        "risk": "Hard Stop Area",
+        "body": [
+            "STATUTE / SOURCE: Wis. Stat. § 175.60 and Wisconsin DOJ CCW guidance",
+            "SUMMARY: Court, law-enforcement, detention, and secure government facilities can be prohibited or heavily restricted depending on the exact site and statute.",
+            "GUIDANCE: Do not approach security screening armed. Verify the specific facility before arrival."
+        ],
+        "source": "Wis. Stat. § 175.60 and Wisconsin DOJ CCW guidance"
+    },
+    {
+        "title": "Alcohol, Bars, Events, and Impairment",
+        "risk": "Alcohol / Event Risk",
+        "body": [
+            "STATUTE / SOURCE: State alcohol-location and impairment framework",
+            "SUMMARY: Alcohol-related locations, ticketed events, stadiums, festivals, or impairment may create separate legal and practical risk.",
+            "GUIDANCE: If drinking is part of the plan, carrying should not be. Check venue rules and statutory restrictions before entering."
+        ],
+        "source": "State alcohol-location and impairment framework"
+    },
+    {
+        "title": "Private Property / Posted Premises",
+        "risk": "Property Control",
+        "body": [
+            "STATUTE / SOURCE: Wisconsin DOJ CCW FAQ and posting/property framework",
+            "SUMMARY: Private property owners, employers, venues, and persons in control of premises may restrict firearms or require the person to leave.",
+            "GUIDANCE: Follow signs and instructions. Leave immediately if asked; do not create a trespass, disorderly conduct, or public confrontation issue."
+        ],
+        "source": "Wisconsin DOJ CCW FAQ and posting/property framework"
+    },
+    {
+        "title": "Police Interaction / Traffic Stops",
+        "risk": "Police Contact",
+        "body": [
+            "STATUTE / SOURCE: Wis. Stat. § 175.60(4)",
+            "SUMMARY: Wisconsin requires license and photographic ID while carrying concealed and display upon request by a law enforcement officer.",
+            "GUIDANCE: Carry physical documentation and keep hands visible. If asked, provide documentation calmly."
+        ],
+        "source": "Wis. Stat. § 175.60(4)"
+    },
+    {
+        "title": "Federal, Tribal, Airport, and Interstate Travel Overlay",
+        "risk": "Separate Legal System",
+        "body": [
+            "STATUTE / SOURCE: Federal law; TSA/airport rules; tribal-property framework; interstate travel framework",
+            "SUMMARY: State carry permission does not override federal buildings, post offices, secure airport areas, tribal-government rules, or the laws of the next state on the route.",
+            "GUIDANCE: Check federal/tribal/airport rules separately. When crossing state lines, re-check reciprocity, vehicle carry, magazine/ammunition rules, and sensitive-place laws before entering the next state."
+        ],
+        "source": "Federal facility, TSA, tribal-property, and interstate travel framework"
+    },
+    {
+        "title": "State-Specific Traps",
+        "risk": "Common Legal Traps",
+        "body": [
+            "STATUTE / SOURCE: State-specific legal framework",
+            "SUMMARY: Wisconsin traps include forgetting license/ID, assuming vehicle carry is simple, and ignoring school-zone law.",
+            "GUIDANCE: Teach Wisconsin around documentation and school-zone/vehicle details."
+        ],
+        "source": "State-specific legal framework"
+    },
+    {
+        "title": "Civil Liability / Aftermath",
+        "risk": "Post-Incident Exposure",
+        "body": [
+            "STATUTE / SOURCE: Civil liability, criminal procedure, and self-defense investigation framework",
+            "SUMMARY: A lawful carry status does not prevent arrest, investigation, prosecution review, civil claims, employment consequences, or administrative issues after a defensive incident.",
+            "GUIDANCE: Report the emergency, request police/medical if needed, identify attacker/evidence/witnesses only as necessary, request counsel, then avoid detailed statements until represented."
+        ],
+        "source": "General civil liability and post-incident framework"
+    },
+    {
+        "title": "Use of Force / Self-Defense",
+        "risk": "Life-Altering Legal Risk",
+        "body": [
+            "STATUTE / SOURCE: State self-defense and use-of-force framework",
+            "SUMMARY: Defensive force must be justified under state law and the facts known at the time. Deadly force is not for anger, property disputes, warning shots, intimidation, or punishment.",
+            "GUIDANCE: Avoid, disengage, create distance, call 911 when safe, preserve evidence, and understand that justified does not mean consequence-free."
+        ],
+        "source": "State self-defense and use-of-force framework"
+    }
+],
     [
-      "Wisconsin is not a permitless concealed carry state.",
-      "A recognized out-of-state license may matter, but users must carry proper documentation.",
-      "School zones, government buildings, law enforcement facilities, and posted private property require special caution.",
-      "Open carry does not solve concealed carry or restricted-location issues.",
-      "Great Lakes travel often involves parks, campgrounds, boats, hotels, and vehicle storage—each should be checked separately."
-    ],
-    [
-      {
-        title: "Concealed Carry License Framework",
-        risk: "Core Carry Rule",
-        body: [
-          "STATUTE: Wis. Stat. § 175.60.",
-          "SUMMARY: Wisconsin’s concealed carry statute governs issuance of licenses and the concealed carry framework.",
-          "GUIDANCE: A Michigan CPL holder should verify Wisconsin recognition and should carry the out-of-state license and photo identification when relying on reciprocity."
-        ],
-        source: "Wis. Stat. § 175.60."
-      },
-      {
-        title: "Carrying License and Photo ID",
-        risk: "Documentation Requirement",
-        body: [
-          "STATUTE: Wis. Stat. § 175.60(4).",
-          "SUMMARY: Wisconsin requires a licensee to have the license document and photographic identification while carrying concealed.",
-          "GUIDANCE: Members should carry both permit and photo ID. Do not assume a digital photo or memory of the permit number is enough."
-        ],
-        source: "Wis. Stat. § 175.60(4)."
-      },
-      {
-        title: "Carrying Concealed Without License",
-        risk: "Criminal Exposure",
-        body: [
-          "STATUTE: Wis. Stat. § 941.23.",
-          "SUMMARY: Wisconsin law addresses carrying a concealed weapon and exceptions for lawful carry.",
-          "GUIDANCE: Do not treat Wisconsin as permitless concealed carry. Verify license recognition before carrying concealed."
-        ],
-        source: "Wis. Stat. § 941.23."
-      },
-      {
-        title: "School Zones",
-        risk: "Extreme Risk Area",
-        body: [
-          "STATUTE: Wis. Stat. § 948.605.",
-          "SUMMARY: Wisconsin law restricts firearm possession in school zones, subject to exceptions.",
-          "GUIDANCE: School buildings, grounds, events, and parking areas should be treated as verify-first areas."
-        ],
-        source: "Wis. Stat. § 948.605."
-      },
-      {
-        title: "Prohibited / Restricted Locations",
-        risk: "Location Restriction",
-        body: [
-          "STATUTE / SOURCE: Wis. Stat. § 175.60 and related Wisconsin prohibited-place framework.",
-          "SUMMARY: Wisconsin law restricts carry in certain locations and allows certain property owners/government facilities to restrict firearms.",
-          "GUIDANCE: Check police stations, sheriff offices, jails, courthouses/courtrooms, schools, federal property, secure areas, and posted locations before entering."
-        ],
-        source: "Wis. Stat. § 175.60; Wisconsin DOJ CCW guidance."
-      },
-      {
-        title: "Private Property / Posted Locations",
-        risk: "Trespass / Property Control",
-        body: [
-          "STATUTE / SOURCE: Wisconsin property and CCW posting framework.",
-          "SUMMARY: Property owners may restrict firearms on private property.",
-          "GUIDANCE: Posted signs and staff/security instructions should be followed. Leave immediately if asked."
-        ],
-        source: "Wisconsin DOJ CCW FAQ; Wisconsin property law framework."
-      },
-      {
-        title: "Vehicle Carry",
-        risk: "Travel / Storage Risk",
-        body: [
-          "STATUTE / SOURCE: Wis. Stat. § 941.23; Wis. Stat. § 175.60.",
-          "SUMMARY: Vehicle carry must comply with Wisconsin concealed carry and transport rules.",
-          "GUIDANCE: If carrying concealed in a vehicle, verify license recognition and avoid unnecessary reaching during police contact."
-        ],
-        source: "Wis. Stat. § 941.23; Wis. Stat. § 175.60."
-      },
-      {
-        title: "Alcohol / Impairment",
-        risk: "Judgment and Legal Risk",
-        body: [
-          "STATUTE / SOURCE: Wisconsin weapons and intoxication framework.",
-          "SUMMARY: Carrying while impaired creates legal and tactical risk.",
-          "GUIDANCE: If drinking is part of the plan, carrying should not be. Bars, restaurants, festivals, stadiums, and events should be checked for posted rules."
-        ],
-        source: "Wisconsin weapons/intoxication framework."
-      },
-      {
-        title: "Federal Property / Post Offices",
-        risk: "Federal Law Overlay",
-        body: [
-          "STATUTE / SOURCE: Federal facility and postal property framework.",
-          "SUMMARY: Wisconsin carry permission does not override federal restrictions.",
-          "GUIDANCE: Federal buildings, federal courthouses, post offices, and secure federal property must be checked separately."
-        ],
-        source: "Federal facility and postal property framework."
-      },
-      {
-        title: "Use of Force / Self-Defense",
-        risk: "Fact-Specific Legal Risk",
-        body: [
-          "STATUTE / SOURCE: Wisconsin self-defense framework.",
-          "SUMMARY: Wisconsin self-defense law is fact-specific and depends on necessity, reasonableness, and the circumstances.",
-          "GUIDANCE: Avoid confrontation, disengage if safely possible, call 911, identify evidence/witnesses, request counsel, and avoid long statements under stress."
-        ],
-        source: "Wisconsin self-defense law framework."
-      }
-    ],
-    [
-      {
-        title: "Wisconsin Carry Checklist",
-        steps: [
-          "1. Verify Michigan CPL recognition.",
-          "2. Carry license and photo ID.",
-          "3. Check Wis. Stat. § 941.23 concealed carry rules.",
-          "4. Check Wis. Stat. § 948.605 school zones.",
-          "5. Check posted private property.",
-          "6. Check federal and government facilities.",
-          "7. Plan safe vehicle storage."
+    {
+        "title": "Wisconsin Elite Deep Carry Checklist",
+        "steps": [
+            "1. Check reciprocity/current permit recognition before entering the state.",
+            "2. Confirm eligibility, age, prohibited-person status, and whether permitless carry applies.",
+            "3. Check vehicle carry/transport rules before crossing the state line.",
+            "4. Check restricted and sensitive locations before entering any building, event, school, court, government facility, airport, or posted property.",
+            "5. Know police-contact rules and keep hands visible during stops.",
+            "6. Check federal, tribal, airport, and interstate-travel overlays separately.",
+            "7. Separate carry legality from use-of-force legality; both must be lawful."
         ]
-      }
-    ],
+    }
+],
+    [],
     [
-      {
-        title: "Great Lakes Weekend Trip",
-        summary: "Wisconsin travel often involves hotels, parks, restaurants, events, and vehicle storage.",
-        guidance: [
-          "Carry permit and photo ID.",
-          "Check posted locations.",
-          "Secure firearms from unauthorized access.",
-          "Check parks/federal property separately."
-        ]
-      }
-    ],
+    "Assuming reciprocity means carry anywhere.",
+    "Ignoring vehicle carry and transport rules.",
+    "Ignoring schools, courts, secure facilities, airports, and federal property.",
+    "Arguing with staff/security instead of leaving posted or restricted property.",
+    "Thinking lawful carry automatically justifies defensive display or force.",
+    "Talking too much after a defensive incident before legal counsel."
+],
     [
-      "Assuming Wisconsin is permitless concealed carry.",
-      "Failing to carry license and photo ID.",
-      "Ignoring school zones.",
-      "Ignoring posted private property.",
-      "Assuming vehicle carry has no separate rules.",
-      "Ignoring federal property."
-    ],
+    "Reciprocity checked.",
+    "Eligibility checked.",
+    "Vehicle carry checked.",
+    "Restricted & sensitive locations checked.",
+    "Police-contact rule checked.",
+    "Federal/tribal/airport overlay checked.",
+    "Aftermath plan ready."
+],
     [
-      "Recognition checked.",
-      "Permit and photo ID carried.",
-      "School zones checked.",
-      "Vehicle carry checked.",
-      "Private signs checked.",
-      "Federal property checked."
-    ],
-    [
-      {
-        myth: "Wisconsin is close to Michigan, so rules are basically the same.",
-        reality: "No. Wisconsin has its own concealed carry, school zone, license/ID, and location rules."
-      }
-    ]
+    {
+        "myth": "If the map is green, I can carry anywhere in Wisconsin.",
+        "reality": "No. Green only means permit recognition in the app engine. Restricted/sensitive locations, vehicle rules, private property, federal property, and use-of-force law still control."
+    },
+    {
+        "myth": "Permitless carry means no rules.",
+        "reality": "No. Permitless carry only affects the licensing requirement for eligible people. It does not erase location restrictions, prohibited-person rules, vehicle rules, or use-of-force standards."
+    }
+]
   ),
 
   WV: makeProfile(
     "West Virginia",
-    "Law-Backed Ultra Expanded Travel State",
-    "West Virginia is a permitless carry state for eligible adults 21 and older, but it still has statutory restrictions involving age, prohibited persons, school property, court facilities, campus carry, vehicles, private property, federal property, and use-of-force conduct.",
+    "Elite Deep Travel State",
+    "West Virginia is a permitless concealed carry state for eligible adults 21 and older, but prohibited-person rules, under-21/provisional licensing, schools, courts, campus carry, brandishing, private property, and federal overlays remain important.",
     {
-      reciprocity: "Michigan CPL recognition should be verified, but West Virginia also allows permitless concealed carry for eligible adults 21 and older.",
-      permitlessCarry: "W. Va. Code § 61-7-7 allows certain adults 21+ to carry concealed without a license if not prohibited.",
-      concealedCarry: "Permitless concealed carry applies only to eligible persons. Younger adults may need a provisional license.",
-      openCarry: "Open carry may be lawful for eligible persons, but restricted locations and conduct still matter.",
-      vehicleCarry: "Vehicle carry must be analyzed under West Virginia weapons law, school property law, and prohibited-person rules.",
-      dutyToInform: "Verify current West Virginia police-contact rules before travel. Keep hands visible and answer lawful questions truthfully.",
-      privateSigns: "Private property and posted locations still matter. Leave if asked.",
-      forceLaw: "West Virginia self-defense law is fact-specific."
+    "reciprocity": "Michigan CPL is treated as recognized in this app unless the reciprocity engine shows otherwise. State law controls while physically in this state.",
+    "permitlessCarry": "W. Va. Code § 61-7-7: eligible adults 21+ may carry concealed without a license if not prohibited.",
+    "concealedCarry": "Permitless concealed carry applies to eligible adults 21+; younger adults may need a provisional license.",
+    "openCarry": "Open carry may be lawful for eligible persons, but restricted/sensitive locations, vehicles, private property, and police contact still matter.",
+    "vehicleCarry": "Vehicle carry is generally permissive for eligible adults but still interacts with schools, courts, campus rules, and prohibited-person law.",
+    "dutyToInform": "Verify current West Virginia police-contact rules; keep hands visible and answer lawful questions truthfully.",
+    "privateSigns": "Private property and posted/instructed restrictions matter. Leave immediately if asked.",
+    "forceLaw": "Use of force is fact-specific. Justification depends on necessity, reasonableness, imminence, proportionality, and the defender’s conduct."
+},
+    [
+    "Recognition or permitless carry does not override restricted and sensitive locations.",
+    "Vehicle carry and transport rules should be checked before crossing state lines.",
+    "Federal property, tribal property, airports, schools, courts, and private property require separate analysis.",
+    "Use-of-force law is separate from carry law; lawful carry does not make every defensive act lawful."
+],
+    [
+    {
+        "title": "Carry Authority / Permit Framework",
+        "risk": "Core Carry Rule",
+        "body": [
+            "STATUTE / SOURCE: W. Va. Code § 61-7-7; W. Va. Code § 61-7-4",
+            "SUMMARY: West Virginia allows eligible adults 21+ to carry concealed without a license while maintaining licensing/provisional rules and prohibited-person restrictions.",
+            "GUIDANCE: Confirm age, eligibility, prohibited-person status, and whether a provisional license is needed."
+        ],
+        "source": "W. Va. Code § 61-7-7; W. Va. Code § 61-7-4"
     },
+    {
+        "title": "Transport and Vehicle Carry",
+        "risk": "Vehicle / Transport Deep Dive",
+        "body": [
+            "STATUTE / SOURCE: W. Va. Code § 61-7-7 and West Virginia vehicle carry framework",
+            "SUMMARY: Vehicle carry may be lawful for eligible persons but does not override schools, courts, campus restrictions, private property, or federal property.",
+            "GUIDANCE: Check destination restrictions before parking or entering property armed."
+        ],
+        "source": "W. Va. Code § 61-7-7 and West Virginia vehicle carry framework"
+    },
+    {
+        "title": "Restricted & Sensitive Locations",
+        "risk": "Location Restrictions",
+        "body": [
+            "STATUTE / SOURCE: W. Va. Code § 61-7-11a and West Virginia restricted-location framework",
+            "SUMMARY: West Virginia restricts deadly weapons on certain educational and court premises and has other location-specific rules.",
+            "GUIDANCE: Check schools, courts, campuses, private property, and federal property separately."
+        ],
+        "source": "W. Va. Code § 61-7-11a and West Virginia restricted-location framework"
+    },
+    {
+        "title": "Schools and Educational Property",
+        "risk": "Extreme Risk Area",
+        "body": [
+            "STATUTE / SOURCE: W. Va. Code § 61-7-11a",
+            "SUMMARY: West Virginia restricts deadly weapons on premises of educational facilities and court premises subject to exceptions.",
+            "GUIDANCE: Treat school property, events, and court premises as verify-first."
+        ],
+        "source": "W. Va. Code § 61-7-11a"
+    },
+    {
+        "title": "Courts / Government / Secure Facilities",
+        "risk": "Hard Stop Area",
+        "body": [
+            "STATUTE / SOURCE: W. Va. Code § 61-7-11a",
+            "SUMMARY: West Virginia restricts deadly weapons on court premises and certain educational premises.",
+            "GUIDANCE: Do not approach security screening armed. Verify the specific facility before arrival."
+        ],
+        "source": "W. Va. Code § 61-7-11a"
+    },
+    {
+        "title": "Alcohol, Bars, Events, and Impairment",
+        "risk": "Alcohol / Event Risk",
+        "body": [
+            "STATUTE / SOURCE: State alcohol-location and impairment framework",
+            "SUMMARY: Alcohol-related locations, ticketed events, stadiums, festivals, or impairment may create separate legal and practical risk.",
+            "GUIDANCE: If drinking is part of the plan, carrying should not be. Check venue rules and statutory restrictions before entering."
+        ],
+        "source": "State alcohol-location and impairment framework"
+    },
+    {
+        "title": "Private Property / Posted Premises",
+        "risk": "Property Control",
+        "body": [
+            "STATUTE / SOURCE: State private property and trespass framework",
+            "SUMMARY: Private property owners, employers, venues, and persons in control of premises may restrict firearms or require the person to leave.",
+            "GUIDANCE: Follow signs and instructions. Leave immediately if asked; do not create a trespass, disorderly conduct, or public confrontation issue."
+        ],
+        "source": "State private property and trespass framework"
+    },
+    {
+        "title": "Police Interaction / Traffic Stops",
+        "risk": "Police Contact",
+        "body": [
+            "STATUTE / SOURCE: State police-contact and concealed carry guidance",
+            "SUMMARY: Police-contact duties vary by state. Even where no affirmative duty to inform exists, truthful answers, visible hands, and calm compliance are critical.",
+            "GUIDANCE: Keep hands visible, do not reach, answer lawful questions truthfully, and ask how the officer wants you to proceed."
+        ],
+        "source": "State police-contact and concealed carry guidance"
+    },
+    {
+        "title": "Federal, Tribal, Airport, and Interstate Travel Overlay",
+        "risk": "Separate Legal System",
+        "body": [
+            "STATUTE / SOURCE: Federal law; TSA/airport rules; tribal-property framework; interstate travel framework",
+            "SUMMARY: State carry permission does not override federal buildings, post offices, secure airport areas, tribal-government rules, or the laws of the next state on the route.",
+            "GUIDANCE: Check federal/tribal/airport rules separately. When crossing state lines, re-check reciprocity, vehicle carry, magazine/ammunition rules, and sensitive-place laws before entering the next state."
+        ],
+        "source": "Federal facility, TSA, tribal-property, and interstate travel framework"
+    },
+    {
+        "title": "State-Specific Traps",
+        "risk": "Common Legal Traps",
+        "body": [
+            "STATUTE / SOURCE: W. Va. Code § 61-7-11; West Virginia campus carry framework",
+            "SUMMARY: West Virginia traps include under-21/provisional-license issues, campus carry exceptions, and brandishing/display allegations.",
+            "GUIDANCE: Teach West Virginia as permissive but with real age, campus, school, court, and display risks."
+        ],
+        "source": "W. Va. Code § 61-7-11; West Virginia campus carry framework"
+    },
+    {
+        "title": "Civil Liability / Aftermath",
+        "risk": "Post-Incident Exposure",
+        "body": [
+            "STATUTE / SOURCE: Civil liability, criminal procedure, and self-defense investigation framework",
+            "SUMMARY: A lawful carry status does not prevent arrest, investigation, prosecution review, civil claims, employment consequences, or administrative issues after a defensive incident.",
+            "GUIDANCE: Report the emergency, request police/medical if needed, identify attacker/evidence/witnesses only as necessary, request counsel, then avoid detailed statements until represented."
+        ],
+        "source": "General civil liability and post-incident framework"
+    },
+    {
+        "title": "Use of Force / Self-Defense",
+        "risk": "Life-Altering Legal Risk",
+        "body": [
+            "STATUTE / SOURCE: State self-defense and use-of-force framework",
+            "SUMMARY: Defensive force must be justified under state law and the facts known at the time. Deadly force is not for anger, property disputes, warning shots, intimidation, or punishment.",
+            "GUIDANCE: Avoid, disengage, create distance, call 911 when safe, preserve evidence, and understand that justified does not mean consequence-free."
+        ],
+        "source": "State self-defense and use-of-force framework"
+    }
+],
     [
-      "West Virginia permitless carry does not mean carry anywhere.",
-      "School and court-related premises are major statutory risk points.",
-      "Campus carry has detailed rules and exceptions.",
-      "A license may still matter for reciprocity outside West Virginia.",
-      "Federal property and private property must be checked separately."
-    ],
-    [
-      {
-        title: "Permitless Concealed Carry",
-        risk: "Core Eligibility Rule",
-        body: [
-          "STATUTE: W. Va. Code § 61-7-7.",
-          "SUMMARY: Certain adults 21 and older may carry a concealed deadly weapon without a license if they are not prohibited under state or federal law.",
-          "GUIDANCE: Permitless carry does not apply to prohibited persons and does not override restricted places."
-        ],
-        source: "W. Va. Code § 61-7-7."
-      },
-      {
-        title: "Under 21 / Provisional License",
-        risk: "Age-Based Carry Risk",
-        body: [
-          "STATUTE: W. Va. Code § 61-7-3; W. Va. Code § 61-7-4.",
-          "SUMMARY: Persons under 21 have separate rules and may require a provisional license or other lawful authorization.",
-          "GUIDANCE: Do not assume an 18–20-year-old may carry concealed without a license."
-        ],
-        source: "W. Va. Code § 61-7-3; § 61-7-4."
-      },
-      {
-        title: "Concealed Weapon License",
-        risk: "License / Reciprocity Context",
-        body: [
-          "STATUTE: W. Va. Code § 61-7-4.",
-          "SUMMARY: West Virginia law provides a licensing process for concealed deadly weapons, including resident and nonresident licenses.",
-          "GUIDANCE: Even with permitless carry inside West Virginia, a license may matter for travel reciprocity in other states."
-        ],
-        source: "W. Va. Code § 61-7-4."
-      },
-      {
-        title: "Prohibited Persons",
-        risk: "Disqualification Risk",
-        body: [
-          "STATUTE: W. Va. Code § 61-7-7.",
-          "SUMMARY: West Virginia law identifies persons prohibited from possessing firearms or carrying under the statutory framework.",
-          "GUIDANCE: Protection orders, criminal history, domestic violence issues, substance issues, and federal prohibitions should be checked before carrying."
-        ],
-        source: "W. Va. Code § 61-7-7."
-      },
-      {
-        title: "Schools / Educational Facilities",
-        risk: "Extreme Risk Area",
-        body: [
-          "STATUTE: W. Va. Code § 61-7-11a.",
-          "SUMMARY: West Virginia restricts deadly weapons on premises of educational facilities and court premises, subject to statutory exceptions.",
-          "GUIDANCE: Schools, school events, educational property, and court-related premises should be treated as verify-first locations."
-        ],
-        source: "W. Va. Code § 61-7-11a."
-      },
-      {
-        title: "Courts / Court Premises",
-        risk: "Hard Stop Area",
-        body: [
-          "STATUTE: W. Va. Code § 61-7-11a.",
-          "SUMMARY: West Virginia restricts deadly weapons on premises housing courts of law and family law courts.",
-          "GUIDANCE: Do not enter courthouse or court-related premises armed unless a clear legal exception applies."
-        ],
-        source: "W. Va. Code § 61-7-11a."
-      },
-      {
-        title: "Campus Carry",
-        risk: "Detailed Campus Rules",
-        body: [
-          "STATUTE / SOURCE: West Virginia campus carry framework.",
-          "SUMMARY: West Virginia law allows certain concealed carry on public college/university campuses, but restrictions, exceptions, storage rules, and specific locations may apply.",
-          "GUIDANCE: Campus carry should not be summarized casually. Check the institution, location type, and current rules before carrying."
-        ],
-        source: "West Virginia campus carry framework; W. Va. Code Chapter 18B / § 61-7 references."
-      },
-      {
-        title: "Brandishing / Threatening Conduct",
-        risk: "Display Risk",
-        body: [
-          "STATUTE: W. Va. Code § 61-7-11.",
-          "SUMMARY: West Virginia law addresses brandishing deadly weapons and threatening or causing breach of the peace.",
-          "GUIDANCE: Do not display a firearm to intimidate, win an argument, or stop a verbal dispute. If display was necessary due to an immediate threat, call 911 first."
-        ],
-        source: "W. Va. Code § 61-7-11."
-      },
-      {
-        title: "Private Property / Posted Locations",
-        risk: "Property Control",
-        body: [
-          "STATUTE / SOURCE: West Virginia property and trespass framework.",
-          "SUMMARY: Private property owners may control access and restrict firearms on their property.",
-          "GUIDANCE: If posted or asked to leave, leave immediately."
-        ],
-        source: "West Virginia property/trespass framework."
-      },
-      {
-        title: "Federal Property / Post Offices",
-        risk: "Federal Law Overlay",
-        body: [
-          "STATUTE / SOURCE: Federal facility and postal property framework.",
-          "SUMMARY: West Virginia carry permission does not override federal restrictions.",
-          "GUIDANCE: Federal buildings, post offices, federal courthouses, and secure federal property must be checked separately."
-        ],
-        source: "Federal facility and postal property framework."
-      }
-    ],
-    [
-      {
-        title: "West Virginia Carry Checklist",
-        steps: [
-          "1. Confirm age and eligibility under § 61-7-7.",
-          "2. If under 21, check § 61-7-3 and license requirements.",
-          "3. Check schools and courts under § 61-7-11a.",
-          "4. Check campus carry rules if on college/university property.",
-          "5. Check private property and federal property.",
-          "6. Avoid display/brandishing conduct under § 61-7-11."
+    {
+        "title": "West Virginia Elite Deep Carry Checklist",
+        "steps": [
+            "1. Check reciprocity/current permit recognition before entering the state.",
+            "2. Confirm eligibility, age, prohibited-person status, and whether permitless carry applies.",
+            "3. Check vehicle carry/transport rules before crossing the state line.",
+            "4. Check restricted and sensitive locations before entering any building, event, school, court, government facility, airport, or posted property.",
+            "5. Know police-contact rules and keep hands visible during stops.",
+            "6. Check federal, tribal, airport, and interstate-travel overlays separately.",
+            "7. Separate carry legality from use-of-force legality; both must be lawful."
         ]
-      }
-    ],
+    }
+],
+    [],
     [
-      {
-        title: "Mountain Trip / Vehicle Travel",
-        summary: "West Virginia is permissive, but schools, courts, campuses, and private property remain traps.",
-        guidance: [
-          "Verify age/eligibility.",
-          "Check campus rules.",
-          "Check schools and courts.",
-          "Do not assume permitless means unrestricted."
-        ]
-      }
-    ],
+    "Assuming reciprocity means carry anywhere.",
+    "Ignoring vehicle carry and transport rules.",
+    "Ignoring schools, courts, secure facilities, airports, and federal property.",
+    "Arguing with staff/security instead of leaving posted or restricted property.",
+    "Thinking lawful carry automatically justifies defensive display or force.",
+    "Talking too much after a defensive incident before legal counsel."
+],
     [
-      "Assuming permitless carry means carry anywhere.",
-      "Ignoring under-21 restrictions.",
-      "Ignoring schools and courts under § 61-7-11a.",
-      "Ignoring campus carry exceptions.",
-      "Displaying a firearm in a non-deadly dispute."
-    ],
+    "Reciprocity checked.",
+    "Eligibility checked.",
+    "Vehicle carry checked.",
+    "Restricted & sensitive locations checked.",
+    "Police-contact rule checked.",
+    "Federal/tribal/airport overlay checked.",
+    "Aftermath plan ready."
+],
     [
-      "Age and eligibility checked.",
-      "School/court restrictions checked.",
-      "Campus rules checked.",
-      "Private property checked.",
-      "Federal property checked.",
-      "Display/brandishing risk understood."
-    ],
-    [
-      {
-        myth: "West Virginia is permitless, so there are no location restrictions.",
-        reality: "No. Schools, courts, campuses, private property, federal property, and prohibited-person rules still matter."
-      }
-    ]
+    {
+        "myth": "If the map is green, I can carry anywhere in West Virginia.",
+        "reality": "No. Green only means permit recognition in the app engine. Restricted/sensitive locations, vehicle rules, private property, federal property, and use-of-force law still control."
+    },
+    {
+        "myth": "Permitless carry means no rules.",
+        "reality": "No. Permitless carry only affects the licensing requirement for eligible people. It does not erase location restrictions, prohibited-person rules, vehicle rules, or use-of-force standards."
+    }
+]
   ),
 
   GA: makeProfile(
     "Georgia",
-    "Law-Backed Ultra Expanded Travel State",
-    "Georgia is a high-priority southern travel state with permitless carry for lawful weapons carriers. Georgia law recognizes out-of-state weapons carry licenses, but users must understand lawful weapons carrier status, unauthorized locations, school safety zones, courthouses, government buildings, places of worship, private property, vehicles, and federal property.",
+    "Elite Deep Travel State",
+    "Georgia is a common southern travel state. It recognizes lawful weapons carriers and out-of-state license holders, but unauthorized locations, school safety zones, courthouses, government buildings, places of worship, private property, and federal property still matter.",
     {
-      reciprocity: "Georgia law authorizes persons licensed to carry in another state to carry in Georgia, but they must comply with Georgia law.",
-      permitlessCarry: "O.C.G.A. § 16-11-126: lawful weapons carriers may carry weapons as allowed by Georgia law.",
-      concealedCarry: "Georgia allows carry by lawful weapons carriers, but unauthorized locations still apply.",
-      openCarry: "Georgia carry may be open or concealed for lawful weapons carriers, subject to restricted locations.",
-      vehicleCarry: "O.C.G.A. § 16-11-126 addresses carrying in private passenger motor vehicles.",
-      dutyToInform: "Verify current Georgia police-contact rules. Keep hands visible and answer lawful questions truthfully.",
-      privateSigns: "Private property owners may control access and ask armed persons to leave.",
-      forceLaw: "Georgia self-defense law is fact-specific."
+    "reciprocity": "Michigan CPL is treated as recognized in this app unless the reciprocity engine shows otherwise. State law controls while physically in this state.",
+    "permitlessCarry": "O.C.G.A. § 16-11-126: lawful weapons carriers may carry weapons as allowed by Georgia law.",
+    "concealedCarry": "Georgia permits open or concealed carry by lawful weapons carriers, subject to restricted locations.",
+    "openCarry": "Open carry may be lawful for eligible persons, but restricted/sensitive locations, vehicles, private property, and police contact still matter.",
+    "vehicleCarry": "Georgia vehicle carry is generally permissive for lawful weapons carriers, but restricted locations and police-contact conduct still matter.",
+    "dutyToInform": "Verify Georgia police-contact rules; keep hands visible and answer lawful questions truthfully.",
+    "privateSigns": "Private property and posted/instructed restrictions matter. Leave immediately if asked.",
+    "forceLaw": "Use of force is fact-specific. Justification depends on necessity, reasonableness, imminence, proportionality, and the defender’s conduct."
+},
+    [
+    "Recognition or permitless carry does not override restricted and sensitive locations.",
+    "Vehicle carry and transport rules should be checked before crossing state lines.",
+    "Federal property, tribal property, airports, schools, courts, and private property require separate analysis.",
+    "Use-of-force law is separate from carry law; lawful carry does not make every defensive act lawful."
+],
+    [
+    {
+        "title": "Carry Authority / Permit Framework",
+        "risk": "Core Carry Rule",
+        "body": [
+            "STATUTE / SOURCE: O.C.G.A. § 16-11-126",
+            "SUMMARY: Georgia law allows lawful weapons carriers, including recognized out-of-state license holders, to carry under Georgia law.",
+            "GUIDANCE: Confirm lawful weapons carrier status and Georgia location restrictions before carrying."
+        ],
+        "source": "O.C.G.A. § 16-11-126"
     },
+    {
+        "title": "Transport and Vehicle Carry",
+        "risk": "Vehicle / Transport Deep Dive",
+        "body": [
+            "STATUTE / SOURCE: O.C.G.A. § 16-11-126",
+            "SUMMARY: Georgia law addresses carrying in private passenger motor vehicles and by lawful weapons carriers.",
+            "GUIDANCE: Vehicle carry should still be paired with careful traffic-stop behavior and strict location awareness."
+        ],
+        "source": "O.C.G.A. § 16-11-126"
+    },
+    {
+        "title": "Restricted & Sensitive Locations",
+        "risk": "Location Restrictions",
+        "body": [
+            "STATUTE / SOURCE: O.C.G.A. § 16-11-127",
+            "SUMMARY: Georgia prohibits weapons in unauthorized locations including certain government buildings, courthouses, jails/prisons, places of worship unless permitted, and other locations.",
+            "GUIDANCE: Check government/court/security-controlled spaces and places of worship before entering."
+        ],
+        "source": "O.C.G.A. § 16-11-127"
+    },
+    {
+        "title": "Schools and Educational Property",
+        "risk": "Extreme Risk Area",
+        "body": [
+            "STATUTE / SOURCE: O.C.G.A. § 16-11-127.1",
+            "SUMMARY: Georgia restricts weapons in school safety zones subject to statutory exceptions.",
+            "GUIDANCE: Check school property, school functions, parking areas, and buses separately."
+        ],
+        "source": "O.C.G.A. § 16-11-127.1"
+    },
+    {
+        "title": "Courts / Government / Secure Facilities",
+        "risk": "Hard Stop Area",
+        "body": [
+            "STATUTE / SOURCE: O.C.G.A. § 16-11-127",
+            "SUMMARY: Court, law-enforcement, detention, and secure government facilities can be prohibited or heavily restricted depending on the exact site and statute.",
+            "GUIDANCE: Do not approach security screening armed. Verify the specific facility before arrival."
+        ],
+        "source": "O.C.G.A. § 16-11-127"
+    },
+    {
+        "title": "Alcohol, Bars, Events, and Impairment",
+        "risk": "Alcohol / Event Risk",
+        "body": [
+            "STATUTE / SOURCE: State alcohol-location and impairment framework",
+            "SUMMARY: Alcohol-related locations, ticketed events, stadiums, festivals, or impairment may create separate legal and practical risk.",
+            "GUIDANCE: If drinking is part of the plan, carrying should not be. Check venue rules and statutory restrictions before entering."
+        ],
+        "source": "State alcohol-location and impairment framework"
+    },
+    {
+        "title": "Private Property / Posted Premises",
+        "risk": "Property Control",
+        "body": [
+            "STATUTE / SOURCE: State private property and trespass framework",
+            "SUMMARY: Private property owners, employers, venues, and persons in control of premises may restrict firearms or require the person to leave.",
+            "GUIDANCE: Follow signs and instructions. Leave immediately if asked; do not create a trespass, disorderly conduct, or public confrontation issue."
+        ],
+        "source": "State private property and trespass framework"
+    },
+    {
+        "title": "Police Interaction / Traffic Stops",
+        "risk": "Police Contact",
+        "body": [
+            "STATUTE / SOURCE: State police-contact and concealed carry guidance",
+            "SUMMARY: Police-contact duties vary by state. Even where no affirmative duty to inform exists, truthful answers, visible hands, and calm compliance are critical.",
+            "GUIDANCE: Keep hands visible, do not reach, answer lawful questions truthfully, and ask how the officer wants you to proceed."
+        ],
+        "source": "State police-contact and concealed carry guidance"
+    },
+    {
+        "title": "Federal, Tribal, Airport, and Interstate Travel Overlay",
+        "risk": "Separate Legal System",
+        "body": [
+            "STATUTE / SOURCE: Federal law; TSA/airport rules; tribal-property framework; interstate travel framework",
+            "SUMMARY: State carry permission does not override federal buildings, post offices, secure airport areas, tribal-government rules, or the laws of the next state on the route.",
+            "GUIDANCE: Check federal/tribal/airport rules separately. When crossing state lines, re-check reciprocity, vehicle carry, magazine/ammunition rules, and sensitive-place laws before entering the next state."
+        ],
+        "source": "Federal facility, TSA, tribal-property, and interstate travel framework"
+    },
+    {
+        "title": "State-Specific Traps",
+        "risk": "Common Legal Traps",
+        "body": [
+            "STATUTE / SOURCE: State-specific legal framework",
+            "SUMMARY: Georgia traps include assuming lawful weapons carrier status overrides unauthorized locations or places of worship rules.",
+            "GUIDANCE: Teach Georgia as carry-friendly but location-sensitive, with government buildings and schools as major traps."
+        ],
+        "source": "State-specific legal framework"
+    },
+    {
+        "title": "Civil Liability / Aftermath",
+        "risk": "Post-Incident Exposure",
+        "body": [
+            "STATUTE / SOURCE: Civil liability, criminal procedure, and self-defense investigation framework",
+            "SUMMARY: A lawful carry status does not prevent arrest, investigation, prosecution review, civil claims, employment consequences, or administrative issues after a defensive incident.",
+            "GUIDANCE: Report the emergency, request police/medical if needed, identify attacker/evidence/witnesses only as necessary, request counsel, then avoid detailed statements until represented."
+        ],
+        "source": "General civil liability and post-incident framework"
+    },
+    {
+        "title": "Use of Force / Self-Defense",
+        "risk": "Life-Altering Legal Risk",
+        "body": [
+            "STATUTE / SOURCE: State self-defense and use-of-force framework",
+            "SUMMARY: Defensive force must be justified under state law and the facts known at the time. Deadly force is not for anger, property disputes, warning shots, intimidation, or punishment.",
+            "GUIDANCE: Avoid, disengage, create distance, call 911 when safe, preserve evidence, and understand that justified does not mean consequence-free."
+        ],
+        "source": "State self-defense and use-of-force framework"
+    }
+],
     [
-      "Georgia permitless carry applies to lawful weapons carriers, not everyone.",
-      "Out-of-state license holders must comply with Georgia law.",
-      "Unauthorized locations remain in effect.",
-      "Schools, courthouses, government buildings, jails/prisons, places of worship, and nuclear power facilities require special caution.",
-      "Private property and federal property remain separate issues."
-    ],
-    [
-      {
-        title: "Lawful Weapons Carrier / Carry Authority",
-        risk: "Core Eligibility Rule",
-        body: [
-          "STATUTE: O.C.G.A. § 16-11-126.",
-          "SUMMARY: Georgia law allows lawful weapons carriers to carry weapons under Georgia’s carry framework.",
-          "GUIDANCE: Do not treat Georgia as ruleless. The user must qualify as a lawful weapons carrier and must obey Georgia restricted-location law."
-        ],
-        source: "O.C.G.A. § 16-11-126."
-      },
-      {
-        title: "Out-of-State License Recognition",
-        risk: "Travel Carry Rule",
-        body: [
-          "STATUTE: O.C.G.A. § 16-11-126(d).",
-          "SUMMARY: Georgia authorizes a person licensed to carry a weapon in another state to carry in Georgia, provided the person carries in compliance with Georgia law.",
-          "GUIDANCE: Michigan CPL may help with Georgia recognition, but Georgia law controls while in Georgia."
-        ],
-        source: "O.C.G.A. § 16-11-126(d)."
-      },
-      {
-        title: "Unauthorized Locations",
-        risk: "Major Location Restriction",
-        body: [
-          "STATUTE: O.C.G.A. § 16-11-127.",
-          "SUMMARY: Georgia law restricts carrying weapons or long guns in certain unauthorized locations.",
-          "GUIDANCE: Check government buildings, courthouses, jails/prisons, places of worship unless permitted, state mental health facilities, nuclear power facilities, and polling places."
-        ],
-        source: "O.C.G.A. § 16-11-127."
-      },
-      {
-        title: "School Safety Zones",
-        risk: "Extreme Risk Area",
-        body: [
-          "STATUTE: O.C.G.A. § 16-11-127.1.",
-          "SUMMARY: Georgia law restricts weapons in school safety zones, subject to statutory exceptions.",
-          "GUIDANCE: Schools, school buses, school functions, parking areas, and events should be treated as verify-first areas."
-        ],
-        source: "O.C.G.A. § 16-11-127.1."
-      },
-      {
-        title: "Courthouses",
-        risk: "Hard Stop Area",
-        body: [
-          "STATUTE: O.C.G.A. § 16-11-127.",
-          "SUMMARY: Georgia law treats courthouses as unauthorized locations.",
-          "GUIDANCE: Do not approach courthouse security armed. Plan storage before arrival."
-        ],
-        source: "O.C.G.A. § 16-11-127."
-      },
-      {
-        title: "Government Buildings",
-        risk: "Government Facility Risk",
-        body: [
-          "STATUTE: O.C.G.A. § 16-11-127.",
-          "SUMMARY: Georgia restricts weapons in government buildings under the statutory framework, with different treatment depending on lawful weapons carrier status and security screening.",
-          "GUIDANCE: Government buildings should be treated as verify-first locations."
-        ],
-        source: "O.C.G.A. § 16-11-127."
-      },
-      {
-        title: "Places of Worship",
-        risk: "Permission Required",
-        body: [
-          "STATUTE: O.C.G.A. § 16-11-127.",
-          "SUMMARY: Georgia restricts carry in places of worship unless the governing body or authority permits carry.",
-          "GUIDANCE: Do not assume churches or religious facilities allow carry. Verify policy with the proper authority."
-        ],
-        source: "O.C.G.A. § 16-11-127."
-      },
-      {
-        title: "Vehicle Carry",
-        risk: "Travel / Vehicle Rule",
-        body: [
-          "STATUTE: O.C.G.A. § 16-11-126.",
-          "SUMMARY: Georgia law addresses carrying handguns, long guns, and weapons in private passenger motor vehicles.",
-          "GUIDANCE: Vehicle carry should still be paired with calm traffic-stop behavior: hands visible, no reaching, truthful answers."
-        ],
-        source: "O.C.G.A. § 16-11-126."
-      },
-      {
-        title: "Private Property / Posted Locations",
-        risk: "Property Control",
-        body: [
-          "STATUTE / SOURCE: Georgia trespass/property framework.",
-          "SUMMARY: Private property owners may control access and require armed persons to leave.",
-          "GUIDANCE: If posted or asked to leave, leave immediately."
-        ],
-        source: "Georgia property/trespass framework."
-      },
-      {
-        title: "Federal Property / Post Offices",
-        risk: "Federal Law Overlay",
-        body: [
-          "STATUTE / SOURCE: Federal facility and postal property framework.",
-          "SUMMARY: Georgia carry permission does not override federal restrictions.",
-          "GUIDANCE: Federal buildings, federal courthouses, post offices, and secure federal property must be checked separately."
-        ],
-        source: "Federal facility and postal property framework."
-      }
-    ],
-    [
-      {
-        title: "Georgia Carry Checklist",
-        steps: [
-          "1. Confirm lawful weapons carrier status.",
-          "2. Verify out-of-state license recognition if relying on Michigan CPL.",
-          "3. Check unauthorized locations under § 16-11-127.",
-          "4. Check school safety zones under § 16-11-127.1.",
-          "5. Check places of worship policy.",
-          "6. Check private and federal property separately."
+    {
+        "title": "Georgia Elite Deep Carry Checklist",
+        "steps": [
+            "1. Check reciprocity/current permit recognition before entering the state.",
+            "2. Confirm eligibility, age, prohibited-person status, and whether permitless carry applies.",
+            "3. Check vehicle carry/transport rules before crossing the state line.",
+            "4. Check restricted and sensitive locations before entering any building, event, school, court, government facility, airport, or posted property.",
+            "5. Know police-contact rules and keep hands visible during stops.",
+            "6. Check federal, tribal, airport, and interstate-travel overlays separately.",
+            "7. Separate carry legality from use-of-force legality; both must be lawful."
         ]
-      }
-    ],
+    }
+],
+    [],
     [
-      {
-        title: "Atlanta / Event Venue Travel",
-        summary: "Georgia is permissive, but city travel often involves government buildings, events, private security, and parking.",
-        guidance: [
-          "Check unauthorized locations.",
-          "Watch for security screening.",
-          "Follow private property instructions.",
-          "Do not argue with venue staff."
-        ]
-      }
-    ],
+    "Assuming reciprocity means carry anywhere.",
+    "Ignoring vehicle carry and transport rules.",
+    "Ignoring schools, courts, secure facilities, airports, and federal property.",
+    "Arguing with staff/security instead of leaving posted or restricted property.",
+    "Thinking lawful carry automatically justifies defensive display or force.",
+    "Talking too much after a defensive incident before legal counsel."
+],
     [
-      "Assuming lawful weapons carrier means carry anywhere.",
-      "Ignoring Georgia unauthorized locations.",
-      "Ignoring school safety zones.",
-      "Ignoring places of worship rules.",
-      "Ignoring private property instructions.",
-      "Assuming federal property follows Georgia law."
-    ],
+    "Reciprocity checked.",
+    "Eligibility checked.",
+    "Vehicle carry checked.",
+    "Restricted & sensitive locations checked.",
+    "Police-contact rule checked.",
+    "Federal/tribal/airport overlay checked.",
+    "Aftermath plan ready."
+],
     [
-      "Lawful weapons carrier status checked.",
-      "Recognition checked.",
-      "Unauthorized locations checked.",
-      "School safety zones checked.",
-      "Vehicle carry checked.",
-      "Private/federal property checked."
-    ],
-    [
-      {
-        myth: "Georgia permitless carry means no restrictions.",
-        reality: "No. Georgia still has unauthorized locations, school safety zones, private property rules, and federal restrictions."
-      }
-    ]
+    {
+        "myth": "If the map is green, I can carry anywhere in Georgia.",
+        "reality": "No. Green only means permit recognition in the app engine. Restricted/sensitive locations, vehicle rules, private property, federal property, and use-of-force law still control."
+    },
+    {
+        "myth": "Permitless carry means no rules.",
+        "reality": "No. Permitless carry only affects the licensing requirement for eligible people. It does not erase location restrictions, prohibited-person rules, vehicle rules, or use-of-force standards."
+    }
+]
   ),
 
   NC: makeProfile(
     "North Carolina",
-    "Law-Backed Ultra Expanded Travel State",
-    "North Carolina is a high-priority southeastern travel state with a concealed handgun permit framework. North Carolina recognizes valid permits, but users must understand permit scope, prohibited places, educational property, assemblies where admission is charged, alcohol-related locations, posted private property, vehicles, parks, and federal property.",
+    "Elite Deep Travel State",
+    "North Carolina is a major southeastern travel state with a concealed handgun permit framework and explicit restrictions involving educational property, posted private property, alcohol/events, state parks, vehicles, and police disclosure.",
     {
-      reciprocity: "North Carolina recognizes valid concealed handgun permits, but users must comply with North Carolina law while physically in the state.",
-      permitlessCarry: "No general permitless concealed carry. Concealed handgun carry generally requires a valid permit.",
-      concealedCarry: "G.S. 14-415.11: a person with a concealed handgun permit may carry unless otherwise prohibited by law.",
-      openCarry: "Open carry may be lawful in some circumstances, but prohibited places, local restrictions, private property, and police contact still matter.",
-      vehicleCarry: "Vehicle carry must be analyzed under concealed carry and open carry rules.",
-      dutyToInform: "North Carolina permit holders must disclose to law enforcement when approached or addressed by an officer while carrying concealed.",
-      privateSigns: "G.S. 14-415.11(c)(8): posted private premises may prohibit concealed carry.",
-      forceLaw: "North Carolina self-defense law is fact-specific."
+    "reciprocity": "Michigan CPL is treated as recognized in this app unless the reciprocity engine shows otherwise. State law controls while physically in this state.",
+    "permitlessCarry": "No general permitless concealed carry. Concealed handgun carry generally requires a valid recognized permit.",
+    "concealedCarry": "G.S. 14-415.11: permit holders may carry concealed unless otherwise prohibited by law.",
+    "openCarry": "Open carry may be lawful for eligible persons, but restricted/sensitive locations, vehicles, private property, and police contact still matter.",
+    "vehicleCarry": "Vehicle carry depends on concealed/open carry rules and permit status. Concealment in a vehicle can matter.",
+    "dutyToInform": "North Carolina requires concealed permit holders who are carrying to disclose to law enforcement when approached or addressed by an officer.",
+    "privateSigns": "Private property and posted/instructed restrictions matter. Leave immediately if asked.",
+    "forceLaw": "Use of force is fact-specific. Justification depends on necessity, reasonableness, imminence, proportionality, and the defender’s conduct."
+},
+    [
+    "Recognition or permitless carry does not override restricted and sensitive locations.",
+    "Vehicle carry and transport rules should be checked before crossing state lines.",
+    "Federal property, tribal property, airports, schools, courts, and private property require separate analysis.",
+    "Use-of-force law is separate from carry law; lawful carry does not make every defensive act lawful."
+],
+    [
+    {
+        "title": "Carry Authority / Permit Framework",
+        "risk": "Core Carry Rule",
+        "body": [
+            "STATUTE / SOURCE: N.C. Gen. Stat. § 14-415.11",
+            "SUMMARY: North Carolina concealed handgun carry is permit-based and subject to statutory limitations.",
+            "GUIDANCE: Confirm recognition and know disclosure rules before carrying concealed."
+        ],
+        "source": "N.C. Gen. Stat. § 14-415.11"
     },
+    {
+        "title": "Transport and Vehicle Carry",
+        "risk": "Vehicle / Transport Deep Dive",
+        "body": [
+            "STATUTE / SOURCE: N.C. Gen. Stat. §§ 14-269 and 14-415.11",
+            "SUMMARY: North Carolina concealed weapon and permit laws affect vehicle carry, especially when a handgun is concealed or readily accessible.",
+            "GUIDANCE: Know whether the firearm is concealed, whether permit recognition applies, and when disclosure is required."
+        ],
+        "source": "N.C. Gen. Stat. §§ 14-269 and 14-415.11"
+    },
+    {
+        "title": "Restricted & Sensitive Locations",
+        "risk": "Location Restrictions",
+        "body": [
+            "STATUTE / SOURCE: N.C. Gen. Stat. § 14-415.11(c)",
+            "SUMMARY: North Carolina identifies places where a concealed handgun permit does not authorize carry.",
+            "GUIDANCE: Check posted private premises, schools, government locations, assemblies, alcohol locations, and federal property."
+        ],
+        "source": "N.C. Gen. Stat. § 14-415.11(c)"
+    },
+    {
+        "title": "Schools and Educational Property",
+        "risk": "Extreme Risk Area",
+        "body": [
+            "STATUTE / SOURCE: N.C. Gen. Stat. § 14-269.2",
+            "SUMMARY: North Carolina restricts weapons on educational property subject to statutory exceptions.",
+            "GUIDANCE: Educational property is a major trap; check schools, colleges, events, parking areas, and vehicles."
+        ],
+        "source": "N.C. Gen. Stat. § 14-269.2"
+    },
+    {
+        "title": "Courts / Government / Secure Facilities",
+        "risk": "Hard Stop Area",
+        "body": [
+            "STATUTE / SOURCE: N.C. Gen. Stat. § 14-415.11(c)",
+            "SUMMARY: Court, law-enforcement, detention, and secure government facilities can be prohibited or heavily restricted depending on the exact site and statute.",
+            "GUIDANCE: Do not approach security screening armed. Verify the specific facility before arrival."
+        ],
+        "source": "N.C. Gen. Stat. § 14-415.11(c)"
+    },
+    {
+        "title": "Alcohol, Bars, Events, and Impairment",
+        "risk": "Alcohol / Event Risk",
+        "body": [
+            "STATUTE / SOURCE: N.C. Gen. Stat. § 14-269.3",
+            "SUMMARY: North Carolina restricts weapons at certain assemblies and establishments where alcoholic beverages are sold and consumed, subject to exceptions.",
+            "GUIDANCE: Check restaurants, bars, festivals, concerts, and ticketed events carefully."
+        ],
+        "source": "N.C. Gen. Stat. § 14-269.3"
+    },
+    {
+        "title": "Private Property / Posted Premises",
+        "risk": "Property Control",
+        "body": [
+            "STATUTE / SOURCE: N.C. Gen. Stat. § 14-415.11(c)(8)",
+            "SUMMARY: Private property owners, employers, venues, and persons in control of premises may restrict firearms or require the person to leave.",
+            "GUIDANCE: Follow signs and instructions. Leave immediately if asked; do not create a trespass, disorderly conduct, or public confrontation issue."
+        ],
+        "source": "N.C. Gen. Stat. § 14-415.11(c)(8)"
+    },
+    {
+        "title": "Police Interaction / Traffic Stops",
+        "risk": "Police Contact",
+        "body": [
+            "STATUTE / SOURCE: North Carolina concealed handgun permit framework; N.C. Gen. Stat. Article 54B",
+            "SUMMARY: Concealed permit holders carrying in North Carolina must disclose to law enforcement when approached or addressed by an officer.",
+            "GUIDANCE: Use clear wording: Officer, I have a valid permit and I am carrying. How would you like me to proceed?"
+        ],
+        "source": "North Carolina concealed handgun permit framework; N.C. Gen. Stat. Article 54B"
+    },
+    {
+        "title": "Federal, Tribal, Airport, and Interstate Travel Overlay",
+        "risk": "Separate Legal System",
+        "body": [
+            "STATUTE / SOURCE: Federal law; TSA/airport rules; tribal-property framework; interstate travel framework",
+            "SUMMARY: State carry permission does not override federal buildings, post offices, secure airport areas, tribal-government rules, or the laws of the next state on the route.",
+            "GUIDANCE: Check federal/tribal/airport rules separately. When crossing state lines, re-check reciprocity, vehicle carry, magazine/ammunition rules, and sensitive-place laws before entering the next state."
+        ],
+        "source": "Federal facility, TSA, tribal-property, and interstate travel framework"
+    },
+    {
+        "title": "State-Specific Traps",
+        "risk": "Common Legal Traps",
+        "body": [
+            "STATUTE / SOURCE: State-specific legal framework",
+            "SUMMARY: North Carolina traps include forgetting mandatory disclosure, ignoring posted private premises, and misunderstanding educational property.",
+            "GUIDANCE: Train users to disclose calmly, check signs, and treat school/college property as verify-first."
+        ],
+        "source": "State-specific legal framework"
+    },
+    {
+        "title": "Civil Liability / Aftermath",
+        "risk": "Post-Incident Exposure",
+        "body": [
+            "STATUTE / SOURCE: Civil liability, criminal procedure, and self-defense investigation framework",
+            "SUMMARY: A lawful carry status does not prevent arrest, investigation, prosecution review, civil claims, employment consequences, or administrative issues after a defensive incident.",
+            "GUIDANCE: Report the emergency, request police/medical if needed, identify attacker/evidence/witnesses only as necessary, request counsel, then avoid detailed statements until represented."
+        ],
+        "source": "General civil liability and post-incident framework"
+    },
+    {
+        "title": "Use of Force / Self-Defense",
+        "risk": "Life-Altering Legal Risk",
+        "body": [
+            "STATUTE / SOURCE: State self-defense and use-of-force framework",
+            "SUMMARY: Defensive force must be justified under state law and the facts known at the time. Deadly force is not for anger, property disputes, warning shots, intimidation, or punishment.",
+            "GUIDANCE: Avoid, disengage, create distance, call 911 when safe, preserve evidence, and understand that justified does not mean consequence-free."
+        ],
+        "source": "State self-defense and use-of-force framework"
+    }
+],
     [
-      "North Carolina is not general permitless concealed carry.",
-      "Permit recognition does not override prohibited places.",
-      "Educational property is a major statutory risk area.",
-      "Private posting has explicit statutory significance.",
-      "Alcohol-related and event locations need careful review."
-    ],
-    [
-      {
-        title: "Concealed Handgun Permit Authority",
-        risk: "Core Carry Rule",
-        body: [
-          "STATUTE: G.S. 14-415.11.",
-          "SUMMARY: A person with a concealed handgun permit may carry a concealed handgun unless otherwise specifically prohibited by law.",
-          "GUIDANCE: A permit is not blanket authority. Restricted places and posted private property still matter."
-        ],
-        source: "N.C. Gen. Stat. § 14-415.11."
-      },
-      {
-        title: "Permit Scope / Prohibited Places",
-        risk: "Major Carry Restriction",
-        body: [
-          "STATUTE: G.S. 14-415.11(c).",
-          "SUMMARY: North Carolina law identifies areas where a concealed handgun permit does not authorize carry, including areas prohibited by other statutes and posted private premises.",
-          "GUIDANCE: Check every destination separately before carrying concealed."
-        ],
-        source: "N.C. Gen. Stat. § 14-415.11(c)."
-      },
-      {
-        title: "Educational Property",
-        risk: "Extreme Risk Area",
-        body: [
-          "STATUTE: G.S. 14-269.2.",
-          "SUMMARY: North Carolina restricts possession or carrying of firearms and other weapons on educational property, subject to statutory exceptions.",
-          "GUIDANCE: Schools, colleges, school events, parking lots, and educational property should be treated as verify-first areas."
-        ],
-        source: "N.C. Gen. Stat. § 14-269.2."
-      },
-      {
-        title: "Assemblies / Admission Charged / Alcohol Sold",
-        risk: "Event and Alcohol Location Risk",
-        body: [
-          "STATUTE: G.S. 14-269.3.",
-          "SUMMARY: North Carolina restricts weapons at certain assemblies and establishments where alcoholic beverages are sold and consumed, subject to exceptions.",
-          "GUIDANCE: Bars, restaurants, festivals, concerts, stadium events, and ticketed gatherings should be checked carefully."
-        ],
-        source: "N.C. Gen. Stat. § 14-269.3."
-      },
-      {
-        title: "Private Premises / Posted Notice",
-        risk: "Posted Property Rule",
-        body: [
-          "STATUTE: G.S. 14-415.11(c)(8).",
-          "SUMMARY: A concealed handgun permit does not authorize carry on private premises where notice prohibiting concealed handguns is conspicuously posted or stated by the person in control of the premises.",
-          "GUIDANCE: Posted signs matter in North Carolina. Leave immediately if asked."
-        ],
-        source: "N.C. Gen. Stat. § 14-415.11(c)(8)."
-      },
-      {
-        title: "Duty to Disclose During Police Contact",
-        risk: "Police Contact Requirement",
-        body: [
-          "STATUTE / SOURCE: North Carolina concealed handgun permit framework.",
-          "SUMMARY: North Carolina permit holders carrying concealed must disclose to law enforcement when approached or addressed by an officer.",
-          "GUIDANCE: Use a calm script: Officer, I have a valid permit and I am carrying. How would you like me to proceed?"
-        ],
-        source: "North Carolina concealed handgun permit guidance; N.C. Gen. Stat. Article 54B."
-      },
-      {
-        title: "State Parks",
-        risk: "Parks / Public Lands",
-        body: [
-          "STATUTE: G.S. 14-415.11(c1).",
-          "SUMMARY: North Carolina law allows permit holders to carry concealed handguns on grounds or waters of state parks, subject to other restrictions.",
-          "GUIDANCE: State parks are not the same as federal land, visitor centers, schools, posted buildings, or private property. Verify the specific location."
-        ],
-        source: "N.C. Gen. Stat. § 14-415.11(c1)."
-      },
-      {
-        title: "Vehicle Carry",
-        risk: "Vehicle / Concealment Risk",
-        body: [
-          "STATUTE / SOURCE: G.S. 14-269; G.S. 14-415.11.",
-          "SUMMARY: North Carolina concealed weapon law and concealed handgun permit law affect how firearms may be carried in vehicles.",
-          "GUIDANCE: If relying on concealment in a vehicle, verify permit validity and disclosure duties before travel."
-        ],
-        source: "N.C. Gen. Stat. § 14-269; § 14-415.11."
-      },
-      {
-        title: "Federal Property / Post Offices",
-        risk: "Federal Law Overlay",
-        body: [
-          "STATUTE / SOURCE: Federal facility and postal property framework.",
-          "SUMMARY: North Carolina carry permission does not override federal property restrictions.",
-          "GUIDANCE: Federal buildings, federal courthouses, post offices, and secure federal property must be checked separately."
-        ],
-        source: "Federal facility and postal property framework."
-      },
-      {
-        title: "Use of Force / Self-Defense",
-        risk: "Fact-Specific Legal Risk",
-        body: [
-          "STATUTE / SOURCE: North Carolina self-defense framework.",
-          "SUMMARY: Defensive force must be justified under the facts and applicable North Carolina law.",
-          "GUIDANCE: Avoid, disengage, call 911, identify evidence/witnesses when necessary, request counsel, and avoid detailed statements under stress."
-        ],
-        source: "North Carolina self-defense law framework."
-      }
-    ],
-    [
-      {
-        title: "North Carolina Carry Checklist",
-        steps: [
-          "1. Verify permit recognition.",
-          "2. Check G.S. 14-415.11 permit scope.",
-          "3. Check educational property under G.S. 14-269.2.",
-          "4. Check alcohol/event restrictions under G.S. 14-269.3.",
-          "5. Check posted private property under G.S. 14-415.11(c)(8).",
-          "6. Know police disclosure script.",
-          "7. Check federal property separately."
+    {
+        "title": "North Carolina Elite Deep Carry Checklist",
+        "steps": [
+            "1. Check reciprocity/current permit recognition before entering the state.",
+            "2. Confirm eligibility, age, prohibited-person status, and whether permitless carry applies.",
+            "3. Check vehicle carry/transport rules before crossing the state line.",
+            "4. Check restricted and sensitive locations before entering any building, event, school, court, government facility, airport, or posted property.",
+            "5. Know police-contact rules and keep hands visible during stops.",
+            "6. Check federal, tribal, airport, and interstate-travel overlays separately.",
+            "7. Separate carry legality from use-of-force legality; both must be lawful."
         ]
-      }
-    ],
+    }
+],
+    [],
     [
-      {
-        title: "Beach / Vacation Travel",
-        summary: "North Carolina travel may include hotels, restaurants, parks, alcohol locations, posted businesses, and federal coastal property.",
-        guidance: [
-          "Check posted signs.",
-          "Check alcohol/event restrictions.",
-          "Verify whether land is state, federal, municipal, or private.",
-          "Know disclosure duties."
-        ]
-      }
-    ],
+    "Assuming reciprocity means carry anywhere.",
+    "Ignoring vehicle carry and transport rules.",
+    "Ignoring schools, courts, secure facilities, airports, and federal property.",
+    "Arguing with staff/security instead of leaving posted or restricted property.",
+    "Thinking lawful carry automatically justifies defensive display or force.",
+    "Talking too much after a defensive incident before legal counsel."
+],
     [
-      "Assuming North Carolina is permitless concealed carry.",
-      "Ignoring posted private property.",
-      "Ignoring educational property.",
-      "Ignoring alcohol/event restrictions.",
-      "Forgetting police disclosure duties.",
-      "Assuming state park rules apply to federal property."
-    ],
+    "Reciprocity checked.",
+    "Eligibility checked.",
+    "Vehicle carry checked.",
+    "Restricted & sensitive locations checked.",
+    "Police-contact rule checked.",
+    "Federal/tribal/airport overlay checked.",
+    "Aftermath plan ready."
+],
     [
-      "Permit recognition checked.",
-      "Educational property checked.",
-      "Alcohol/event restrictions checked.",
-      "Posted private premises checked.",
-      "Vehicle carry checked.",
-      "Police disclosure script ready.",
-      "Federal property checked."
-    ],
-    [
-      {
-        myth: "If North Carolina recognizes my permit, I can carry anywhere.",
-        reality: "No. Permit recognition does not override educational property, posted private premises, alcohol/event restrictions, federal property, or disclosure duties."
-      }
-    ]
+    {
+        "myth": "If the map is green, I can carry anywhere in North Carolina.",
+        "reality": "No. Green only means permit recognition in the app engine. Restricted/sensitive locations, vehicle rules, private property, federal property, and use-of-force law still control."
+    },
+    {
+        "myth": "Permitless carry means no rules.",
+        "reality": "No. Permitless carry only affects the licensing requirement for eligible people. It does not erase location restrictions, prohibited-person rules, vehicle rules, or use-of-force standards."
+    }
+]
   ),
 
   CA: makeProfile(
@@ -4775,550 +4700,560 @@ var stateLawData = {
   ),
   AL: makeProfile(
     "Alabama",
-    "Law-Backed Ultra Expanded Travel State",
-    "Alabama is a common southern travel state and a useful state for members because it has permitless carry, optional permits, broad recognition of out-of-state permits, and important restrictions involving prohibited persons, schools, law enforcement facilities, courthouses, secure government buildings, private property, federal property, and defensive conduct. Alabama is generally permissive, but it is not rule-free.",
+    "Elite Deep Travel State",
+    "Alabama is a permitless carry state and recognizes other states’ permits, but eligibility, prohibited persons, school zones, law-enforcement facilities, detention facilities, mental health facilities, private property, federal property, and use-of-force law still matter.",
     {
-      reciprocity: "Alabama recognizes any valid out-of-state permit under Alabama Code § 13A-11-85. Michigan CPL should be treated as recognized, but Alabama law controls while physically in Alabama.",
-      permitlessCarry: "Alabama Code § 13A-11-74.1: Alabama does not impose a general prohibition on carrying a pistol without a permit.",
-      concealedCarry: "Alabama allows permitless carry for eligible persons, but prohibited-person rules and location restrictions still apply.",
-      openCarry: "Open carry may be lawful for eligible persons, but restricted locations, disorderly conduct, private property, and police contact still matter.",
-      vehicleCarry: "Alabama permitless carry includes vehicle carry considerations, but federal property, schools, courthouses, and restricted premises remain separate issues.",
-      dutyToInform: "Verify current Alabama police-contact duties. Keep hands visible and answer lawful questions truthfully.",
-      privateSigns: "Private property owners may restrict firearms and require persons to leave.",
-      forceLaw: "Alabama self-defense law is fact-specific and does not excuse unlawful possession, unlawful carry, or reckless conduct."
+    "reciprocity": "Michigan CPL is treated as recognized in this app unless the reciprocity engine shows otherwise. State law controls while physically in this state.",
+    "permitlessCarry": "Alabama permitless carry allows eligible persons to carry without an Alabama permit, but prohibited-person and location rules still apply.",
+    "concealedCarry": "Alabama concealed carry is generally permitless for eligible persons, while permits remain relevant for reciprocity and documentation.",
+    "openCarry": "Open carry may be lawful for eligible persons, but restricted/sensitive locations, vehicles, private property, and police contact still matter.",
+    "vehicleCarry": "Alabama permitless carry includes vehicle carry considerations, but restricted premises and police-contact behavior still matter.",
+    "dutyToInform": "Verify Alabama police-contact rules; keep hands visible and answer lawful questions truthfully.",
+    "privateSigns": "Private property and posted/instructed restrictions matter. Leave immediately if asked.",
+    "forceLaw": "Use of force is fact-specific. Justification depends on necessity, reasonableness, imminence, proportionality, and the defender’s conduct."
+},
+    [
+    "Recognition or permitless carry does not override restricted and sensitive locations.",
+    "Vehicle carry and transport rules should be checked before crossing state lines.",
+    "Federal property, tribal property, airports, schools, courts, and private property require separate analysis.",
+    "Use-of-force law is separate from carry law; lawful carry does not make every defensive act lawful."
+],
+    [
+    {
+        "title": "Carry Authority / Permit Framework",
+        "risk": "Core Carry Rule",
+        "body": [
+            "STATUTE / SOURCE: Ala. Code § 13A-11-74.1; Ala. Code § 13A-11-75; Alabama ALEA gun laws guidance",
+            "SUMMARY: Alabama allows permitless carry for eligible persons while retaining permits and reciprocity for travel/documentation.",
+            "GUIDANCE: Confirm eligibility and prohibited-person status before carrying."
+        ],
+        "source": "Ala. Code § 13A-11-74.1; Ala. Code § 13A-11-75; Alabama ALEA gun laws guidance"
     },
+    {
+        "title": "Transport and Vehicle Carry",
+        "risk": "Vehicle / Transport Deep Dive",
+        "body": [
+            "STATUTE / SOURCE: Ala. Code § 13A-11-74.1 and Alabama vehicle carry framework",
+            "SUMMARY: Alabama permitless carry expanded vehicle carry options for eligible persons, but does not override prohibited places or unlawful possession.",
+            "GUIDANCE: Vehicle carry should still be paired with hands-visible traffic stop behavior and secure storage practices."
+        ],
+        "source": "Ala. Code § 13A-11-74.1 and Alabama vehicle carry framework"
+    },
+    {
+        "title": "Restricted & Sensitive Locations",
+        "risk": "Location Restrictions",
+        "body": [
+            "STATUTE / SOURCE: Ala. Code § 13A-11-61.2 and Alabama prohibited-location framework",
+            "SUMMARY: Alabama restricts firearms in certain facilities and locations including law-enforcement buildings, jails/detention, mental health facilities, courthouses/courtrooms, and other restricted areas.",
+            "GUIDANCE: Check specific facilities and posted/security-controlled properties before entering."
+        ],
+        "source": "Ala. Code § 13A-11-61.2 and Alabama prohibited-location framework"
+    },
+    {
+        "title": "Schools and Educational Property",
+        "risk": "Extreme Risk Area",
+        "body": [
+            "STATUTE / SOURCE: Federal school-zone law; Alabama education/property weapons framework",
+            "SUMMARY: School zones and school property create federal and state-level risk.",
+            "GUIDANCE: Treat school property/events as verify-first even in a permitless state."
+        ],
+        "source": "Federal school-zone law; Alabama education/property weapons framework"
+    },
+    {
+        "title": "Courts / Government / Secure Facilities",
+        "risk": "Hard Stop Area",
+        "body": [
+            "STATUTE / SOURCE: Ala. Code § 13A-11-61.2 and Alabama prohibited-location framework",
+            "SUMMARY: Court, law-enforcement, detention, and secure government facilities can be prohibited or heavily restricted depending on the exact site and statute.",
+            "GUIDANCE: Do not approach security screening armed. Verify the specific facility before arrival."
+        ],
+        "source": "Ala. Code § 13A-11-61.2 and Alabama prohibited-location framework"
+    },
+    {
+        "title": "Alcohol, Bars, Events, and Impairment",
+        "risk": "Alcohol / Event Risk",
+        "body": [
+            "STATUTE / SOURCE: State alcohol-location and impairment framework",
+            "SUMMARY: Alcohol-related locations, ticketed events, stadiums, festivals, or impairment may create separate legal and practical risk.",
+            "GUIDANCE: If drinking is part of the plan, carrying should not be. Check venue rules and statutory restrictions before entering."
+        ],
+        "source": "State alcohol-location and impairment framework"
+    },
+    {
+        "title": "Private Property / Posted Premises",
+        "risk": "Property Control",
+        "body": [
+            "STATUTE / SOURCE: State private property and trespass framework",
+            "SUMMARY: Private property owners, employers, venues, and persons in control of premises may restrict firearms or require the person to leave.",
+            "GUIDANCE: Follow signs and instructions. Leave immediately if asked; do not create a trespass, disorderly conduct, or public confrontation issue."
+        ],
+        "source": "State private property and trespass framework"
+    },
+    {
+        "title": "Police Interaction / Traffic Stops",
+        "risk": "Police Contact",
+        "body": [
+            "STATUTE / SOURCE: State police-contact and concealed carry guidance",
+            "SUMMARY: Police-contact duties vary by state. Even where no affirmative duty to inform exists, truthful answers, visible hands, and calm compliance are critical.",
+            "GUIDANCE: Keep hands visible, do not reach, answer lawful questions truthfully, and ask how the officer wants you to proceed."
+        ],
+        "source": "State police-contact and concealed carry guidance"
+    },
+    {
+        "title": "Federal, Tribal, Airport, and Interstate Travel Overlay",
+        "risk": "Separate Legal System",
+        "body": [
+            "STATUTE / SOURCE: Federal law; TSA/airport rules; tribal-property framework; interstate travel framework",
+            "SUMMARY: State carry permission does not override federal buildings, post offices, secure airport areas, tribal-government rules, or the laws of the next state on the route.",
+            "GUIDANCE: Check federal/tribal/airport rules separately. When crossing state lines, re-check reciprocity, vehicle carry, magazine/ammunition rules, and sensitive-place laws before entering the next state."
+        ],
+        "source": "Federal facility, TSA, tribal-property, and interstate travel framework"
+    },
+    {
+        "title": "State-Specific Traps",
+        "risk": "Common Legal Traps",
+        "body": [
+            "STATUTE / SOURCE: State-specific legal framework",
+            "SUMMARY: Alabama traps include assuming permitless carry overrides police buildings, jails, mental health facilities, schools, or federal property.",
+            "GUIDANCE: Teach Alabama as permitless but not unrestricted; eligibility and restricted locations still control."
+        ],
+        "source": "State-specific legal framework"
+    },
+    {
+        "title": "Civil Liability / Aftermath",
+        "risk": "Post-Incident Exposure",
+        "body": [
+            "STATUTE / SOURCE: Civil liability, criminal procedure, and self-defense investigation framework",
+            "SUMMARY: A lawful carry status does not prevent arrest, investigation, prosecution review, civil claims, employment consequences, or administrative issues after a defensive incident.",
+            "GUIDANCE: Report the emergency, request police/medical if needed, identify attacker/evidence/witnesses only as necessary, request counsel, then avoid detailed statements until represented."
+        ],
+        "source": "General civil liability and post-incident framework"
+    },
+    {
+        "title": "Use of Force / Self-Defense",
+        "risk": "Life-Altering Legal Risk",
+        "body": [
+            "STATUTE / SOURCE: State self-defense and use-of-force framework",
+            "SUMMARY: Defensive force must be justified under state law and the facts known at the time. Deadly force is not for anger, property disputes, warning shots, intimidation, or punishment.",
+            "GUIDANCE: Avoid, disengage, create distance, call 911 when safe, preserve evidence, and understand that justified does not mean consequence-free."
+        ],
+        "source": "State self-defense and use-of-force framework"
+    }
+],
     [
-      "Alabama is generally permissive, but permitless carry does not mean carry anywhere.",
-      "Alabama recognizes valid out-of-state permits, but users must still follow Alabama law.",
-      "Schools, courthouses, law enforcement facilities, detention facilities, secure government buildings, federal property, and private property remain major warning areas.",
-      "A permit may still matter for reciprocity when leaving Alabama, documentation, and certain practical interactions.",
-      "Travelers should treat event venues, beaches, bars, stadiums, government property, and posted private locations as verify-first areas."
-    ],
-    [
-      {
-        title: "Permitless Carry / Carrying Without Permit",
-        risk: "Core Carry Rule",
-        body: [
-          "STATUTE: Alabama Code § 13A-11-74.1.",
-          "SUMMARY: Alabama law states that the availability of a pistol permit or recognition of a nonresident license does not impose a general prohibition on otherwise lawful carrying of a pistol without a permit.",
-          "GUIDANCE: Permitless carry only helps people who may lawfully possess and carry. Prohibited persons, restricted places, intoxication, criminal activity, and federal restrictions can still make carry unlawful."
-        ],
-        source: "Alabama Code § 13A-11-74.1."
-      },
-      {
-        title: "Optional Alabama Pistol Permit",
-        risk: "Permit / Reciprocity Context",
-        body: [
-          "STATUTE: Alabama Code § 13A-11-75.",
-          "SUMMARY: Alabama maintains an optional pistol permit system through county sheriffs.",
-          "GUIDANCE: Even in a permitless carry state, a permit can still matter for reciprocity outside Alabama, documentation, and proving permit status when traveling."
-        ],
-        source: "Alabama Code § 13A-11-75; Alabama Law Enforcement Agency gun laws guidance."
-      },
-      {
-        title: "Out-of-State Permit Recognition",
-        risk: "Travel Recognition Rule",
-        body: [
-          "STATUTE: Alabama Code § 13A-11-85.",
-          "SUMMARY: Alabama recognizes any valid permit or license issued by another state.",
-          "GUIDANCE: Michigan CPL should be treated as recognized in Alabama, but recognition does not override Alabama restricted places, federal law, or private property control."
-        ],
-        source: "Alabama Code § 13A-11-85; Alabama Law Enforcement Agency gun laws guidance."
-      },
-      {
-        title: "Prohibited Persons / Persons Forbidden to Possess",
-        risk: "Disqualification Risk",
-        body: [
-          "STATUTE: Alabama Code § 13A-11-72.",
-          "SUMMARY: Alabama law identifies categories of people prohibited from owning, possessing, or controlling pistols or firearms in certain circumstances.",
-          "GUIDANCE: Domestic violence issues, felony history, protection orders, mental health adjudications, pending cases, bond conditions, or federal prohibitions require legal review before possession or carry."
-        ],
-        source: "Alabama Code § 13A-11-72."
-      },
-      {
-        title: "Schools / K-12 Premises",
-        risk: "Extreme Risk Area",
-        body: [
-          "STATUTE: Alabama Code § 13A-11-72(d) and related school weapons framework.",
-          "SUMMARY: Alabama restricts possession of deadly weapons on school premises under statutory conditions and exceptions.",
-          "GUIDANCE: School buildings, buses, school property, events, pickup/drop-off, and athletic activities should be treated as verify-first areas. Do not assume permitless carry solves a school issue."
-        ],
-        source: "Alabama Code § 13A-11-72(d); Alabama school weapons framework."
-      },
-      {
-        title: "Courthouses / Court Facilities",
-        risk: "Hard Stop Area",
-        body: [
-          "STATUTE / SOURCE: Alabama court security and prohibited-location framework.",
-          "SUMMARY: Courthouses and court facilities are high-risk restricted locations and may be controlled by court order, security screening, and local facility rules.",
-          "GUIDANCE: Do not approach court security armed. Secure lawfully before arrival or do not bring the firearm."
-        ],
-        source: "Alabama court security/prohibited premises framework."
-      },
-      {
-        title: "Law Enforcement / Detention / Correctional Facilities",
-        risk: "Restricted Facility Risk",
-        body: [
-          "STATUTE / SOURCE: Alabama prohibited-location and correctional facility framework.",
-          "SUMMARY: Police stations, sheriff offices, jails, detention facilities, prisons, and correctional settings create serious legal and security risk.",
-          "GUIDANCE: Treat these locations as restricted unless a clear legal exception applies. Do not walk into a police or jail facility armed without verifying."
-        ],
-        source: "Alabama law enforcement/detention facility framework."
-      },
-      {
-        title: "Private Property / Posted Locations",
-        risk: "Property Control",
-        body: [
-          "STATUTE / SOURCE: Alabama property and trespass framework.",
-          "SUMMARY: Private property owners may restrict firearms and require a person to leave.",
-          "GUIDANCE: Posted businesses, event venues, churches, hotels, beaches, stadiums, and private properties should be respected. If asked to leave, leave immediately."
-        ],
-        source: "Alabama property/trespass framework."
-      },
-      {
-        title: "Vehicle Carry / Road Trip Issues",
-        risk: "Travel Carry Risk",
-        body: [
-          "STATUTE / SOURCE: Alabama Code § 13A-11-74.1; Alabama pistol carry framework.",
-          "SUMMARY: Alabama permitless carry reduces the old permit barrier for pistol carry, but vehicle carry still interacts with eligibility, location restrictions, officer safety, and federal property.",
-          "GUIDANCE: Keep hands visible during police contact, avoid reaching, answer lawful questions truthfully, and do not assume a vehicle cures a school, court, or federal property problem."
-        ],
-        source: "Alabama Code § 13A-11-74.1; Alabama firearm travel framework."
-      },
-      {
-        title: "Federal Property / Post Offices / Military Installations",
-        risk: "Federal Law Overlay",
-        body: [
-          "STATUTE / SOURCE: Federal facility, postal property, and military installation framework.",
-          "SUMMARY: Alabama carry permission does not override federal buildings, post offices, secure federal facilities, military bases, or federal court rules.",
-          "GUIDANCE: Check federal property separately. Military installations and federal facilities are not controlled by Alabama permitless carry."
-        ],
-        source: "Federal facility, postal property, and military installation framework."
-      },
-      {
-        title: "Use of Force / Self-Defense",
-        risk: "Fact-Specific Legal Risk",
-        body: [
-          "STATUTE / SOURCE: Alabama self-defense framework.",
-          "SUMMARY: Defensive force must be justified under Alabama law and the facts. Carry law does not decide whether force was lawful.",
-          "GUIDANCE: Avoid confrontation, call 911, identify evidence/witnesses when necessary, request counsel, and avoid detailed statements under stress."
-        ],
-        source: "Alabama self-defense law framework."
-      }
-    ],
-    [
-      {
-        title: "Alabama Carry Checklist",
-        steps: [
-          "1. Confirm legal eligibility to possess and carry.",
-          "2. Confirm Alabama recognition/permitless status under §§ 13A-11-74.1 and 13A-11-85.",
-          "3. Check schools under § 13A-11-72 and related rules.",
-          "4. Check courts, law enforcement facilities, and secure government buildings.",
-          "5. Check private property, hotels, beaches, stadiums, and event rules.",
-          "6. Check federal property and military installations separately."
+    {
+        "title": "Alabama Elite Deep Carry Checklist",
+        "steps": [
+            "1. Check reciprocity/current permit recognition before entering the state.",
+            "2. Confirm eligibility, age, prohibited-person status, and whether permitless carry applies.",
+            "3. Check vehicle carry/transport rules before crossing the state line.",
+            "4. Check restricted and sensitive locations before entering any building, event, school, court, government facility, airport, or posted property.",
+            "5. Know police-contact rules and keep hands visible during stops.",
+            "6. Check federal, tribal, airport, and interstate-travel overlays separately.",
+            "7. Separate carry legality from use-of-force legality; both must be lawful."
         ]
-      }
-    ],
+    }
+],
+    [],
     [
-      {
-        title: "Gulf Coast / Vacation Travel",
-        summary: "Alabama travel often includes beaches, hotels, restaurants, events, alcohol, and vehicle storage.",
-        guidance: [
-          "Check hotel and venue policy.",
-          "Do not leave firearms unsecured in vehicles.",
-          "Check federal property and military-area rules.",
-          "Do not mix alcohol and carry."
-        ]
-      }
-    ],
+    "Assuming reciprocity means carry anywhere.",
+    "Ignoring vehicle carry and transport rules.",
+    "Ignoring schools, courts, secure facilities, airports, and federal property.",
+    "Arguing with staff/security instead of leaving posted or restricted property.",
+    "Thinking lawful carry automatically justifies defensive display or force.",
+    "Talking too much after a defensive incident before legal counsel."
+],
     [
-      "Assuming permitless carry means no prohibited places.",
-      "Ignoring school premises.",
-      "Ignoring federal property or military installations.",
-      "Arguing with private property/security staff.",
-      "Leaving firearms unsecured in vehicles during travel.",
-      "Assuming recognition overrides Alabama law."
-    ],
+    "Reciprocity checked.",
+    "Eligibility checked.",
+    "Vehicle carry checked.",
+    "Restricted & sensitive locations checked.",
+    "Police-contact rule checked.",
+    "Federal/tribal/airport overlay checked.",
+    "Aftermath plan ready."
+],
     [
-      "Eligibility checked.",
-      "Permitless/recognition rule checked.",
-      "School property checked.",
-      "Court/government/law enforcement facilities checked.",
-      "Private property checked.",
-      "Federal/military property checked.",
-      "Vehicle storage plan ready."
-    ],
-    [
-      {
-        myth: "Alabama is permitless, so there are no restrictions.",
-        reality: "No. Permitless carry does not override prohibited persons, schools, courts, federal property, private property, or other restricted locations."
-      }
-    ]
+    {
+        "myth": "If the map is green, I can carry anywhere in Alabama.",
+        "reality": "No. Green only means permit recognition in the app engine. Restricted/sensitive locations, vehicle rules, private property, federal property, and use-of-force law still control."
+    },
+    {
+        "myth": "Permitless carry means no rules.",
+        "reality": "No. Permitless carry only affects the licensing requirement for eligible people. It does not erase location restrictions, prohibited-person rules, vehicle rules, or use-of-force standards."
+    }
+]
   ),
 
   SC: makeProfile(
     "South Carolina",
-    "Law-Backed Ultra Expanded Travel State",
-    "South Carolina is an important southern travel state because it recently adopted constitutional carry while still keeping significant location restrictions. South Carolina law no longer requires a CWP for ordinary carry by eligible persons, but firearms remain prohibited in many places, including schools, churches unless allowed, law enforcement and correctional facilities, medical procedure areas, courthouses, public buildings, and posted locations.",
+    "Elite Deep Travel State",
+    "South Carolina has constitutional carry, but firearms remain prohibited in many places and SLED guidance emphasizes schools, churches, law enforcement facilities, detention/correctional facilities, medical procedure areas, courthouses, public buildings, and posted locations.",
     {
-      reciprocity: "South Carolina should be treated as recognized/permitless for eligible Michigan travelers, but South Carolina law controls while physically in the state.",
-      permitlessCarry: "South Carolina constitutional carry took effect in 2024; eligible persons may carry without a CWP subject to restrictions.",
-      concealedCarry: "CWP is no longer required for ordinary eligible carry, but CWP remains useful for reciprocity/training and some legal contexts.",
-      openCarry: "Open carry is allowed for eligible persons, subject to prohibited locations and property restrictions.",
-      vehicleCarry: "Vehicle carry is generally more permissive after constitutional carry, but restricted places, private property, and officer safety still matter.",
-      dutyToInform: "SLED guidance states a CWP holder is not required to disclose CWP status to law enforcement under the new law.",
-      privateSigns: "S.C. Code § 23-31-235 controls signage requirements for premises where concealed weapons are prohibited.",
-      forceLaw: "South Carolina self-defense law is fact-specific and does not excuse unlawful carry or reckless display."
+    "reciprocity": "Michigan CPL is treated as recognized in this app unless the reciprocity engine shows otherwise. State law controls while physically in this state.",
+    "permitlessCarry": "South Carolina constitutional carry allows eligible persons to carry openly or concealed without a CWP, but prohibited places still apply.",
+    "concealedCarry": "Concealed carry is generally permitless for eligible persons, subject to South Carolina prohibited-location law.",
+    "openCarry": "Open carry may be lawful for eligible persons, but restricted/sensitive locations, vehicles, private property, and police contact still matter.",
+    "vehicleCarry": "South Carolina vehicle carry is more permissive after constitutional carry, but prohibited locations and private property still matter.",
+    "dutyToInform": "SLED guidance states CWP holders are no longer required to disclose CWP status to law enforcement under the new framework, but truthful answers and visible hands remain critical.",
+    "privateSigns": "Private property and posted/instructed restrictions matter. Leave immediately if asked.",
+    "forceLaw": "Use of force is fact-specific. Justification depends on necessity, reasonableness, imminence, proportionality, and the defender’s conduct."
+},
+    [
+    "Recognition or permitless carry does not override restricted and sensitive locations.",
+    "Vehicle carry and transport rules should be checked before crossing state lines.",
+    "Federal property, tribal property, airports, schools, courts, and private property require separate analysis.",
+    "Use-of-force law is separate from carry law; lawful carry does not make every defensive act lawful."
+],
+    [
+    {
+        "title": "Carry Authority / Permit Framework",
+        "risk": "Core Carry Rule",
+        "body": [
+            "STATUTE / SOURCE: S.C. Code § 23-31-215; South Carolina Constitutional Carry/Second Amendment Preservation Act framework",
+            "SUMMARY: South Carolina now allows eligible persons to carry openly or concealed without a CWP, but prohibited places remain.",
+            "GUIDANCE: Confirm eligibility and check prohibited locations before carrying."
+        ],
+        "source": "S.C. Code § 23-31-215; South Carolina Constitutional Carry/Second Amendment Preservation Act framework"
     },
+    {
+        "title": "Transport and Vehicle Carry",
+        "risk": "Vehicle / Transport Deep Dive",
+        "body": [
+            "STATUTE / SOURCE: S.C. Code § 23-31-215 and SLED constitutional carry guidance",
+            "SUMMARY: South Carolina allows permitless carrying/transport in a manner not prohibited by law.",
+            "GUIDANCE: Vehicle carry is more permissive but still does not override schools, courts, posted properties, federal property, or employer policies."
+        ],
+        "source": "S.C. Code § 23-31-215 and SLED constitutional carry guidance"
+    },
+    {
+        "title": "Restricted & Sensitive Locations",
+        "risk": "Location Restrictions",
+        "body": [
+            "STATUTE / SOURCE: SLED constitutional carry guidance; S.C. Code prohibited-location framework",
+            "SUMMARY: SLED states firearms remain prohibited in many locations including schools, churches, law-enforcement/detention/correctional facilities, medical-procedure areas, courthouses, public buildings, and clearly marked locations.",
+            "GUIDANCE: Treat South Carolina as permitless but location-restricted."
+        ],
+        "source": "SLED constitutional carry guidance; S.C. Code prohibited-location framework"
+    },
+    {
+        "title": "Schools and Educational Property",
+        "risk": "Extreme Risk Area",
+        "body": [
+            "STATUTE / SOURCE: S.C. Code § 16-23-420 and South Carolina school weapons framework",
+            "SUMMARY: South Carolina restricts weapons on school property and in school-related settings subject to exceptions.",
+            "GUIDANCE: School property remains a hard verify area even after constitutional carry."
+        ],
+        "source": "S.C. Code § 16-23-420 and South Carolina school weapons framework"
+    },
+    {
+        "title": "Courts / Government / Secure Facilities",
+        "risk": "Hard Stop Area",
+        "body": [
+            "STATUTE / SOURCE: SLED constitutional carry guidance; S.C. Code prohibited-location framework",
+            "SUMMARY: Court, law-enforcement, detention, and secure government facilities can be prohibited or heavily restricted depending on the exact site and statute.",
+            "GUIDANCE: Do not approach security screening armed. Verify the specific facility before arrival."
+        ],
+        "source": "SLED constitutional carry guidance; S.C. Code prohibited-location framework"
+    },
+    {
+        "title": "Alcohol, Bars, Events, and Impairment",
+        "risk": "Alcohol / Event Risk",
+        "body": [
+            "STATUTE / SOURCE: State alcohol-location and impairment framework",
+            "SUMMARY: Alcohol-related locations, ticketed events, stadiums, festivals, or impairment may create separate legal and practical risk.",
+            "GUIDANCE: If drinking is part of the plan, carrying should not be. Check venue rules and statutory restrictions before entering."
+        ],
+        "source": "State alcohol-location and impairment framework"
+    },
+    {
+        "title": "Private Property / Posted Premises",
+        "risk": "Property Control",
+        "body": [
+            "STATUTE / SOURCE: SLED constitutional carry guidance; South Carolina posting/trespass framework",
+            "SUMMARY: Private property owners, employers, venues, and persons in control of premises may restrict firearms or require the person to leave.",
+            "GUIDANCE: Follow signs and instructions. Leave immediately if asked; do not create a trespass, disorderly conduct, or public confrontation issue."
+        ],
+        "source": "SLED constitutional carry guidance; South Carolina posting/trespass framework"
+    },
+    {
+        "title": "Police Interaction / Traffic Stops",
+        "risk": "Police Contact",
+        "body": [
+            "STATUTE / SOURCE: SLED constitutional carry guidance",
+            "SUMMARY: Police-contact duties vary by state. Even where no affirmative duty to inform exists, truthful answers, visible hands, and calm compliance are critical.",
+            "GUIDANCE: Keep hands visible, do not reach, answer lawful questions truthfully, and ask how the officer wants you to proceed."
+        ],
+        "source": "SLED constitutional carry guidance"
+    },
+    {
+        "title": "Federal, Tribal, Airport, and Interstate Travel Overlay",
+        "risk": "Separate Legal System",
+        "body": [
+            "STATUTE / SOURCE: Federal law; TSA/airport rules; tribal-property framework; interstate travel framework",
+            "SUMMARY: State carry permission does not override federal buildings, post offices, secure airport areas, tribal-government rules, or the laws of the next state on the route.",
+            "GUIDANCE: Check federal/tribal/airport rules separately. When crossing state lines, re-check reciprocity, vehicle carry, magazine/ammunition rules, and sensitive-place laws before entering the next state."
+        ],
+        "source": "Federal facility, TSA, tribal-property, and interstate travel framework"
+    },
+    {
+        "title": "State-Specific Traps",
+        "risk": "Common Legal Traps",
+        "body": [
+            "STATUTE / SOURCE: State-specific legal framework",
+            "SUMMARY: The South Carolina trap is assuming constitutional carry means public buildings, churches, medical facilities, and posted locations are safe.",
+            "GUIDANCE: Use SLED guidance as a user-facing warning: permitless carry did not erase location restrictions."
+        ],
+        "source": "State-specific legal framework"
+    },
+    {
+        "title": "Civil Liability / Aftermath",
+        "risk": "Post-Incident Exposure",
+        "body": [
+            "STATUTE / SOURCE: Civil liability, criminal procedure, and self-defense investigation framework",
+            "SUMMARY: A lawful carry status does not prevent arrest, investigation, prosecution review, civil claims, employment consequences, or administrative issues after a defensive incident.",
+            "GUIDANCE: Report the emergency, request police/medical if needed, identify attacker/evidence/witnesses only as necessary, request counsel, then avoid detailed statements until represented."
+        ],
+        "source": "General civil liability and post-incident framework"
+    },
+    {
+        "title": "Use of Force / Self-Defense",
+        "risk": "Life-Altering Legal Risk",
+        "body": [
+            "STATUTE / SOURCE: State self-defense and use-of-force framework",
+            "SUMMARY: Defensive force must be justified under state law and the facts known at the time. Deadly force is not for anger, property disputes, warning shots, intimidation, or punishment.",
+            "GUIDANCE: Avoid, disengage, create distance, call 911 when safe, preserve evidence, and understand that justified does not mean consequence-free."
+        ],
+        "source": "State self-defense and use-of-force framework"
+    }
+],
     [
-      "South Carolina constitutional carry does not mean carry anywhere.",
-      "SLED specifically warns that firearms remain prohibited in many locations after constitutional carry.",
-      "Schools, churches, law enforcement facilities, correctional facilities, medical procedure areas, courthouses, public buildings, and posted locations need special caution.",
-      "A CWP may still matter for reciprocity when traveling outside South Carolina.",
-      "Private property and event security rules should be treated seriously."
-    ],
-    [
-      {
-        title: "Constitutional Carry / Permitless Carry",
-        risk: "Core Carry Rule",
-        body: [
-          "STATUTE / SOURCE: South Carolina constitutional carry law; SLED constitutional carry guidance.",
-          "SUMMARY: South Carolina no longer requires a CWP for ordinary eligible carry, but firearm restrictions still apply in many locations.",
-          "GUIDANCE: Do not teach South Carolina as ruleless. Eligible carry still requires location awareness and lawful conduct."
-        ],
-        source: "South Carolina Law Enforcement Division constitutional carry guidance."
-      },
-      {
-        title: "SLED Prohibited Location Warning",
-        risk: "Major Location Restriction",
-        body: [
-          "STATUTE / SOURCE: SLED constitutional carry guidance; S.C. Code Title 16 and Title 23 firearms framework.",
-          "SUMMARY: SLED states firearms are still prohibited in many locations, including schools, churches, law enforcement facilities, detention/correctional facilities, places where medical procedures are performed, courthouses, public buildings, and clearly marked places prohibiting firearms.",
-          "GUIDANCE: Treat these as high-risk verify-first locations before entering armed."
-        ],
-        source: "South Carolina Law Enforcement Division constitutional carry guidance."
-      },
-      {
-        title: "Carrying Weapon on School Property",
-        risk: "Extreme Risk Area",
-        body: [
-          "STATUTE: S.C. Code § 16-23-430.",
-          "SUMMARY: South Carolina law restricts carrying weapons on elementary or secondary school property, subject to statutory exceptions.",
-          "GUIDANCE: School buildings, school grounds, buses, parking lots, events, and student activities should be treated as verify-first areas."
-        ],
-        source: "S.C. Code § 16-23-430."
-      },
-      {
-        title: "Prohibited Locations / CWP Restrictions",
-        risk: "Location Restriction",
-        body: [
-          "STATUTE: S.C. Code § 23-31-215(M) and related 2024 changes.",
-          "SUMMARY: South Carolina law has historically identified locations where concealed weapons may not be carried, and 2024 guidance confirms many location restrictions remain.",
-          "GUIDANCE: Review schools, churches unless allowed, courthouses, public buildings, detention/correctional facilities, medical-procedure locations, and posted areas before entry."
-        ],
-        source: "S.C. Code § 23-31-215; SLED constitutional carry guidance."
-      },
-      {
-        title: "Places of Worship",
-        risk: "Permission Required",
-        body: [
-          "STATUTE / SOURCE: SLED constitutional carry guidance and South Carolina location-restriction framework.",
-          "SUMMARY: SLED lists churches among locations where firearms remain prohibited unless carry is allowed by the appropriate authority or exception.",
-          "GUIDANCE: Do not assume church carry is allowed. Verify with the governing authority or security policy."
-        ],
-        source: "SLED constitutional carry guidance; South Carolina location-restriction framework."
-      },
-      {
-        title: "Courthouses / Public Buildings",
-        risk: "Hard Stop Area",
-        body: [
-          "STATUTE / SOURCE: SLED guidance and South Carolina public building/court security framework.",
-          "SUMMARY: Courthouses and public buildings remain high-risk restricted locations under South Carolina law and policy.",
-          "GUIDANCE: Do not approach courthouse or public-building security armed unless a clear legal exception applies."
-        ],
-        source: "SLED constitutional carry guidance; South Carolina court/public building framework."
-      },
-      {
-        title: "Private Property / Signage",
-        risk: "Posted Premises Rule",
-        body: [
-          "STATUTE: S.C. Code § 23-31-235.",
-          "SUMMARY: South Carolina law specifies signage requirements for premises where concealed weapons are prohibited.",
-          "GUIDANCE: Posted signs and property-owner instructions should be followed. Leave immediately if asked."
-        ],
-        source: "S.C. Code § 23-31-235."
-      },
-      {
-        title: "Law Enforcement / Correctional Facilities",
-        risk: "Restricted Facility Risk",
-        body: [
-          "STATUTE / SOURCE: SLED constitutional carry guidance and South Carolina facility restrictions.",
-          "SUMMARY: SLED specifically lists law enforcement facilities, detention facilities, and correctional facilities as prohibited locations.",
-          "GUIDANCE: Do not enter police, jail, detention, or correctional facilities armed unless a clear exception applies."
-        ],
-        source: "SLED constitutional carry guidance."
-      },
-      {
-        title: "Medical Procedure Locations",
-        risk: "Healthcare Location Risk",
-        body: [
-          "STATUTE / SOURCE: SLED constitutional carry guidance.",
-          "SUMMARY: SLED includes places where medical procedures are performed among prohibited areas.",
-          "GUIDANCE: Hospitals, surgery centers, clinics, procedure areas, and medical campuses should be verified before entry."
-        ],
-        source: "SLED constitutional carry guidance."
-      },
-      {
-        title: "Federal Property / Post Offices / Military Bases",
-        risk: "Federal Law Overlay",
-        body: [
-          "STATUTE / SOURCE: Federal facility and postal property framework.",
-          "SUMMARY: South Carolina carry permission does not override federal buildings, post offices, secure federal facilities, or military installations.",
-          "GUIDANCE: Federal property must be checked separately from South Carolina law."
-        ],
-        source: "Federal facility, postal property, and military installation framework."
-      },
-      {
-        title: "Use of Force / Self-Defense",
-        risk: "Fact-Specific Legal Risk",
-        body: [
-          "STATUTE / SOURCE: South Carolina Protection of Persons and Property Act / self-defense framework.",
-          "SUMMARY: Defensive force must be justified under South Carolina law and the facts. Carry permission does not decide whether force was lawful.",
-          "GUIDANCE: Avoid confrontation, call 911, identify evidence/witnesses when necessary, request counsel, and avoid detailed statements under stress."
-        ],
-        source: "South Carolina self-defense law framework."
-      }
-    ],
-    [
-      {
-        title: "South Carolina Carry Checklist",
-        steps: [
-          "1. Confirm eligibility to possess and carry.",
-          "2. Confirm constitutional carry status and remaining location restrictions.",
-          "3. Check S.C. Code § 16-23-430 for school property.",
-          "4. Check churches, law enforcement, correctional facilities, medical-procedure locations, courthouses, and public buildings.",
-          "5. Check signs under § 23-31-235.",
-          "6. Check federal property separately."
+    {
+        "title": "South Carolina Elite Deep Carry Checklist",
+        "steps": [
+            "1. Check reciprocity/current permit recognition before entering the state.",
+            "2. Confirm eligibility, age, prohibited-person status, and whether permitless carry applies.",
+            "3. Check vehicle carry/transport rules before crossing the state line.",
+            "4. Check restricted and sensitive locations before entering any building, event, school, court, government facility, airport, or posted property.",
+            "5. Know police-contact rules and keep hands visible during stops.",
+            "6. Check federal, tribal, airport, and interstate-travel overlays separately.",
+            "7. Separate carry legality from use-of-force legality; both must be lawful."
         ]
-      }
-    ],
+    }
+],
+    [],
     [
-      {
-        title: "Myrtle Beach / Charleston Travel",
-        summary: "South Carolina travel often includes hotels, beaches, bars, churches, public events, medical facilities, and private security.",
-        guidance: [
-          "Check posted properties.",
-          "Do not carry into prohibited public buildings.",
-          "Avoid alcohol/carry combinations.",
-          "Follow private security instructions."
-        ]
-      }
-    ],
+    "Assuming reciprocity means carry anywhere.",
+    "Ignoring vehicle carry and transport rules.",
+    "Ignoring schools, courts, secure facilities, airports, and federal property.",
+    "Arguing with staff/security instead of leaving posted or restricted property.",
+    "Thinking lawful carry automatically justifies defensive display or force.",
+    "Talking too much after a defensive incident before legal counsel."
+],
     [
-      "Assuming constitutional carry means carry anywhere.",
-      "Ignoring SLED prohibited-location guidance.",
-      "Ignoring school property.",
-      "Ignoring churches and medical-procedure locations.",
-      "Ignoring posted private property signs.",
-      "Assuming federal property follows South Carolina law."
-    ],
+    "Reciprocity checked.",
+    "Eligibility checked.",
+    "Vehicle carry checked.",
+    "Restricted & sensitive locations checked.",
+    "Police-contact rule checked.",
+    "Federal/tribal/airport overlay checked.",
+    "Aftermath plan ready."
+],
     [
-      "Eligibility checked.",
-      "SLED prohibited locations checked.",
-      "School property checked.",
-      "Church policy checked.",
-      "Medical/courthouse/public building checked.",
-      "Private signs checked.",
-      "Federal property checked."
-    ],
-    [
-      {
-        myth: "South Carolina constitutional carry means I can carry anywhere.",
-        reality: "No. SLED guidance makes clear that many locations remain prohibited even after constitutional carry."
-      }
-    ]
+    {
+        "myth": "If the map is green, I can carry anywhere in South Carolina.",
+        "reality": "No. Green only means permit recognition in the app engine. Restricted/sensitive locations, vehicle rules, private property, federal property, and use-of-force law still control."
+    },
+    {
+        "myth": "Permitless carry means no rules.",
+        "reality": "No. Permitless carry only affects the licensing requirement for eligible people. It does not erase location restrictions, prohibited-person rules, vehicle rules, or use-of-force standards."
+    }
+]
   ),
 
   VA: makeProfile(
     "Virginia",
-    "Law-Backed Ultra Expanded Travel State",
-    "Virginia is a common travel state for Michigan CPL holders and has a recognized concealed handgun permit framework with permit reciprocity, strict school rules, public/capitol area restrictions, courthouse concerns, airport/secure-area issues, alcohol and restaurant issues, private property rules, and local government/event limitations. Virginia law controls while physically in Virginia.",
+    "Elite Deep Travel State",
+    "Virginia is a permit-recognition state for Michigan members, but it has specific restrictions involving concealed carry permits, schools, courthouses, airports, state/local government buildings, restaurants/alcohol, private property, and vehicle transport.",
     {
-      reciprocity: "Virginia recognizes out-of-state concealed handgun permits that meet Virginia statutory conditions under Va. Code § 18.2-308.014.",
-      permitlessCarry: "No general permitless concealed handgun carry. Concealed handgun carry generally requires a valid permit or statutory exception.",
-      concealedCarry: "Va. Code § 18.2-308 and Article 6.1 govern concealed weapons and permits.",
-      openCarry: "Open carry may be lawful in many circumstances, but local restrictions, schools, courthouses, private property, and public-event rules matter.",
-      vehicleCarry: "Vehicle carry must be analyzed under Virginia concealed-carry rules and exceptions.",
-      dutyToInform: "Virginia does not generally use Michigan-style automatic disclosure, but permit/ID must be displayed upon demand under reciprocity conditions.",
-      privateSigns: "Private property owners can restrict firearms and require persons to leave.",
-      forceLaw: "Virginia self-defense law is fact-specific and rooted substantially in case-law principles."
+    "reciprocity": "Michigan CPL is treated as recognized in this app unless the reciprocity engine shows otherwise. State law controls while physically in this state.",
+    "permitlessCarry": "No general permitless concealed handgun carry. Concealed carry generally requires a valid recognized permit.",
+    "concealedCarry": "Va. Code § 18.2-308 and § 18.2-308.014: concealed carry is permit-based, with recognition rules for out-of-state permits.",
+    "openCarry": "Open carry may be lawful for eligible persons, but restricted/sensitive locations, vehicles, private property, and police contact still matter.",
+    "vehicleCarry": "Vehicle carry depends on concealment, permit status, container/location, and restricted places.",
+    "dutyToInform": "Virginia does not use Michigan-style immediate disclosure, but truthful answers, visible hands, and careful movement remain critical.",
+    "privateSigns": "Private property and posted/instructed restrictions matter. Leave immediately if asked.",
+    "forceLaw": "Use of force is fact-specific. Justification depends on necessity, reasonableness, imminence, proportionality, and the defender’s conduct."
+},
+    [
+    "Recognition or permitless carry does not override restricted and sensitive locations.",
+    "Vehicle carry and transport rules should be checked before crossing state lines.",
+    "Federal property, tribal property, airports, schools, courts, and private property require separate analysis.",
+    "Use-of-force law is separate from carry law; lawful carry does not make every defensive act lawful."
+],
+    [
+    {
+        "title": "Carry Authority / Permit Framework",
+        "risk": "Core Carry Rule",
+        "body": [
+            "STATUTE / SOURCE: Va. Code § 18.2-308; Va. Code § 18.2-308.014",
+            "SUMMARY: Virginia concealed handgun carry is permit-based and recognizes out-of-state permits under the statutory framework.",
+            "GUIDANCE: Carry permit/ID and verify current recognition before travel."
+        ],
+        "source": "Va. Code § 18.2-308; Va. Code § 18.2-308.014"
     },
+    {
+        "title": "Transport and Vehicle Carry",
+        "risk": "Vehicle / Transport Deep Dive",
+        "body": [
+            "STATUTE / SOURCE: Va. Code § 18.2-308 and Virginia vehicle carry framework",
+            "SUMMARY: Virginia vehicle carry depends on whether the handgun is concealed, permit status, and how it is stored/accessible.",
+            "GUIDANCE: Know the difference between openly visible, concealed, secured compartment, and on-person carry in a vehicle."
+        ],
+        "source": "Va. Code § 18.2-308 and Virginia vehicle carry framework"
+    },
+    {
+        "title": "Restricted & Sensitive Locations",
+        "risk": "Location Restrictions",
+        "body": [
+            "STATUTE / SOURCE: Virginia restricted-location framework; Va. Code §§ 18.2-308.1 and related provisions",
+            "SUMMARY: Virginia restricts carry in schools, courthouses, certain airport areas, government buildings/local properties, and other sensitive locations.",
+            "GUIDANCE: Check schools, government/court buildings, airports, posted locations, and local rules before carrying."
+        ],
+        "source": "Virginia restricted-location framework; Va. Code §§ 18.2-308.1 and related provisions"
+    },
+    {
+        "title": "Schools and Educational Property",
+        "risk": "Extreme Risk Area",
+        "body": [
+            "STATUTE / SOURCE: Va. Code § 18.2-308.1",
+            "SUMMARY: Virginia restricts firearms on school property, school buses, and school-related locations subject to statutory exceptions.",
+            "GUIDANCE: Do not assume parking lots or school events are safe; verify the exact rule."
+        ],
+        "source": "Va. Code § 18.2-308.1"
+    },
+    {
+        "title": "Courts / Government / Secure Facilities",
+        "risk": "Hard Stop Area",
+        "body": [
+            "STATUTE / SOURCE: Virginia restricted-location framework; Va. Code §§ 18.2-308.1 and related provisions",
+            "SUMMARY: Court, law-enforcement, detention, and secure government facilities can be prohibited or heavily restricted depending on the exact site and statute.",
+            "GUIDANCE: Do not approach security screening armed. Verify the specific facility before arrival."
+        ],
+        "source": "Virginia restricted-location framework; Va. Code §§ 18.2-308.1 and related provisions"
+    },
+    {
+        "title": "Alcohol, Bars, Events, and Impairment",
+        "risk": "Alcohol / Event Risk",
+        "body": [
+            "STATUTE / SOURCE: Virginia alcohol/restaurant concealed carry framework",
+            "SUMMARY: Virginia has rules involving concealed carry in restaurants/clubs licensed to serve alcohol and unlawful consumption while carrying.",
+            "GUIDANCE: Do not drink while armed and check restaurant/bar/event rules."
+        ],
+        "source": "Virginia alcohol/restaurant concealed carry framework"
+    },
+    {
+        "title": "Private Property / Posted Premises",
+        "risk": "Property Control",
+        "body": [
+            "STATUTE / SOURCE: State private property and trespass framework",
+            "SUMMARY: Private property owners, employers, venues, and persons in control of premises may restrict firearms or require the person to leave.",
+            "GUIDANCE: Follow signs and instructions. Leave immediately if asked; do not create a trespass, disorderly conduct, or public confrontation issue."
+        ],
+        "source": "State private property and trespass framework"
+    },
+    {
+        "title": "Police Interaction / Traffic Stops",
+        "risk": "Police Contact",
+        "body": [
+            "STATUTE / SOURCE: State police-contact and concealed carry guidance",
+            "SUMMARY: Police-contact duties vary by state. Even where no affirmative duty to inform exists, truthful answers, visible hands, and calm compliance are critical.",
+            "GUIDANCE: Keep hands visible, do not reach, answer lawful questions truthfully, and ask how the officer wants you to proceed."
+        ],
+        "source": "State police-contact and concealed carry guidance"
+    },
+    {
+        "title": "Federal, Tribal, Airport, and Interstate Travel Overlay",
+        "risk": "Separate Legal System",
+        "body": [
+            "STATUTE / SOURCE: Federal law; TSA/airport rules; tribal-property framework; interstate travel framework",
+            "SUMMARY: State carry permission does not override federal buildings, post offices, secure airport areas, tribal-government rules, or the laws of the next state on the route.",
+            "GUIDANCE: Check federal/tribal/airport rules separately. When crossing state lines, re-check reciprocity, vehicle carry, magazine/ammunition rules, and sensitive-place laws before entering the next state."
+        ],
+        "source": "Federal facility, TSA, tribal-property, and interstate travel framework"
+    },
+    {
+        "title": "State-Specific Traps",
+        "risk": "Common Legal Traps",
+        "body": [
+            "STATUTE / SOURCE: State-specific legal framework",
+            "SUMMARY: Virginia traps include vehicle concealment assumptions, school property, local-government buildings, and alcohol-related carry issues.",
+            "GUIDANCE: Teach Virginia as permit-based with important vehicle and local-property details."
+        ],
+        "source": "State-specific legal framework"
+    },
+    {
+        "title": "Civil Liability / Aftermath",
+        "risk": "Post-Incident Exposure",
+        "body": [
+            "STATUTE / SOURCE: Civil liability, criminal procedure, and self-defense investigation framework",
+            "SUMMARY: A lawful carry status does not prevent arrest, investigation, prosecution review, civil claims, employment consequences, or administrative issues after a defensive incident.",
+            "GUIDANCE: Report the emergency, request police/medical if needed, identify attacker/evidence/witnesses only as necessary, request counsel, then avoid detailed statements until represented."
+        ],
+        "source": "General civil liability and post-incident framework"
+    },
+    {
+        "title": "Use of Force / Self-Defense",
+        "risk": "Life-Altering Legal Risk",
+        "body": [
+            "STATUTE / SOURCE: State self-defense and use-of-force framework",
+            "SUMMARY: Defensive force must be justified under state law and the facts known at the time. Deadly force is not for anger, property disputes, warning shots, intimidation, or punishment.",
+            "GUIDANCE: Avoid, disengage, create distance, call 911 when safe, preserve evidence, and understand that justified does not mean consequence-free."
+        ],
+        "source": "State self-defense and use-of-force framework"
+    }
+],
     [
-      "Virginia recognizes out-of-state permits if statutory conditions are met, but the person must carry permit and photo ID and display them upon demand.",
-      "Virginia is not permitless concealed carry.",
-      "School property, courthouses, airport terminals/secure areas, capitol/government areas, and certain public events require careful review.",
-      "Open carry is not the same as lawful carry everywhere.",
-      "Private property, employer rules, and local ordinances can create separate consequences."
-    ],
-    [
-      {
-        title: "Concealed Carry Permit / Reciprocity",
-        risk: "Core Recognition Rule",
-        body: [
-          "STATUTE: Va. Code § 18.2-308.014.",
-          "SUMMARY: Virginia recognizes valid out-of-state concealed handgun permits if statutory conditions are satisfied, including permit and photo identification display upon demand and no prior Virginia permit revocation.",
-          "GUIDANCE: Michigan CPL holders should carry physical permit and government photo ID and be prepared to display them upon lawful demand."
-        ],
-        source: "Va. Code § 18.2-308.014."
-      },
-      {
-        title: "Concealed Weapons General Rule",
-        risk: "Core Carry Rule",
-        body: [
-          "STATUTE: Va. Code § 18.2-308.",
-          "SUMMARY: Virginia restricts carrying concealed weapons, including handguns, unless a permit or statutory exception applies.",
-          "GUIDANCE: Do not treat Virginia as permitless concealed carry. Verify permit recognition and carry documentation."
-        ],
-        source: "Va. Code § 18.2-308."
-      },
-      {
-        title: "Permit Must Be Carried / Displayed",
-        risk: "Documentation Requirement",
-        body: [
-          "STATUTE: Va. Code § 18.2-308.014 and Article 6.1 framework.",
-          "SUMMARY: Virginia’s reciprocity statute requires the permit holder to carry the permit/license and photo identification and display them upon demand by law enforcement.",
-          "GUIDANCE: Carry physical permit and photo ID. Do not rely on screenshots or memory."
-        ],
-        source: "Va. Code § 18.2-308.014."
-      },
-      {
-        title: "Schools / School Property",
-        risk: "Extreme Risk Area",
-        body: [
-          "STATUTE: Va. Code § 18.2-308.1.",
-          "SUMMARY: Virginia restricts possession of firearms and weapons on school property and school buses, subject to statutory exceptions.",
-          "GUIDANCE: Schools, school events, buses, parking areas, and activities should be treated as verify-first locations."
-        ],
-        source: "Va. Code § 18.2-308.1."
-      },
-      {
-        title: "Courthouses",
-        risk: "Hard Stop Area",
-        body: [
-          "STATUTE: Va. Code § 18.2-283.1.",
-          "SUMMARY: Virginia restricts weapons in courthouses and courtrooms, subject to exceptions.",
-          "GUIDANCE: Do not approach courthouse security armed. Plan lawful storage before arrival."
-        ],
-        source: "Va. Code § 18.2-283.1."
-      },
-      {
-        title: "Air Carrier Airport Terminal",
-        risk: "Airport / Transportation Risk",
-        body: [
-          "STATUTE: Va. Code § 18.2-287.01.",
-          "SUMMARY: Virginia restricts carrying weapons in air carrier airport terminals, subject to statutory details and exceptions.",
-          "GUIDANCE: Airport carry and airline checked transport are different. Know TSA/airline procedures before arrival."
-        ],
-        source: "Va. Code § 18.2-287.01."
-      },
-      {
-        title: "Capitol Square / Government Buildings / Local Events",
-        risk: "Government and Local Restriction Risk",
-        body: [
-          "STATUTE / SOURCE: Virginia state/local government firearms restrictions framework, including Va. Code § 15.2-915 authority in certain public spaces/events.",
-          "SUMMARY: Virginia allows certain local firearm restrictions in government buildings, parks, recreation/community centers, and permitted events under statutory limits.",
-          "GUIDANCE: Public buildings, city events, protests, parades, parks, and community centers should be checked before carrying."
-        ],
-        source: "Va. Code § 15.2-915; Virginia local firearms restrictions framework."
-      },
-      {
-        title: "Restaurants / Alcohol",
-        risk: "Alcohol Location Risk",
-        body: [
-          "STATUTE / SOURCE: Virginia concealed handgun and alcohol-related restrictions framework.",
-          "SUMMARY: Virginia has rules involving concealed handguns, alcohol consumption, and restaurants/clubs where alcohol is served.",
-          "GUIDANCE: If drinking is part of the plan, carrying should not be. Verify alcohol-related restrictions before entering bars, restaurants, clubs, stadiums, or events."
-        ],
-        source: "Virginia alcohol/firearm restrictions framework."
-      },
-      {
-        title: "Private Property / Posted Locations",
-        risk: "Property Control",
-        body: [
-          "STATUTE / SOURCE: Virginia property and trespass framework.",
-          "SUMMARY: Private property owners may restrict firearms and require a person to leave.",
-          "GUIDANCE: If posted or instructed to leave, leave immediately. Do not debate staff or security."
-        ],
-        source: "Virginia property/trespass framework."
-      },
-      {
-        title: "Federal Property / Post Offices / Military Installations",
-        risk: "Federal Law Overlay",
-        body: [
-          "STATUTE / SOURCE: Federal facility, postal property, and military installation framework.",
-          "SUMMARY: Virginia carry permission does not override federal property, military installation, federal courthouse, postal, or secure federal facility restrictions.",
-          "GUIDANCE: Federal property must be checked separately. Northern Virginia travel often involves federal facilities and secure government areas."
-        ],
-        source: "Federal facility, postal property, and military installation framework."
-      },
-      {
-        title: "Use of Force / Self-Defense",
-        risk: "Fact-Specific Legal Risk",
-        body: [
-          "STATUTE / SOURCE: Virginia self-defense case-law and statutory framework.",
-          "SUMMARY: Virginia self-defense is fact-specific and depends on reasonableness, fault, necessity, proportionality, and circumstances.",
-          "GUIDANCE: Avoid confrontation, disengage if safely possible, call 911, request counsel, and avoid detailed statements under stress."
-        ],
-        source: "Virginia self-defense law framework."
-      }
-    ],
-    [
-      {
-        title: "Virginia Carry Checklist",
-        steps: [
-          "1. Verify permit recognition under § 18.2-308.014.",
-          "2. Carry physical permit and government photo ID.",
-          "3. Check schools under § 18.2-308.1.",
-          "4. Check courthouses under § 18.2-283.1.",
-          "5. Check airports under § 18.2-287.01.",
-          "6. Check local government/event restrictions.",
-          "7. Check alcohol, private property, and federal property."
+    {
+        "title": "Virginia Elite Deep Carry Checklist",
+        "steps": [
+            "1. Check reciprocity/current permit recognition before entering the state.",
+            "2. Confirm eligibility, age, prohibited-person status, and whether permitless carry applies.",
+            "3. Check vehicle carry/transport rules before crossing the state line.",
+            "4. Check restricted and sensitive locations before entering any building, event, school, court, government facility, airport, or posted property.",
+            "5. Know police-contact rules and keep hands visible during stops.",
+            "6. Check federal, tribal, airport, and interstate-travel overlays separately.",
+            "7. Separate carry legality from use-of-force legality; both must be lawful."
         ]
-      }
-    ],
+    }
+],
+    [],
     [
-      {
-        title: "Northern Virginia / DC Border Travel",
-        summary: "Virginia travel near DC creates major risk because federal property and DC law may be nearby.",
-        guidance: [
-          "Know whether you are in Virginia, DC, federal property, or private property.",
-          "Carry permit and photo ID.",
-          "Do not cross into DC armed without separate legal review.",
-          "Check federal buildings and parking areas."
-        ]
-      }
-    ],
+    "Assuming reciprocity means carry anywhere.",
+    "Ignoring vehicle carry and transport rules.",
+    "Ignoring schools, courts, secure facilities, airports, and federal property.",
+    "Arguing with staff/security instead of leaving posted or restricted property.",
+    "Thinking lawful carry automatically justifies defensive display or force.",
+    "Talking too much after a defensive incident before legal counsel."
+],
     [
-      "Assuming Virginia is permitless concealed carry.",
-      "Failing to carry permit and photo ID.",
-      "Ignoring schools, courthouses, airports, and government/event restrictions.",
-      "Crossing into DC accidentally while armed.",
-      "Ignoring private property and employer policies."
-    ],
+    "Reciprocity checked.",
+    "Eligibility checked.",
+    "Vehicle carry checked.",
+    "Restricted & sensitive locations checked.",
+    "Police-contact rule checked.",
+    "Federal/tribal/airport overlay checked.",
+    "Aftermath plan ready."
+],
     [
-      "Permit recognition checked.",
-      "Permit and photo ID carried.",
-      "School property checked.",
-      "Courthouse/airport checked.",
-      "Local government/event rules checked.",
-      "Federal/DC boundary risks checked."
-    ],
-    [
-      {
-        myth: "Virginia honors my permit, so I can carry anywhere in Virginia.",
-        reality: "No. Permit recognition does not override schools, courthouses, airports, government/event restrictions, private property, federal property, or DC boundary risks."
-      }
-    ]
+    {
+        "myth": "If the map is green, I can carry anywhere in Virginia.",
+        "reality": "No. Green only means permit recognition in the app engine. Restricted/sensitive locations, vehicle rules, private property, federal property, and use-of-force law still control."
+    },
+    {
+        "myth": "Permitless carry means no rules.",
+        "reality": "No. Permitless carry only affects the licensing requirement for eligible people. It does not erase location restrictions, prohibited-person rules, vehicle rules, or use-of-force standards."
+    }
+]
   ),
 
   MO: makeProfile(
@@ -9716,31 +9651,27 @@ function stateName(abbr){
 
 function statusClass(status){
   if(status === "recognized") return "green";
-  if(status === "restricted") return "yellow";
   if(status === "not_recognized") return "red";
   return "gray";
 }
 
 function statusLabelByStatus(status){
   if(status === "recognized") return "Recognized";
-  if(status === "restricted") return "Recognized with Restrictions";
   if(status === "not_recognized") return "Not Recognized";
-  return "Not Yet Verified";
+  return "Verify";
 }
 
 function stateStatus(permitState, travelState){
   var data = reciprocityData[permitState];
   if(!data) return "unverified";
   if(travelState === permitState) return "recognized";
-  if(data.recognized.indexOf(travelState) !== -1) return "recognized";
-  if(data.restricted.indexOf(travelState) !== -1) return "restricted";
   if(data.notRecognized.indexOf(travelState) !== -1) return "not_recognized";
+  if(data.recognized.indexOf(travelState) !== -1) return "recognized";
   return "unverified";
 }
 
 function statusFill(status){
   if(status === "recognized") return "#b9f3cc";
-  if(status === "restricted") return "#fde2b8";
   if(status === "not_recognized") return "#ffc2c7";
   return "#dbe2ea";
 }
@@ -9748,7 +9679,6 @@ function statusFill(status){
 function renderMapLegend(){
   return '<div class="mapLegend">' +
     '<span class="legendItem green">Recognized</span>' +
-    '<span class="legendItem yellow">Restrictions</span>' +
     '<span class="legendItem red">Not Recognized</span>' +
     '<span class="legendItem gray">Verify</span>' +
   '</div>';
@@ -9760,19 +9690,17 @@ function permitDataFor(permitState){
 
 function permitEngineCounts(permitState){
   var recognized = 0;
-  var restricted = 0;
   var notRecognized = 0;
   var unverified = 0;
 
   states.forEach(function(row){
     var status = stateStatus(permitState, row[0]);
     if(status === "recognized") recognized++;
-    else if(status === "restricted") restricted++;
     else if(status === "not_recognized") notRecognized++;
     else unverified++;
   });
 
-  return { recognized:recognized, restricted:restricted, notRecognized:notRecognized, unverified:unverified };
+  return { recognized:recognized, restricted:0, notRecognized:notRecognized, unverified:unverified };
 }
 
 function renderPermitEngineCard(permitState){
@@ -9788,7 +9716,6 @@ function renderPermitEngineCard(permitState){
     '<p class="small">' + escapeHtml(note) + '</p>' +
     '<div class="permitEngineStats">' +
       '<div class="permitEngineStat green"><b>' + counts.recognized + '</b><span>Recognized</span></div>' +
-      '<div class="permitEngineStat yellow"><b>' + counts.restricted + '</b><span>Verify</span></div>' +
       '<div class="permitEngineStat red"><b>' + counts.notRecognized + '</b><span>Not Honored</span></div>' +
       '<div class="permitEngineStat gray"><b>' + counts.unverified + '</b><span>Unverified</span></div>' +
     '</div>' +
