@@ -580,6 +580,7 @@ button{
   gap:8px;
   margin:8px 0 14px;
 }
+
 .permitEngineCard{
   background:linear-gradient(135deg,#ffffff,#f7f8fa);
   border:1px solid rgba(16,19,24,.10);
@@ -593,7 +594,6 @@ button{
 .permitEngineStat b{display:block;font-size:18px;color:#11151b}
 .permitEngineStat span{display:block;font-size:11px;font-weight:900;color:#626975;text-transform:uppercase}
 @media(max-width:650px){.permitEngineStats{grid-template-columns:repeat(2,1fr)}}
-
 .legendItem{
   font-size:12px;
   font-weight:900;
@@ -763,9 +763,6 @@ var token = localStorage.getItem("pd_token");
 var authMode = "login";
 var currentUser = null;
 var selectedMapState = "";
-
-window.addEventListener("error", function(e){ console.error("Prime Defense UI error:", e.message || e.error || e); renderEmergencyLoginFallback(); });
-window.addEventListener("unhandledrejection", function(e){ console.error("Prime Defense promise error:", e.reason || e); });
 
 var states = [
   ["AL","Alabama"],["AK","Alaska"],["AZ","Arizona"],["AR","Arkansas"],["CA","California"],
@@ -4937,14 +4934,11 @@ function permitDataFor(permitState){
 }
 
 function permitEngineCounts(permitState){
-  var data = permitDataFor(permitState);
-  if(!data){
-    return { recognized:0, restricted:0, notRecognized:0, unverified:states.length, hasData:false };
-  }
   var recognized = 0;
   var restricted = 0;
   var notRecognized = 0;
   var unverified = 0;
+
   states.forEach(function(row){
     var status = stateStatus(permitState, row[0]);
     if(status === "recognized") recognized++;
@@ -4952,15 +4946,16 @@ function permitEngineCounts(permitState){
     else if(status === "not_recognized") notRecognized++;
     else unverified++;
   });
-  return { recognized:recognized, restricted:restricted, notRecognized:notRecognized, unverified:unverified, hasData:true };
+
+  return { recognized:recognized, restricted:restricted, notRecognized:notRecognized, unverified:unverified };
 }
 
 function renderPermitEngineCard(permitState){
   var data = permitDataFor(permitState);
   var counts = permitEngineCounts(permitState);
   var title = data ? (data.title || (stateName(permitState) + " Permit Reciprocity Engine")) : (stateName(permitState) + " Permit Reciprocity Engine");
-  var note = data ? (data.sourceNote || "Map colors are based on the selected permit state.") : "This permit state is not fully built in the reciprocity engine yet. The map will show VERIFY until this permit dataset is added.";
   var reviewed = data ? (data.verifiedDate || "Verify before travel") : "Not built yet";
+  var note = data ? (data.sourceNote || "Map colors are based on the selected permit state.") : "This permit state is not fully built in the reciprocity engine yet. The map will show VERIFY until this permit dataset is added.";
 
   return '<div class="permitEngineCard">' +
     '<h3>' + escapeHtml(title) + '</h3>' +
@@ -4981,9 +4976,9 @@ function renderSvgMap(permitState){
   html += '<filter id="stateShadow" x="-10%" y="-10%" width="120%" height="120%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#101318" flood-opacity="0.18"/></filter>';
   html += '</defs>';
   html += '<rect x="0" y="0" width="960" height="690" rx="22" fill="#f8fafc"></rect>';
-  html += '<text x="24" y="34" style="font-size:20px;font-weight:950;fill:#11151b">Interactive U.S. Reciprocity Map</text>';
-  html += '<text x="24" y="58" style="font-size:12px;font-weight:800;fill:#626975">Click any state shape to view reciprocity status and state legal intelligence.</text>';
-  html += '<text x="24" y="78" style="font-size:11px;font-weight:800;fill:#8a93a3">Map colors are based on the selected permit state.</text>';
+  html += '<text x="24" y="32" style="font-size:20px;font-weight:950;fill:#11151b">Interactive U.S. Reciprocity Map</text>';
+  html += '<text x="24" y="54" style="font-size:12px;font-weight:800;fill:#626975">Click any state shape to view reciprocity status and state legal intelligence.</text>';
+  html += '<text x="24" y="76" style="font-size:11px;font-weight:800;fill:#8a93a3">Map colors are based on the selected permit state.</text>';
   html += '<g transform="translate(0,54)">';
   html += '<rect x="33" y="462" width="275" height="142" rx="16" fill="#ffffff" stroke="rgba(16,19,24,.12)"></rect>';
   html += '<text x="48" y="484" style="font-size:12px;font-weight:950;fill:#626975">ALASKA</text>';
@@ -4998,7 +4993,7 @@ function renderSvgMap(permitState){
 
     var status = stateStatus(permitState, abbr);
     var selected = selectedMapState === abbr;
-    html += '<path class="mapCell ' + (selected ? 'selected' : '') + '" d="' + path + '" fill="' + statusFill(status) + '" onclick="selectMapState(\'' + abbr + '\')"><title>' + escapeHtml(name) + ' — ' + statusLabelByStatus(status) + '</title></path>';
+    html += '<path class="mapCell ' + (selected ? 'selected' : '') + '" d="' + path + '" fill="' + statusFill(status) + '" onclick="selectMapState(\\\'' + abbr + '\\\')"><title>' + escapeHtml(name) + ' — ' + statusLabelByStatus(status) + '</title></path>';
   });
 
   html += '<g class="mapLabels">';
@@ -5129,10 +5124,10 @@ function renderIntelPanel(permitState, travelState){
   }
 
   html += '<div class="jumpNav">' +
-    '<button type="button" data-scroll-target="pd-legal-details">Detailed Law</button>' +
-    '<button type="button" data-scroll-target="pd-decision-blocks">Checklists</button>' +
-    '<button type="button" data-scroll-target="pd-scenarios">Scenarios</button>' +
-    '<button type="button" data-scroll-target="pd-common-mistakes">Common Mistakes</button>' +
+    '<button type="button" onclick="document.getElementById(\\'pd-legal-details\\').scrollIntoView({behavior:\\'smooth\\'})">Detailed Law</button>' +
+    '<button type="button" onclick="document.getElementById(\\'pd-decision-blocks\\').scrollIntoView({behavior:\\'smooth\\'})">Checklists</button>' +
+    '<button type="button" onclick="document.getElementById(\\'pd-scenarios\\').scrollIntoView({behavior:\\'smooth\\'})">Scenarios</button>' +
+    '<button type="button" onclick="document.getElementById(\\'pd-common-mistakes\\').scrollIntoView({behavior:\\'smooth\\'})">Common Mistakes</button>' +
   '</div>';
 
   return html;
@@ -5269,28 +5264,6 @@ function getReciprocityHtml(state){
 function selectMapState(abbr){
   selectedMapState = abbr;
   updateReciprocity();
-}
-
-
-function attachJumpNavHandlers(){
-  var buttons = document.querySelectorAll ? document.querySelectorAll('[data-scroll-target]') : [];
-  for(var i=0;i<buttons.length;i++){
-    buttons[i].onclick = function(){
-      var id = this.getAttribute('data-scroll-target');
-      var target = document.getElementById(id);
-      if(target && target.scrollIntoView){
-        target.scrollIntoView({ behavior: 'smooth' });
-      }
-    };
-  }
-}
-
-function renderEmergencyLoginFallback(){
-  try{
-    var appEl = document.getElementById('app');
-    if(!appEl) return;
-    appEl.innerHTML = '<div class="container"><div class="brand">Prime Defense Training</div><h1>Prime Defense Protection</h1><p class="subtitle">The app had trouble loading your session. Clear the saved session and log in again.</p><button class="primary" type="button" onclick="localStorage.removeItem(\'pd_token\'); location.reload();">Reset Login</button></div>';
-  }catch(e){}
 }
 
 function showAuth(){
@@ -5504,7 +5477,7 @@ async function showDashboard(){
           '<h2>Interactive Reciprocity Map & State Detail Panel</h2>' +
           '<p class="small">Select the permit you hold. The map colors update from that permit’s reciprocity data. Click any state to view reciprocity status and legal intelligence.</p>' +
           '<div class="grid">' +
-            '<div><label class="small"><b>Permit State</b></label><select id="state">' + buildStateOptions(selectedState) + '</select></div>' +
+            '<select id="state">' + buildStateOptions(selectedState) + '</select>' +
             '<input id="issue" type="date" value="' + escapeHtml(user.issueDate || '') + '">' +
             '<input id="exp" type="date" value="' + escapeHtml(user.expirationDate || '') + '">' +
           '</div>' +
@@ -5575,7 +5548,6 @@ function updateReciprocity(){
   var box = q("reciprocityBox");
   if(!stateEl || !box) return;
   box.innerHTML = getReciprocityHtml(stateEl.value);
-  attachJumpNavHandlers();
 }
 
 async function saveProfile(){
@@ -5621,7 +5593,6 @@ function showStateLawFull(abbr){
       '</div>' +
       renderLawProfile(abbr) +
     '</div>';
-  attachJumpNavHandlers();
 }
 
 function openEmergency(){
@@ -5638,21 +5609,21 @@ function openEmergency(){
         '<div class="card">' +
           '<div class="brand">Step 1 — Call 911</div>' +
           '<div class="script">“I was attacked, feared for my life, and had to defend myself. Please send both police and an ambulance to this location.”</div>' +
-          '<button class="primary bigAction" type="button" onclick="window.location.href=\'tel:911\'">CALL 911</button>' +
+          '<button class="primary bigAction" type="button" onclick="window.location.href=\\'tel:911\\'">CALL 911</button>' +
           '<div class="warn">Secondary wording: “There has been a self-defense shooting at this location. Send help.” Provide only necessary information and follow dispatcher instructions.</div>' +
         '</div>' +
 
         '<div class="card">' +
           '<div class="brand">Step 2 — Call USCCA</div>' +
           '<p class="small">Contact the USCCA Critical Response Team after calling 911.</p>' +
-          '<button class="primary bigAction" type="button" onclick="window.location.href=\'tel:8776771919\'">CALL USCCA</button>' +
+          '<button class="primary bigAction" type="button" onclick="window.location.href=\\'tel:8776771919\\'">CALL USCCA</button>' +
         '</div>' +
 
         '<div class="card">' +
           '<div class="brand">Step 3 — Contact Family</div>' +
           '<h2>' + escapeHtml(name || "Emergency Contact") + '</h2>' +
           '<p class="small">' + escapeHtml(phone || "No phone saved") + '</p>' +
-          (phone ? '<button class="primary bigAction" type="button" onclick="window.location.href=\'tel:' + cleanPhone + '\'">CALL CONTACT</button>' : '<div class="warn">No emergency contact saved.</div>') +
+          (phone ? '<button class="primary bigAction" type="button" onclick="window.location.href=\\'tel:' + cleanPhone + '\\'">CALL CONTACT</button>' : '<div class="warn">No emergency contact saved.</div>') +
           '<div class="script">“I’ve been involved in a defensive incident. I’m safe. Do not discuss anything with anyone until I have legal guidance.”</div>' +
         '</div>' +
 
@@ -5676,7 +5647,7 @@ function openDefensiveDisplay(){
         '<div class="card">' +
           '<div class="brand">Step 1 — Call 911</div>' +
           '<div class="script">“My name is [name], and I need to report an attack or possible attack at this location. I have a permit to carry and exposed my defensive tool, but I did not fire.”</div>' +
-          '<button class="primary bigAction" type="button" onclick="window.location.href=\'tel:911\'">CALL 911</button>' +
+          '<button class="primary bigAction" type="button" onclick="window.location.href=\\'tel:911\\'">CALL 911</button>' +
         '</div>' +
 
         '<div class="card">' +
@@ -5687,7 +5658,7 @@ function openDefensiveDisplay(){
 
         '<div class="card">' +
           '<div class="brand">Step 2 — Call USCCA</div>' +
-          '<button class="primary bigAction" type="button" onclick="window.location.href=\'tel:8776771919\'">CALL USCCA</button>' +
+          '<button class="primary bigAction" type="button" onclick="window.location.href=\\'tel:8776771919\\'">CALL USCCA</button>' +
         '</div>' +
 
         '<div class="card">' +
@@ -5739,21 +5710,15 @@ function openAftermath(){
 
         '<div class="card">' +
           '<div class="brand">Next Steps</div>' +
-          '<button class="primary bigAction" type="button" onclick="window.location.href=\'tel:8776771919\'">CALL USCCA</button>' +
+          '<button class="primary bigAction" type="button" onclick="window.location.href=\\'tel:8776771919\\'">CALL USCCA</button>' +
           '<button class="secondary bigAction" type="button" onclick="showDashboard()">BACK TO DASHBOARD</button>' +
         '</div>' +
       '</div>' +
     '</div>';
 }
 
-try {
-  if(token) showDashboard();
-  else showAuth();
-} catch(e) {
-  console.error("Startup error:", e);
-  localStorage.removeItem("pd_token");
-  renderEmergencyLoginFallback();
-}
+if(token) showDashboard();
+else showAuth();
 </script>
 </body>
 </html>
