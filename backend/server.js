@@ -12597,7 +12597,7 @@ async function showDashboard(){
           '<p class="small">Add the app to your home screen for a faster, full-screen app experience. This also prepares the app for future permit and legal-update notifications.</p>' +
           '<div class="actions">' +
             '<button id="installAppBtn" class="primary" type="button">Install App</button>' +
-            '<button class="secondary" type="button" onclick="document.getElementById(\'pwaInstallCard\').className=\'pwaInstallCard\'">Not Now</button>' +
+            '<button id="dismissInstallBtn" class="secondary" type="button">Not Now</button>' +
           '</div>' +
           '<div id="iosInstallHint" class="pwaMiniHint">iPhone: open in Safari → Share → Add to Home Screen. Android: Chrome menu → Install App.</div>' +
         '</div>' +
@@ -12711,6 +12711,10 @@ async function showDashboard(){
     if(q("refreshLegalFeedBtn")) q("refreshLegalFeedBtn").onclick = loadLegalUpdates;
     if(q("legalFeedState")) q("legalFeedState").onchange = loadLegalUpdates;
     if(q("runLegalMonitorBtn")) q("runLegalMonitorBtn").onclick = runLegalMonitorNow;
+    if(q("dismissInstallBtn")) q("dismissInstallBtn").onclick = function(){
+      var card = q("pwaInstallCard");
+      if(card) card.className = "pwaInstallCard";
+    };
     loadLegalUpdates();
     setDashboardMode("single");
 
