@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import Stripe from "stripe";
+import crypto from "crypto";
 
 const app = express();
 const PORT = process.env.PORT || 4000;
@@ -31,6 +32,198 @@ const UserSchema = new mongoose.Schema({
 });
 
 const User = mongoose.model("User", UserSchema);
+
+
+const LegalMonitorSourceSchema = new mongoose.Schema({
+  sourceId: { type: String, unique: true, index: true },
+  state: String,
+  label: String,
+  url: String,
+  category: String,
+  lastHash: String,
+  lastChecked: Date,
+  lastChanged: Date,
+  lastStatus: String,
+  lastError: String,
+  createdAt: { type: Date, default: Date.now }
+});
+
+const LegalUpdateSchema = new mongoose.Schema({
+  updateId: { type: String, unique: true, index: true },
+  state: { type: String, index: true },
+  title: String,
+  severity: { type: String, default: "possible_update" },
+  status: { type: String, default: "unverified" },
+  sourceLabel: String,
+  sourceUrl: String,
+  category: String,
+  detectedAt: { type: Date, default: Date.now },
+  summary: String,
+  trainingNote: String,
+  contentHash: String,
+  previousHash: String,
+  currentHash: String,
+  createdAt: { type: Date, default: Date.now }
+});
+
+const LegalMonitorSource = mongoose.model("LegalMonitorSource", LegalMonitorSourceSchema);
+const LegalUpdate = mongoose.model("LegalUpdate", LegalUpdateSchema);
+
+const LEGAL_MONITOR_SOURCES = [
+  { sourceId: "MI-MSP-FIREARMS", state: "MI", category: "official_guidance", label: "Michigan State Police Firearms Laws", url: "https://www.michigan.gov/msp/services/ccw" },
+  { sourceId: "MI-LEGIS-CPL", state: "MI", category: "statute", label: "Michigan Legislature CPL Statutes", url: "https://www.legislature.mi.gov/Laws/MCL?objectName=mcl-28-425f" },
+  { sourceId: "OH-AG-CCW", state: "OH", category: "official_guidance", label: "Ohio Attorney General Concealed Carry", url: "https://www.ohioattorneygeneral.gov/Law-Enforcement/Concealed-Carry" },
+  { sourceId: "OH-ORC-2923", state: "OH", category: "statute", label: "Ohio Revised Code Chapter 2923", url: "https://codes.ohio.gov/ohio-revised-code/chapter-2923" },
+  { sourceId: "IL-ISP-CCL", state: "IL", category: "official_guidance", label: "Illinois State Police Concealed Carry", url: "https://isp.illinois.gov/Foid/Ccl" },
+  { sourceId: "CA-DOJ-FIREARMS", state: "CA", category: "official_guidance", label: "California DOJ Firearms", url: "https://oag.ca.gov/firearms" },
+  { sourceId: "NY-SENATE-265", state: "NY", category: "statute", label: "New York Penal Law Article 265", url: "https://www.nysenate.gov/legislation/laws/PEN/P3TAP265" },
+  { sourceId: "NJSP-FIREARMS", state: "NJ", category: "official_guidance", label: "New Jersey State Police Firearms", url: "https://www.nj.gov/njsp/firearms/" },
+  { sourceId: "FL-STAT-790", state: "FL", category: "statute", label: "Florida Statutes Chapter 790", url: "https://www.leg.state.fl.us/statutes/index.cfm?App_mode=Display_Statute&URL=0700-0799/0790/0790.html" },
+  { sourceId: "TX-PENAL-46", state: "TX", category: "statute", label: "Texas Penal Code Chapter 46", url: "https://statutes.capitol.texas.gov/Docs/PE/htm/PE.46.htm" },
+  { sourceId: "PA-6106", state: "PA", category: "statute", label: "Pennsylvania Uniform Firearms Act", url: "https://www.legis.state.pa.us/WU01/LI/LI/CT/HTM/18/00.061..HTM" },
+  { sourceId: "NV-RCCD-RECOGNITION", state: "NV", category: "reciprocity", label: "Nevada Out-of-State CCW Recognition", url: "https://rccd.nv.gov/Resources/CCW-Permit-Recognition/" },
+  { sourceId: "MD-MSP-LICENSING", state: "MD", category: "official_guidance", label: "Maryland State Police Licensing Division", url: "https://mdsp.maryland.gov/Organization/Pages/CriminalInvestigationBureau/LicensingDivision.aspx" },
+  { sourceId: "OR-STATE-POLICE-FIREARMS", state: "OR", category: "official_guidance", label: "Oregon State Police Firearms", url: "https://www.oregon.gov/osp/programs/cjis/Pages/Firearms.aspx" },
+  { sourceId: "WA-AG-RECIPROCITY", state: "WA", category: "reciprocity", label: "Washington Attorney General CPL Reciprocity", url: "https://www.atg.wa.gov/concealed-pistol-license-reciprocity" },
+  { sourceId: "IN-ISP-FIREARMS", state: "IN", category: "official_guidance", label: "Indiana State Police Firearms Licensing", url: "https://www.in.gov/isp/firearms-licensing/" },
+  { sourceId: "KY-KSP-CCDW", state: "KY", category: "official_guidance", label: "Kentucky State Police CCDW", url: "https://kentuckystatepolice.org/ccdw/" },
+  { sourceId: "TN-HANDGUN-PERMITS", state: "TN", category: "official_guidance", label: "Tennessee Handgun Carry Permits", url: "https://www.tn.gov/safety/tnhp/handgun.html" },
+  { sourceId: "GA-LAW-16-11", state: "GA", category: "statute", label: "Georgia Weapons Carry Statutes", url: "https://law.justia.com/codes/georgia/title-16/chapter-11/article-4/part-3/" },
+  { sourceId: "NC-DOJ-CCW", state: "NC", category: "official_guidance", label: "North Carolina DOJ Concealed Carry", url: "https://ncdoj.gov/law-enforcement-training/criminal-justice/forms-and-publications/concealed-carry/" }
+];
+
+function monitorHash(text) {
+  return crypto.createHash("sha256").update(text || "").digest("hex");
+}
+
+function normalizeMonitorContent(html) {
+  return String(html || "")
+    .replace(/<script[\s\S]*?<\/script>/gi, " ")
+    .replace(/<style[\s\S]*?<\/style>/gi, " ")
+    .replace(/<noscript[\s\S]*?<\/noscript>/gi, " ")
+    .replace(/<[^>]+>/g, " ")
+    .replace(/&nbsp;/gi, " ")
+    .replace(/&amp;/gi, "&")
+    .replace(/\s+/g, " ")
+    .trim()
+    .slice(0, 120000);
+}
+
+function buildMonitorSummary(source, isFirstChange) {
+  const base = isFirstChange
+    ? "Initial source baseline created. Future changes will be detected automatically."
+    : "Possible legal-source change detected. The source page content changed since the previous automated check.";
+  return `${base} Review the official source before relying on or publishing any legal interpretation.`;
+}
+
+async function seedLegalMonitorSources() {
+  await Promise.all(LEGAL_MONITOR_SOURCES.map(src =>
+    LegalMonitorSource.updateOne(
+      { sourceId: src.sourceId },
+      { $setOnInsert: src },
+      { upsert: true }
+    )
+  ));
+}
+
+async function runLegalMonitor() {
+  await seedLegalMonitorSources();
+  const sources = await LegalMonitorSource.find({}).sort({ state: 1, sourceId: 1 }).lean();
+  const results = [];
+
+  for (const src of sources) {
+    try {
+      const controller = new AbortController();
+      const timeout = setTimeout(() => controller.abort(), 15000);
+      const response = await fetch(src.url, {
+        method: "GET",
+        redirect: "follow",
+        signal: controller.signal,
+        headers: {
+          "User-Agent": "PrimeDefenseLegalMonitor/1.0 (+https://primedefensetraining.com)",
+          "Accept": "text/html,application/xhtml+xml,application/xml,text/plain,*/*"
+        }
+      });
+      clearTimeout(timeout);
+
+      const raw = await response.text();
+      const normalized = normalizeMonitorContent(raw);
+      const newHash = monitorHash(normalized);
+      const previousHash = src.lastHash || "";
+      const changed = Boolean(previousHash && previousHash !== newHash);
+      const firstBaseline = !previousHash;
+
+      await LegalMonitorSource.updateOne(
+        { sourceId: src.sourceId },
+        {
+          $set: {
+            lastHash: newHash,
+            lastChecked: new Date(),
+            lastChanged: changed ? new Date() : src.lastChanged,
+            lastStatus: response.ok ? "ok" : `http_${response.status}`,
+            lastError: ""
+          }
+        }
+      );
+
+      if (changed) {
+        const updateId = monitorHash(`${src.sourceId}:${previousHash}:${newHash}`).slice(0, 32);
+        await LegalUpdate.updateOne(
+          { updateId },
+          {
+            $setOnInsert: {
+              updateId,
+              state: src.state,
+              title: `${src.state}: Possible legal-source update detected`,
+              severity: src.category === "reciprocity" ? "urgent" : "important",
+              status: "unverified",
+              sourceLabel: src.label,
+              sourceUrl: src.url,
+              category: src.category,
+              detectedAt: new Date(),
+              summary: buildMonitorSummary(src, false),
+              trainingNote: "This alert is automated and unverified. Members should review the official source and should not treat this alert as legal advice or a confirmed law change until reviewed.",
+              contentHash: newHash,
+              previousHash,
+              currentHash: newHash
+            }
+          },
+          { upsert: true }
+        );
+      }
+
+      results.push({ sourceId: src.sourceId, state: src.state, changed, firstBaseline, status: response.status });
+    } catch (err) {
+      await LegalMonitorSource.updateOne(
+        { sourceId: src.sourceId },
+        {
+          $set: {
+            lastChecked: new Date(),
+            lastStatus: "error",
+            lastError: err && err.message ? err.message : String(err)
+          }
+        }
+      );
+      results.push({ sourceId: src.sourceId, state: src.state, changed: false, error: err && err.message ? err.message : String(err) });
+    }
+  }
+
+  return results;
+}
+
+let legalMonitorRunning = false;
+async function runLegalMonitorSafely(reason = "scheduled") {
+  if (legalMonitorRunning) return;
+  legalMonitorRunning = true;
+  try {
+    const results = await runLegalMonitor();
+    console.log(`Legal monitor ${reason} completed: ${results.length} source(s) checked.`);
+  } catch (err) {
+    console.log("Legal monitor error:", err);
+  } finally {
+    legalMonitorRunning = false;
+  }
+}
 
 function signToken(user) {
   return jwt.sign({ id: user._id }, process.env.JWT_SECRET, { expiresIn: "30d" });
@@ -251,6 +444,79 @@ app.post("/api/save-profile", async (req, res) => {
     res.json({ error: "Save failed. Please login again." });
   }
 });
+
+
+app.post("/api/legal-updates", async (req, res) => {
+  try {
+    const user = await authUserFromToken(req.body.token);
+    const stripeCheck = await checkStripeMembership(user.email);
+    user.membershipStatus = stripeCheck.status;
+    await user.save();
+
+    if (!accessAllowed(user.membershipStatus || "not_found")) {
+      return res.json({ error: "Active membership required." });
+    }
+
+    const state = String(req.body.state || "ALL").trim().toUpperCase();
+    const query = state && state !== "ALL" ? { state } : {};
+    const updates = await LegalUpdate.find(query).sort({ detectedAt: -1 }).limit(30).lean();
+    const sources = await LegalMonitorSource.find({}).sort({ state: 1, label: 1 }).lean();
+
+    res.json({
+      success: true,
+      updates: updates.map(u => ({
+        state: u.state,
+        title: u.title,
+        severity: u.severity,
+        status: u.status,
+        sourceLabel: u.sourceLabel,
+        sourceUrl: u.sourceUrl,
+        category: u.category,
+        detectedAt: u.detectedAt,
+        summary: u.summary,
+        trainingNote: u.trainingNote
+      })),
+      sourceCount: sources.length,
+      lastChecked: sources.reduce((latest, src) => {
+        if (!src.lastChecked) return latest;
+        const t = new Date(src.lastChecked).getTime();
+        return !latest || t > new Date(latest).getTime() ? src.lastChecked : latest;
+      }, null)
+    });
+  } catch (err) {
+    console.log("Legal updates error:", err);
+    res.json({ error: "Unable to load legal updates." });
+  }
+});
+
+app.post("/api/run-legal-monitor", async (req, res) => {
+  try {
+    const user = await authUserFromToken(req.body.token);
+    const stripeCheck = await checkStripeMembership(user.email);
+    user.membershipStatus = stripeCheck.status;
+    await user.save();
+
+    if (!accessAllowed(user.membershipStatus || "not_found")) {
+      return res.json({ error: "Active membership required." });
+    }
+
+    if (legalMonitorRunning) {
+      return res.json({ success: true, message: "Legal monitor is already running." });
+    }
+
+    runLegalMonitorSafely("manual");
+    res.json({ success: true, message: "Legal monitor started. Refresh the feed in a few minutes." });
+  } catch (err) {
+    console.log("Manual legal monitor error:", err);
+    res.json({ error: "Unable to start legal monitor." });
+  }
+});
+
+const legalMonitorHours = Math.max(1, Number(process.env.LEGAL_MONITOR_INTERVAL_HOURS || 24));
+if (process.env.LEGAL_MONITOR_ENABLED !== "false") {
+  setTimeout(() => runLegalMonitorSafely("startup"), 45000);
+  setInterval(() => runLegalMonitorSafely("scheduled"), legalMonitorHours * 60 * 60 * 1000);
+}
 
 const html = `
 <!DOCTYPE html>
@@ -849,6 +1115,57 @@ button{
   margin-top:14px;
 }
 .travelModePanel.active{display:block;}
+
+.legalFeedToolbar{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  align-items:center;
+  margin:14px 0;
+}
+.legalFeedToolbar select{max-width:260px;margin:0;}
+.legalFeedToolbar button{min-width:150px;}
+.legalFeedList{
+  display:grid;
+  gap:12px;
+  margin-top:12px;
+}
+.legalUpdateCard{
+  background:#fff;
+  border:1px solid rgba(16,19,24,.10);
+  border-radius:18px;
+  padding:16px;
+  box-shadow:0 8px 22px rgba(16,19,24,.05);
+}
+.legalUpdateMeta{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  align-items:center;
+  margin:8px 0 10px;
+}
+.updatePill{
+  display:inline-block;
+  border-radius:999px;
+  padding:6px 10px;
+  font-size:11px;
+  font-weight:950;
+  border:1px solid rgba(16,19,24,.10);
+}
+.updatePill.urgent{background:rgba(215,25,32,.10);color:#b91c1c;border-color:rgba(215,25,32,.25);}
+.updatePill.important{background:rgba(217,119,6,.12);color:#9a3412;border-color:rgba(217,119,6,.25);}
+.updatePill.possible_update{background:rgba(100,116,139,.10);color:#475569;border-color:rgba(100,116,139,.20);}
+.updatePill.unverified{background:#11151b;color:#fff;}
+.legalSourceLink{color:#b91c1c;font-weight:900;text-decoration:none;}
+.legalSourceLink:hover{text-decoration:underline;}
+.legalFeedEmpty{
+  background:#fff;
+  border:1px dashed rgba(16,19,24,.16);
+  border-radius:18px;
+  padding:18px;
+  color:#626975;
+  line-height:1.55;
+}
 .detailToggleCard{
   background:linear-gradient(135deg,#fff,#f7f8fa);
   border:1px solid rgba(16,19,24,.10);
@@ -12226,6 +12543,18 @@ async function showDashboard(){
         '</div>' +
 
         '<div class="card">' +
+          '<div class="brand">Legal Updates</div>' +
+          '<h2>Automated Legal Update Feed</h2>' +
+          '<p class="small">The app monitors selected official legal sources and flags possible changes. Alerts are automated and unverified until reviewed, so members should use the source link before relying on any change.</p>' +
+          '<div class="legalFeedToolbar">' +
+            '<select id="legalFeedState"><option value="ALL">All monitored states</option>' + buildStateOptions(selectedState) + '</select>' +
+            '<button id="refreshLegalFeedBtn" class="secondary" type="button">Refresh Feed</button>' +
+            '<button id="runLegalMonitorBtn" class="darkBtn" type="button">Check Sources Now</button>' +
+          '</div>' +
+          '<div id="legalFeed" class="legalFeedList"><div class="legalFeedEmpty">Loading legal update feed...</div></div>' +
+        '</div>' +
+
+        '<div class="card">' +
           '<div class="brand">Michigan Ultra Guide</div>' +
           '<h2>Michigan CPL & Firearms Law Intelligence</h2>' +
           '<p class="small">Open the expanded Michigan guide with detailed sections, decision blocks, common mistakes, restricted-location guidance, plain-English reality checks, and before-carry checklists.</p>' +
@@ -12282,6 +12611,10 @@ async function showDashboard(){
     if(q("buildTravelBtn")) q("buildTravelBtn").onclick = renderTravelMode;
     if(q("travelStart")) q("travelStart").onchange = function(){ if(travelModeActive) renderTravelMode(); };
     if(q("travelDestination")) q("travelDestination").onchange = function(){ if(travelModeActive) renderTravelMode(); };
+    if(q("refreshLegalFeedBtn")) q("refreshLegalFeedBtn").onclick = loadLegalUpdates;
+    if(q("legalFeedState")) q("legalFeedState").onchange = loadLegalUpdates;
+    if(q("runLegalMonitorBtn")) q("runLegalMonitorBtn").onclick = runLegalMonitorNow;
+    loadLegalUpdates();
     setDashboardMode("single");
 
   }catch(e){
@@ -12296,6 +12629,101 @@ function updateReciprocity(){
   var box = q("reciprocityBox");
   if(!stateEl || !box) return;
   box.innerHTML = getReciprocityHtml(stateEl.value);
+}
+
+function formatDateTime(value){
+  if(!value) return "Not checked yet";
+  try{
+    return new Date(value).toLocaleString([], { month:"short", day:"numeric", year:"numeric", hour:"numeric", minute:"2-digit" });
+  }catch(e){
+    return String(value || "");
+  }
+}
+
+function legalSeverityLabel(value){
+  if(value === "urgent") return "Urgent";
+  if(value === "important") return "Important";
+  if(value === "possible_update") return "Possible Update";
+  return "Notice";
+}
+
+function renderLegalUpdatesFeed(data){
+  var box = q("legalFeed");
+  if(!box) return;
+
+  if(!data || data.error){
+    box.innerHTML = '<div class="legalFeedEmpty">' + escapeHtml((data && data.error) || "Unable to load legal updates.") + '</div>';
+    return;
+  }
+
+  var updates = data.updates || [];
+  var monitorLine = '<p class="small"><b>Sources monitored:</b> ' + escapeHtml(data.sourceCount || 0) +
+    ' &nbsp; <b>Last check:</b> ' + escapeHtml(formatDateTime(data.lastChecked)) + '</p>';
+
+  if(!updates.length){
+    box.innerHTML = '<div class="legalFeedEmpty">' + monitorLine +
+      '<p>No possible legal updates are currently flagged for this filter. Automated monitoring will continue checking official sources.</p>' +
+      '<p><b>Important:</b> No alert does not guarantee that no law changed. Always verify official sources before relying on legal information.</p>' +
+      '</div>';
+    return;
+  }
+
+  var html = monitorLine;
+  updates.forEach(function(u){
+    html += '<div class="legalUpdateCard">' +
+      '<h3>' + escapeHtml(u.title || "Possible legal update") + '</h3>' +
+      '<div class="legalUpdateMeta">' +
+        '<span class="updatePill ' + escapeHtml(u.severity || "possible_update") + '">' + escapeHtml(legalSeverityLabel(u.severity)) + '</span>' +
+        '<span class="updatePill unverified">' + escapeHtml(String(u.status || "unverified").toUpperCase()) + '</span>' +
+        '<span class="badge">' + escapeHtml(u.state || "") + '</span>' +
+        '<span class="badge">Detected: ' + escapeHtml(formatDateTime(u.detectedAt)) + '</span>' +
+      '</div>' +
+      '<p>' + escapeHtml(u.summary || "Automated possible source change detected.") + '</p>' +
+      '<p class="small"><b>Training note:</b> ' + escapeHtml(u.trainingNote || "Review the source before relying on this alert.") + '</p>' +
+      '<p class="small"><b>Source:</b> <a class="legalSourceLink" href="' + escapeHtml(u.sourceUrl || "#") + '" target="_blank" rel="noopener noreferrer">' + escapeHtml(u.sourceLabel || u.sourceUrl || "Official source") + '</a></p>' +
+      '</div>';
+  });
+
+  box.innerHTML = html;
+}
+
+async function loadLegalUpdates(){
+  var box = q("legalFeed");
+  if(box) box.innerHTML = '<div class="legalFeedEmpty">Loading legal update feed...</div>';
+
+  try{
+    var state = q("legalFeedState") ? q("legalFeedState").value : "ALL";
+    var res = await fetch("/api/legal-updates", {
+      method:"POST",
+      headers:{ "Content-Type":"application/json" },
+      body:JSON.stringify({ token:token, state:state })
+    });
+    var data = await res.json();
+    renderLegalUpdatesFeed(data);
+  }catch(e){
+    renderLegalUpdatesFeed({ error:"Unable to load legal updates." });
+  }
+}
+
+async function runLegalMonitorNow(){
+  var btn = q("runLegalMonitorBtn");
+  var oldText = btn ? btn.innerText : "";
+  if(btn){ btn.innerText = "Checking..."; btn.disabled = true; }
+
+  try{
+    var res = await fetch("/api/run-legal-monitor", {
+      method:"POST",
+      headers:{ "Content-Type":"application/json" },
+      body:JSON.stringify({ token:token })
+    });
+    var data = await res.json();
+    setMsg(data.error || data.message || "Legal monitor started.");
+    setTimeout(loadLegalUpdates, 4000);
+  }catch(e){
+    setMsg("Unable to start legal monitor.");
+  }finally{
+    if(btn){ btn.innerText = oldText || "Check Sources Now"; btn.disabled = false; }
+  }
 }
 
 async function saveProfile(){
