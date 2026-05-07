@@ -11164,7 +11164,7 @@ function renderSvgMap(permitState){
 
     var status = stateStatus(permitState, abbr);
     var selected = selectedMapState === abbr;
-    html += '<path class="mapCell ' + (selected ? 'selected' : '') + '" d="' + path + '" fill="' + statusFill(status) + '" onclick="selectMapState(\\\'' + abbr + '\\\')"><title>' + escapeHtml(name) + ' — ' + statusLabelByStatus(status) + '</title></path>';
+    html += '<path class="mapCell ' + (selected ? 'selected' : '') + '" d="' + path + '" fill="' + statusFill(status) + '" onclick="selectMapState(&quot;' + abbr + '&quot;)"><title>' + escapeHtml(name) + ' — ' + statusLabelByStatus(status) + '</title></path>';
   });
 
   html += '<g class="mapLabels">';
@@ -11295,9 +11295,9 @@ function renderIntelPanel(permitState, travelState){
   }
 
   html += '<div class="jumpNav">' +
-    '<button type="button" onclick="openStateLawSection(\\'' + travelState + '\\',\\'pd-legal-details\\')">Open Detailed Law</button>' +
-    '<button type="button" onclick="openStateLawSection(\\'' + travelState + '\\',\\'pd-decision-blocks\\')">Checklists</button>' +
-    '<button type="button" onclick="openStateLawSection(\\'' + travelState + '\\',\\'pd-common-mistakes\\')">Common Mistakes</button>' +
+    '<button type="button" onclick="openStateLawSection(&quot;' + travelState + '&quot;,&quot;pd-legal-details&quot;)">Open Detailed Law</button>' +
+    '<button type="button" onclick="openStateLawSection(&quot;' + travelState + '&quot;,&quot;pd-decision-blocks&quot;)">Checklists</button>' +
+    '<button type="button" onclick="openStateLawSection(&quot;' + travelState + '&quot;,&quot;pd-common-mistakes&quot;)">Common Mistakes</button>' +
   '</div>';
 
   return html;
@@ -11924,7 +11924,7 @@ function getStateDetailHtml(permitState, travelState){
       '<p>The quick intelligence panel above is designed for fast decisions. Open the full legal profile when you want statutes, checklists, common mistakes, and deeper state-specific detail.</p>' +
       '<div class="compactHint">This keeps the dashboard cleaner while preserving the full legal data for every state.</div>' +
       '<div class="actions">' +
-        '<button class="primary" type="button" onclick="showStateLawFull(\\'' + travelState + '\\')">Open Full ' + escapeHtml(stateName(travelState)) + ' Legal Detail</button>' +
+        '<button class="primary" type="button" onclick="showStateLawFull(&quot;' + travelState + '&quot;)">Open Full ' + escapeHtml(stateName(travelState)) + ' Legal Detail</button>' +
       '</div>' +
     '</div>';
 }
@@ -12265,7 +12265,7 @@ function renderTravelMode(){
       '<p><b>Vehicle:</b> ' + escapeHtml(qk.vehicleCarry || 'Verify vehicle carry / transport rules.') + '</p>' +
       '<p><b>Restricted & Sensitive Locations:</b> ' + escapeHtml((law.travelAlerts && law.travelAlerts[0]) || 'Check schools, courts, federal property, posted property, and sensitive locations.') + '</p>';
     warnings.forEach(function(w){ html += '<p>• ' + escapeHtml(w) + '</p>'; });
-    html += '<button type="button" onclick="openTravelState(\\\'' + abbr + '\\\')">Open State Intelligence</button>' +
+    html += '<button type="button" onclick="openTravelState(&quot;' + abbr + '&quot;)">Open State Intelligence</button>';
     '</div>';
   });
   html += '</div>';
@@ -12643,21 +12643,21 @@ function openEmergency(){
         '<div class="card">' +
           '<div class="brand">Step 1 — Call 911</div>' +
           '<div class="script">“I was attacked, feared for my life, and had to defend myself. Please send both police and an ambulance to this location.”</div>' +
-          '<button class="primary bigAction" type="button" onclick="window.location.href=\\'tel:911\\'">CALL 911</button>' +
+          '<button class="primary bigAction" type="button" onclick="window.location.href=&quot;tel:911&quot;">CALL 911</button>' +
           '<div class="warn">Secondary wording: “There has been a self-defense shooting at this location. Send help.” Provide only necessary information and follow dispatcher instructions.</div>' +
         '</div>' +
 
         '<div class="card">' +
           '<div class="brand">Step 2 — Call USCCA</div>' +
           '<p class="small">Contact the USCCA Critical Response Team after calling 911.</p>' +
-          '<button class="primary bigAction" type="button" onclick="window.location.href=\\'tel:8776771919\\'">CALL USCCA</button>' +
+          '<button class="primary bigAction" type="button" onclick="window.location.href=&quot;tel:8776771919&quot;">CALL USCCA</button>' +
         '</div>' +
 
         '<div class="card">' +
           '<div class="brand">Step 3 — Contact Family</div>' +
           '<h2>' + escapeHtml(name || "Emergency Contact") + '</h2>' +
           '<p class="small">' + escapeHtml(phone || "No phone saved") + '</p>' +
-          (phone ? '<button class="primary bigAction" type="button" onclick="window.location.href=\\'tel:' + cleanPhone + '\\'">CALL CONTACT</button>' : '<div class="warn">No emergency contact saved.</div>') +
+          (phone ? '<button class="primary bigAction" type="button" onclick="window.location.href=&quot;tel:' + cleanPhone + '&quot;">CALL CONTACT</button>' : '<div class="warn">No phone saved</div>') +
           '<div class="script">“I’ve been involved in a defensive incident. I’m safe. Do not discuss anything with anyone until I have legal guidance.”</div>' +
         '</div>' +
 
@@ -12681,7 +12681,7 @@ function openDefensiveDisplay(){
         '<div class="card">' +
           '<div class="brand">Step 1 — Call 911</div>' +
           '<div class="script">“My name is [name], and I need to report an attack or possible attack at this location. I have a permit to carry and exposed my defensive tool, but I did not fire.”</div>' +
-          '<button class="primary bigAction" type="button" onclick="window.location.href=\\'tel:911\\'">CALL 911</button>' +
+          '<button class="primary bigAction" type="button" onclick="window.location.href=&quot;tel:911&quot;">CALL 911</button>' +
         '</div>' +
 
         '<div class="card">' +
@@ -12692,7 +12692,7 @@ function openDefensiveDisplay(){
 
         '<div class="card">' +
           '<div class="brand">Step 2 — Call USCCA</div>' +
-          '<button class="primary bigAction" type="button" onclick="window.location.href=\\'tel:8776771919\\'">CALL USCCA</button>' +
+          '<button class="primary bigAction" type="button" onclick="window.location.href=&quot;tel:8776771919&quot;">CALL USCCA</button>' +
         '</div>' +
 
         '<div class="card">' +
@@ -12744,7 +12744,7 @@ function openAftermath(){
 
         '<div class="card">' +
           '<div class="brand">Next Steps</div>' +
-          '<button class="primary bigAction" type="button" onclick="window.location.href=\\'tel:8776771919\\'">CALL USCCA</button>' +
+          '<button class="primary bigAction" type="button" onclick="window.location.href=&quot;tel:8776771919&quot;">CALL USCCA</button>' +
           '<button class="secondary bigAction" type="button" onclick="showDashboard()">BACK TO DASHBOARD</button>' +
         '</div>' +
       '</div>' +
