@@ -1086,6 +1086,19 @@ var token = localStorage.getItem("pd_token");
 var authMode = "login";
 var currentUser = null;
 var selectedMapState = "";
+var appBootFailed = false;
+window.onerror = function(message, source, lineno, colno, error){
+  if(appBootFailed) return false;
+  appBootFailed = true;
+  try{
+    localStorage.removeItem("pd_token");
+    var appNode = document.getElementById("app");
+    if(appNode){
+      appNode.innerHTML = '<div class="container"><div class="brand">Prime Defense Training</div><h1>Prime Defense Protection</h1><p class="subtitle">The app refreshed after a loading issue. Please log in again.</p><button class="primary" type="button" onclick="location.reload()">Reload App</button></div>';
+    }
+  }catch(e){}
+  return false;
+};
 var travelModeActive = false;
 
 var states = [
@@ -12383,10 +12396,12 @@ async function loadLegalMonitor(){
   }
 }
 
+// PWA service worker is intentionally disabled for now.
+// This prevents stale cached builds from causing blank login screens during active development.
 if('serviceWorker' in navigator){
-  window.addEventListener('load', function(){
-    navigator.serviceWorker.register('/service-worker.js').catch(function(){ });
-  });
+  navigator.serviceWorker.getRegistrations().then(function(regs){
+    regs.forEach(function(reg){ reg.unregister(); });
+  }).catch(function(){ });
 }
 
 
@@ -12751,8 +12766,14 @@ function openAftermath(){
     '</div>';
 }
 
-if(token) showDashboard();
-else showAuth();
+try{
+  if(token) showDashboard();
+  else showAuth();
+}catch(e){
+  localStorage.removeItem("pd_token");
+  token = null;
+  showAuth();
+}
 </script>
 </body>
 </html>
@@ -12788,20 +12809,24 @@ app.get('/app-icon.svg', (req, res) => {
 
 app.get('/service-worker.js', (req, res) => {
   res.setHeader('Content-Type', 'application/javascript');
+  res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate, max-age=0');
   res.send(`
     self.addEventListener('install', event => self.skipWaiting());
-    self.addEventListener('activate', event => event.waitUntil(self.clients.claim()));
-    self.addEventListener('fetch', event => {
-      const request = event.request;
-      if (request.method !== 'GET') return;
-      event.respondWith(fetch(request).catch(() => caches.match(request)));
+    self.addEventListener('activate', event => {
+      event.waitUntil((async () => {
+        const keys = await caches.keys();
+        await Promise.all(keys.map(key => caches.delete(key)));
+        await self.registration.unregister();
+        const clientsList = await self.clients.matchAll({ type: 'window', includeUncontrolled: true });
+        clientsList.forEach(client => client.navigate(client.url));
+      })());
     });
   `);
 });
 
-app.get("/", (req, res) => res.send(html));
+app.get("/", (req, res) => { res.setHeader("Cache-Control", "no-store, no-cache, must-revalidate, max-age=0"); res.send(html); });
 
-app.use((req, res) => res.send(html));
+app.use((req, res) => { res.setHeader("Cache-Control", "no-store, no-cache, must-revalidate, max-age=0"); res.send(html); });
 
 
 app.listen(PORT, "0.0.0.0", () => {
